@@ -49,11 +49,17 @@ export default function Module101Page() {
           eyebrow="Replay and handout"
           title="Session materials."
         />
-        <div className="mt-6 grid gap-5 md:grid-cols-2">
+        <div className="mt-6 grid gap-5 md:grid-cols-3">
           <RecordingPlaceholder
             level="101"
             title="The Loan Factory Operating System. Live walkthrough."
             description="Jeremy runs one full Loan Factory LO day from 8 a.m. to 5 p.m. Activity standard, weekly rhythm, first follow ups, AI assisted drafting."
+          />
+          <DownloadPlaceholder
+            title="101 Live class deck"
+            format="PPTX"
+            description="Premium revised deck. 10 slides, six Q and A pauses, brand aligned, embedded speaker notes. Ready for live class or Gamma upload."
+            downloadHref="/downloads/Elite_Sales_Marketing_Training_101_REVISED.pptx"
           />
           <DownloadPlaceholder
             title="101 Mortgage Sales Foundation handout"
