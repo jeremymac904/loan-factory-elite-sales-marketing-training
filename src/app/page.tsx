@@ -12,8 +12,22 @@ import { brandAssets } from "@/data/brandAssets";
 export default function HomePage() {
   return (
     <>
-      <section className="bg-lf-navy text-white">
-        <div className="container-page py-16 md:py-24">
+      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
+        <video
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/media/dark-hero-background.png"
+        >
+          <source src="/media/platform-motion-background.mp4" type="video/mp4" />
+        </video>
+        <div aria-hidden className="absolute inset-0 bg-lf-navyDark/65" />
+
+        <div className="relative container-page py-16 md:py-24">
           <div className="grid items-center gap-10 md:grid-cols-[1.2fr_1fr]">
             <div>
               <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
@@ -47,21 +61,19 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-col items-center gap-6 rounded-2xl border border-white/10 bg-white p-6 md:p-8">
+            <div className="flex flex-col items-center gap-8 rounded-2xl border border-white/15 bg-white p-8 backdrop-blur md:p-10">
               <BrandImage
                 asset={brandAssets.elite}
-                heightClass="h-44 md:h-52"
+                heightClass="h-40 md:h-48"
               />
-              <div className="h-px w-16 bg-lf-line" />
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-[11px] uppercase tracking-wide text-lf-slate">
-                  Powered by
-                </span>
-                <BrandImage
-                  asset={brandAssets["loan-factory"]}
-                  heightClass="h-7 md:h-8"
-                />
-              </div>
+              <div className="h-px w-24 bg-lf-line" />
+              <BrandImage
+                asset={brandAssets["loan-factory"]}
+                heightClass="h-16 md:h-20"
+              />
+              <p className="text-center text-[11px] uppercase tracking-wide text-lf-slate">
+                Loan Factory Elite Sales and Marketing Training
+              </p>
             </div>
           </div>
         </div>
@@ -148,7 +160,7 @@ export default function HomePage() {
         <div className="container-page py-16">
           <SectionHeading
             eyebrow="The path"
-            title="101 through 601 in six weeks."
+            title="101 through 601 in six sessions."
             description="Start with 101. Stay in sequence. Each module adds one specific layer to the system."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -183,7 +195,7 @@ export default function HomePage() {
           <ResourceCard
             meta="AI"
             title="AI Prompt Library"
-            description="TERA ready prompts for call prep, follow up, partner outreach, content, roleplay, and weekly review."
+            description="Gemini Gem AI Twin ready prompts for call prep, follow up, partner outreach, content, roleplay, and weekly review."
             href="/prompts/"
           />
           <ResourceCard

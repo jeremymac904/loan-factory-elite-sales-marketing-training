@@ -27,7 +27,7 @@ export default function TrackerPage() {
         <SectionHeading
           eyebrow="Form spec"
           title="What to log every Friday."
-          description="In version one, paste these fields into a Google Sheet, an Airtable, or your TERA workspace. Future versions will offer a built in form."
+          description="In version one, paste these fields into a Google Sheet, an Airtable, or your team's shared tracker. Future versions will offer a built in form inside Loan Factory AI Advantage."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {trackerSections.map((s) => (

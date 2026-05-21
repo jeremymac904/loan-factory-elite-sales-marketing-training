@@ -15,7 +15,7 @@ export default function TrainingPathPage() {
             The Path
           </span>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
-            101 to 601 in six weeks.
+            101 to 601 in six sessions.
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
             Run the series in order. Each module sits on top of the one before

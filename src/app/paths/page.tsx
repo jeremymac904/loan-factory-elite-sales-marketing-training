@@ -9,8 +9,21 @@ export const metadata = { title: "Learner Paths" };
 export default function PathsPage() {
   return (
     <>
-      <section className="bg-lf-navy text-white">
-        <div className="container-page py-16">
+      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
+        <video
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/media/dark-hero-background.png"
+        >
+          <source src="/media/dark-premium-AI-workflow.mp4" type="video/mp4" />
+        </video>
+        <div aria-hidden className="absolute inset-0 bg-lf-navyDark/60" />
+        <div className="relative container-page py-16">
           <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
             Choose Your Path
           </span>

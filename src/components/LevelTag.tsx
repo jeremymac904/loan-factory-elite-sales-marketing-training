@@ -4,8 +4,7 @@ type Props = {
   level: SkillLevel | "All Levels";
 };
 
-const allLevelsStyle =
-  "bg-slate-50 text-slate-700 border-slate-200";
+const allLevelsStyle = "bg-white text-lf-charcoal border-lf-line";
 
 export default function LevelTag({ level }: Props) {
   const style =

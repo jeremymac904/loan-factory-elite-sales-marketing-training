@@ -6,8 +6,19 @@ This document captures how Loan Factory turns NotebookLM audio overviews and oth
 
 1. Curriculum content lives in `src/data/`.
 2. Audio files live in `public/audio/`.
-3. Each audio item is registered in `src/data/audioTraining.ts`.
+3. Each audio item is registered in `src/data/audioTraining.ts` with a `category` so the page groups it correctly.
 4. Transcript placeholders live in `docs/audio-transcripts/`.
+
+## Categories
+
+Audio briefs are grouped on the page into:
+
+1. `sales-psychology` Sales Psychology and Borrower Conversion
+2. `realtor-trust` Referral Partner and Realtor Trust
+3. `broker-value-and-guarantee` Broker Value Proposition and Guarantee Conversations
+4. `training-blueprint` Training Blueprint and Coaching Strategy
+
+When adding a new item, set `category` to one of the four ids above.
 
 ## What we use NotebookLM audio overviews for
 

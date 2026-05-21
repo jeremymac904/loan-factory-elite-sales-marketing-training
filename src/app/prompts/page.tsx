@@ -1,5 +1,6 @@
 import PromptCard from "@/components/PromptCard";
 import SectionHeading from "@/components/SectionHeading";
+import GeminiGemCallout from "@/components/GeminiGemCallout";
 import { prompts, promptCategories } from "@/data/prompts";
 
 export const metadata = { title: "AI Prompt Library" };
@@ -16,12 +17,16 @@ export default function PromptLibraryPage() {
             AI Prompt Library
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            TERA ready prompts for call prep, follow up, partner outreach,
+            Gemini Gem AI Twin ready prompts for call prep, follow up, partner outreach,
             content, roleplay, and weekly review. Every output is a draft. Read
             it. Personalize it. Compliance review anything borrower or public
             facing.
           </p>
         </div>
+      </section>
+
+      <section className="container-page pt-10">
+        <GeminiGemCallout />
       </section>
 
       <section className="container-page py-12">

@@ -39,7 +39,7 @@ export const prompts: PromptItem[] = [
 4. Suggested next step to confirm before we hang up.
 Tone: professional, calm, helpful.`,
     tips:
-      "Use TERA or your AI of choice. Read the brief once before the call. Do not read from it.",
+      "Run this inside your Gemini Gem AI Twin. Read the brief once before the call. Do not read from it.",
   },
   {
     id: "follow-up-email",

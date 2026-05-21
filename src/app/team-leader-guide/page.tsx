@@ -1,12 +1,26 @@
 import SectionHeading from "@/components/SectionHeading";
+import RoleGate from "@/components/RoleGate";
 
 export const metadata = { title: "Team Leader Guide" };
 
 export default function TeamLeaderGuidePage() {
   return (
     <>
-      <section className="bg-lf-navy text-white">
-        <div className="container-page py-14">
+      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
+        <video
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/media/dark-hero-background.png"
+        >
+          <source src="/media/team-leader-website-builder.mp4" type="video/mp4" />
+        </video>
+        <div aria-hidden className="absolute inset-0 bg-lf-navyDark/60" />
+        <div className="relative container-page py-14">
           <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
             For team leaders
           </span>
@@ -21,6 +35,7 @@ export default function TeamLeaderGuidePage() {
         </div>
       </section>
 
+      <RoleGate gate="team-leader-guide">
       <section className="container-page py-12 space-y-12">
         <div>
           <SectionHeading
@@ -65,6 +80,7 @@ export default function TeamLeaderGuidePage() {
           />
         </div>
       </section>
+      </RoleGate>
     </>
   );
 }

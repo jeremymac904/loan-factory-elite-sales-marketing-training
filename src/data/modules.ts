@@ -44,7 +44,7 @@ export const modules: ModuleSummary[] = [
       "Confidently explain the Loan Factory broker model in 30 seconds.",
       "Run a daily standard of 5 to 8 real conversations.",
       "Send a clean, compliant first text after a new lead.",
-      "Use TERA to draft a follow up text in under a minute.",
+      "Use your Gemini Gem AI Twin to draft a follow up text in under a minute.",
       "Track conversations, partner touches, and past client touches every day.",
     ],
     agenda: [
@@ -63,7 +63,7 @@ export const modules: ModuleSummary[] = [
       { time: "25 to 32", topic: "The weekly operating rhythm." },
       {
         time: "32 to 40",
-        topic: "First follow up scripts and a live TERA assist demo.",
+        topic: "First follow up scripts and a live Gemini Gem AI Twin assist demo.",
       },
       {
         time: "40 to 45",
@@ -83,7 +83,7 @@ export const modules: ModuleSummary[] = [
       "Log 25 or more real conversations across the week.",
       "Update one professional channel (Google Business Profile or LinkedIn) with current photo, NMLS ID, brokerage, and contact link.",
       "Send three personalized past client texts. Not a blast. One sentence about them.",
-      "Use the TERA first text prompt at least three times this week.",
+      "Use the Gemini Gem AI Twin first text prompt at least three times this week.",
       "Submit one short note on what slowed you down most this week.",
     ],
     trackerMetrics: [
@@ -132,7 +132,7 @@ export const modules: ModuleSummary[] = [
       "Hit a 43:57 talk to listen ratio.",
       "Redirect rate and fee questions without teaser talk.",
       "Always end the call with a dated next step.",
-      "Use a TERA pre call brief on every first call.",
+      "Use a Gemini Gem AI Twin pre call brief on every first call.",
     ],
     topics: [
       "The borrower journey",
@@ -147,7 +147,7 @@ export const modules: ModuleSummary[] = [
       "Record three real first calls with borrower consent.",
       "Self score each call using the first call rubric (open, questions, talk ratio, plan summary, next step).",
       "Submit one written call recap.",
-      "Use the TERA pre call brief prompt on every recorded call.",
+      "Use the Gemini Gem AI Twin pre call brief prompt on every recorded call.",
     ],
     trackerMetrics: [
       "Pre qual to app conversion rate",
@@ -318,7 +318,7 @@ export const modules: ModuleSummary[] = [
       "Run a 15 minute Friday production review every week.",
       "Hold every active file at one of four statuses with a dated next step.",
       "Segment past clients and run a real touch routine.",
-      "Use TERA to draft personalized past client and follow up touches.",
+      "Use your Gemini Gem AI Twin to draft personalized past client and follow up touches.",
       "Move your past client retention rate from the industry baseline toward 40%+.",
     ],
     topics: [
@@ -329,7 +329,7 @@ export const modules: ModuleSummary[] = [
       "Past client touch plan by tenure",
       "Weekly pipeline review (15 minutes)",
       "AI assisted follow up",
-      "TERA and tracker discipline",
+      "TERA pipeline and tracker discipline. TERA is Loan Factory's LOS, POS, and CRM platform.",
     ],
     assignment: [
       "Clean your pipeline. Every file has a status and a dated next step.",

@@ -31,6 +31,7 @@ Static Next.js 14 (App Router) site with TypeScript and Tailwind. Content lives 
 19. `/ai-coaching-assistant/` AI Coaching Assistant placeholder with seven mode cards
 20. `/audio-training/` Audio Training Library (NotebookLM audio overviews and other supplemental audio)
 21. `/brand-preview/` Brand Preview (logos on light, logos on dark, recommended lockups)
+22. `/login/` Role Preview Login. Static role chooser. localStorage backed. No real authentication in version one.
 
 ## Data files (`src/data/`)
 
@@ -43,8 +44,13 @@ Static Next.js 14 (App Router) site with TypeScript and Tailwind. Content lives 
 7. `paths.ts` for the three Learner Paths (Beginner, Intermediate, Advanced) with focus areas, modules, resources, and a first week day by day plan.
 8. `conversationSources.ts` for the beginner conversation source list shown on the 101 page.
 9. `recommendedChannels.ts` for the Recommended Channels page entries.
-10. `audioTraining.ts` for the Audio Training Library entries.
-11. `brandAssets.ts` for the Elite and Loan Factory logo paths, alt text, usage notes, and the brand hierarchy rule.
+10. `audioTraining.ts` for the Audio Training Library entries and the four audio categories. Each item supports optional `driveUrl`, `downloadUrl`, `hostedLocation`, and `assetStatus`.
+11. `brandAssets.ts` for the Elite (SVG primary + PNG fallback) and Loan Factory logo paths, alt text, usage notes, and the brand hierarchy rule.
+12. `driveAssets.ts` for the Drive hosted asset registry. Documents the Drive folder URL, the recommended folder structure, and every asset that should migrate to Drive.
+
+The shared external link constants live in `src/lib/externalLinks.ts`. Update that file when the real registration, events, or Loan Factory homepage URLs are confirmed.
+
+The role preview library lives in `src/lib/roles.ts` with the gate definitions for Coach Guide and Team Leader Guide.
 
 ## Skill level tag system
 
@@ -67,7 +73,11 @@ The `LevelTag` and `LevelTagGroup` components render the tags consistently acros
 4. Building blocks. `ComplianceCallout`, `AssignmentBox`, `DoThisToday`, `RecordingPlaceholder`, `DownloadPlaceholder`, `StatusBadge`, `SectionHeading`.
 5. Tagging. `LevelTag`, `LevelTagGroup`.
 6. Audio. `AudioTrainingCard`.
-7. Brand. `BrandImage` (plain img with aspect preservation, no stretch, no crop).
+7. Brand. `BrandImage` (SVG primary, PNG fallback via `<picture>`, aspect preserved).
+8. Heros. `PageHero` (background image or video with charcoal scrim).
+9. Role preview. `RoleBanner`, `RoleGate`, `LoginPicker`.
+10. AI. `GeminiGemCallout`.
+11. Live training. `ClassRegistration`.
 
 ## Design tokens
 

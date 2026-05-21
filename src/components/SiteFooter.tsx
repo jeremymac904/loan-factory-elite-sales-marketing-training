@@ -17,20 +17,20 @@ const footerLinks = [
   { href: "/recordings/", label: "Recordings" },
   { href: "/recommended-channels/", label: "Recommended Channels" },
   { href: "/ai-coaching-assistant/", label: "AI Coaching Assistant" },
+  { href: "/login/", label: "Login" },
 ];
 
 export default function SiteFooter() {
   return (
     <footer className="mt-20 border-t border-lf-line bg-lf-mist">
       <div className="container-page py-10">
-        <div className="flex flex-col items-start gap-4 border-b border-lf-line pb-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-5">
-            <BrandImage asset={brandAssets.elite} heightClass="h-12" />
-            <div className="hidden h-8 w-px bg-lf-line md:block" />
+        <div className="flex flex-col items-start gap-5 border-b border-lf-line pb-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-6">
+            <BrandImage asset={brandAssets.elite} heightClass="h-14" />
+            <span aria-hidden className="h-10 w-px bg-lf-line" />
             <BrandImage
               asset={brandAssets["loan-factory"]}
-              heightClass="h-6"
-              className="opacity-90"
+              heightClass="h-9"
             />
           </div>
           <p className="text-xs uppercase tracking-wide text-lf-slate">

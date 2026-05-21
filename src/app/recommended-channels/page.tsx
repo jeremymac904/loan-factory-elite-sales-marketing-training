@@ -33,8 +33,14 @@ export default function RecommendedChannelsPage() {
 
   return (
     <>
-      <section className="bg-lf-navy text-white">
-        <div className="container-page py-14">
+      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
+        />
+        <div aria-hidden className="absolute inset-0 bg-lf-navyDark/60" />
+        <div className="relative container-page py-14">
           <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
             Outside Resources Worth Studying
           </span>
@@ -77,8 +83,28 @@ export default function RecommendedChannelsPage() {
                 {cat.channels.map((ch) => (
                   <article key={ch.name} className="card">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <h4 className="h-display text-lg">{ch.name}</h4>
-                      <LevelTag level={ch.level} />
+                      <a
+                        href={ch.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-1.5"
+                      >
+                        <h4 className="h-display text-lg group-hover:text-lf-orange">
+                          {ch.name}
+                        </h4>
+                        <span
+                          aria-hidden
+                          className="text-lf-slate transition group-hover:text-lf-orange"
+                        >
+                          &#8599;
+                        </span>
+                      </a>
+                      <div className="flex items-center gap-2">
+                        {ch.urlType && (
+                          <span className="pill">{ch.urlType}</span>
+                        )}
+                        <LevelTag level={ch.level} />
+                      </div>
                     </div>
                     <p className="prose-lf mt-2 text-sm">
                       <strong>What it is: </strong>
@@ -88,6 +114,15 @@ export default function RecommendedChannelsPage() {
                       <strong>Why it helps: </strong>
                       {ch.whyItHelps}
                     </p>
+                    <a
+                      href={ch.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center text-sm font-semibold text-lf-navy hover:text-lf-orange"
+                    >
+                      Visit {ch.urlType ?? "site"}
+                      <span aria-hidden className="ml-1">&#8599;</span>
+                    </a>
                   </article>
                 ))}
               </div>
@@ -124,7 +159,15 @@ export default function RecommendedChannelsPage() {
               <ul className="prose-lf mt-3 list-disc space-y-1 pl-5 text-sm">
                 {byLevel[lvl].map((ch) => (
                   <li key={`${lvl}-${ch.name}`}>
-                    <strong>{ch.name}.</strong> {ch.whyItHelps}
+                    <a
+                      href={ch.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-lf-navy hover:text-lf-orange"
+                    >
+                      {ch.name}
+                    </a>
+                    . {ch.whyItHelps}
                   </li>
                 ))}
               </ul>

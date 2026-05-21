@@ -46,7 +46,7 @@ This document describes how the static portal evolves into a module inside Loan 
 4. Owner dashboard. Cross team trends and certification rate.
 
 ### AI assistant prompts
-The prompts in `src/data/prompts.ts` are the starting library. Inside AI Advantage they are loaded into TERA. The LO finds them pre pinned in their workspace. Every output is a draft and is reviewed by the LO before any borrower or public use.
+The prompts in `src/data/prompts.ts` are the starting library. Inside AI Advantage they are loaded into each LO's Gemini Gem AI Twin so they appear pre pinned in their workspace. Every output is a draft and is reviewed by the LO before any borrower or public use. TERA is Loan Factory's LOS, POS, and CRM platform and is not used for AI drafting.
 
 ### Coach view
 Coaches see each LO's tracker entries, completed assignments, and uploaded recorded calls. Comments are visible to the LO and the team leader.

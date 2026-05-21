@@ -10,6 +10,8 @@ type Props = {
   status: ModuleStatus;
   outcomes: string[];
   levels?: SkillLevel[];
+  backgroundImage?: string;
+  backgroundVideo?: string;
 };
 
 export default function ModuleHero({
@@ -20,10 +22,34 @@ export default function ModuleHero({
   status,
   outcomes,
   levels = [],
+  backgroundImage,
+  backgroundVideo,
 }: Props) {
   return (
-    <section className="bg-lf-navy text-white">
-      <div className="container-page py-14 md:py-20">
+    <section className="relative isolate overflow-hidden bg-lf-navy text-white">
+      {backgroundVideo && (
+        <video
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      )}
+      {!backgroundVideo && backgroundImage && (
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+      )}
+      <div aria-hidden className="absolute inset-0 bg-lf-navyDark/60" />
+
+      <div className="relative container-page py-14 md:py-20">
         <div className="flex flex-wrap items-center gap-3">
           <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
             {level}
@@ -43,7 +69,7 @@ export default function ModuleHero({
             {outcomes.map((o) => (
               <div
                 key={o}
-                className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-white/90"
+                className="rounded-xl border border-white/15 bg-lf-navyDark/40 p-4 text-sm leading-6 text-white/90 backdrop-blur"
               >
                 <span className="mr-2 font-semibold text-lf-orange">&#10003;</span>
                 {o}

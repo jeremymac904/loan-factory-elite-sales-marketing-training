@@ -7,6 +7,8 @@ import DownloadPlaceholder from "@/components/DownloadPlaceholder";
 import ComplianceCallout from "@/components/ComplianceCallout";
 import SectionHeading from "@/components/SectionHeading";
 import DoThisToday from "@/components/DoThisToday";
+import ClassRegistration from "@/components/ClassRegistration";
+import GeminiGemCallout from "@/components/GeminiGemCallout";
 import { findModule } from "@/data/modules";
 import { scripts } from "@/data/scripts";
 import { prompts } from "@/data/prompts";
@@ -31,41 +33,15 @@ export default function Module101Page() {
         status={module101.status}
         outcomes={module101.outcomes}
         levels={module101.levels}
+        backgroundImage="/media/dark-hero-background.png"
       />
 
       <section className="container-page pt-10">
         <DoThisToday items={module101.doThisToday} />
       </section>
 
-      <section className="container-page py-14">
-        <SectionHeading
-          eyebrow="45 minute agenda"
-          title="What happens in the live session."
-          description="The live class runs 45 minutes. Replays will be posted on the Recordings page."
-        />
-        <div className="mt-6 overflow-hidden rounded-2xl border border-lf-line bg-white shadow-card">
-          <table className="w-full">
-            <thead className="bg-lf-mist text-left text-xs uppercase tracking-wide text-lf-slate">
-              <tr>
-                <th className="px-5 py-3">Minute</th>
-                <th className="px-5 py-3">Topic</th>
-              </tr>
-            </thead>
-            <tbody>
-              {module101.agenda?.map((row) => (
-                <tr
-                  key={row.time}
-                  className="border-t border-lf-line text-sm text-lf-charcoal"
-                >
-                  <td className="px-5 py-3 font-semibold text-lf-navy">
-                    {row.time}
-                  </td>
-                  <td className="px-5 py-3">{row.topic}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+      <section className="container-page py-12">
+        <ClassRegistration />
       </section>
 
       <section className="container-page py-6">
@@ -77,11 +53,13 @@ export default function Module101Page() {
           <RecordingPlaceholder
             level="101"
             title="The Loan Factory Operating System. Live walkthrough."
-            description="Jeremy runs one full Loan Factory LO day from 8 a.m. to 5 p.m. Activity standard, weekly rhythm, first follow ups, TERA assist."
+            description="Jeremy runs one full Loan Factory LO day from 8 a.m. to 5 p.m. Activity standard, weekly rhythm, first follow ups, AI assisted drafting."
           />
           <DownloadPlaceholder
-            title="101 Premium PDF handout"
-            description="Daily standard, broker value prop, sales math, weekly rhythm, first follow up scripts, assignment checklist."
+            title="101 Mortgage Sales Foundation handout"
+            format="Word"
+            description="Purpose, what you will learn, broker value prop, first call script, tracker basics, today's assignment, compliance notes, next step."
+            downloadHref="/downloads/101_foundation_handout.docx"
           />
         </div>
       </section>
@@ -206,9 +184,12 @@ export default function Module101Page() {
       <section className="container-page py-12">
         <SectionHeading
           eyebrow="AI prompt"
-          title="Your first TERA prompt."
-          description="Paste your context. Read the draft. Make it sound like you. Send."
+          title="Your first Gemini Gem AI Twin prompt."
+          description="Paste your context into your Gemini Gem AI Twin. Read the draft. Make it sound like you. Send."
         />
+        <div className="mt-6">
+          <GeminiGemCallout />
+        </div>
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {module101Prompts.map((p) => (
             <PromptCard key={p.id} prompt={p} />

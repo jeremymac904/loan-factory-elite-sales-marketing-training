@@ -82,8 +82,8 @@ export default function StagedModulePage({
         <section className="container-page py-6">
           <SectionHeading
             eyebrow="AI prompts"
-            title={`${module.level} TERA prompts.`}
-            description="Paste context. Read the draft. Personalize. Send."
+            title={`${module.level} AI prompts.`}
+            description="Use these inside your Gemini Gem AI Twin. Paste context. Read the draft. Personalize. Send."
           />
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             {modulePrompts.map((p) => (

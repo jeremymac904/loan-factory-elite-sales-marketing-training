@@ -1,7 +1,7 @@
 import SectionHeading from "@/components/SectionHeading";
 import ComplianceCallout from "@/components/ComplianceCallout";
 import AudioTrainingCard from "@/components/AudioTrainingCard";
-import { audioTraining } from "@/data/audioTraining";
+import { audioTraining, audioCategories } from "@/data/audioTraining";
 
 export const metadata = { title: "Audio Training Library" };
 
@@ -16,8 +16,14 @@ const comingNext = [
 export default function AudioTrainingPage() {
   return (
     <>
-      <section className="bg-lf-navy text-white">
-        <div className="container-page py-14">
+      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
+        />
+        <div aria-hidden className="absolute inset-0 bg-lf-navyDark/60" />
+        <div className="relative container-page py-14">
           <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
             Supplemental Training
           </span>
@@ -45,18 +51,42 @@ export default function AudioTrainingPage() {
         </ComplianceCallout>
       </section>
 
-      <section className="container-page py-10">
-        <SectionHeading
-          eyebrow="Listen"
-          title="Three audio overviews to start with."
-          description="Use the native player below each card. Or download the file and listen offline. Each card lists the related modules so you can land in the right lesson after you listen."
-        />
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {audioTraining.map((a) => (
-            <AudioTrainingCard key={a.id} item={a} />
+      <section className="container-page py-8">
+        <div className="flex flex-wrap gap-2">
+          {audioCategories.map((c) => (
+            <a
+              key={c.id}
+              href={`#${c.id}`}
+              className="pill hover:border-lf-navy hover:text-lf-navy"
+            >
+              {c.title}
+            </a>
           ))}
         </div>
       </section>
+
+      {audioCategories.map((cat) => {
+        const items = audioTraining.filter((a) => a.category === cat.id);
+        if (items.length === 0) return null;
+        return (
+          <section
+            key={cat.id}
+            id={cat.id}
+            className="container-page py-8 scroll-mt-24"
+          >
+            <SectionHeading
+              eyebrow={`${items.length} audio`}
+              title={cat.title}
+              description={cat.description}
+            />
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {items.map((a) => (
+                <AudioTrainingCard key={a.id} item={a} />
+              ))}
+            </div>
+          </section>
+        );
+      })}
 
       <section className="bg-lf-mist">
         <div className="container-page py-12">
@@ -98,8 +128,8 @@ export default function AudioTrainingPage() {
           <div className="card">
             <h3 className="h-display text-lg">Listen as a refresher</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Six weeks after certification, replay the audio to keep the system
-              top of mind. Repetition is the operating system.
+              Six weeks after certification, replay the audio to keep the
+              system top of mind. Repetition is the operating system.
             </p>
           </div>
         </div>

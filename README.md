@@ -14,8 +14,48 @@ A static, internal training website that holds the six week Elite Sales and Mark
 6. Compliance Notes with Reg Z, SAFE Act NMLS display, RESPA Section 8, FFIEC social media guidance, and Loan Factory policy rules.
 7. Recordings page with replay placeholders by module.
 8. Recommended Channels page. Outside resources worth studying, grouped by category and by level, with a compliance disclaimer.
-9. AI Coaching Assistant placeholder page with seven assistant mode cards (Beginner Coach, Sales Roleplay Coach, Script Builder, Content Coach, Pipeline Review Coach, Team Leader Coach, Advanced AI Workflow Coach). No live AI in version one.
+9. AI Coaching Assistant placeholder page with seven assistant mode cards (Beginner Coach, Sales Roleplay Coach, Script Builder, Content Coach, Pipeline Review Coach, Team Leader Coach, Advanced AI Workflow Coach). No live AI in version one. Includes the Gemini Gem AI Twin intake callout and a walkthrough video placeholder.
 10. Audio Training Library at `/audio-training/`. Source grounded audio overviews with native player, skill level tags, suggested use, key takeaways, related modules, and transcript status. Disclaimer pinned to the top of the page.
+11. Role preview login at `/login`. Static role chooser stored in localStorage. Coach Guide and Team Leader Guide are role gated.
+12. Brand Preview page at `/brand-preview/`. Logo lockup reference on light and dark.
+
+## Role preview login
+
+Visit `/login` to switch between role previews. Roles include Jeremy McDonald (Owner Admin), Andre King (Leadership), Tara / Kevin / Benjamin (LO Development), Corporate Coach, Team Leader, Loan Officer, and Marketing Reviewer Duyen. The choice is saved in `localStorage` only. There is no real authentication in version one. A small role banner sits at the top of every page so the current preview is always visible. Coach Guide is visible to Owner Admin, Leadership, LO Development, Corporate Coach, and Marketing Reviewer. Team Leader Guide is visible to those roles plus Team Leader. Loan Officer view sees a friendly notice instead.
+
+## Color palette
+
+Brand colors only. Allowed: Loan Factory orange (`lf-orange`), black, dark charcoal (`lf-navy`, `lf-navyDark`, `lf-charcoal`), silver (`lf-slate`), white, and light gray (`lf-mist`, `lf-line`). No blue, green, purple, or pastel colors anywhere on UI chips, badges, buttons, or hover states.
+
+## Hero assets
+
+Background images and videos live in `public/media/`:
+
+1. `dark-hero-background.png` and `light-hero-background.png` for still hero backdrops.
+2. `platform-motion-background.mp4`, `dark-premium-AI-workflow.mp4`, `team-leader-website-builder.mp4` for hero motion.
+3. `team-marketing-system.png` reserved for future marketing sections.
+
+Heros sit over a charcoal scrim so the headline always reads. Source files are mirrored in `site_background_vids_and_images/` at the project root for archival.
+
+## TERA definition
+
+TERA is Loan Factory's loan origination software, point of sale, and CRM platform. It is not an AI drafting tool. Anywhere on this site that talks about AI drafting refers to the Gemini Gem AI Twin or the planned AI Coaching Assistant.
+
+## Gemini Gem AI Twin
+
+Before using the AI prompts at scale, fill out the Gemini Gem AI Twin intake form: https://forms.gle/wzuBXPS5nXBBe2SC6. The callout appears on the AI Coaching Assistant page, the 101 page, and the AI Prompt Library. A walkthrough video placeholder lives on the AI Coaching Assistant page until Jeremy records it.
+
+## Class Registration and Calendar
+
+Live training classes run every other Thursday at 1 PM Eastern. The 101 page has a Class Registration section with three buttons: Register for Training, View Loan Factory Events, and Loan Factory Homepage. Update the placeholder URLs in `src/lib/externalLinks.ts` once leadership confirms the real links.
+
+## Live vs Coming Soon
+
+Module status reads either `Live` or `Coming Soon`. 101 is `Live`. 201 through 601 are `Coming Soon`. The status badge uses brand orange for `Live` and silver for `Coming Soon`.
+
+## 101 handout status
+
+The 101 handout source lives at `docs/handouts/101_foundation_handout.md` and is also published to `public/downloads/101_foundation_handout.md` so the 101 page can download it. A PDF export is pending design review. The Download button on 101 reads as `Live` and serves the markdown.
 
 ## Skill level tag system
 
@@ -108,16 +148,35 @@ All curriculum content lives in `src/data/`:
 9. `recommendedChannels.ts` for the Recommended Channels page entries.
 10. `audioTraining.ts` for the Audio Training Library entries.
 
+## Asset Hosting
+
+The static site is code first. Large media assets live in Google Drive, not in this repo. The shared Drive folder for this site is at https://drive.google.com/drive/folders/1Rt8gY1GBIp_0LK_LW_gZY3UVVEptlhTD?usp=sharing. GitHub should not become the video and audio storage system. Drive links are added to `src/data/driveAssets.ts` and to the audio entries in `src/data/audioTraining.ts` as assets are finalized. Full guidance lives in `docs/DRIVE_ASSET_HOSTING.md` and `docs/ASSET_UPLOAD_CHECKLIST.md`. Today the eight audio briefs still play from `public/audio/`; the migration plan is described in those two documents.
+
 ## Audio Training
 
-The `/audio-training/` page serves source grounded audio overviews as supplemental training. Files live under `public/audio/`. Transcript placeholders live under `docs/audio-transcripts/`. To add a new file, drop the audio into `public/audio/` with a snake_case filename, add an entry to `src/data/audioTraining.ts`, and add a matching transcript placeholder. The full pipeline is documented in `docs/AUDIO_TRAINING_WORKFLOW.md`.
+The `/audio-training/` page serves source grounded audio overviews as supplemental training. Audio files live under `public/audio/`. Transcript placeholders live under `docs/audio-transcripts/`. The library currently holds eight audio briefs grouped into four categories:
+
+1. Sales Psychology and Borrower Conversion
+2. Referral Partner and Realtor Trust
+3. Broker Value Proposition and Guarantee Conversations
+4. Training Blueprint and Coaching Strategy
+
+To add a new audio brief:
+
+1. Drop the m4a (or compatible audio) into `public/audio/` with a snake_case filename.
+2. Add an entry to `src/data/audioTraining.ts` with title, description, category, skill level, related modules, key takeaways, suggested use, compliance note, and the transcript placeholder path.
+3. Add a matching transcript placeholder under `docs/audio-transcripts/` with `Transcript status: Pending`.
+4. Reload the dev server. The page picks up the new entry automatically and groups it into the matching category.
+
+The full pipeline is documented in `docs/AUDIO_TRAINING_WORKFLOW.md`.
 
 ## Brand assets
 
 Logo files live in `public/images/brand/`:
 
-1. `elite-sales-marketing-training-logo.png` — Elite Sales and Marketing Training logo. Primary brand on this portal. Used in the site header, the homepage hero, and the footer.
-2. `loan-factory-logo-transparent.png` — Loan Factory logo. Supporting brand. Used in the homepage hero and the footer at a smaller size than the Elite logo.
+1. `elite-sales-marketing-training-logo.svg` — Elite Sales and Marketing Training logo. SVG is the primary asset used everywhere on the site so the mark stays crisp at any size.
+2. `elite-sales-marketing-training-logo.png` — Transparent PNG fallback. Loaded only if the browser cannot render the SVG (rare on modern browsers).
+3. `loan-factory-logo-transparent.png` — Loan Factory logo. Supporting brand. Used in the homepage hero and the footer at a smaller size than the Elite logo.
 
 The brand hierarchy rule: on this internal training site the Elite training logo always reads larger than the Loan Factory logo. Loan Factory is the supporting brand here.
 

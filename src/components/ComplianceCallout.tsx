@@ -8,11 +8,16 @@ type Props = {
   variant?: Variant;
 };
 
+/**
+ * Brand palette only. Three intensities of the orange family on light surfaces.
+ *   default  soft orange wash. Most callouts.
+ *   soft     light gray wash with orange accent border.
+ *   warning  stronger orange tint for must-do compliance warnings.
+ */
 const styles: Record<Variant, string> = {
-  default:
-    "border-lf-orange/40 bg-lf-orangeSoft/60 text-lf-charcoal",
-  soft: "border-amber-200 bg-amber-50 text-amber-900",
-  warning: "border-red-200 bg-red-50 text-red-900",
+  default: "border-lf-orange/40 bg-lf-orangeSoft/60 text-lf-charcoal",
+  soft: "border-lf-line bg-lf-mist text-lf-charcoal",
+  warning: "border-lf-orange bg-lf-orangeSoft text-lf-orangeDark",
 };
 
 export default function ComplianceCallout({
