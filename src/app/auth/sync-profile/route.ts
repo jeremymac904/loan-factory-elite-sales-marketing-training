@@ -1,9 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import type { PostgrestError, User } from "@supabase/supabase-js";
 import { getSafeNextPath } from "@/lib/supabase/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
-import { isLoanFactoryEmail } from "@/lib/supabase/config";
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+import {
+  getSupabasePublicConfig,
+  hasSupabasePublicConfig,
+  isLoanFactoryEmail,
+} from "@/lib/supabase/config";
 
 export const dynamic = "force-dynamic";
 
@@ -22,6 +26,12 @@ type SyncProfileRequestBody = {
   refreshToken?: string | null;
 };
 
+type CookieToSet = {
+  name: string;
+  value: string;
+  options: CookieOptions;
+};
+
 function logSupabaseSyncError(context: string, error: PostgrestError | null) {
   if (!error) return;
 
@@ -33,13 +43,32 @@ function logSupabaseSyncError(context: string, error: PostgrestError | null) {
   });
 }
 
-function pending(reason: string, status = 200) {
-  return NextResponse.json(
+function jsonWithCookies(
+  body: Record<string, unknown>,
+  status: number,
+  cookiesToSet: CookieToSet[] = [],
+) {
+  const response = NextResponse.json(body, { status });
+
+  cookiesToSet.forEach(({ name, value, options }) => {
+    response.cookies.set(name, value, options);
+  });
+
+  return response;
+}
+
+function pending(
+  reason: string,
+  status = 200,
+  cookiesToSet: CookieToSet[] = [],
+) {
+  return jsonWithCookies(
     {
       reason,
       redirectTo: `/access-pending/?reason=${encodeURIComponent(reason)}`,
     },
-    { status },
+    status,
+    cookiesToSet,
   );
 }
 
@@ -61,11 +90,23 @@ function getMetadataValue(
 }
 
 export async function POST(request: NextRequest) {
-  const supabase = await createServerSupabaseClient();
+  const config = getSupabasePublicConfig();
 
-  if (!supabase) {
+  if (!hasSupabasePublicConfig(config)) {
     return pending("setup", 503);
   }
+
+  const cookiesToSet: CookieToSet[] = [];
+  const supabase = createServerClient(config.supabaseUrl, config.supabaseAnonKey, {
+    cookies: {
+      getAll() {
+        return request.cookies.getAll();
+      },
+      setAll(nextCookiesToSet) {
+        cookiesToSet.push(...nextCookiesToSet);
+      },
+    },
+  });
 
   let next = "/";
 
@@ -94,7 +135,7 @@ export async function POST(request: NextRequest) {
         name: sessionError.name,
         status: sessionError.status,
       });
-      return pending("session-sync", 401);
+      return pending("session-sync", 401, cookiesToSet);
     }
   }
 
@@ -105,18 +146,18 @@ export async function POST(request: NextRequest) {
   const email = user?.email?.toLowerCase().trim();
 
   if (!user || !email) {
-    return pending("missing-user", 401);
+    return pending("missing-user", 401, cookiesToSet);
   }
 
   if (!isLoanFactoryEmail(email)) {
     await supabase.auth.signOut();
-    return pending("domain", 403);
+    return pending("domain", 403, cookiesToSet);
   }
 
   const admin = createSupabaseAdminClient();
 
   if (!admin) {
-    return pending("setup", 503);
+    return pending("setup", 503, cookiesToSet);
   }
 
   const { data: approvedUser, error: approvalError } = await admin
@@ -128,7 +169,7 @@ export async function POST(request: NextRequest) {
 
   if (approvalError) {
     logSupabaseSyncError("Supabase approved user lookup failed", approvalError);
-    return pending("approval-sync", 500);
+    return pending("approval-sync", 500, cookiesToSet);
   }
 
   const profileStatus = approvedUser ? "approved" : "pending";
@@ -151,16 +192,20 @@ export async function POST(request: NextRequest) {
 
   if (profileError) {
     logSupabaseSyncError("Supabase profile upsert failed", profileError);
-    return pending("profile-sync", 500);
+    return pending("profile-sync", 500, cookiesToSet);
   }
 
   if (!approvedUser) {
-    return pending("pending");
+    return pending("pending", 200, cookiesToSet);
   }
 
-  return NextResponse.json({
-    status: "approved",
-    role: approvedUser.role,
-    redirectTo: next,
-  });
+  return jsonWithCookies(
+    {
+      status: "approved",
+      role: approvedUser.role,
+      redirectTo: next,
+    },
+    200,
+    cookiesToSet,
+  );
 }
