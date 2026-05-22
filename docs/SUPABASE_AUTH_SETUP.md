@@ -49,6 +49,17 @@ In Supabase Auth settings:
 7. Approved users get a synced `profiles` row with status `approved`.
 8. Unapproved users land on `/access-pending/`.
 
+## Profile Sync Fix
+
+If Google Auth succeeds but the user lands on
+`/access-pending/?reason=profile-sync`, run the SQL in
+`docs/SUPABASE_PROFILE_SYNC_FIX.sql`.
+
+The fix explicitly grants PostgREST/Data API access to the beta tables for
+`authenticated` and `service_role` while keeping Row Level Security enabled.
+This is required for newer Supabase projects where SQL-created public tables
+are no longer exposed to the Data API automatically.
+
 ## Testing
 
 Use `/auth/status/` after signing in. It compares server session state and

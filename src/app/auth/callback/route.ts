@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { type NextRequest } from "next/server";
+import type { PostgrestError } from "@supabase/supabase-js";
 import { getSafeNextPath } from "@/lib/supabase/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { isLoanFactoryEmail } from "@/lib/supabase/config";
@@ -15,6 +16,17 @@ type ApprovedUserRow = {
   title: string | null;
   active: boolean;
 };
+
+function logSupabaseSyncError(context: string, error: PostgrestError | null) {
+  if (!error) return;
+
+  console.error(context, {
+    code: error.code,
+    message: error.message,
+    details: error.details,
+    hint: error.hint,
+  });
+}
 
 export async function GET(request: NextRequest) {
   const requestUrl = new URL(request.url);
@@ -67,6 +79,11 @@ export async function GET(request: NextRequest) {
     .eq("active", true)
     .maybeSingle<ApprovedUserRow>();
 
+  if (approvalError) {
+    logSupabaseSyncError("Supabase approved user lookup failed", approvalError);
+    redirect("/access-pending/?reason=approval-sync");
+  }
+
   const userMetadata = user.user_metadata ?? {};
   const metadataName =
     typeof userMetadata.full_name === "string"
@@ -81,7 +98,7 @@ export async function GET(request: NextRequest) {
         ? userMetadata.picture
         : null;
 
-  const profileStatus = approvedUser && !approvalError ? "approved" : "pending";
+  const profileStatus = approvedUser ? "approved" : "pending";
 
   const { error: profileError } = await admin.from("profiles").upsert(
     {
@@ -95,14 +112,15 @@ export async function GET(request: NextRequest) {
       status: profileStatus,
       updated_at: new Date().toISOString(),
     },
-    { onConflict: "id" },
+    { onConflict: "email" },
   );
 
   if (profileError) {
+    logSupabaseSyncError("Supabase profile upsert failed", profileError);
     redirect("/access-pending/?reason=profile-sync");
   }
 
-  if (!approvedUser || approvalError) {
+  if (!approvedUser) {
     redirect("/access-pending/?reason=pending");
   }
 

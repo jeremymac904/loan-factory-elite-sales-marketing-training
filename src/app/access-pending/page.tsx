@@ -7,8 +7,10 @@ const reasonMessages: Record<string, string> = {
     "This beta is limited to Google accounts using the loanfactory.com domain.",
   setup:
     "Supabase server env vars are not fully configured yet, so approval status cannot be checked.",
+  "approval-sync":
+    "Your Google login worked, but the approved user list could not be checked. Ask Jeremy to run the Supabase beta schema and grant SQL.",
   "profile-sync":
-    "Your Google login worked, but the profile record could not be synced. Ask Jeremy to check the Supabase profiles table.",
+    "Your Google login worked, but the profile record could not be synced. Ask Jeremy to run the Supabase profile sync grant SQL and check the profiles table.",
   pending:
     "Your Loan Factory Google account is signed in, but your email is not active in approved_users yet.",
 };

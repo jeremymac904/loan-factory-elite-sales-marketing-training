@@ -4,6 +4,8 @@ The beta migration enables Row Level Security on every app table.
 
 ## Baseline
 
+- App tables explicitly grant Data API access to `authenticated` and
+  `service_role`; RLS remains the row-level enforcement layer.
 - Authenticated users can read their own `profiles` row.
 - Users can update limited profile fields only; a trigger preserves protected
   fields such as email, role, department, title, and status for non-admin self
