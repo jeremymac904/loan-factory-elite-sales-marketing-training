@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import {
+  getAuthCallbackUrl,
   getSupabasePublicConfig,
   hasSupabasePublicConfig,
 } from "@/lib/supabase/config";
@@ -15,13 +17,28 @@ export default function GoogleSignInButton() {
     setLoading(true);
     setError(null);
 
-    if (!configured) {
+    const supabase = createBrowserSupabaseClient();
+
+    if (!supabase) {
       setLoading(false);
       setError("Supabase is not configured for this environment yet.");
       return;
     }
 
-    window.location.assign("/auth/sign-in/google");
+    const { error: signInError } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: getAuthCallbackUrl(),
+        queryParams: {
+          prompt: "select_account",
+        },
+      },
+    });
+
+    if (signInError) {
+      setLoading(false);
+      setError(signInError.message);
+    }
   }
 
   return (

@@ -1,6 +1,5 @@
-import { redirect } from "next/navigation";
-import { type NextRequest } from "next/server";
-import type { PostgrestError } from "@supabase/supabase-js";
+import { NextResponse, type NextRequest } from "next/server";
+import type { PostgrestError, User } from "@supabase/supabase-js";
 import { getSafeNextPath } from "@/lib/supabase/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { isLoanFactoryEmail } from "@/lib/supabase/config";
@@ -28,32 +27,47 @@ function logSupabaseSyncError(context: string, error: PostgrestError | null) {
   });
 }
 
-export async function GET(request: NextRequest) {
-  const requestUrl = new URL(request.url);
-  const code = requestUrl.searchParams.get("code");
-  const next = getSafeNextPath(requestUrl.searchParams.get("next"));
+function pending(reason: string, status = 200) {
+  return NextResponse.json(
+    {
+      reason,
+      redirectTo: `/access-pending/?reason=${encodeURIComponent(reason)}`,
+    },
+    { status },
+  );
+}
 
-  if (!code) {
-    redirect("/login/?error=missing-code");
+function getMetadataValue(
+  user: User,
+  keys: Array<"full_name" | "name" | "avatar_url" | "picture">,
+) {
+  const metadata = user.user_metadata ?? {};
+
+  for (const key of keys) {
+    const value = metadata[key];
+
+    if (typeof value === "string" && value.trim()) {
+      return value;
+    }
   }
 
+  return null;
+}
+
+export async function POST(request: NextRequest) {
   const supabase = await createServerSupabaseClient();
 
   if (!supabase) {
-    redirect("/login/?error=supabase-not-configured");
+    return pending("setup", 503);
   }
 
-  const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(
-    code,
-  );
+  let next = "/";
 
-  if (exchangeError) {
-    console.error("Supabase auth code exchange failed", {
-      message: exchangeError.message,
-      name: exchangeError.name,
-      status: exchangeError.status,
-    });
-    redirect("/login/?error=auth-callback");
+  try {
+    const body = (await request.json()) as { next?: string | null };
+    next = getSafeNextPath(body.next ?? null);
+  } catch {
+    next = "/";
   }
 
   const {
@@ -63,18 +77,18 @@ export async function GET(request: NextRequest) {
   const email = user?.email?.toLowerCase().trim();
 
   if (!user || !email) {
-    redirect("/login/?error=missing-user");
+    return pending("missing-user", 401);
   }
 
   if (!isLoanFactoryEmail(email)) {
     await supabase.auth.signOut();
-    redirect("/access-pending/?reason=domain");
+    return pending("domain", 403);
   }
 
   const admin = createSupabaseAdminClient();
 
   if (!admin) {
-    redirect("/access-pending/?reason=setup");
+    return pending("setup", 503);
   }
 
   const { data: approvedUser, error: approvalError } = await admin
@@ -86,22 +100,8 @@ export async function GET(request: NextRequest) {
 
   if (approvalError) {
     logSupabaseSyncError("Supabase approved user lookup failed", approvalError);
-    redirect("/access-pending/?reason=approval-sync");
+    return pending("approval-sync", 500);
   }
-
-  const userMetadata = user.user_metadata ?? {};
-  const metadataName =
-    typeof userMetadata.full_name === "string"
-      ? userMetadata.full_name
-      : typeof userMetadata.name === "string"
-        ? userMetadata.name
-        : null;
-  const metadataAvatar =
-    typeof userMetadata.avatar_url === "string"
-      ? userMetadata.avatar_url
-      : typeof userMetadata.picture === "string"
-        ? userMetadata.picture
-        : null;
 
   const profileStatus = approvedUser ? "approved" : "pending";
 
@@ -109,11 +109,12 @@ export async function GET(request: NextRequest) {
     {
       id: user.id,
       email,
-      full_name: approvedUser?.full_name ?? metadataName,
+      full_name:
+        approvedUser?.full_name ?? getMetadataValue(user, ["full_name", "name"]),
       role: approvedUser?.role ?? null,
       department: approvedUser?.department ?? null,
       title: approvedUser?.title ?? null,
-      avatar_url: metadataAvatar,
+      avatar_url: getMetadataValue(user, ["avatar_url", "picture"]),
       status: profileStatus,
       updated_at: new Date().toISOString(),
     },
@@ -122,12 +123,16 @@ export async function GET(request: NextRequest) {
 
   if (profileError) {
     logSupabaseSyncError("Supabase profile upsert failed", profileError);
-    redirect("/access-pending/?reason=profile-sync");
+    return pending("profile-sync", 500);
   }
 
   if (!approvedUser) {
-    redirect("/access-pending/?reason=pending");
+    return pending("pending");
   }
 
-  redirect(next);
+  return NextResponse.json({
+    status: "approved",
+    role: approvedUser.role,
+    redirectTo: next,
+  });
 }
