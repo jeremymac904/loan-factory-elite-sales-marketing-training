@@ -9,6 +9,7 @@ import SectionHeading from "@/components/SectionHeading";
 import DoThisToday from "@/components/DoThisToday";
 import ClassRegistration from "@/components/ClassRegistration";
 import GeminiGemCallout from "@/components/GeminiGemCallout";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { findModule } from "@/data/modules";
 import { scripts } from "@/data/scripts";
 import { prompts } from "@/data/prompts";
@@ -39,6 +40,29 @@ export default function Module101Page() {
       <section className="container-page pt-10">
         <DoThisToday items={module101.doThisToday} />
       </section>
+
+      {module101.trainingVideo && (
+        <section className="container-page py-10">
+          <div className="overflow-hidden rounded-2xl border border-lf-line bg-lf-navy p-4 shadow-card md:p-6">
+            <div className="mb-5 border-l-4 border-lf-orange pl-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                101 Foundation video
+              </p>
+              <h2 className="h-display mt-1 text-2xl text-white md:text-3xl">
+                {module101.trainingVideo.title}
+              </h2>
+              <p className="mt-3 max-w-3xl text-base leading-7 text-white/75">
+                {module101.trainingVideo.description}
+              </p>
+            </div>
+            <YouTubeEmbed
+              src={module101.trainingVideo.embedUrl}
+              title={module101.trainingVideo.title}
+              className="border-white/15 shadow-2xl ring-1 ring-lf-orange/30"
+            />
+          </div>
+        </section>
+      )}
 
       <section className="container-page py-12">
         <ClassRegistration />

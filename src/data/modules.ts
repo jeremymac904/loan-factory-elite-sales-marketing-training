@@ -13,6 +13,12 @@ export type ModuleSummary = {
   doThisToday: string[];
   outcomes: string[];
   agenda?: { time: string; topic: string }[];
+  trainingVideo?: {
+    title: string;
+    youtubeUrl: string;
+    embedUrl: string;
+    description: string;
+  };
   topics: string[];
   assignment: string[];
   trackerMetrics: string[];
@@ -70,6 +76,13 @@ export const modules: ModuleSummary[] = [
         topic: "Weekly assignment, tracker, accountability partner.",
       },
     ],
+    trainingVideo: {
+      title: "Elite Sales & Marketing 101 Training Video",
+      youtubeUrl: "https://youtu.be/fdqe2poMc98",
+      embedUrl: "https://www.youtube.com/embed/fdqe2poMc98",
+      description:
+        "Watch this training first, then use the scripts, prompts, roleplays, and tracker resources below to complete the 101 Foundation module.",
+    },
     topics: [
       "Broker model positioning and what 240+ wholesale lenders means in plain English",
       "Why Loan Factory wins versus banks and retail lenders, without bashing competitors",
