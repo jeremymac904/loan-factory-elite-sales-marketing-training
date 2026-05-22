@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { BrandAsset } from "@/data/brandAssets";
 
 type Props = {
@@ -27,7 +28,6 @@ export default function BrandImage({
     return (
       <picture>
         <source srcSet={asset.filePath} type="image/svg+xml" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={asset.fallbackPath}
           alt={asset.alt}
@@ -40,7 +40,6 @@ export default function BrandImage({
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={asset.filePath}
       alt={asset.alt}

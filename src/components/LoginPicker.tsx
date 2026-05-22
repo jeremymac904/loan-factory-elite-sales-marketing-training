@@ -1,45 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import {
   ROLE_PREVIEW_DISCLAIMER,
-  ROLE_STORAGE_KEY,
   RoleId,
   findRole,
   roles,
 } from "@/lib/roles";
+import { setRolePreview, useRolePreview } from "@/lib/useRolePreview";
 
 export default function LoginPicker() {
-  const [active, setActive] = useState<RoleId | null>(null);
-
-  useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(ROLE_STORAGE_KEY);
-      if (stored) setActive(stored as RoleId);
-    } catch {
-      // ignore
-    }
-  }, []);
+  const active = useRolePreview();
 
   function pick(id: RoleId) {
-    try {
-      window.localStorage.setItem(ROLE_STORAGE_KEY, id);
-      setActive(id);
-      window.dispatchEvent(new Event("lf-role-changed"));
-    } catch {
-      // ignore
-    }
+    setRolePreview(id);
   }
 
   function clear() {
-    try {
-      window.localStorage.removeItem(ROLE_STORAGE_KEY);
-      setActive(null);
-      window.dispatchEvent(new Event("lf-role-changed"));
-    } catch {
-      // ignore
-    }
+    setRolePreview(null);
   }
 
   const current = findRole(active);

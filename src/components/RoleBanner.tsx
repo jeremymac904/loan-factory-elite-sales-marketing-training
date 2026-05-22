@@ -1,39 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import {
-  ROLE_STORAGE_KEY,
-  RoleId,
-  findRole,
-} from "@/lib/roles";
+import { findRole } from "@/lib/roles";
+import { useRolePreview } from "@/lib/useRolePreview";
 
 export default function RoleBanner() {
-  const [role, setRole] = useState<RoleId | null>(null);
-
-  useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(ROLE_STORAGE_KEY);
-      if (stored) setRole(stored as RoleId);
-    } catch {
-      // localStorage may be unavailable. Ignore.
-    }
-    const handler = () => {
-      try {
-        const stored = window.localStorage.getItem(ROLE_STORAGE_KEY);
-        setRole(stored as RoleId | null);
-      } catch {
-        // ignore
-      }
-    };
-    window.addEventListener("storage", handler);
-    window.addEventListener("lf-role-changed", handler);
-    return () => {
-      window.removeEventListener("storage", handler);
-      window.removeEventListener("lf-role-changed", handler);
-    };
-  }, []);
-
+  const role = useRolePreview();
   const r = findRole(role);
   if (!r) return null;
 

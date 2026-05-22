@@ -1,126 +1,197 @@
+import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import ComplianceCallout from "@/components/ComplianceCallout";
-import LevelTag from "@/components/LevelTag";
-import { recommendedChannelCategories } from "@/data/recommendedChannels";
 
 export const metadata = { title: "Recommended Channels" };
 
-const levelAnchors: Array<{ id: string; label: string }> = [
-  { id: "beginner", label: "Beginner" },
-  { id: "intermediate", label: "Intermediate" },
-  { id: "advanced", label: "Advanced" },
+type Channel = {
+  name: string;
+  category: string;
+  description: string;
+};
+
+type ChannelSection = {
+  id: string;
+  title: string;
+  description: string;
+  channels: Channel[];
+};
+
+const sections: ChannelSection[] = [
+  {
+    id: "ai-tech",
+    title: "AI and Technology (for mortgage pros)",
+    description:
+      "Voices to follow if you want to stay current on the AI tools shaping mortgage and sales workflows.",
+    channels: [
+      {
+        name: "Matt Wolfe",
+        category: "AI tools",
+        description: "AI tool roundups and tutorials.",
+      },
+      {
+        name: "Wes Roth",
+        category: "AI research",
+        description: "Deep AI research explainers.",
+      },
+      {
+        name: "Sam Altman OpenAI",
+        category: "AI leadership",
+        description: "Industry leadership perspective.",
+      },
+      {
+        name: "Andrej Karpathy",
+        category: "AI fundamentals",
+        description: "Technical AI foundations.",
+      },
+      {
+        name: "AI Explained",
+        category: "AI explainers",
+        description: "Accessible AI breakdowns.",
+      },
+    ],
+  },
+  {
+    id: "mortgage-finance",
+    title: "Mortgage, Real Estate, and Finance",
+    description:
+      "Industry coaches, market analysts, and sales voices worth studying for mortgage perspective.",
+    channels: [
+      {
+        name: "Barry Habib",
+        category: "Market commentary",
+        description: "MBS Highway market commentary.",
+      },
+      {
+        name: "Logan Mohtashami",
+        category: "Housing data",
+        description: "Housing data and economic analysis.",
+      },
+      {
+        name: "Tom Ferry",
+        category: "Real estate coaching",
+        description: "Real estate sales coaching.",
+      },
+      {
+        name: "Brian Buffini",
+        category: "Relationship sales",
+        description: "Relationship based sales.",
+      },
+      {
+        name: "Gary Vaynerchuk",
+        category: "Entrepreneurship",
+        description: "Entrepreneurial mindset.",
+      },
+      {
+        name: "Grant Cardone",
+        category: "Sales mindset",
+        description: "Sales intensity and mindset.",
+      },
+    ],
+  },
+  {
+    id: "personal-development",
+    title: "Personal Development and Performance",
+    description:
+      "Voices to sharpen mindset, discipline, and performance habits over the long run.",
+    channels: [
+      {
+        name: "Tony Robbins",
+        category: "Peak performance",
+        description: "Peak performance and mindset.",
+      },
+      {
+        name: "David Goggins",
+        category: "Mental toughness",
+        description: "Mental toughness.",
+      },
+      {
+        name: "Jocko Willink",
+        category: "Leadership",
+        description: "Discipline and leadership.",
+      },
+      {
+        name: "Ed Mylett",
+        category: "Success",
+        description: "Success principles.",
+      },
+      {
+        name: "Lewis Howes",
+        category: "Greatness",
+        description: "School of Greatness.",
+      },
+    ],
+  },
 ];
 
-export default function RecommendedChannelsPage() {
-  // Build a level grouped view in addition to category view.
-  const byLevel: Record<string, typeof recommendedChannelCategories[number]["channels"]> = {
-    Beginner: [],
-    Intermediate: [],
-    Advanced: [],
-  };
-  for (const cat of recommendedChannelCategories) {
-    for (const ch of cat.channels) {
-      if (ch.level === "Beginner") byLevel.Beginner.push(ch);
-      else if (ch.level === "Intermediate") byLevel.Intermediate.push(ch);
-      else if (ch.level === "Advanced") byLevel.Advanced.push(ch);
-      else {
-        byLevel.Beginner.push(ch);
-        byLevel.Intermediate.push(ch);
-        byLevel.Advanced.push(ch);
-      }
-    }
-  }
+function youtubeSearchUrl(name: string): string {
+  return `https://www.youtube.com/results?search_query=${encodeURIComponent(name)}`;
+}
 
+export default function RecommendedChannelsPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
-        />
-        <div aria-hidden className="absolute inset-0 bg-lf-navyDark/60" />
-        <div className="relative container-page py-14">
-          <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
-            Outside Resources Worth Studying
-          </span>
-          <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
-            Recommended Channels
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/85">
-            A short list of outside voices and references worth studying as you
-            run the series. These are not Loan Factory endorsements. Compliance
-            still applies to anything you publish.
+      <PageHero
+        eyebrow="Outside Voices Worth Studying"
+        title="Recommended Channels."
+        body={
+          <p>
+            Short, curated list of outside voices for AI and technology,
+            mortgage and real estate, and personal performance. Use as study
+            material, not policy.
           </p>
-        </div>
-      </section>
+        }
+        backgroundImage="/media/dark-hero-background.png"
+      />
 
       <section className="container-page pt-10">
         <ComplianceCallout title="Read this first" variant="default">
           <p>
-            These channels are external. Their advice is not official Loan
-            Factory compliance guidance. Any borrower facing, Realtor facing,
-            public, rate related, fee related, or marketing content you create
-            from their material still needs Loan Factory compliance review
-            before you use it.
+            These channels are shared for educational purposes only. Loan
+            Factory does not officially endorse or have an affiliation with any
+            of the creators listed. Always verify information with your
+            compliance team before applying to your business.
           </p>
         </ComplianceCallout>
       </section>
 
       <section className="container-page py-10">
-        <SectionHeading
-          eyebrow="By category"
-          title="Grouped by what they help you build."
-        />
-        <div className="mt-8 space-y-10">
-          {recommendedChannelCategories.map((cat) => (
-            <div key={cat.id} id={cat.id} className="scroll-mt-24">
-              <h3 className="h-display text-xl">{cat.title}</h3>
-              <p className="prose-lf mt-2 text-sm text-lf-slate">
-                {cat.description}
+        <div className="mb-8 flex flex-wrap gap-2">
+          {sections.map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              className="pill hover:border-lf-navy hover:text-lf-navy"
+            >
+              {s.title}
+            </a>
+          ))}
+        </div>
+
+        <div className="space-y-12">
+          {sections.map((section) => (
+            <div key={section.id} id={section.id} className="scroll-mt-24">
+              <h2 className="h-display text-2xl md:text-3xl">{section.title}</h2>
+              <p className="prose-lf mt-2 max-w-2xl text-sm text-lf-slate">
+                {section.description}
               </p>
-              <div className="mt-5 grid gap-5 md:grid-cols-2">
-                {cat.channels.map((ch) => (
-                  <article key={ch.name} className="card">
+              <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {section.channels.map((ch) => (
+                  <article key={ch.name} className="card flex h-full flex-col gap-3">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <a
-                        href={ch.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-1.5"
-                      >
-                        <h4 className="h-display text-lg group-hover:text-lf-orange">
-                          {ch.name}
-                        </h4>
-                        <span
-                          aria-hidden
-                          className="text-lf-slate transition group-hover:text-lf-orange"
-                        >
-                          &#8599;
-                        </span>
-                      </a>
-                      <div className="flex items-center gap-2">
-                        {ch.urlType && (
-                          <span className="pill">{ch.urlType}</span>
-                        )}
-                        <LevelTag level={ch.level} />
-                      </div>
+                      <h3 className="h-display text-lg">{ch.name}</h3>
+                      <span className="pill">{ch.category}</span>
                     </div>
-                    <p className="prose-lf mt-2 text-sm">
-                      <strong>What it is: </strong>
-                      {ch.whatItIs}
-                    </p>
-                    <p className="prose-lf mt-2 text-sm">
-                      <strong>Why it helps: </strong>
-                      {ch.whyItHelps}
+                    <p className="prose-lf text-sm text-lf-slate">
+                      {ch.description}
                     </p>
                     <a
-                      href={ch.url}
+                      href={youtubeSearchUrl(ch.name)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-3 inline-flex items-center text-sm font-semibold text-lf-navy hover:text-lf-orange"
+                      className="mt-auto btn-secondary"
                     >
-                      Visit {ch.urlType ?? "site"}
+                      View Channel
                       <span aria-hidden className="ml-1">&#8599;</span>
                     </a>
                   </article>
@@ -131,49 +202,15 @@ export default function RecommendedChannelsPage() {
         </div>
       </section>
 
-      <section className="bg-lf-mist">
-        <div className="container-page py-12">
-          <SectionHeading
-            eyebrow="By level"
-            title="Quick access by where you are."
-          />
-          <div className="mt-6 flex flex-wrap gap-2">
-            {levelAnchors.map((a) => (
-              <a
-                key={a.id}
-                href={`#level-${a.id}`}
-                className="pill hover:border-lf-navy hover:text-lf-navy"
-              >
-                {a.label}
-              </a>
-            ))}
-          </div>
-
-          {(["Beginner", "Intermediate", "Advanced"] as const).map((lvl) => (
-            <div
-              key={lvl}
-              id={`level-${lvl.toLowerCase()}`}
-              className="mt-8 scroll-mt-24"
-            >
-              <h3 className="h-display text-lg">{lvl}</h3>
-              <ul className="prose-lf mt-3 list-disc space-y-1 pl-5 text-sm">
-                {byLevel[lvl].map((ch) => (
-                  <li key={`${lvl}-${ch.name}`}>
-                    <a
-                      href={ch.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-bold text-lf-navy hover:text-lf-orange"
-                    >
-                      {ch.name}
-                    </a>
-                    . {ch.whyItHelps}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      <section className="container-page pb-20">
+        <ComplianceCallout title="Compliance review" variant="default">
+          <p>
+            Apex Advisor lists these channels for training reference only. Any
+            borrower facing, Realtor facing, or public content you create from
+            material on these channels must be reviewed by Loan Factory
+            compliance before use.
+          </p>
+        </ComplianceCallout>
       </section>
     </>
   );

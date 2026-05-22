@@ -1,95 +1,80 @@
 import Link from "next/link";
 import BrandImage from "./BrandImage";
 import { brandAssets } from "@/data/brandAssets";
-
-const primaryNav = [
-  { href: "/paths/", label: "Paths" },
-  { href: "/training-path/", label: "Modules" },
-  { href: "/scripts/", label: "Scripts" },
-  { href: "/prompts/", label: "AI Prompts" },
-  { href: "/roleplays/", label: "Roleplays" },
-  { href: "/audio-training/", label: "Audio Training" },
-  { href: "/tracker/", label: "Tracker" },
-];
-
-const resourcesNav = [
-  { href: "/coach-guide/", label: "Coach Guide" },
-  { href: "/team-leader-guide/", label: "Team Leader Guide" },
-  { href: "/recommended-channels/", label: "Recommended Channels" },
-  { href: "/ai-coaching-assistant/", label: "AI Coaching Assistant" },
-  { href: "/compliance/", label: "Compliance Notes" },
-  { href: "/recordings/", label: "Recordings" },
-  { href: "/brand-preview/", label: "Brand Preview" },
-];
+import { platformNav } from "@/data/platform";
 
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-lf-line bg-white/95 backdrop-blur">
-      <div className="container-page flex h-20 items-center justify-between gap-6">
-        <Link
-          href="/"
-          className="flex min-w-0 items-center gap-4"
-          aria-label="Elite Sales and Marketing Training, home"
-        >
-          <BrandImage asset={brandAssets.elite} heightClass="h-12" />
-          <span aria-hidden className="hidden h-10 w-px bg-lf-line sm:block" />
-          <BrandImage
-            asset={brandAssets["loan-factory"]}
-            heightClass="h-7 hidden sm:block"
-          />
-        </Link>
-
-        <nav className="hidden items-center gap-0.5 lg:flex">
-          {primaryNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-md px-2.5 py-2 text-sm font-medium text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-navy"
-            >
-              {item.label}
-            </Link>
-          ))}
-
-          <div className="group relative">
-            <button
-              type="button"
-              className="inline-flex items-center gap-1 rounded-md px-2.5 py-2 text-sm font-medium text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-navy"
-              aria-haspopup="true"
-            >
-              Resources
-              <span aria-hidden className="text-xs">&#9662;</span>
-            </button>
-            <div className="invisible absolute right-0 top-full z-10 mt-1 w-64 rounded-xl border border-lf-line bg-white p-2 opacity-0 shadow-lift transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              {resourcesNav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block rounded-md px-3 py-2 text-sm font-medium text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-navy"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
+      <div className="container-page flex min-h-20 flex-col gap-3 py-3 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex w-full items-center justify-between gap-4 lg:w-auto">
           <Link
-            href="/login/"
-            className="ml-2 rounded-md border border-lf-line px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:border-lf-navy hover:bg-lf-mist hover:text-lf-navy"
+            href="/"
+            className="flex min-w-0 items-center gap-4"
+            aria-label="Loan Factory LO Development Platform home"
           >
-            Login
+            <BrandImage asset={brandAssets.elite} heightClass="h-11" />
+            <span aria-hidden className="hidden h-10 w-px bg-lf-line sm:block" />
+            <BrandImage
+              asset={brandAssets["loan-factory"]}
+              heightClass="h-7 hidden sm:block"
+            />
           </Link>
-          <Link href="/101-foundation/" className="btn-primary ml-2">
-            Start with 101
-          </Link>
-        </nav>
 
-        <Link
-          href="/paths/"
-          className="btn-primary lg:hidden"
-          aria-label="Open learner paths"
+          <details className="group lg:hidden">
+            <summary className="btn-primary cursor-pointer list-none">
+              Platform Menu
+            </summary>
+            <nav className="absolute left-5 right-5 top-[76px] z-40 rounded-xl border border-lf-line bg-white p-3 shadow-lift">
+              <div className="grid gap-1">
+                {platformNav.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal hover:bg-lf-mist hover:text-lf-orange"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </nav>
+          </details>
+        </div>
+
+        <nav
+          className="hidden items-center justify-end gap-0.5 lg:flex"
+          aria-label="Primary platform navigation"
         >
-          Paths
-        </Link>
+          {platformNav.map((item) => (
+            <div key={item.href} className="group relative">
+              <Link
+                href={item.href}
+                className="inline-flex items-center gap-1 rounded-md px-2 py-2 text-[13px] font-semibold text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-orange"
+                aria-haspopup={item.items ? "true" : undefined}
+              >
+                {item.label}
+                {item.items && (
+                  <span aria-hidden className="text-[10px] text-lf-slate">
+                    &#9662;
+                  </span>
+                )}
+              </Link>
+              {item.items && (
+                <div className="invisible absolute left-0 top-full z-10 mt-1 w-72 rounded-xl border border-lf-line bg-white p-2 opacity-0 shadow-lift transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  {item.items.map((subItem) => (
+                    <Link
+                      key={subItem.href}
+                      href={subItem.href}
+                      className="block rounded-md border-l-2 border-transparent px-3 py-2 text-sm font-medium text-lf-charcoal transition hover:border-lf-orange hover:bg-lf-mist hover:text-lf-orange"
+                    >
+                      {subItem.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </nav>
       </div>
     </header>
   );

@@ -1,0 +1,517 @@
+export type PlatformStatus =
+  | "Live foundation"
+  | "Static prototype"
+  | "Planned"
+  | "Requires source content"
+  | "Requires sandbox wiring"
+  | "Requires human review";
+
+export type PlatformModule = {
+  id: string;
+  title: string;
+  shortTitle: string;
+  href: string;
+  status: PlatformStatus;
+  summary: string;
+  whoFor: string[];
+  tools: string[];
+  resources: string[];
+  currentStatus: string;
+  nextAction: string;
+  connections: string[];
+};
+
+export type NavGroup = {
+  label: string;
+  href: string;
+  items?: { label: string; href: string }[];
+};
+
+export const platformModules: PlatformModule[] = [
+  {
+    id: "apex-advisor",
+    title: "Apex Advisor",
+    shortTitle: "Apex Advisor",
+    href: "/apex-advisor/",
+    status: "Live foundation",
+    summary:
+      "The advanced coaching layer for serious Loan Factory loan officers, built on top of the 101 to 601 operating system.",
+    whoFor: ["Producing LOs", "Apex members", "Team leaders"],
+    tools: [
+      "Apex Advisor Track",
+      "Apex certifications",
+      "Apex calendar",
+      "Member area preview",
+    ],
+    resources: [
+      "Apex Advisor Track",
+      "Apex Pro membership overview",
+      "Certifications",
+      "Mastermind and event pages",
+    ],
+    currentStatus:
+      "Core Apex pages exist. This sprint keeps them visible inside the unified platform shell.",
+    nextAction:
+      "Review Apex copy with Jeremy and marketing before any public or recruiting use.",
+    connections: [
+      "Links back to Elite Sales & Marketing training.",
+      "Uses AI Assistants for coaching drafts.",
+      "Feeds wins and examples into the Creator Network.",
+    ],
+  },
+  {
+    id: "elite-sales-marketing",
+    title: "Elite Sales & Marketing",
+    shortTitle: "Elite Sales & Marketing",
+    href: "/sales-training/",
+    status: "Live foundation",
+    summary:
+      "The 101 to 601 training series that gives every LO a weekly system for conversations, conversion, referral partner growth, content, pipeline, and elite execution.",
+    whoFor: ["New LOs", "Experienced LOs", "Team leaders", "Coaches"],
+    tools: [
+      "101 to 601 curriculum",
+      "Scripts",
+      "Roleplays",
+      "Prompt library",
+      "Weekly tracker",
+    ],
+    resources: [
+      "101 Foundation",
+      "201 Borrower Conversion",
+      "301 Referral Partner Growth",
+      "401 Content and Marketing",
+      "501 Pipeline and Sales Systems",
+      "601 Elite Execution",
+    ],
+    currentStatus:
+      "Existing training routes remain live and are now surfaced as a parent module.",
+    nextAction:
+      "Add route aliases under /sales-training/[level] after Jeremy confirms the final URL pattern.",
+    connections: [
+      "Foundational curriculum for Apex Advisor.",
+      "Feeds the Training Library.",
+      "Gives AI Assistants approved source material.",
+    ],
+  },
+  {
+    id: "ai-training",
+    title: "AI Training",
+    shortTitle: "AI Training",
+    href: "/ai-training/",
+    status: "Static prototype",
+    summary:
+      "A practical training path for using AI safely inside Loan Factory workflows, with Gemini Gem AI Twin guidance, prompt practice, and review habits.",
+    whoFor: ["LOs", "Team leaders", "Coaches"],
+    tools: [
+      "AI usage playbook",
+      "Prompt practice",
+      "Draft review checklist",
+      "Assistant selection guide",
+    ],
+    resources: [
+      "Prompt Library",
+      "AI Coaching Assistant walkthrough",
+      "Content QA workflow",
+    ],
+    currentStatus:
+      "Static guidance only. No live model calls are wired into the site.",
+    nextAction:
+      "Confirm approved AI provider posture before any live assistant integration.",
+    connections: [
+      "Teaches how to use the AI Assistant Hub.",
+      "Supports Creator Network content drafting.",
+      "Routes risky content to Audience Quality Panel review.",
+    ],
+  },
+  {
+    id: "one-plus-one-five",
+    title: "1+1+1=5",
+    shortTitle: "1+1+1=5",
+    href: "/one-plus-one-five/",
+    status: "Requires source content",
+    summary:
+      "The team growth playbook for multiplying effort through partner strategy, recruiting support, co-branded content planning, and team cadence.",
+    whoFor: ["Team leaders", "Producing LOs", "LO Development"],
+    tools: [
+      "Campaign kit placeholders",
+      "Recruiting kit placeholders",
+      "Referral partner plays",
+      "Team growth scorecard concepts",
+    ],
+    resources: [
+      "Content kit planning",
+      "Recruiting review queue",
+      "Team Leader OS",
+    ],
+    currentStatus:
+      "Visible shell only. Recruiting and marketing materials require source content and Victoria review.",
+    nextAction:
+      "Jeremy and Andre confirm source materials and Victoria review gates before content depth is added.",
+    connections: [
+      "Connects to Team Leader OS.",
+      "Uses Referral Partner Assistant and Growth Assistant drafts.",
+      "Can promote approved internal examples from Creator Network.",
+    ],
+  },
+  {
+    id: "training-library",
+    title: "Training Library",
+    shortTitle: "Training Library",
+    href: "/training-library/",
+    status: "Live foundation",
+    summary:
+      "The searchable home for scripts, roleplays, audio training, recordings, prompts, handouts, trackers, and approved internal resources.",
+    whoFor: ["All LOs", "Team leaders", "Coaches", "Marketing reviewers"],
+    tools: [
+      "Resource catalog",
+      "Audio training links",
+      "Script library",
+      "Roleplay library",
+      "Tracker templates",
+    ],
+    resources: [
+      "Audio Training",
+      "Scripts",
+      "Roleplays",
+      "Prompts",
+      "Recordings",
+      "Tracker",
+    ],
+    currentStatus:
+      "Existing resource routes are live; this sprint adds a unified library front door.",
+    nextAction:
+      "Move large media delivery to Drive or another approved asset system before production hardening.",
+    connections: [
+      "Stores approved resources from every module.",
+      "Receives promoted Creator Network posts after review.",
+      "Feeds AI Assistant source material.",
+    ],
+  },
+  {
+    id: "creator-network",
+    title: "Creator Network",
+    shortTitle: "Creator Network",
+    href: "/creator-network/",
+    status: "Static prototype",
+    summary:
+      "An employee-only internal idea exchange where LOs and leaders share scripts, posts, prompts, wins, and field-tested examples for internal learning.",
+    whoFor: [
+      "Loan Factory employees",
+      "LOs",
+      "Team leaders",
+      "Coaches",
+      "Marketing reviewers",
+    ],
+    tools: [
+      "Internal feed concept",
+      "LO profile concept",
+      "Post composer concept",
+      "Moderation queue concept",
+      "Approved for External Adaptation queue marker",
+    ],
+    resources: [
+      "Creator Network plan",
+      "Access model",
+      "Moderation rules",
+      "Audience Quality Panel",
+    ],
+    currentStatus:
+      "Static prototype only. No auth, feed storage, comments, likes, saves, or external publishing are wired.",
+    nextAction:
+      "Confirm internal rollout scope and moderation ownership before backend work.",
+    connections: [
+      "Promotes top internal examples into the Training Library.",
+      "Uses Content Coach and Audience Quality Panel for draft review.",
+      "Feeds Team Leader OS contribution signals later.",
+    ],
+  },
+  {
+    id: "ai-assistants",
+    title: "AI Assistants",
+    shortTitle: "AI Assistants",
+    href: "/ai-assistants/",
+    status: "Static prototype",
+    summary:
+      "The catalog of draft-only internal support assistants for sales coaching, marketing, scenario structuring, TERA workflow guidance, and content review.",
+    whoFor: ["LOs", "Team leaders", "Coaches", "Admins", "Marketing reviewers"],
+    tools: [
+      "Assistant catalog",
+      "Draft-only output labels",
+      "Guardrail summaries",
+      "Audience Quality Panel handoff",
+    ],
+    resources: [
+      "AI Assistant Hub plan",
+      "Prompt library",
+      "Compliance notes",
+      "Content QA workflow",
+    ],
+    currentStatus:
+      "Static catalog only. No AI model provider is called from the site.",
+    nextAction:
+      "Confirm provider governance, source grounding, and review queues before live model wiring.",
+    connections: [
+      "Supports every module.",
+      "Routes content to human review.",
+      "Uses Audience Quality Panel as a QA layer later.",
+    ],
+  },
+  {
+    id: "audience-quality-panel",
+    title: "Audience Quality Panel",
+    shortTitle: "Audience Quality Panel",
+    href: "/audience-quality-panel/",
+    status: "Static prototype",
+    summary:
+      "An internal QA concept for scoring draft content through simulated Borrower, Referral Partner, Compliance/Risk, Marketing Performance, and LO Peer panels.",
+    whoFor: ["LOs", "Marketing reviewers", "Team leaders", "Coaches"],
+    tools: [
+      "Five-panel review model",
+      "0 to 100 scoring",
+      "Risk flag display",
+      "Rewrite recommendation model",
+      "Approval status labels",
+    ],
+    resources: [
+      "Audience Quality Panel plan",
+      "AI panel scoring rubric",
+      "Market response personas",
+      "Content QA workflow",
+    ],
+    currentStatus:
+      "Static explanation and demo report only. No OpenRouter or external model calls are wired.",
+    nextAction:
+      "Confirm panel routing, review visibility, and human approval gates before implementation.",
+    connections: [
+      "Can review Creator Network drafts.",
+      "Can pre-check Content Coach outputs.",
+      "Can support Victoria and compliance reviewers without replacing them.",
+    ],
+  },
+  {
+    id: "calendar",
+    title: "Calendar",
+    shortTitle: "Calendar",
+    href: "/calendar/",
+    status: "Planned",
+    summary:
+      "A unified view of training sessions, coaching blocks, Apex events, Power Hour, Breakfast Club, review windows, and launch milestones.",
+    whoFor: ["LOs", "Team leaders", "Coaches", "LO Development"],
+    tools: [
+      "Event type map",
+      "Static schedule placeholders",
+      "Review cadence reminders",
+      "Apex event links",
+    ],
+    resources: ["Apex Calendar", "Training Path", "Team Leader Guide"],
+    currentStatus:
+      "Static placeholder only. No Google Calendar or scheduling integration is wired.",
+    nextAction:
+      "Confirm canonical calendar source and sandbox test policy before any calendar integration.",
+    connections: [
+      "Surfaces Apex events.",
+      "Supports Friday tracker review.",
+      "Connects team leader cadences to training modules.",
+    ],
+  },
+  {
+    id: "trackers",
+    title: "Trackers",
+    shortTitle: "Trackers",
+    href: "/trackers/",
+    status: "Live foundation",
+    summary:
+      "A tracker hub for weekly activity, pipeline, production rhythm, recruiting support, training completion, and coaching follow-up.",
+    whoFor: ["LOs", "Team leaders", "Coaches", "Leadership"],
+    tools: [
+      "Weekly activity tracker",
+      "Pipeline tracker concept",
+      "Training completion tracker concept",
+      "Recruiting tracker concept",
+    ],
+    resources: ["Weekly Tracker", "Team Leader Guide", "Coach Guide"],
+    currentStatus:
+      "Weekly tracker exists. Additional trackers are placeholder concepts until source fields are confirmed.",
+    nextAction:
+      "Confirm tracker fields and data source before adding persistence or imports.",
+    connections: [
+      "Feeds Team Leader OS.",
+      "Supports Coach Hub review.",
+      "Gives AI Assistants safe structured context later.",
+    ],
+  },
+  {
+    id: "resources",
+    title: "Resources",
+    shortTitle: "Resources",
+    href: "/resources/",
+    status: "Live foundation",
+    summary:
+      "A quick-access hub for recommended channels, brand previews, personality workshop, coach guide, team leader guide, compliance notes, and recordings.",
+    whoFor: ["All platform users"],
+    tools: [
+      "Recommended channels",
+      "Personality workshop",
+      "Brand preview",
+      "Coach and team leader guides",
+      "Compliance notes",
+    ],
+    resources: [
+      "Recommended Channels",
+      "Personality Workshop",
+      "Brand Preview",
+      "Compliance Notes",
+      "Recordings",
+    ],
+    currentStatus:
+      "Existing resource pages remain live and are now grouped in one hub.",
+    nextAction:
+      "Review resource priority and remove anything that should not appear in the platform nav.",
+    connections: [
+      "Supports all modules.",
+      "Links brand and compliance references.",
+      "Keeps non-curriculum resources discoverable.",
+    ],
+  },
+  {
+    id: "support-routing",
+    title: "Support Routing",
+    shortTitle: "Support Routing",
+    href: "/support-routing/",
+    status: "Requires human review",
+    summary:
+      "The routing map for post-onboarding support, escalation, training academy referrals, corporate coaching, platform feedback, and reviewer handoffs.",
+    whoFor: ["LOs", "LO Development", "Team leaders", "Coaches", "Admins"],
+    tools: [
+      "Routing matrix",
+      "Escalation concepts",
+      "Human review gates",
+      "Support category map",
+    ],
+    resources: ["Open Decisions", "Role Access Model", "LO Development vision"],
+    currentStatus:
+      "Static routing concept only. No ticketing, email, n8n, or workflow automation is wired.",
+    nextAction:
+      "Andre and LO Development confirm routing playbook before any action workflow is built.",
+    connections: [
+      "Routes sensitive assistant outputs to people.",
+      "Connects LOs to training and coaching paths.",
+      "Keeps TERA and production issues outside this prototype.",
+    ],
+  },
+];
+
+export const platformNav: NavGroup[] = [
+  { label: "Home", href: "/" },
+  {
+    label: "Apex Advisor",
+    href: "/apex-advisor/",
+    items: [
+      { label: "Overview", href: "/apex-advisor/" },
+      { label: "Apex Track", href: "/apex-advisor-track/" },
+      { label: "Pro Membership", href: "/apex-advisor-pro/" },
+      { label: "Certifications", href: "/apex-certifications/" },
+      { label: "Apex Calendar", href: "/apex-calendar/" },
+      { label: "Member Area", href: "/apex-member-area/" },
+    ],
+  },
+  {
+    label: "Elite Sales & Marketing",
+    href: "/sales-training/",
+    items: [
+      { label: "Training Overview", href: "/sales-training/" },
+      { label: "101 Foundation", href: "/101-foundation/" },
+      { label: "201 Borrower Conversion", href: "/201-borrower-conversion/" },
+      {
+        label: "301 Referral Partner Growth",
+        href: "/301-referral-partner-growth/",
+      },
+      {
+        label: "401 Content and Marketing",
+        href: "/401-content-and-marketing/",
+      },
+      {
+        label: "501 Pipeline and Sales Systems",
+        href: "/501-pipeline-and-sales-systems/",
+      },
+      { label: "601 Elite Execution", href: "/601-elite-execution/" },
+    ],
+  },
+  { label: "AI Training", href: "/ai-training/" },
+  { label: "1+1+1=5", href: "/one-plus-one-five/" },
+  {
+    label: "Training Library",
+    href: "/training-library/",
+    items: [
+      { label: "Library Overview", href: "/training-library/" },
+      { label: "Audio Training", href: "/audio-training/" },
+      { label: "Scripts", href: "/scripts/" },
+      { label: "Roleplays", href: "/roleplays/" },
+      { label: "Prompts", href: "/prompts/" },
+      { label: "Recordings", href: "/recordings/" },
+      { label: "Tracker", href: "/tracker/" },
+    ],
+  },
+  {
+    label: "Creator Network",
+    href: "/creator-network/",
+    items: [
+      { label: "Landing", href: "/creator-network/" },
+      { label: "Audience Quality Panel", href: "/audience-quality-panel/" },
+    ],
+  },
+  { label: "AI Assistants", href: "/ai-assistants/" },
+  { label: "Calendar", href: "/calendar/" },
+  { label: "Trackers", href: "/trackers/" },
+  { label: "Resources", href: "/resources/" },
+  { label: "Support Routing", href: "/support-routing/" },
+];
+
+export const aiAssistants = [
+  "Marketing Assistant",
+  "Sales Coaching Assistant",
+  "Referral Partner Assistant",
+  "Borrower Conversation Assistant",
+  "Underwriting Support AI",
+  "Scenario Structuring Assistant",
+  "TERA Workflow Helper",
+  "AI Training Coach",
+  "Content Repurposing Assistant",
+  "Team Leader Assistant",
+  "Compliance/Risk Review Assistant",
+  "Apex Advisor Coach",
+  "Elite Sales & Marketing Coach",
+  "1+1+1=5 Growth Assistant",
+  "Content Coach",
+].map((name) => ({
+  name,
+  label: "Draft only. Review before external use.",
+}));
+
+export const audiencePanels = [
+  "Borrower / Consumer Panel",
+  "Referral Partner Panel",
+  "Compliance/Risk Panel",
+  "Marketing Performance Panel",
+  "LO Peer Panel",
+].map((name) => ({
+  name,
+  output: [
+    "Score 0-100",
+    "Audience reaction",
+    "What works",
+    "What does not work",
+    "Risk flags",
+    "Rewrite recommendation",
+    "Approval status",
+  ],
+}));
+
+export function getPlatformModule(id: string): PlatformModule {
+  const platformModule = platformModules.find((item) => item.id === id);
+  if (!platformModule) {
+    throw new Error(`Missing platform module: ${id}`);
+  }
+
+  return platformModule;
+}

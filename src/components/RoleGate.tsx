@@ -1,15 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import {
   GatedSurface,
   ROLE_PREVIEW_DISCLAIMER,
-  ROLE_STORAGE_KEY,
-  RoleId,
   findRole,
   isAllowed,
 } from "@/lib/roles";
+import { useRolePreview } from "@/lib/useRolePreview";
 
 type Props = {
   gate: GatedSurface;
@@ -17,43 +16,7 @@ type Props = {
 };
 
 export default function RoleGate({ gate, children }: Props) {
-  const [role, setRole] = useState<RoleId | null>(null);
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(ROLE_STORAGE_KEY);
-      if (stored) setRole(stored as RoleId);
-    } catch {
-      // ignore
-    }
-    setHydrated(true);
-    const handler = () => {
-      try {
-        const stored = window.localStorage.getItem(ROLE_STORAGE_KEY);
-        setRole(stored as RoleId | null);
-      } catch {
-        // ignore
-      }
-    };
-    window.addEventListener("storage", handler);
-    window.addEventListener("lf-role-changed", handler);
-    return () => {
-      window.removeEventListener("storage", handler);
-      window.removeEventListener("lf-role-changed", handler);
-    };
-  }, []);
-
-  // During hydration we render nothing to avoid a flash of either state.
-  // The page hero and disclaimer below the gate still render via the parent.
-  if (!hydrated) {
-    return (
-      <div className="container-page py-16">
-        <div className="card animate-pulse h-32" />
-      </div>
-    );
-  }
-
+  const role = useRolePreview();
   const r = findRole(role);
   const allowed = isAllowed(gate, role);
 

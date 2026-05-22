@@ -1,4 +1,29 @@
-# Loan Factory Elite Sales and Marketing Training Series
+# Loan Factory Apex Advisor Platform
+
+**Tagline.** Where Top Loan Officers Are Built.
+
+Apex Advisor is the Loan Factory training and development platform for loan officers. It brings the foundation course (the Apex Advisor Track, 101 through 601), live coaching, certifications, summits, and the Apex Mastermind community into one operating system.
+
+This repository started as the Loan Factory Elite Sales and Marketing Training Series. That curriculum is now the **Apex Advisor Track** inside the broader Apex Advisor platform. All existing 101 to 601 material continues to live at its current routes and is now framed as the foundation course.
+
+## Apex Advisor at a glance
+
+- **Tier 1 — Apex Advisor.** $249 per month. Full Apex Advisor Track, resource libraries, member area, ACLO eligibility.
+- **Tier 2 — Apex Advisor Pro.** $449 per month. Everything in Tier 1 plus monthly live mastermind, direct coaching, advanced TERA workflows, priority requests, Apex Summit access, Apex Mastermind community.
+
+Key Apex routes: `/apex-advisor`, `/apex-advisor-track`, `/apex-advisor-pro`, `/apex-member-area`, `/apex-certifications`, `/apex-calendar`, `/apex-leaderboards`, `/apex-mastermind`, `/apex-launch-call`, `/personality-workshop`, `/recommended-channels`.
+
+See `docs/PLATFORM_OVERVIEW.md` for the canonical platform map and `docs/apex-launch/` for the launch campaign assets.
+
+## Compliance ground rules
+
+Apex Advisor is a training and development platform. Membership, certifications, live coaching, and mastermind access are not guarantees of production, income, or business results. Any borrower facing, Realtor facing, or public artifact derived from platform content requires Loan Factory compliance review before use. TERA is Loan Factory's loan origination software, point of sale, and CRM platform.
+
+---
+
+# Loan Factory Elite Sales and Marketing Training Series (legacy framing)
+
+The legacy framing for the foundation course follows. This is now the Apex Advisor Track.
 
 A six week training portal for Loan Factory loan officers, 101 through 601.
 

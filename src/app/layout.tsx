@@ -6,12 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "Loan Factory Elite Sales and Marketing Training Series (101 to 601)",
-    template: "%s | Loan Factory Elite Training",
+    default: "Loan Factory LO Development Platform",
+    template: "%s | Loan Factory LO Development",
   },
   description:
-    "Internal training portal for Loan Factory loan officers. A six week operating system for conversations, conversion, partner growth, content, pipeline, and elite execution.",
+    "Internal Loan Factory LO Development Platform for training, Apex Advisor, AI enablement, Creator Network planning, trackers, resources, and support routing.",
   robots: { index: false, follow: false },
 };
 

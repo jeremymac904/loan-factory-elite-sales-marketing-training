@@ -1,23 +1,14 @@
 import Link from "next/link";
 import BrandImage from "./BrandImage";
 import { brandAssets } from "@/data/brandAssets";
+import { platformNav } from "@/data/platform";
 
-const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/paths/", label: "Learner Paths" },
-  { href: "/training-path/", label: "Training Path" },
-  { href: "/scripts/", label: "Scripts" },
-  { href: "/prompts/", label: "AI Prompts" },
-  { href: "/roleplays/", label: "Roleplays" },
-  { href: "/audio-training/", label: "Audio Training" },
-  { href: "/tracker/", label: "Tracker" },
+const utilityLinks = [
+  { href: "/compliance/", label: "Compliance Notes" },
   { href: "/coach-guide/", label: "Coach Guide" },
   { href: "/team-leader-guide/", label: "Team Leader Guide" },
-  { href: "/compliance/", label: "Compliance Notes" },
-  { href: "/recordings/", label: "Recordings" },
   { href: "/recommended-channels/", label: "Recommended Channels" },
-  { href: "/ai-coaching-assistant/", label: "AI Coaching Assistant" },
-  { href: "/login/", label: "Login" },
+  { href: "/login/", label: "Role Preview" },
 ];
 
 export default function SiteFooter() {
@@ -33,30 +24,34 @@ export default function SiteFooter() {
               heightClass="h-9"
             />
           </div>
-          <p className="text-xs uppercase tracking-wide text-lf-slate">
-            Internal training portal for Loan Factory loan officers.
+          <p className="max-w-xl text-xs uppercase tracking-wide text-lf-slate">
+            Internal Loan Factory LO Development Platform. Static prototype
+            surfaces are not borrower-facing, partner-facing, or public
+            publishing systems.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_2fr]">
           <div>
             <p className="text-sm font-semibold text-lf-navy">
-              Loan Factory Elite Sales and Marketing Training Series
+              Loan Factory LO Development Platform
             </p>
-            <p className="mt-2 text-sm text-lf-slate">
-              101 through 601. A simple, practical operating system for Loan
-              Factory loan officers.
+            <p className="mt-2 text-sm leading-6 text-lf-slate">
+              Unified home for Apex Advisor, Elite Sales & Marketing, AI
+              Training, 1+1+1=5, Training Library, Creator Network concepts,
+              AI Assistants, Audience Quality Panel, trackers, resources, and
+              support routing.
             </p>
-            <p className="mt-4 text-xs text-lf-slate">
-              Internal training portal. Not for borrower or public distribution.
-              All borrower facing, Realtor facing, and public artifacts require
-              compliance review before use.
+            <p className="mt-4 text-xs leading-5 text-lf-slate">
+              Draft and internal training outputs require human review before
+              borrower-facing, Realtor-facing, recruiting-facing, public, or
+              compliance-sensitive use.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 text-sm md:col-span-2">
-            {footerLinks.map((item) => (
+          <div className="grid gap-x-6 gap-y-3 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {[...platformNav, ...utilityLinks].map((item) => (
               <Link
-                key={item.href}
+                key={`${item.href}-${item.label}`}
                 href={item.href}
                 className="text-lf-charcoal hover:text-lf-orange"
               >
@@ -66,8 +61,8 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="mt-10 border-t border-lf-line pt-4 text-xs text-lf-slate">
-          Loan Factory is a mortgage brokerage with access to 240+ wholesale
-          lenders. NMLS 320841. Equal Housing Opportunity.
+          Loan Factory is a mortgage brokerage with access to a broad wholesale
+          lender network. NMLS 320841. Equal Housing Opportunity.
         </div>
       </div>
     </footer>

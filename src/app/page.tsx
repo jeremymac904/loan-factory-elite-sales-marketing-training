@@ -1,13 +1,7 @@
 import Link from "next/link";
-import ModuleCard from "@/components/ModuleCard";
-import ResourceCard from "@/components/ResourceCard";
-import SectionHeading from "@/components/SectionHeading";
 import ComplianceCallout from "@/components/ComplianceCallout";
-import { LevelTagGroup } from "@/components/LevelTag";
-import BrandImage from "@/components/BrandImage";
-import { modules } from "@/data/modules";
-import { paths } from "@/data/paths";
-import { brandAssets } from "@/data/brandAssets";
+import SectionHeading from "@/components/SectionHeading";
+import { platformModules } from "@/data/platform";
 
 export default function HomePage() {
   return (
@@ -15,7 +9,7 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden bg-lf-navy text-white">
         <video
           aria-hidden
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-45 grayscale"
           autoPlay
           loop
           muted
@@ -25,155 +19,97 @@ export default function HomePage() {
         >
           <source src="/media/platform-motion-background.mp4" type="video/mp4" />
         </video>
-        <div aria-hidden className="absolute inset-0 bg-lf-navyDark/65" />
+        <div aria-hidden className="absolute inset-0 bg-black/72" />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(242,106,31,0.28),transparent_30%)]"
+        />
 
         <div className="relative container-page py-16 md:py-24">
-          <div className="grid items-center gap-10 md:grid-cols-[1.2fr_1fr]">
-            <div>
-              <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
-                Internal training portal
-              </span>
-              <h1 className="mt-5 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
-                A six week operating system for Loan Factory loan officers.
-              </h1>
-              <p className="mt-5 max-w-2xl text-lg text-white/85">
-                Conversations create pipeline. Pipeline creates closings.
-                Closings create referrals. This series gives you the simple
-                weekly system that makes all of that repeatable, with scripts,
-                AI prompts, roleplays, and a tracker you can run starting
-                Monday.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/paths/" className="btn-primary">
-                  Choose your path
-                </Link>
-                <Link
-                  href="/101-foundation/"
-                  className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white"
-                >
-                  Start with 101
-                </Link>
-                <Link
-                  href="/training-path/"
-                  className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white"
-                >
-                  See the full path
-                </Link>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-8 rounded-2xl border border-white/15 bg-white p-8 backdrop-blur md:p-10">
-              <BrandImage
-                asset={brandAssets.elite}
-                heightClass="h-40 md:h-48"
-              />
-              <div className="h-px w-24 bg-lf-line" />
-              <BrandImage
-                asset={brandAssets["loan-factory"]}
-                heightClass="h-16 md:h-20"
-              />
-              <p className="text-center text-[11px] uppercase tracking-wide text-lf-slate">
-                Loan Factory Elite Sales and Marketing Training
-              </p>
+          <div className="max-w-4xl">
+            <span className="inline-flex rounded-full border border-lf-orange/70 bg-black/30 px-3 py-1 text-xs font-bold uppercase tracking-wide text-lf-orange">
+              Internal LO development platform
+            </span>
+            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight md:text-6xl">
+              Loan Factory LO Development Platform
+            </h1>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-white/85 md:text-xl">
+              One unified shell for Apex Advisor, Elite Sales & Marketing, AI
+              Training, 1+1+1=5, Training Library, Creator Network, AI
+              Assistants, Audience Quality Panel, Calendar, Trackers,
+              Resources, and Support Routing.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/apex-advisor/" className="btn-primary">
+                Open Apex Advisor
+              </Link>
+              <Link
+                href="/creator-network/"
+                className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
+              >
+                View Creator Network
+              </Link>
+              <Link
+                href="/ai-assistants/"
+                className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
+              >
+                View AI Assistants
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container-page py-16">
-        <SectionHeading
-          eyebrow="Choose Your Starting Point"
-          title="Three honest options."
-          description="Pick the one that matches where you are right now. You can always switch lanes later."
-        />
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {paths.map((p) => (
-            <Link
-              key={p.id}
-              href={`/paths/#${p.id}`}
-              className="card group flex h-full flex-col gap-3 transition hover:shadow-lift"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                  {p.tagline}
-                </span>
-                <LevelTagGroup levels={[p.level]} />
-              </div>
-              <h3 className="h-display text-xl">{p.title}</h3>
-              <p className="prose-lf text-sm text-lf-slate">
-                {p.id === "beginner" &&
-                  "New or overwhelmed? Start with Beginner Path."}
-                {p.id === "intermediate" &&
-                  "Already originating but inconsistent? Start with Intermediate Path."}
-                {p.id === "advanced" &&
-                  "Leading a team, coaching others, or using AI heavily? Start with Advanced Path."}
+      <section className="container-page py-14">
+        <div className="grid gap-5 md:grid-cols-4">
+          {[
+            ["12", "Platform areas"],
+            ["Static", "Safe prototype mode"],
+            ["0", "External APIs wired"],
+            ["Human", "Review before external use"],
+          ].map(([value, label]) => (
+            <article key={label} className="card">
+              <p className="font-display text-3xl font-semibold text-lf-navy">
+                {value}
               </p>
-              <p className="prose-lf text-sm">
-                <strong>Goal: </strong>
-                {p.goal}
+              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-lf-orange">
+                {label}
               </p>
-              <span className="mt-auto inline-flex items-center text-sm font-semibold text-lf-navy group-hover:text-lf-orange">
-                Open this path
-                <span
-                  aria-hidden
-                  className="ml-1 transition group-hover:translate-x-0.5"
-                >
-                  &rarr;
-                </span>
-              </span>
-            </Link>
+            </article>
           ))}
-        </div>
-      </section>
-
-      <section className="container-page py-12">
-        <SectionHeading
-          eyebrow="What this series does"
-          title="From scattered activity to a clear weekly system."
-          description="Built for the brand new LO who feels overwhelmed and the experienced producer who is leaking pipeline. Each week installs one specific behavior, with scripts, AI prompts, roleplays, and a tracker. Practical over theoretical. Broker positive. Compliance aware."
-        />
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <div className="card">
-            <h3 className="h-display text-lg">More conversations.</h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              5 to 8 real conversations a day, every day. The number one
-              predictor of production for a new LO.
-            </p>
-          </div>
-          <div className="card">
-            <h3 className="h-display text-lg">Better conversion.</h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Structured first calls, real discovery questions, and a 43 to 57
-              talk to listen ratio that builds trust fast.
-            </p>
-          </div>
-          <div className="card">
-            <h3 className="h-display text-lg">Stronger partners.</h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Five named priority Realtors and a partner first meeting flow that
-              respects RESPA.
-            </p>
-          </div>
         </div>
       </section>
 
       <section className="bg-lf-mist">
         <div className="container-page py-16">
           <SectionHeading
-            eyebrow="The path"
-            title="101 through 601 in six sessions."
-            description="Start with 101. Stay in sequence. Each module adds one specific layer to the system."
+            eyebrow="Unified Platform"
+            title="Every module has one consistent operating model."
+            description="Each area now states what it does, who it serves, the tools/resources included, current status, and the next action. Static prototypes are labeled honestly and do not imply live integrations."
           />
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {modules.map((m) => (
-              <ModuleCard
-                key={m.slug}
-                level={m.level}
-                title={m.title}
-                promise={m.corePromise}
-                href={m.href}
-                status={m.status}
-                levels={m.levels}
-              />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {platformModules.map((module) => (
+              <Link
+                key={module.id}
+                href={module.href}
+                className="card group flex h-full flex-col gap-4 transition hover:-translate-y-0.5 hover:shadow-lift"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <h2 className="h-display text-xl">{module.shortTitle}</h2>
+                  <span className="shrink-0 rounded-full border border-lf-orange/35 bg-lf-orangeSoft px-2.5 py-0.5 text-[11px] font-semibold text-lf-orangeDark">
+                    {module.status}
+                  </span>
+                </div>
+                <p className="prose-lf text-sm text-lf-slate">
+                  {module.summary}
+                </p>
+                <div className="mt-auto border-t border-lf-line pt-3 text-sm font-semibold text-lf-navy group-hover:text-lf-orange">
+                  Open module
+                  <span aria-hidden className="ml-1">
+                    &rarr;
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -181,97 +117,44 @@ export default function HomePage() {
 
       <section className="container-page py-16">
         <SectionHeading
-          eyebrow="Resources"
-          title="Everything an LO needs to run the week."
-          description="The libraries below sit alongside the modules so you can grab the right tool the minute you need it."
+          eyebrow="Live-ready posture"
+          title="Built as a working site shell, not a fake product."
+          description="The platform is now navigable and demoable, while every non-wired capability is clearly marked as planned, draft only, requires source content, requires sandbox wiring, or requires human review."
         />
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <ResourceCard
-            meta="Scripts"
-            title="Script Library"
-            description="Borrower, Realtor, partner, listing agent, past client, hook, text, and email scripts. Compliance notes included."
-            href="/scripts/"
-          />
-          <ResourceCard
-            meta="AI"
-            title="AI Prompt Library"
-            description="Gemini Gem AI Twin ready prompts for call prep, follow up, partner outreach, content, roleplay, and weekly review."
-            href="/prompts/"
-          />
-          <ResourceCard
-            meta="Practice"
-            title="Roleplay Library"
-            description="Ten short structured roleplays from cold Realtor outreach to past client check ins."
-            href="/roleplays/"
-          />
-          <ResourceCard
-            meta="Audio"
-            title="Audio Training Library"
-            description="Short source grounded training conversations on sales psychology, the operating system, and the training blueprint."
-            href="/audio-training/"
-          />
-          <ResourceCard
-            meta="Tracker"
-            title="Weekly Tracker"
-            description="Activity, content, partner, follow up, AI usage, and next week commitments."
-            href="/tracker/"
-          />
-          <ResourceCard
-            meta="Study"
-            title="Recommended Channels"
-            description="Outside voices and references worth studying. Grouped by topic and by skill level."
-            href="/recommended-channels/"
-          />
-        </div>
-      </section>
-
-      <section className="bg-lf-navy/[0.03]">
-        <div className="container-page py-16">
-          <SectionHeading
-            eyebrow="For coaches and team leaders"
-            title="Run the series with your team."
-            description="The coach and team leader guides show how to teach, reinforce, review, and hold accountability without overengineering the week."
-          />
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            <ResourceCard
-              meta="Coach"
-              title="Coach Guide"
-              description="How corporate coaches teach the modules, reinforce one behavior a week, and run a clean review rubric."
-              href="/coach-guide/"
-            />
-            <ResourceCard
-              meta="Team leader"
-              title="Team Leader Guide"
-              description="A clean weekly cadence: Monday kickoff, Wednesday roleplay, Friday production review."
-              href="/team-leader-guide/"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="container-page py-16">
-        <SectionHeading
-          eyebrow="What is coming"
-          title="A future AI coaching assistant."
-          description="In version one, this site is the static training hub. The AI coaching assistant is a placeholder, with planned capabilities documented for the team."
-        />
-        <div className="mt-6">
-          <ResourceCard
-            meta="Preview"
-            title="AI Coaching Assistant (planned)"
-            description="Future role: call prep, follow up drafts, roleplay, pipeline review, weekly accountability summary, and content drafting, all aligned to the modules."
-            href="/ai-coaching-assistant/"
-          />
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <article className="card">
+            <h3 className="h-display text-lg">Static where appropriate</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              Creator Network, Audience Quality Panel, and AI Assistants are
+              visible without claiming auth, feeds, model calls, or publishing.
+            </p>
+          </article>
+          <article className="card">
+            <h3 className="h-display text-lg">Training routes preserved</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              The existing 101 to 601 pages, Apex pages, scripts, roleplays,
+              prompts, audio training, and trackers remain reachable.
+            </p>
+          </article>
+          <article className="card">
+            <h3 className="h-display text-lg">Review gates visible</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              Draft outputs, marketing/recruiting materials, support routing,
+              and compliance-sensitive work point back to human review.
+            </p>
+          </article>
         </div>
       </section>
 
       <section className="container-page pb-20">
         <ComplianceCallout title="Internal use only" variant="default">
           <p>
-            This portal is for Loan Factory team training. Borrower facing,
-            Realtor facing, and public artifacts must be reviewed by compliance
-            before use. Do not publish anything in this site outside the
-            company.
+            This platform is for Loan Factory internal training and LO
+            development. It does not send messages, publish content, call AI
+            models, write to TERA, or expose borrower data. Borrower-facing,
+            Realtor-facing, recruiting-facing, public, rate-related,
+            fee-related, and compliance-sensitive artifacts require human review
+            before use.
           </p>
         </ComplianceCallout>
       </section>
