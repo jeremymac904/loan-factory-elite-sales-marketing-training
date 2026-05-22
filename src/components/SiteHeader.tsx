@@ -16,7 +16,7 @@ const primaryNav = [
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-lf-line bg-white/95 backdrop-blur">
-      <div className="container-page flex min-h-20 items-center justify-between gap-5 py-3">
+      <div className="mx-auto flex min-h-20 w-full max-w-[1500px] items-center justify-between gap-5 px-5 py-3 sm:px-8">
         <div className="flex w-full items-center justify-between gap-4 lg:w-auto">
           <Link
             href="/"
@@ -50,16 +50,16 @@ export default function SiteHeader() {
           </details>
         </div>
 
-        <div className="hidden items-center justify-end gap-3 lg:flex">
+        <div className="hidden min-w-0 items-center justify-end gap-3 lg:flex">
           <nav
-            className="flex items-center justify-end gap-2"
+            className="flex min-w-0 items-center justify-end gap-2"
             aria-label="Primary navigation"
           >
             {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="inline-flex items-center rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-orange xl:text-[15px]"
+                className="inline-flex items-center whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-semibold text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-orange xl:px-3 xl:text-[15px]"
               >
                 {item.label}
               </Link>

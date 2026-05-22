@@ -60,7 +60,7 @@ export default function FaceGramExperience() {
       </section>
 
       <section id="facegram-feed" className="bg-[#f0f2f5] py-5">
-        <div className="mx-auto grid w-full max-w-[1480px] gap-5 px-4 lg:grid-cols-[270px_minmax(0,680px)_310px] xl:grid-cols-[300px_minmax(0,760px)_340px]">
+        <div className="grid w-full gap-5 px-4 sm:px-6 lg:grid-cols-[300px_minmax(0,1fr)_320px] xl:grid-cols-[320px_minmax(0,1fr)_360px]">
           <aside className="hidden space-y-3 lg:block">
             <div className="rounded-2xl bg-white p-4 shadow-card">
               <div className="flex items-center gap-3">

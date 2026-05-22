@@ -19,7 +19,7 @@ export default function HeaderAuthStatus({ variant = "desktop" }: Props) {
         className={
           variant === "mobile"
             ? "rounded-lg bg-lf-navy px-3 py-3 text-center text-base font-semibold text-white hover:bg-lf-orange"
-            : "inline-flex items-center justify-center rounded-lg bg-lf-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-lf-orange"
+            : "inline-flex items-center justify-center whitespace-nowrap rounded-lg bg-lf-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-lf-orange"
         }
       >
         Sign In
@@ -40,7 +40,7 @@ export default function HeaderAuthStatus({ variant = "desktop" }: Props) {
         className={
           variant === "mobile"
             ? "rounded-lg bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal hover:text-lf-orange"
-            : "inline-flex max-w-44 items-center justify-center rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
+            : "inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
         }
       >
         {variant === "mobile"
@@ -53,7 +53,7 @@ export default function HeaderAuthStatus({ variant = "desktop" }: Props) {
         className={
           variant === "mobile"
             ? "rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-slate hover:text-lf-orange"
-            : "inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-semibold text-lf-slate transition hover:bg-lf-mist hover:text-lf-orange"
+            : "inline-flex items-center justify-center whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold text-lf-slate transition hover:bg-lf-mist hover:text-lf-orange"
         }
       >
         Sign Out
