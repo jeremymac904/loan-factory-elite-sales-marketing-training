@@ -1,6 +1,7 @@
 import SectionHeading from "@/components/SectionHeading";
 import RoleGate from "@/components/RoleGate";
 
+export const dynamic = "force-dynamic";
 export const metadata = { title: "Coach Guide" };
 
 export default function CoachGuidePage() {

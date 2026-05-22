@@ -2,7 +2,7 @@
 
 ## Status
 
-Built into a unified Loan Factory LO Development Platform shell and validated locally. The import is complete, the new platform routes render, and the repo is ready for push/deploy monitoring.
+Built into a unified Loan Factory LO Development Platform shell with a Supabase Google Auth beta foundation. Public routes render, protected beta surfaces use request-time Supabase checks, and the repo is ready for push/deploy monitoring after validation.
 
 ## Canonical Local Working Path
 
@@ -12,18 +12,18 @@ Built into a unified Loan Factory LO Development Platform shell and validated lo
 
 - Branch: `main`
 - Remote: `https://github.com/jeremymac904/loan-factory-elite-sales-marketing-training.git`
-- Working tree: includes preserved Dispatch docs/work plus the current platform shell build.
+- Working tree: active Supabase beta auth implementation pending commit.
 
 ## Current Product Direction
 
 The site now positions the app as the Loan Factory LO Development Platform, with visible routes for:
 
-- Apex Advisor
-- Elite Sales & Marketing
+- Loan Factory LO Mastery Coaching / Loan Factory Alliance
+- Elite Sales & Marketing 101-601
 - AI Training
 - 1+1+1=5
 - Training Library
-- Creator Network
+- FaceGram
 - AI Assistants
 - Audience Quality Panel
 - Calendar
@@ -33,8 +33,9 @@ The site now positions the app as the Loan Factory LO Development Platform, with
 
 ## Safety State
 
-- No real auth, AI model calls, n8n, Google Workspace, TERA writes, database wiring, social publishing, or external sends are wired.
-- Creator Network is static and employee-only/internal-only.
+- Supabase Google Auth, Postgres schema, and RLS are wired for beta.
+- No AI model calls, n8n, Google Workspace, TERA reads/writes, social publishing, or external sends are wired.
+- FaceGram is internal-only; posting requires sign-in in the beta UI.
 - Audience Quality Panel is static and does not replace Loan Factory marketing, compliance, legal, or leadership review.
 - AI Assistant outputs are labeled draft-only and require review before external use.
 - Large media remains a follow-up cleanup item; no new large media was added.
@@ -43,10 +44,9 @@ The site now positions the app as the Loan Factory LO Development Platform, with
 
 - `npm run lint` passed.
 - `npm run typecheck` passed.
-- `npm run build` passed with 45 static routes.
-- `npm audit` reports 0 vulnerabilities after updating Next, ESLint tooling, and PostCSS.
-- Browser QA passed on the homepage plus key module routes at desktop and mobile viewport sizes.
-- Browser console check reported no relevant errors or warnings on tested routes.
+- `npm run build` passed with static public routes and dynamic auth/admin/gated routes.
+- Browser QA passed on `/`, `/apex-advisor/`, `/ai-training/`, `/creator-network/`, `/sales-training/`, `/resources/`, `/login/`, `/access-pending/`, and `/admin/`.
+- Browser console check reported no errors on tested routes after adding the favicon.
 
 ## Read Before Building
 

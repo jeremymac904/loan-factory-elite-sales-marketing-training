@@ -1,12 +1,12 @@
 # Role Access Model
 
-**Status:** Draft. Production enforcement is pending TERA/Ally SSO and role provisioning decisions. Prototype enforces nothing — all routes are open in the preview build.
+**Status:** Beta auth foundation added. Supabase Google Auth, `approved_users`, `profiles`, `role_permissions`, and RLS now provide the beta access model. Future production SSO/TERA alignment remains a separate decision.
 **Owner:** Jeremy McDonald, with Andre and Edward to confirm scopes.
-**Last updated:** 2026-05-21
+**Last updated:** 2026-05-22
 
 This document defines twelve roles that the LO Development Platform must support, the access scope for each, and what is explicitly out of scope for that role.
 
-**Prototype reminder:** In the prototype build, no roles are enforced. Access control during prototype is "do not link the page from the public nav." Real role enforcement starts in production once SSO and role provisioning are decided. See [`DO_NOT_BUILD_YET.md`](./DO_NOT_BUILD_YET.md).
+**Beta reminder:** Public landing/resource pages remain reviewable. Protected beta surfaces use Supabase role checks. TERA remains separate; this app does not read from or write to TERA.
 
 ---
 

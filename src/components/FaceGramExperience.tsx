@@ -2,9 +2,14 @@
 
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BrandImage from "@/components/BrandImage";
 import { brandAssets } from "@/data/brandAssets";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import {
+  getSupabasePublicConfig,
+  hasSupabasePublicConfig,
+} from "@/lib/supabase/config";
 import {
   faceGramGroups,
   faceGramPosts,
@@ -36,9 +41,59 @@ const accentClasses = {
   silver: "from-[#d9d9d9] via-[#363636] to-black",
 };
 
+type FaceGramAuthState =
+  | { status: "loading" }
+  | { status: "not-configured" }
+  | { status: "signed-out" }
+  | { status: "signed-in"; email: string };
+
 export default function FaceGramExperience() {
   const [entered, setEntered] = useState(false);
   const [draftPost, setDraftPost] = useState("");
+  const supabaseConfigured = hasSupabasePublicConfig(getSupabasePublicConfig());
+  const [authState, setAuthState] = useState<FaceGramAuthState>(() =>
+    supabaseConfigured ? { status: "loading" } : { status: "not-configured" },
+  );
+
+  useEffect(() => {
+    if (!supabaseConfigured) return;
+
+    const supabase = createBrowserSupabaseClient();
+
+    if (!supabase) return;
+
+    const client = supabase;
+    let active = true;
+
+    async function loadUser() {
+      const {
+        data: { user },
+      } = await client.auth.getUser();
+
+      if (!active) return;
+
+      setAuthState(
+        user?.email
+          ? { status: "signed-in", email: user.email }
+          : { status: "signed-out" },
+      );
+    }
+
+    void loadUser();
+
+    const {
+      data: { subscription },
+    } = client.auth.onAuthStateChange(() => {
+      void loadUser();
+    });
+
+    return () => {
+      active = false;
+      subscription.unsubscribe();
+    };
+  }, [supabaseConfigured]);
+
+  const canPost = authState.status === "signed-in";
 
   return (
     <>
@@ -136,41 +191,62 @@ export default function FaceGramExperience() {
                 </p>
                 <button
                   type="button"
-                  onClick={() => setEntered(true)}
+                  onClick={() => canPost && setEntered(true)}
+                  disabled={!canPost}
                   className="btn-primary mt-4"
                 >
-                  Login / Enter FaceGram
+                  {canPost ? "Enter FaceGram" : "Sign in required"}
                 </button>
+                {!canPost && (
+                  <Link href="/login/" className="btn-secondary mt-3">
+                    Sign in with Google
+                  </Link>
+                )}
               </div>
             )}
 
-            <div className="rounded-2xl bg-white p-4 shadow-card">
-              <div className="grid grid-cols-[auto_1fr] gap-3">
-                <img
-                  src="/team/andre-king.png"
-                  alt="Andre King"
-                  className="h-11 w-11 rounded-full object-cover"
-                />
-                <textarea
-                  value={draftPost}
-                  onChange={(event) => setDraftPost(event.target.value)}
-                  rows={2}
-                  placeholder="What's on your mind?"
-                  className="min-h-12 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
-                />
+            {canPost ? (
+              <div className="rounded-2xl bg-white p-4 shadow-card">
+                <div className="grid grid-cols-[auto_1fr] gap-3">
+                  <img
+                    src="/team/andre-king.png"
+                    alt=""
+                    className="h-11 w-11 rounded-full object-cover"
+                  />
+                  <textarea
+                    value={draftPost}
+                    onChange={(event) => setDraftPost(event.target.value)}
+                    rows={2}
+                    placeholder={`What's on your mind, ${authState.email}?`}
+                    className="min-h-12 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
+                  />
+                </div>
+                <div className="mt-4 grid gap-2 border-t border-lf-line pt-4 sm:grid-cols-3">
+                  {postOptions.map((option) => (
+                    <button
+                      key={option}
+                      type="button"
+                      className="rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal hover:bg-lf-mist hover:text-lf-orange"
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
               </div>
-              <div className="mt-4 grid gap-2 border-t border-lf-line pt-4 sm:grid-cols-3">
-                {postOptions.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    className="rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal hover:bg-lf-mist hover:text-lf-orange"
-                  >
-                    {option}
-                  </button>
-                ))}
+            ) : (
+              <div className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
+                <h2 className="font-display text-xl font-semibold text-lf-navy">
+                  Posting requires sign-in
+                </h2>
+                <p className="mt-2 text-sm leading-6 text-lf-slate">
+                  You can browse the beta preview. Creating FaceGram posts will
+                  require an approved Loan Factory Google account.
+                </p>
+                <Link href="/login/" className="btn-primary mt-4">
+                  Sign in
+                </Link>
               </div>
-            </div>
+            )}
 
             <div className="grid grid-cols-2 gap-3 overflow-hidden sm:grid-cols-5">
               {stories.map((story) => (

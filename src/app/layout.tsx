@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import RoleBanner from "@/components/RoleBanner";
 import HeyGenVideoWidget from "@/components/HeyGenVideoWidget";
 import "./globals.css";
 
@@ -13,6 +12,9 @@ export const metadata: Metadata = {
   description:
     "Internal Loan Factory LO Development site for coaching, Sales & Marketing training, AI Advantage, FaceGram, resources, and support routing.",
   robots: { index: false, follow: false },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +25,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-white antialiased">
-        <RoleBanner />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
