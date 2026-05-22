@@ -1,59 +1,110 @@
 import Link from "next/link";
 import ComplianceCallout from "@/components/ComplianceCallout";
-import SectionHeading from "@/components/SectionHeading";
-import { platformModules } from "@/data/platform";
+
+const dashboardModules = [
+  {
+    title: "Apex Advisor",
+    description: "Start here for coaching, Apex track access, certifications, and member resources.",
+    href: "/apex-advisor/",
+    status: "Live",
+  },
+  {
+    title: "Elite Sales & Marketing",
+    description: "Follow the 101 to 601 training path for conversations, conversion, partners, and execution.",
+    href: "/sales-training/",
+    status: "Live",
+  },
+  {
+    title: "AI Training",
+    description: "Learn how to use AI tools safely for drafts, practice, and training support.",
+    href: "/ai-training/",
+    status: "Guide",
+  },
+  {
+    title: "Creator Network",
+    description: "Use the internal-only idea network for scripts, prompts, examples, and field wins.",
+    href: "/creator-network/",
+    status: "Internal",
+  },
+  {
+    title: "AI Assistants",
+    description: "Open draft-only assistants for marketing, sales coaching, content, and support workflows.",
+    href: "/ai-assistants/",
+    status: "Draft only",
+  },
+  {
+    title: "Training Library",
+    description: "Find scripts, roleplays, prompts, recordings, audio training, and handouts.",
+    href: "/training-library/",
+    status: "Library",
+  },
+  {
+    title: "Calendar",
+    description: "See training sessions, coaching moments, review windows, and upcoming platform events.",
+    href: "/calendar/",
+    status: "Planning",
+  },
+  {
+    title: "Trackers",
+    description: "Track conversations, partner touches, assignments, and weekly accountability.",
+    href: "/trackers/",
+    status: "Tools",
+  },
+  {
+    title: "Resources",
+    description: "Jump to supporting guides, compliance reminders, downloads, and reference materials.",
+    href: "/resources/",
+    status: "Reference",
+  },
+  {
+    title: "Support Routing",
+    description: "Find where to send training, content, workflow, compliance, or platform support needs.",
+    href: "/support-routing/",
+    status: "Routing",
+  },
+  {
+    title: "1+1+1=5 Growth",
+    description: "Review the team growth playbook for partner strategy, content planning, and cadence.",
+    href: "/one-plus-one-five/",
+    status: "Planned",
+  },
+];
+
+const platformStatus = [
+  "Static shell only",
+  "No external APIs wired",
+  "Draft outputs require review",
+  "TERA writes are blocked",
+];
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
-        <video
-          aria-hidden
-          className="absolute inset-0 h-full w-full object-cover opacity-45 grayscale"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="/media/dark-hero-background.png"
-        >
-          <source src="/media/platform-motion-background.mp4" type="video/mp4" />
-        </video>
-        <div aria-hidden className="absolute inset-0 bg-black/72" />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(242,106,31,0.28),transparent_30%)]"
-        />
-
-        <div className="relative container-page py-16 md:py-24">
-          <div className="max-w-4xl">
-            <span className="inline-flex rounded-full border border-lf-orange/70 bg-black/30 px-3 py-1 text-xs font-bold uppercase tracking-wide text-lf-orange">
-              Internal LO development platform
-            </span>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight md:text-6xl">
+      <section className="border-b border-lf-line bg-lf-mist">
+        <div className="container-page py-14 md:py-16">
+          <div className="max-w-3xl">
+            <h1 className="font-display text-4xl font-semibold tracking-tight text-lf-navy md:text-6xl">
               Loan Factory LO Development Platform
             </h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-white/85 md:text-xl">
-              One unified shell for Apex Advisor, Elite Sales & Marketing, AI
-              Training, 1+1+1=5, Training Library, Creator Network, AI
-              Assistants, Audience Quality Panel, Calendar, Trackers,
-              Resources, and Support Routing.
+            <p className="mt-5 text-lg leading-8 text-lf-charcoal md:text-xl">
+              Training, coaching, AI tools, and internal resources for Loan
+              Factory loan officers.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/apex-advisor/" className="btn-primary">
-                Open Apex Advisor
+                Start with Apex Advisor
               </Link>
               <Link
-                href="/creator-network/"
-                className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
+                href="/sales-training/"
+                className="btn-secondary"
               >
-                View Creator Network
+                View Sales Training
               </Link>
               <Link
                 href="/ai-assistants/"
-                className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
+                className="btn-secondary"
               >
-                View AI Assistants
+                Explore AI Assistants
               </Link>
             </div>
           </div>
@@ -61,92 +112,61 @@ export default function HomePage() {
       </section>
 
       <section className="container-page py-14">
-        <div className="grid gap-5 md:grid-cols-4">
-          {[
-            ["12", "Platform areas"],
-            ["Static", "Safe prototype mode"],
-            ["0", "External APIs wired"],
-            ["Human", "Review before external use"],
-          ].map(([value, label]) => (
-            <article key={label} className="card">
-              <p className="font-display text-3xl font-semibold text-lf-navy">
-                {value}
+        <div className="flex max-w-3xl flex-col gap-3">
+          <h2 className="h-display text-3xl">Choose your training area.</h2>
+          <p className="prose-lf text-lf-slate">
+            Pick the card that matches what you need right now. Each area opens
+            to training, tools, or resources with no extra dashboard clutter.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {dashboardModules.map((module) => (
+            <article
+              key={module.href}
+              className="card flex min-h-56 flex-col gap-4 transition hover:-translate-y-0.5 hover:shadow-lift"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="h-display text-xl">{module.title}</h3>
+                <span className="shrink-0 rounded-full border border-lf-orange/35 bg-lf-orangeSoft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-lf-orangeDark">
+                  {module.status}
+                </span>
+              </div>
+              <p className="prose-lf text-sm text-lf-slate">
+                {module.description}
               </p>
-              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-lf-orange">
-                {label}
-              </p>
+              <Link
+                href={module.href}
+                className="mt-auto inline-flex w-fit items-center rounded-lg bg-lf-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-lf-orange"
+              >
+                Open
+                <span aria-hidden className="ml-2">
+                  &rarr;
+                </span>
+              </Link>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="bg-lf-mist">
-        <div className="container-page py-16">
-          <SectionHeading
-            eyebrow="Unified Platform"
-            title="Every module has one consistent operating model."
-            description="Each area now states what it does, who it serves, the tools/resources included, current status, and the next action. Static prototypes are labeled honestly and do not imply live integrations."
-          />
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {platformModules.map((module) => (
-              <Link
-                key={module.id}
-                href={module.href}
-                className="card group flex h-full flex-col gap-4 transition hover:-translate-y-0.5 hover:shadow-lift"
+      <section className="border-y border-lf-line bg-white">
+        <div className="container-page py-8">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-lf-orange">
+            Platform status
+          </h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {platformStatus.map((item) => (
+              <div
+                key={item}
+                className="rounded-xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold text-lf-charcoal"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <h2 className="h-display text-xl">{module.shortTitle}</h2>
-                  <span className="shrink-0 rounded-full border border-lf-orange/35 bg-lf-orangeSoft px-2.5 py-0.5 text-[11px] font-semibold text-lf-orangeDark">
-                    {module.status}
-                  </span>
-                </div>
-                <p className="prose-lf text-sm text-lf-slate">
-                  {module.summary}
-                </p>
-                <div className="mt-auto border-t border-lf-line pt-3 text-sm font-semibold text-lf-navy group-hover:text-lf-orange">
-                  Open module
-                  <span aria-hidden className="ml-1">
-                    &rarr;
-                  </span>
-                </div>
-              </Link>
+                {item}
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="container-page py-16">
-        <SectionHeading
-          eyebrow="Live-ready posture"
-          title="Built as a working site shell, not a fake product."
-          description="The platform is now navigable and demoable, while every non-wired capability is clearly marked as planned, draft only, requires source content, requires sandbox wiring, or requires human review."
-        />
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <article className="card">
-            <h3 className="h-display text-lg">Static where appropriate</h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Creator Network, Audience Quality Panel, and AI Assistants are
-              visible without claiming auth, feeds, model calls, or publishing.
-            </p>
-          </article>
-          <article className="card">
-            <h3 className="h-display text-lg">Training routes preserved</h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              The existing 101 to 601 pages, Apex pages, scripts, roleplays,
-              prompts, audio training, and trackers remain reachable.
-            </p>
-          </article>
-          <article className="card">
-            <h3 className="h-display text-lg">Review gates visible</h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Draft outputs, marketing/recruiting materials, support routing,
-              and compliance-sensitive work point back to human review.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="container-page pb-20">
+      <section className="container-page py-14">
         <ComplianceCallout title="Internal use only" variant="default">
           <p>
             This platform is for Loan Factory internal training and LO
