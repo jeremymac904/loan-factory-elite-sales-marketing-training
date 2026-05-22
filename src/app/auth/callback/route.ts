@@ -48,6 +48,11 @@ export async function GET(request: NextRequest) {
   );
 
   if (exchangeError) {
+    console.error("Supabase auth code exchange failed", {
+      message: exchangeError.message,
+      name: exchangeError.name,
+      status: exchangeError.status,
+    });
     redirect("/login/?error=auth-callback");
   }
 
