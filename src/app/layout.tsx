@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import RoleBanner from "@/components/RoleBanner";
+import HeyGenVideoWidget from "@/components/HeyGenVideoWidget";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <HeyGenVideoWidget />
       </body>
     </html>
   );
