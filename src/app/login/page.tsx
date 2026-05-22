@@ -45,9 +45,14 @@ export default function LoginPage() {
               <li>Unapproved users land on Access Pending.</li>
               <li>User management stays in Supabase during beta.</li>
             </ul>
-            <Link href="/" className="btn-secondary mt-5">
-              Back to home
-            </Link>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href="/" className="btn-secondary">
+                Back to home
+              </Link>
+              <Link href="/auth/status/" className="btn-secondary">
+                Check auth status
+              </Link>
+            </div>
           </div>
         </div>
       </section>

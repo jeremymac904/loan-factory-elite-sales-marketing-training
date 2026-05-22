@@ -48,3 +48,8 @@ In Supabase Auth settings:
 6. The callback checks `approved_users` with the server-only service role key.
 7. Approved users get a synced `profiles` row with status `approved`.
 8. Unapproved users land on `/access-pending/`.
+
+## Testing
+
+Use `/auth/status/` after signing in. It compares server session state and
+browser session state without printing token values or API keys.
