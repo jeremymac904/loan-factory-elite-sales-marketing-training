@@ -3,6 +3,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
+import BrandImage from "@/components/BrandImage";
+import { brandAssets } from "@/data/brandAssets";
 import {
   faceGramGroups,
   faceGramPosts,
@@ -42,8 +44,11 @@ export default function FaceGramExperience() {
     <>
       <section className="border-b border-lf-line bg-white">
         <div className="mx-auto flex w-full max-w-[1480px] items-center gap-3 px-4 py-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lf-orange text-base font-black text-white">
-            F
+          <div className="flex shrink-0 rounded-xl bg-white p-1">
+            <BrandImage
+              asset={brandAssets.facegram}
+              heightClass="h-10"
+            />
           </div>
           <div className="min-w-0">
             <h1 className="font-display text-xl font-semibold leading-6 text-lf-navy">
@@ -64,8 +69,11 @@ export default function FaceGramExperience() {
           <aside className="hidden space-y-3 lg:block">
             <div className="rounded-2xl bg-white p-4 shadow-card">
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-lf-orange text-lg font-black text-white">
-                  F
+                <div className="flex shrink-0 rounded-xl bg-white p-1">
+                  <BrandImage
+                    asset={brandAssets.facegram}
+                    heightClass="h-11"
+                  />
                 </div>
                 <div>
                   <h2 className="font-display text-lg font-semibold text-lf-navy">

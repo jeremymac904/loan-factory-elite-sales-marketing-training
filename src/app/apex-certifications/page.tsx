@@ -4,7 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ComplianceCallout from "@/components/ComplianceCallout";
 import { apexCertifications, apexCertificationCompliance } from "@/data/apex";
 
-export const metadata = { title: "Apex Certifications" };
+export const metadata = { title: "Coaching Certifications" };
 
 const howToEarnSteps = [
   {
@@ -17,7 +17,7 @@ const howToEarnSteps = [
   },
   {
     step: "3. Share it the right way",
-    body: "Use the approved Apex certification language. Any borrower facing, Realtor facing, or public claim still goes through Loan Factory compliance review.",
+    body: "Use the approved coaching certification language. Any borrower facing, Realtor facing, or public claim still goes through Loan Factory compliance review.",
   },
 ];
 
@@ -25,12 +25,12 @@ export default function ApexCertificationsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Apex Credentials"
+        eyebrow="Coaching Credentials"
         title="Certifications that signal you have done the work."
         body={
           <p>
             Certifications build credibility and differentiate you in the
-            market. Apex certifications are awarded for completing the work,
+            market. Coaching certifications are awarded for completing the work,
             not for paying a fee.
           </p>
         }
@@ -41,7 +41,7 @@ export default function ApexCertificationsPage() {
         <SectionHeading
           eyebrow="The four certifications"
           title="Build credibility through approved credentials."
-          description="Each Apex certification represents approved work inside the Apex Advisor coaching platform. Specialty tracks are Pro-level and launch only after review."
+          description="Each coaching certification represents approved work inside LO Mastery or Loan Factory Alliance. Specialty tracks are Alliance-level and launch only after review."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {apexCertifications.map((cert) => (
@@ -90,10 +90,10 @@ export default function ApexCertificationsPage() {
         />
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/apex-advisor/" className="btn-primary">
-            Join Apex Advisor
+            Join LO Mastery
           </Link>
           <Link href="/apex-advisor-pro/" className="btn-secondary">
-            See Apex Advisor Pro
+            See Loan Factory Alliance
           </Link>
         </div>
       </section>

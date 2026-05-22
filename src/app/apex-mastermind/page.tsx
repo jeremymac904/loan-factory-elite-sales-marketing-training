@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import ComplianceCallout from "@/components/ComplianceCallout";
 
-export const metadata = { title: "Apex Mastermind" };
+export const metadata = { title: "Alliance Mastermind" };
 
 const callAgenda = [
   {
@@ -31,7 +31,7 @@ const callAgenda = [
 const communityValues = [
   {
     title: "Closed door",
-    body: "Pro members only. What gets shared in the mastermind stays in the mastermind.",
+    body: "Loan Factory Alliance members only. What gets shared in the mastermind stays in the mastermind.",
   },
   {
     title: "Bring the work",
@@ -51,19 +51,20 @@ export default function ApexMastermindPage() {
   return (
     <>
       <PageHero
-        eyebrow="Pro only"
-        title="The Apex Mastermind."
+        eyebrow="Alliance only"
+        title="The Alliance Mastermind."
         body={
           <p>
-            The Pro tier community where serious loan officers share work,
-            share wins, and hold each other to a higher standard. Monthly live
-            mastermind calls. A closed community. One commitment a month.
+            The Loan Factory Alliance community where serious loan officers
+            share work, share wins, and hold each other to a higher standard.
+            Monthly live mastermind calls. A closed community. One commitment a
+            month.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
       >
         <span className="inline-flex items-center gap-2 rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-          Apex Advisor Pro . $449/mo
+          Loan Factory Alliance . $449/mo
         </span>
       </PageHero>
 
@@ -71,7 +72,7 @@ export default function ApexMastermindPage() {
         <SectionHeading
           eyebrow="What it is"
           title="A mastermind, not a webinar."
-          description="The Apex Mastermind is a live coaching and peer community for Pro members. Smaller cohort, live coaching, real deals, real partners, real content."
+          description="The Alliance Mastermind is a live coaching and peer community for Loan Factory Alliance members. Smaller cohort, live coaching, real deals, real partners, real content."
         />
       </section>
 
@@ -123,14 +124,14 @@ export default function ApexMastermindPage() {
         <div className="container-page py-12">
           <SectionHeading
             eyebrow="Access"
-            title="Mastermind access is included in Apex Advisor Pro."
+            title="Mastermind access is included in Loan Factory Alliance."
           />
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/apex-launch-call/" className="btn-primary">
-              Go Pro with Apex Advisor Pro
+              Join Loan Factory Alliance
             </Link>
             <Link href="/apex-advisor-pro/" className="btn-secondary">
-              See the full Pro tier
+              See the full Alliance tier
             </Link>
           </div>
         </div>
@@ -139,7 +140,7 @@ export default function ApexMastermindPage() {
       <section className="container-page pb-20 pt-10">
         <ComplianceCallout title="Compliance review" variant="default">
           <p>
-            The Apex Mastermind is a coaching and community program. It is not
+            The Alliance Mastermind is a coaching and community program. It is not
             a guarantee of production, income, or business results. Anything
             created in or shared from the mastermind for borrowers, Realtors,
             or the public still requires Loan Factory compliance review before

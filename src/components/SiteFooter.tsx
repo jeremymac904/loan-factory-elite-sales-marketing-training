@@ -5,7 +5,7 @@ import { brandAssets } from "@/data/brandAssets";
 
 const footerLinks = [
   { href: "/", label: "Home" },
-  { href: "/apex-advisor/", label: "Apex Advisor" },
+  { href: "/apex-advisor/", label: "Coaching" },
   { href: "/sales-training/", label: "Sales & Marketing" },
   { href: "/ai-training/", label: "AI Training" },
   { href: "/creator-network/", label: "FaceGram" },

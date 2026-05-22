@@ -76,7 +76,7 @@ const assistants: Assistant[] = [
     starters: ["Explain the next workflow step", "Make a checklist", "Turn this into a training note"],
   },
   {
-    name: "AI Training Coach",
+    name: "AI Advantage Coach",
     description: "Teaches practical AI habits, prompt structure, and review discipline.",
     starters: ["Improve my prompt", "Create practice drills", "Build a 15-minute AI exercise"],
   },
@@ -96,9 +96,10 @@ const assistants: Assistant[] = [
     starters: ["Flag risk in this draft", "Make this more review-ready", "Find unsupported claims"],
   },
   {
-    name: "Apex Advisor Coach",
-    description: "Supports Apex Advisor coaching rhythm, trackers, scorecards, and member resources.",
-    starters: ["Plan my Apex week", "Review my scorecard notes", "Prepare for Power Hour"],
+    name: "LO Mastery Coach",
+    description:
+      "Supports LO Mastery coaching rhythm, trackers, scorecards, and member resources.",
+    starters: ["Plan my coaching week", "Review my scorecard notes", "Prepare for Power Hour"],
   },
   {
     name: "Elite Sales & Marketing Coach",
@@ -131,7 +132,7 @@ const sourceCards = [
     href: "/sales-training/",
   },
   {
-    title: "Apex Advisor",
+    title: "LO Mastery",
     type: "Coaching resources",
     excerpt: "Coaching rhythm, scorecards, trackers, leaderboards, and member resources.",
     href: "/apex-advisor/",

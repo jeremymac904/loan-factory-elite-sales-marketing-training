@@ -1,19 +1,21 @@
 import Link from "next/link";
+import BrandImage from "@/components/BrandImage";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import ComplianceCallout from "@/components/ComplianceCallout";
+import { brandAssets } from "@/data/brandAssets";
 import { apexTiers } from "@/data/apex";
 
-export const metadata = { title: "Apex Advisor Pro" };
+export const metadata = { title: "Loan Factory Alliance" };
 
 const proBenefits = [
   {
     title: "Weekly coaching calls",
-    body: "A tighter weekly coaching rhythm for Pro members who want more frequent accountability and review.",
+    body: "A tighter weekly coaching rhythm for Alliance members who want more frequent accountability and review.",
   },
   {
     title: "Daily Breakfast Club call",
-    body: "A daily Pro call for rhythm, accountability, mindset, and execution planning.",
+    body: "A daily Alliance call for rhythm, accountability, mindset, and execution planning.",
   },
   {
     title: "More specific daily coaching email",
@@ -29,7 +31,7 @@ const proBenefits = [
   },
   {
     title: "Advanced mastermind access",
-    body: "Deeper peer review, Pro leaderboard visibility, and advanced mastermind access.",
+    body: "Deeper peer review, Alliance leaderboard visibility, and advanced mastermind access.",
   },
 ];
 
@@ -38,11 +40,11 @@ export default function ApexAdvisorProPage() {
   return (
     <>
       <PageHero
-        eyebrow="Tier 2 . Apex Advisor Pro"
+        eyebrow="Tier 2 . Loan Factory Alliance"
         title="A deeper coaching rhythm for serious producers."
         body={
           <p>
-            Apex Advisor Pro includes everything in Apex Advisor, then adds
+            Loan Factory Alliance includes everything in LO Mastery, then adds
             weekly coaching calls, the daily Breakfast Club call, more specific
             coaching email, advanced certifications, priority accountability,
             and deeper mastermind access.
@@ -50,6 +52,12 @@ export default function ApexAdvisorProPage() {
         }
         backgroundImage="/media/dark-hero-background.png"
       >
+        <div className="mb-6 inline-flex rounded-xl bg-white/95 p-2 shadow-card">
+          <BrandImage
+            asset={brandAssets["loan-factory-alliance"]}
+            heightClass="h-16 md:h-20"
+          />
+        </div>
         <div className="flex flex-wrap items-center gap-3">
           <Link href={pro.ctaHref} className="btn-primary">
             {pro.ctaLabel}
@@ -58,7 +66,7 @@ export default function ApexAdvisorProPage() {
             href="/apex-advisor/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white"
           >
-            Compare with Apex Advisor
+            Compare with LO Mastery
           </Link>
           <span className="rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-white">
             {pro.price} {pro.priceSuffix}
@@ -69,8 +77,8 @@ export default function ApexAdvisorProPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="What you get"
-          title="Everything in Apex Advisor, plus six Pro upgrades."
-          description="Pro adds a stronger weekly coaching cadence, Breakfast Club, advanced certifications, priority accountability, the Pro leaderboard, and deeper mastermind access."
+          title="Everything in LO Mastery, plus six Alliance upgrades."
+          description="Alliance adds a stronger weekly coaching cadence, Breakfast Club, advanced certifications, priority accountability, the Alliance leaderboard, and deeper mastermind access."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {proBenefits.map((b) => (
@@ -98,7 +106,7 @@ export default function ApexAdvisorProPage() {
               {pro.ctaLabel}
             </Link>
             <Link href="/apex-mastermind/" className="btn-secondary">
-              See the Apex Mastermind
+              See the Alliance Mastermind
             </Link>
           </div>
         </div>
@@ -115,9 +123,9 @@ export default function ApexAdvisorProPage() {
       <section className="container-page pb-20">
         <ComplianceCallout title="Compliance review" variant="default">
           <p>
-            Pro tier benefits and live sessions are training. They are not a
+            Alliance benefits and live sessions are training. They are not a
             guarantee of production, income, or business results. Anything
-            created for borrowers, Realtors, or the public from Pro sessions
+            created for borrowers, Realtors, or the public from Alliance sessions
             still requires Loan Factory compliance review before use.
           </p>
         </ComplianceCallout>

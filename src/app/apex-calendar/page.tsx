@@ -2,40 +2,40 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 
-export const metadata = { title: "Apex Calendar" };
+export const metadata = { title: "Coaching Calendar" };
 
 type SampleEvent = {
   date: string;
   title: string;
   type: "Group Coaching" | "Mastermind" | "Breakfast Club" | "Workshop";
-  tier: "All Members" | "Pro Only";
+  tier: "All Members" | "Alliance Only";
   description: string;
 };
 
 const sampleEvents: SampleEvent[] = [
   {
     date: "Biweekly . Time TBD",
-    title: "Apex Advisor Group Coaching",
+    title: "LO Mastery Group Coaching",
     type: "Group Coaching",
     tier: "All Members",
     description:
-      "Biweekly group coaching for Apex Advisor members. Bring a deal, partner question, content question, or accountability item.",
+      "Biweekly group coaching for LO Mastery members. Bring a deal, partner question, content question, or accountability item.",
   },
   {
     date: "Weekly . Time TBD",
-    title: "Apex Advisor Pro Coaching Call",
+    title: "Loan Factory Alliance Coaching Call",
     type: "Mastermind",
-    tier: "Pro Only",
+    tier: "Alliance Only",
     description:
-      "Weekly Pro coaching call for deeper accountability, deal flow review, and production rhythm.",
+      "Weekly Alliance coaching call for deeper accountability, deal flow review, and production rhythm.",
   },
   {
     date: "Daily . Time TBD",
     title: "Breakfast Club",
     type: "Breakfast Club",
-    tier: "Pro Only",
+    tier: "Alliance Only",
     description:
-      "Daily Pro rhythm call for focus, mindset, accountability, and execution planning.",
+      "Daily Alliance rhythm call for focus, mindset, accountability, and execution planning.",
   },
   {
     date: "Quarterly . Date TBD",
@@ -52,12 +52,12 @@ export default function ApexCalendarPage() {
     <>
       <PageHero
         eyebrow="Live events and sessions"
-        title="Apex Calendar."
+        title="Coaching Calendar."
         body={
           <p>
-            Biweekly group coaching for Apex Advisor members. Weekly coaching
-            and daily Breakfast Club for Pro members. The calendar below
-            previews the coaching cadence.
+            Biweekly group coaching for LO Mastery members. Weekly coaching
+            and daily Breakfast Club for Loan Factory Alliance members. The
+            calendar below previews the coaching cadence.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -67,7 +67,7 @@ export default function ApexCalendarPage() {
         <SectionHeading
           eyebrow="Cadence"
           title="What to expect each month."
-          description="Specific dates and times are confirmed through the Apex Advisor communication channel."
+          description="Specific dates and times are confirmed through the coaching communication channel."
         />
         <div className="mt-8 space-y-5">
           {sampleEvents.map((e) => (
@@ -95,14 +95,14 @@ export default function ApexCalendarPage() {
           <SectionHeading
             eyebrow="How to attend"
             title="Live events run inside the member area."
-            description="Sign in to your Apex Member Area for the next event link, the replay archive, and your RSVP."
+            description="Sign in to your coaching member area for the next event link, the replay archive, and your RSVP."
           />
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/apex-member-area/" className="btn-primary">
               Open the Member Area
             </Link>
             <Link href="/apex-advisor-pro/" className="btn-secondary">
-              See Pro tier benefits
+              See Alliance benefits
             </Link>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function SalesTrainingPage() {
         <SectionHeading
           eyebrow="101 to 601"
           title="The six-part Sales & Marketing training series"
-          description="This is the 101 through 601 training series for Loan Factory LOs. It is training content, scripts, prompts, roleplays, trackers, and resources. It is separate from Apex Advisor paid coaching."
+          description="This is the 101 through 601 training series for Loan Factory LOs. It is training content, scripts, prompts, roleplays, trackers, and resources. It is separate from paid coaching."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {modules.map((item) => (

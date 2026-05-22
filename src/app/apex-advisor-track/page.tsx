@@ -39,7 +39,7 @@ export default function ApexAdvisorTrackPage() {
         <SectionHeading
           eyebrow="What this track does"
           title="One installable behavior per week, for six weeks."
-          description="The Sales & Marketing training series installs one specific behavior per module. It is training content, not the Apex Advisor paid coaching membership."
+          description="The Sales & Marketing training series installs one specific behavior per module. It is training content, not the paid coaching membership."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           <div className="card">

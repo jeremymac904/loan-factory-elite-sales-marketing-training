@@ -1,8 +1,10 @@
 import Link from "next/link";
+import BrandImage from "@/components/BrandImage";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
+import { brandAssets } from "@/data/brandAssets";
 
-export const metadata = { title: "Apex Member Area" };
+export const metadata = { title: "Coaching Member Area" };
 
 const dashboardCards = [
   {
@@ -73,7 +75,7 @@ const memberAreas = [
   },
   {
     title: "Leaderboard",
-    body: "See Apex Advisor and Apex Advisor Pro accountability categories and recognition areas.",
+    body: "See LO Mastery and Loan Factory Alliance accountability categories and recognition areas.",
     href: "/apex-leaderboards/",
   },
   {
@@ -89,12 +91,12 @@ const memberAreas = [
 ];
 
 const coachingRhythm = [
-  "Biweekly Apex Advisor group coaching calls",
+  "Biweekly LO Mastery group coaching calls",
   "Daily Power Hour Smile and Dial lunch-themed call",
   "Daily motivational coaching email",
-  "Weekly Apex Advisor Pro coaching calls",
-  "Daily Breakfast Club call for Pro members",
-  "Priority accountability rhythm for Pro members",
+  "Weekly Loan Factory Alliance coaching calls",
+  "Daily Breakfast Club call for Alliance members",
+  "Priority accountability rhythm for Alliance members",
 ];
 
 const resourceGroups = [
@@ -139,16 +141,30 @@ export default function ApexMemberAreaPage() {
   return (
     <>
       <PageHero
-        title="Apex Member Area"
+        title="Coaching Member Area"
         body={
           <p>
-            The Apex Advisor member home for paid coaching resources, daily
-            rhythm, member recordings, scripts, trackers, scorecards,
-            certifications, and leaderboards.
+            The paid coaching member home for LO Mastery and Loan Factory
+            Alliance resources, daily rhythm, member recordings, scripts,
+            trackers, scorecards, certifications, and leaderboards.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
       >
+        <div className="mb-6 flex flex-wrap items-center gap-3">
+          <div className="inline-flex rounded-xl bg-white/95 p-2 shadow-card">
+            <BrandImage
+              asset={brandAssets["lo-mastery"]}
+              heightClass="h-14 md:h-16"
+            />
+          </div>
+          <div className="inline-flex rounded-xl bg-white/95 p-2 shadow-card">
+            <BrandImage
+              asset={brandAssets["loan-factory-alliance"]}
+              heightClass="h-14 md:h-16"
+            />
+          </div>
+        </div>
         <div className="flex flex-wrap gap-3">
           <Link href="/login/" className="btn-primary">
             Sign In
@@ -157,7 +173,7 @@ export default function ApexMemberAreaPage() {
             href="/apex-advisor/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
-            View Apex Tiers
+            View Coaching Tiers
           </Link>
         </div>
       </PageHero>
@@ -183,8 +199,8 @@ export default function ApexMemberAreaPage() {
       <section className="bg-lf-mist">
         <div className="container-page py-14">
           <SectionHeading
-            title="Apex member areas"
-            description="Each area supports Apex Advisor paid coaching. Sales & Marketing 101-601 remains its own training series."
+            title="Coaching member areas"
+            description="Each area supports paid coaching. Sales & Marketing 101-601 remains its own training series."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {memberAreas.map((area) => (
@@ -207,7 +223,7 @@ export default function ApexMemberAreaPage() {
           <div>
             <SectionHeading
               title="Coaching Rhythm"
-              description="Apex Advisor gives members a recurring coaching cadence with daily and weekly accountability built around action."
+              description="LO Mastery gives members a recurring coaching cadence with daily and weekly accountability built around action."
             />
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/apex-calendar/" className="btn-primary">
@@ -238,7 +254,7 @@ export default function ApexMemberAreaPage() {
               Member Resources
             </h2>
             <p className="mt-3 text-base leading-7 text-white/75">
-              Apex members can work from recordings, scripts, documents,
+              Coaching members can work from recordings, scripts, documents,
               handouts, tracker links, and favorite training references.
             </p>
           </div>
@@ -294,19 +310,20 @@ export default function ApexMemberAreaPage() {
         <div className="rounded-2xl border border-lf-line bg-lf-orangeSoft p-6 shadow-card">
           <h2 className="h-display text-2xl">Membership path</h2>
           <p className="prose-lf mt-2 max-w-3xl text-sm text-lf-slate">
-            Apex Advisor is the paid coaching platform. Apex Advisor includes
-            biweekly group coaching, Power Hour, member resources, daily
-            motivational email, Certified Mortgage Advisor designation, and
-            accountability tools. Apex Advisor Pro adds weekly coaching, Daily
-            Breakfast Club, advanced certifications, deeper coaching rhythm,
-            Pro leaderboard, and advanced mastermind access.
+            LO Mastery is the Level I paid coaching platform. LO Mastery
+            includes biweekly group coaching, Power Hour, member resources,
+            daily motivational email, Certified Mortgage Advisor designation,
+            and accountability tools. Loan Factory Alliance adds weekly
+            coaching, Daily Breakfast Club, advanced certifications, deeper
+            coaching rhythm, Alliance leaderboard, and advanced mastermind
+            access.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/apex-advisor/" className="btn-primary">
               Compare Tiers
             </Link>
             <Link href="/apex-advisor-pro/" className="btn-secondary">
-              View Apex Advisor Pro
+              View Loan Factory Alliance
             </Link>
           </div>
         </div>

@@ -207,7 +207,7 @@ export default function RecommendedChannelsPage() {
       <section className="container-page pb-20">
         <ComplianceCallout title="Compliance review" variant="default">
           <p>
-            Apex Advisor lists these channels for training reference only. Any
+            Paid coaching lists these channels for training reference only. Any
             borrower facing, Realtor facing, or public content you create from
             material on these channels must be reviewed by Loan Factory
             compliance before use.

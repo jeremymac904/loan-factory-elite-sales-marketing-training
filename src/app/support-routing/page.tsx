@@ -17,7 +17,7 @@ const supportSections = [
   {
     title: "Corporate Coaches",
     description:
-      "Coaching rhythm, accountability questions, Apex Advisor support, and loan officer development.",
+      "Coaching rhythm, accountability questions, LO Mastery support, and loan officer development.",
     href: "#corporate-coaches",
     cta: "View corporate coaches",
   },

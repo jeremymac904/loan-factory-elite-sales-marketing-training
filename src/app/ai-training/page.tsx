@@ -1,6 +1,8 @@
 import Link from "next/link";
+import BrandImage from "@/components/BrandImage";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
+import { brandAssets } from "@/data/brandAssets";
 import {
   aiTrainingMicroLessonQueue,
   aiTrainingPaths,
@@ -9,7 +11,7 @@ import {
   duplicateAiTrainingMarkdownFiles,
 } from "@/data/aiTrainingVideos";
 
-export const metadata = { title: "AI Training" };
+export const metadata = { title: "AI Advantage" };
 
 const driveResources = [
   {
@@ -63,17 +65,24 @@ export default function AITrainingPage() {
   return (
     <>
       <PageHero
-        title="AI Training"
+        title="AI Advantage"
         body={
           <p>
-            Practical AI training for Loan Factory loan officers: Gemini,
-            NotebookLM, Google Workspace, Google Business Profile, AI Twins,
-            content automation, and safe AI workflows.
+            AI Advantage is the practical AI Training path for Loan Factory
+            loan officers: Gemini, NotebookLM, Google Workspace, Google
+            Business Profile, AI Twins, content automation, and safe AI
+            workflows.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
         overlayOpacity={0.68}
       >
+        <div className="mb-6 inline-flex rounded-xl bg-white/95 p-3 shadow-card">
+          <BrandImage
+            asset={brandAssets["ai-advantage"]}
+            heightClass="h-16 md:h-20"
+          />
+        </div>
         <div className="flex flex-wrap gap-3">
           <a href="#start-here" className="btn-primary">
             Start here
@@ -98,7 +107,7 @@ export default function AITrainingPage() {
           <div>
             <SectionHeading
               eyebrow="Start here"
-              title="The first five AI lessons every LO should watch."
+              title="The first five AI Advantage lessons every LO should watch."
               description="This path pulls the strongest beginner clips from the timestamp breakdowns so a new loan officer knows exactly where to begin."
             />
             <div className="mt-6 grid gap-3">
@@ -143,7 +152,7 @@ export default function AITrainingPage() {
         <div className="container-page py-14">
           <SectionHeading
             eyebrow="Training paths"
-            title="Nine practical AI paths from the timestamp breakdowns"
+            title="Nine practical AI Advantage paths from the timestamp breakdowns"
             description="Each path maps to real source clips. No video is embedded here; this is the training structure and editing command center."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">

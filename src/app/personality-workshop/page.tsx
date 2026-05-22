@@ -59,7 +59,7 @@ export default function PersonalityWorkshopPage() {
             href="/apex-advisor/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white"
           >
-            See Apex tiers
+            See coaching tiers
           </Link>
         </div>
       </PageHero>
@@ -113,15 +113,15 @@ export default function PersonalityWorkshopPage() {
         <div className="container-page py-12">
           <SectionHeading
             eyebrow="Who it is for"
-            title="Every Apex Advisor member."
-            description="The Personality Workshop is included with both Apex tiers. New loan officers use it to build a foundation. Experienced producers use it to sharpen partner work and content."
+            title="Every coaching member."
+            description="The Personality Workshop is included with both coaching tiers. New loan officers use it to build a foundation. Experienced producers use it to sharpen partner work and content."
           />
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/apex-launch-call/" className="btn-primary">
               Join the Workshop
             </Link>
             <Link href="/apex-advisor-track/" className="btn-secondary">
-              See the Apex Track
+              See the Sales &amp; Marketing Track
             </Link>
           </div>
         </div>

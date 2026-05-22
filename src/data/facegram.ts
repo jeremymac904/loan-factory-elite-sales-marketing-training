@@ -89,17 +89,17 @@ export const faceGramGroups: FaceGramGroup[] = [
   },
   {
     slug: "apex-advisor",
-    name: "Apex Advisor",
+    name: "LO Mastery",
     visibility: "Member group",
     memberCount: "491 members",
     category: "Coaching",
-    coverTitle: "Apex Advisor",
+    coverTitle: "LO Mastery",
     coverSubtitle: "Coaching rhythm, scorecards, and accountability",
     description:
-      "A group for Apex Advisor members to discuss coaching takeaways, scorecards, trackers, and daily execution.",
+      "A group for LO Mastery members to discuss coaching takeaways, scorecards, trackers, and daily execution.",
     rules: [
       "Keep coaching examples constructive.",
-      "Do not blend Apex with the 101-601 training series.",
+      "Do not blend paid coaching with the 101-601 training series.",
       "Share wins and questions that help other members execute.",
     ],
   },
@@ -116,16 +116,16 @@ export const faceGramGroups: FaceGramGroup[] = [
     rules: [
       "Keep posts tied to training practice.",
       "Ask for feedback on scripts, roleplays, and tracker habits.",
-      "Use the 101-601 series for training, not Apex paid coaching.",
+      "Use the 101-601 series for training, not paid coaching.",
     ],
   },
   {
     slug: "ai-training",
-    name: "AI Training",
+    name: "AI Advantage",
     visibility: "Internal group",
     memberCount: "405 members",
     category: "AI",
-    coverTitle: "AI Training",
+    coverTitle: "AI Advantage",
     coverSubtitle: "Prompt practice and safer draft review",
     description:
       "A group for prompt practice, Gemini Gem AI Twin setup, NotebookLM lessons, and AI workflow questions.",
@@ -182,7 +182,7 @@ export const faceGramPosts: FaceGramPost[] = [
     author: "Edward Arvizo",
     role: "Corporate Coach",
     avatar: "/team/edward-arvizo.png",
-    group: "Apex Advisor",
+    group: "LO Mastery",
     time: "This week",
     title: "Power Hour win",
     body:

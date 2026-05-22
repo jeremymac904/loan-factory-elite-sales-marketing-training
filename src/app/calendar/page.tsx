@@ -8,7 +8,7 @@ export const metadata = { title: "Calendar" };
 const eventTypes = [
   "Power Hour",
   "Breakfast Club",
-  "Apex Mastermind",
+  "Alliance Mastermind",
   "101 to 601 training sessions",
   "Friday tracker review",
   "Certification review windows",
@@ -37,7 +37,7 @@ export default function CalendarPage() {
           ))}
         </div>
         <Link href="/apex-calendar/" className="btn-secondary mt-8">
-          Open current Apex calendar
+          Open current coaching calendar
         </Link>
       </section>
     </PlatformModulePage>

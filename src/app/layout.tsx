@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Loan Factory LO Development",
   },
   description:
-    "Internal Loan Factory LO Development site for training, Apex Advisor, AI enablement, FaceGram, resources, and support routing.",
+    "Internal Loan Factory LO Development site for coaching, Sales & Marketing training, AI Advantage, FaceGram, resources, and support routing.",
   robots: { index: false, follow: false },
 };
 

@@ -5,7 +5,7 @@ import { brandAssets } from "@/data/brandAssets";
 
 const primaryNav = [
   { label: "Home", href: "/" },
-  { label: "Apex Advisor", href: "/apex-advisor/" },
+  { label: "Coaching", href: "/apex-advisor/" },
   { label: "Sales & Marketing", href: "/sales-training/" },
   { label: "AI Training", href: "/ai-training/" },
   { label: "FaceGram", href: "/creator-network/" },

@@ -1,6 +1,8 @@
 export type ApexTier = {
   id: "advisor" | "pro";
   name: string;
+  shortName: string;
+  logoAssetId: "lo-mastery" | "loan-factory-alliance";
   price: string;
   priceSuffix: string;
   tagline: string;
@@ -15,12 +17,14 @@ export type ApexTier = {
 export const apexTiers: ApexTier[] = [
   {
     id: "advisor",
-    name: "Apex Advisor",
+    name: "Loan Factory LO Mastery Coaching",
+    shortName: "LO Mastery",
+    logoAssetId: "lo-mastery",
     price: "$249",
     priceSuffix: "per month",
     tagline: "The foundation tier for serious loan officers.",
     href: "/apex-advisor/",
-    ctaLabel: "Join Apex Advisor",
+    ctaLabel: "Join LO Mastery",
     ctaHref: "/apex-launch-call/",
     description:
       "A paid coaching membership with biweekly group coaching, the daily Power Hour Smile and Dial call, daily motivational coaching email, member resources, recordings, scripts, documents, handouts, trackers, scorecards, and leaderboard access.",
@@ -36,25 +40,27 @@ export const apexTiers: ApexTier[] = [
       "Scripts, documents, and PDF handouts",
       "Greatness Tracker, Deal Flow Tracker, and Referral Partner Tracker",
       "Advisor Scorecard",
-      "Apex Advisor leaderboard",
+      "LO Mastery leaderboard",
       "Favorite YouTube channel library",
     ],
   },
   {
     id: "pro",
-    name: "Apex Advisor Pro",
+    name: "Loan Factory Alliance",
+    shortName: "Loan Factory Alliance",
+    logoAssetId: "loan-factory-alliance",
     price: "$449",
     priceSuffix: "per month",
-    tagline: "Everything in Apex Advisor plus live coaching and community.",
+    tagline: "Everything in LO Mastery plus live coaching and community.",
     href: "/apex-advisor-pro/",
-    ctaLabel: "Go Pro with Apex Advisor Pro",
+    ctaLabel: "Join Loan Factory Alliance",
     ctaHref: "/apex-launch-call/",
     description:
-      "Everything in Apex Advisor plus weekly coaching calls, the daily Breakfast Club call, a more specific daily coaching email, advanced certifications, priority accountability, the Pro leaderboard, and deeper mastermind access.",
+      "Everything in LO Mastery plus weekly coaching calls, the daily Breakfast Club call, a more specific daily coaching email, advanced certifications, priority accountability, the Alliance leaderboard, and deeper mastermind access.",
     bestFor:
       "Loan officers who want a tighter coaching cadence, stronger accountability, and advanced specialty-track development.",
     includes: [
-      "Everything in Apex Advisor",
+      "Everything in LO Mastery",
       "Weekly coaching calls",
       "Daily Breakfast Club call",
       "More specific daily coaching email",
@@ -63,7 +69,7 @@ export const apexTiers: ApexTier[] = [
       "Investor Specialist",
       "Future specialty tracks (planned)",
       "Priority accountability",
-      "Apex Advisor Pro leaderboard",
+      "Loan Factory Alliance leaderboard",
       "Advanced mastermind access",
       "Deeper coaching rhythm",
     ],
@@ -74,10 +80,10 @@ export const apexCertifications = [
   {
     id: "aclo",
     name: "Certified Mortgage Advisor",
-    requirement: "Complete the Apex Advisor certification requirements.",
+    requirement: "Complete the LO Mastery certification requirements.",
     summary:
-      "The core Apex Advisor designation for members who complete the required training and assessment work.",
-    eligibleTiers: ["Apex Advisor", "Apex Advisor Pro"],
+      "The core LO Mastery designation for members who complete the required training and assessment work.",
+    eligibleTiers: ["LO Mastery", "Loan Factory Alliance"],
   },
   {
     id: "military-housing-specialist",
@@ -85,8 +91,8 @@ export const apexCertifications = [
     requirement:
       "Complete the approved Military Housing Specialist requirements.",
     summary:
-      "Advanced Pro specialty track for serving military housing scenarios after the track is approved.",
-    eligibleTiers: ["Apex Advisor Pro"],
+      "Advanced Alliance specialty track for serving military housing scenarios after the track is approved.",
+    eligibleTiers: ["Loan Factory Alliance"],
   },
   {
     id: "investor-specialist",
@@ -94,16 +100,16 @@ export const apexCertifications = [
     requirement:
       "Complete the approved Investor Specialist requirements.",
     summary:
-      "Advanced Pro specialty track for investor-focused scenarios after the track is approved.",
-    eligibleTiers: ["Apex Advisor Pro"],
+      "Advanced Alliance specialty track for investor-focused scenarios after the track is approved.",
+    eligibleTiers: ["Loan Factory Alliance"],
   },
   {
     id: "future-specialty-tracks",
     name: "Future Specialty Tracks",
     requirement: "Planned. Jeremy approval required before launch.",
     summary:
-      "Future Pro specialty tracks can be added after the content, review process, and approval language are confirmed.",
-    eligibleTiers: ["Apex Advisor Pro"],
+      "Future Alliance specialty tracks can be added after the content, review process, and approval language are confirmed.",
+    eligibleTiers: ["Loan Factory Alliance"],
   },
 ];
 

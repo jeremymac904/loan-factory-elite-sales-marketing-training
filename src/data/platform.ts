@@ -30,13 +30,13 @@ export type NavGroup = {
 export const platformModules: PlatformModule[] = [
   {
     id: "apex-advisor",
-    title: "Apex Advisor",
-    shortTitle: "Apex Advisor",
+    title: "Coaching",
+    shortTitle: "Coaching",
     href: "/apex-advisor/",
     status: "Live foundation",
     summary:
-      "The paid coaching platform for Loan Factory loan officers who want a stronger daily rhythm, accountability, resources, and scorecards.",
-    whoFor: ["Producing LOs", "Apex members", "Team leaders"],
+      "The paid coaching platform for Loan Factory loan officers who want a stronger daily rhythm, accountability, resources, and scorecards through LO Mastery and Loan Factory Alliance.",
+    whoFor: ["Producing LOs", "Coaching members", "Team leaders"],
     tools: [
       "Biweekly group coaching",
       "Power Hour Smile and Dial",
@@ -54,11 +54,11 @@ export const platformModules: PlatformModule[] = [
       "Leaderboards",
     ],
     currentStatus:
-      "Core Apex pages exist and are positioned as paid coaching, not the 101 to 601 training series.",
+      "Core coaching pages exist and are positioned as paid coaching, not the 101 to 601 training series.",
     nextAction:
-      "Review Apex copy with Jeremy and marketing before any public or recruiting use.",
+      "Review coaching copy with Jeremy and marketing before any public or recruiting use.",
     connections: [
-      "Apex members can use Sales & Marketing training as a resource.",
+      "Coaching members can use Sales & Marketing training as a resource.",
       "AI Assistants can help prepare draft coaching materials.",
       "Wins and examples can be shared inside FaceGram.",
     ],
@@ -92,15 +92,15 @@ export const platformModules: PlatformModule[] = [
     nextAction:
       "Add route aliases under /sales-training/[level] after Jeremy confirms the final URL pattern.",
     connections: [
-      "Separate from Apex Advisor paid coaching.",
+      "Separate from paid coaching.",
       "Feeds the Training Library.",
       "Gives AI Assistants approved source material.",
     ],
   },
   {
     id: "ai-training",
-    title: "AI Training",
-    shortTitle: "AI Training",
+    title: "AI Advantage",
+    shortTitle: "AI Advantage",
     href: "/ai-training/",
     status: "Experience preview",
     summary:
@@ -303,21 +303,21 @@ export const platformModules: PlatformModule[] = [
     href: "/calendar/",
     status: "Planned",
     summary:
-      "A unified view of training sessions, coaching blocks, Apex events, Power Hour, Breakfast Club, review windows, and launch milestones.",
+      "A unified view of training sessions, coaching blocks, LO Mastery events, Power Hour, Breakfast Club, review windows, and launch milestones.",
     whoFor: ["LOs", "Team leaders", "Coaches", "LO Development"],
     tools: [
       "Event type map",
       "Schedule views",
       "Review cadence reminders",
-      "Apex event links",
+      "Coaching event links",
     ],
-    resources: ["Apex Calendar", "Training Path", "Team Leader Guide"],
+    resources: ["Coaching Calendar", "Training Path", "Team Leader Guide"],
     currentStatus:
-      "Calendar page organizes Apex and training cadence for planning.",
+      "Calendar page organizes coaching and training cadence for planning.",
     nextAction:
       "Confirm canonical calendar source and sandbox test policy before any calendar integration.",
     connections: [
-      "Surfaces Apex events.",
+      "Surfaces coaching events.",
       "Supports Friday tracker review.",
       "Connects team leader cadences to training modules.",
     ],
@@ -412,14 +412,14 @@ export const platformModules: PlatformModule[] = [
 export const platformNav: NavGroup[] = [
   { label: "Home", href: "/" },
   {
-    label: "Apex Advisor",
+    label: "Coaching",
     href: "/apex-advisor/",
     items: [
       { label: "Overview", href: "/apex-advisor/" },
-      { label: "Apex Track", href: "/apex-advisor-track/" },
-      { label: "Pro Membership", href: "/apex-advisor-pro/" },
+      { label: "Sales & Marketing Track", href: "/apex-advisor-track/" },
+      { label: "Alliance Membership", href: "/apex-advisor-pro/" },
       { label: "Certifications", href: "/apex-certifications/" },
-      { label: "Apex Calendar", href: "/apex-calendar/" },
+      { label: "Coaching Calendar", href: "/apex-calendar/" },
       { label: "Member Area", href: "/apex-member-area/" },
     ],
   },
@@ -483,11 +483,11 @@ export const aiAssistants = [
   "Underwriting Support AI",
   "Scenario Structuring Assistant",
   "TERA Workflow Helper",
-  "AI Training Coach",
+  "AI Advantage Coach",
   "Content Repurposing Assistant",
   "Team Leader Assistant",
   "Compliance/Risk Review Assistant",
-  "Apex Advisor Coach",
+  "LO Mastery Coach",
   "Sales & Marketing Coach",
   "1+1+1=5 Growth Assistant",
   "Content Coach",

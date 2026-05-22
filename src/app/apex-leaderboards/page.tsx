@@ -1,7 +1,7 @@
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 
-export const metadata = { title: "Apex Leaderboards" };
+export const metadata = { title: "Coaching Leaderboards" };
 
 type ProductionRow = {
   rank: number;
@@ -47,7 +47,7 @@ export default function ApexLeaderboardsPage() {
     <>
       <PageHero
         eyebrow="Recognition"
-        title="Apex Leaderboards."
+        title="Coaching Leaderboards."
         body={
           <p>
             See who is showing up and doing the work. Production rankings by
@@ -100,7 +100,7 @@ export default function ApexLeaderboardsPage() {
           <SectionHeading
             eyebrow="Activity"
             title="Scorecard and certifications leaderboard."
-            description="Ranked by Advisor Scorecard progress and approved Apex certifications earned."
+            description="Ranked by Advisor Scorecard progress and approved coaching certifications earned."
           />
           <div className="mt-6 overflow-x-auto">
             <table className="w-full min-w-[560px] border-collapse text-left">
@@ -155,7 +155,7 @@ export default function ApexLeaderboardsPage() {
 
       <section className="container-page pb-20">
         <p className="max-w-3xl text-sm leading-6 text-lf-slate">
-          Apex leaderboards support motivation and accountability. Results vary
+          Coaching leaderboards support motivation and accountability. Results vary
           by LO, market, and execution.
         </p>
       </section>

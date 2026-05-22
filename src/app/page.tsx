@@ -1,11 +1,15 @@
 import Link from "next/link";
+import BrandImage from "@/components/BrandImage";
+import { BrandAsset, brandAssets } from "@/data/brandAssets";
 
 const dashboardModules = [
   {
-    title: "Apex Advisor",
-    description: "Paid coaching, accountability, member resources, and Apex scorecards.",
+    title: "Coaching",
+    description:
+      "Paid coaching through LO Mastery and Loan Factory Alliance.",
     href: "/apex-advisor/",
     cta: "Explore",
+    logos: ["lo-mastery", "loan-factory-alliance"],
   },
   {
     title: "Sales & Marketing",
@@ -14,16 +18,19 @@ const dashboardModules = [
     cta: "Open",
   },
   {
-    title: "AI Training",
-    description: "Practical lessons for using AI tools to draft, practice, and improve.",
+    title: "AI Advantage",
+    description:
+      "Practical AI Training for drafting, practice, review, and safer workflows.",
     href: "/ai-training/",
     cta: "Open",
+    logos: ["ai-advantage"],
   },
   {
     title: "FaceGram",
     description: "The internal Loan Factory social feed for posts, groups, wins, and feedback.",
     href: "/creator-network/",
     cta: "Explore",
+    logos: ["facegram"],
   },
   {
     title: "AI Assistants",
@@ -64,7 +71,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/apex-advisor/" className="btn-primary">
-                Start with Apex Advisor
+                Explore Coaching
               </Link>
               <Link
                 href="/sales-training/"
@@ -99,6 +106,18 @@ export default function HomePage() {
             >
               <div className="flex items-start justify-between gap-4">
                 <h3 className="h-display text-xl">{module.title}</h3>
+                {"logos" in module && module.logos && (
+                  <div className="flex shrink-0 items-center gap-2">
+                    {(module.logos as BrandAsset["id"][]).map((logo) => (
+                      <BrandImage
+                        key={logo}
+                        asset={brandAssets[logo]}
+                        heightClass="h-10"
+                        className="rounded-md"
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
               <p className="prose-lf text-sm text-lf-slate">
                 {module.description}

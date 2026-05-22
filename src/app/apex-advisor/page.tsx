@@ -1,25 +1,41 @@
 import Link from "next/link";
+import BrandImage from "@/components/BrandImage";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
+import { brandAssets } from "@/data/brandAssets";
 import { apexTiers } from "@/data/apex";
 
-export const metadata = { title: "Apex Advisor Platform" };
+export const metadata = { title: "Loan Factory Coaching" };
 
 export default function ApexAdvisorPage() {
   return (
     <>
       <PageHero
-        eyebrow="Loan Factory Apex Advisor Platform"
-        title="Where Top Loan Officers Are Built."
+        eyebrow="Loan Factory Coaching"
+        title="LO Mastery and Loan Factory Alliance."
         body={
           <p>
-            Apex Advisor is the paid coaching platform for Loan Factory loan
-            officers who want accountability, coaching rhythm, practical
-            resources, scorecards, and leaderboards.
+            Paid coaching for Loan Factory loan officers who want
+            accountability, coaching rhythm, practical resources, scorecards,
+            and leaderboards. Sales &amp; Marketing remains the separate
+            101-601 training series.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
       >
+        <div className="mb-6 flex flex-wrap items-center gap-3">
+          {apexTiers.map((tier) => (
+            <div
+              key={tier.id}
+              className="inline-flex rounded-xl bg-white/95 p-2 shadow-card"
+            >
+              <BrandImage
+                asset={brandAssets[tier.logoAssetId]}
+                heightClass="h-14 md:h-16"
+              />
+            </div>
+          ))}
+        </div>
         <div className="flex flex-wrap gap-3">
           <Link href="#tiers" className="btn-primary">
             See the tiers
@@ -35,23 +51,23 @@ export default function ApexAdvisorPage() {
 
       <section className="container-page py-14">
         <SectionHeading
-          eyebrow="What is Apex Advisor"
+          eyebrow="What is coaching"
           title="Paid coaching, accountability, and member resources."
-          description="Apex Advisor is separate from the Sales & Marketing 101 to 601 training series. It is the coaching membership layer for loan officers who want calls, daily coaching touchpoints, trackers, scorecards, resource libraries, and accountability."
+          description="LO Mastery and Loan Factory Alliance are separate from the Sales & Marketing 101 to 601 training series. This is the coaching membership layer for loan officers who want calls, daily coaching touchpoints, trackers, scorecards, resource libraries, and accountability."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           <div className="card">
             <h3 className="h-display text-lg">Coach</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Biweekly group coaching for Apex Advisor members. Pro members
-              get a deeper weekly coaching rhythm.
+              Biweekly group coaching for LO Mastery members. Loan Factory
+              Alliance members get a deeper weekly coaching rhythm.
             </p>
           </div>
           <div className="card">
             <h3 className="h-display text-lg">Track</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
               Greatness Tracker, Deal Flow Tracker, Referral Partner Tracker,
-              Advisor Scorecard, and Apex leaderboards.
+              Advisor Scorecard, and coaching leaderboards.
             </p>
           </div>
           <div className="card">
@@ -69,7 +85,7 @@ export default function ApexAdvisorPage() {
           <SectionHeading
             eyebrow="Membership tiers"
             title="Pick the coaching rhythm that fits your work."
-            description="Apex Advisor is $249 per month. Apex Advisor Pro is $449 per month and adds a stronger weekly coaching cadence, Breakfast Club, advanced certifications, and deeper mastermind access."
+            description="LO Mastery is $249 per month. Loan Factory Alliance is $449 per month and adds a stronger weekly coaching cadence, Breakfast Club, advanced certifications, and deeper mastermind access."
           />
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {apexTiers.map((tier) => (
@@ -78,6 +94,12 @@ export default function ApexAdvisorPage() {
                 className="card flex h-full flex-col gap-4"
               >
                 <div>
+                  <div className="mb-5 inline-flex rounded-xl bg-white p-2 shadow-card">
+                    <BrandImage
+                      asset={brandAssets[tier.logoAssetId]}
+                      heightClass="h-16"
+                    />
+                  </div>
                   <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
                     {tier.id === "pro" ? "Tier 2" : "Tier 1"}
                   </span>
@@ -127,7 +149,7 @@ export default function ApexAdvisorPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="What is inside"
-          title="The Apex Advisor member experience."
+          title="The paid coaching member experience."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           <Link href="/apex-member-area/" className="card hover:shadow-lift">
@@ -146,7 +168,7 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Certifications</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Certified Mortgage Advisor plus advanced Pro specialty tracks.
+              Certified Mortgage Advisor plus advanced Alliance specialty tracks.
             </p>
           </Link>
           <Link href="/apex-calendar/" className="card hover:shadow-lift">
@@ -163,9 +185,9 @@ export default function ApexAdvisorPage() {
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
               Community
             </p>
-            <h3 className="h-display mt-1 text-lg">Apex Mastermind</h3>
+            <h3 className="h-display mt-1 text-lg">Alliance Mastermind</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Advanced mastermind access for Apex Advisor Pro members.
+              Advanced mastermind access for Loan Factory Alliance members.
             </p>
           </Link>
           <Link href="/apex-leaderboards/" className="card hover:shadow-lift">
@@ -174,8 +196,8 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Leaderboards</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Apex Advisor and Apex Advisor Pro leaderboards for accountability
-              and recognition.
+              LO Mastery and Loan Factory Alliance leaderboards for
+              accountability and recognition.
             </p>
           </Link>
           <Link href="/apex-member-area/" className="card hover:shadow-lift">
@@ -193,7 +215,7 @@ export default function ApexAdvisorPage() {
 
       <section className="container-page pb-20">
         <p className="max-w-3xl text-sm leading-6 text-lf-slate">
-          Apex Advisor materials support coaching and development. Borrower,
+          Paid coaching materials support coaching and development. Borrower,
           Realtor, recruiting, and marketing use still needs the proper Loan
           Factory review before use.
         </p>
