@@ -23,17 +23,21 @@ export const apexTiers: ApexTier[] = [
     ctaLabel: "Join Apex Advisor",
     ctaHref: "/apex-launch-call/",
     description:
-      "Full access to the Apex Advisor Track (101 through 601), the resource libraries, and the member area. The simple weekly operating system that turns conversations into closings.",
+      "A paid coaching membership with biweekly group coaching, the daily Power Hour Smile and Dial call, daily motivational coaching email, member resources, recordings, scripts, documents, handouts, trackers, scorecards, and leaderboard access.",
     bestFor:
-      "New and experienced loan officers who want a clear weekly system and the full course library.",
+      "Loan officers who want structure, coaching rhythm, accountability, and a clear member resource area.",
     includes: [
-      "Apex Advisor Track (modules 101 through 601)",
-      "Script Library, AI Prompt Library, Roleplay Library",
-      "Audio Training Library",
-      "Weekly Tracker and Personality Workshop",
-      "Recommended Channels and study guides",
+      "Biweekly group coaching calls",
+      "Daily Power Hour Smile and Dial lunch-themed call",
+      "Daily motivational coaching email",
+      "Certified Mortgage Advisor designation",
       "Member area access",
-      "Eligible for the Apex Certified Loan Officer (ACLO) certification",
+      "Past training recordings",
+      "Scripts, documents, and PDF handouts",
+      "Greatness Tracker, Deal Flow Tracker, and Referral Partner Tracker",
+      "Advisor Scorecard",
+      "Apex Advisor leaderboard",
+      "Favorite YouTube channel library",
     ],
   },
   {
@@ -46,18 +50,22 @@ export const apexTiers: ApexTier[] = [
     ctaLabel: "Go Pro with Apex Advisor Pro",
     ctaHref: "/apex-launch-call/",
     description:
-      "For loan officers who want live coaching, mastermind access, and advanced TERA workflows. Pro members get the full Apex Advisor curriculum plus monthly coaching calls, the Apex Mastermind community, and access to the annual Apex Summit.",
+      "Everything in Apex Advisor plus weekly coaching calls, the daily Breakfast Club call, a more specific daily coaching email, advanced certifications, priority accountability, the Pro leaderboard, and deeper mastermind access.",
     bestFor:
-      "Producers and team leaders who want live coaching, mastermind access, and accountability.",
+      "Loan officers who want a tighter coaching cadence, stronger accountability, and advanced specialty-track development.",
     includes: [
       "Everything in Apex Advisor",
-      "Monthly live mastermind calls",
-      "Direct coaching access",
-      "Advanced TERA workflows",
-      "Priority content requests",
-      "Apex Summit access (live annual event)",
-      "Apex Mastermind community",
-      "Eligible for all Apex certifications",
+      "Weekly coaching calls",
+      "Daily Breakfast Club call",
+      "More specific daily coaching email",
+      "Advanced certifications",
+      "Military Housing Specialist",
+      "Investor Specialist",
+      "Future specialty tracks (planned)",
+      "Priority accountability",
+      "Apex Advisor Pro leaderboard",
+      "Advanced mastermind access",
+      "Deeper coaching rhythm",
     ],
   },
 ];
@@ -65,36 +73,36 @@ export const apexTiers: ApexTier[] = [
 export const apexCertifications = [
   {
     id: "aclo",
-    name: "Apex Certified Loan Officer (ACLO)",
-    requirement: "Complete the Apex Advisor Track (101 through 601).",
+    name: "Certified Mortgage Advisor",
+    requirement: "Complete the Apex Advisor certification requirements.",
     summary:
-      "The foundation credential. Shows you have completed every module of the Apex Advisor Track and can run the weekly operating system from start to finish.",
+      "The core Apex Advisor designation for members who complete the required training and assessment work.",
     eligibleTiers: ["Apex Advisor", "Apex Advisor Pro"],
   },
   {
-    id: "tera-power-user",
-    name: "Apex TERA Power User",
+    id: "military-housing-specialist",
+    name: "Military Housing Specialist",
     requirement:
-      "Complete the TERA module and pass the TERA workflow assessment.",
+      "Complete the approved Military Housing Specialist requirements.",
     summary:
-      "Shows you can use TERA — Loan Factory's loan origination software, point of sale, and CRM platform — to run a clean pipeline, structured borrower journeys, and partner workflows.",
-    eligibleTiers: ["Apex Advisor", "Apex Advisor Pro"],
+      "Advanced Pro specialty track for serving military housing scenarios after the track is approved.",
+    eligibleTiers: ["Apex Advisor Pro"],
   },
   {
-    id: "marketing-pro",
-    name: "Apex Marketing Pro",
+    id: "investor-specialist",
+    name: "Investor Specialist",
     requirement:
-      "Complete the marketing modules and submit a campaign sample for review.",
+      "Complete the approved Investor Specialist requirements.",
     summary:
-      "Shows you can plan, build, and ship a compliant marketing campaign end to end. Includes content, follow up, and a partner play.",
-    eligibleTiers: ["Apex Advisor", "Apex Advisor Pro"],
+      "Advanced Pro specialty track for investor-focused scenarios after the track is approved.",
+    eligibleTiers: ["Apex Advisor Pro"],
   },
   {
-    id: "pro-graduate",
-    name: "Apex Advisor Pro Graduate",
-    requirement: "Complete the Pro coaching curriculum.",
+    id: "future-specialty-tracks",
+    name: "Future Specialty Tracks",
+    requirement: "Planned. Jeremy approval required before launch.",
     summary:
-      "The capstone Pro credential. Shows you have completed the live coaching curriculum and mastermind track.",
+      "Future Pro specialty tracks can be added after the content, review process, and approval language are confirmed.",
     eligibleTiers: ["Apex Advisor Pro"],
   },
 ];

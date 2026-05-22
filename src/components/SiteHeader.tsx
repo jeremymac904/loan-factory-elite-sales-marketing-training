@@ -5,7 +5,7 @@ import { brandAssets } from "@/data/brandAssets";
 const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Apex Advisor", href: "/apex-advisor/" },
-  { label: "Sales Training", href: "/sales-training/" },
+  { label: "Sales & Marketing", href: "/sales-training/" },
   { label: "AI Training", href: "/ai-training/" },
   { label: "Creator Network", href: "/creator-network/" },
   { label: "AI Assistants", href: "/ai-assistants/" },
@@ -20,7 +20,7 @@ export default function SiteHeader() {
           <Link
             href="/"
             className="flex min-w-0 items-center"
-            aria-label="Loan Factory LO Development Platform home"
+            aria-label="Loan Factory LO Development home"
           >
             <BrandImage
               asset={brandAssets["loan-factory"]}
@@ -30,7 +30,7 @@ export default function SiteHeader() {
 
           <details className="group lg:hidden">
             <summary className="btn-primary cursor-pointer list-none">
-              Platform Menu
+              Menu
             </summary>
             <nav className="absolute left-5 right-5 top-[76px] z-40 rounded-xl border border-lf-line bg-white p-3 shadow-lift">
               <div className="grid gap-2">
@@ -50,7 +50,7 @@ export default function SiteHeader() {
 
         <nav
           className="hidden items-center justify-end gap-2 lg:flex"
-          aria-label="Primary platform navigation"
+          aria-label="Primary navigation"
         >
           {primaryNav.map((item) => (
             <Link

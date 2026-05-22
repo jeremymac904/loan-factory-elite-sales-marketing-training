@@ -8,28 +8,28 @@ export const metadata = { title: "Apex Advisor Pro" };
 
 const proBenefits = [
   {
-    title: "Monthly live mastermind calls",
-    body: "One live call every month with Jeremy and the Pro cohort. Live coaching, deal review, pipeline review, and a Q and A.",
+    title: "Weekly coaching calls",
+    body: "A tighter weekly coaching rhythm for Pro members who want more frequent accountability and review.",
   },
   {
-    title: "Direct coaching access",
-    body: "Bring a specific deal, a partner challenge, or a content problem and get a working answer. Not a generic webinar.",
+    title: "Daily Breakfast Club call",
+    body: "A daily Pro call for rhythm, accountability, mindset, and execution planning.",
   },
   {
-    title: "Advanced TERA workflows",
-    body: "Advanced workflows inside TERA — Loan Factory's loan origination software, point of sale, and CRM platform — for borrower journeys, partner workflows, and pipeline review.",
+    title: "More specific daily coaching email",
+    body: "A stronger daily coaching email with more specific prompts, accountability, and tactical direction.",
   },
   {
-    title: "Priority content requests",
-    body: "Pro members can request specific scripts, prompts, or roleplays. Pro requests go to the front of the line.",
+    title: "Advanced certifications",
+    body: "Military Housing Specialist, Investor Specialist, and future specialty tracks as they are approved.",
   },
   {
-    title: "Apex Summit access",
-    body: "Access to the live annual Apex Summit. Cohort networking, advanced sessions, and the year's themes.",
+    title: "Priority accountability",
+    body: "More frequent check-ins and a deeper operating rhythm for members who want to be pushed.",
   },
   {
-    title: "Apex Mastermind community",
-    body: "The Pro tier community where members share wins, share work, and hold each other to a higher standard.",
+    title: "Advanced mastermind access",
+    body: "Deeper peer review, Pro leaderboard visibility, and advanced mastermind access.",
   },
 ];
 
@@ -39,13 +39,13 @@ export default function ApexAdvisorProPage() {
     <>
       <PageHero
         eyebrow="Tier 2 . Apex Advisor Pro"
-        title="Live coaching, mastermind, and the Apex Summit."
+        title="A deeper coaching rhythm for serious producers."
         body={
           <p>
-            Apex Advisor Pro is for loan officers who want live coaching and a
-            tighter community on top of the full Apex Advisor Track. Everything
-            in Apex Advisor, plus the live elements that turn a curriculum into
-            a habit.
+            Apex Advisor Pro includes everything in Apex Advisor, then adds
+            weekly coaching calls, the daily Breakfast Club call, more specific
+            coaching email, advanced certifications, priority accountability,
+            and deeper mastermind access.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -70,7 +70,7 @@ export default function ApexAdvisorProPage() {
         <SectionHeading
           eyebrow="What you get"
           title="Everything in Apex Advisor, plus six Pro upgrades."
-          description="Pro keeps the full Apex Advisor Track and resource libraries, then adds the live elements: monthly coaching, mastermind community, advanced TERA workflows, priority requests, and Apex Summit access."
+          description="Pro adds a stronger weekly coaching cadence, Breakfast Club, advanced certifications, priority accountability, the Pro leaderboard, and deeper mastermind access."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {proBenefits.map((b) => (
@@ -108,7 +108,7 @@ export default function ApexAdvisorProPage() {
         <SectionHeading
           eyebrow="Best for"
           title="Producers and team leaders who want accountability."
-          description="Pro is for loan officers who already know what to do most days, but want live coaching, advanced TERA workflows, and a community of peers who will push them."
+          description="Pro is for loan officers who want a tighter coaching rhythm, stronger accountability, advanced specialty-track development, and a community of peers who will push them."
         />
       </section>
 

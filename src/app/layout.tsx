@@ -6,11 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Loan Factory LO Development Platform",
+    default: "Loan Factory LO Development",
     template: "%s | Loan Factory LO Development",
   },
   description:
-    "Internal Loan Factory LO Development Platform for training, Apex Advisor, AI enablement, Creator Network planning, trackers, resources, and support routing.",
+    "Internal Loan Factory LO Development site for training, Apex Advisor, AI enablement, Creator Network planning, resources, and support routing.",
   robots: { index: false, follow: false },
 };
 

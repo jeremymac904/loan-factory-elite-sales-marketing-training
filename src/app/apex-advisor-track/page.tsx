@@ -5,20 +5,19 @@ import ComplianceCallout from "@/components/ComplianceCallout";
 import ModuleCard from "@/components/ModuleCard";
 import { modules } from "@/data/modules";
 
-export const metadata = { title: "Apex Advisor Track" };
+export const metadata = { title: "Sales & Marketing Training Path" };
 
 export default function ApexAdvisorTrackPage() {
   return (
     <>
       <PageHero
-        eyebrow="The foundation course"
-        title="Apex Advisor Track. 101 through 601."
+        eyebrow="Sales & Marketing training"
+        title="Sales & Marketing. 101 through 601."
         body={
           <p>
-            The Apex Advisor Track is the foundation course inside the Apex
-            Advisor platform. Six modules, one week each. The Elite Sales and
-            Marketing Training Series, rebuilt as the official Apex Advisor
-            curriculum. Included in both membership tiers.
+            This preserved route now points to the Sales & Marketing training
+            path: six modules, one at a time, with scripts, prompts, roleplays,
+            trackers, and resources for Loan Factory loan officers.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -28,10 +27,10 @@ export default function ApexAdvisorTrackPage() {
             Start with 101
           </Link>
           <Link
-            href="/apex-advisor/"
+            href="/sales-training/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white"
           >
-            See platform tiers
+            Sales &amp; Marketing overview
           </Link>
         </div>
       </PageHero>
@@ -40,34 +39,37 @@ export default function ApexAdvisorTrackPage() {
         <SectionHeading
           eyebrow="What this track does"
           title="One installable behavior per week, for six weeks."
-          description="The Apex Advisor Track is the same operating system that the Elite Sales and Marketing Training Series taught. Each module installs one specific behavior with scripts, AI prompts, roleplays, and a tracker. Practical over theoretical. Broker positive. Compliance aware."
+          description="The Sales & Marketing training series installs one specific behavior per module. It is training content, not the Apex Advisor paid coaching membership."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           <div className="card">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Tier 1
+              Training
             </p>
-            <h3 className="h-display mt-1 text-lg">Included in Apex Advisor</h3>
+            <h3 className="h-display mt-1 text-lg">101 through 601</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Full Apex Advisor Track access at $249 per month.
+              A six-part training series for conversations, conversion,
+              partners, content, pipeline, and execution.
             </p>
           </div>
           <div className="card">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Tier 2
+              Cadence
             </p>
-            <h3 className="h-display mt-1 text-lg">Included in Apex Advisor Pro</h3>
+            <h3 className="h-display mt-1 text-lg">Repeating training rhythm</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Full Apex Advisor Track plus live coaching at $449 per month.
+              Built for a biweekly or repeating training cadence, depending on
+              the team schedule.
             </p>
           </div>
           <div className="card">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Credential
+              Resources
             </p>
-            <h3 className="h-display mt-1 text-lg">Apex Certified Loan Officer</h3>
+            <h3 className="h-display mt-1 text-lg">Scripts and trackers</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Complete all six modules to be eligible for the ACLO credential.
+              Each module connects to scripts, prompts, roleplays, handouts,
+              and activity tracking.
             </p>
           </div>
         </div>
@@ -150,8 +152,8 @@ export default function ApexAdvisorTrackPage() {
       <section className="container-page pb-20">
         <ComplianceCallout title="Compliance review" variant="default">
           <p>
-            Apex Advisor Track content is for Loan Factory team training. It is
-            not a guarantee of production or income. Any borrower facing,
+            Sales & Marketing content is for Loan Factory team training. It is
+            not a guarantee of production or income. Any borrower-facing,
             Realtor facing, or public artifact created from this material must
             be reviewed by Loan Factory compliance before use.
           </p>

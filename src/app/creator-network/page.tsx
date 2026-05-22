@@ -8,48 +8,46 @@ export const metadata = { title: "Creator Network" };
 
 const concepts = [
   {
-    title: "Internal feed",
-    body: "A private team feed for scripts, prompts, video ideas, wins, referral partner plays, and training examples. Static demo only.",
+    title: "Daily internal posts",
+    body: "LOs, AEs, approved vendors, coaches, and internal teams can share ideas, questions, examples, wins, videos, and feedback requests.",
   },
   {
-    title: "LO profiles",
-    body: "Internal profiles can eventually show role, market focus, contributions, and saved resources. No public profile surface exists.",
+    title: "Community groups",
+    body: "State groups, language groups, new loan officer groups, topic groups, and approved AE/vendor participation help the right people find each other.",
   },
   {
-    title: "Post composer",
-    body: "Draft title, body, media/link reference, categories, and save/publish-internally actions. Not wired to storage yet.",
+    title: "Marketing examples",
+    body: "Members can share scripts, posts, videos, event ideas, and partner plays for feedback and learning inside Loan Factory.",
   },
   {
-    title: "Likes, comments, saves",
-    body: "Engagement concepts for internal learning and resource discovery. No real interaction state is persisted in this version.",
+    title: "Questions and answers",
+    body: "Loan officers can ask practical questions, get peer feedback, and learn from coaches and internal teams.",
   },
   {
-    title: "Moderation queue",
-    body: "Marketing reviewers and admins can later review flagged posts and queue approved internal resources.",
+    title: "Wins and field notes",
+    body: "Teams can post wins, lessons learned, and examples that help other Loan Factory employees improve.",
   },
   {
-    title: "Compliance and risk flags",
-    body: "Risk patterns route to human review. The site does not approve content for external use.",
+    title: "Review support",
+    body: "Marketing and risk reviewers can help flag sensitive content before anything is adapted outside the internal community.",
   },
 ];
 
 const categories = [
+  "Daily Posts",
+  "Questions",
+  "Marketing Ideas",
+  "Scripts",
+  "Videos",
+  "Wins",
+  "Feedback Requests",
+  "State Groups",
+  "Language Groups",
+  "New Loan Officer Groups",
+  "Topic Groups",
+  "AE and Vendor Ideas",
   "Referral Partner Strategy",
   "Borrower Conversion",
-  "Social Media Ideas",
-  "Open House Marketing",
-  "Realtor Scripts",
-  "Video Scripts",
-  "Email Templates",
-  "AI Prompts",
-  "Success Stories",
-  "Objection Handling",
-  "Events",
-  "Recruiting",
-  "Apex Advisor",
-  "Elite Sales & Marketing",
-  "1+1+1=5",
-  "AI Training",
 ];
 
 export default function CreatorNetworkPage() {
@@ -58,11 +56,13 @@ export default function CreatorNetworkPage() {
   return (
     <PlatformModulePage module={platformModule}>
       <section className="container-page py-14">
-        <ComplianceCallout title="Employee-only internal network" variant="warning">
+        <ComplianceCallout title="Employee-only internal community" variant="warning">
           <p>
-            Creator Network is employee-only and internal-only. It is not a
-            public feed, public profile system, external social publishing tool,
-            borrower portal, Realtor portal, or partner portal.
+            Creator Network is an internal Loan Factory community feed where
+            loan officers, AEs, approved vendors, coaches, and internal teams
+            can share ideas, ask questions, post marketing examples, get
+            feedback, and learn from each other. It is not public social media
+            and it does not publish to external social channels.
           </p>
         </ComplianceCallout>
       </section>
@@ -70,9 +70,9 @@ export default function CreatorNetworkPage() {
       <section className="bg-lf-mist">
         <div className="container-page py-14">
           <SectionHeading
-            eyebrow="Visible v1"
-            title="First internal Creator Network shell"
-            description="This page shows the product shape without pretending the backend exists."
+            eyebrow="Internal community"
+            title="A Facebook or Instagram-style feed for Loan Factory employees"
+            description="The goal is simple: help Loan Factory people learn from each other without turning this into public social media."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {concepts.map((item) => (
@@ -91,7 +91,7 @@ export default function CreatorNetworkPage() {
         <SectionHeading
           eyebrow="Categories and tags"
           title="How internal posts will be organized"
-          description="Categories are shown as static taxonomy, not a live filter."
+          description="Posts can be grouped by topic, state, language, role, and learning need."
         />
         <div className="mt-8 flex flex-wrap gap-2">
           {categories.map((category) => (
@@ -109,15 +109,14 @@ export default function CreatorNetworkPage() {
         <div className="grid gap-5 lg:grid-cols-2">
           <article className="card">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Status language
+              Review language
             </p>
             <h3 className="h-display mt-2 text-xl">
-              Approved for External Adaptation
+              Ready for human review
             </h3>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              This is a queue marker for further human review. It does not
-              publish content externally, bypass marketing review, or bypass
-              compliance review.
+              Internal examples can be flagged for marketing or compliance
+              review before anyone adapts them outside the community.
             </p>
           </article>
           <article className="card">

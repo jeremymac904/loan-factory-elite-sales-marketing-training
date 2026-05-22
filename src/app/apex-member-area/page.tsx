@@ -7,28 +7,28 @@ export const metadata = { title: "Apex Member Area" };
 
 const lockedBlocks = [
   {
-    title: "Your Apex Advisor Track progress",
-    body: "Track which modules you have completed, where you left off, and what comes next.",
-  },
-  {
-    title: "Live mastermind schedule (Pro)",
-    body: "The next live mastermind call, the call replay archive, and your RSVP.",
-  },
-  {
-    title: "Coaching requests (Pro)",
-    body: "Submit a deal, a partner question, or a content request for the next live call.",
-  },
-  {
-    title: "Certification status",
-    body: "Your current Apex certifications and what is left to complete each one.",
+    title: "Coaching rhythm",
+    body: "See upcoming coaching calls, daily coaching prompts, and accountability actions.",
   },
   {
     title: "Resource library",
-    body: "Members only access to scripts, AI prompts, roleplays, and audio training.",
+    body: "Access past training recordings, scripts, documents, PDF handouts, and favorite YouTube channels.",
   },
   {
-    title: "Apex Summit access (Pro)",
-    body: "Annual summit registration, agenda, and replays.",
+    title: "Trackers and scorecards",
+    body: "Use the Greatness Tracker, Deal Flow Tracker, Referral Partner Tracker, and Advisor Scorecard.",
+  },
+  {
+    title: "Certification status",
+    body: "Track Certified Mortgage Advisor progress and approved specialty-track requirements.",
+  },
+  {
+    title: "Leaderboards",
+    body: "View Apex Advisor and Apex Advisor Pro leaderboard progress.",
+  },
+  {
+    title: "Pro mastermind access",
+    body: "Pro members get advanced mastermind access and deeper accountability rhythm.",
   },
 ];
 
@@ -41,8 +41,8 @@ export default function ApexMemberAreaPage() {
         body={
           <p>
             Sign in to your Apex Advisor portal. Track your progress, access
-            live calls, manage coaching requests, and review your
-            certifications.
+            coaching resources, review scorecards, and manage your membership
+            rhythm.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"

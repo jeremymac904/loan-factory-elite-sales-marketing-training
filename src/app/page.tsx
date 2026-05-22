@@ -1,92 +1,70 @@
 import Link from "next/link";
-import ComplianceCallout from "@/components/ComplianceCallout";
 
 const dashboardModules = [
   {
     title: "Apex Advisor",
-    description: "Start here for coaching, Apex track access, certifications, and member resources.",
+    description: "Paid coaching, accountability, member resources, and Apex scorecards.",
     href: "/apex-advisor/",
-    status: "Live",
+    status: "Coaching",
+    cta: "Explore",
   },
   {
-    title: "Elite Sales & Marketing",
-    description: "Follow the 101 to 601 training path for conversations, conversion, partners, and execution.",
+    title: "Sales & Marketing",
+    description: "The six-part 101 to 601 training series for Loan Factory LOs.",
     href: "/sales-training/",
-    status: "Live",
+    status: "Training",
+    cta: "Open",
   },
   {
     title: "AI Training",
-    description: "Learn how to use AI tools safely for drafts, practice, and training support.",
+    description: "Practical lessons for using AI tools to draft, practice, and improve.",
     href: "/ai-training/",
     status: "Guide",
+    cta: "Open",
   },
   {
     title: "Creator Network",
-    description: "Use the internal-only idea network for scripts, prompts, examples, and field wins.",
+    description: "An internal community feed for ideas, questions, examples, wins, and feedback.",
     href: "/creator-network/",
     status: "Internal",
+    cta: "Explore",
   },
   {
     title: "AI Assistants",
-    description: "Open draft-only assistants for marketing, sales coaching, content, and support workflows.",
+    description: "Drafting helpers for coaching, content, scenarios, and review preparation.",
     href: "/ai-assistants/",
-    status: "Draft only",
-  },
-  {
-    title: "Training Library",
-    description: "Find scripts, roleplays, prompts, recordings, audio training, and handouts.",
-    href: "/training-library/",
-    status: "Library",
-  },
-  {
-    title: "Calendar",
-    description: "See training sessions, coaching moments, review windows, and upcoming platform events.",
-    href: "/calendar/",
-    status: "Planning",
-  },
-  {
-    title: "Trackers",
-    description: "Track conversations, partner touches, assignments, and weekly accountability.",
-    href: "/trackers/",
-    status: "Tools",
+    status: "Assistants",
+    cta: "Explore",
   },
   {
     title: "Resources",
-    description: "Jump to supporting guides, compliance reminders, downloads, and reference materials.",
+    description: "Quick access to guides, support contacts, downloads, and reference materials.",
     href: "/resources/",
-    status: "Reference",
+    status: "Support",
+    cta: "Open",
   },
-  {
-    title: "Support Routing",
-    description: "Find where to send training, content, workflow, compliance, or platform support needs.",
-    href: "/support-routing/",
-    status: "Routing",
-  },
-  {
-    title: "1+1+1=5 Growth",
-    description: "Review the team growth playbook for partner strategy, content planning, and cadence.",
-    href: "/one-plus-one-five/",
-    status: "Planned",
-  },
-];
-
-const platformStatus = [
-  "Static shell only",
-  "No external APIs wired",
-  "Draft outputs require review",
-  "TERA writes are blocked",
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section className="border-b border-lf-line bg-lf-mist">
-        <div className="container-page py-14 md:py-16">
+      <section className="relative isolate overflow-hidden border-b border-lf-line bg-lf-navy text-white">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
+        />
+        <div aria-hidden className="absolute inset-0 bg-black/68" />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.46)_48%,rgba(0,0,0,0.84)_100%)]"
+        />
+        <div className="relative container-page py-16 md:py-24">
           <div className="max-w-3xl">
-            <h1 className="font-display text-4xl font-semibold tracking-tight text-lf-navy md:text-6xl">
-              Loan Factory LO Development Platform
+            <h1 className="chrome-title font-display text-4xl font-semibold tracking-normal md:text-6xl">
+              Loan Factory LO Development
             </h1>
-            <p className="mt-5 text-lg leading-8 text-lf-charcoal md:text-xl">
+            <p className="mt-5 text-lg leading-8 text-white/85 md:text-xl">
               Training, coaching, AI tools, and internal resources for Loan
               Factory loan officers.
             </p>
@@ -96,13 +74,13 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/sales-training/"
-                className="btn-secondary"
+                className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
               >
-                View Sales Training
+                View Sales &amp; Marketing
               </Link>
               <Link
                 href="/ai-assistants/"
-                className="btn-secondary"
+                className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
               >
                 Explore AI Assistants
               </Link>
@@ -119,11 +97,11 @@ export default function HomePage() {
             to training, tools, or resources with no extra dashboard clutter.
           </p>
         </div>
-        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
           {dashboardModules.map((module) => (
             <article
               key={module.href}
-              className="card flex min-h-56 flex-col gap-4 transition hover:-translate-y-0.5 hover:shadow-lift"
+              className="card flex min-h-52 flex-col gap-4 transition hover:-translate-y-0.5 hover:shadow-lift"
             >
               <div className="flex items-start justify-between gap-4">
                 <h3 className="h-display text-xl">{module.title}</h3>
@@ -138,7 +116,7 @@ export default function HomePage() {
                 href={module.href}
                 className="mt-auto inline-flex w-fit items-center rounded-lg bg-lf-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-lf-orange"
               >
-                Open
+                {module.cta}
                 <span aria-hidden className="ml-2">
                   &rarr;
                 </span>
@@ -146,37 +124,6 @@ export default function HomePage() {
             </article>
           ))}
         </div>
-      </section>
-
-      <section className="border-y border-lf-line bg-white">
-        <div className="container-page py-8">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-lf-orange">
-            Platform status
-          </h2>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {platformStatus.map((item) => (
-              <div
-                key={item}
-                className="rounded-xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold text-lf-charcoal"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="container-page py-14">
-        <ComplianceCallout title="Internal use only" variant="default">
-          <p>
-            This platform is for Loan Factory internal training and LO
-            development. It does not send messages, publish content, call AI
-            models, write to TERA, or expose borrower data. Borrower-facing,
-            Realtor-facing, recruiting-facing, public, rate-related,
-            fee-related, and compliance-sensitive artifacts require human review
-            before use.
-          </p>
-        </ComplianceCallout>
       </section>
     </>
   );

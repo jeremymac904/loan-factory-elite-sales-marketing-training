@@ -9,7 +9,7 @@ export const metadata = { title: "Apex Certifications" };
 const howToEarnSteps = [
   {
     step: "1. Complete the requirement",
-    body: "Each certification has a clear requirement. Finish the modules, the assessment, or the deliverable listed for that credential.",
+    body: "Each certification has a clear requirement. Finish the approved assessment or deliverable listed for that credential.",
   },
   {
     step: "2. Display the credential",
@@ -40,8 +40,8 @@ export default function ApexCertificationsPage() {
       <section className="container-page py-12">
         <SectionHeading
           eyebrow="The four certifications"
-          title="Earn one. Earn all four."
-          description="Each Apex certification represents a specific body of work inside the Apex Advisor platform. They stack."
+          title="Build credibility through approved credentials."
+          description="Each Apex certification represents approved work inside the Apex Advisor coaching platform. Specialty tracks are Pro-level and launch only after review."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {apexCertifications.map((cert) => (
@@ -95,8 +95,8 @@ export default function ApexCertificationsPage() {
           <Link href="/apex-advisor/" className="btn-primary">
             Join Apex Advisor
           </Link>
-          <Link href="/apex-advisor-track/" className="btn-secondary">
-            See the Apex Track
+          <Link href="/apex-advisor-pro/" className="btn-secondary">
+            See Apex Advisor Pro
           </Link>
         </div>
       </section>

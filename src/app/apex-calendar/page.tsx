@@ -8,35 +8,35 @@ export const metadata = { title: "Apex Calendar" };
 type SampleEvent = {
   date: string;
   title: string;
-  type: "Live Q&A" | "Mastermind" | "Summit" | "Workshop";
+  type: "Group Coaching" | "Mastermind" | "Breakfast Club" | "Workshop";
   tier: "All Members" | "Pro Only";
   description: string;
 };
 
 const sampleEvents: SampleEvent[] = [
   {
-    date: "Monthly . 1st Tuesday . 11 AM PT",
-    title: "Apex Advisor Live Q and A",
-    type: "Live Q&A",
+    date: "Biweekly . Time TBD",
+    title: "Apex Advisor Group Coaching",
+    type: "Group Coaching",
     tier: "All Members",
     description:
-      "Monthly open Q and A for all Apex Advisor members. Bring a deal, a partner question, or a content problem.",
+      "Biweekly group coaching for Apex Advisor members. Bring a deal, partner question, content question, or accountability item.",
   },
   {
-    date: "Monthly . 3rd Thursday . 11 AM PT",
-    title: "Apex Mastermind Call",
+    date: "Weekly . Time TBD",
+    title: "Apex Advisor Pro Coaching Call",
     type: "Mastermind",
     tier: "Pro Only",
     description:
-      "Live Pro mastermind. Coaching, deal review, pipeline review, and accountability.",
+      "Weekly Pro coaching call for deeper accountability, deal flow review, and production rhythm.",
   },
   {
-    date: "Annual . Date TBD",
-    title: "Apex Summit",
-    type: "Summit",
+    date: "Daily . Time TBD",
+    title: "Breakfast Club",
+    type: "Breakfast Club",
     tier: "Pro Only",
     description:
-      "Live annual Apex Summit. Cohort networking, advanced sessions, and the year's themes.",
+      "Daily Pro rhythm call for focus, mindset, accountability, and execution planning.",
   },
   {
     date: "Quarterly . Date TBD",
@@ -56,9 +56,9 @@ export default function ApexCalendarPage() {
         title="Apex Calendar."
         body={
           <p>
-            Monthly live Q and A for all members. Monthly mastermind calls for
-            Pro. An annual Apex Summit. The calendar below previews the cadence
-            for the platform.
+            Biweekly group coaching for Apex Advisor members. Weekly coaching
+            and daily Breakfast Club for Pro members. The calendar below
+            previews the coaching cadence.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"

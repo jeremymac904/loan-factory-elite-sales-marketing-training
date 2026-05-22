@@ -35,38 +35,42 @@ export const platformModules: PlatformModule[] = [
     href: "/apex-advisor/",
     status: "Live foundation",
     summary:
-      "The advanced coaching layer for serious Loan Factory loan officers, built on top of the 101 to 601 operating system.",
+      "The paid coaching platform for Loan Factory loan officers who want a stronger daily rhythm, accountability, resources, and scorecards.",
     whoFor: ["Producing LOs", "Apex members", "Team leaders"],
     tools: [
-      "Apex Advisor Track",
-      "Apex certifications",
-      "Apex calendar",
-      "Member area preview",
+      "Biweekly group coaching",
+      "Power Hour Smile and Dial",
+      "Member resource area",
+      "Greatness Tracker",
+      "Deal Flow Tracker",
+      "Referral Partner Tracker",
+      "Advisor Scorecard",
     ],
     resources: [
-      "Apex Advisor Track",
-      "Apex Pro membership overview",
-      "Certifications",
-      "Mastermind and event pages",
+      "Past training recordings",
+      "Scripts",
+      "Documents and PDF handouts",
+      "Favorite YouTube channel library",
+      "Leaderboards",
     ],
     currentStatus:
-      "Core Apex pages exist. This sprint keeps them visible inside the unified platform shell.",
+      "Core Apex pages exist and are positioned as paid coaching, not the 101 to 601 training series.",
     nextAction:
       "Review Apex copy with Jeremy and marketing before any public or recruiting use.",
     connections: [
-      "Links back to Elite Sales & Marketing training.",
-      "Uses AI Assistants for coaching drafts.",
-      "Feeds wins and examples into the Creator Network.",
+      "Apex members can use Sales & Marketing training as a resource.",
+      "AI Assistants can help prepare draft coaching materials.",
+      "Wins and examples can be shared inside the Creator Network.",
     ],
   },
   {
     id: "elite-sales-marketing",
-    title: "Elite Sales & Marketing",
-    shortTitle: "Elite Sales & Marketing",
+    title: "Sales & Marketing",
+    shortTitle: "Sales & Marketing",
     href: "/sales-training/",
     status: "Live foundation",
     summary:
-      "The 101 to 601 training series that gives every LO a weekly system for conversations, conversion, referral partner growth, content, pipeline, and elite execution.",
+      "The six-part 101 to 601 Sales & Marketing training series for conversations, conversion, referral partners, content, pipeline, and execution.",
     whoFor: ["New LOs", "Experienced LOs", "Team leaders", "Coaches"],
     tools: [
       "101 to 601 curriculum",
@@ -88,7 +92,7 @@ export const platformModules: PlatformModule[] = [
     nextAction:
       "Add route aliases under /sales-training/[level] after Jeremy confirms the final URL pattern.",
     connections: [
-      "Foundational curriculum for Apex Advisor.",
+      "Separate from Apex Advisor paid coaching.",
       "Feeds the Training Library.",
       "Gives AI Assistants approved source material.",
     ],
@@ -194,20 +198,24 @@ export const platformModules: PlatformModule[] = [
     href: "/creator-network/",
     status: "Static prototype",
     summary:
-      "An employee-only internal idea exchange where LOs and leaders share scripts, posts, prompts, wins, and field-tested examples for internal learning.",
+      "An employee-only internal community feed where LOs, AEs, approved vendors, coaches, and internal teams share ideas, questions, examples, wins, and feedback.",
     whoFor: [
       "Loan Factory employees",
       "LOs",
+      "AEs",
+      "Approved vendors",
       "Team leaders",
       "Coaches",
       "Marketing reviewers",
     ],
     tools: [
-      "Internal feed concept",
-      "LO profile concept",
-      "Post composer concept",
-      "Moderation queue concept",
-      "Approved for External Adaptation queue marker",
+      "Internal feed",
+      "Daily posts",
+      "Questions and feedback requests",
+      "Groups by state",
+      "Groups by language",
+      "New loan officer groups",
+      "Topic groups",
     ],
     resources: [
       "Creator Network plan",
@@ -216,13 +224,13 @@ export const platformModules: PlatformModule[] = [
       "Audience Quality Panel",
     ],
     currentStatus:
-      "Static prototype only. No auth, feed storage, comments, likes, saves, or external publishing are wired.",
+      "Internal community model only. It is not public social media or an external publishing system.",
     nextAction:
       "Confirm internal rollout scope and moderation ownership before backend work.",
     connections: [
       "Promotes top internal examples into the Training Library.",
       "Uses Content Coach and Audience Quality Panel for draft review.",
-      "Feeds Team Leader OS contribution signals later.",
+      "Supports coaching and peer learning across teams.",
     ],
   },
   {
@@ -416,7 +424,7 @@ export const platformNav: NavGroup[] = [
     ],
   },
   {
-    label: "Elite Sales & Marketing",
+    label: "Sales & Marketing",
     href: "/sales-training/",
     items: [
       { label: "Training Overview", href: "/sales-training/" },
@@ -480,7 +488,7 @@ export const aiAssistants = [
   "Team Leader Assistant",
   "Compliance/Risk Review Assistant",
   "Apex Advisor Coach",
-  "Elite Sales & Marketing Coach",
+  "Sales & Marketing Coach",
   "1+1+1=5 Growth Assistant",
   "Content Coach",
 ].map((name) => ({

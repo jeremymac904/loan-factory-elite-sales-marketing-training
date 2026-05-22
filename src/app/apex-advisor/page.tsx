@@ -14,10 +14,9 @@ export default function ApexAdvisorPage() {
         title="Where Top Loan Officers Are Built."
         body={
           <p>
-            Apex Advisor is the full development platform for serious loan
-            officers. The Apex Advisor Track (101 through 601), live coaching,
-            certifications, summits, and a mastermind community, all in one
-            place.
+            Apex Advisor is the paid coaching platform for Loan Factory loan
+            officers who want accountability, coaching rhythm, practical
+            resources, scorecards, and leaderboards.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -27,10 +26,10 @@ export default function ApexAdvisorPage() {
             See the tiers
           </Link>
           <Link
-            href="/apex-advisor-track/"
+            href="/apex-member-area/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white"
           >
-            Explore the Apex Track
+            Preview member resources
           </Link>
         </div>
       </PageHero>
@@ -38,29 +37,29 @@ export default function ApexAdvisorPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="What is Apex Advisor"
-          title="One platform for the way top loan officers actually grow."
-          description="Apex Advisor brings together the training, tools, certifications, and community a serious loan officer needs. The Apex Advisor Track is the foundation. Pro adds live coaching, the Apex Mastermind community, advanced TERA workflows, and access to the Apex Summit."
+          title="Paid coaching, accountability, and member resources."
+          description="Apex Advisor is separate from the Sales & Marketing 101 to 601 training series. It is the coaching membership layer for loan officers who want calls, daily coaching touchpoints, trackers, scorecards, resource libraries, and accountability."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           <div className="card">
-            <h3 className="h-display text-lg">Train</h3>
+            <h3 className="h-display text-lg">Coach</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Apex Advisor Track 101 through 601. Scripts, AI prompts,
-              roleplays, audio training, and a weekly tracker.
+              Biweekly group coaching for Apex Advisor members. Pro members
+              get a deeper weekly coaching rhythm.
             </p>
           </div>
           <div className="card">
-            <h3 className="h-display text-lg">Certify</h3>
+            <h3 className="h-display text-lg">Track</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Earn Apex certifications that signal you have done the work.
-              ACLO, TERA Power User, Marketing Pro, and Pro Graduate.
+              Greatness Tracker, Deal Flow Tracker, Referral Partner Tracker,
+              Advisor Scorecard, and Apex leaderboards.
             </p>
           </div>
           <div className="card">
-            <h3 className="h-display text-lg">Connect</h3>
+            <h3 className="h-display text-lg">Resource</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Live mastermind calls, an annual Apex Summit, and a community of
-              loan officers who run the same operating system.
+              Member area with past training recordings, scripts, documents,
+              PDF handouts, and favorite YouTube channel library.
             </p>
           </div>
         </div>
@@ -70,8 +69,8 @@ export default function ApexAdvisorPage() {
         <div className="container-page py-14">
           <SectionHeading
             eyebrow="Membership tiers"
-            title="Pick the level that matches the work you are willing to do."
-            description="Both tiers include the Apex Advisor Track and the member area. Pro adds live coaching, the mastermind, and the Apex Summit."
+            title="Pick the coaching rhythm that fits your work."
+            description="Apex Advisor is $249 per month. Apex Advisor Pro is $449 per month and adds a stronger weekly coaching cadence, Breakfast Club, advanced certifications, and deeper mastermind access."
           />
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {apexTiers.map((tier) => (
@@ -114,7 +113,7 @@ export default function ApexAdvisorPage() {
                     {tier.ctaLabel}
                   </Link>
                   <Link
-                    href={tier.id === "pro" ? "/apex-advisor-pro/" : "/apex-advisor-track/"}
+                    href={tier.id === "pro" ? "/apex-advisor-pro/" : "/apex-member-area/"}
                     className="btn-secondary"
                   >
                     Learn more
@@ -129,16 +128,17 @@ export default function ApexAdvisorPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="What is inside"
-          title="The full Apex Advisor platform map."
+          title="The Apex Advisor member experience."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <Link href="/apex-advisor-track/" className="card hover:shadow-lift">
+          <Link href="/apex-member-area/" className="card hover:shadow-lift">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Course track
+              Member resources
             </p>
-            <h3 className="h-display mt-1 text-lg">Apex Advisor Track</h3>
+            <h3 className="h-display mt-1 text-lg">Resource area</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              The 101 through 601 foundation course. Included in both tiers.
+              Past training recordings, scripts, documents, PDF handouts, and
+              favorite YouTube channels.
             </p>
           </Link>
           <Link href="/apex-certifications/" className="card hover:shadow-lift">
@@ -147,7 +147,7 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Certifications</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Four Apex certifications that signal you have done the work.
+              Certified Mortgage Advisor plus advanced Pro specialty tracks.
             </p>
           </Link>
           <Link href="/apex-calendar/" className="card hover:shadow-lift">
@@ -156,7 +156,8 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Calendar</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Monthly Q&amp;A, mastermind calls, and the Apex Summit.
+              Biweekly coaching, daily Power Hour, Pro Breakfast Club, and
+              weekly Pro calls.
             </p>
           </Link>
           <Link href="/apex-mastermind/" className="card hover:shadow-lift">
@@ -165,7 +166,7 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Apex Mastermind</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Pro tier community and coaching calls.
+              Advanced mastermind access for Apex Advisor Pro members.
             </p>
           </Link>
           <Link href="/apex-leaderboards/" className="card hover:shadow-lift">
@@ -174,8 +175,8 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Leaderboards</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Production and activity leaderboards. For motivation, not
-              guarantees.
+              Apex Advisor and Apex Advisor Pro leaderboards for accountability
+              and recognition.
             </p>
           </Link>
           <Link href="/apex-member-area/" className="card hover:shadow-lift">
@@ -184,7 +185,8 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Member Area</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Sign in to your training, content, and live event schedule.
+              Sign in to coaching resources, trackers, scorecards, recordings,
+              and documents.
             </p>
           </Link>
         </div>

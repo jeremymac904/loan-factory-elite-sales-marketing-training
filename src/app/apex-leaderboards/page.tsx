@@ -104,8 +104,8 @@ export default function ApexLeaderboardsPage() {
         <div className="container-page py-10">
           <SectionHeading
             eyebrow="Activity"
-            title="Lessons and certifications leaderboard."
-            description="Ranked by Apex Advisor Track lessons completed and Apex certifications earned."
+            title="Scorecard and certifications leaderboard."
+            description="Ranked by Advisor Scorecard progress and approved Apex certifications earned."
           />
           <div className="mt-6 overflow-x-auto">
             <table className="w-full min-w-[560px] border-collapse text-left">

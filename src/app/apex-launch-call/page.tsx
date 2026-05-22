@@ -14,9 +14,9 @@ export default function ApexLaunchCallPage() {
         body={
           <p>
             Where Top Loan Officers Are Built. The Apex Advisor platform brings
-            together the Apex Advisor Track, live coaching, certifications,
-            summits, and the Apex Mastermind. Drop your email to be on the
-            launch list.
+            together paid coaching, daily rhythm, member resources,
+            certifications, scorecards, leaderboards, and Pro mastermind access.
+            Drop your email to be on the launch list.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -68,9 +68,10 @@ export default function ApexLaunchCallPage() {
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             <div className="card">
-              <h3 className="h-display text-lg">Apex Advisor Track</h3>
+              <h3 className="h-display text-lg">Apex Advisor</h3>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                The 101 through 601 foundation course. Included at both tiers.
+                $249 per month. Biweekly group coaching, Power Hour Smile and
+                Dial, daily coaching email, resources, trackers, and scorecards.
               </p>
             </div>
             <div className="card">
@@ -83,19 +84,22 @@ export default function ApexLaunchCallPage() {
             <div className="card">
               <h3 className="h-display text-lg">Apex certifications</h3>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                ACLO, TERA Power User, Marketing Pro, and Pro Graduate.
+                Certified Mortgage Advisor plus approved specialty-track
+                certifications.
               </p>
             </div>
             <div className="card">
-              <h3 className="h-display text-lg">Live mastermind (Pro)</h3>
+              <h3 className="h-display text-lg">Pro coaching rhythm</h3>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                Monthly live mastermind calls and the Apex Mastermind community.
+                Weekly coaching calls, daily Breakfast Club, priority
+                accountability, and advanced mastermind access.
               </p>
             </div>
             <div className="card">
-              <h3 className="h-display text-lg">Apex Summit (Pro)</h3>
+              <h3 className="h-display text-lg">Pro specialty tracks</h3>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                Live annual summit access for Apex Advisor Pro members.
+                Military Housing Specialist, Investor Specialist, and future
+                specialty tracks as they are approved.
               </p>
             </div>
             <div className="card">
@@ -118,8 +122,8 @@ export default function ApexLaunchCallPage() {
           <Link href="/apex-advisor/" className="btn-primary">
             See platform tiers
           </Link>
-          <Link href="/apex-advisor-track/" className="btn-secondary">
-            Explore the Apex Track
+          <Link href="/sales-training/" className="btn-secondary">
+            View Sales &amp; Marketing Training
           </Link>
           <Link href="/apex-mastermind/" className="btn-secondary">
             See the Apex Mastermind
