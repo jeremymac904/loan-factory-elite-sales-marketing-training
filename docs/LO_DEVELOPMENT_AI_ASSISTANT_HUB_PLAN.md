@@ -1,9 +1,9 @@
 # AI Assistant Hub Plan — LO Development Platform
 
-**Status:** Draft. Prototype phase = static catalog only. No live AI wiring.
+**Status:** Sandbox backend wired for beta testing. OpenRouter chat and Groq Whisper transcription require server-only Netlify env vars.
 **Owner:** Jeremy McDonald
-**Last updated:** 2026-05-21
-**Companion docs:** [`LO_DEVELOPMENT_PLATFORM_VISION.md`](./LO_DEVELOPMENT_PLATFORM_VISION.md), [`DO_NOT_BUILD_YET.md`](./DO_NOT_BUILD_YET.md)
+**Last updated:** 2026-05-22
+**Companion docs:** [`LO_DEVELOPMENT_PLATFORM_VISION.md`](./LO_DEVELOPMENT_PLATFORM_VISION.md), [`AI_ASSISTANT_BACKEND_SANDBOX.md`](./AI_ASSISTANT_BACKEND_SANDBOX.md)
 
 The AI Assistant Hub is the catalog of **internal support tools** for LOs, team leaders, coaches, and admins. These are not customer-facing tools. They draft, coach, structure, and route — they never auto-send to borrowers or Realtors, and they never make final decisions.
 
@@ -23,7 +23,7 @@ These guardrails govern every assistant on the platform. They are visible in the
 - **No claim that Loan Factory has an open API.**
 - **No claim of "free processing," "daily companywide training," or production guarantees.**
 - **Never use "ELO" — use "LO" or "loan officer."** Never use "MOSO."
-- **AI provider governance.** Choice of model (Gemini, Claude, others) is pending vendor risk review. Until production approval, all assistant pages are static descriptions.
+- **AI provider governance.** The beta sandbox uses OpenRouter for chat completions and Groq Whisper for transcription. Production approval, model routing expansion, persistence, and external-send workflows remain out of scope.
 
 ---
 

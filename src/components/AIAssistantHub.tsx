@@ -1,7 +1,7 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Assistant = {
   name: string;
@@ -13,6 +13,30 @@ type Message = {
   id: number;
   role: "user" | "assistant";
   text: string;
+};
+
+type AssistantApiMessage = {
+  role: "user" | "assistant";
+  content: string;
+};
+
+type AssistantBackendStatus = {
+  sandboxEnabled: boolean;
+  requireAuth: boolean;
+  allowUnsignedSandbox: boolean;
+  openRouterConfigured: boolean;
+  openRouterModel: string;
+  groqConfigured: boolean;
+  groqWhisperModel: string;
+  maxInputChars: number;
+  externalActionsEnabled: false;
+};
+
+type AttachedFile = {
+  file: File;
+  name: string;
+  type: string;
+  previewUrl?: string;
 };
 
 type SpeechRecognitionEventLike = {
@@ -158,12 +182,51 @@ const historyItems = [
   "Content feedback request",
 ];
 
-function responseFor(assistant: Assistant, prompt: string) {
-  return [
-    `${assistant.name} draft response:`,
-    `I would turn "${prompt}" into a clearer next step, then point you to the most relevant Loan Factory training resource.`,
-    "Draft only. Review before external use.",
-  ].join("\n\n");
+const initialAssistantMessage =
+  "Choose an assistant, attach context if useful, then ask for a draft, roleplay, checklist, or review pass.";
+
+let messageIdCounter = 1;
+
+function nextMessageId() {
+  messageIdCounter += 1;
+  return messageIdCounter;
+}
+
+function toApiMessages(messages: Message[]): AssistantApiMessage[] {
+  return messages
+    .filter((message) => message.text.trim())
+    .slice(-12)
+    .map((message) => ({
+      role: message.role,
+      content: message.text,
+    }));
+}
+
+function isAudioAttachment(file: AttachedFile | null) {
+  if (!file) return false;
+  return (
+    file.type.startsWith("audio/") ||
+    /\.(flac|mp3|mp4|mpeg|mpga|m4a|ogg|wav|webm)$/i.test(file.name)
+  );
+}
+
+function apiErrorMessage(
+  status: number,
+  payload: { message?: unknown; error?: unknown } | null,
+) {
+  if (typeof payload?.message === "string" && payload.message.trim()) {
+    return payload.message;
+  }
+
+  if (status === 401 || status === 403) {
+    return "Sign in with an approved Loan Factory account to use the AI Assistant sandbox.";
+  }
+
+  if (status === 503) {
+    return "The AI Assistant sandbox needs server environment variables before it can run.";
+  }
+
+  return "The AI Assistant sandbox could not complete that request.";
 }
 
 export default function AIAssistantHub() {
@@ -172,15 +235,17 @@ export default function AIAssistantHub() {
     {
       id: 1,
       role: "assistant",
-      text: "Choose an assistant, attach context if useful, then ask for a draft, roleplay, checklist, or review pass.",
+      text: initialAssistantMessage,
     },
   ]);
   const [input, setInput] = useState("");
-  const [attachedFile, setAttachedFile] = useState<{
-    name: string;
-    previewUrl?: string;
-  } | null>(null);
+  const [attachedFile, setAttachedFile] = useState<AttachedFile | null>(null);
   const [voiceNote, setVoiceNote] = useState("");
+  const [backendStatus, setBackendStatus] =
+    useState<AssistantBackendStatus | null>(null);
+  const [backendStatusNote, setBackendStatusNote] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [isTranscribing, setIsTranscribing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const selectedAssistant = useMemo(
@@ -188,26 +253,110 @@ export default function AIAssistantHub() {
     [selectedName],
   );
 
-  function sendMessage(text = input) {
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadStatus() {
+      try {
+        const response = await fetch("/api/ai/status", { cache: "no-store" });
+        const data = (await response.json()) as AssistantBackendStatus;
+
+        if (!cancelled) {
+          setBackendStatus(data);
+          setBackendStatusNote("");
+        }
+      } catch {
+        if (!cancelled) {
+          setBackendStatusNote("AI backend status is unavailable.");
+        }
+      }
+    }
+
+    void loadStatus();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (attachedFile?.previewUrl) {
+        URL.revokeObjectURL(attachedFile.previewUrl);
+      }
+    };
+  }, [attachedFile]);
+
+  async function sendMessage(text = input) {
     const trimmed = text.trim();
-    if (!trimmed) return;
-    const nextId = messages.length + 1;
-    setMessages((current) => [
-      ...current,
-      { id: nextId, role: "user", text: trimmed },
-      {
-        id: nextId + 1,
-        role: "assistant",
-        text: responseFor(selectedAssistant, trimmed),
-      },
-    ]);
+    if (!trimmed || isSending) return;
+
+    const assistant = selectedAssistant;
+    const userMessage: Message = {
+      id: nextMessageId(),
+      role: "user",
+      text: trimmed,
+    };
+    const nextMessages = [...messages, userMessage];
+
+    setMessages((current) => [...current, userMessage]);
     setInput("");
+    setIsSending(true);
+
+    try {
+      const response = await fetch("/api/ai/assistant", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          assistantName: assistant.name,
+          assistantDescription: assistant.description,
+          messages: toApiMessages(nextMessages),
+          attachmentName: attachedFile?.name,
+          voiceTranscript: voiceNote,
+        }),
+      });
+      const payload = (await response.json().catch(() => null)) as {
+        text?: unknown;
+        model?: unknown;
+        message?: unknown;
+        error?: unknown;
+      } | null;
+
+      const responseText =
+        response.ok && typeof payload?.text === "string"
+          ? payload.text
+          : apiErrorMessage(response.status, payload);
+      const modelLabel =
+        response.ok && typeof payload?.model === "string"
+          ? `\n\nModel: ${payload.model}`
+          : "";
+
+      setMessages((current) => [
+        ...current,
+        {
+          id: nextMessageId(),
+          role: "assistant",
+          text: `${responseText}${modelLabel}`,
+        },
+      ]);
+    } catch {
+      setMessages((current) => [
+        ...current,
+        {
+          id: nextMessageId(),
+          role: "assistant",
+          text: "The AI Assistant sandbox could not reach the server route.",
+        },
+      ]);
+    } finally {
+      setIsSending(false);
+    }
   }
 
   function newChat() {
     setMessages([
       {
-        id: Date.now(),
+        id: nextMessageId(),
         role: "assistant",
         text: `New ${selectedAssistant.name} chat ready. Ask for a draft, checklist, roleplay, or review pass.`,
       },
@@ -222,7 +371,72 @@ export default function AIAssistantHub() {
     const previewUrl = file.type.startsWith("image/")
       ? URL.createObjectURL(file)
       : undefined;
-    setAttachedFile({ name: file.name, previewUrl });
+    setAttachedFile((current) => {
+      if (current?.previewUrl) {
+        URL.revokeObjectURL(current.previewUrl);
+      }
+
+      return {
+        file,
+        name: file.name,
+        type: file.type,
+        previewUrl,
+      };
+    });
+    setVoiceNote(
+      isAudioAttachment({ file, name: file.name, type: file.type, previewUrl })
+        ? "Audio attached. Use Transcribe audio to add it to the message."
+        : "",
+    );
+  }
+
+  function removeAttachedFile() {
+    setAttachedFile((current) => {
+      if (current?.previewUrl) {
+        URL.revokeObjectURL(current.previewUrl);
+      }
+
+      return null;
+    });
+  }
+
+  async function transcribeAttachedFile() {
+    if (!attachedFile || !isAudioAttachment(attachedFile) || isTranscribing) {
+      return;
+    }
+
+    setIsTranscribing(true);
+    setVoiceNote("Transcribing audio in sandbox...");
+
+    const formData = new FormData();
+    formData.append("file", attachedFile.file, attachedFile.name);
+
+    try {
+      const response = await fetch("/api/ai/transcribe", {
+        method: "POST",
+        body: formData,
+      });
+      const payload = (await response.json().catch(() => null)) as {
+        text?: unknown;
+        message?: unknown;
+        error?: unknown;
+      } | null;
+
+      const transcript =
+        typeof payload?.text === "string" ? payload.text.trim() : "";
+
+      if (!response.ok || !transcript) {
+        setVoiceNote(apiErrorMessage(response.status, payload));
+        return;
+      }
+
+      setInput((current) => `${current.trim()} ${transcript}`.trim());
+      setVoiceNote("Transcript added to the message.");
+    } catch {
+      setVoiceNote("The transcription route could not be reached.");
+    } finally {
+      setIsTranscribing(false);
+    }
   }
 
   function startVoiceInput() {
@@ -302,6 +516,47 @@ export default function AIAssistantHub() {
             <p className="mt-2 max-w-3xl text-sm leading-6 text-lf-slate">
               {selectedAssistant.description}
             </p>
+            <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+              <span
+                className={`rounded-full border px-3 py-1 ${
+                  backendStatus?.sandboxEnabled
+                    ? "border-lf-orange bg-lf-orangeSoft text-lf-orangeDark"
+                    : "border-lf-line bg-lf-mist text-lf-slate"
+                }`}
+              >
+                {backendStatus?.sandboxEnabled ? "Sandbox AI" : "Sandbox disabled"}
+              </span>
+              <span
+                className={`rounded-full border px-3 py-1 ${
+                  backendStatus?.openRouterConfigured
+                    ? "border-lf-line bg-white text-lf-charcoal"
+                    : "border-lf-line bg-lf-mist text-lf-slate"
+                }`}
+              >
+                {backendStatus?.openRouterConfigured
+                  ? `OpenRouter ${backendStatus.openRouterModel}`
+                  : "OpenRouter key needed"}
+              </span>
+              <span
+                className={`rounded-full border px-3 py-1 ${
+                  backendStatus?.groqConfigured
+                    ? "border-lf-line bg-white text-lf-charcoal"
+                    : "border-lf-line bg-lf-mist text-lf-slate"
+                }`}
+              >
+                {backendStatus?.groqConfigured
+                  ? `Groq ${backendStatus.groqWhisperModel}`
+                  : "Groq key needed"}
+              </span>
+              <span className="rounded-full border border-lf-line bg-white px-3 py-1 text-lf-charcoal">
+                No external sends
+              </span>
+            </div>
+            {backendStatusNote && (
+              <p className="mt-2 text-sm font-semibold text-lf-orangeDark">
+                {backendStatusNote}
+              </p>
+            )}
           </div>
 
           <div className="flex-1 overflow-hidden px-5 py-6 md:px-8">
@@ -311,7 +566,8 @@ export default function AIAssistantHub() {
                   key={starter}
                   type="button"
                   className="rounded-xl border border-lf-line bg-lf-mist p-4 text-left text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
-                  onClick={() => sendMessage(starter)}
+                  onClick={() => void sendMessage(starter)}
+                  disabled={isSending}
                 >
                   {starter}
                 </button>
@@ -335,6 +591,13 @@ export default function AIAssistantHub() {
                   </div>
                 </div>
               ))}
+              {isSending && (
+                <div className="flex justify-start">
+                  <div className="max-w-2xl rounded-2xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold leading-6 text-lf-slate">
+                    Running sandbox draft...
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -352,10 +615,20 @@ export default function AIAssistantHub() {
                 <button
                   type="button"
                   className="ml-auto text-lf-slate hover:text-lf-orange"
-                  onClick={() => setAttachedFile(null)}
+                  onClick={removeAttachedFile}
                 >
                   Remove
                 </button>
+                {isAudioAttachment(attachedFile) && (
+                  <button
+                    type="button"
+                    className="btn-secondary"
+                    onClick={() => void transcribeAttachedFile()}
+                    disabled={isTranscribing}
+                  >
+                    {isTranscribing ? "Transcribing" : "Transcribe audio"}
+                  </button>
+                )}
               </div>
             )}
             {voiceNote && (
@@ -384,7 +657,7 @@ export default function AIAssistantHub() {
                 onKeyDown={(event) => {
                   if (event.key === "Enter" && !event.shiftKey) {
                     event.preventDefault();
-                    sendMessage();
+                    void sendMessage();
                   }
                 }}
                 rows={1}
@@ -396,11 +669,17 @@ export default function AIAssistantHub() {
                 className="rounded-xl border border-lf-line bg-white px-3 py-3 text-sm font-bold text-lf-charcoal hover:border-lf-orange hover:text-lf-orange"
                 onClick={startVoiceInput}
                 aria-label="Use microphone"
+                disabled={isSending}
               >
                 Mic
               </button>
-              <button type="button" className="btn-primary min-h-11" onClick={() => sendMessage()}>
-                Send
+              <button
+                type="button"
+                className="btn-primary min-h-11"
+                onClick={() => void sendMessage()}
+                disabled={isSending}
+              >
+                {isSending ? "Sending" : "Send"}
               </button>
             </div>
           </div>
