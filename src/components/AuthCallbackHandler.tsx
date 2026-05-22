@@ -114,9 +114,10 @@ export default function AuthCallbackHandler() {
         return;
       }
 
-      await supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
+      window.localStorage.removeItem("lf-lo-dev-oauth");
+      window.localStorage.removeItem("lf-lo-dev-oauth-code-verifier");
 
-      router.replace(result.redirectTo);
+      window.location.assign(result.redirectTo);
     }
 
     void finishSignIn();
