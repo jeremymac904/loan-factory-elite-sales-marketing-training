@@ -3,16 +3,6 @@ import { NextResponse, type NextRequest } from "next/server";
 import { getSupabasePublicConfig, hasSupabasePublicConfig } from "./config";
 
 export async function updateSession(request: NextRequest) {
-  if (
-    request.nextUrl.pathname === "/" &&
-    request.nextUrl.searchParams.has("code")
-  ) {
-    const callbackUrl = request.nextUrl.clone();
-    callbackUrl.pathname = "/auth/callback/";
-
-    return NextResponse.redirect(callbackUrl);
-  }
-
   const config = getSupabasePublicConfig();
 
   if (!hasSupabasePublicConfig(config)) {

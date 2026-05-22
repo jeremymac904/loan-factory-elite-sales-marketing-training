@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import BrandImage from "@/components/BrandImage";
 import { BrandAsset, brandAssets } from "@/data/brandAssets";
 
@@ -46,7 +47,37 @@ const dashboardModules = [
   },
 ];
 
-export default function HomePage() {
+type SearchParams = Record<string, string | string[] | undefined>;
+
+type Props = {
+  searchParams?: Promise<SearchParams> | SearchParams;
+};
+
+function buildCallbackQuery(params: SearchParams) {
+  const query = new URLSearchParams();
+
+  Object.entries(params).forEach(([key, value]) => {
+    if (Array.isArray(value)) {
+      value.forEach((item) => query.append(key, item));
+      return;
+    }
+
+    if (typeof value === "string") {
+      query.set(key, value);
+    }
+  });
+
+  return query.toString();
+}
+
+export default async function HomePage({ searchParams }: Props) {
+  const params = searchParams ? await searchParams : {};
+
+  if (typeof params.code === "string" && params.code) {
+    const query = buildCallbackQuery(params);
+    redirect(`/auth/callback/${query ? `?${query}` : ""}`);
+  }
+
   return (
     <>
       <section className="relative isolate overflow-hidden border-b border-lf-line bg-lf-navy text-white">
