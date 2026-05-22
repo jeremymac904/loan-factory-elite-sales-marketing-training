@@ -3,60 +3,36 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
+import {
+  faceGramGroups,
+  faceGramPosts,
+  faceGramRightRail,
+  faceGramShortcuts,
+  lenderPromotionNotes,
+} from "@/data/facegram";
 
-const groups = [
-  "Florida LOs",
-  "Vietnamese-speaking LOs",
-  "New Loan Officers",
-  "Referral Partner Ideas",
-  "Open House Scripts",
-  "AE and Vendor Ideas",
-  "Content Feedback",
-  "Spanish-speaking LOs",
+const postOptions = [
+  "Text post",
+  "Image",
+  "Video/Reel",
+  "Story",
+  "Poll",
+  "Ask for feedback",
 ];
 
-const topics = [
-  "Daily posts",
-  "Questions",
-  "Marketing ideas",
-  "Scripts",
-  "Videos",
-  "Wins",
-  "Feedback requests",
-  "State groups",
-  "Language groups",
-  "Topic groups",
+const stories = [
+  { label: "Create story", image: "/team/andre-king.png" },
+  { label: "Training win", image: "/team/edward-arvizo.png" },
+  { label: "Marketing idea", image: "/team/duyen-nguyen.png" },
+  { label: "New LO question", image: "/team/kevin-truong.png" },
+  { label: "Coach recap", image: "/team/jody-richards.png" },
 ];
 
-const posts = [
-  {
-    author: "Andre King",
-    role: "LO Development",
-    avatar: "/team/andre-king.png",
-    title: "What worked on today's first-call practice",
-    body: "Share one sentence that helped you slow down the conversation and keep the borrower engaged.",
-    tag: "Question",
-    media: "Script thread",
-  },
-  {
-    author: "Duyen Nguyen",
-    role: "Marketing",
-    avatar: "/team/duyen-nguyen.png",
-    title: "Before and after: local event post",
-    body: "This example is ready for internal feedback. Keep comments focused on clarity, audience, and review needs.",
-    tag: "Marketing idea",
-    media: "Image-style card",
-  },
-  {
-    author: "Edward Arvizo",
-    role: "Corporate Coach",
-    avatar: "/team/edward-arvizo.png",
-    title: "Power Hour win",
-    body: "One LO booked two referral partner conversations by asking a cleaner next-step question. Drop your version below.",
-    tag: "Win",
-    media: "Video-style recap",
-  },
-];
+const accentClasses = {
+  orange: "from-lf-orange/90 via-[#2b2b2b] to-black",
+  charcoal: "from-[#3a3a3a] via-[#161616] to-black",
+  silver: "from-[#d9d9d9] via-[#363636] to-black",
+};
 
 export default function FaceGramExperience() {
   const [entered, setEntered] = useState(false);
@@ -81,13 +57,14 @@ export default function FaceGramExperience() {
               FaceGram
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/85">
-              Loan Factory's internal social community for loan officers, AEs,
-              approved vendors, corporate coaches, marketing reviewers, and
-              internal teams.
+              Loan Factory&apos;s internal social community for loan officers,
+              AEs, approved vendors, corporate coaches, marketing reviewers,
+              and internal teams.
             </p>
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/70">
-              Use it to ask questions, share ideas, post examples, get feedback,
-              join groups, and learn from the people doing the work every day.
+              Share questions, ideas, scripts, videos, wins, marketing
+              examples, groups, and feedback inside Loan Factory. FaceGram does
+              not publish to public social channels.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <button
@@ -97,111 +74,144 @@ export default function FaceGramExperience() {
               >
                 Enter FaceGram
               </button>
-              <a
-                href="#facegram-feed"
+              <Link
+                href="/creator-network/groups/"
                 className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
               >
-                Preview feed
-              </a>
+                Browse Groups
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container-page py-14">
-        <div className="grid gap-5 lg:grid-cols-3">
-          {[
-            {
-              title: "Why LOs use it",
-              body: "Get fast peer feedback, see practical examples, learn from coach comments, and find ideas by group or topic.",
-            },
-            {
-              title: "What belongs here",
-              body: "Daily posts, questions, marketing ideas, scripts, videos, wins, feedback requests, and group conversations.",
-            },
-            {
-              title: "How it stays clean",
-              body: "FaceGram is employee-only. Internal examples stay inside the community unless a separate reviewer approves adaptation.",
-            },
-          ].map((item) => (
-            <article key={item.title} className="card">
-              <h2 className="h-display text-xl">{item.title}</h2>
-              <p className="prose-lf mt-2 text-sm text-lf-slate">{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="facegram-feed" className="bg-lf-mist py-14">
-        <div className="container-page">
-          <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h2 className="h-display text-3xl">Community feed</h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-lf-slate">
-                {entered
-                  ? "You are inside the FaceGram preview experience."
-                  : "Preview how FaceGram will organize internal posts, groups, coaching notes, and feedback requests."}
-              </p>
-            </div>
-            {!entered && (
-              <button
-                type="button"
-                className="btn-primary"
-                onClick={() => setEntered(true)}
-              >
-                Login / Enter FaceGram
-              </button>
-            )}
-          </div>
-
-          <div className="grid gap-5 lg:grid-cols-[240px_minmax(0,1fr)_260px]">
-            <aside className="card h-fit">
-              <h3 className="h-display text-lg">Groups</h3>
-              <div className="mt-4 grid gap-2">
-                {groups.map((group) => (
-                  <button
-                    key={group}
-                    type="button"
-                    className="rounded-lg border border-lf-line bg-white px-3 py-2 text-left text-sm font-semibold text-lf-charcoal hover:border-lf-orange hover:text-lf-orange"
+      <section id="facegram-feed" className="bg-[#f0f2f5] py-6">
+        <div className="mx-auto grid w-full max-w-[1480px] gap-5 px-4 lg:grid-cols-[270px_minmax(0,680px)_310px] xl:grid-cols-[300px_minmax(0,760px)_340px]">
+          <aside className="hidden space-y-3 lg:block">
+            <div className="rounded-2xl bg-white p-4 shadow-card">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-lf-orange text-lg font-black text-white">
+                  F
+                </div>
+                <div>
+                  <h2 className="font-display text-lg font-semibold text-lf-navy">
+                    FaceGram
+                  </h2>
+                  <p className="text-xs text-lf-slate">Internal community</p>
+                </div>
+              </div>
+              <nav className="mt-4 grid gap-1" aria-label="FaceGram shortcuts">
+                {faceGramShortcuts.map((shortcut) => (
+                  <Link
+                    key={shortcut.label}
+                    href={shortcut.href}
+                    className="rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal hover:bg-lf-mist hover:text-lf-orange"
                   >
-                    {group}
-                  </button>
+                    {shortcut.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            <div className="rounded-2xl bg-white p-4 shadow-card">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="font-display text-lg font-semibold text-lf-navy">
+                  Groups
+                </h3>
+                <Link
+                  href="/creator-network/groups/"
+                  className="text-sm font-semibold text-lf-orange"
+                >
+                  See all
+                </Link>
+              </div>
+              <div className="mt-3 grid gap-2">
+                {faceGramGroups.slice(0, 6).map((group) => (
+                  <Link
+                    key={group.slug}
+                    href={`/creator-network/groups/${group.slug}/`}
+                    className="rounded-xl border border-lf-line bg-white px-3 py-3 text-sm font-semibold text-lf-charcoal hover:border-lf-orange hover:text-lf-orange"
+                  >
+                    {group.name}
+                    <span className="mt-1 block text-xs font-normal text-lf-slate">
+                      {group.memberCount}
+                    </span>
+                  </Link>
                 ))}
               </div>
-            </aside>
+            </div>
+          </aside>
 
-            <div className="space-y-5">
-              <article className="card">
-                <div className="flex items-center gap-3">
-                  <img
-                    src="/team/andre-king.png"
-                    alt="Andre King"
-                    className="h-11 w-11 rounded-full object-cover"
-                  />
-                  <div>
-                    <h3 className="h-display text-lg">Post composer</h3>
-                    <p className="text-sm text-lf-slate">
-                      Share an internal question, win, script, video idea, or
-                      feedback request.
-                    </p>
-                  </div>
-                </div>
+          <main className="space-y-4">
+            {!entered && (
+              <div className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
+                <h2 className="font-display text-2xl font-semibold text-lf-navy">
+                  Welcome to FaceGram
+                </h2>
+                <p className="mt-2 text-sm leading-6 text-lf-slate">
+                  Enter the internal community feed to review posts, groups,
+                  coaching reminders, and internal examples.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setEntered(true)}
+                  className="btn-primary mt-4"
+                >
+                  Login / Enter FaceGram
+                </button>
+              </div>
+            )}
+
+            <div className="rounded-2xl bg-white p-4 shadow-card">
+              <div className="grid grid-cols-[auto_1fr] gap-3">
+                <img
+                  src="/team/andre-king.png"
+                  alt="Andre King"
+                  className="h-11 w-11 rounded-full object-cover"
+                />
                 <textarea
                   value={draftPost}
                   onChange={(event) => setDraftPost(event.target.value)}
-                  rows={4}
-                  placeholder="What do you want to share with the Loan Factory community?"
-                  className="mt-4 w-full rounded-xl border border-lf-line bg-lf-mist px-4 py-3 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
+                  rows={2}
+                  placeholder="What's on your mind?"
+                  className="min-h-12 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
                 />
-                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                  {["Question", "Marketing idea", "Script", "Video", "Win"].map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-              </article>
+              </div>
+              <div className="mt-4 grid gap-2 border-t border-lf-line pt-4 sm:grid-cols-3">
+                {postOptions.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    className="rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal hover:bg-lf-mist hover:text-lf-orange"
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-              {posts.map((post) => (
-                <article key={post.title} className="card">
+            <div className="grid grid-cols-2 gap-3 overflow-hidden sm:grid-cols-5">
+              {stories.map((story) => (
+                <article
+                  key={story.label}
+                  className="relative min-h-36 overflow-hidden rounded-2xl bg-lf-navy shadow-card"
+                >
+                  <img
+                    src={story.image}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover opacity-55"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/15 to-transparent" />
+                  <p className="absolute bottom-3 left-3 right-3 text-sm font-semibold text-white">
+                    {story.label}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            {faceGramPosts.map((post) => (
+              <article key={post.title} className="rounded-2xl bg-white shadow-card">
+                <div className="p-5">
                   <div className="flex items-start gap-3">
                     <img
                       src={post.avatar}
@@ -209,66 +219,107 @@ export default function FaceGramExperience() {
                       className="h-12 w-12 rounded-full object-cover"
                     />
                     <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="h-display text-lg">{post.author}</h3>
-                        <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                          {post.tag}
-                        </span>
-                      </div>
-                      <p className="text-sm text-lf-slate">{post.role}</p>
+                      <h3 className="font-display text-base font-semibold text-lf-navy">
+                        {post.author}
+                      </h3>
+                      <p className="text-xs text-lf-slate">
+                        {post.role} · {post.group} · {post.time}
+                      </p>
                     </div>
                   </div>
                   <h4 className="mt-4 text-lg font-semibold text-lf-navy">
                     {post.title}
                   </h4>
-                  <p className="prose-lf mt-2 text-sm text-lf-slate">
+                  <p className="mt-2 text-sm leading-6 text-lf-charcoal">
                     {post.body}
                   </p>
-                  <div className="mt-4 rounded-xl border border-lf-line bg-[linear-gradient(135deg,#111111,#2b2b2b)] p-5 text-white">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                      {post.media}
-                    </p>
-                    <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                      <div className="h-24 rounded-lg bg-white/12" />
-                      <div className="h-24 rounded-lg bg-white/16" />
-                      <div className="h-24 rounded-lg bg-white/10" />
+                </div>
+                <div className={`bg-gradient-to-br ${accentClasses[post.accent]} p-5 text-white`}>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                    {post.mediaLabel}
+                  </p>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
+                    <div className="flex min-h-44 items-end rounded-xl bg-white/12 p-4">
+                      <p className="max-w-xs font-display text-2xl font-semibold">
+                        Internal example for feedback
+                      </p>
+                    </div>
+                    <div className="grid gap-3">
+                      <div className="rounded-xl bg-white/15 p-4 text-sm">
+                        Script idea
+                      </div>
+                      <div className="rounded-xl bg-white/10 p-4 text-sm">
+                        Coaching note
+                      </div>
                     </div>
                   </div>
-                  <div className="mt-4 flex flex-wrap gap-2 text-sm font-semibold text-lf-charcoal">
-                    <button type="button" className="btn-secondary">Like</button>
-                    <button type="button" className="btn-secondary">Comment</button>
-                    <button type="button" className="btn-secondary">Save</button>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <aside className="space-y-5">
-              <article className="card">
-                <h3 className="h-display text-lg">Trends</h3>
-                <div className="mt-4 grid gap-2 text-sm text-lf-slate">
-                  {topics.map((topic) => (
-                    <span key={topic}>{topic}</span>
+                </div>
+                <div className="grid grid-cols-4 border-t border-lf-line text-center text-sm font-semibold text-lf-slate">
+                  {["Like", "Comment", "Save", "Share internally"].map((action) => (
+                    <button
+                      key={action}
+                      type="button"
+                      className="px-2 py-3 hover:bg-lf-mist hover:text-lf-orange"
+                    >
+                      {action}
+                    </button>
                   ))}
                 </div>
               </article>
-              <article className="card border-lf-orange/35">
-                <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                  Content Coach
-                </p>
-                <h3 className="h-display mt-2 text-lg">
-                  Turn an idea into a cleaner draft
-                </h3>
-                <p className="prose-lf mt-2 text-sm text-lf-slate">
-                  Use Content Coach to reshape an internal post into a clearer
-                  draft before human review.
-                </p>
-                <Link href="/ai-assistants/" className="btn-primary mt-4">
-                  Open Content Coach
-                </Link>
-              </article>
-            </aside>
-          </div>
+            ))}
+          </main>
+
+          <aside className="space-y-4 lg:sticky lg:top-24 lg:h-fit">
+            <div className="rounded-2xl bg-white p-4 shadow-card">
+              <h3 className="font-display text-lg font-semibold text-lf-navy">
+                Lender Promotions
+              </h3>
+              <div className="mt-3 grid gap-3">
+                {lenderPromotionNotes.map((note) => (
+                  <article
+                    key={note.title}
+                    className="rounded-xl border border-lf-line bg-lf-mist p-3"
+                  >
+                    <h4 className="text-sm font-semibold text-lf-navy">
+                      {note.title}
+                    </h4>
+                    <p className="mt-1 text-xs leading-5 text-lf-slate">
+                      {note.body}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-white p-4 shadow-card">
+              <h3 className="font-display text-lg font-semibold text-lf-navy">
+                What to watch
+              </h3>
+              <div className="mt-3 grid gap-2">
+                {faceGramRightRail.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-xl border border-lf-line px-3 py-3 text-sm font-semibold text-lf-charcoal"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-lf-navy p-5 text-white shadow-card">
+              <h3 className="font-display text-xl font-semibold">
+                Content Coach
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-white/75">
+                Turn a rough internal post into a cleaner draft before sending
+                it through the right human review path.
+              </p>
+              <Link href="/ai-assistants/" className="btn-primary mt-4">
+                Open Content Coach
+              </Link>
+            </div>
+          </aside>
         </div>
       </section>
     </>

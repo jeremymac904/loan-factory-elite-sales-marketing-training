@@ -71,43 +71,31 @@ a {
   .chrome-title {
     position: relative;
     display: inline-block;
-    overflow: hidden;
     color: transparent;
     background:
-      linear-gradient(110deg, #f8f8f8 0%, #9f9f9f 18%, #ffffff 34%, #b9b9b9 52%, #f6f6f6 70%, #747474 100%),
+      linear-gradient(110deg, #f8f8f8 0%, #9f9f9f 18%, #ffffff 31%, #f26a1f 42%, #ffffff 48%, #b9b9b9 58%, #f6f6f6 74%, #747474 100%),
       linear-gradient(180deg, #ffffff 0%, #9a9a9a 48%, #ffffff 100%);
+    background-size: 230% 100%, 100% 100%;
+    background-position: 0% 50%, 0 0;
     background-clip: text;
     -webkit-background-clip: text;
     letter-spacing: 0;
     text-shadow: 0 16px 36px rgba(0, 0, 0, 0.42);
+    animation: chrome-title-shine 5.8s ease-in-out infinite;
   }
 
   .chrome-title::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    transform: translateX(-135%) skewX(-18deg);
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.08) 35%,
-      rgba(255, 255, 255, 0.72) 48%,
-      rgba(242, 106, 31, 0.22) 54%,
-      transparent 72%
-    );
-    animation: chrome-title-sweep 5.8s ease-in-out infinite;
-    mix-blend-mode: screen;
-    pointer-events: none;
+    content: none;
   }
 }
 
-@keyframes chrome-title-sweep {
+@keyframes chrome-title-shine {
   0%,
   42% {
-    transform: translateX(-135%) skewX(-18deg);
+    background-position: 0% 50%, 0 0;
   }
   72%,
   100% {
-    transform: translateX(135%) skewX(-18deg);
+    background-position: 120% 50%, 0 0;
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   ROLE_PREVIEW_DISCLAIMER,
   RoleId,
@@ -11,9 +12,12 @@ import { setRolePreview, useRolePreview } from "@/lib/useRolePreview";
 
 export default function LoginPicker() {
   const active = useRolePreview();
+  const router = useRouter();
 
   function pick(id: RoleId) {
     setRolePreview(id);
+    const role = findRole(id);
+    router.push(role?.dashboardHref ?? "/");
   }
 
   function clear() {
@@ -84,8 +88,18 @@ export default function LoginPicker() {
                 </div>
                 <h3 className="h-display text-lg">{r.name}</h3>
                 <p className="prose-lf text-sm text-lf-slate">{r.description}</p>
+                <ul className="mt-2 space-y-1 text-sm text-lf-slate">
+                  {r.highlights.map((highlight) => (
+                    <li key={highlight} className="flex gap-2">
+                      <span aria-hidden className="text-lf-orange">
+                        -
+                      </span>
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
                 <span className="mt-auto text-sm font-semibold text-lf-navy">
-                  {isActive ? "Selected" : "Preview as this role"}
+                  {isActive ? "Go to role area" : "Sign in as this role"}
                 </span>
               </button>
             );

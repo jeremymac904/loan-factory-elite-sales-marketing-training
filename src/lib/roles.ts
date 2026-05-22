@@ -1,104 +1,124 @@
 export type RoleId =
-  | "jeremy-owner-admin"
-  | "andre-leadership"
-  | "tara-lo-development"
-  | "kevin-lo-development"
-  | "benjamin-lo-development"
+  | "admin"
   | "corporate-coach"
   | "team-leader"
+  | "marketing"
   | "loan-officer"
-  | "marketing-reviewer";
+  | "support-staff";
 
 export type Role = {
   id: RoleId;
   name: string;
   group:
-    | "Owner Admin"
-    | "Leadership"
-    | "LO Development"
+    | "Admin"
     | "Corporate Coach"
     | "Team Leader"
+    | "Marketing"
     | "Loan Officer"
-    | "Marketing Reviewer";
+    | "Support Staff";
   description: string;
+  dashboardHref: string;
+  highlights: string[];
 };
 
 export const roles: Role[] = [
   {
-    id: "jeremy-owner-admin",
-    name: "Jeremy McDonald",
-    group: "Owner Admin",
-    description: "Owner admin. Full access to every page and surface.",
-  },
-  {
-    id: "andre-leadership",
-    name: "Andre King",
-    group: "Leadership",
-    description: "Leadership view. Curriculum oversight and approvals.",
-  },
-  {
-    id: "tara-lo-development",
-    name: "Tara, LO Development",
-    group: "LO Development",
-    description: "LO Development access to coach and team leader views.",
-  },
-  {
-    id: "kevin-lo-development",
-    name: "Kevin, LO Development",
-    group: "LO Development",
-    description: "LO Development access to coach and team leader views.",
-  },
-  {
-    id: "benjamin-lo-development",
-    name: "Benjamin, LO Development",
-    group: "LO Development",
-    description: "LO Development access to coach and team leader views.",
+    id: "admin",
+    name: "Admin",
+    group: "Admin",
+    description:
+      "Platform overview for Jeremy, Andre, Tara, Benjamin, Edward, Kevin, and approved admin users.",
+    dashboardHref: "/resources/",
+    highlights: [
+      "Platform overview",
+      "Content and admin links",
+      "Moderation and review concepts",
+      "User and support directory",
+    ],
   },
   {
     id: "corporate-coach",
     name: "Corporate Coach",
     group: "Corporate Coach",
-    description: "Coach Guide access. Reviews and reinforces with LOs.",
+    description:
+      "Coaching resources, Apex coaching area, recordings, scripts, and trackers.",
+    dashboardHref: "/apex-member-area/",
+    highlights: [
+      "Apex coaching area",
+      "Recordings and scripts",
+      "Trackers and scorecards",
+      "Coach guide",
+    ],
   },
   {
     id: "team-leader",
     name: "Team Leader",
     group: "Team Leader",
-    description: "Team Leader Guide access. Runs the team's weekly cadence.",
+    description:
+      "Team growth, 1+1+1=5 planning, training progress, and resource sharing.",
+    dashboardHref: "/team-leader-guide/",
+    highlights: [
+      "Team Leader Guide",
+      "1+1+1=5 growth",
+      "Training progress",
+      "Resource sharing",
+    ],
+  },
+  {
+    id: "marketing",
+    name: "Marketing",
+    group: "Marketing",
+    description:
+      "Review queue concepts, FaceGram content review, and approved adaptation resources.",
+    dashboardHref: "/creator-network/",
+    highlights: [
+      "FaceGram content review",
+      "Approved adaptation concepts",
+      "Compliance notes",
+      "Marketing resource paths",
+    ],
   },
   {
     id: "loan-officer",
     name: "Loan Officer",
     group: "Loan Officer",
-    description: "Standard LO view. Modules, scripts, prompts, tracker, audio.",
+    description:
+      "Apex Advisor, Sales & Marketing, AI Training, FaceGram, AI Assistants, and Resources.",
+    dashboardHref: "/",
+    highlights: [
+      "Sales & Marketing 101-601",
+      "Apex Advisor",
+      "AI Training",
+      "FaceGram",
+    ],
   },
   {
-    id: "marketing-reviewer",
-    name: "Marketing Reviewer, Duyen",
-    group: "Marketing Reviewer",
-    description: "Reviews public content for compliance and brand voice.",
+    id: "support-staff",
+    name: "Support Staff",
+    group: "Support Staff",
+    description:
+      "Support routing, resource directory, and request intake concepts.",
+    dashboardHref: "/support-routing/",
+    highlights: [
+      "Support routing",
+      "Resource directory",
+      "Platform suggestions",
+      "Anonymous feedback path",
+    ],
   },
 ];
 
 const COACH_GUIDE_ACCESS: RoleId[] = [
-  "jeremy-owner-admin",
-  "andre-leadership",
-  "tara-lo-development",
-  "kevin-lo-development",
-  "benjamin-lo-development",
+  "admin",
   "corporate-coach",
-  "marketing-reviewer",
+  "marketing",
 ];
 
 const TEAM_LEADER_GUIDE_ACCESS: RoleId[] = [
-  "jeremy-owner-admin",
-  "andre-leadership",
-  "tara-lo-development",
-  "kevin-lo-development",
-  "benjamin-lo-development",
+  "admin",
   "corporate-coach",
   "team-leader",
-  "marketing-reviewer",
+  "marketing",
 ];
 
 export type GatedSurface = "coach-guide" | "team-leader-guide";
@@ -118,7 +138,11 @@ export function findRole(id: RoleId | null): Role | undefined {
   return roles.find((r) => r.id === id);
 }
 
+export function isRoleId(value: string | null): value is RoleId {
+  return roles.some((role) => role.id === value);
+}
+
 export const ROLE_STORAGE_KEY = "lf_role_preview";
 
 export const ROLE_PREVIEW_DISCLAIMER =
-  "Version one uses a local role preview only. Real login and role based access will be added when this moves into Loan Factory AI Advantage.";
+  "This sign-in is a local role preview for this browser. Real account security will be added later.";

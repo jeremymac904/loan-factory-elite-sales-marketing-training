@@ -1,13 +1,14 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { ROLE_STORAGE_KEY, RoleId } from "@/lib/roles";
+import { ROLE_STORAGE_KEY, RoleId, isRoleId } from "@/lib/roles";
 
 function getStoredRole(): RoleId | null {
   if (typeof window === "undefined") return null;
 
   try {
-    return window.localStorage.getItem(ROLE_STORAGE_KEY) as RoleId | null;
+    const stored = window.localStorage.getItem(ROLE_STORAGE_KEY);
+    return isRoleId(stored) ? stored : null;
   } catch {
     return null;
   }

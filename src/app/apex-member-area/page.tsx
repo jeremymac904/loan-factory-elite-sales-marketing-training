@@ -4,30 +4,134 @@ import SectionHeading from "@/components/SectionHeading";
 
 export const metadata = { title: "Apex Member Area" };
 
-const lockedBlocks = [
+const dashboardCards = [
   {
-    title: "Coaching rhythm",
-    body: "See upcoming coaching calls, daily coaching prompts, and accountability actions.",
+    title: "This week's coaching focus",
+    body: "Power Hour preparation, referral partner follow-up, and a cleaner daily call block.",
+    action: "Open Coaching Rhythm",
+    href: "#coaching-rhythm",
   },
   {
-    title: "Resource library",
-    body: "Access past training recordings, scripts, documents, PDF handouts, and favorite YouTube channels.",
+    title: "Advisor Scorecard",
+    body: "Review activity, consistency, partner touches, training progress, and accountability notes.",
+    action: "View Scorecards",
+    href: "#trackers-scorecards",
   },
   {
-    title: "Trackers and scorecards",
-    body: "Use the Greatness Tracker, Deal Flow Tracker, Referral Partner Tracker, and Advisor Scorecard.",
+    title: "Member Resource Library",
+    body: "Find recordings, scripts, documents, handouts, tracker links, and favorite YouTube channels.",
+    action: "Open Resources",
+    href: "#member-resources",
+  },
+];
+
+const memberAreas = [
+  {
+    title: "Coaching Rhythm",
+    body: "Daily Power Hour, biweekly group coaching, motivational emails, and Pro coaching cadence.",
+    href: "#coaching-rhythm",
   },
   {
-    title: "Certification status",
-    body: "Track Certified Mortgage Advisor progress and approved specialty-track requirements.",
+    title: "Resource Library",
+    body: "Member resources for scripts, handouts, recordings, documents, and coaching references.",
+    href: "#member-resources",
   },
   {
-    title: "Leaderboards",
-    body: "View Apex Advisor and Apex Advisor Pro leaderboard progress.",
+    title: "Trackers and Scorecards",
+    body: "Greatness Tracker, Deal Flow Tracker, Referral Partner Tracker, and Advisor Scorecard.",
+    href: "#trackers-scorecards",
   },
   {
-    title: "Pro mastermind access",
-    body: "Pro members get advanced mastermind access and deeper accountability rhythm.",
+    title: "Past Recordings",
+    body: "Review coaching calls, member trainings, Power Hour examples, and topic replays.",
+    href: "/recordings/",
+  },
+  {
+    title: "Scripts and Documents",
+    body: "Open call scripts, partner scripts, follow-up templates, PDFs, and coaching handouts.",
+    href: "/scripts/",
+  },
+  {
+    title: "Advisor Scorecard",
+    body: "Use a weekly scorecard to track consistent action, practice, follow-up, and coaching notes.",
+    href: "#advisor-scorecard",
+  },
+  {
+    title: "Greatness Tracker",
+    body: "Track the daily habits that create better conversations and stronger consistency.",
+    href: "#greatness-tracker",
+  },
+  {
+    title: "Deal Flow Tracker",
+    body: "Stay clear on active opportunities, follow-up dates, next actions, and pipeline health.",
+    href: "#deal-flow-tracker",
+  },
+  {
+    title: "Referral Partner Tracker",
+    body: "Track Realtor and referral partner touches, appointments, notes, and next steps.",
+    href: "#referral-partner-tracker",
+  },
+  {
+    title: "Leaderboard",
+    body: "See Apex Advisor and Apex Advisor Pro accountability categories and recognition areas.",
+    href: "/apex-leaderboards/",
+  },
+  {
+    title: "Certifications",
+    body: "Track Certified Mortgage Advisor designation progress and specialty-track requirements.",
+    href: "/apex-certifications/",
+  },
+  {
+    title: "Calendar",
+    body: "Review coaching calls, Breakfast Club, Power Hour, training windows, and member events.",
+    href: "/apex-calendar/",
+  },
+];
+
+const coachingRhythm = [
+  "Biweekly Apex Advisor group coaching calls",
+  "Daily Power Hour Smile and Dial lunch-themed call",
+  "Daily motivational coaching email",
+  "Weekly Apex Advisor Pro coaching calls",
+  "Daily Breakfast Club call for Pro members",
+  "Priority accountability rhythm for Pro members",
+];
+
+const resourceGroups = [
+  {
+    title: "Recordings",
+    items: ["Past coaching calls", "Power Hour examples", "Training replays"],
+  },
+  {
+    title: "Scripts",
+    items: ["First-call scripts", "Referral partner scripts", "Follow-up scripts"],
+  },
+  {
+    title: "Documents",
+    items: ["PDF handouts", "Coaching worksheets", "Favorite YouTube channel library"],
+  },
+];
+
+const trackers = [
+  {
+    id: "advisor-scorecard",
+    title: "Advisor Scorecard",
+    body: "Weekly scorecard for activity, practice, consistency, training progress, and accountability.",
+  },
+  {
+    id: "greatness-tracker",
+    title: "Greatness Tracker",
+    body: "Daily habit tracker for calls, follow-up, partner touches, learning, and execution rhythm.",
+  },
+  {
+    id: "deal-flow-tracker",
+    title: "Deal Flow Tracker",
+    body: "Pipeline clarity for opportunities, next steps, dates, borrower conversations, and deal movement.",
+  },
+  {
+    id: "referral-partner-tracker",
+    title: "Referral Partner Tracker",
+    body: "Relationship tracker for Realtor touches, partner meetings, referral sources, and follow-up cadence.",
   },
 ];
 
@@ -35,73 +139,177 @@ export default function ApexMemberAreaPage() {
   return (
     <>
       <PageHero
-        eyebrow="Members only"
-        title="Apex Member Area."
+        title="Apex Member Area"
         body={
           <p>
-            Sign in to your Apex Advisor portal. Track your progress, access
-            coaching resources, review scorecards, and manage your membership
-            rhythm.
+            The Apex Advisor member home for paid coaching resources, daily
+            rhythm, member recordings, scripts, trackers, scorecards,
+            certifications, and leaderboards.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
       >
         <div className="flex flex-wrap gap-3">
+          <Link href="/login/" className="btn-primary">
+            Sign In
+          </Link>
           <Link
-            href="/apex-launch-call/"
-            className="btn-primary"
+            href="/apex-advisor/"
+            className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
-            Join Now
+            View Apex Tiers
           </Link>
         </div>
       </PageHero>
 
-      <section className="container-page pb-10">
+      <section className="container-page py-14">
         <SectionHeading
-          eyebrow="What members see"
-          title="Apex Advisor member resources."
+          title="Member Dashboard"
+          description="Start here when you need the next coaching action, the right resource, or your weekly accountability view."
         />
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {lockedBlocks.map((b) => (
-            <article
-              key={b.title}
-              className="relative card overflow-hidden"
-            >
-              <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-lf-line bg-white px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-lf-slate">
-                Locked
+        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          {dashboardCards.map((card) => (
+            <a key={card.title} href={card.href} className="card block hover:shadow-lift">
+              <h2 className="h-display text-xl">{card.title}</h2>
+              <p className="prose-lf mt-2 text-sm text-lf-slate">{card.body}</p>
+              <span className="mt-5 inline-flex text-sm font-semibold text-lf-orange">
+                {card.action} &rarr;
               </span>
-              <h3 className="h-display text-lg">{b.title}</h3>
-              <p className="prose-lf mt-2 text-sm text-lf-slate">{b.body}</p>
-              <div className="mt-4 h-1.5 w-full rounded-full bg-lf-mist">
-                <div className="h-1.5 w-0 rounded-full bg-lf-orange" />
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-lf-mist">
+        <div className="container-page py-14">
+          <SectionHeading
+            title="Apex member areas"
+            description="Each area supports Apex Advisor paid coaching. Sales & Marketing 101-601 remains its own training series."
+          />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {memberAreas.map((area) => (
+              <Link key={area.title} href={area.href} className="card hover:shadow-lift">
+                <h2 className="h-display text-lg">{area.title}</h2>
+                <p className="prose-lf mt-2 text-sm text-lf-slate">
+                  {area.body}
+                </p>
+                <span className="mt-5 inline-flex text-sm font-semibold text-lf-orange">
+                  Open &rarr;
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="coaching-rhythm" className="container-page py-14">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <SectionHeading
+              title="Coaching Rhythm"
+              description="Apex Advisor gives members a recurring coaching cadence with daily and weekly accountability built around action."
+            />
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/apex-calendar/" className="btn-primary">
+                Open Calendar
+              </Link>
+              <Link href="/apex-mastermind/" className="btn-secondary">
+                Open Mastermind
+              </Link>
+            </div>
+          </div>
+          <div className="grid gap-3">
+            {coachingRhythm.map((item) => (
+              <div
+                key={item}
+                className="rounded-xl border border-lf-line bg-white p-4 text-sm font-semibold text-lf-charcoal shadow-card"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="member-resources" className="bg-lf-navy text-white">
+        <div className="container-page py-14">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-3xl font-semibold">
+              Member Resources
+            </h2>
+            <p className="mt-3 text-base leading-7 text-white/75">
+              Apex members can work from recordings, scripts, documents,
+              handouts, tracker links, and favorite training references.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {resourceGroups.map((group) => (
+              <article
+                key={group.title}
+                className="rounded-2xl border border-white/15 bg-white/[0.08] p-6"
+              >
+                <h3 className="font-display text-xl font-semibold">
+                  {group.title}
+                </h3>
+                <ul className="mt-4 space-y-3 text-sm text-white/75">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="trackers-scorecards" className="container-page py-14">
+        <SectionHeading
+          title="Trackers and Scorecards"
+          description="Use these tools to keep activity, partner development, deal movement, and coaching rhythm visible."
+        />
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          {trackers.map((tracker) => (
+            <article key={tracker.id} id={tracker.id} className="card">
+              <h3 className="h-display text-xl">{tracker.title}</h3>
+              <p className="prose-lf mt-2 text-sm text-lf-slate">
+                {tracker.body}
+              </p>
+              <div className="mt-5 grid gap-2 text-sm text-lf-slate">
+                <div className="rounded-lg bg-lf-mist px-3 py-2">
+                  This week&apos;s focus
+                </div>
+                <div className="rounded-lg bg-lf-mist px-3 py-2">
+                  Current score
+                </div>
+                <div className="rounded-lg bg-lf-mist px-3 py-2">
+                  Next action
+                </div>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="bg-lf-mist">
-        <div className="container-page py-12">
-          <SectionHeading
-            eyebrow="Not a member yet"
-            title="Choose your Apex tier."
-          />
+      <section className="container-page pb-20">
+        <div className="rounded-2xl border border-lf-line bg-lf-orangeSoft p-6 shadow-card">
+          <h2 className="h-display text-2xl">Membership path</h2>
+          <p className="prose-lf mt-2 max-w-3xl text-sm text-lf-slate">
+            Apex Advisor is the paid coaching platform. Apex Advisor includes
+            biweekly group coaching, Power Hour, member resources, daily
+            motivational email, Certified Mortgage Advisor designation, and
+            accountability tools. Apex Advisor Pro adds weekly coaching, Daily
+            Breakfast Club, advanced certifications, deeper coaching rhythm,
+            Pro leaderboard, and advanced mastermind access.
+          </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/apex-advisor/" className="btn-primary">
-              Join Apex Advisor ($249/mo)
+              Compare Tiers
             </Link>
             <Link href="/apex-advisor-pro/" className="btn-secondary">
-              Go Pro ($449/mo)
+              View Apex Advisor Pro
             </Link>
           </div>
         </div>
-      </section>
-
-      <section className="container-page pb-20 pt-10">
-        <p className="max-w-3xl text-sm leading-6 text-lf-slate">
-          Member resources support coaching, training, and accountability.
-          Results vary by LO, market, and execution.
-        </p>
       </section>
     </>
   );

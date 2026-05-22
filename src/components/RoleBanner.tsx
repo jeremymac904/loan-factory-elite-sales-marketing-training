@@ -24,7 +24,7 @@ export default function RoleBanner() {
             Switch role
           </Link>
           <span className="hidden text-lf-orangeDark/70 md:inline">
-            Local preview only. Not real authentication.
+            Browser role preview.
           </span>
         </p>
       </div>

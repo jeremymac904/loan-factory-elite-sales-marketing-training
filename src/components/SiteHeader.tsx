@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BrandImage from "./BrandImage";
+import HeaderAuthStatus from "./HeaderAuthStatus";
 import { brandAssets } from "@/data/brandAssets";
 
 const primaryNav = [
@@ -43,25 +44,29 @@ export default function SiteHeader() {
                     {item.label}
                   </Link>
                 ))}
+                <HeaderAuthStatus variant="mobile" />
               </div>
             </nav>
           </details>
         </div>
 
-        <nav
-          className="hidden items-center justify-end gap-2 lg:flex"
-          aria-label="Primary navigation"
-        >
-          {primaryNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="inline-flex items-center rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-orange xl:text-[15px]"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden items-center justify-end gap-3 lg:flex">
+          <nav
+            className="flex items-center justify-end gap-2"
+            aria-label="Primary navigation"
+          >
+            {primaryNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="inline-flex items-center rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-orange xl:text-[15px]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <HeaderAuthStatus />
+        </div>
       </div>
     </header>
   );
