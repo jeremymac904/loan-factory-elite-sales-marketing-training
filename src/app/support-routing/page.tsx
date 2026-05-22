@@ -1,6 +1,7 @@
 import ComplianceCallout from "@/components/ComplianceCallout";
 import PlatformModulePage from "@/components/PlatformModulePage";
 import SectionHeading from "@/components/SectionHeading";
+import SupportTeamDirectory from "@/components/SupportTeamDirectory";
 import { getPlatformModule } from "@/data/platform";
 
 export const metadata = { title: "Support Routing" };
@@ -45,6 +46,8 @@ export default function SupportRoutingPage() {
           </div>
         </div>
       </section>
+
+      <SupportTeamDirectory />
     </PlatformModulePage>
   );
 }

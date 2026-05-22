@@ -11,6 +11,10 @@ const resources = [
   { title: "Brand Preview", href: "/brand-preview/" },
   { title: "Coach Guide", href: "/coach-guide/" },
   { title: "Team Leader Guide", href: "/team-leader-guide/" },
+  {
+    title: "LO Development Support Team",
+    href: "/support-routing/#lo-development-support-team",
+  },
   { title: "Compliance Notes", href: "/compliance/" },
   { title: "Recordings", href: "/recordings/" },
 ];
