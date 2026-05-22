@@ -1,6 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { createServerClient, type CookieOptions } from "@supabase/ssr";
-import type { PostgrestError, User } from "@supabase/supabase-js";
+import {
+  DEFAULT_COOKIE_OPTIONS,
+  createChunks,
+  createServerClient,
+  isChunkLike,
+  stringToBase64URL,
+  type CookieOptions,
+} from "@supabase/ssr";
+import type { PostgrestError, Session, User } from "@supabase/supabase-js";
 import { getSafeNextPath } from "@/lib/supabase/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import {
@@ -50,6 +57,15 @@ function jsonWithCookies(
 ) {
   const response = NextResponse.json(body, { status });
 
+  if (cookiesToSet.length > 0) {
+    response.headers.set(
+      "Cache-Control",
+      "private, no-cache, no-store, must-revalidate, max-age=0",
+    );
+    response.headers.set("Expires", "0");
+    response.headers.set("Pragma", "no-cache");
+  }
+
   cookiesToSet.forEach(({ name, value, options }) => {
     response.cookies.set(name, value, options);
   });
@@ -89,6 +105,54 @@ function getMetadataValue(
   return null;
 }
 
+function getSupabaseAuthCookieName(supabaseUrl: string) {
+  return `sb-${new URL(supabaseUrl).hostname.split(".")[0]}-auth-token`;
+}
+
+function queueSessionCookies(
+  request: NextRequest,
+  cookiesToSet: CookieToSet[],
+  supabaseUrl: string,
+  session: Session,
+) {
+  const cookieName = getSupabaseAuthCookieName(supabaseUrl);
+  const existingCookieNames = request.cookies
+    .getAll()
+    .map((cookie) => cookie.name);
+  const staleCookieNames = new Set(
+    existingCookieNames.filter((name) => isChunkLike(name, cookieName)),
+  );
+  const encodedSession = `base64-${stringToBase64URL(JSON.stringify(session))}`;
+  const sessionChunks = createChunks(cookieName, encodedSession);
+  const baseOptions: CookieOptions = {
+    ...DEFAULT_COOKIE_OPTIONS,
+    secure: request.nextUrl.protocol === "https:",
+  };
+
+  sessionChunks.forEach(({ name }) => {
+    staleCookieNames.delete(name);
+  });
+
+  staleCookieNames.forEach((name) => {
+    cookiesToSet.push({
+      name,
+      value: "",
+      options: { ...baseOptions, maxAge: 0 },
+    });
+  });
+
+  sessionChunks.forEach(({ name, value }) => {
+    cookiesToSet.push({
+      name,
+      value,
+      options: {
+        ...baseOptions,
+        maxAge: DEFAULT_COOKIE_OPTIONS.maxAge,
+      },
+    });
+  });
+}
+
 export async function POST(request: NextRequest) {
   const config = getSupabasePublicConfig();
 
@@ -124,10 +188,11 @@ export async function POST(request: NextRequest) {
   }
 
   if (accessToken && refreshToken) {
-    const { error: sessionError } = await supabase.auth.setSession({
-      access_token: accessToken,
-      refresh_token: refreshToken,
-    });
+    const { data: sessionData, error: sessionError } =
+      await supabase.auth.setSession({
+        access_token: accessToken,
+        refresh_token: refreshToken,
+      });
 
     if (sessionError) {
       console.error("Supabase server session sync failed", {
@@ -136,6 +201,15 @@ export async function POST(request: NextRequest) {
         status: sessionError.status,
       });
       return pending("session-sync", 401, cookiesToSet);
+    }
+
+    if (sessionData.session) {
+      queueSessionCookies(
+        request,
+        cookiesToSet,
+        config.supabaseUrl,
+        sessionData.session,
+      );
     }
   }
 
