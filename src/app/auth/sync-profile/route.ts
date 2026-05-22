@@ -16,6 +16,12 @@ type ApprovedUserRow = {
   active: boolean;
 };
 
+type SyncProfileRequestBody = {
+  accessToken?: string | null;
+  next?: string | null;
+  refreshToken?: string | null;
+};
+
 function logSupabaseSyncError(context: string, error: PostgrestError | null) {
   if (!error) return;
 
@@ -63,11 +69,33 @@ export async function POST(request: NextRequest) {
 
   let next = "/";
 
+  let accessToken: string | null = null;
+  let refreshToken: string | null = null;
+
   try {
-    const body = (await request.json()) as { next?: string | null };
+    const body = (await request.json()) as SyncProfileRequestBody;
     next = getSafeNextPath(body.next ?? null);
+    accessToken = typeof body.accessToken === "string" ? body.accessToken : null;
+    refreshToken =
+      typeof body.refreshToken === "string" ? body.refreshToken : null;
   } catch {
     next = "/";
+  }
+
+  if (accessToken && refreshToken) {
+    const { error: sessionError } = await supabase.auth.setSession({
+      access_token: accessToken,
+      refresh_token: refreshToken,
+    });
+
+    if (sessionError) {
+      console.error("Supabase server session sync failed", {
+        message: sessionError.message,
+        name: sessionError.name,
+        status: sessionError.status,
+      });
+      return pending("session-sync", 401);
+    }
   }
 
   const {

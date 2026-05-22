@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getSafeNextPath } from "@/lib/supabase/auth";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { createBrowserOAuthSupabaseClient } from "@/lib/supabase/client";
 
 type SyncResult = {
   redirectTo?: string;
@@ -29,14 +29,14 @@ export default function AuthCallbackHandler() {
         return;
       }
 
-      const supabase = createBrowserSupabaseClient();
+      const supabase = createBrowserOAuthSupabaseClient();
 
       if (!supabase) {
         router.replace("/login/?error=supabase-not-configured");
         return;
       }
 
-      const { error: exchangeError } =
+      const { data, error: exchangeError } =
         await supabase.auth.exchangeCodeForSession(code);
 
       if (!active) return;
@@ -51,6 +51,14 @@ export default function AuthCallbackHandler() {
         return;
       }
 
+      const accessToken = data.session?.access_token;
+      const refreshToken = data.session?.refresh_token;
+
+      if (!accessToken || !refreshToken) {
+        router.replace("/login/?error=missing-session");
+        return;
+      }
+
       setMessage("Syncing your approved beta profile.");
 
       const syncResponse = await fetch("/auth/sync-profile/", {
@@ -60,7 +68,7 @@ export default function AuthCallbackHandler() {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ next }),
+        body: JSON.stringify({ accessToken, next, refreshToken }),
       });
 
       if (!active) return;
@@ -78,6 +86,8 @@ export default function AuthCallbackHandler() {
         router.replace(`/access-pending/?reason=${encodeURIComponent(reason)}`);
         return;
       }
+
+      await supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
 
       router.replace(result.redirectTo);
     }

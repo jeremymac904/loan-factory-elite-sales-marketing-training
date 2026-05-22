@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { createBrowserOAuthSupabaseClient } from "@/lib/supabase/client";
 import {
   getAuthCallbackUrl,
   getSupabasePublicConfig,
@@ -17,13 +17,15 @@ export default function GoogleSignInButton() {
     setLoading(true);
     setError(null);
 
-    const supabase = createBrowserSupabaseClient();
+    const supabase = createBrowserOAuthSupabaseClient();
 
     if (!supabase) {
       setLoading(false);
       setError("Supabase is not configured for this environment yet.");
       return;
     }
+
+    await supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
 
     const { error: signInError } = await supabase.auth.signInWithOAuth({
       provider: "google",
