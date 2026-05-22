@@ -40,52 +40,26 @@ export default function FaceGramExperience() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
-        />
-        <div aria-hidden className="absolute inset-0 bg-black/72" />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(242,106,31,0.34),transparent_28%),linear-gradient(90deg,rgba(0,0,0,0.92),rgba(17,17,17,0.66),rgba(0,0,0,0.92))]"
-        />
-        <div className="relative container-page py-16 md:py-24">
-          <div className="max-w-3xl">
-            <h1 className="font-display text-5xl font-semibold tracking-tight md:text-7xl">
+      <section className="border-b border-lf-line bg-white">
+        <div className="mx-auto flex w-full max-w-[1480px] items-center gap-3 px-4 py-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lf-orange text-base font-black text-white">
+            F
+          </div>
+          <div className="min-w-0">
+            <h1 className="font-display text-xl font-semibold leading-6 text-lf-navy">
               FaceGram
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/85">
+            <p className="mt-0.5 text-sm leading-5 text-lf-slate">
+              <span className="font-semibold text-lf-charcoal">What this is:</span>{" "}
               Loan Factory&apos;s internal social community for loan officers,
               AEs, approved vendors, corporate coaches, marketing reviewers,
               and internal teams.
             </p>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/70">
-              Share questions, ideas, scripts, videos, wins, marketing
-              examples, groups, and feedback inside Loan Factory. FaceGram does
-              not publish to public social channels.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <button
-                type="button"
-                className="btn-primary"
-                onClick={() => setEntered(true)}
-              >
-                Enter FaceGram
-              </button>
-              <Link
-                href="/creator-network/groups/"
-                className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
-              >
-                Browse Groups
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      <section id="facegram-feed" className="bg-[#f0f2f5] py-6">
+      <section id="facegram-feed" className="bg-[#f0f2f5] py-5">
         <div className="mx-auto grid w-full max-w-[1480px] gap-5 px-4 lg:grid-cols-[270px_minmax(0,680px)_310px] xl:grid-cols-[300px_minmax(0,760px)_340px]">
           <aside className="hidden space-y-3 lg:block">
             <div className="rounded-2xl bg-white p-4 shadow-card">
