@@ -1,7 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import ComplianceCallout from "@/components/ComplianceCallout";
 
 export const metadata = { title: "Apex Member Area" };
 
@@ -48,36 +47,19 @@ export default function ApexMemberAreaPage() {
         backgroundImage="/media/dark-hero-background.png"
       >
         <div className="flex flex-wrap gap-3">
-          <button
-            type="button"
-            disabled
-            className="btn-primary cursor-not-allowed opacity-70"
-          >
-            Sign In (coming soon)
-          </button>
           <Link
             href="/apex-launch-call/"
-            className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white"
+            className="btn-primary"
           >
             Join Now
           </Link>
         </div>
       </PageHero>
 
-      <section className="container-page py-12">
-        <ComplianceCallout title="Portal placeholder" variant="soft">
-          <p>
-            The full member portal is a future build. The blocks below preview
-            what members will see once they sign in. Tier 2 (Pro) only blocks
-            are marked.
-          </p>
-        </ComplianceCallout>
-      </section>
-
       <section className="container-page pb-10">
         <SectionHeading
           eyebrow="What members see"
-          title="A preview of the locked member dashboard."
+          title="Apex Advisor member resources."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {lockedBlocks.map((b) => (
@@ -116,12 +98,10 @@ export default function ApexMemberAreaPage() {
       </section>
 
       <section className="container-page pb-20 pt-10">
-        <ComplianceCallout title="Compliance review" variant="default">
-          <p>
-            Member area features are for training and community. They are not a
-            guarantee of production, income, or business results.
-          </p>
-        </ComplianceCallout>
+        <p className="max-w-3xl text-sm leading-6 text-lf-slate">
+          Member resources support coaching, training, and accountability.
+          Results vary by LO, market, and execution.
+        </p>
       </section>
     </>
   );

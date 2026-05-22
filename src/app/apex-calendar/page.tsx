@@ -1,7 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import ComplianceCallout from "@/components/ComplianceCallout";
 
 export const metadata = { title: "Apex Calendar" };
 
@@ -64,20 +63,11 @@ export default function ApexCalendarPage() {
         backgroundImage="/media/dark-hero-background.png"
       />
 
-      <section className="container-page py-10">
-        <ComplianceCallout title="Calendar placeholder" variant="soft">
-          <p>
-            Live calendar integration is a future build. The schedule below is
-            the planned cadence and is subject to change. Specific dates and
-            times will be confirmed before each event.
-          </p>
-        </ComplianceCallout>
-      </section>
-
       <section className="container-page pb-10">
         <SectionHeading
           eyebrow="Cadence"
           title="What to expect each month."
+          description="Specific dates and times are confirmed through the Apex Advisor communication channel."
         />
         <div className="mt-8 space-y-5">
           {sampleEvents.map((e) => (
@@ -127,14 +117,11 @@ export default function ApexCalendarPage() {
       </section>
 
       <section className="container-page pb-20 pt-10">
-        <ComplianceCallout title="Compliance review" variant="default">
-          <p>
-            Live sessions are training and coaching. They are not a guarantee
-            of production, income, or business results. Any borrower facing,
-            Realtor facing, or public material referenced in a live call still
-            requires Loan Factory compliance review before use.
-          </p>
-        </ComplianceCallout>
+        <p className="max-w-3xl text-sm leading-6 text-lf-slate">
+          Live sessions are training and coaching. Borrower-facing,
+          Realtor-facing, or marketing material referenced in a live call still
+          needs the proper Loan Factory review before use.
+        </p>
       </section>
     </>
   );

@@ -7,7 +7,7 @@ const primaryNav = [
   { label: "Apex Advisor", href: "/apex-advisor/" },
   { label: "Sales & Marketing", href: "/sales-training/" },
   { label: "AI Training", href: "/ai-training/" },
-  { label: "Creator Network", href: "/creator-network/" },
+  { label: "FaceGram", href: "/creator-network/" },
   { label: "AI Assistants", href: "/ai-assistants/" },
   { label: "Resources", href: "/resources/" },
 ];
@@ -32,7 +32,7 @@ export default function SiteHeader() {
             <summary className="btn-primary cursor-pointer list-none">
               Menu
             </summary>
-            <nav className="absolute left-5 right-5 top-[76px] z-40 rounded-xl border border-lf-line bg-white p-3 shadow-lift">
+            <nav className="fixed left-5 right-5 top-20 z-40 max-w-[calc(100vw-2.5rem)] rounded-xl border border-lf-line bg-white p-3 shadow-lift">
               <div className="grid gap-2">
                 {primaryNav.map((item) => (
                   <Link

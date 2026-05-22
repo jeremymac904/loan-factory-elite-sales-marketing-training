@@ -30,34 +30,14 @@ export default function ApexLaunchCallPage() {
         <SectionHeading
           eyebrow="Get on the launch list"
           title="Be first to know when Apex opens."
-          description="Email capture is a placeholder. Form integration is a future build."
+          description="Email Jeremy to be added to the Apex Advisor interest list."
         />
-        <form
-          className="mt-8 grid max-w-xl gap-3 sm:grid-cols-[1fr_auto]"
-          aria-label="Apex Advisor launch email capture (placeholder)"
+        <a
+          href="mailto:jeremy.mcdonald@loanfactory.com?subject=Apex%20Advisor%20Interest%20List"
+          className="btn-primary mt-8"
         >
-          <label className="sr-only" htmlFor="apex-launch-email">
-            Your work email
-          </label>
-          <input
-            id="apex-launch-email"
-            type="email"
-            placeholder="you@yourcompany.com"
-            className="rounded-lg border border-lf-line bg-white px-4 py-3 text-sm text-lf-charcoal placeholder:text-lf-slate focus:border-lf-navy focus:outline-none focus:ring-2 focus:ring-lf-orange"
-            disabled
-          />
-          <button
-            type="button"
-            disabled
-            className="btn-primary cursor-not-allowed opacity-70"
-          >
-            Notify me (placeholder)
-          </button>
-        </form>
-        <p className="mt-3 text-xs text-lf-slate">
-          We will not share your email. The form above is a placeholder for the
-          live launch integration.
-        </p>
+          Email Jeremy
+        </a>
       </section>
 
       <section className="bg-lf-mist">

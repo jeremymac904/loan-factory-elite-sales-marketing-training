@@ -39,12 +39,6 @@ export default function PlatformModulePage({ module, children }: Props) {
             <Link href="/" className="btn-primary">
               Home
             </Link>
-            <Link
-              href="/support-routing/"
-              className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
-            >
-              Support Routing
-            </Link>
           </div>
         </div>
       </section>
@@ -63,21 +57,6 @@ export default function PlatformModulePage({ module, children }: Props) {
       </section>
 
       {children}
-
-      <section className="container-page py-14">
-        <SectionHeading
-          eyebrow="Platform connection"
-          title="How this connects to the rest of LO Development"
-        />
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {module.connections.map((connection) => (
-            <article key={connection} className="card">
-              <p className="prose-lf text-sm text-lf-slate">{connection}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
     </>
   );
 }

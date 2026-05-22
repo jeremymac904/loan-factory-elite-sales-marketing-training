@@ -1,6 +1,6 @@
 export type PlatformStatus =
   | "Live foundation"
-  | "Static prototype"
+  | "Experience preview"
   | "Planned"
   | "Requires source content"
   | "Requires sandbox wiring"
@@ -60,7 +60,7 @@ export const platformModules: PlatformModule[] = [
     connections: [
       "Apex members can use Sales & Marketing training as a resource.",
       "AI Assistants can help prepare draft coaching materials.",
-      "Wins and examples can be shared inside the Creator Network.",
+      "Wins and examples can be shared inside FaceGram.",
     ],
   },
   {
@@ -102,7 +102,7 @@ export const platformModules: PlatformModule[] = [
     title: "AI Training",
     shortTitle: "AI Training",
     href: "/ai-training/",
-    status: "Static prototype",
+    status: "Experience preview",
     summary:
       "A practical training path for using AI safely inside Loan Factory workflows, with Gemini Gem AI Twin guidance, prompt practice, and review habits.",
     whoFor: ["LOs", "Team leaders", "Coaches"],
@@ -118,12 +118,12 @@ export const platformModules: PlatformModule[] = [
       "Content QA workflow",
     ],
     currentStatus:
-      "Static guidance only. No live model calls are wired into the site.",
+      "Training page is organized around prompt practice, Gemini setup, NotebookLM, and content QA.",
     nextAction:
       "Confirm approved AI provider posture before any live assistant integration.",
     connections: [
       "Teaches how to use the AI Assistant Hub.",
-      "Supports Creator Network content drafting.",
+      "Supports FaceGram content drafting.",
       "Routes risky content to Audience Quality Panel review.",
     ],
   },
@@ -137,8 +137,8 @@ export const platformModules: PlatformModule[] = [
       "The team growth playbook for multiplying effort through partner strategy, recruiting support, co-branded content planning, and team cadence.",
     whoFor: ["Team leaders", "Producing LOs", "LO Development"],
     tools: [
-      "Campaign kit placeholders",
-      "Recruiting kit placeholders",
+      "Campaign kits",
+      "Recruiting kits",
       "Referral partner plays",
       "Team growth scorecard concepts",
     ],
@@ -154,7 +154,7 @@ export const platformModules: PlatformModule[] = [
     connections: [
       "Connects to Team Leader OS.",
       "Uses Referral Partner Assistant and Growth Assistant drafts.",
-      "Can promote approved internal examples from Creator Network.",
+      "Can promote approved internal examples from FaceGram.",
     ],
   },
   {
@@ -187,16 +187,16 @@ export const platformModules: PlatformModule[] = [
       "Move large media delivery to Drive or another approved asset system before production hardening.",
     connections: [
       "Stores approved resources from every module.",
-      "Receives promoted Creator Network posts after review.",
+      "Receives promoted FaceGram posts after review.",
       "Feeds AI Assistant source material.",
     ],
   },
   {
     id: "creator-network",
-    title: "Creator Network",
-    shortTitle: "Creator Network",
+    title: "FaceGram",
+    shortTitle: "FaceGram",
     href: "/creator-network/",
-    status: "Static prototype",
+    status: "Experience preview",
     summary:
       "An employee-only internal community feed where LOs, AEs, approved vendors, coaches, and internal teams share ideas, questions, examples, wins, and feedback.",
     whoFor: [
@@ -218,13 +218,13 @@ export const platformModules: PlatformModule[] = [
       "Topic groups",
     ],
     resources: [
-      "Creator Network plan",
+      "FaceGram plan",
       "Access model",
       "Moderation rules",
       "Audience Quality Panel",
     ],
     currentStatus:
-      "Internal community model only. It is not public social media or an external publishing system.",
+      "Internal community experience is visible with feed, groups, trends, and Content Coach entry point.",
     nextAction:
       "Confirm internal rollout scope and moderation ownership before backend work.",
     connections: [
@@ -238,13 +238,13 @@ export const platformModules: PlatformModule[] = [
     title: "AI Assistants",
     shortTitle: "AI Assistants",
     href: "/ai-assistants/",
-    status: "Static prototype",
+    status: "Experience preview",
     summary:
-      "The catalog of draft-only internal support assistants for sales coaching, marketing, scenario structuring, TERA workflow guidance, and content review.",
+      "The internal assistant hub for sales coaching, marketing, scenario structuring, TERA workflow guidance, and content review drafts.",
     whoFor: ["LOs", "Team leaders", "Coaches", "Admins", "Marketing reviewers"],
     tools: [
       "Assistant catalog",
-      "Draft-only output labels",
+      "Draft review labels",
       "Guardrail summaries",
       "Audience Quality Panel handoff",
     ],
@@ -255,7 +255,7 @@ export const platformModules: PlatformModule[] = [
       "Content QA workflow",
     ],
     currentStatus:
-      "Static catalog only. No AI model provider is called from the site.",
+      "Local assistant interface is available with assistant switching, chat messages, source previews, attachments, and voice fallback.",
     nextAction:
       "Confirm provider governance, source grounding, and review queues before live model wiring.",
     connections: [
@@ -269,7 +269,7 @@ export const platformModules: PlatformModule[] = [
     title: "Audience Quality Panel",
     shortTitle: "Audience Quality Panel",
     href: "/audience-quality-panel/",
-    status: "Static prototype",
+    status: "Experience preview",
     summary:
       "An internal QA concept for scoring draft content through simulated Borrower, Referral Partner, Compliance/Risk, Marketing Performance, and LO Peer panels.",
     whoFor: ["LOs", "Marketing reviewers", "Team leaders", "Coaches"],
@@ -287,11 +287,11 @@ export const platformModules: PlatformModule[] = [
       "Content QA workflow",
     ],
     currentStatus:
-      "Static explanation and demo report only. No OpenRouter or external model calls are wired.",
+      "Audience review model is visible for content quality, audience reaction, and human review preparation.",
     nextAction:
       "Confirm panel routing, review visibility, and human approval gates before implementation.",
     connections: [
-      "Can review Creator Network drafts.",
+      "Can review FaceGram drafts.",
       "Can pre-check Content Coach outputs.",
       "Can support Victoria and compliance reviewers without replacing them.",
     ],
@@ -307,13 +307,13 @@ export const platformModules: PlatformModule[] = [
     whoFor: ["LOs", "Team leaders", "Coaches", "LO Development"],
     tools: [
       "Event type map",
-      "Static schedule placeholders",
+      "Schedule views",
       "Review cadence reminders",
       "Apex event links",
     ],
     resources: ["Apex Calendar", "Training Path", "Team Leader Guide"],
     currentStatus:
-      "Static placeholder only. No Google Calendar or scheduling integration is wired.",
+      "Calendar page organizes Apex and training cadence for planning.",
     nextAction:
       "Confirm canonical calendar source and sandbox test policy before any calendar integration.",
     connections: [
@@ -339,7 +339,7 @@ export const platformModules: PlatformModule[] = [
     ],
     resources: ["Weekly Tracker", "Team Leader Guide", "Coach Guide"],
     currentStatus:
-      "Weekly tracker exists. Additional trackers are placeholder concepts until source fields are confirmed.",
+      "Weekly tracker exists and additional tracker categories are organized for source-field review.",
     nextAction:
       "Confirm tracker fields and data source before adding persistence or imports.",
     connections: [
@@ -398,13 +398,13 @@ export const platformModules: PlatformModule[] = [
     ],
     resources: ["Open Decisions", "Role Access Model", "LO Development vision"],
     currentStatus:
-      "Static routing concept only. No ticketing, email, n8n, or workflow automation is wired.",
+      "Support routing page points users toward the right internal owner or resource.",
     nextAction:
       "Andre and LO Development confirm routing playbook before any action workflow is built.",
     connections: [
       "Routes sensitive assistant outputs to people.",
       "Connects LOs to training and coaching paths.",
-      "Keeps TERA and production issues outside this prototype.",
+      "Keeps TERA and production issues directed to the proper human owner.",
     ],
   },
 ];
@@ -461,10 +461,10 @@ export const platformNav: NavGroup[] = [
     ],
   },
   {
-    label: "Creator Network",
+    label: "FaceGram",
     href: "/creator-network/",
     items: [
-      { label: "Landing", href: "/creator-network/" },
+      { label: "FaceGram", href: "/creator-network/" },
       { label: "Audience Quality Panel", href: "/audience-quality-panel/" },
     ],
   },

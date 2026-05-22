@@ -1,7 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import ComplianceCallout from "@/components/ComplianceCallout";
 import { apexTiers } from "@/data/apex";
 
 export const metadata = { title: "Apex Advisor Platform" };
@@ -193,15 +192,11 @@ export default function ApexAdvisorPage() {
       </section>
 
       <section className="container-page pb-20">
-        <ComplianceCallout title="Compliance review" variant="default">
-          <p>
-            Apex Advisor is a Loan Factory training and development platform.
-            Course content, marketing content, and member content do not
-            guarantee production, income, or business results. Anything created
-            for borrowers, Realtors, or the public still requires Loan Factory
-            compliance review before use.
-          </p>
-        </ComplianceCallout>
+        <p className="max-w-3xl text-sm leading-6 text-lf-slate">
+          Apex Advisor materials support coaching and development. Borrower,
+          Realtor, recruiting, and marketing use still needs the proper Loan
+          Factory review before use.
+        </p>
       </section>
     </>
   );

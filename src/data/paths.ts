@@ -147,7 +147,7 @@ export const paths: LearnerPath[] = [
       { label: "Weekly summary prompt", href: "/prompts/#weekly-summary" },
       { label: "Coach Guide", href: "/coach-guide/" },
       { label: "Team Leader Guide", href: "/team-leader-guide/" },
-      { label: "AI Coaching Assistant (planned)", href: "/ai-coaching-assistant/" },
+      { label: "AI Coaching Assistant", href: "/ai-coaching-assistant/" },
       { label: "Advanced recommended channels", href: "/recommended-channels/#advanced" },
     ],
     firstWeek: [

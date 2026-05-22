@@ -1,6 +1,5 @@
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import ComplianceCallout from "@/components/ComplianceCallout";
 
 export const metadata = { title: "Apex Leaderboards" };
 
@@ -60,14 +59,10 @@ export default function ApexLeaderboardsPage() {
       />
 
       <section className="container-page py-10">
-        <ComplianceCallout title="Compliance note" variant="warning">
-          <p>
-            Production rankings are for motivational purposes only and do not
-            constitute guarantees of results. Past production does not predict
-            future production. Live data integration is a future build. The
-            tables below show sample placeholder data.
-          </p>
-        </ComplianceCallout>
+        <p className="max-w-3xl text-sm leading-6 text-lf-slate">
+          Leaderboards are for motivation and accountability only. Results vary,
+          and past production does not predict future production.
+        </p>
       </section>
 
       <section className="container-page pb-10">
@@ -159,14 +154,10 @@ export default function ApexLeaderboardsPage() {
       </section>
 
       <section className="container-page pb-20">
-        <ComplianceCallout title="Compliance review" variant="default">
-          <p>
-            Production rankings are for motivational purposes only and do not
-            constitute guarantees of results. Apex Advisor is a training and
-            development platform and does not promise any specific level of
-            production, income, or business outcome.
-          </p>
-        </ComplianceCallout>
+        <p className="max-w-3xl text-sm leading-6 text-lf-slate">
+          Apex leaderboards support motivation and accountability. Results vary
+          by LO, market, and execution.
+        </p>
       </section>
     </>
   );

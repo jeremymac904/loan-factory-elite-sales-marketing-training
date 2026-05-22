@@ -21,17 +21,17 @@ export default function CalendarPage() {
     <PlatformModulePage module={platformModule}>
       <section className="container-page py-14">
         <SectionHeading
-          eyebrow="Static schedule model"
-          title="Calendar is visible, not integrated."
-          description="No Google Calendar, email reminders, or scheduling automation is wired."
+          eyebrow="Training calendar"
+          title="Plan the coaching and training rhythm."
+          description="Use this view to understand the key training categories and where they fit in the week."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {eventTypes.map((eventType) => (
             <article key={eventType} className="card">
               <h3 className="h-display text-lg">{eventType}</h3>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                Planned calendar category. Requires source schedule and sandbox
-                wiring before any integration.
+                Training and coaching category for planning your weekly LO
+                Development rhythm.
               </p>
             </article>
           ))}

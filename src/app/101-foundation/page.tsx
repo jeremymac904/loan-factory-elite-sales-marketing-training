@@ -4,12 +4,10 @@ import ScriptCard from "@/components/ScriptCard";
 import PromptCard from "@/components/PromptCard";
 import RecordingPlaceholder from "@/components/RecordingPlaceholder";
 import DownloadPlaceholder from "@/components/DownloadPlaceholder";
-import ComplianceCallout from "@/components/ComplianceCallout";
 import SectionHeading from "@/components/SectionHeading";
 import DoThisToday from "@/components/DoThisToday";
 import ClassRegistration from "@/components/ClassRegistration";
 import GeminiGemCallout from "@/components/GeminiGemCallout";
-import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { findModule } from "@/data/modules";
 import { scripts } from "@/data/scripts";
 import { prompts } from "@/data/prompts";
@@ -41,29 +39,6 @@ export default function Module101Page() {
         <DoThisToday items={module101.doThisToday} />
       </section>
 
-      {module101.trainingVideo && (
-        <section className="container-page py-10">
-          <div className="overflow-hidden rounded-2xl border border-lf-line bg-lf-navy p-4 shadow-card md:p-6">
-            <div className="mb-5 border-l-4 border-lf-orange pl-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                101 Foundation video
-              </p>
-              <h2 className="h-display mt-1 text-2xl text-white md:text-3xl">
-                {module101.trainingVideo.title}
-              </h2>
-              <p className="mt-3 max-w-3xl text-base leading-7 text-white/75">
-                {module101.trainingVideo.description}
-              </p>
-            </div>
-            <YouTubeEmbed
-              src={module101.trainingVideo.embedUrl}
-              title={module101.trainingVideo.title}
-              className="border-white/15 shadow-2xl ring-1 ring-lf-orange/30"
-            />
-          </div>
-        </section>
-      )}
-
       <section className="container-page py-12">
         <ClassRegistration />
       </section>
@@ -78,6 +53,8 @@ export default function Module101Page() {
             level="101"
             title="The Loan Factory Operating System. Live walkthrough."
             description="Jeremy runs one full Loan Factory LO day from 8 a.m. to 5 p.m. Activity standard, weekly rhythm, first follow ups, AI assisted drafting."
+            videoSrc={module101.trainingVideo?.embedUrl}
+            videoTitle={module101.trainingVideo?.title}
           />
           <DownloadPlaceholder
             title="101 Live class deck"
@@ -230,13 +207,11 @@ export default function Module101Page() {
       <ModuleSummarySections module={module101} />
 
       <section className="container-page pb-16">
-        <ComplianceCallout title="Before you send anything public">
-          <p>
-            Public, borrower facing, and Realtor facing artifacts require
-            compliance review. The 101 daily messages keep you safe by avoiding
-            any specific rate, payment, down payment dollar amount, or fee.
-          </p>
-        </ComplianceCallout>
+        <p className="max-w-3xl text-sm leading-6 text-lf-slate">
+          Borrower-facing, Realtor-facing, and marketing use should follow the
+          proper Loan Factory review path. Keep 101 messages simple and avoid
+          specific rate, payment, down payment dollar amount, or fee language.
+        </p>
       </section>
     </>
   );

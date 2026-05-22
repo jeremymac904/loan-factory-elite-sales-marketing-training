@@ -22,16 +22,16 @@ export default function TrackersPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="Tracker hub"
-          title="Track the work without pretending persistence exists."
-          description="Only the weekly tracker route exists today. Other trackers require source fields and data decisions."
+          title="Track the work that drives the week."
+          description="Use this hub to organize weekly activity, pipeline rhythm, production habits, training completion, and coaching follow-up."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {trackers.map((tracker) => (
             <article key={tracker} className="card">
               <h3 className="h-display text-lg">{tracker}</h3>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                Static placeholder. Requires source content and data ownership
-                before wiring.
+                Use this category to keep activity, review notes, and follow-up
+                actions easy to find.
               </p>
             </article>
           ))}

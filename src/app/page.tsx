@@ -5,42 +5,36 @@ const dashboardModules = [
     title: "Apex Advisor",
     description: "Paid coaching, accountability, member resources, and Apex scorecards.",
     href: "/apex-advisor/",
-    status: "Coaching",
     cta: "Explore",
   },
   {
     title: "Sales & Marketing",
     description: "The six-part 101 to 601 training series for Loan Factory LOs.",
     href: "/sales-training/",
-    status: "Training",
     cta: "Open",
   },
   {
     title: "AI Training",
     description: "Practical lessons for using AI tools to draft, practice, and improve.",
     href: "/ai-training/",
-    status: "Guide",
     cta: "Open",
   },
   {
-    title: "Creator Network",
-    description: "An internal community feed for ideas, questions, examples, wins, and feedback.",
+    title: "FaceGram",
+    description: "The internal Loan Factory social feed for posts, groups, wins, and feedback.",
     href: "/creator-network/",
-    status: "Internal",
     cta: "Explore",
   },
   {
     title: "AI Assistants",
     description: "Drafting helpers for coaching, content, scenarios, and review preparation.",
     href: "/ai-assistants/",
-    status: "Assistants",
     cta: "Explore",
   },
   {
     title: "Resources",
     description: "Quick access to guides, support contacts, downloads, and reference materials.",
     href: "/resources/",
-    status: "Support",
     cta: "Open",
   },
 ];
@@ -105,9 +99,6 @@ export default function HomePage() {
             >
               <div className="flex items-start justify-between gap-4">
                 <h3 className="h-display text-xl">{module.title}</h3>
-                <span className="shrink-0 rounded-full border border-lf-orange/35 bg-lf-orangeSoft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-lf-orangeDark">
-                  {module.status}
-                </span>
               </div>
               <p className="prose-lf text-sm text-lf-slate">
                 {module.description}

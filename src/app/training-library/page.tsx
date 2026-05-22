@@ -10,11 +10,11 @@ const library = [
   { title: "Scripts", href: "/scripts/", status: "Live" },
   { title: "Roleplays", href: "/roleplays/", status: "Live" },
   { title: "Prompts", href: "/prompts/", status: "Live" },
-  { title: "Recordings", href: "/recordings/", status: "Live foundation" },
-  { title: "Tracker", href: "/tracker/", status: "Live foundation" },
-  { title: "Flashcards", href: "/training-library/", status: "Planned" },
-  { title: "Quizzes", href: "/training-library/", status: "Planned" },
-  { title: "PDFs and handouts", href: "/training-library/", status: "Requires source content" },
+  { title: "Recordings", href: "/recordings/", status: "Library" },
+  { title: "Tracker", href: "/tracker/", status: "Tool" },
+  { title: "Flashcards", href: "/training-library/", status: "Study" },
+  { title: "Quizzes", href: "/training-library/", status: "Practice" },
+  { title: "PDFs and handouts", href: "/training-library/", status: "Resources" },
 ];
 
 export default function TrainingLibraryPage() {
@@ -26,7 +26,7 @@ export default function TrainingLibraryPage() {
         <SectionHeading
           eyebrow="Library Catalog"
           title="Resources grouped by how an LO actually uses them."
-          description="Large media should stay in Drive or another approved asset system before production hardening."
+          description="Open scripts, roleplays, recordings, prompts, trackers, and handouts from one clean library."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {library.map((item) => (
@@ -36,8 +36,7 @@ export default function TrainingLibraryPage() {
               </span>
               <h3 className="h-display mt-2 text-lg">{item.title}</h3>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                Open the current resource surface or review the planned catalog
-                slot.
+                Open the resource area for this part of LO Development.
               </p>
             </Link>
           ))}

@@ -1,4 +1,3 @@
-import ComplianceCallout from "@/components/ComplianceCallout";
 import PlatformModulePage from "@/components/PlatformModulePage";
 import SectionHeading from "@/components/SectionHeading";
 import SupportTeamDirectory from "@/components/SupportTeamDirectory";
@@ -9,9 +8,9 @@ export const metadata = { title: "Support Routing" };
 const routes = [
   ["Training question", "Route to module owner, coach guide, or Training Library."],
   ["Apex Advisor question", "Route to Apex Advisor owner or member support path."],
-  ["AI draft review", "Route to AI Assistant Hub guardrails and human reviewer."],
-  ["Creator Network flag", "Route to moderation queue concept and marketing reviewer."],
-  ["TERA workflow question", "Route to approved TERA training references. No writeback."],
+  ["AI draft review", "Route to AI Assistant Hub review notes and human reviewer."],
+  ["FaceGram flag", "Route to FaceGram review path and marketing reviewer."],
+  ["TERA workflow question", "Route to approved TERA training references and human owner."],
   ["Compliance-sensitive content", "Route to human review before external use."],
 ];
 
@@ -20,21 +19,12 @@ export default function SupportRoutingPage() {
 
   return (
     <PlatformModulePage module={platformModule}>
-      <section className="container-page py-14">
-        <ComplianceCallout title="No workflow automation wired" variant="warning">
-          <p>
-            This page does not send email, trigger n8n, open a ticket, write to
-            TERA, or notify anyone. It is the static routing playbook shell.
-          </p>
-        </ComplianceCallout>
-      </section>
-
       <section className="bg-lf-mist">
         <div className="container-page py-14">
           <SectionHeading
             eyebrow="Routing matrix"
             title="Right help, right now"
-            description="Andre and LO Development need to confirm the operational playbook before this becomes an action workflow."
+            description="Use this page to find the right internal owner, coach, reviewer, or resource path."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {routes.map(([title, body]) => (

@@ -1,5 +1,4 @@
 import { ModuleSummary } from "@/data/modules";
-import ComplianceCallout from "./ComplianceCallout";
 import AssignmentBox from "./AssignmentBox";
 
 type Props = {
@@ -48,13 +47,14 @@ export default function ModuleSummarySections({ module }: Props) {
         </div>
       </section>
 
-      <ComplianceCallout title="Compliance watch outs">
-        <ul className="prose-lf list-disc space-y-1 pl-5">
+      <section className="card">
+        <h2 className="h-display text-lg">Review notes</h2>
+        <ul className="prose-lf mt-3 list-disc space-y-1 pl-5 text-sm">
           {module.complianceWatchOuts.map((c) => (
             <li key={c}>{c}</li>
           ))}
         </ul>
-      </ComplianceCallout>
+      </section>
 
       {module.behaviorChange && (
         <section className="card border-lf-orange/40 bg-lf-orangeSoft/40">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BrandImage from "./BrandImage";
+import SuggestionModal from "./SuggestionModal";
 import { brandAssets } from "@/data/brandAssets";
 
 const footerLinks = [
@@ -7,7 +8,7 @@ const footerLinks = [
   { href: "/apex-advisor/", label: "Apex Advisor" },
   { href: "/sales-training/", label: "Sales & Marketing" },
   { href: "/ai-training/", label: "AI Training" },
-  { href: "/creator-network/", label: "Creator Network" },
+  { href: "/creator-network/", label: "FaceGram" },
   { href: "/ai-assistants/", label: "AI Assistants" },
   { href: "/resources/", label: "Resources" },
   {
@@ -53,9 +54,21 @@ export default function SiteFooter() {
             ))}
           </div>
         </div>
-        <div className="mt-10 border-t border-lf-line pt-4 text-xs text-lf-slate">
-          Loan Factory is a mortgage brokerage with access to a broad wholesale
-          lender network. NMLS 320841. Equal Housing Opportunity.
+        <div className="mt-10 flex flex-col gap-4 border-t border-lf-line pt-5 text-sm text-lf-slate md:flex-row md:items-center md:justify-between">
+          <p>
+            Platform built by Jeremy McDonald ·{" "}
+            <a className="font-semibold text-lf-charcoal hover:text-lf-orange" href="tel:9044423213">
+              904-442-3213
+            </a>{" "}
+            ·{" "}
+            <a
+              className="font-semibold text-lf-charcoal hover:text-lf-orange"
+              href="mailto:jeremy.mcdonald@loanfactory.com"
+            >
+              jeremy.mcdonald@loanfactory.com
+            </a>
+          </p>
+          <SuggestionModal />
         </div>
       </div>
     </footer>
