@@ -3,7 +3,10 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getSafeNextPath } from "@/lib/supabase/auth";
-import { createBrowserOAuthSupabaseClient } from "@/lib/supabase/client";
+import {
+  createBrowserOAuthSupabaseClient,
+  createBrowserSupabaseClient,
+} from "@/lib/supabase/client";
 
 type SyncResult = {
   redirectTo?: string;
@@ -56,6 +59,30 @@ export default function AuthCallbackHandler() {
 
       if (!accessToken || !refreshToken) {
         router.replace("/login/?error=missing-session");
+        return;
+      }
+
+      const appSupabase = createBrowserSupabaseClient();
+
+      if (!appSupabase) {
+        router.replace("/login/?error=supabase-not-configured");
+        return;
+      }
+
+      const { error: appSessionError } = await appSupabase.auth.setSession({
+        access_token: accessToken,
+        refresh_token: refreshToken,
+      });
+
+      if (!active) return;
+
+      if (appSessionError) {
+        console.error("Supabase browser session persistence failed", {
+          message: appSessionError.message,
+          name: appSessionError.name,
+          status: appSessionError.status,
+        });
+        router.replace("/login/?error=session-persistence");
         return;
       }
 
