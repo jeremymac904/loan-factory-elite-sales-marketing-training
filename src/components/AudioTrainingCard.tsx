@@ -1,19 +1,9 @@
 import Link from "next/link";
 import { AudioTrainingItem } from "@/data/audioTraining";
-import { LevelTagGroup } from "./LevelTag";
 import ComplianceCallout from "./ComplianceCallout";
 
 type Props = {
   item: AudioTrainingItem;
-};
-
-const transcriptStatusStyle: Record<
-  AudioTrainingItem["transcriptStatus"],
-  string
-> = {
-  Pending: "bg-lf-mist text-lf-slate border-lf-line",
-  Draft: "bg-white text-lf-charcoal border-lf-line",
-  Approved: "bg-lf-orangeSoft text-lf-orangeDark border-lf-orange/40",
 };
 
 export default function AudioTrainingCard({ item }: Props) {
@@ -23,17 +13,17 @@ export default function AudioTrainingCard({ item }: Props) {
         <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
           {item.sourceType}
         </span>
-        <LevelTagGroup levels={item.skillLevel} />
+        <span className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+          {item.skillLevel.join(" / ")}
+        </span>
       </div>
 
       <h3 className="h-display text-xl">{item.title}</h3>
       <p className="prose-lf text-sm text-lf-charcoal">{item.description}</p>
 
       <div className="flex flex-wrap items-center gap-2">
-        <span className="pill">{item.duration}</span>
-        <span
-          className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold ${transcriptStatusStyle[item.transcriptStatus]}`}
-        >
+        <span className="text-sm font-semibold text-lf-navy">{item.duration}</span>
+        <span className="text-sm text-lf-slate">
           Transcript: {item.transcriptStatus}
         </span>
       </div>

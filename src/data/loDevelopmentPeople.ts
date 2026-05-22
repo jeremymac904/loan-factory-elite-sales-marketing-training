@@ -10,7 +10,6 @@ export type LoDevelopmentPerson = {
   group: LoDevelopmentGroup;
   email: string;
   image: string;
-  tags: string[];
   sortOrder: number;
 };
 
@@ -29,7 +28,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "LO Development",
     email: "andre.king@loanfactory.com",
     image: "/team/andre-king.png",
-    tags: ["Department manager", "LO Development"],
     sortOrder: 10,
   },
   {
@@ -39,7 +37,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "LO Development",
     email: "kevin.truong@loanfactory.com",
     image: "/team/kevin-truong.png",
-    tags: ["LO Development"],
     sortOrder: 20,
   },
   {
@@ -49,7 +46,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "LO Development",
     email: "dennis@loanfactory.com",
     image: "/team/dennis-nguyen.png",
-    tags: ["LO Development"],
     sortOrder: 30,
   },
   {
@@ -59,7 +55,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "LO Development",
     email: "benjamin@loanfactory.com",
     image: "/team/benjamin-huynh.png",
-    tags: ["LO Development"],
     sortOrder: 40,
   },
   {
@@ -69,7 +64,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "LO Development",
     email: "tara.bartoli@loanfactory.com",
     image: "/team/tara-bartoli.png",
-    tags: ["LO Development"],
     sortOrder: 50,
   },
   {
@@ -79,7 +73,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "LO Development",
     email: "jay.nguyen@loanfactory.com",
     image: "/team/jay-nguyen.png",
-    tags: ["LO Development"],
     sortOrder: 60,
   },
   {
@@ -89,7 +82,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "Corporate Coaches",
     email: "acardoso@loanfactory.com",
     image: "/team/alexander-cardoso.png",
-    tags: ["Corporate Coach", "Loan Officer"],
     sortOrder: 110,
   },
   {
@@ -99,7 +91,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "Corporate Coaches",
     email: "alessandra@loanfactory.com",
     image: "/team/alessandra-pereira.png",
-    tags: ["Corporate Coach", "Loan Officer"],
     sortOrder: 120,
   },
   {
@@ -109,7 +100,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "Corporate Coaches",
     email: "edward.arvizo@loanfactory.com",
     image: "/team/edward-arvizo.png",
-    tags: ["Head of Corporate Coach", "Branch Manager", "Loan Officer"],
     sortOrder: 130,
   },
   {
@@ -119,7 +109,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "Corporate Coaches",
     email: "bobs@loanfactory.com",
     image: "/team/bob-shahidadpury.png",
-    tags: ["Corporate Coach", "Loan Officer"],
     sortOrder: 140,
   },
   {
@@ -129,7 +118,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "Corporate Coaches",
     email: "ddang@loanfactory.com",
     image: "/team/duc-dang.png",
-    tags: ["Corporate Coach", "Loan Officer"],
     sortOrder: 150,
   },
   {
@@ -139,7 +127,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "Corporate Coaches",
     email: "jody.richards@loanfactory.com",
     image: "/team/jody-richards.png",
-    tags: ["Corporate Coach", "Loan Officer"],
     sortOrder: 160,
   },
   {
@@ -149,7 +136,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "Corporate Coaches",
     email: "john.lemos@loanfactory.com",
     image: "/team/john-lemos.png",
-    tags: ["Corporate Coach", "Loan Officer"],
     sortOrder: 170,
   },
   {
@@ -159,7 +145,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "Marketing",
     email: "duyen@loanfactory.com",
     image: "/team/duyen-nguyen.png",
-    tags: ["Marketing", "Marketing Manager"],
     sortOrder: 210,
   },
   {
@@ -169,7 +154,6 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     group: "Marketing",
     email: "leslie@loanfactory.com",
     image: "/team/leslie-do.png",
-    tags: ["Marketing"],
     sortOrder: 220,
   },
 ];

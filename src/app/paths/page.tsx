@@ -1,6 +1,5 @@
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
-import { LevelTagGroup } from "@/components/LevelTag";
 import ComplianceCallout from "@/components/ComplianceCallout";
 import { paths } from "@/data/paths";
 
@@ -24,7 +23,7 @@ export default function PathsPage() {
         </video>
         <div aria-hidden className="absolute inset-0 bg-lf-navyDark/60" />
         <div className="relative container-page py-16">
-          <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
+          <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
             Choose Your Path
           </span>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight md:text-5xl">
@@ -71,12 +70,9 @@ export default function PathsPage() {
       <section className="container-page space-y-8 pb-16">
         {paths.map((p) => (
           <article key={p.id} id={p.id} className="card scroll-mt-24">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-                {p.tagline}
-              </span>
-              <LevelTagGroup levels={[p.level]} />
-            </div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+              {p.tagline} · {p.level}
+            </p>
             <h2 className="h-display mt-3 text-2xl">{p.title}</h2>
             <p className="prose-lf mt-1 text-sm text-lf-slate">{p.audience}</p>
             <p className="prose-lf mt-2 text-base">

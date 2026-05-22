@@ -15,6 +15,12 @@ const groupDescriptions: Record<LoDevelopmentGroup, string> = {
     "Approved marketing support contacts for content, campaign, and adaptation review.",
 };
 
+const groupIds: Record<LoDevelopmentGroup, string> = {
+  "LO Development": "lo-development",
+  "Corporate Coaches": "corporate-coaches",
+  Marketing: "marketing",
+};
+
 export default function SupportTeamDirectory() {
   return (
     <section id="lo-development-support-team" className="container-page py-14">
@@ -28,7 +34,6 @@ export default function SupportTeamDirectory() {
         <p className="prose-lf mt-3 text-lf-slate">
           Use this directory to find the right internal support path for LO
           development, corporate coaching, and approved marketing review.
-          Email links open your mail client only; this site does not send email.
         </p>
       </div>
 
@@ -61,7 +66,7 @@ export default function SupportTeamDirectory() {
             .sort((a, b) => a.sortOrder - b.sortOrder);
 
           return (
-            <div key={group}>
+            <div key={group} id={groupIds[group]}>
               <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
                 <div>
                   <h3 className="h-display text-2xl">{group}</h3>
@@ -69,9 +74,6 @@ export default function SupportTeamDirectory() {
                     {groupDescriptions[group]}
                   </p>
                 </div>
-                <span className="w-fit rounded-full border border-lf-orange/35 bg-lf-orangeSoft px-3 py-1 text-xs font-semibold uppercase tracking-wide text-lf-orangeDark">
-                  {people.length} contacts
-                </span>
               </div>
 
               <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -86,7 +88,7 @@ export default function SupportTeamDirectory() {
                         alt={`${person.name} headshot`}
                         width={96}
                         height={96}
-                        className="h-20 w-20 shrink-0 rounded-xl border border-lf-line object-cover"
+                        className="h-20 w-20 shrink-0 rounded-full object-cover"
                       />
                       <div className="min-w-0">
                         <h4 className="h-display text-lg">{person.name}</h4>
@@ -96,17 +98,9 @@ export default function SupportTeamDirectory() {
                       </div>
                     </div>
 
-                    <div className="mt-auto flex flex-wrap gap-2">
-                      {person.tags.map((tag) => (
-                        <span key={tag} className="pill">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
                     <a
                       href={`mailto:${person.email}`}
-                      className="inline-flex w-fit items-center rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-navy transition hover:border-lf-orange hover:text-lf-orange"
+                      className="mt-auto inline-flex w-fit items-center rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-navy transition hover:border-lf-orange hover:text-lf-orange"
                     >
                       {person.email}
                     </a>

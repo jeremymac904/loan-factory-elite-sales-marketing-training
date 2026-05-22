@@ -73,17 +73,9 @@ export default function ApexCalendarPage() {
           {sampleEvents.map((e) => (
             <article key={e.title} className="card flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div className="md:max-w-2xl">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="pill">{e.type}</span>
-                  <span
-                    className={`pill ${
-                      e.tier === "Pro Only"
-                        ? "border-lf-orange/40 text-lf-orangeDark"
-                        : ""
-                    }`}
-                  >
-                    {e.tier}
-                  </span>
+                <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                  <span>{e.type}</span>
+                  <span>{e.tier}</span>
                 </div>
                 <h3 className="h-display mt-2 text-lg">{e.title}</h3>
                 <p className="prose-lf mt-1 text-sm text-lf-slate">

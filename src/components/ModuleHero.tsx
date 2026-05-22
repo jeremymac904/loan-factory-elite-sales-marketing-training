@@ -1,5 +1,3 @@
-import StatusBadge from "./StatusBadge";
-import { LevelTagGroup } from "./LevelTag";
 import { ModuleStatus, SkillLevel } from "@/lib/utils";
 
 type Props = {
@@ -19,9 +17,7 @@ export default function ModuleHero({
   title,
   promise,
   audience,
-  status,
   outcomes,
-  levels = [],
   backgroundImage,
   backgroundVideo,
 }: Props) {
@@ -50,13 +46,9 @@ export default function ModuleHero({
       <div aria-hidden className="absolute inset-0 bg-lf-navyDark/60" />
 
       <div className="relative container-page py-14 md:py-20">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
-            {level}
-          </span>
-          <StatusBadge status={status} />
-          {levels.length > 0 && <LevelTagGroup levels={levels} />}
-        </div>
+        <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+          {level}
+        </p>
         <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight md:text-5xl">
           {title}
         </h1>

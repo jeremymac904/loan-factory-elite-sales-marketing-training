@@ -56,13 +56,10 @@ export default function ApexCertificationsPage() {
               <p className="prose-lf text-sm">
                 <strong>Requirement:</strong> {cert.requirement}
               </p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {cert.eligibleTiers.map((t) => (
-                  <span key={t} className="pill">
-                    {t}
-                  </span>
-                ))}
-              </div>
+              <p className="pt-2 text-sm text-lf-slate">
+                <strong className="text-lf-navy">Eligible tiers: </strong>
+                {cert.eligibleTiers.join(", ")}
+              </p>
             </article>
           ))}
         </div>

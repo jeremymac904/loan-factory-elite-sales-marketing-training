@@ -25,7 +25,7 @@ export default function AudienceQualityPanelPage() {
           <SectionHeading
             eyebrow="Five panels"
             title="Every panel returns the same review structure"
-            description="This is a static demo surface. No OpenRouter, model provider, or external API is called."
+            description="Use this structure to improve content quality before it goes to a human reviewer."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {audiencePanels.map((panel) => (

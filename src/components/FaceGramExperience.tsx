@@ -193,14 +193,10 @@ export default function FaceGramExperience() {
                   placeholder="What do you want to share with the Loan Factory community?"
                   className="mt-4 w-full rounded-xl border border-lf-line bg-lf-mist px-4 py-3 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
                 />
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {["Question", "Marketing idea", "Script", "Video", "Win"].map(
-                    (tag) => (
-                      <span key={tag} className="pill">
-                        {tag}
-                      </span>
-                    ),
-                  )}
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                  {["Question", "Marketing idea", "Script", "Video", "Win"].map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
                 </div>
               </article>
 
@@ -215,7 +211,9 @@ export default function FaceGramExperience() {
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <h3 className="h-display text-lg">{post.author}</h3>
-                        <span className="pill">{post.tag}</span>
+                        <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                          {post.tag}
+                        </span>
                       </div>
                       <p className="text-sm text-lf-slate">{post.role}</p>
                     </div>
@@ -248,11 +246,9 @@ export default function FaceGramExperience() {
             <aside className="space-y-5">
               <article className="card">
                 <h3 className="h-display text-lg">Trends</h3>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-4 grid gap-2 text-sm text-lf-slate">
                   {topics.map((topic) => (
-                    <span key={topic} className="pill">
-                      {topic}
-                    </span>
+                    <span key={topic}>{topic}</span>
                   ))}
                 </div>
               </article>

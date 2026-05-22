@@ -11,7 +11,9 @@ export default function RoleplayCard({ roleplay }: Props) {
         <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
           {roleplay.module}
         </span>
-        <span className="pill">{roleplay.duration}</span>
+        <span className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+          {roleplay.duration}
+        </span>
       </div>
       <h3 className="h-display text-lg">{roleplay.title}</h3>
       <p className="prose-lf text-sm text-lf-slate">{roleplay.setup}</p>

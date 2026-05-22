@@ -20,24 +20,9 @@ export default function DownloadPlaceholder({
   const isReady = !!downloadHref;
   return (
     <div className="card flex flex-col gap-2">
-      <div className="flex items-center justify-between">
+      <div>
         <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
           {format} handout
-        </span>
-        <span
-          className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-semibold ${
-            isReady
-              ? "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark"
-              : "border-lf-line bg-lf-mist text-lf-slate"
-          }`}
-        >
-          {isReady && (
-            <span
-              aria-hidden
-              className="inline-block h-1.5 w-1.5 rounded-full bg-lf-orange"
-            />
-          )}
-          {isReady ? "Live" : "Coming Soon"}
         </span>
       </div>
       <h3 className="h-display text-lg">{title}</h3>
@@ -61,15 +46,7 @@ export default function DownloadPlaceholder({
               </a>
             )}
           </>
-        ) : (
-          <button
-            type="button"
-            disabled
-            className="cursor-not-allowed rounded-lg border border-lf-line bg-lf-mist px-4 py-2 text-sm font-semibold text-lf-slate"
-          >
-            Download (pending compliance review)
-          </button>
-        )}
+        ) : null}
       </div>
     </div>
   );

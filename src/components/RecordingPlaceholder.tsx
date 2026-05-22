@@ -21,7 +21,11 @@ export default function RecordingPlaceholder({
         <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
           {level}
         </span>
-        {videoSrc && <span className="pill">Video replay</span>}
+        {videoSrc && (
+          <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+            Video replay
+          </span>
+        )}
       </div>
       <h3 className="h-display text-lg">{title}</h3>
       {description && (
@@ -35,11 +39,7 @@ export default function RecordingPlaceholder({
             className="border-white/10"
           />
         </div>
-      ) : (
-        <div className="mt-3 flex aspect-video w-full items-center justify-center rounded-lg border border-dashed border-lf-line bg-lf-mist text-sm text-lf-slate">
-          Replay link will be posted here after the live session is recorded.
-        </div>
-      )}
+      ) : null}
     </div>
   );
 }

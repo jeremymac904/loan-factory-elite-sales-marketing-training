@@ -148,7 +148,7 @@ export const platformModules: PlatformModule[] = [
       "Team Leader OS",
     ],
     currentStatus:
-      "Visible shell only. Recruiting and marketing materials require source content and Victoria review.",
+      "The page organizes growth plays that need source content and Victoria review before broader use.",
     nextAction:
       "Jeremy and Andre confirm source materials and Victoria review gates before content depth is added.",
     connections: [
@@ -355,26 +355,26 @@ export const platformModules: PlatformModule[] = [
     href: "/resources/",
     status: "Live foundation",
     summary:
-      "A quick-access hub for recommended channels, brand previews, personality workshop, coach guide, team leader guide, compliance notes, and recordings.",
+      "A quick-access hub for recommended channels, compliance notes, recordings, support contacts, and LO Development feedback.",
     whoFor: ["All platform users"],
     tools: [
       "Recommended channels",
-      "Personality workshop",
-      "Brand preview",
-      "Coach and team leader guides",
       "Compliance notes",
+      "Recordings",
+      "Support contacts",
+      "Anonymous feedback",
     ],
     resources: [
       "Recommended Channels",
-      "Personality Workshop",
-      "Brand Preview",
       "Compliance Notes",
       "Recordings",
+      "LO Development Support Team",
+      "Anonymous Complaints and Suggestions",
     ],
     currentStatus:
-      "Existing resource pages remain live and are now grouped in one hub.",
+      "Resources are organized around the support paths LOs need most often.",
     nextAction:
-      "Review resource priority and remove anything that should not appear in the platform nav.",
+      "Confirm the preferred anonymous feedback channel before wiring anything beyond the local form.",
     connections: [
       "Supports all modules.",
       "Links brand and compliance references.",
@@ -388,19 +388,19 @@ export const platformModules: PlatformModule[] = [
     href: "/support-routing/",
     status: "Requires human review",
     summary:
-      "The routing map for post-onboarding support, escalation, training academy referrals, corporate coaching, platform feedback, and reviewer handoffs.",
+      "A simple contact guide for LO Development, coaching, marketing review, platform suggestions, and anonymous feedback.",
     whoFor: ["LOs", "LO Development", "Team leaders", "Coaches", "Admins"],
     tools: [
-      "Routing matrix",
-      "Escalation concepts",
-      "Human review gates",
-      "Support category map",
+      "LO Development contacts",
+      "Corporate coach contacts",
+      "Marketing review contacts",
+      "Suggestion and feedback paths",
     ],
-    resources: ["Open Decisions", "Role Access Model", "LO Development vision"],
+    resources: ["LO Development Support Team", "Corporate Coaches", "Marketing Review"],
     currentStatus:
-      "Support routing page points users toward the right internal owner or resource.",
+      "Support routing points users toward the right internal owner or resource.",
     nextAction:
-      "Andre and LO Development confirm routing playbook before any action workflow is built.",
+      "Andre and LO Development confirm final ownership for any future submitted feedback flow.",
     connections: [
       "Routes sensitive assistant outputs to people.",
       "Connects LOs to training and coaching paths.",

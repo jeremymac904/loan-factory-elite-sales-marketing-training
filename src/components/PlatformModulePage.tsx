@@ -45,7 +45,7 @@ export default function PlatformModulePage({ module, children }: Props) {
 
       <section className="container-page py-14">
         <SectionHeading
-          eyebrow="Module Overview"
+          eyebrow="Overview"
           title="What this module does"
           description={module.summary}
         />

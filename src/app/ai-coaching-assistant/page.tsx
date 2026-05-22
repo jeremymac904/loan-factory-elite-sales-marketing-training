@@ -1,5 +1,4 @@
 import SectionHeading from "@/components/SectionHeading";
-import LevelTag from "@/components/LevelTag";
 import GeminiGemCallout from "@/components/GeminiGemCallout";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { externalLinks } from "@/lib/externalLinks";
@@ -191,7 +190,9 @@ export default function AICoachingAssistantPage() {
             <article key={m.name} className="card flex flex-col gap-3">
               <div className="flex items-center justify-between">
                 <h3 className="h-display text-lg">{m.name}</h3>
-                <LevelTag level={m.level} />
+                <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                  {m.level}
+                </span>
               </div>
               <p className="prose-lf text-sm">
                 <strong>What it will do: </strong>

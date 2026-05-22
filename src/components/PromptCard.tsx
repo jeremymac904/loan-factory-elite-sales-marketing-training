@@ -14,7 +14,6 @@ export default function PromptCard({ prompt }: Props) {
         <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
           {prompt.category}
         </span>
-        {prompt.module && <span className="pill">{prompt.module}</span>}
       </div>
       <h3 className="h-display text-lg">{prompt.title}</h3>
       <p className="prose-lf text-sm text-lf-slate">{prompt.useCase}</p>

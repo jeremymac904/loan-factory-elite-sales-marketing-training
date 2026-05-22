@@ -178,9 +178,11 @@ export default function RecommendedChannelsPage() {
               <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {section.channels.map((ch) => (
                   <article key={ch.name} className="card flex h-full flex-col gap-3">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div>
                       <h3 className="h-display text-lg">{ch.name}</h3>
-                      <span className="pill">{ch.category}</span>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                        {ch.category}
+                      </p>
                     </div>
                     <p className="prose-lf text-sm text-lf-slate">
                       {ch.description}

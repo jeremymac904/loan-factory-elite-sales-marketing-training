@@ -15,7 +15,6 @@ export default function ScriptCard({ script }: Props) {
         <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
           {script.category}
         </span>
-        {script.module && <span className="pill">{script.module}</span>}
       </div>
       <h3 className="h-display text-lg">{script.title}</h3>
       <p className="prose-lf text-sm text-lf-slate">{script.purpose}</p>
