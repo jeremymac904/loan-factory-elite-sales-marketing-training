@@ -12,9 +12,12 @@ const library = [
   { title: "Prompts", href: "/prompts/", status: "Live" },
   { title: "Recordings", href: "/recordings/", status: "Library" },
   { title: "Tracker", href: "/tracker/", status: "Tool" },
-  { title: "Flashcards", href: "/training-library/", status: "Study" },
-  { title: "Quizzes", href: "/training-library/", status: "Practice" },
-  { title: "PDFs and handouts", href: "/training-library/", status: "Resources" },
+  { title: "Assessments", href: "/assessments/", status: "Beta" },
+];
+
+const comingSoonLibrary = [
+  { title: "Flashcards", status: "Coming soon" },
+  { title: "PDFs and handouts", status: "Needs upload" },
 ];
 
 export default function TrainingLibraryPage() {
@@ -39,6 +42,18 @@ export default function TrainingLibraryPage() {
                 Open the resource area for this part of LO Development.
               </p>
             </Link>
+          ))}
+          {comingSoonLibrary.map((item) => (
+            <article key={item.title} className="card bg-lf-mist">
+              <span className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                {item.status}
+              </span>
+              <h3 className="h-display mt-2 text-lg">{item.title}</h3>
+              <p className="prose-lf mt-2 text-sm text-lf-slate">
+                This resource is not live yet. Upload or approve the asset
+                before linking it for beta users.
+              </p>
+            </article>
           ))}
         </div>
       </section>

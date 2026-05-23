@@ -33,8 +33,6 @@ export default function SuggestionModal({
     supabaseConfigured ? { status: "loading" } : { status: "not-configured" },
   );
   const [form, setForm] = useState({
-    name: "",
-    email: "",
     category: "platform",
     suggestion: "",
     anonymous: false,
@@ -88,8 +86,15 @@ export default function SuggestionModal({
   }
 
   async function saveSuggestion() {
+    const suggestion = form.suggestion.trim();
+
     setSaved(false);
     setSaveError(null);
+
+    if (!suggestion) {
+      setSaveError("Add a suggestion before saving.");
+      return;
+    }
 
     if (authState.status !== "signed-in") {
       setSaveError("Sign in with Google before saving to Supabase.");
@@ -107,7 +112,7 @@ export default function SuggestionModal({
       user_id: form.anonymous ? null : authState.userId,
       anonymous: form.anonymous,
       category: form.category,
-      message: form.suggestion,
+      message: suggestion,
     });
 
     if (error) {
@@ -147,8 +152,9 @@ export default function SuggestionModal({
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
                   Have an idea, broken link, missing resource, or platform
-                  improvement? Save it here when signed in, or copy Jeremy's
-                  email and send it manually. This app will not send email.
+                  improvement? Signed-in users can save a category and message
+                  to Supabase. Or copy Jeremy's email and send it manually.
+                  This app will not send email.
                 </p>
               </div>
               <button
@@ -162,33 +168,11 @@ export default function SuggestionModal({
             </div>
 
             <div className="mt-5 grid gap-4">
-              <label className="grid gap-1 text-sm font-semibold text-lf-charcoal">
-                Name
-                <input
-                  value={form.name}
-                  onChange={(event) =>
-                    setForm((current) => ({
-                      ...current,
-                      name: event.target.value,
-                    }))
-                  }
-                  className="rounded-lg border border-lf-line px-3 py-2 font-normal outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
-                />
-              </label>
-              <label className="grid gap-1 text-sm font-semibold text-lf-charcoal">
-                Email
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(event) =>
-                    setForm((current) => ({
-                      ...current,
-                      email: event.target.value,
-                    }))
-                  }
-                  className="rounded-lg border border-lf-line px-3 py-2 font-normal outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
-                />
-              </label>
+              <p className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-sm font-semibold text-lf-slate">
+                {authState.status === "signed-in"
+                  ? `Saving as ${form.anonymous ? "anonymous feedback" : authState.email}.`
+                  : "Sign in with Google to save feedback in Supabase."}
+              </p>
               <label className="grid gap-1 text-sm font-semibold text-lf-charcoal">
                 Category
                 <select
@@ -261,7 +245,7 @@ export default function SuggestionModal({
                 type="button"
                 className="btn-secondary"
                 onClick={saveSuggestion}
-                disabled={authState.status !== "signed-in" || !form.suggestion}
+                disabled={authState.status !== "signed-in" || !form.suggestion.trim()}
               >
                 Save suggestion
               </button>

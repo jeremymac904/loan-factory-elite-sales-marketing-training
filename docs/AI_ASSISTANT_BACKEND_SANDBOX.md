@@ -5,7 +5,7 @@
 The AI Assistant Hub has a sandbox backend for beta testing:
 
 - Chat completions route through OpenRouter.
-- The default chat model is configurable and currently defaults to `deepseek/deepseek-chat`.
+- The chat model must be set explicitly with `OPENROUTER_MODEL`; the app does not fall back to a default provider model.
 - Audio transcription routes through Groq Whisper.
 - No external sends, publishing, webhooks, n8n calls, Google Workspace actions, CRM actions, LOS actions, or TERA actions are wired.
 
@@ -75,8 +75,8 @@ Every assistant call includes a server-side system prompt that enforces:
 1. Sign in as an approved beta user with AI Assistant access.
 2. Open `/api/ai/status` and confirm:
    - `sandboxEnabled` is `true`.
-   - `openRouterConfigured` is `true` after adding `OPENROUTER_API_KEY`.
-   - `groqConfigured` is `true` after adding `GROQ_API_KEY`.
+   - `openRouterConfigured` is `true` after adding both `OPENROUTER_API_KEY` and `OPENROUTER_MODEL`.
+   - `groqConfigured` is `true` after adding both `GROQ_API_KEY` and `GROQ_WHISPER_MODEL`.
    - `externalActionsEnabled` is `false`.
 3. Sign out or use a private browser and confirm `/api/ai/status` returns a
    403 instead of provider model details.

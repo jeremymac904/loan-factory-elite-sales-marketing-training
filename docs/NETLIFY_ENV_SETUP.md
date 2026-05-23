@@ -29,6 +29,7 @@ Scopes:
 - Never expose `SUPABASE_SERVICE_ROLE_KEY` in client code or in public logs.
 - Never expose `OPENROUTER_API_KEY` or `GROQ_API_KEY` in client code or in public logs.
 - Do not prefix AI provider keys with `NEXT_PUBLIC_`.
+- `OPENROUTER_MODEL` and `GROQ_WHISPER_MODEL` must be set explicitly; the app does not fall back to default models.
 - The AI backend remains sandbox-only. `externalActionsEnabled` is hard-coded `false`.
 
 ## Build Settings

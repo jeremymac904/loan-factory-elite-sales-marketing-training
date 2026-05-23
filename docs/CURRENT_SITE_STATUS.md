@@ -34,8 +34,8 @@ The site now positions the app as the Loan Factory LO Development Platform, with
 ## Safety State
 
 - Supabase Google Auth, Postgres schema, and RLS are wired for beta.
-- AI Assistant chat is wired through server-side OpenRouter when sandbox env vars are enabled.
-- AI Assistant audio transcription is wired through server-side Groq Whisper when sandbox env vars are enabled.
+- AI Assistant chat is wired through server-side OpenRouter only when sandbox env vars, provider key, and explicit model are enabled.
+- AI Assistant audio transcription is wired through server-side Groq Whisper only when sandbox env vars, provider key, and explicit model are enabled.
 - No n8n, Google Workspace, TERA reads/writes, social publishing, or external sends are wired.
 - FaceGram is internal-only; posting requires sign-in in the beta UI.
 - Audience Quality Panel is static and does not replace Loan Factory marketing, compliance, legal, or leadership review.

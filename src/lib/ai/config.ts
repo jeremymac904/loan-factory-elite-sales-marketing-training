@@ -53,6 +53,8 @@ export function getAiSandboxConfig(): AiSandboxConfig {
     process.env.OPENROUTER_SITE_URL ||
     process.env.NEXT_PUBLIC_SITE_URL ||
     DEFAULT_SITE_URL;
+  const openRouterModel = process.env.OPENROUTER_MODEL?.trim() ?? "";
+  const groqWhisperModel = process.env.GROQ_WHISPER_MODEL?.trim() ?? "";
 
   return {
     sandboxEnabled: getBooleanEnv("AI_ASSISTANTS_SANDBOX_ENABLED"),
@@ -61,15 +63,13 @@ export function getAiSandboxConfig(): AiSandboxConfig {
       "AI_ASSISTANTS_ALLOW_UNSIGNED_SANDBOX",
     ),
     openRouterApiKey: process.env.OPENROUTER_API_KEY ?? "",
-    openRouterModel:
-      process.env.OPENROUTER_MODEL?.trim() || "deepseek/deepseek-chat",
+    openRouterModel,
     openRouterSiteUrl: normalizeUrl(siteUrl),
     openRouterAppTitle:
       process.env.OPENROUTER_APP_TITLE?.trim() ||
       "Loan Factory LO Development",
     groqApiKey: process.env.GROQ_API_KEY ?? "",
-    groqWhisperModel:
-      process.env.GROQ_WHISPER_MODEL?.trim() || "whisper-large-v3-turbo",
+    groqWhisperModel,
     maxInputChars: getPositiveIntegerEnv("AI_ASSISTANTS_MAX_INPUT_CHARS", 6000),
     externalActionsEnabled: false,
   };
@@ -82,10 +82,12 @@ export function getPublicAiSandboxStatus(
     sandboxEnabled: config.sandboxEnabled,
     requireAuth: config.requireAuth,
     allowUnsignedSandbox: config.allowUnsignedSandbox,
-    openRouterConfigured: Boolean(config.openRouterApiKey),
-    openRouterModel: config.openRouterModel,
-    groqConfigured: Boolean(config.groqApiKey),
-    groqWhisperModel: config.groqWhisperModel,
+    openRouterConfigured: Boolean(
+      config.openRouterApiKey && config.openRouterModel,
+    ),
+    openRouterModel: config.openRouterModel || "not-configured",
+    groqConfigured: Boolean(config.groqApiKey && config.groqWhisperModel),
+    groqWhisperModel: config.groqWhisperModel || "not-configured",
     maxInputChars: config.maxInputChars,
     externalActionsEnabled: false,
   };

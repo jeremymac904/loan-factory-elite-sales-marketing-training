@@ -94,11 +94,11 @@ export async function POST(request: NextRequest) {
     return jsonError(403, access.status, access.message);
   }
 
-  if (!config.openRouterApiKey) {
+  if (!config.openRouterApiKey || !config.openRouterModel) {
     return jsonError(
       503,
       "openrouter-not-configured",
-      "OpenRouter is not configured for the AI Assistant sandbox.",
+      "OpenRouter key and model must both be configured for the AI Assistant sandbox.",
     );
   }
 

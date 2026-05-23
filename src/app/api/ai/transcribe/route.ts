@@ -49,11 +49,11 @@ export async function POST(request: NextRequest) {
     return jsonError(403, access.status, access.message);
   }
 
-  if (!config.groqApiKey) {
+  if (!config.groqApiKey || !config.groqWhisperModel) {
     return jsonError(
       503,
       "groq-not-configured",
-      "Groq Whisper is not configured for sandbox transcription.",
+      "Groq key and transcription model must both be configured for sandbox transcription.",
     );
   }
 
