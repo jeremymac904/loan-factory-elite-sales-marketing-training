@@ -8,13 +8,6 @@ export type HeyGenIntroVideo = {
 
 export const heygenIntroVideos: HeyGenIntroVideo[] = [
   {
-    route: "/",
-    speaker: "Andre",
-    label: "Watch Andre's Welcome",
-    embedUrl: "https://app.heygen.com/embeds/034992427fe44831a39a5f2afe65b371",
-    title: "Andre King - LO Development Portal Intro",
-  },
-  {
     route: "/apex-advisor/",
     speaker: "Edward",
     label: "Watch Edward's Coaching Intro",

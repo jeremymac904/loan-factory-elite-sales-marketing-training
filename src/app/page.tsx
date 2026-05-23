@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import BrandImage from "@/components/BrandImage";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { BrandAsset, brandAssets } from "@/data/brandAssets";
 
 const dashboardModules = [
@@ -142,6 +143,25 @@ export default async function HomePage({ searchParams }: Props) {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="container-page py-14">
+        <article className="grid gap-6 rounded-2xl border border-lf-line bg-white p-5 shadow-card md:grid-cols-[minmax(0,1fr)_minmax(320px,0.92fr)] md:items-center md:p-6">
+          <div className="max-w-2xl">
+            <h2 className="h-display text-2xl md:text-3xl">
+              Welcome to the Loan Factory LO Development Platform
+            </h2>
+            <p className="prose-lf mt-3 text-lf-slate">
+              A quick welcome from Thuan, Andre, Edward, and Jeremy on why this
+              platform was built and how it helps Loan Factory loan officers
+              train, connect, execute, and grow.
+            </p>
+          </div>
+          <YouTubeEmbed
+            src="https://www.youtube.com/embed/Ba67qj-6EOE"
+            title="Welcome to the Loan Factory LO Development Platform"
+          />
+        </article>
       </section>
 
       <section className="container-page py-14">
