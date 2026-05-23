@@ -44,7 +44,7 @@ export function PersonaShell({
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/one-plus-one-five/campaign-builder/" className="btn-primary">
-              Preview campaign plan
+              Build campaign plan
             </Link>
             <Link
               href="/one-plus-one-five/communities/"
@@ -204,7 +204,7 @@ export function PersonaCard({ persona }: { persona: PersonaTemplate }) {
 export function ReadOnlyCallout({ children }: { children: ReactNode }) {
   return (
     <div className="rounded-2xl border border-lf-line bg-lf-mist p-5 text-sm leading-6 text-lf-slate">
-      <strong className="text-lf-navy">Read-only preview:</strong> {children}
+      <strong className="text-lf-navy">Planning guardrail:</strong> {children}
     </div>
   );
 }

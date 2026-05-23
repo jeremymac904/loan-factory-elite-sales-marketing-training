@@ -2,7 +2,6 @@ import {
   ComplianceNotice,
   ListBlock,
   PersonaShell,
-  ReadOnlyCallout,
   TextBlock,
 } from "@/components/persona-intelligence/PersonaModule";
 import { boardroomReviewCategories } from "@/data/personaIntelligence";
@@ -13,17 +12,12 @@ export default function AIBoardroomPage() {
   return (
     <PersonaShell
       title="AI Boardroom Review"
-      description="A read-only preview of what AI Boardroom will eventually review before campaigns move from planning into approval."
+      description="Use these review categories before campaigns move from planning into public-facing content."
     >
       <section className="container-page py-14">
-        <ReadOnlyCallout>
-          AI Boardroom is not connected here. This page shows review categories,
-          prompts, and flow only.
-        </ReadOnlyCallout>
-
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           <ListBlock
-            title="What AI Boardroom will review"
+            title="Manual review checklist"
             items={[
               "Community and audience fit.",
               "Campaign lane clarity.",
@@ -49,21 +43,21 @@ export default function AIBoardroomPage() {
           />
           <TextBlock title="Campaign fit score">
             <p>
-              Future score that checks whether the community, audience,
-              campaign goal, channel, and LO lane make sense together.
+              Check whether the community, audience, campaign goal, channel,
+              and LO lane make sense together.
             </p>
           </TextBlock>
           <TextBlock title="Compliance sensitivity score">
             <p>
-              Future score that flags fair lending, protected-class targeting,
-              rate/APR/fee/payment language, eligibility language, and public
-              claims that require review.
+              Flag fair lending, protected-class targeting, rate/APR/fee/payment
+              language, eligibility language, and public claims that require
+              review.
             </p>
           </TextBlock>
           <TextBlock title="Localization risk score">
             <p>
-              Future score that checks whether translation, tone, community
-              context, channel choice, and CTA language need local review.
+              Check whether translation, tone, community context, channel
+              choice, and CTA language need local review.
             </p>
           </TextBlock>
         </div>
@@ -81,10 +75,11 @@ export default function AIBoardroomPage() {
               "Compliance review prompt.",
             ]}
           />
-          <TextBlock title="What is blocked for beta">
+          <TextBlock title="Before public use">
             <p>
-              No AI scoring, no campaign saving, no public publishing, no n8n
-              workflow, and no database writes are wired on this page.
+              Keep campaign ideas internal until the right human review is
+              complete. Do not publish protected-class targeting, pricing,
+              approval, eligibility, rate, APR, fee, or underwriting claims.
             </p>
           </TextBlock>
         </div>

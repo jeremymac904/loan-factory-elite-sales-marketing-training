@@ -101,6 +101,7 @@ export default function SuggestionModal({
     }
 
     if (authState.status !== "signed-in") {
+      saveLocalFeedback(feedback);
       setLocalOnly(true);
       setSaved(true);
       return;
@@ -109,7 +110,9 @@ export default function SuggestionModal({
     const supabase = createBrowserSupabaseClient();
 
     if (!supabase) {
-      setSaveError("Feedback saving is not ready in this environment yet.");
+      saveLocalFeedback(feedback);
+      setLocalOnly(true);
+      setSaved(true);
       return;
     }
 
@@ -131,6 +134,26 @@ export default function SuggestionModal({
     }
 
     setSaved(true);
+  }
+
+  function saveLocalFeedback(feedback: string) {
+    const entry = {
+      ...form,
+      feedback,
+      savedAt: new Date().toISOString(),
+    };
+
+    try {
+      const existing = JSON.parse(
+        localStorage.getItem("lf_feedback_drafts") ?? "[]",
+      ) as unknown[];
+      localStorage.setItem(
+        "lf_feedback_drafts",
+        JSON.stringify([entry, ...existing].slice(0, 50)),
+      );
+    } catch {
+      localStorage.setItem("lf_feedback_drafts", JSON.stringify([entry]));
+    }
   }
 
   return (
@@ -163,10 +186,9 @@ export default function SuggestionModal({
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
                   Tell us what is confusing, broken, missing, or worth
-                  improving. The app will not send email. If you are not signed
-                  in, your feedback is only shown as a preview confirmation.
-                  Do not include borrower names, loan details, or private file
-                  information.
+                  improving. If feedback cannot be submitted, it saves in this
+                  browser so you can copy it to LO Development. Do not include
+                  borrower names, loan details, or private file information.
                 </p>
               </div>
               <button
@@ -183,7 +205,7 @@ export default function SuggestionModal({
               <p className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-sm font-semibold text-lf-slate">
                 {authState.status === "signed-in"
                   ? `Saving as ${form.anonymous ? "anonymous feedback" : authState.email}.`
-                  : "Preview only: sign in with Google if you need to submit feedback."}
+                  : "Local save: sign in with Google if you need to submit feedback."}
               </p>
               <label className="grid gap-1 text-sm font-semibold text-lf-charcoal">
                 Name
@@ -266,8 +288,8 @@ export default function SuggestionModal({
             {saved && (
               <p className="mt-4 rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-sm font-semibold text-green-700">
                 {localOnly
-                  ? "Feedback captured for this preview session only. It was not submitted and no email was sent."
-                  : "Feedback saved. No email was sent."}
+                  ? "Feedback saved in this browser. It was not submitted."
+                  : "Feedback saved."}
               </p>
             )}
 

@@ -89,16 +89,16 @@ export const faceGramGroups: FaceGramGroup[] = [
   },
   {
     slug: "vendor-lender-partner-preview",
-    name: "Vendor/Lender Partner Preview",
-    visibility: "Approval-based future group",
-    memberCount: "Preview only",
+    name: "Vendor/Lender Partner Review",
+    visibility: "Approval-based group",
+    memberCount: "Partner review group",
     category: "Partners",
-    coverTitle: "Vendor/Lender Partner Preview",
-    coverSubtitle: "Sponsored content model, locked for beta",
+    coverTitle: "Vendor/Lender Partner Review",
+    coverSubtitle: "Sponsored content review and training resources",
     description:
-      "A controlled preview of how approved vendors and wholesale lenders may later share reviewed training classes, resources, and sponsored placements.",
+      "A controlled area for reviewed vendor and wholesale lender training classes, resources, and sponsored placements.",
     rules: [
-      "Vendor posting is not open in beta.",
+      "Vendor posting requires LO Development approval.",
       "No borrower data or production files.",
       "Sponsored resources require admin or marketing approval.",
     ],

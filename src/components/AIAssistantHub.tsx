@@ -348,7 +348,7 @@ export default function AIAssistantHub({
     }
 
     if (previewMode || backendStatus?.sandboxEnabled === false) {
-      setVoiceNote("Audio transcription is not turned on yet.");
+      setVoiceNote("Audio transcription is unavailable here. Type your message instead.");
       return;
     }
 
@@ -413,7 +413,13 @@ export default function AIAssistantHub({
 
   return (
     <section className="min-h-[calc(100vh-5rem)] overflow-x-hidden bg-white">
-      <div className="grid min-h-[calc(100vh-5rem)] min-w-0 lg:grid-cols-[280px_minmax(0,1fr)_320px]">
+      <div
+        className={`grid min-h-[calc(100vh-5rem)] min-w-0 ${
+          showSources
+            ? "lg:grid-cols-[280px_minmax(0,1fr)_320px]"
+            : "lg:grid-cols-[280px_minmax(0,1fr)]"
+        }`}
+      >
         <aside className="min-w-0 border-b border-lf-line bg-lf-mist p-4 text-lf-charcoal lg:border-b-0 lg:border-r">
           <div className="grid gap-2">
             <button
@@ -613,47 +619,40 @@ export default function AIAssistantHub({
           </div>
         </main>
 
-        <aside className="min-w-0 border-t border-lf-line bg-white p-5 lg:border-l lg:border-t-0">
-          {showSources ? (
-            <>
-              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                Helpful sources
-              </p>
-              <h2 className="h-display mt-2 text-2xl">Where to look next</h2>
-              <div className="mt-5 grid gap-4">
-                {sourceCards.map((source) => (
-                  <a
-                    key={source.title}
-                    href={source.href}
-                    className="rounded-xl border border-lf-line bg-lf-mist p-4 transition hover:border-lf-orange hover:bg-white"
-                  >
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                          {source.type}
-                        </p>
-                        <h3 className="h-display mt-1 text-base">
-                          {source.title}
-                        </h3>
-                      </div>
-                      <span aria-hidden className="text-lf-orange">
-                        ↗
-                      </span>
+        {showSources && (
+          <aside className="min-w-0 border-t border-lf-line bg-white p-5 lg:border-l lg:border-t-0">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+              Helpful sources
+            </p>
+            <h2 className="h-display mt-2 text-2xl">Where to look next</h2>
+            <div className="mt-5 grid gap-4">
+              {sourceCards.map((source) => (
+                <a
+                  key={source.title}
+                  href={source.href}
+                  className="rounded-xl border border-lf-line bg-lf-mist p-4 transition hover:border-lf-orange hover:bg-white"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                        {source.type}
+                      </p>
+                      <h3 className="h-display mt-1 text-base">
+                        {source.title}
+                      </h3>
                     </div>
-                    <p className="mt-2 text-sm leading-6 text-lf-slate">
-                      {source.excerpt}
-                    </p>
-                  </a>
-                ))}
-              </div>
-            </>
-          ) : (
-            <div className="rounded-2xl border border-dashed border-lf-line bg-lf-mist p-4 text-sm leading-6 text-lf-slate">
-              Sources appear here only after an answer points you to a useful
-              training page or resource.
+                    <span aria-hidden className="text-lf-orange">
+                      ↗
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-lf-slate">
+                    {source.excerpt}
+                  </p>
+                </a>
+              ))}
             </div>
-          )}
-        </aside>
+          </aside>
+        )}
       </div>
     </section>
   );

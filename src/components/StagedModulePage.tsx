@@ -3,8 +3,7 @@ import ModuleSummarySections from "./ModuleSummarySections";
 import ScriptCard from "./ScriptCard";
 import PromptCard from "./PromptCard";
 import RoleplayCard from "./RoleplayCard";
-import RecordingPlaceholder from "./RecordingPlaceholder";
-import DownloadPlaceholder from "./DownloadPlaceholder";
+import RecordingCard from "./RecordingCard";
 import SectionHeading from "./SectionHeading";
 import DoThisToday from "./DoThisToday";
 import AudioCompanionCard from "./audio/AudioCompanionCard";
@@ -31,48 +30,6 @@ export default function StagedModulePage({
   const modulePrompts = prompts.filter((p) => p.module === module.level);
   const moduleRoleplays = roleplays.filter((r) => r.module === module.level);
   const audioCompanion = getAudioCompanionByRoute(module.href);
-  const assetSlots = [
-    {
-      label: "Video",
-      status: module.trainingVideo ? "Ready" : "Upload pending",
-      body: module.trainingVideo?.description ?? recordingDescription,
-    },
-    {
-      label: "Audio",
-      status: "In review",
-      body: "Audio lesson for LOs who want to review this training while driving or walking.",
-    },
-    {
-      label: "Podcast/tutorial clips",
-      status: "Upload pending",
-      body: "Short practical clips for review between live classes.",
-    },
-    {
-      label: "Handouts",
-      status: "Under review",
-      body: handoutDescription,
-    },
-    {
-      label: "Slide decks",
-      status: "Under review",
-      body: "Class slides will appear here after the final deck is uploaded.",
-    },
-    {
-      label: "Scripts",
-      status: moduleScripts.length ? "Ready" : "Under review",
-      body: "Start with these words, then make them sound like you before using them.",
-    },
-    {
-      label: "Prompts",
-      status: modulePrompts.length ? "Ready" : "Under review",
-      body: "Use these prompts to get a first draft. Read and edit before using anything.",
-    },
-    {
-      label: "Roleplays and trackers",
-      status: moduleRoleplays.length ? "Ready" : "Under review",
-      body: "Practice the conversation and track the activity that creates more follow-up.",
-    },
-  ];
 
   return (
     <>
@@ -92,19 +49,38 @@ export default function StagedModulePage({
 
       <section className="container-page py-12">
         <SectionHeading
-          eyebrow="Replay and handout"
-          title="Watch the lesson and grab the handout."
+          eyebrow="Lesson guide"
+          title="What to practice from this lesson."
         />
         <div className="mt-6 grid gap-5 md:grid-cols-2">
-          <RecordingPlaceholder
-            level={module.level}
-            title={`${module.level} Live session`}
-            description={recordingDescription}
-          />
-          <DownloadPlaceholder
-            title={handoutTitle}
-            description={handoutDescription}
-          />
+          {module.trainingVideo ? (
+            <RecordingCard
+              level={module.level}
+              title={`${module.level} Live session`}
+              description={module.trainingVideo.description}
+              videoSrc={module.trainingVideo.embedUrl}
+              videoTitle={module.trainingVideo.title}
+            />
+          ) : (
+            <article className="card">
+              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                {module.level}
+              </p>
+              <h3 className="h-display mt-1 text-lg">Practice focus</h3>
+              <p className="prose-lf mt-2 text-sm text-lf-slate">
+                {recordingDescription}
+              </p>
+            </article>
+          )}
+          <article className="card">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+              Lesson handout
+            </p>
+            <h3 className="h-display mt-1 text-lg">{handoutTitle}</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              {handoutDescription}
+            </p>
+          </article>
         </div>
       </section>
 
@@ -119,29 +95,6 @@ export default function StagedModulePage({
           </div>
         </section>
       )}
-
-      <section className="container-page py-6">
-        <SectionHeading
-          eyebrow="Training materials"
-          title={`${module.level} materials.`}
-          description="Each training page has a clear place for videos, audio, handouts, scripts, prompts, roleplays, and trackers. Missing files are marked clearly."
-        />
-        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {assetSlots.map((slot) => (
-            <article key={slot.label} className="card p-5">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="h-display text-base">{slot.label}</h3>
-                <span className="rounded-full border border-lf-line bg-lf-mist px-2 py-1 text-[11px] font-semibold uppercase tracking-wide text-lf-slate">
-                  {slot.status}
-                </span>
-              </div>
-              <p className="mt-3 text-sm leading-6 text-lf-slate">
-                {slot.body}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
 
       {moduleScripts.length > 0 && (
         <section className="container-page py-6">

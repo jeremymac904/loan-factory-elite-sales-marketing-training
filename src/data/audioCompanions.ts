@@ -77,15 +77,15 @@ export function getDriveAudioUrl(companion: AudioCompanion) {
 
 export function getAudioStatusLabel(status: AudioCompanionStatus) {
   if (status === "published") return "Published";
-  if (status === "generating") return "In Production";
+  if (status === "generating") return "Audio in production";
   if (
     status === "downloaded" ||
     status === "generated" ||
     status === "needs-drive-upload"
   ) {
-    return "In Review";
+    return "Audio under review";
   }
-  return "Planned";
+  return "Audio under review";
 }
 
 export function getAudioCompanionByRoute(route: string) {

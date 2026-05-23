@@ -27,6 +27,23 @@ export default function LenderEscalationForm() {
   }
 
   function saveLocal() {
+    const entry = {
+      ...form,
+      savedAt: new Date().toISOString(),
+    };
+
+    try {
+      const existing = JSON.parse(
+        localStorage.getItem("lf_lender_escalations") ?? "[]",
+      ) as unknown[];
+      localStorage.setItem(
+        "lf_lender_escalations",
+        JSON.stringify([entry, ...existing].slice(0, 50)),
+      );
+    } catch {
+      localStorage.setItem("lf_lender_escalations", JSON.stringify([entry]));
+    }
+
     setSaved(true);
   }
 
@@ -76,16 +93,16 @@ export default function LenderEscalationForm() {
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <button type="button" className="btn-primary" onClick={saveLocal}>
-          Save for Manual Review
+          Save Review Note
         </button>
         <p className="text-sm font-semibold text-lf-slate">
-          No email, automation, Google connection, or external send is triggered.
+          Saved entries stay in this browser for LO Development review.
         </p>
       </div>
 
       {saved && (
         <p className="mt-4 rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-sm font-semibold text-green-700">
-          Escalation captured for beta preview only. Manual review is still
+          Escalation note saved in this browser. Manual review is still
           required before anyone contacts the lender.
         </p>
       )}

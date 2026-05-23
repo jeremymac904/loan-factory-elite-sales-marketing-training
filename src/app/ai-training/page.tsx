@@ -14,7 +14,7 @@ function compactTitle(title: string) {
 }
 
 function clipRange(start: string, end: string) {
-  if (!start && !end) return "Timestamp pending";
+  if (!start && !end) return "Key section";
   return `${start || "?"}-${end || "?"}`;
 }
 
@@ -116,8 +116,8 @@ export default function AITrainingPage() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="Full video library"
-            title="AI training videos and lesson highlights"
-            description="Choose a training topic below. Each video includes a short preview, key takeaways, and next steps. YouTube clips will appear as each training segment is approved."
+            title="AI lesson guides and highlights"
+            description="Choose a training topic below. Each guide gives you key takeaways, practice ideas, and one next step."
           />
           <div className="rounded-2xl border border-lf-line bg-white p-4 text-sm text-lf-slate shadow-card sm:max-w-sm">
             <strong className="text-lf-navy">How to use this page:</strong>{" "}
@@ -138,9 +138,6 @@ export default function AITrainingPage() {
                     {compactTitle(video.title)}
                   </h3>
                 </div>
-                <span className="rounded-full border border-lf-line bg-lf-mist px-3 py-1 text-xs font-semibold text-lf-slate">
-                  Upload pending
-                </span>
               </div>
 
               <p className="mt-4 text-sm leading-6 text-lf-charcoal">
@@ -169,7 +166,7 @@ export default function AITrainingPage() {
 
               <div className="mt-auto flex flex-wrap gap-3 pt-6">
                 <Link href={`/ai-training/recordings/${video.id}/`} className="btn-primary">
-                  Open lesson highlights
+                  Open lesson guide
                 </Link>
               </div>
             </article>
@@ -200,7 +197,7 @@ export default function AITrainingPage() {
             >
               <h3 className="font-semibold text-lf-navy">Training Library</h3>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
-                Find published lessons after recordings are approved and added.
+                Find training pages, scripts, prompts, and review materials.
               </p>
             </Link>
             <Link href="/assessments/" className="card p-4 hover:shadow-lift">

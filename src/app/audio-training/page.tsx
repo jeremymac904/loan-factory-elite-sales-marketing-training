@@ -48,18 +48,16 @@ export default function AudioTrainingPage() {
 
       <section className="container-page py-10">
         <div className="grid gap-4 md:grid-cols-3">
-          {["Planned", "Published", "In Review"].map((label) => (
+          {["Audio under review", "Published"].map((label) => (
             <article key={label} className="card p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
                 {label}
               </p>
               <p className="mt-2 h-display text-3xl">{statusCount(label)}</p>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
-                {label === "Planned"
-                  ? "Audio companion is planned and waiting for production."
-                  : label === "Published"
+                {label === "Published"
                     ? "Audio is ready to play on the site."
-                    : "Audio has been created and is waiting for review and publishing."}
+                    : "Audio is ready for review."}
               </p>
             </article>
           ))}
@@ -69,7 +67,7 @@ export default function AudioTrainingPage() {
       <section id="core-audio" className="container-page py-10 scroll-mt-24">
         <SectionHeading
           title="Core 101-601 audio companions"
-          description="Each Sales & Marketing lesson has one matching audio companion. After review and approved publishing, the player appears automatically."
+          description="Each Sales & Marketing lesson has one matching audio companion. Approved audio appears automatically after review."
         />
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
           {coreAudioCompanions.map((companion) => (
@@ -95,7 +93,7 @@ export default function AudioTrainingPage() {
       <section className="container-page py-12">
         <SectionHeading
           title="Recommended production order"
-          description="If only a few can be generated first, use this order so the highest-value lessons go live first."
+          description="Use this order when reviewing and publishing the highest-value lessons first."
         />
         <ol className="mt-6 grid gap-3 md:grid-cols-2">
           {productionOrderAudioCompanions.map((companion, index) => (

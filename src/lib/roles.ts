@@ -145,4 +145,4 @@ export function isRoleId(value: string | null): value is RoleId {
 export const ROLE_STORAGE_KEY = "lf_role_preview";
 
 export const ROLE_PREVIEW_DISCLAIMER =
-  "This sign-in is a local role preview for this browser. Real account security will be added later.";
+  "This sign-in is a local role view for this browser. Real account security remains the production path.";

@@ -24,7 +24,7 @@ export default function LoMasteryCoachingPage() {
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/member-area/" className="btn-primary">
-            Preview Member Area
+            Open Member Area
           </Link>
           <Link
             href="/loan-factory-alliance/"
@@ -45,8 +45,8 @@ export default function LoMasteryCoachingPage() {
             <article key={item} className="card">
               <h2 className="h-display text-lg">{item}</h2>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                Built for weekly action and coaching review. Some member
-                uploads are still being added for beta review.
+                Built for weekly action, coaching review, and stronger follow
+                through.
               </p>
             </article>
           ))}

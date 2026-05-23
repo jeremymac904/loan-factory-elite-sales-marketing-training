@@ -11,7 +11,7 @@ export default function AiTwinProjectsPage() {
       <SectionHeading
         eyebrow="Project examples"
         title="Turn an idea into a clear project brief."
-        description="This preview shows how a Twin could help organize a project: goal, sources, instructions, tasks, needed connections, and a testing checklist."
+        description="Use this page to see how a Twin can organize a project: goal, sources, instructions, tasks, needed connections, and a testing checklist."
       />
       <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <article className="card">
@@ -22,9 +22,8 @@ export default function AiTwinProjectsPage() {
             {aiTwinProjectExample.title}
           </h2>
           <p className="prose-lf mt-2 text-sm text-lf-slate">
-            A future project builder can turn a rough idea into clear
-            instructions, source lists, tasks, and a testing checklist. This
-            preview does not save anything.
+            A project builder can turn a rough idea into clear instructions,
+            source lists, tasks, and a testing checklist.
           </p>
           <div className="mt-5 grid gap-2">
             {aiTwinProjectExample.sources.map((source) => (
@@ -35,7 +34,7 @@ export default function AiTwinProjectsPage() {
           </div>
         </article>
         <article className="card">
-          <h2 className="h-display text-2xl">Generated checklist preview</h2>
+          <h2 className="h-display text-2xl">Generated checklist</h2>
           <ol className="prose-lf mt-4 list-decimal space-y-2 pl-5 text-sm">
             {aiTwinProjectExample.tasks.map((task) => (
               <li key={task}>{task}</li>

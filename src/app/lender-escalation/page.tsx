@@ -9,12 +9,12 @@ export default function LenderEscalationPage() {
   return (
     <>
       <PageHero
-        eyebrow="Manual review only"
+        eyebrow="Lender support"
         title="Lender Escalation"
         body={
           <p>
-            Use this when a lender issue needs manual LO Development review.
-            During beta, this form does not send email or run automations.
+            Use this when a lender issue needs LO Development review. Capture
+            the people, issue, urgency, and requested help in one clean note.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -27,7 +27,7 @@ export default function LenderEscalationPage() {
       <section className="container-page py-12">
         <SectionHeading
           title="What happens next"
-          description="For beta, this saves only on this screen. Later, an approved manual review flow can send from the right LO Development email with the right people copied."
+          description="This keeps the details organized so LO Development can review the issue and decide the right next step."
         />
         <div className="mt-8">
           <LenderEscalationForm />

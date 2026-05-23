@@ -155,8 +155,8 @@ export default async function AITrainingPathPage({ params }: Props) {
       <section className="bg-lf-mist">
         <div className="container-page py-14">
           <SectionHeading
-            title="Training videos"
-            description="Approved YouTube clips will appear here after upload. Until then, use the topic summary and prompts to practice safely."
+            title="Related lesson guides"
+            description="Use these guides for takeaways, practice ideas, and safe next steps."
           />
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
             {(videos.length ? videos : aiTrainingVideos.slice(0, 3)).map((video) => (
@@ -166,14 +166,14 @@ export default async function AITrainingPathPage({ params }: Props) {
                 className="card hover:shadow-lift"
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                  {video.duration} | Upload pending
+                  {video.duration}
                 </p>
                 <h3 className="h-display mt-2 text-lg">{video.category}</h3>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
                   {video.topic}
                 </p>
                 <span className="mt-5 inline-flex text-sm font-semibold text-lf-orange">
-                  Open lesson highlights &rarr;
+                  Open lesson guide &rarr;
                 </span>
               </Link>
             ))}

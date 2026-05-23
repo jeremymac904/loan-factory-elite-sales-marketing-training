@@ -13,7 +13,7 @@ import {
   teamLaneAssignments,
 } from "@/data/personaIntelligence";
 
-export const metadata = { title: "Campaign Builder Preview" };
+export const metadata = { title: "Campaign Builder" };
 
 type SearchParams = Record<string, string | string[] | undefined>;
 
@@ -42,8 +42,8 @@ export default async function CampaignBuilderPage({ searchParams }: Props) {
 
   return (
     <PersonaShell
-      title="Campaign Builder Preview"
-      description="Select a community, audience, and goal to preview a read-only Team Leader campaign plan. Nothing saves or generates live AI output."
+      title="Campaign Builder"
+      description="Select a community, audience, and goal. This builds a Team Leader campaign plan you can review and copy into your weekly planning."
     >
       <section className="container-page py-14">
         <form method="get" className="card grid gap-4 md:grid-cols-4">
@@ -89,13 +89,13 @@ export default async function CampaignBuilderPage({ searchParams }: Props) {
           </label>
           <div className="flex items-end">
             <button type="submit" className="btn-primary w-full">
-              Preview plan
+              Build plan
             </button>
           </div>
         </form>
 
         <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
-          <TextBlock title="Sample campaign output">
+          <TextBlock title="Team campaign output">
             <p>
               <strong>Community:</strong> {selectedCommunity.name}
             </p>
@@ -138,8 +138,8 @@ export default async function CampaignBuilderPage({ searchParams }: Props) {
 
         <div className="mt-8">
           <ReadOnlyCallout>
-            This preview does not save campaigns, call AI, create ads, post to
-            Google Business Profile, or send emails.
+            Use this as an internal planning worksheet. Human review is
+            required before public use.
           </ReadOnlyCallout>
         </div>
         <div className="mt-6">

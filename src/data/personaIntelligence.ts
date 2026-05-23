@@ -3680,7 +3680,7 @@ export const personaTemplates = [
     "trustTriggers": [
       "team campaign map",
       "weekly review",
-      "scorecard preview"
+      "scorecard review"
     ],
     "campaignIdeas": [
       "Team Leader Growth Review",
@@ -3702,7 +3702,7 @@ export const sampleCampaignRecommendation = {
   audience: "buyer" as PersonaAudience,
   communitySlug: "mexican-american",
   goal: "More buyer conversations",
-  campaignSummary: "A read-only sample campaign lane that helps a Team Leader assign useful education content without creating public copy yet.",
+  campaignSummary: "A sample campaign lane that helps a Team Leader assign useful education content before creating public copy.",
   lanes: [
     { owner: "LO 1", lane: "First-time buyer content", action: "Record one short education video and draft one checklist." },
     { owner: "LO 2", lane: "Realtor education", action: "Prepare one buyer-readiness asset for local Realtor partners." },

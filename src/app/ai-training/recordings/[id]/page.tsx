@@ -13,7 +13,7 @@ function cleanTitle(title: string) {
 }
 
 function clipRange(start: string, end: string) {
-  if (!start && !end) return "Timestamp pending";
+  if (!start && !end) return "Key section";
   return `${start || "?"}-${end || "?"}`;
 }
 
@@ -74,11 +74,11 @@ export default async function AIRecordingPage({ params }: Props) {
               {video.recommendedUse}
             </p>
           </article>
-          <article className="card border-dashed">
-            <h2 className="h-display text-2xl">Video preview</h2>
+          <article className="card">
+            <h2 className="h-display text-2xl">How to use this lesson</h2>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              YouTube clip pending upload. This page is ready for an approved
-              unlisted embed URL when the clip is reviewed.
+              Read the highlights, choose one idea, and turn it into a prompt,
+              follow-up, or practice action you can review before use.
             </p>
           </article>
         </div>
@@ -88,7 +88,7 @@ export default async function AIRecordingPage({ params }: Props) {
         <div className="container-page py-14">
           <SectionHeading
             title="Lesson highlights"
-            description="These highlights show what to watch for once the approved clips are uploaded."
+            description="These highlights show what to practice and how to apply the lesson this week."
           />
           <div className="mt-8 grid gap-4">
             {highlights.map((segment) => (
@@ -101,7 +101,7 @@ export default async function AIRecordingPage({ params }: Props) {
                     {clipRange(segment.start, segment.end)}
                   </p>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                    Clip pending upload
+                    Practice point
                   </p>
                 </div>
                 <div>

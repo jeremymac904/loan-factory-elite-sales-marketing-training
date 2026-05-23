@@ -2,8 +2,8 @@ import ModuleHero from "@/components/ModuleHero";
 import ModuleSummarySections from "@/components/ModuleSummarySections";
 import ScriptCard from "@/components/ScriptCard";
 import PromptCard from "@/components/PromptCard";
-import RecordingPlaceholder from "@/components/RecordingPlaceholder";
-import DownloadPlaceholder from "@/components/DownloadPlaceholder";
+import RecordingCard from "@/components/RecordingCard";
+import DownloadCard from "@/components/DownloadCard";
 import SectionHeading from "@/components/SectionHeading";
 import DoThisToday from "@/components/DoThisToday";
 import ClassRegistration from "@/components/ClassRegistration";
@@ -52,20 +52,20 @@ export default function Module101Page() {
           title="Watch the lesson and download the handouts."
         />
         <div className="mt-6 grid gap-5 md:grid-cols-3">
-          <RecordingPlaceholder
+          <RecordingCard
             level="101"
             title="101 live walkthrough"
             description="Jeremy walks through a full Loan Factory LO day: activity standard, weekly rhythm, first follow-ups, and AI-assisted drafting."
             videoSrc={module101.trainingVideo?.embedUrl}
             videoTitle={module101.trainingVideo?.title}
           />
-          <DownloadPlaceholder
+          <DownloadCard
             title="101 Live class deck"
             format="PPTX"
             description="Class slides for the 101 Foundation lesson."
             downloadHref="/downloads/Elite_Sales_Marketing_Training_101_REVISED.pptx"
           />
-          <DownloadPlaceholder
+          <DownloadCard
             title="101 Mortgage Sales Foundation handout"
             format="Word"
             description="What you will learn, first-call script, tracker basics, today's assignment, safety notes, and next step."
@@ -114,7 +114,7 @@ export default function Module101Page() {
                 Start with your income goal and average loan amount.
               </li>
               <li>
-                Choose the compensation model that matches your role.
+                Enter your compensation bps, split percentage, and house fee.
               </li>
               <li>
                 Adjust closing, application, prequal, and conversation

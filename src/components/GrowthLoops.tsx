@@ -15,9 +15,42 @@ const challenges = [
   "Rewrite one social post through the prompt library.",
 ];
 
+function getStoredRecord<T extends number | boolean>(key: string) {
+  if (typeof window === "undefined") return {} as Record<string, T>;
+
+  try {
+    return JSON.parse(localStorage.getItem(key) ?? "{}") as Record<string, T>;
+  } catch {
+    return {} as Record<string, T>;
+  }
+}
+
 export default function GrowthLoops() {
-  const [votes, setVotes] = useState<Record<string, number>>({});
-  const [complete, setComplete] = useState<Record<string, boolean>>({});
+  const [votes, setVotes] = useState<Record<string, number>>(() =>
+    getStoredRecord<number>("lf_growth_votes"),
+  );
+  const [complete, setComplete] = useState<Record<string, boolean>>(() =>
+    getStoredRecord<boolean>("lf_growth_challenges"),
+  );
+
+  function upvote(title: string, baseVotes: number) {
+    setVotes((current) => {
+      const next = {
+        ...current,
+        [title]: (current[title] ?? baseVotes) + 1,
+      };
+      localStorage.setItem("lf_growth_votes", JSON.stringify(next));
+      return next;
+    });
+  }
+
+  function setChallengeComplete(challenge: string, value: boolean) {
+    setComplete((current) => {
+      const next = { ...current, [challenge]: value };
+      localStorage.setItem("lf_growth_challenges", JSON.stringify(next));
+      return next;
+    });
+  }
 
   return (
     <section className="bg-lf-mist">
@@ -31,8 +64,8 @@ export default function GrowthLoops() {
               Vote on what should improve next.
             </h2>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Vote on what would help you most. These votes are for beta
-              review only and do not save yet.
+              Vote on what would help you most. Your votes stay in this
+              browser while the platform is being tested.
             </p>
             <div className="mt-6 grid gap-3">
               {featureIdeas.map((idea) => (
@@ -49,12 +82,7 @@ export default function GrowthLoops() {
                     <button
                       type="button"
                       className="btn-secondary"
-                      onClick={() =>
-                        setVotes((current) => ({
-                          ...current,
-                          [idea.title]: (current[idea.title] ?? idea.votes) + 1,
-                        }))
-                      }
+                      onClick={() => upvote(idea.title, idea.votes)}
                     >
                       Upvote {votes[idea.title] ?? idea.votes}
                     </button>
@@ -85,10 +113,7 @@ export default function GrowthLoops() {
                     type="checkbox"
                     checked={complete[challenge] ?? false}
                     onChange={(event) =>
-                      setComplete((current) => ({
-                        ...current,
-                        [challenge]: event.target.checked,
-                      }))
+                      setChallengeComplete(challenge, event.target.checked)
                     }
                     className="h-5 w-5 rounded border-lf-line text-lf-orange"
                   />
@@ -97,7 +122,7 @@ export default function GrowthLoops() {
               ))}
             </div>
             <p className="mt-4 text-sm font-semibold text-lf-orangeDark">
-              Preview-only completion. No leaderboard points are saved yet.
+              Your checklist stays in this browser.
             </p>
           </div>
         </div>

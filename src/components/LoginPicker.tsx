@@ -32,11 +32,11 @@ export default function LoginPicker() {
         <div className="card flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-              Current preview
+              Current view
             </p>
             <p className="prose-lf mt-1 text-base">
               {current
-                ? `Previewing as ${current.name} (${current.group}).`
+                ? `Viewing as ${current.name} (${current.group}).`
                 : "No role selected. Pick one below."}
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function LoginPicker() {
                 onClick={clear}
                 className="btn-secondary"
               >
-                Clear preview
+                Clear role
               </button>
             )}
             <Link href="/" className="btn-primary">

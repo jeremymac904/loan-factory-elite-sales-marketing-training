@@ -11,7 +11,7 @@ export default function AiTwinSourcesPage() {
       <SectionHeading
         eyebrow="Sources"
         title="What each Twin should be allowed to use"
-        description="This preview shows the kinds of training notes, docs, and review rules each Twin may use later. Private Gmail and Drive files are not connected."
+        description="Review the training notes, docs, and review rules each Twin can use when building drafts and plans."
       />
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {aiTwinProfiles.map((twin) => (
@@ -25,11 +25,11 @@ export default function AiTwinSourcesPage() {
               ))}
             </div>
             <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Connected now
+              Approved source types
             </p>
             <p className="mt-1 text-sm text-lf-slate">
-              Example source list only. No email, Drive files, or private
-              documents are connected.
+              Use only sources approved for the user's role. Private email,
+              Drive files, and documents stay isolated by user.
             </p>
           </article>
         ))}

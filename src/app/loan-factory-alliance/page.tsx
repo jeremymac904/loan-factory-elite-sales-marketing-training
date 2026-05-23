@@ -24,7 +24,7 @@ export default function LoanFactoryAlliancePage() {
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/member-area/" className="btn-primary">
-            Preview Member Area
+            Open Member Area
           </Link>
           <Link
             href="/lo-mastery-coaching/"
@@ -45,8 +45,8 @@ export default function LoanFactoryAlliancePage() {
             <article key={item} className="card">
               <h2 className="h-display text-lg">{item}</h2>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                Designed for stronger weekly execution. Some advanced
-                resources are still being added for beta review.
+                Designed for stronger weekly execution, accountability, and
+                advanced coaching review.
               </p>
             </article>
           ))}

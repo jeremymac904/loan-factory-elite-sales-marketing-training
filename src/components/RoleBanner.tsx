@@ -13,7 +13,7 @@ export default function RoleBanner() {
     <div className="border-b border-lf-orange/40 bg-lf-orangeSoft/60">
       <div className="container-page flex flex-wrap items-center justify-between gap-3 py-2 text-xs text-lf-orangeDark">
         <p>
-          <span className="font-semibold">Role preview:</span>{" "}
+          <span className="font-semibold">Role view:</span>{" "}
           {r.name} ({r.group})
         </p>
         <p className="flex items-center gap-3">
@@ -24,7 +24,7 @@ export default function RoleBanner() {
             Switch role
           </Link>
           <span className="hidden text-lf-orangeDark/70 md:inline">
-            Browser role preview.
+            Browser role view.
           </span>
         </p>
       </div>

@@ -225,8 +225,8 @@ export default function FaceGramGroupTabs({ activeTab, group }: Props) {
           </button>
         </div>
         <p className="mt-4 border-t border-lf-line pt-3 text-xs text-lf-slate">
-          Group posts save locally in this browser for beta review. Public
-          sharing and external publishing stay off.
+          Group posts save in this browser while you review the group. FaceGram
+          is internal only.
         </p>
       </article>
 

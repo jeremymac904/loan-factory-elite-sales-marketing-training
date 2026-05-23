@@ -57,7 +57,7 @@ export default function ApexCalendarPage() {
           <p>
             Biweekly group coaching for LO Mastery members. Weekly coaching
             and daily Breakfast Club for Loan Factory Alliance members. The
-            calendar below previews the coaching cadence.
+            calendar below shows the coaching cadence.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"

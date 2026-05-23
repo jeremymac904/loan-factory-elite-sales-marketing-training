@@ -1,5 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
-import DownloadPlaceholder from "@/components/DownloadPlaceholder";
+import DownloadCard from "@/components/DownloadCard";
 import { trackerSections, trackerCsvHeaders } from "@/data/trackerFields";
 
 export const metadata = { title: "Weekly Tracker" };
@@ -56,7 +56,7 @@ export default function TrackerPage() {
           description="Download the starter CSV or copy the field list into your team's tracker."
         />
         <div className="mt-6 grid gap-5 md:grid-cols-2">
-          <DownloadPlaceholder
+          <DownloadCard
             title="Weekly Tracker CSV"
             format="CSV"
             description="One row per LO per week. Drop into Google Sheets or Airtable."
@@ -64,7 +64,7 @@ export default function TrackerPage() {
               `${trackerCsvHeaders.join(",")}\n`,
             )}`}
           />
-          <DownloadPlaceholder
+          <DownloadCard
             title="Weekly Tracker Google Form (template)"
             format="Google Form"
             description="A team leader can copy this into a Google Form and route results into a Sheet."

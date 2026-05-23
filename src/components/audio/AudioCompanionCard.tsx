@@ -15,11 +15,11 @@ function statusClass(label: string) {
     return "border-lf-orange bg-lf-orange text-white";
   }
 
-  if (label === "In Production") {
+  if (label === "Audio in production") {
     return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
   }
 
-  if (label === "In Review") {
+  if (label === "Audio under review") {
     return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
   }
 
@@ -93,11 +93,9 @@ export default function AudioCompanionCard({ companion, compact = false }: Props
         </div>
       ) : (
         <div className="rounded-xl border border-dashed border-lf-line bg-lf-mist p-4 text-sm leading-6 text-lf-slate">
-          {statusLabel === "In Production"
-            ? "Audio companion is in production. It will appear here after review and approved upload."
-            : statusLabel === "In Review"
-              ? "Audio companion is under review. The player appears after approved upload."
-              : "Audio companion is planned. The player appears after review and approved upload."}
+          {statusLabel === "Audio in production"
+            ? "Audio is being prepared. Approved audio appears here after review."
+            : "Audio under review. Approved audio appears here after review."}
         </div>
       )}
 

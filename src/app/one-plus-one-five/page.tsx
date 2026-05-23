@@ -29,7 +29,7 @@ const moduleCards = [
   {
     title: "Campaign Builder",
     href: "/one-plus-one-five/campaign-builder/",
-    description: "Preview how a Team Leader assigns a safe campaign lane.",
+    description: "Build a Team Leader campaign lane for weekly execution.",
   },
   {
     title: "Funnel Strategy",
@@ -49,7 +49,7 @@ const moduleCards = [
   {
     title: "AI Boardroom Review",
     href: "/one-plus-one-five/ai-boardroom/",
-    description: "Preview review categories before any AI scoring is wired.",
+    description: "Use review categories before a campaign leaves planning.",
   },
   {
     title: "Team Leader Playbook",
@@ -59,7 +59,7 @@ const moduleCards = [
   {
     title: "Scorecards",
     href: "/one-plus-one-five/scorecards/",
-    description: "Track future tags, review status, fit score, and localization risk.",
+    description: "Track tags, review status, fit score, and localization risk.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function OnePlusOneFivePage() {
   return (
     <PersonaShell
       title="1+1+1=5 Team Growth Platform"
-      description="A read-only planning tool that helps Team Leaders stop marketing alone, choose a community, choose an audience, and assign clear campaign lanes."
+      description="A Team Leader planning tool that helps teams stop marketing alone, choose a community, choose an audience, and assign clear campaign lanes."
     >
       <section className="container-page py-14">
         <div className="grid gap-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(280px,0.8fr)]">
@@ -116,12 +116,12 @@ export default function OnePlusOneFivePage() {
       <section className="container-page pb-14">
         <div className="grid gap-5 lg:grid-cols-3">
           <ListBlock
-            title="Current read-only data"
+            title="Current planning data"
             items={[
               `${personaCommunities.length} community profiles`,
               `${personaTemplates.length} persona templates`,
               `${teamLaneAssignments.length} sample team lanes`,
-              `${boardroomReviewCategories.length} future review categories`,
+              `${boardroomReviewCategories.length} review categories`,
             ]}
           />
           <ListBlock
@@ -134,7 +134,7 @@ export default function OnePlusOneFivePage() {
             ]}
           />
           <ListBlock
-            title="Future connections"
+            title="Where this connects"
             items={[
               "Campaign Builder",
               "Funnel recommendations",
@@ -146,8 +146,8 @@ export default function OnePlusOneFivePage() {
         </div>
         <div className="mt-8">
           <ReadOnlyCallout>
-            Nothing on this module saves data, posts content, creates ads, runs
-            AI, or sends emails yet.
+            Keep this as an internal planning worksheet. Human review is
+            required before any public campaign, ad, post, or email.
           </ReadOnlyCallout>
         </div>
         <div className="mt-6">

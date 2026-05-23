@@ -67,8 +67,8 @@ export default async function PersonaLibraryPage({ searchParams }: Props) {
           <div className="rounded-2xl border border-lf-line bg-lf-mist p-4">
             <h3 className="h-display text-lg">Community filter</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Use this to preview which community the templates should be
-              localized for. It does not create public copy.
+              Use this to choose which community the templates should be
+              localized for before public copy is reviewed.
             </p>
             <div className="mt-3 grid gap-2">
               {personaCommunities.slice(0, 6).map((community) => (

@@ -179,7 +179,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI in the Marketplace - 2026_02_11 13_27 PST - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_53_43 PM UTC-4.md",
-    "driveStatus": "Upload pending",
+    "driveStatus": "Requires media review",
     "tags": [
       "Gemini",
       "AI Twin",
@@ -448,7 +448,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_03_03 13_48 PST - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_53_06 PM UTC-4.md",
-    "driveStatus": "Upload pending",
+    "driveStatus": "Requires media review",
     "tags": [
       "NotebookLM",
       "AI Twin",
@@ -561,7 +561,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_03_17 14_45 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_52_42 PM UTC-4.md",
-    "driveStatus": "Upload pending",
+    "driveStatus": "Requires media review",
     "tags": [
       "Google AI Studio",
       "Loan Factory Ally",
@@ -831,7 +831,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_03_31 14_52 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_52_12 PM UTC-4.md",
-    "driveStatus": "Upload pending",
+    "driveStatus": "Requires media review",
     "tags": [
       "enterprise AI",
       "NotebookLM",
@@ -1019,7 +1019,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_04_14 14_43 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_51_16 PM UTC-4.md",
-    "driveStatus": "Upload pending",
+    "driveStatus": "Requires media review",
     "tags": [
       "Gemini",
       "NotebookLM",
@@ -1276,7 +1276,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_04_28 14_51 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_48_49 PM UTC-4.md",
-    "driveStatus": "Upload pending",
+    "driveStatus": "Requires media review",
     "tags": [
       "Custom GPTs",
       "AI Twin",
@@ -1485,7 +1485,7 @@ export const aiTrainingVideos = [
     ],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_05_12 14_50 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_50_07 PM UTC-4.md",
-    "driveStatus": "Upload pending; duplicate local MP4 copies need review",
+    "driveStatus": "Requires media review; duplicate local MP4 copies need review",
     "tags": [
       "Google Business Profile",
       "local SEO",

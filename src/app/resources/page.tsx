@@ -34,7 +34,7 @@ const resources = [
   {
     title: "Lender Escalation",
     description:
-      "Request manual help with a lender issue. No email or automation is sent during beta.",
+      "Request help with a lender issue and keep the details organized for review.",
     href: "/lender-escalation/",
   },
   {
@@ -101,9 +101,9 @@ export default function ResourcesPage() {
         <div className="rounded-2xl border border-lf-orange/30 bg-lf-orangeSoft p-6 shadow-card">
           <h2 className="h-display text-2xl">Send Feedback</h2>
           <p className="prose-lf mt-2 max-w-3xl text-sm text-lf-slate">
-            Use the floating Send Feedback button on any page. The app does not
-            send email. Signed-in users can save feedback; preview users see a
-            preview-only confirmation.
+            Use the floating Send Feedback button on any page. Signed-in users
+            can submit feedback. If saving is unavailable, the note stays in
+            this browser so you can copy it to LO Development.
           </p>
         </div>
       </section>

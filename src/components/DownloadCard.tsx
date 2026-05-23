@@ -9,7 +9,7 @@ type Props = {
   secondaryLabel?: string;
 };
 
-export default function DownloadPlaceholder({
+export default function DownloadCard({
   title,
   format = "PDF",
   description,
@@ -18,7 +18,7 @@ export default function DownloadPlaceholder({
   secondaryLabel,
 }: Props) {
   const isReady = !!downloadHref;
-  const statusLabel = isReady ? `${format} ready` : "Under review";
+  const statusLabel = isReady ? `${format} ready` : "Guide";
 
   return (
     <div className="card flex flex-col gap-2">
@@ -36,7 +36,8 @@ export default function DownloadPlaceholder({
       )}
       {!isReady && (
         <p className="text-sm font-semibold text-lf-slate">
-          File appears here after review and approved publishing.
+          Use the page details for now. A download button appears only when an
+          approved file is available.
         </p>
       )}
       <div className="mt-3 flex flex-wrap gap-2">

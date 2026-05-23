@@ -134,16 +134,16 @@ export const platformModules: PlatformModule[] = [
     href: "/one-plus-one-five/",
     status: "Experience preview",
     summary:
-      "A read-only Team Leader planning tool for personas, community intelligence, campaign lanes, Realtor outreach, recruiting, and future scorecards.",
+      "A Team Leader planning tool for personas, community intelligence, campaign lanes, Realtor outreach, recruiting, and scorecards.",
     whoFor: ["Team leaders", "Producing LOs", "LO Development"],
     tools: [
       "Persona library",
       "Community intelligence",
-      "Campaign builder preview",
+      "Campaign builder",
       "Funnel strategy",
       "Realtor outreach strategy",
       "Recruiting strategy",
-      "Scorecard preview",
+      "Scorecards",
     ],
     resources: [
       "29 community profiles",
@@ -152,7 +152,7 @@ export const platformModules: PlatformModule[] = [
       "AI Boardroom review model",
     ],
     currentStatus:
-      "The read-only beta module is available for Team Leader planning and review.",
+      "The beta module is available for Team Leader planning and review.",
     nextAction:
       "LO Development reviews sample lanes before live campaign saving, AI scoring, or scorecard persistence.",
     connections: [

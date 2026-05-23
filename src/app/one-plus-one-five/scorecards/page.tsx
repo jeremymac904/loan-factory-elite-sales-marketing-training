@@ -13,11 +13,11 @@ export default function ScorecardsPage() {
   return (
     <PersonaShell
       title="Scorecards"
-      description="Preview how future scorecards will tag personas, campaigns, channels, LO assignments, review status, and performance metrics."
+      description="Use scorecards to tag personas, campaigns, channels, LO assignments, review status, and performance metrics."
     >
       <section className="container-page py-14">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <ListBlock title="Future scorecard fields" items={scorecardItems} />
+          <ListBlock title="Scorecard fields" items={scorecardItems} />
           <ListBlock
             title="Persona tagging"
             items={[
@@ -49,7 +49,7 @@ export default function ScorecardsPage() {
             ]}
           />
           <ListBlock
-            title="Future performance metrics"
+            title="Performance metrics"
             items={[
               "Conversations created.",
               "Realtor meetings booked.",
@@ -61,15 +61,15 @@ export default function ScorecardsPage() {
           <TextBlock title="Review scores">
             <p>
               Campaign fit, localization risk, and compliance sensitivity are
-              future review scores. They are not live AI scores today.
+              manual review categories for Team Leaders and LO Development.
             </p>
           </TextBlock>
         </div>
 
         <div className="mt-8">
           <ReadOnlyCallout>
-            Scorecards are preview-only. No Supabase tables, migrations,
-            database writes, or AI scoring are connected.
+            Use these fields for planning and weekly review. Human review is
+            required before public campaign use.
           </ReadOnlyCallout>
         </div>
         <div className="mt-6">

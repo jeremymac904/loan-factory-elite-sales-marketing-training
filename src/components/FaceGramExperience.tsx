@@ -133,7 +133,7 @@ export default function FaceGramExperience({
   const canPost = previewMode || authState.status === "approved";
   const isPending = authState.status === "pending";
   const activeEmail =
-    authState.status === "approved" ? authState.email : "beta preview";
+    authState.status === "approved" ? authState.email : "loan officer";
 
   function publishLocalPost() {
     const body = draftPost.trim();
@@ -314,8 +314,8 @@ export default function FaceGramExperience({
                     aria-label="Title"
                   />
                   <p className="text-xs text-lf-slate">
-                    Local beta profile only. Nothing is published outside this
-                    browser.
+                    Profile changes stay in this browser while you review the
+                    feed.
                   </p>
                 </div>
               )}
@@ -459,8 +459,8 @@ export default function FaceGramExperience({
                   </button>
                 </div>
                 <p className="mt-4 border-t border-lf-line pt-3 text-xs text-lf-slate">
-                  Posts and media previews save locally in this browser. Public
-                  sharing, vendor posting, and external publishing stay off.
+                  Posts and media previews save in this browser. FaceGram is
+                  internal only.
                 </p>
               </div>
             ) : (
@@ -654,7 +654,7 @@ export default function FaceGramExperience({
                           [post.id]: event.target.value,
                         }))
                       }
-                      placeholder="Add a beta comment"
+                      placeholder="Add a comment"
                       id={`comment-input-${post.id}`}
                       className="min-w-0 flex-1 rounded-lg border border-lf-line px-3 py-2 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
                     />

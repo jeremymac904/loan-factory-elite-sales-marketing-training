@@ -80,13 +80,9 @@ export default function AudioTrainingCard({ item }: Props) {
       )}
 
       <div className="flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          disabled
-          className="cursor-not-allowed rounded-lg border border-lf-line bg-lf-mist px-4 py-2 text-sm font-semibold text-lf-slate"
-        >
-          View transcript ({item.transcriptStatus.toLowerCase()})
-        </button>
+        <span className="rounded-lg border border-lf-line bg-lf-mist px-4 py-2 text-sm font-semibold text-lf-slate">
+          Transcript: {item.transcriptStatus.toLowerCase()}
+        </span>
         <a
           href={item.filePath}
           download

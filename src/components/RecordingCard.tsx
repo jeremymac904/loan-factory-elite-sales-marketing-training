@@ -8,14 +8,14 @@ type Props = {
   videoTitle?: string;
 };
 
-export default function RecordingPlaceholder({
+export default function RecordingCard({
   level,
   title,
   description,
   videoSrc,
   videoTitle,
 }: Props) {
-  const statusLabel = videoSrc ? "Video replay" : "Upload pending";
+  const statusLabel = videoSrc ? "Ready to watch" : "Replay guide";
 
   return (
     <div className="card flex flex-col gap-2">
@@ -39,7 +39,12 @@ export default function RecordingPlaceholder({
             className="border-white/10"
           />
         </div>
-      ) : null}
+      ) : (
+        <p className="mt-2 rounded-xl border border-lf-line bg-lf-mist p-3 text-sm leading-6 text-lf-slate">
+          Use this guide to focus your review. The replay player appears only
+          when an approved video is available on this page.
+        </p>
+      )}
     </div>
   );
 }
