@@ -5,6 +5,9 @@ import {
   getSupabasePublicConfig,
   hasSupabasePublicConfig,
 } from "@/lib/supabase/config";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+
+const authNextStorageKey = "loan-factory-auth-next";
 
 export default function GoogleSignInButton() {
   const [loading, setLoading] = useState(false);
@@ -21,7 +24,36 @@ export default function GoogleSignInButton() {
       return;
     }
 
-    window.location.assign("/auth/google/");
+    const supabase = createBrowserSupabaseClient();
+
+    if (!supabase) {
+      setLoading(false);
+      setError("Supabase is not configured for this environment yet.");
+      return;
+    }
+
+    const redirectTo = new URL("/auth/callback", window.location.origin);
+
+    window.sessionStorage.setItem(authNextStorageKey, "/");
+
+    const { data, error: signInError } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: redirectTo.toString(),
+        queryParams: {
+          prompt: "select_account",
+        },
+        skipBrowserRedirect: true,
+      },
+    });
+
+    if (signInError || !data.url) {
+      setLoading(false);
+      setError("Google sign-in could not start. Please try again.");
+      return;
+    }
+
+    window.location.assign(data.url);
   }
 
   return (

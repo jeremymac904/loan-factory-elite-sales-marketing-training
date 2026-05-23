@@ -39,6 +39,17 @@ type CookieToSet = {
   options: CookieOptions;
 };
 
+function getCookieOptions(request: NextRequest): CookieOptions {
+  const forwardedProto = request.headers.get("x-forwarded-proto");
+  const secure =
+    forwardedProto === "https" || request.nextUrl.protocol === "https:";
+
+  return {
+    ...DEFAULT_COOKIE_OPTIONS,
+    secure,
+  };
+}
+
 function logSupabaseSyncError(context: string, error: PostgrestError | null) {
   if (!error) return;
 
@@ -124,10 +135,7 @@ function queueSessionCookies(
   );
   const encodedSession = `base64-${stringToBase64URL(JSON.stringify(session))}`;
   const sessionChunks = createChunks(cookieName, encodedSession);
-  const baseOptions: CookieOptions = {
-    ...DEFAULT_COOKIE_OPTIONS,
-    secure: request.nextUrl.protocol === "https:",
-  };
+  const baseOptions = getCookieOptions(request);
 
   sessionChunks.forEach(({ name }) => {
     staleCookieNames.delete(name);
@@ -161,7 +169,9 @@ export async function POST(request: NextRequest) {
   }
 
   const cookiesToSet: CookieToSet[] = [];
+  let syncedUser: User | null = null;
   const supabase = createServerClient(config.supabaseUrl, config.supabaseAnonKey, {
+    cookieOptions: getCookieOptions(request),
     cookies: {
       getAll() {
         return request.cookies.getAll();
@@ -204,6 +214,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (sessionData.session) {
+      syncedUser = sessionData.session.user;
       queueSessionCookies(
         request,
         cookiesToSet,
@@ -217,9 +228,10 @@ export async function POST(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const email = user?.email?.toLowerCase().trim();
+  const activeUser = syncedUser ?? user;
+  const email = activeUser?.email?.toLowerCase().trim();
 
-  if (!user || !email) {
+  if (!activeUser || !email) {
     return pending("missing-user", 401, cookiesToSet);
   }
 
@@ -250,14 +262,15 @@ export async function POST(request: NextRequest) {
 
   const { error: profileError } = await admin.from("profiles").upsert(
     {
-      id: user.id,
+      id: activeUser.id,
       email,
       full_name:
-        approvedUser?.full_name ?? getMetadataValue(user, ["full_name", "name"]),
+        approvedUser?.full_name ??
+        getMetadataValue(activeUser, ["full_name", "name"]),
       role: approvedUser?.role ?? null,
       department: approvedUser?.department ?? null,
       title: approvedUser?.title ?? null,
-      avatar_url: getMetadataValue(user, ["avatar_url", "picture"]),
+      avatar_url: getMetadataValue(activeUser, ["avatar_url", "picture"]),
       status: profileStatus,
       updated_at: new Date().toISOString(),
     },

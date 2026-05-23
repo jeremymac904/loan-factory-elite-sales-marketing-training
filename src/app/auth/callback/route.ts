@@ -121,6 +121,16 @@ function pendingPath(reason: string) {
   return `/access-pending/?reason=${encodeURIComponent(reason)}`;
 }
 
+function browserCallbackPath(code: string, next: string) {
+  const searchParams = new URLSearchParams({
+    code,
+    next,
+    stage: "callback-missing-verifier",
+  });
+
+  return `/auth/browser-callback/?${searchParams.toString()}`;
+}
+
 function getSupabaseAuthCookieName(supabaseUrl: string) {
   return `sb-${new URL(supabaseUrl).hostname.split(".")[0]}-auth-token`;
 }
@@ -439,6 +449,15 @@ export async function GET(request: NextRequest) {
         status: manualExchange.error?.status ?? error?.status,
         stage: "callback-exchange",
       });
+
+      if (manualExchange.stage === "callback-missing-verifier") {
+        return redirectWithCookies(
+          request,
+          browserCallbackPath(code, next),
+          cookiesToSet,
+          headersToSet,
+        );
+      }
 
       return redirectWithCookies(
         request,
