@@ -37,6 +37,12 @@ const resources = [
       "Request manual help with a lender issue. No email or automation is sent during beta.",
     href: "/lender-escalation/",
   },
+  {
+    title: "1+1+1=5 Team Growth",
+    description:
+      "Plan community, persona, campaign, Realtor, recruiting, and scorecard lanes for Team Leaders.",
+    href: "/one-plus-one-five/",
+  },
 ];
 
 export default function ResourcesPage() {

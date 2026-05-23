@@ -189,6 +189,22 @@ export default async function HomePage({ searchParams }: Props) {
           ))}
         </div>
       </section>
+
+      <section className="container-page pb-14">
+        <div className="rounded-2xl border border-lf-line bg-lf-mist p-6 shadow-card md:flex md:items-center md:justify-between md:gap-6">
+          <div className="max-w-3xl">
+            <h2 className="h-display text-2xl">Team Leader growth planning</h2>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              Use 1+1+1=5 to choose a community, pick a buyer, Realtor, or
+              recruiting audience, and assign weekly campaign lanes. Read-only
+              during beta.
+            </p>
+          </div>
+          <Link href="/one-plus-one-five/" className="btn-primary mt-5 md:mt-0">
+            Open 1+1+1=5
+          </Link>
+        </div>
+      </section>
     </>
   );
 }
