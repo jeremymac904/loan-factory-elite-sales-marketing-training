@@ -362,19 +362,19 @@ export const platformModules: PlatformModule[] = [
       "Compliance notes",
       "Recordings",
       "Support contacts",
-      "Anonymous feedback",
+      "Global Send Feedback bubble",
     ],
     resources: [
       "Recommended Channels",
       "Compliance Notes",
       "Recordings",
       "LO Development Support Team",
-      "Anonymous Complaints and Suggestions",
+      "Send Feedback",
     ],
     currentStatus:
       "Resources are organized around the support paths LOs need most often.",
     nextAction:
-      "Confirm the preferred anonymous feedback channel before wiring anything beyond the local form.",
+      "Use the global Send Feedback bubble for platform issues, missing resources, and suggestions.",
     connections: [
       "Supports all modules.",
       "Links brand and compliance references.",
@@ -445,7 +445,7 @@ export const platformNav: NavGroup[] = [
       { label: "601 Elite Execution", href: "/601-elite-execution/" },
     ],
   },
-  { label: "AI Training", href: "/ai-training/" },
+  { label: "AI Advantage", href: "/ai-training/" },
   { label: "1+1+1=5", href: "/one-plus-one-five/" },
   {
     label: "Training Library",

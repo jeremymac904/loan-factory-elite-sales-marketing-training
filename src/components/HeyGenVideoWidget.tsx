@@ -13,7 +13,7 @@ export default function HeyGenVideoWidget() {
 
   return (
     <aside
-      className="fixed bottom-4 left-4 z-40 max-w-[calc(100vw-2rem)]"
+      className="fixed bottom-4 right-4 z-40 max-w-[calc(100vw-2rem)] sm:left-4 sm:right-auto"
       aria-label={`${video.speaker} intro video`}
     >
       {open ? (
@@ -51,14 +51,14 @@ export default function HeyGenVideoWidget() {
       ) : (
         <button
           type="button"
-          className="group flex max-w-[min(330px,calc(100vw-2rem))] items-center gap-3 rounded-2xl border border-white/10 bg-lf-navy px-4 py-3 text-left text-white shadow-2xl transition hover:-translate-y-0.5 hover:border-lf-orange"
+          className="group flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-lf-navy p-0 text-left text-white shadow-2xl transition hover:-translate-y-0.5 hover:border-lf-orange sm:h-auto sm:w-auto sm:max-w-[min(330px,calc(100vw-2rem))] sm:justify-start sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3"
           onClick={() => setOpen(true)}
           aria-label={video.label}
         >
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lf-orange text-[11px] font-bold uppercase tracking-wide text-white shadow-sm">
             Play
           </span>
-          <span className="min-w-0">
+          <span className="hidden min-w-0 sm:block">
             <span className="block text-xs font-semibold uppercase tracking-wide text-lf-orange">
               {video.speaker}
             </span>

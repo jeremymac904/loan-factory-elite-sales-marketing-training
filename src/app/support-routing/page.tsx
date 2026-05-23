@@ -1,5 +1,4 @@
 import Link from "next/link";
-import AnonymousFeedbackModal from "@/components/AnonymousFeedbackModal";
 import SectionHeading from "@/components/SectionHeading";
 import SupportTeamDirectory from "@/components/SupportTeamDirectory";
 
@@ -83,18 +82,6 @@ export default function SupportRoutingPage() {
             </Link>
           ))}
 
-          <article className="card border-lf-orange/30">
-            <h2 className="h-display text-xl">
-              Anonymous Complaints &amp; Suggestions
-            </h2>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Share feedback, complaints, platform issues, missing resources,
-              or suggestions for improving LO Development programs.
-            </p>
-            <div className="mt-5">
-              <AnonymousFeedbackModal />
-            </div>
-          </article>
         </div>
       </section>
 

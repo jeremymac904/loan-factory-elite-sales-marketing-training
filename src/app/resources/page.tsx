@@ -1,5 +1,4 @@
 import Link from "next/link";
-import AnonymousFeedbackModal from "@/components/AnonymousFeedbackModal";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata = { title: "Resources" };
@@ -83,19 +82,6 @@ export default function ResourcesPage() {
               </p>
             </Link>
           ))}
-          <article className="card border-lf-orange/30">
-            <h3 className="h-display text-lg">
-              Anonymous Complaints &amp; Suggestions
-            </h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Use this area to submit anonymous feedback, complaints, platform
-              issues, missing resources, or suggestions for improving LO
-              Development programs.
-            </p>
-            <div className="mt-5">
-              <AnonymousFeedbackModal />
-            </div>
-          </article>
         </div>
       </section>
     </>

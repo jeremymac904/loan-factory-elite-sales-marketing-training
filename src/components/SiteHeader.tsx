@@ -7,7 +7,7 @@ const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Coaching", href: "/apex-advisor/" },
   { label: "Sales & Marketing", href: "/sales-training/" },
-  { label: "AI Training", href: "/ai-training/" },
+  { label: "AI Advantage", href: "/ai-training/" },
   { label: "FaceGram", href: "/facegram/" },
   { label: "AI Assistants", href: "/ai-assistants/" },
   { label: "Resources", href: "/resources/" },
