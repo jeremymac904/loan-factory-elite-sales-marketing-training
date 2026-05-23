@@ -1,137 +1,126 @@
+import AudioCompanionCard from "@/components/audio/AudioCompanionCard";
+import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import ComplianceCallout from "@/components/ComplianceCallout";
-import AudioTrainingCard from "@/components/AudioTrainingCard";
-import { audioTraining, audioCategories } from "@/data/audioTraining";
+import {
+  audioCompanions,
+  bonusAudioCompanions,
+  coreAudioCompanions,
+  getAudioStatusLabel,
+  productionOrderAudioCompanions,
+} from "@/data/audioCompanions";
 
 export const metadata = { title: "Audio Training Library" };
 
-const comingNext = [
-  "Timestamped transcripts",
-  "Short clip library",
-  "HeyGen avatar cutdown scripts",
-  "Module specific audio notes",
-  "Quiz questions from each audio overview",
-];
+function statusCount(label: string) {
+  return audioCompanions.filter(
+    (companion) => getAudioStatusLabel(companion.status) === label,
+  ).length;
+}
 
 export default function AudioTrainingPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
-        />
-        <div aria-hidden className="absolute inset-0 bg-lf-navyDark/60" />
-        <div className="relative container-page py-14">
-          <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
-            Supplemental Training
-          </span>
-          <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
-            Audio Training Library
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Listen to short source grounded training conversations that break
-            down the sales, marketing, psychology, and execution ideas behind
-            the Loan Factory Elite Sales and Marketing Series.
-          </p>
-        </div>
-      </section>
-
-      <section className="container-page pt-10">
-        <ComplianceCallout title="Read this first" variant="default">
+      <PageHero
+        title="Audio Training Library"
+        body={
           <p>
-            These audio overviews are supplemental training resources. They are
-            not official compliance guidance, borrower facing content, Realtor
-            facing content, or final approved scripts. Use them for learning,
-            discussion, and idea generation. Any public, borrower facing,
-            Realtor facing, rate related, fee related, or marketing content
-            still requires proper review before use.
+            NotebookLM audio companions will help loan officers review the
+            Sales & Marketing lessons while driving, walking, or preparing for
+            the next coaching conversation.
           </p>
-        </ComplianceCallout>
-      </section>
+        }
+        backgroundImage="/media/dark-hero-background.png"
+        overlayOpacity={0.68}
+      >
+        <div className="flex flex-wrap gap-3">
+          <a href="#core-audio" className="btn-primary">
+            Start with 101-601 audio
+          </a>
+          <a
+            href="#bonus-audio"
+            className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
+          >
+            View bonus audio
+          </a>
+        </div>
+      </PageHero>
 
-      <section className="container-page py-8">
-        <div className="flex flex-wrap gap-2">
-          {audioCategories.map((c) => (
-            <a
-              key={c.id}
-              href={`#${c.id}`}
-              className="pill hover:border-lf-navy hover:text-lf-navy"
-            >
-              {c.title}
-            </a>
+      <section className="container-page py-10">
+        <div className="grid gap-4 md:grid-cols-3">
+          {["Prompt Ready", "Published", "Needs Drive Upload"].map((label) => (
+            <article key={label} className="card p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                {label}
+              </p>
+              <p className="mt-2 h-display text-3xl">{statusCount(label)}</p>
+              <p className="mt-2 text-sm leading-6 text-lf-slate">
+                {label === "Prompt Ready"
+                  ? "Prompt is ready for NotebookLM generation."
+                  : label === "Published"
+                    ? "Drive audio is ready to play on the site."
+                    : "Audio exists or is expected, but needs Drive upload details."}
+              </p>
+            </article>
           ))}
         </div>
       </section>
 
-      {audioCategories.map((cat) => {
-        const items = audioTraining.filter((a) => a.category === cat.id);
-        if (items.length === 0) return null;
-        return (
-          <section
-            key={cat.id}
-            id={cat.id}
-            className="container-page py-8 scroll-mt-24"
-          >
-            <SectionHeading
-              eyebrow={`${items.length} audio`}
-              title={cat.title}
-              description={cat.description}
-            />
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {items.map((a) => (
-                <AudioTrainingCard key={a.id} item={a} />
-              ))}
-            </div>
-          </section>
-        );
-      })}
-
-      <section className="bg-lf-mist">
-        <div className="container-page py-12">
-          <SectionHeading
-            eyebrow="Coming next"
-            title="What we will add to this library."
-            description="Each one of these strengthens the supplemental layer without replacing the official live sessions and replays."
-          />
-          <ul className="prose-lf mt-6 grid list-disc gap-2 pl-5 text-base md:grid-cols-2">
-            {comingNext.map((c, i) => (
-              <li key={c}>
-                {i + 1}. {c}
-              </li>
-            ))}
-          </ul>
+      <section id="core-audio" className="container-page py-10 scroll-mt-24">
+        <SectionHeading
+          title="Core 101-601 audio companions"
+          description="Each Sales & Marketing lesson has one matching audio companion. When the MP3 is generated and uploaded to Drive, the player appears automatically."
+        />
+        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          {coreAudioCompanions.map((companion) => (
+            <AudioCompanionCard key={companion.id} companion={companion} />
+          ))}
         </div>
       </section>
 
-      <section className="container-page pb-16 pt-12">
+      <section id="bonus-audio" className="bg-lf-mist">
+        <div className="container-page py-12">
+          <SectionHeading
+            title="Bonus sales and marketing audio"
+            description="These are extra review episodes for follow-up, Realtor relationships, AI Advantage, objection handling, and turning training into weekly action."
+          />
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            {bonusAudioCompanions.map((companion) => (
+              <AudioCompanionCard key={companion.id} companion={companion} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-page py-12">
         <SectionHeading
-          eyebrow="How to use these"
-          title="Three honest workflows."
+          title="Recommended production order"
+          description="If only a few can be generated first, use this order so the highest-value lessons go live first."
         />
-        <div className="mt-6 grid gap-5 md:grid-cols-3">
-          <div className="card">
-            <h3 className="h-display text-lg">Listen before a module</h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Use the audio as a pre read. Land in the module page with the
-              ideas already in your head. Easier to do the assignment that way.
-            </p>
-          </div>
-          <div className="card">
-            <h3 className="h-display text-lg">Listen as a coach prompt</h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Pull one idea from the audio and turn it into a Monday team
-              discussion question or a Friday coaching note.
-            </p>
-          </div>
-          <div className="card">
-            <h3 className="h-display text-lg">Listen as a refresher</h3>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Six weeks after certification, replay the audio to keep the
-              system top of mind. Repetition is the operating system.
-            </p>
-          </div>
+        <ol className="mt-6 grid gap-3 md:grid-cols-2">
+          {productionOrderAudioCompanions.map((companion, index) => (
+            <li
+              key={companion.id}
+              className="rounded-xl border border-lf-line bg-white p-4 shadow-card"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                {index + 1}. {getAudioStatusLabel(companion.status)}
+              </p>
+              <p className="mt-1 font-semibold text-lf-navy">
+                {companion.title}
+              </p>
+              <p className="mt-1 text-sm text-lf-slate">
+                {companion.session ?? "Bonus audio"}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="container-page pb-16">
+        <div className="rounded-2xl border border-lf-orange/25 bg-lf-orangeSoft p-5 text-sm leading-6 text-lf-charcoal">
+          These are internal training companions. Review every generated audio
+          file before publishing it, and do not upload borrower/private loan
+          content.
         </div>
       </section>
     </>

@@ -8,6 +8,8 @@ import SectionHeading from "@/components/SectionHeading";
 import DoThisToday from "@/components/DoThisToday";
 import ClassRegistration from "@/components/ClassRegistration";
 import GeminiGemCallout from "@/components/GeminiGemCallout";
+import AudioCompanionCard from "@/components/audio/AudioCompanionCard";
+import { getAudioCompanionByRoute } from "@/data/audioCompanions";
 import { findModule } from "@/data/modules";
 import { scripts } from "@/data/scripts";
 import { prompts } from "@/data/prompts";
@@ -20,6 +22,7 @@ export const metadata = {
 const module101 = findModule("101-foundation")!;
 const module101Scripts = scripts.filter((s) => s.module === "101");
 const module101Prompts = prompts.filter((p) => p.module === "101");
+const module101Audio = getAudioCompanionByRoute("/101-foundation/");
 
 export default function Module101Page() {
   return (
@@ -70,6 +73,18 @@ export default function Module101Page() {
           />
         </div>
       </section>
+
+      {module101Audio && (
+        <section className="container-page py-6">
+          <SectionHeading
+            title="Audio companion"
+            description="Use this when you want to review the 101 lesson while driving, walking, or preparing for coaching."
+          />
+          <div className="mt-6 max-w-3xl">
+            <AudioCompanionCard companion={module101Audio} />
+          </div>
+        </section>
+      )}
 
       <section className="container-page py-12">
         <SectionHeading

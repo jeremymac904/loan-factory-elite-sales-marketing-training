@@ -7,6 +7,8 @@ import RecordingPlaceholder from "./RecordingPlaceholder";
 import DownloadPlaceholder from "./DownloadPlaceholder";
 import SectionHeading from "./SectionHeading";
 import DoThisToday from "./DoThisToday";
+import AudioCompanionCard from "./audio/AudioCompanionCard";
+import { getAudioCompanionByRoute } from "@/data/audioCompanions";
 import { ModuleSummary } from "@/data/modules";
 import { scripts } from "@/data/scripts";
 import { prompts } from "@/data/prompts";
@@ -28,6 +30,7 @@ export default function StagedModulePage({
   const moduleScripts = scripts.filter((s) => s.module === module.level);
   const modulePrompts = prompts.filter((p) => p.module === module.level);
   const moduleRoleplays = roleplays.filter((r) => r.module === module.level);
+  const audioCompanion = getAudioCompanionByRoute(module.href);
   const assetSlots = [
     {
       label: "Video",
@@ -104,6 +107,18 @@ export default function StagedModulePage({
           />
         </div>
       </section>
+
+      {audioCompanion && (
+        <section className="container-page py-6">
+          <SectionHeading
+            title="Audio companion"
+            description="Use this when you want to review the lesson while driving, walking, or preparing for coaching."
+          />
+          <div className="mt-6 max-w-3xl">
+            <AudioCompanionCard companion={audioCompanion} />
+          </div>
+        </section>
+      )}
 
       <section className="container-page py-6">
         <SectionHeading

@@ -1,0 +1,128 @@
+import Link from "next/link";
+import {
+  AudioCompanion,
+  getAudioStatusLabel,
+  getDriveAudioUrl,
+} from "@/data/audioCompanions";
+
+type Props = {
+  companion: AudioCompanion;
+  compact?: boolean;
+};
+
+function statusClass(label: string) {
+  if (label === "Published") {
+    return "border-lf-orange bg-lf-orange text-white";
+  }
+
+  if (label === "Needs Drive Upload") {
+    return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
+  }
+
+  return "border-lf-line bg-lf-mist text-lf-slate";
+}
+
+function formatType(type: string) {
+  return type
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+export default function AudioCompanionCard({ companion, compact = false }: Props) {
+  const statusLabel = getAudioStatusLabel(companion.status);
+  const audioUrl = companion.status === "published" ? getDriveAudioUrl(companion) : null;
+  const trackLabel = companion.track === "core" ? "101-601 companion" : "Bonus companion";
+
+  return (
+    <article
+      id={companion.id}
+      className={`card flex min-w-0 flex-col gap-4 scroll-mt-24 ${
+        compact ? "p-5" : ""
+      }`}
+    >
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+            {companion.session ?? trackLabel}
+          </p>
+          <h3 className="h-display mt-1 break-words text-xl">
+            {companion.title}
+          </h3>
+        </div>
+        <span
+          className={`rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide ${statusClass(
+            statusLabel,
+          )}`}
+        >
+          {statusLabel}
+        </span>
+      </div>
+
+      <div className="flex flex-wrap gap-2 text-sm text-lf-slate">
+        <span>{formatType(companion.type)}</span>
+        <span aria-hidden>·</span>
+        <span>{trackLabel}</span>
+        {companion.duration && (
+          <>
+            <span aria-hidden>·</span>
+            <span>{companion.duration}</span>
+          </>
+        )}
+      </div>
+
+      {companion.notes && (
+        <p className="prose-lf text-sm text-lf-charcoal">{companion.notes}</p>
+      )}
+
+      {audioUrl ? (
+        <div className="rounded-xl border border-lf-line bg-lf-mist p-3">
+          <audio
+            controls
+            preload="none"
+            className="w-full"
+            aria-label={`Audio companion for ${companion.title}`}
+          >
+            <source src={audioUrl} type="audio/mpeg" />
+            Your browser does not support audio playback.{" "}
+            <a href={audioUrl} className="font-semibold text-lf-orange underline">
+              Open the Drive audio file
+            </a>
+            .
+          </audio>
+        </div>
+      ) : (
+        <div className="rounded-xl border border-dashed border-lf-line bg-lf-mist p-4 text-sm leading-6 text-lf-slate">
+          Audio companion prompt is ready. Audio file will appear here after
+          NotebookLM generation and Drive upload.
+        </div>
+      )}
+
+      <div className="flex flex-wrap items-center gap-3 text-sm">
+        {companion.sourceNotebookUrl && (
+          <a
+            href={companion.sourceNotebookUrl}
+            className="font-semibold text-lf-navy hover:text-lf-orange"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open source notebook
+          </a>
+        )}
+        {companion.customPromptFile && (
+          <span className="break-all text-lf-slate">
+            Prompt source: {companion.customPromptFile.split("#")[0]}
+          </span>
+        )}
+        {companion.route && companion.track === "core" && (
+          <Link
+            href={`${companion.route}/`}
+            className="font-semibold text-lf-navy hover:text-lf-orange"
+          >
+            Open lesson page
+          </Link>
+        )}
+      </div>
+    </article>
+  );
+}

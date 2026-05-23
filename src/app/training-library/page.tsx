@@ -1,6 +1,8 @@
 import Link from "next/link";
 import PlatformModulePage from "@/components/PlatformModulePage";
 import SectionHeading from "@/components/SectionHeading";
+import AudioCompanionCard from "@/components/audio/AudioCompanionCard";
+import { coreAudioCompanions } from "@/data/audioCompanions";
 import { getPlatformModule } from "@/data/platform";
 
 export const metadata = { title: "Training Library" };
@@ -54,6 +56,22 @@ export default function TrainingLibraryPage() {
                 before linking it for beta users.
               </p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-page pb-14">
+        <SectionHeading
+          title="Audio companions"
+          description="The 101-601 NotebookLM prompts are ready. Audio players will appear after MP3 generation and Drive upload."
+        />
+        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          {coreAudioCompanions.map((companion) => (
+            <AudioCompanionCard
+              key={companion.id}
+              companion={companion}
+              compact
+            />
           ))}
         </div>
       </section>
