@@ -24,7 +24,7 @@ function getCookieOptions(request: NextRequest): CookieOptions {
 
   return {
     path: "/",
-    sameSite: "lax",
+    sameSite: "none",
     secure,
   };
 }
