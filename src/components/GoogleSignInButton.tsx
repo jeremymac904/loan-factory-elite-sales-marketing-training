@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { createBrowserOAuthSupabaseClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import {
   getAuthCallbackUrl,
   getSupabasePublicConfig,
@@ -17,7 +17,7 @@ export default function GoogleSignInButton() {
     setLoading(true);
     setError(null);
 
-    const supabase = createBrowserOAuthSupabaseClient();
+    const supabase = createBrowserSupabaseClient();
 
     if (!supabase) {
       setLoading(false);
