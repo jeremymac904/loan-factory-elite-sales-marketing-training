@@ -1,11 +1,14 @@
 import Link from "next/link";
 /* eslint-disable @next/next/no-img-element */
 import { notFound } from "next/navigation";
+import FaceGramAccessNotice from "@/components/FaceGramAccessNotice";
 import {
   faceGramGroups,
   faceGramPosts,
   getFaceGramGroup,
 } from "@/data/facegram";
+import { canAccessFaceGram, getRoleLabel } from "@/lib/supabase/auth";
+import { getBetaUserSession } from "@/lib/supabase/session";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -23,7 +26,14 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-const tabs = ["About", "Discussion", "People", "Events", "Media", "Files"];
+const tabs = [
+  { label: "Discussion", href: "#discussion" },
+  { label: "About", href: "#about" },
+  { label: "Rules", href: "#rules" },
+];
+
+const engagementPreviewActions = ["Like", "Comment", "Save", "Share internally"];
+export const dynamic = "force-dynamic";
 
 export default async function FaceGramGroupPage({ params }: Props) {
   const { slug } = await params;
@@ -31,6 +41,29 @@ export default async function FaceGramGroupPage({ params }: Props) {
 
   if (!group) {
     notFound();
+  }
+
+  const session = await getBetaUserSession();
+
+  if (session.status === "not-configured") {
+    return <FaceGramAccessNotice status="not-configured" />;
+  }
+
+  if (session.status === "signed-out") {
+    return <FaceGramAccessNotice status="signed-out" />;
+  }
+
+  if (session.status === "pending") {
+    return <FaceGramAccessNotice status="pending" />;
+  }
+
+  if (!canAccessFaceGram(session.profile, session.permissions)) {
+    return (
+      <FaceGramAccessNotice
+        status="role"
+        roleLabel={getRoleLabel(session.profile.role)}
+      />
+    );
   }
 
   return (
@@ -72,17 +105,10 @@ export default async function FaceGramGroupPage({ params }: Props) {
                 ))}
               </div>
             </div>
-            <div className="flex flex-wrap gap-2">
-              <button type="button" className="btn-primary">
-                Invite
-              </button>
-              <button type="button" className="btn-secondary">
-                Share
-              </button>
-              <button type="button" className="btn-secondary">
-                Joined
-              </button>
-            </div>
+            <p className="max-w-sm rounded-xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold text-lf-slate">
+              Group invites, sharing, and join controls stay off until admin
+              approval and member permissions are wired.
+            </p>
           </div>
 
           <nav
@@ -91,15 +117,15 @@ export default async function FaceGramGroupPage({ params }: Props) {
           >
             {tabs.map((tab) => (
               <a
-                key={tab}
-                href={tab === "Discussion" ? "#discussion" : "#about"}
+                key={tab.label}
+                href={tab.href}
                 className={`whitespace-nowrap rounded-lg px-4 py-3 text-sm font-semibold ${
-                  tab === "Discussion"
+                  tab.label === "Discussion"
                     ? "bg-lf-orange text-white"
                     : "text-lf-charcoal hover:bg-lf-mist hover:text-lf-orange"
                 }`}
               >
-                {tab}
+                {tab.label}
               </a>
             ))}
           </nav>
@@ -113,19 +139,22 @@ export default async function FaceGramGroupPage({ params }: Props) {
               <div className="h-11 w-11 rounded-full bg-lf-orange" aria-hidden />
               <textarea
                 rows={2}
-                placeholder="Write something..."
-                className="min-h-12 flex-1 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
+                disabled
+                placeholder="Group posting is coming soon after Supabase saving and moderation are wired."
+                className="min-h-12 flex-1 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm text-lf-slate outline-none"
               />
             </div>
             <div className="mt-4 grid gap-2 border-t border-lf-line pt-4 sm:grid-cols-3">
               {["Feeling/activity", "Poll", "Ask for feedback"].map((item) => (
-                <button
+                <div
                   key={item}
-                  type="button"
-                  className="rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal hover:bg-lf-mist hover:text-lf-orange"
+                  className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-sm font-semibold text-lf-charcoal"
                 >
                   {item}
-                </button>
+                  <span className="mt-1 block text-xs font-normal text-lf-slate">
+                    Coming soon
+                  </span>
+                </div>
               ))}
             </div>
           </article>
@@ -156,15 +185,17 @@ export default async function FaceGramGroupPage({ params }: Props) {
               <div className="mt-4 rounded-xl bg-lf-mist p-4 text-sm font-semibold text-lf-charcoal">
                 {post.mediaLabel}
               </div>
-              <div className="mt-4 grid grid-cols-4 border-t border-lf-line pt-3 text-center text-sm font-semibold text-lf-slate">
-                {["Like", "Comment", "Save", "Share internally"].map((action) => (
-                  <button
+              <div className="mt-4 grid grid-cols-2 border-t border-lf-line pt-3 text-center text-sm font-semibold text-lf-slate sm:grid-cols-4">
+                {engagementPreviewActions.map((action) => (
+                  <div
                     key={action}
-                    type="button"
-                    className="rounded-lg px-2 py-2 hover:bg-lf-mist hover:text-lf-orange"
+                    className="rounded-lg px-2 py-2"
                   >
                     {action}
-                  </button>
+                    <span className="mt-1 block text-xs font-normal text-lf-slate">
+                      Coming soon
+                    </span>
+                  </div>
                 ))}
               </div>
             </article>
@@ -189,7 +220,7 @@ export default async function FaceGramGroupPage({ params }: Props) {
             </div>
           </article>
 
-          <article className="rounded-2xl bg-white p-5 shadow-card">
+          <article id="rules" className="rounded-2xl bg-white p-5 shadow-card">
             <h3 className="font-display text-xl font-semibold text-lf-navy">
               Group rules
             </h3>

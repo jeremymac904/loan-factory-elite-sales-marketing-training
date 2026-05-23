@@ -153,7 +153,7 @@ export const platformModules: PlatformModule[] = [
       "Jeremy and Andre confirm source materials and Victoria review gates before content depth is added.",
     connections: [
       "Connects to Team Leader OS.",
-      "Uses Referral Partner Assistant and Growth Assistant drafts.",
+      "Uses LO Support Assistant and Marketing Support Assistant drafts.",
       "Can promote approved internal examples from FaceGram.",
     ],
   },
@@ -195,7 +195,7 @@ export const platformModules: PlatformModule[] = [
     id: "creator-network",
     title: "FaceGram",
     shortTitle: "FaceGram",
-    href: "/creator-network/",
+    href: "/facegram/",
     status: "Experience preview",
     summary:
       "An employee-only internal community feed where LOs, AEs, approved vendors, coaches, and internal teams share ideas, questions, examples, wins, and feedback.",
@@ -224,12 +224,12 @@ export const platformModules: PlatformModule[] = [
       "Audience Quality Panel",
     ],
     currentStatus:
-      "Internal community experience is visible with feed, groups, trends, and Content Coach entry point.",
+      "Internal community experience is visible with feed, groups, trends, and AI Assistant entry point.",
     nextAction:
       "Confirm internal rollout scope and moderation ownership before backend work.",
     connections: [
       "Promotes top internal examples into the Training Library.",
-      "Uses Content Coach and Audience Quality Panel for draft review.",
+      "Uses Marketing Support Assistant and Audience Quality Panel for draft review.",
       "Supports coaching and peer learning across teams.",
     ],
   },
@@ -292,7 +292,7 @@ export const platformModules: PlatformModule[] = [
       "Confirm panel routing, review visibility, and human approval gates before implementation.",
     connections: [
       "Can review FaceGram drafts.",
-      "Can pre-check Content Coach outputs.",
+      "Can pre-check Marketing Support Assistant outputs.",
       "Can support Victoria and compliance reviewers without replacing them.",
     ],
   },
@@ -462,9 +462,9 @@ export const platformNav: NavGroup[] = [
   },
   {
     label: "FaceGram",
-    href: "/creator-network/",
+    href: "/facegram/",
     items: [
-      { label: "FaceGram", href: "/creator-network/" },
+      { label: "FaceGram", href: "/facegram/" },
       { label: "Audience Quality Panel", href: "/audience-quality-panel/" },
     ],
   },
@@ -476,21 +476,9 @@ export const platformNav: NavGroup[] = [
 ];
 
 export const aiAssistants = [
-  "Marketing Assistant",
-  "Sales Coaching Assistant",
-  "Referral Partner Assistant",
-  "Borrower Conversation Assistant",
-  "Underwriting Support AI",
-  "Scenario Structuring Assistant",
-  "TERA Workflow Helper",
-  "AI Advantage Coach",
-  "Content Repurposing Assistant",
-  "Team Leader Assistant",
-  "Compliance/Risk Review Assistant",
-  "LO Mastery Coach",
-  "Sales & Marketing Coach",
-  "1+1+1=5 Growth Assistant",
-  "Content Coach",
+  "LO Support Assistant",
+  "Marketing Support Assistant",
+  "LO Development Helper",
 ].map((name) => ({
   name,
   label: "Draft only. Review before external use.",

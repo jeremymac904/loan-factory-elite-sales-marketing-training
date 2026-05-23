@@ -193,12 +193,10 @@ export const faceGramPosts: FaceGramPost[] = [
 ];
 
 export const faceGramShortcuts = [
-  { label: "Home Feed", href: "/creator-network/" },
+  { label: "Home Feed", href: "/facegram/" },
   { label: "Groups", href: "/creator-network/groups/" },
-  { label: "Saved Posts", href: "/creator-network/" },
-  { label: "Internal Videos", href: "/creator-network/" },
-  { label: "Feedback Requests", href: "/creator-network/" },
-  { label: "Content Coach", href: "/ai-assistants/" },
+  { label: "Audience Quality Panel", href: "/audience-quality-panel/" },
+  { label: "AI Assistants", href: "/ai-assistants/" },
 ];
 
 export const lenderPromotionNotes = [

@@ -6,6 +6,12 @@ export const metadata = { title: "Resources" };
 
 const resources = [
   {
+    title: "Assessments",
+    description:
+      "Take the Coaching Personality Quiz or the New LO Aptitude & Personality Quiz. Coaching tool only.",
+    href: "/assessments/",
+  },
+  {
     title: "Recommended Channels",
     description: "Find approved channels, learning references, and useful internal resource paths.",
     href: "/recommended-channels/",

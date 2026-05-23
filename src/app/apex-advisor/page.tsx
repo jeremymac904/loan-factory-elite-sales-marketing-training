@@ -210,6 +210,16 @@ export default function ApexAdvisorPage() {
               and documents.
             </p>
           </Link>
+          <Link href="/assessments/" className="card hover:shadow-lift">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+              Coaching tool
+            </p>
+            <h3 className="h-display mt-1 text-lg">Assessments</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              Coaching Personality Quiz and New LO Aptitude Quiz. Profile
+              output guides scripts, training path, and team leader notes.
+            </p>
+          </Link>
         </div>
       </section>
 

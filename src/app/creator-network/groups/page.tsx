@@ -1,9 +1,36 @@
 import Link from "next/link";
+import FaceGramAccessNotice from "@/components/FaceGramAccessNotice";
 import { faceGramGroups } from "@/data/facegram";
+import { canAccessFaceGram, getRoleLabel } from "@/lib/supabase/auth";
+import { getBetaUserSession } from "@/lib/supabase/session";
 
 export const metadata = { title: "FaceGram Groups" };
+export const dynamic = "force-dynamic";
 
-export default function FaceGramGroupsPage() {
+export default async function FaceGramGroupsPage() {
+  const session = await getBetaUserSession();
+
+  if (session.status === "not-configured") {
+    return <FaceGramAccessNotice status="not-configured" />;
+  }
+
+  if (session.status === "signed-out") {
+    return <FaceGramAccessNotice status="signed-out" />;
+  }
+
+  if (session.status === "pending") {
+    return <FaceGramAccessNotice status="pending" />;
+  }
+
+  if (!canAccessFaceGram(session.profile, session.permissions)) {
+    return (
+      <FaceGramAccessNotice
+        status="role"
+        roleLabel={getRoleLabel(session.profile.role)}
+      />
+    );
+  }
+
   return (
     <>
       <section className="bg-lf-navy text-white">
@@ -17,7 +44,7 @@ export default function FaceGramGroupsPage() {
             only.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/creator-network/" className="btn-primary">
+            <Link href="/facegram/" className="btn-primary">
               Back to Feed
             </Link>
           </div>

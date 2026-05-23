@@ -70,7 +70,7 @@ export const roles: Role[] = [
     group: "Marketing",
     description:
       "Review queue concepts, FaceGram content review, and approved adaptation resources.",
-    dashboardHref: "/creator-network/",
+    dashboardHref: "/facegram/",
     highlights: [
       "FaceGram content review",
       "Approved adaptation concepts",

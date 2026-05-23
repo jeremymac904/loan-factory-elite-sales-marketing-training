@@ -76,6 +76,26 @@ export function canAccessGate(
   return false;
 }
 
+export function canAccessFaceGram(
+  profile: ProfileRow | null | undefined,
+  permissions: RolePermissionsRow | null | undefined,
+): boolean {
+  if (!isApprovedProfile(profile)) return false;
+
+  return profile.role === "admin" || Boolean(permissions?.can_access_facegram);
+}
+
+export function canAccessAiAssistants(
+  profile: ProfileRow | null | undefined,
+  permissions: RolePermissionsRow | null | undefined,
+): boolean {
+  if (!isApprovedProfile(profile)) return false;
+
+  return (
+    profile.role === "admin" || Boolean(permissions?.can_access_ai_assistants)
+  );
+}
+
 export function getSafeNextPath(next: string | null): string {
   if (!next || !next.startsWith("/") || next.startsWith("//")) {
     return "/";

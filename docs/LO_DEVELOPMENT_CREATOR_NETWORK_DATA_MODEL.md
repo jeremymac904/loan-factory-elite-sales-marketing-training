@@ -1,5 +1,7 @@
 # Loan Factory Creator Network — Proposed Data Model (Planning Only)
 
+> **FaceGram update:** The user-facing product name is now **FaceGram**. This document remains useful background, but future schema planning should follow `FACEGRAM_PRODUCT_ROADMAP.md` and `FACEGRAM_ROLE_ACCESS_MODEL.md`.
+>
 > # ⚠️ DO NOT IMPLEMENT
 >
 > **This document is planning-only.**

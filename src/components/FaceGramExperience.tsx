@@ -20,12 +20,14 @@ import {
 
 const postOptions = [
   "Text post",
-  "Image",
+  "Image post",
   "Video/Reel",
   "Story",
   "Poll",
-  "Ask for feedback",
+  "Feedback request",
 ];
+
+const engagementPreviewActions = ["Like", "Comment", "Save", "Share internally"];
 
 const stories = [
   { label: "Create story", image: "/team/andre-king.png" },
@@ -45,14 +47,23 @@ type FaceGramAuthState =
   | { status: "loading" }
   | { status: "not-configured" }
   | { status: "signed-out" }
-  | { status: "signed-in"; email: string };
+  | { status: "pending"; email: string }
+  | { status: "approved"; email: string };
 
-export default function FaceGramExperience() {
+export default function FaceGramExperience({
+  initialApprovedEmail,
+}: {
+  initialApprovedEmail?: string;
+}) {
   const [entered, setEntered] = useState(false);
   const [draftPost, setDraftPost] = useState("");
   const supabaseConfigured = hasSupabasePublicConfig(getSupabasePublicConfig());
   const [authState, setAuthState] = useState<FaceGramAuthState>(() =>
-    supabaseConfigured ? { status: "loading" } : { status: "not-configured" },
+    initialApprovedEmail
+      ? { status: "approved", email: initialApprovedEmail }
+      : supabaseConfigured
+        ? { status: "loading" }
+        : { status: "not-configured" },
   );
 
   useEffect(() => {
@@ -72,10 +83,23 @@ export default function FaceGramExperience() {
 
       if (!active) return;
 
+      if (!user?.email) {
+        setAuthState({ status: "signed-out" });
+        return;
+      }
+
+      const { data: profile } = await client
+        .from("profiles")
+        .select("status")
+        .eq("id", user.id)
+        .maybeSingle<{ status: string | null }>();
+
+      if (!active) return;
+
       setAuthState(
-        user?.email
-          ? { status: "signed-in", email: user.email }
-          : { status: "signed-out" },
+        profile?.status === "approved"
+          ? { status: "approved", email: user.email }
+          : { status: "pending", email: user.email },
       );
     }
 
@@ -93,7 +117,8 @@ export default function FaceGramExperience() {
     };
   }, [supabaseConfigured]);
 
-  const canPost = authState.status === "signed-in";
+  const canPost = authState.status === "approved";
+  const isPending = authState.status === "pending";
 
   return (
     <>
@@ -195,11 +220,20 @@ export default function FaceGramExperience() {
                   disabled={!canPost}
                   className="btn-primary mt-4"
                 >
-                  {canPost ? "Enter FaceGram" : "Sign in required"}
+                  {canPost
+                    ? "Enter FaceGram"
+                    : isPending
+                      ? "Access pending"
+                      : "Sign in required"}
                 </button>
-                {!canPost && (
+                {!canPost && !isPending && (
                   <Link href="/login/" className="btn-secondary mt-3">
                     Sign in with Google
+                  </Link>
+                )}
+                {isPending && (
+                  <Link href="/access-pending/" className="btn-secondary mt-3">
+                    View pending status
                   </Link>
                 )}
               </div>
@@ -223,28 +257,40 @@ export default function FaceGramExperience() {
                 </div>
                 <div className="mt-4 grid gap-2 border-t border-lf-line pt-4 sm:grid-cols-3">
                   {postOptions.map((option) => (
-                    <button
+                    <div
                       key={option}
-                      type="button"
-                      className="rounded-lg px-3 py-2 text-sm font-semibold text-lf-charcoal hover:bg-lf-mist hover:text-lf-orange"
+                      className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-sm font-semibold text-lf-charcoal"
                     >
                       {option}
-                    </button>
+                      <span className="mt-1 block text-xs font-normal text-lf-slate">
+                        Coming soon
+                      </span>
+                    </div>
                   ))}
                 </div>
+                <p className="mt-3 text-xs font-semibold text-lf-slate">
+                  Posting, media upload, stories, and polls stay off until
+                  Supabase saving plus moderation review are wired.
+                </p>
               </div>
             ) : (
               <div className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
                 <h2 className="font-display text-xl font-semibold text-lf-navy">
-                  Posting requires sign-in
+                  Posting requires approved access
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
-                  You can browse the beta preview. Creating FaceGram posts will
-                  require an approved Loan Factory Google account.
+                  The internal feed opens only after your approved Loan Factory
+                  beta access is active.
                 </p>
-                <Link href="/login/" className="btn-primary mt-4">
-                  Sign in
-                </Link>
+                {isPending ? (
+                  <Link href="/access-pending/" className="btn-primary mt-4">
+                    View pending status
+                  </Link>
+                ) : (
+                  <Link href="/login/" className="btn-primary mt-4">
+                    Sign in
+                  </Link>
+                )}
               </div>
             )}
 
@@ -312,15 +358,17 @@ export default function FaceGramExperience() {
                     </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-4 border-t border-lf-line text-center text-sm font-semibold text-lf-slate">
-                  {["Like", "Comment", "Save", "Share internally"].map((action) => (
-                    <button
+                <div className="grid grid-cols-2 border-t border-lf-line text-center text-sm font-semibold text-lf-slate sm:grid-cols-4">
+                  {engagementPreviewActions.map((action) => (
+                    <div
                       key={action}
-                      type="button"
-                      className="px-2 py-3 hover:bg-lf-mist hover:text-lf-orange"
+                      className="px-2 py-3"
                     >
                       {action}
-                    </button>
+                      <span className="mt-1 block text-xs font-normal text-lf-slate">
+                        Coming soon
+                      </span>
+                    </div>
                   ))}
                 </div>
               </article>
@@ -367,14 +415,14 @@ export default function FaceGramExperience() {
 
             <div className="rounded-2xl bg-lf-navy p-5 text-white shadow-card">
               <h3 className="font-display text-xl font-semibold">
-                Content Coach
+                Marketing Support
               </h3>
               <p className="mt-2 text-sm leading-6 text-white/75">
                 Turn a rough internal post into a cleaner draft before sending
                 it through the right human review path.
               </p>
               <Link href="/ai-assistants/" className="btn-primary mt-4">
-                Open Content Coach
+                Open AI Assistants
               </Link>
             </div>
           </aside>

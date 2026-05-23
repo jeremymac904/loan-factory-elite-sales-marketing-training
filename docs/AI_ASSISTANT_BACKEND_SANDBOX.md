@@ -15,7 +15,8 @@ The AI Assistant Hub has a sandbox backend for beta testing:
 - `POST /api/ai/assistant`
 - `POST /api/ai/transcribe`
 
-The status route returns only booleans/model names. It does not return API keys.
+The status route requires approved AI Assistant access before returning
+booleans/model names. It does not return API keys.
 
 ## Netlify Environment Variables
 
@@ -24,7 +25,6 @@ Add these in Netlify Site configuration > Environment variables:
 ```txt
 AI_ASSISTANTS_SANDBOX_ENABLED=true
 AI_ASSISTANTS_REQUIRE_AUTH=true
-AI_ASSISTANTS_ALLOW_UNSIGNED_SANDBOX=false
 AI_ASSISTANTS_MAX_INPUT_CHARS=6000
 
 OPENROUTER_API_KEY=
@@ -40,13 +40,14 @@ Do not add these as `NEXT_PUBLIC_` variables. They must remain server-only.
 
 ## Auth Boundary
 
-Default behavior requires Supabase auth:
+AI Assistant credit access requires Supabase auth:
 
+- Status, chat, and transcription routes all check Supabase access before
+  returning provider configuration or touching OpenRouter/Groq.
 - Approved users can use AI Assistants unless their role permission explicitly disables `can_access_ai_assistants`.
-- Pending signed-in `@loanfactory.com` users can use the sandbox while beta profile sync is being addressed.
-- Signed-out users are blocked unless `AI_ASSISTANTS_ALLOW_UNSIGNED_SANDBOX=true`.
-
-Use unsigned sandbox access only for temporary local/demo testing.
+- Pending users are blocked until beta approval is active.
+- Signed-out users are blocked.
+- Missing or false role permissions fail closed for non-admin users.
 
 ## Sandbox Guardrails
 
@@ -71,14 +72,16 @@ Every assistant call includes a server-side system prompt that enforces:
 
 ## Testing
 
-1. Open `/api/ai/status` and confirm:
+1. Sign in as an approved beta user with AI Assistant access.
+2. Open `/api/ai/status` and confirm:
    - `sandboxEnabled` is `true`.
    - `openRouterConfigured` is `true` after adding `OPENROUTER_API_KEY`.
    - `groqConfigured` is `true` after adding `GROQ_API_KEY`.
    - `externalActionsEnabled` is `false`.
-2. Open `/ai-assistants/`.
-3. Sign in with a Loan Factory Google account if auth is required.
-4. Send a short prompt and confirm the response is draft-only.
-5. Attach an audio file and use `Transcribe audio`.
+3. Sign out or use a private browser and confirm `/api/ai/status` returns a
+   403 instead of provider model details.
+4. Open `/ai-assistants/`.
+5. Send a short prompt and confirm the response is draft-only.
+6. Attach an audio file and use `Transcribe audio`.
 
 Do not test with borrower PII, production TERA data, or external-send workflows.

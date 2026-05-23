@@ -4,11 +4,9 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { brandAssets } from "@/data/brandAssets";
 import {
-  aiTrainingMicroLessonQueue,
   aiTrainingPaths,
   aiTrainingStartHere,
   aiTrainingVideos,
-  duplicateAiTrainingMarkdownFiles,
 } from "@/data/aiTrainingVideos";
 
 export const metadata = { title: "AI Advantage" };
@@ -55,13 +53,6 @@ export default function AITrainingPage() {
       count + video.segments.filter((segment) => segment.keep).length,
     0,
   );
-  const avoidItems = aiTrainingVideos.flatMap((video) =>
-    video.clipsToAvoidOrMerge.slice(0, 3).map((item) => ({
-      video: compactTitle(video.title),
-      item,
-    })),
-  );
-
   return (
     <>
       <PageHero
@@ -94,10 +85,10 @@ export default function AITrainingPage() {
             View video library
           </a>
           <a
-            href="#editing-queue"
+            href="/prompts/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
-            Editing queue
+            Open prompt library
           </a>
         </div>
       </PageHero>
@@ -153,7 +144,7 @@ export default function AITrainingPage() {
           <SectionHeading
             eyebrow="Training paths"
             title="Nine practical AI Advantage paths from the timestamp breakdowns"
-            description="Each path maps to real source clips. No video is embedded here; this is the training structure and editing command center."
+            description="Each path points loan officers to practical AI skills they can use for drafting, review, planning, and safer daily workflow."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {aiTrainingPaths.map((path) => (
@@ -183,12 +174,12 @@ export default function AITrainingPage() {
           <SectionHeading
             eyebrow="Full video library"
             title="Seven unique AI training recordings are indexed."
-            description={`${totalSegments} timestamped segments are mapped. ${keepSegments} are marked usable or queued; duplicate May 12 Markdown is excluded.`}
+            description={`${totalSegments} timestamped segments are mapped. ${keepSegments} are marked as useful first-watch lessons. Uploaded video links can be added as each lesson is approved.`}
           />
           <div className="rounded-2xl border border-lf-line bg-white p-4 text-sm text-lf-slate shadow-card sm:max-w-sm">
-            <strong className="text-lf-navy">Media rule:</strong> large video
-            files stay in local storage or Google Drive. GitHub stores metadata,
-            docs, timestamps, and source code only.
+            <strong className="text-lf-navy">How to use this page:</strong>{" "}
+            start with the first five lessons, then open the matching recording
+            section when you want timestamps.
           </div>
         </div>
 
@@ -241,67 +232,17 @@ export default function AITrainingPage() {
                 <a href={`#segments-${video.id}`} className="btn-primary">
                   View segments
                 </a>
-                <a
-                  href="#editing-queue"
-                  className="btn-secondary"
-                  aria-label={`View editing queue entries for ${compactTitle(
-                    video.title,
-                  )}`}
-                >
-                  Queue clips
-                </a>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="editing-queue" className="bg-lf-mist">
-        <div className="container-page py-14">
-          <SectionHeading
-            eyebrow="Micro-lesson editing queue"
-            title="Cut these clips first when editing starts."
-            description="This queue is metadata only. It gives the future editor source video, timestamp range, title, priority, and suggested output filename."
-          />
-          <div className="mt-8 overflow-hidden rounded-2xl border border-lf-line bg-white shadow-card">
-            <div className="grid gap-0 divide-y divide-lf-line">
-              {aiTrainingMicroLessonQueue.map((clip) => (
-                <article
-                  key={clip.id}
-                  className="grid gap-4 p-5 lg:grid-cols-[1fr_0.75fr_0.65fr]"
-                >
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                      {clip.category} · {clip.status}
-                    </p>
-                    <h3 className="mt-1 h-display text-lg">
-                      {clip.clipTitle}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-lf-slate">
-                      {clip.whyItMatters}
-                    </p>
-                  </div>
-                  <div className="text-sm leading-6 text-lf-slate">
-                    <p className="font-semibold text-lf-navy">
-                      {compactTitle(clip.sourceVideoTitle)}
-                    </p>
-                    <p>{clipRange(clip.start, clip.end)}</p>
-                  </div>
-                  <div className="rounded-xl bg-lf-mist p-3 font-mono text-xs leading-5 text-lf-charcoal">
-                    {clip.suggestedOutputFilename}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="Segment index"
-          title="Open each recording to see its timestamp map."
-          description="These details come from the Gemini Markdown breakdowns. Segments marked skip or merge are included so editors know what not to cut as standalone clips."
+          title="Open each recording to find the useful lessons."
+          description="These timestamp notes help loan officers jump to the parts that matter most. Items that are not useful as standalone lessons stay hidden from this page."
         />
         <div className="mt-8 grid gap-4">
           {aiTrainingVideos.map((video) => (
@@ -326,17 +267,14 @@ export default function AITrainingPage() {
                 </div>
               </summary>
               <div className="grid gap-3 border-t border-lf-line p-5">
-                {video.segments.map((segment) => (
+                {video.segments.filter((segment) => segment.keep).map((segment) => (
                   <article
                     key={segment.id}
-                    className="grid gap-4 rounded-xl border border-lf-line bg-lf-mist p-4 lg:grid-cols-[0.45fr_1fr_0.5fr]"
+                    className="grid gap-4 rounded-xl border border-lf-line bg-lf-mist p-4 lg:grid-cols-[0.35fr_1fr]"
                   >
                     <div>
                       <p className="text-sm font-semibold text-lf-navy">
                         {clipRange(segment.start, segment.end)}
-                      </p>
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                        {segment.keep ? "Keep" : "Skip or merge"}
                       </p>
                     </div>
                     <div>
@@ -347,9 +285,6 @@ export default function AITrainingPage() {
                         {segment.whatJeremyCovers || segment.reason}
                       </p>
                     </div>
-                    <div className="font-mono text-xs leading-5 text-lf-slate">
-                      {segment.suggestedClipFilename}
-                    </div>
                   </article>
                 ))}
               </div>
@@ -358,77 +293,10 @@ export default function AITrainingPage() {
         </div>
       </section>
 
-      <section className="bg-lf-mist">
-        <div className="container-page py-14">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <SectionHeading
-                eyebrow="Clips to avoid"
-                title="Not every timestamp becomes a lesson."
-                description="The source breakdowns flagged setup delays, troubleshooting-heavy stretches, and off-topic discussion so the future editing batch stays focused."
-              />
-              <div className="mt-6 rounded-2xl border border-lf-orange/30 bg-white p-5 shadow-card">
-                <h3 className="h-display text-lg">General editing rule</h3>
-                <p className="mt-2 text-sm leading-6 text-lf-slate">
-                  Avoid dead air, troubleshooting loops, repeated setup delays,
-                  and broad off-topic discussion. Keep short guardrail moments
-                  only when they help LOs use AI more safely.
-                </p>
-              </div>
-            </div>
-            <div className="grid gap-3">
-              {avoidItems.slice(0, 8).map((entry) => (
-                <article
-                  key={`${entry.video}-${entry.item}`}
-                  className="rounded-xl border border-lf-line bg-white p-4 shadow-card"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                    {entry.video}
-                  </p>
-                  <p className="mt-1 text-sm leading-6 text-lf-charcoal">
-                    {entry.item}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="container-page py-14">
-        <div className="grid gap-6 rounded-2xl border border-lf-line bg-lf-navy p-6 text-white shadow-card lg:grid-cols-[1fr_0.9fr]">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Drive and media note
-            </p>
-            <h2 className="mt-2 font-display text-2xl font-semibold">
-              Large video files stay out of GitHub.
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-white/75">
-              The local MP4 recordings should remain in local storage or move to
-              Google Drive later. This site exposes the training structure,
-              segment map, clip titles, timestamps, and editing priorities only.
-            </p>
-          </div>
-          <div className="rounded-xl bg-white/10 p-4 text-sm leading-6 text-white/80">
-            <p>
-              <strong className="text-white">Markdown processed:</strong>{" "}
-              {aiTrainingVideos.length} canonical breakdowns, with{" "}
-              {duplicateAiTrainingMarkdownFiles.length} duplicate excluded.
-            </p>
-            <p className="mt-2">
-              <strong className="text-white">Future setup:</strong> upload one
-              canonical MP4 per training to Drive, then add reviewed Drive links
-              to the metadata.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="container-page pb-16">
         <div className="rounded-2xl border border-lf-orange/30 bg-lf-orangeSoft/50 p-6">
           <h2 className="h-display text-2xl">Connected AI resources</h2>
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
+          <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             <Link href="/ai-assistants/" className="card p-4 hover:shadow-lift">
               <h3 className="font-semibold text-lf-navy">AI Assistants</h3>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
@@ -451,6 +319,13 @@ export default function AITrainingPage() {
               <p className="mt-2 text-sm leading-6 text-lf-slate">
                 Future home for published lessons once clips are cut and hosted
                 outside GitHub.
+              </p>
+            </Link>
+            <Link href="/assessments/" className="card p-4 hover:shadow-lift">
+              <h3 className="font-semibold text-lf-navy">Assessments</h3>
+              <p className="mt-2 text-sm leading-6 text-lf-slate">
+                Coaching Personality Quiz and New LO Aptitude Quiz to match
+                each LO to the right AI training path. Coaching tool only.
               </p>
             </Link>
           </div>

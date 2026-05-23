@@ -1,6 +1,8 @@
 # Loan Factory Creator Network — Product Plan
 
 > **Scope note:** Planning document for the Loan Factory LO Development Platform. This is **NOT** LegendsOS. Nothing in this document authorizes builds, migrations, deployments, or external publishing.
+>
+> **FaceGram update:** The user-facing product name is now **FaceGram**. Treat this older Creator Network plan as background context. Use `FACEGRAM_PRODUCT_ROADMAP.md`, `FACEGRAM_ROLE_ACCESS_MODEL.md`, `FACEGRAM_VENDOR_MONETIZATION_PLAN.md`, and `FACEGRAM_SPONSORED_CONTENT_REVIEW_FLOW.md` as the current roadmap.
 
 ---
 

@@ -1,15 +1,15 @@
 import "server-only";
 
+import { canAccessAiAssistants } from "@/lib/supabase/auth";
 import { isLoanFactoryEmail } from "@/lib/supabase/config";
 import { getBetaUserSession } from "@/lib/supabase/session";
-import type { AiSandboxConfig } from "@/lib/ai/config";
 
 export type AiSandboxAccess =
   | {
       allowed: true;
-      userId: string | null;
+      userId: string;
       email: string | null;
-      status: "approved" | "pending" | "sandbox-unsigned";
+      status: "approved";
     }
   | {
       allowed: false;
@@ -22,38 +22,8 @@ export type AiSandboxAccess =
       message: string;
     };
 
-export async function getAiSandboxAccess(
-  config: AiSandboxConfig,
-): Promise<AiSandboxAccess> {
+export async function getAiSandboxAccess(): Promise<AiSandboxAccess> {
   const session = await getBetaUserSession();
-
-  if (!config.requireAuth) {
-    return {
-      allowed: true,
-      userId: session.status === "approved" || session.status === "pending"
-        ? session.user.id
-        : null,
-      email: session.status === "approved" || session.status === "pending"
-        ? session.user.email?.toLowerCase().trim() ?? null
-        : null,
-      status:
-        session.status === "approved" || session.status === "pending"
-          ? session.status
-          : "sandbox-unsigned",
-    };
-  }
-
-  if (
-    config.allowUnsignedSandbox &&
-    (session.status === "not-configured" || session.status === "signed-out")
-  ) {
-    return {
-      allowed: true,
-      userId: null,
-      email: null,
-      status: "sandbox-unsigned",
-    };
-  }
 
   if (session.status === "not-configured") {
     return {
@@ -83,17 +53,13 @@ export async function getAiSandboxAccess(
 
   if (session.status === "pending") {
     return {
-      allowed: true,
-      userId: session.user.id,
-      email,
+      allowed: false,
       status: "pending",
+      message: "Your account is signed in, but beta access is still pending.",
     };
   }
 
-  if (
-    session.profile.role !== "admin" &&
-    session.permissions?.can_access_ai_assistants === false
-  ) {
+  if (!canAccessAiAssistants(session.profile, session.permissions)) {
     return {
       allowed: false,
       status: "permission",

@@ -22,8 +22,6 @@ type AssistantApiMessage = {
 
 type AssistantBackendStatus = {
   sandboxEnabled: boolean;
-  requireAuth: boolean;
-  allowUnsignedSandbox: boolean;
   openRouterConfigured: boolean;
   openRouterModel: string;
   groqConfigured: boolean;
@@ -65,80 +63,22 @@ type SpeechRecognitionWindow = Window &
 
 const assistants: Assistant[] = [
   {
-    name: "Marketing Assistant",
-    description: "Drafts internal marketing ideas, campaign outlines, and review-ready content notes.",
-    starters: ["Rewrite this post for clarity", "Build a local event idea", "Create a referral partner email draft"],
-  },
-  {
-    name: "Sales Coaching Assistant",
-    description: "Helps LOs practice calls, objections, follow-ups, and weekly accountability.",
-    starters: ["Roleplay a first call", "Coach my follow-up text", "Give me a Tuesday outreach plan"],
-  },
-  {
-    name: "Referral Partner Assistant",
-    description: "Helps shape Realtor and referral partner touchpoints for human review.",
-    starters: ["Draft a partner coffee invite", "Create a weekly partner touch", "Improve this value prop"],
-  },
-  {
-    name: "Borrower Conversation Assistant",
-    description: "Helps practice borrower conversations without making approval, pricing, or loan decisions.",
-    starters: ["Practice a first borrower call", "Explain next steps simply", "Rewrite this follow-up"],
-  },
-  {
-    name: "Underwriting Support AI",
-    description: "Organizes questions and checklists for human review. It does not make underwriting decisions.",
-    starters: ["List documentation questions", "Summarize scenario facts", "Prepare a cleaner handoff"],
-  },
-  {
-    name: "Scenario Structuring Assistant",
-    description: "Turns messy notes into structured questions and options for qualified human review.",
-    starters: ["Organize this scenario", "What facts are missing?", "Prepare a coaching question"],
-  },
-  {
-    name: "TERA Workflow Helper",
-    description: "Explains training workflow steps and terminology. It does not read from or write to TERA.",
-    starters: ["Explain the next workflow step", "Make a checklist", "Turn this into a training note"],
-  },
-  {
-    name: "AI Advantage Coach",
-    description: "Teaches practical AI habits, prompt structure, and review discipline.",
-    starters: ["Improve my prompt", "Create practice drills", "Build a 15-minute AI exercise"],
-  },
-  {
-    name: "Content Repurposing Assistant",
-    description: "Turns one approved idea into draft variations for internal review.",
-    starters: ["Repurpose this into three formats", "Create a short video outline", "Turn this into a checklist"],
-  },
-  {
-    name: "Team Leader Assistant",
-    description: "Helps team leaders plan coaching rhythms, accountability notes, and meeting prompts.",
-    starters: ["Build a team huddle agenda", "Create weekly accountability questions", "Summarize coaching themes"],
-  },
-  {
-    name: "Compliance/Risk Review Assistant",
-    description: "Flags language that should be reviewed before external use.",
-    starters: ["Flag risk in this draft", "Make this more review-ready", "Find unsupported claims"],
-  },
-  {
-    name: "LO Mastery Coach",
+    name: "LO Support Assistant",
     description:
-      "Supports LO Mastery coaching rhythm, trackers, scorecards, and member resources.",
-    starters: ["Plan my coaching week", "Review my scorecard notes", "Prepare for Power Hour"],
+      "Helps loan officers turn training notes into draft checklists, roleplays, and next-step plans for human review.",
+    starters: ["Build my next-step checklist", "Roleplay a first call", "Summarize this training note"],
   },
   {
-    name: "Elite Sales & Marketing Coach",
-    description: "Supports the 101 to 601 Sales & Marketing training series with scripts, prompts, and roleplays.",
-    starters: ["Help with 101 practice", "Build a roleplay", "Summarize this module"],
+    name: "Marketing Support Assistant",
+    description:
+      "Drafts internal marketing ideas, post outlines, and review-ready content notes without publishing anything.",
+    starters: ["Rewrite this post for clarity", "Build a local event idea", "Create a review-ready outline"],
   },
   {
-    name: "1+1+1=5 Growth Assistant",
-    description: "Helps shape team growth ideas, partner strategy, and content rhythm drafts.",
-    starters: ["Plan a growth week", "Create a partner touch plan", "Draft a team content idea"],
-  },
-  {
-    name: "Content Coach",
-    description: "Turns rough internal ideas into clearer drafts for human review.",
-    starters: ["Clean up this post", "Make this easier to read", "Suggest three hooks"],
+    name: "LO Development Helper",
+    description:
+      "Answers practical questions about Sales & Marketing, AI Advantage, FaceGram, coaching resources, and support routing.",
+    starters: ["Where should I start?", "Find the right resource", "Make this easier to explain"],
   },
 ];
 
@@ -176,14 +116,13 @@ const sourceCards = [
 ];
 
 const historyItems = [
-  "101 follow-up script",
-  "Referral partner coffee invite",
-  "Power Hour prep",
-  "Content feedback request",
+  "First-call practice",
+  "Marketing draft review",
+  "Training next steps",
 ];
 
 const initialAssistantMessage =
-  "Choose an assistant, attach context if useful, then ask for a draft, roleplay, checklist, or review pass.";
+  "Choose one simple assistant, attach context if useful, then ask for a draft, roleplay, checklist, or review pass. Outputs are draft-only.";
 
 let messageIdCounter = 1;
 
@@ -494,17 +433,16 @@ export default function AIAssistantHub() {
           </div>
           <div className="mt-8">
             <p className="text-xs font-semibold uppercase tracking-wide text-white/55">
-              Recent chats
+              Example chat topics
             </p>
-            <div className="mt-3 grid gap-1">
+            <div className="mt-3 grid gap-2">
               {historyItems.map((item) => (
-                <button
+                <div
                   key={item}
-                  type="button"
-                  className="rounded-lg px-3 py-2 text-left text-sm text-white/78 hover:bg-white/10"
+                  className="rounded-lg border border-white/10 px-3 py-2 text-sm text-white/78"
                 >
                   {item}
-                </button>
+                </div>
               ))}
             </div>
           </div>
@@ -524,29 +462,10 @@ export default function AIAssistantHub() {
                     : "border-lf-line bg-lf-mist text-lf-slate"
                 }`}
               >
-                {backendStatus?.sandboxEnabled ? "Sandbox AI" : "Sandbox disabled"}
+                {backendStatus?.sandboxEnabled ? "Draft sandbox" : "Draft sandbox off"}
               </span>
-              <span
-                className={`rounded-full border px-3 py-1 ${
-                  backendStatus?.openRouterConfigured
-                    ? "border-lf-line bg-white text-lf-charcoal"
-                    : "border-lf-line bg-lf-mist text-lf-slate"
-                }`}
-              >
-                {backendStatus?.openRouterConfigured
-                  ? `OpenRouter ${backendStatus.openRouterModel}`
-                  : "OpenRouter key needed"}
-              </span>
-              <span
-                className={`rounded-full border px-3 py-1 ${
-                  backendStatus?.groqConfigured
-                    ? "border-lf-line bg-white text-lf-charcoal"
-                    : "border-lf-line bg-lf-mist text-lf-slate"
-                }`}
-              >
-                {backendStatus?.groqConfigured
-                  ? `Groq ${backendStatus.groqWhisperModel}`
-                  : "Groq key needed"}
+              <span className="rounded-full border border-lf-line bg-white px-3 py-1 text-lf-charcoal">
+                Approved users only
               </span>
               <span className="rounded-full border border-lf-line bg-white px-3 py-1 text-lf-charcoal">
                 No external sends

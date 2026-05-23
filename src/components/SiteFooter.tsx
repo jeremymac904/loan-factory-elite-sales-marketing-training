@@ -8,7 +8,7 @@ const footerLinks = [
   { href: "/apex-advisor/", label: "Coaching" },
   { href: "/sales-training/", label: "Sales & Marketing" },
   { href: "/ai-training/", label: "AI Training" },
-  { href: "/creator-network/", label: "FaceGram" },
+  { href: "/facegram/", label: "FaceGram" },
   { href: "/ai-assistants/", label: "AI Assistants" },
   { href: "/resources/", label: "Resources" },
   {

@@ -29,7 +29,7 @@ const dashboardModules = [
   {
     title: "FaceGram",
     description: "The internal Loan Factory social feed for posts, groups, wins, and feedback.",
-    href: "/creator-network/",
+    href: "/facegram/",
     cta: "Explore",
     logos: ["facegram"],
   },

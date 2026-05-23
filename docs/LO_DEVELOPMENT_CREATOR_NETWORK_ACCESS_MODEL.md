@@ -1,6 +1,8 @@
 # Loan Factory Creator Network — Access Model
 
 > **Scope note:** Planning document for the Loan Factory LO Development Platform. This is **NOT** LegendsOS. Access patterns described here are intent — they are not yet implemented in Supabase RLS.
+>
+> **FaceGram update:** The user-facing product name is now **FaceGram**. Use `FACEGRAM_ROLE_ACCESS_MODEL.md` as the current role roadmap.
 
 ---
 

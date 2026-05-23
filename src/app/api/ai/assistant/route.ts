@@ -88,18 +88,18 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const access = await getAiSandboxAccess();
+
+  if (!access.allowed) {
+    return jsonError(403, access.status, access.message);
+  }
+
   if (!config.openRouterApiKey) {
     return jsonError(
       503,
       "openrouter-not-configured",
       "OpenRouter is not configured for the AI Assistant sandbox.",
     );
-  }
-
-  const access = await getAiSandboxAccess(config);
-
-  if (!access.allowed) {
-    return jsonError(403, access.status, access.message);
   }
 
   let body: unknown;

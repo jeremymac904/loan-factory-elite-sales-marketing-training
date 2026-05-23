@@ -1,6 +1,8 @@
 # Loan Factory Creator Network — Moderation Rules
 
 > **Scope note:** Planning document for the Loan Factory LO Development Platform. This is **NOT** LegendsOS. Rules described here are policy intent — they govern the design of the Creator Network module and the behavior of all roles who participate in it.
+>
+> **FaceGram update:** The user-facing product name is now **FaceGram**. Use `FACEGRAM_SPONSORED_CONTENT_REVIEW_FLOW.md` for current sponsored/vendor review direction.
 
 ---
 

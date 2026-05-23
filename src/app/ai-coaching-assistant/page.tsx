@@ -1,7 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
 import GeminiGemCallout from "@/components/GeminiGemCallout";
-import YouTubeEmbed from "@/components/YouTubeEmbed";
-import { externalLinks } from "@/lib/externalLinks";
 import { SkillLevel } from "@/lib/utils";
 
 export const metadata = { title: "AI Coaching Assistant" };
@@ -138,45 +136,7 @@ export default function AICoachingAssistantPage() {
       </section>
 
       <section className="container-page pt-10">
-        <GeminiGemCallout compact />
-      </section>
-
-      <section className="container-page py-10">
-        <SectionHeading
-          eyebrow="Walkthrough"
-          title="Gemini Gem AI Twin walkthrough."
-          description="A short walkthrough that shows how to set up your own Gemini Gem AI Twin, paste prompts in, and review drafts safely."
-        />
-        <div className="mt-6 card flex flex-col gap-3">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Video walkthrough
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-lf-orange/40 bg-lf-orangeSoft px-2.5 py-0.5 text-xs font-semibold text-lf-orangeDark">
-              <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-lf-orange" />
-              Live
-            </span>
-          </div>
-          <h3 className="h-display text-lg">
-            Gemini Gem AI Twin Walkthrough
-          </h3>
-          <p className="prose-lf text-sm text-lf-slate">
-            End to end Gemini Gem AI Twin setup. Watch this before scaling AI
-            prompts from the library.
-          </p>
-          <YouTubeEmbed
-            src={externalLinks.geminiGemWalkthroughEmbed}
-            title="Gemini Gem AI Twin walkthrough"
-          />
-          <a
-            href={externalLinks.geminiGemWalkthroughYouTube}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary mt-2 self-start"
-          >
-            Open on YouTube
-          </a>
-        </div>
+        <GeminiGemCallout compact showWalkthroughLink={false} />
       </section>
 
       <section className="container-page py-12">

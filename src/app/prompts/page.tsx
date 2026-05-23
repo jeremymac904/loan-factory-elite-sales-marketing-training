@@ -26,7 +26,7 @@ export default function PromptLibraryPage() {
       </section>
 
       <section className="container-page pt-10">
-        <GeminiGemCallout />
+        <GeminiGemCallout compact showWalkthroughLink={false} />
       </section>
 
       <section className="container-page py-12">

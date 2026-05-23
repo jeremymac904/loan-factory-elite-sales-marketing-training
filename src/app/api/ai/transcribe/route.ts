@@ -43,18 +43,18 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const access = await getAiSandboxAccess();
+
+  if (!access.allowed) {
+    return jsonError(403, access.status, access.message);
+  }
+
   if (!config.groqApiKey) {
     return jsonError(
       503,
       "groq-not-configured",
       "Groq Whisper is not configured for sandbox transcription.",
     );
-  }
-
-  const access = await getAiSandboxAccess(config);
-
-  if (!access.allowed) {
-    return jsonError(403, access.status, access.message);
   }
 
   let formData: FormData;

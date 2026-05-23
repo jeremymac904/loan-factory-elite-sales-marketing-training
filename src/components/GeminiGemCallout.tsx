@@ -4,9 +4,13 @@ import YouTubeEmbed from "./YouTubeEmbed";
 type Props = {
   /** When true, omit the walkthrough video for tighter contexts. */
   compact?: boolean;
+  showWalkthroughLink?: boolean;
 };
 
-export default function GeminiGemCallout({ compact = false }: Props) {
+export default function GeminiGemCallout({
+  compact = false,
+  showWalkthroughLink = true,
+}: Props) {
   return (
     <section className="rounded-2xl border border-lf-orange/40 bg-lf-orangeSoft/60 p-6">
       <div className="flex flex-wrap items-center gap-2">
@@ -34,17 +38,19 @@ export default function GeminiGemCallout({ compact = false }: Props) {
         >
           Gemini Gem AI Twin Intake Form
         </a>
-        <a
-          href={externalLinks.geminiGemWalkthroughYouTube}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-secondary"
-        >
-          Watch on YouTube
-        </a>
+        {showWalkthroughLink && (
+          <a
+            href={externalLinks.geminiGemWalkthroughYouTube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
+            Watch on YouTube
+          </a>
+        )}
       </div>
 
-      {!compact && (
+      {!compact && showWalkthroughLink && (
         <div className="mt-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-lf-orangeDark">
             Walkthrough video
