@@ -68,6 +68,10 @@ Loan officers should be able to:
 - Save
 - Report or flag a post
 
+The current beta preview supports local/demo text posts, comments, reactions,
+and saves. These actions are for UI review only until Supabase persistence and
+RLS policies are approved.
+
 Loan officers should not be able to:
 
 - Create groups

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FaceGramAccessNotice from "@/components/FaceGramAccessNotice";
 import { faceGramGroups } from "@/data/facegram";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { canAccessFaceGram, getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
@@ -9,20 +10,25 @@ export const dynamic = "force-dynamic";
 
 export default async function FaceGramGroupsPage() {
   const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
 
-  if (session.status === "not-configured") {
+  if (!previewEnabled && session.status === "not-configured") {
     return <FaceGramAccessNotice status="not-configured" />;
   }
 
-  if (session.status === "signed-out") {
+  if (!previewEnabled && session.status === "signed-out") {
     return <FaceGramAccessNotice status="signed-out" />;
   }
 
-  if (session.status === "pending") {
+  if (!previewEnabled && session.status === "pending") {
     return <FaceGramAccessNotice status="pending" />;
   }
 
-  if (!canAccessFaceGram(session.profile, session.permissions)) {
+  if (
+    !previewEnabled &&
+    session.status === "approved" &&
+    !canAccessFaceGram(session.profile, session.permissions)
+  ) {
     return (
       <FaceGramAccessNotice
         status="role"
@@ -57,7 +63,7 @@ export default async function FaceGramGroupsPage() {
             {faceGramGroups.map((group) => (
               <Link
                 key={group.slug}
-                href={`/creator-network/groups/${group.slug}/`}
+                href={`/facegram/groups/${group.slug}/`}
                 className="overflow-hidden rounded-2xl bg-white shadow-card transition hover:-translate-y-0.5 hover:shadow-lift"
               >
                 <div className="relative min-h-36 bg-gradient-to-br from-lf-orange via-[#2b2b2b] to-black p-5 text-white">

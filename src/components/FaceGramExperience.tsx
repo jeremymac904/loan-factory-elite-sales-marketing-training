@@ -19,15 +19,13 @@ import {
 } from "@/data/facegram";
 
 const postOptions = [
-  "Text post",
-  "Image post",
-  "Video/Reel",
-  "Story",
-  "Poll",
-  "Feedback request",
+  { label: "Text post", status: "Local demo ready" },
+  { label: "Image post", status: "Needs upload rules" },
+  { label: "Video/Reel", status: "Needs storage rules" },
+  { label: "Story", status: "Static preview" },
+  { label: "Poll", status: "Coming soon" },
+  { label: "Feedback request", status: "Coming soon" },
 ];
-
-const engagementPreviewActions = ["Like", "Comment", "Save", "Share internally"];
 
 const stories = [
   { label: "Create story", image: "/team/andre-king.png" },
@@ -52,11 +50,24 @@ type FaceGramAuthState =
 
 export default function FaceGramExperience({
   initialApprovedEmail,
+  previewMode = false,
 }: {
   initialApprovedEmail?: string;
+  previewMode?: boolean;
 }) {
   const [entered, setEntered] = useState(false);
   const [draftPost, setDraftPost] = useState("");
+  const [posts, setPosts] = useState(() =>
+    faceGramPosts.map((post, index) => ({
+      ...post,
+      id: post.title,
+      likes: 18 - index * 3,
+      comments: ["Helpful internal example."],
+      saved: false,
+      liked: false,
+    })),
+  );
+  const [commentDrafts, setCommentDrafts] = useState<Record<string, string>>({});
   const supabaseConfigured = hasSupabasePublicConfig(getSupabasePublicConfig());
   const [authState, setAuthState] = useState<FaceGramAuthState>(() =>
     initialApprovedEmail
@@ -67,7 +78,7 @@ export default function FaceGramExperience({
   );
 
   useEffect(() => {
-    if (!supabaseConfigured) return;
+    if (previewMode || initialApprovedEmail || !supabaseConfigured) return;
 
     const supabase = createBrowserSupabaseClient();
 
@@ -115,10 +126,77 @@ export default function FaceGramExperience({
       active = false;
       subscription.unsubscribe();
     };
-  }, [supabaseConfigured]);
+  }, [initialApprovedEmail, previewMode, supabaseConfigured]);
 
-  const canPost = authState.status === "approved";
+  const canPost = previewMode || authState.status === "approved";
   const isPending = authState.status === "pending";
+  const activeEmail =
+    authState.status === "approved" ? authState.email : "beta preview";
+
+  function publishLocalPost() {
+    const body = draftPost.trim();
+
+    if (!body) return;
+
+    setPosts((current) => [
+      {
+        id: `local-${Date.now()}`,
+        author: previewMode ? "Beta Preview User" : "Loan Factory LO",
+        role: previewMode ? "Internal beta preview" : "Loan Officer",
+        avatar: "/team/andre-king.png",
+        group: "FaceGram",
+        time: "Just now",
+        title: "Beta preview text post",
+        body,
+        mediaLabel: "Text post",
+        accent: "orange",
+        likes: 0,
+        comments: [],
+        saved: false,
+        liked: false,
+      },
+      ...current,
+    ]);
+    setDraftPost("");
+    setEntered(true);
+  }
+
+  function toggleLike(id: string) {
+    setPosts((current) =>
+      current.map((post) =>
+        post.id === id
+          ? {
+              ...post,
+              liked: !post.liked,
+              likes: post.liked ? Math.max(0, post.likes - 1) : post.likes + 1,
+            }
+          : post,
+      ),
+    );
+  }
+
+  function toggleSave(id: string) {
+    setPosts((current) =>
+      current.map((post) =>
+        post.id === id ? { ...post, saved: !post.saved } : post,
+      ),
+    );
+  }
+
+  function addComment(id: string) {
+    const comment = commentDrafts[id]?.trim();
+
+    if (!comment) return;
+
+    setPosts((current) =>
+      current.map((post) =>
+        post.id === id
+          ? { ...post, comments: [...post.comments, comment] }
+          : post,
+      ),
+    );
+    setCommentDrafts((current) => ({ ...current, [id]: "" }));
+  }
 
   return (
     <>
@@ -181,7 +259,7 @@ export default function FaceGramExperience({
                   Groups
                 </h3>
                 <Link
-                  href="/creator-network/groups/"
+                  href="/facegram/groups/"
                   className="text-sm font-semibold text-lf-orange"
                 >
                   See all
@@ -191,7 +269,7 @@ export default function FaceGramExperience({
                 {faceGramGroups.slice(0, 6).map((group) => (
                   <Link
                     key={group.slug}
-                    href={`/creator-network/groups/${group.slug}/`}
+                    href={`/facegram/groups/${group.slug}/`}
                     className="rounded-xl border border-lf-line bg-white px-3 py-3 text-sm font-semibold text-lf-charcoal hover:border-lf-orange hover:text-lf-orange"
                   >
                     {group.name}
@@ -251,26 +329,40 @@ export default function FaceGramExperience({
                     value={draftPost}
                     onChange={(event) => setDraftPost(event.target.value)}
                     rows={2}
-                    placeholder={`What's on your mind, ${authState.email}?`}
+                    placeholder={`What's on your mind, ${activeEmail}?`}
                     className="min-h-12 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
                   />
+                </div>
+                <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-xs font-semibold text-lf-slate">
+                    Local beta post only. Nothing is saved to Supabase yet.
+                  </p>
+                  <button
+                    type="button"
+                    className="btn-primary"
+                    onClick={publishLocalPost}
+                    disabled={!draftPost.trim()}
+                  >
+                    Post
+                  </button>
                 </div>
                 <div className="mt-4 grid gap-2 border-t border-lf-line pt-4 sm:grid-cols-3">
                   {postOptions.map((option) => (
                     <div
-                      key={option}
+                      key={option.label}
                       className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-sm font-semibold text-lf-charcoal"
                     >
-                      {option}
+                      {option.label}
                       <span className="mt-1 block text-xs font-normal text-lf-slate">
-                        Coming soon
+                        {option.status}
                       </span>
                     </div>
                   ))}
                 </div>
                 <p className="mt-3 text-xs font-semibold text-lf-slate">
-                  Posting, media upload, stories, and polls stay off until
-                  Supabase saving plus moderation review are wired.
+                  Media upload, public sharing, vendor posting, and external
+                  publishing stay off until Supabase saving and moderation are
+                  wired.
                 </p>
               </div>
             ) : (
@@ -313,8 +405,33 @@ export default function FaceGramExperience({
               ))}
             </div>
 
-            {faceGramPosts.map((post) => (
-              <article key={post.title} className="rounded-2xl bg-white shadow-card">
+            <div className="rounded-2xl bg-white p-5 shadow-card">
+              <div className="grid gap-4 md:grid-cols-2">
+                <article className="rounded-xl border border-lf-line bg-lf-mist p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                    Reels
+                  </p>
+                  <h3 className="h-display mt-1 text-lg">Short training clips</h3>
+                  <p className="mt-2 text-sm leading-6 text-lf-slate">
+                    Static preview for short internal coaching and marketing
+                    examples. Upload and playback rules come later.
+                  </p>
+                </article>
+                <article className="rounded-xl border border-lf-line bg-lf-mist p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                    Events
+                  </p>
+                  <h3 className="h-display mt-1 text-lg">Training posts</h3>
+                  <p className="mt-2 text-sm leading-6 text-lf-slate">
+                    Future event cards for classes, office hours, and sponsored
+                    lender/vendor training after approval.
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            {posts.map((post) => (
+              <article key={post.id} className="rounded-2xl bg-white shadow-card">
                 <div className="p-5">
                   <div className="flex items-start gap-3">
                     <img
@@ -359,17 +476,74 @@ export default function FaceGramExperience({
                   </div>
                 </div>
                 <div className="grid grid-cols-2 border-t border-lf-line text-center text-sm font-semibold text-lf-slate sm:grid-cols-4">
-                  {engagementPreviewActions.map((action) => (
-                    <div
-                      key={action}
-                      className="px-2 py-3"
+                  <button
+                    type="button"
+                    className="px-2 py-3 hover:bg-lf-mist hover:text-lf-orange"
+                    onClick={() => toggleLike(post.id)}
+                  >
+                    {post.liked ? "Liked" : "Like"}
+                    <span className="mt-1 block text-xs font-normal">
+                      {post.likes} reactions
+                    </span>
+                  </button>
+                  <a
+                    href={`#comments-${post.id}`}
+                    className="px-2 py-3 hover:bg-lf-mist hover:text-lf-orange"
+                  >
+                    Comment
+                    <span className="mt-1 block text-xs font-normal">
+                      {post.comments.length} comments
+                    </span>
+                  </a>
+                  <button
+                    type="button"
+                    className="px-2 py-3 hover:bg-lf-mist hover:text-lf-orange"
+                    onClick={() => toggleSave(post.id)}
+                  >
+                    {post.saved ? "Saved" : "Save"}
+                    <span className="mt-1 block text-xs font-normal">
+                      Local only
+                    </span>
+                  </button>
+                  <div className="px-2 py-3 text-lf-slate">
+                    Share internally
+                    <span className="mt-1 block text-xs font-normal">
+                      Coming soon
+                    </span>
+                  </div>
+                </div>
+                <div id={`comments-${post.id}`} className="border-t border-lf-line p-4">
+                  <div className="grid gap-2">
+                    {post.comments.map((comment, index) => (
+                      <p
+                        key={`${post.id}-${index}`}
+                        className="rounded-xl bg-lf-mist px-3 py-2 text-sm text-lf-charcoal"
+                      >
+                        {comment}
+                      </p>
+                    ))}
+                  </div>
+                  <div className="mt-3 flex gap-2">
+                    <input
+                      value={commentDrafts[post.id] ?? ""}
+                      onChange={(event) =>
+                        setCommentDrafts((current) => ({
+                          ...current,
+                          [post.id]: event.target.value,
+                        }))
+                      }
+                      placeholder="Add a beta comment"
+                      className="min-w-0 flex-1 rounded-lg border border-lf-line px-3 py-2 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
+                    />
+                    <button
+                      type="button"
+                      className="btn-secondary"
+                      onClick={() => addComment(post.id)}
+                      disabled={!commentDrafts[post.id]?.trim()}
                     >
-                      {action}
-                      <span className="mt-1 block text-xs font-normal text-lf-slate">
-                        Coming soon
-                      </span>
-                    </div>
-                  ))}
+                      Add
+                    </button>
+                  </div>
                 </div>
               </article>
             ))}
@@ -378,7 +552,7 @@ export default function FaceGramExperience({
           <aside className="space-y-4 lg:sticky lg:top-24 lg:h-fit">
             <div className="rounded-2xl bg-white p-4 shadow-card">
               <h3 className="font-display text-lg font-semibold text-lf-navy">
-                Lender Promotions
+                Sponsored lender/vendor placements
               </h3>
               <div className="mt-3 grid gap-3">
                 {lenderPromotionNotes.map((note) => (
@@ -386,6 +560,9 @@ export default function FaceGramExperience({
                     key={note.title}
                     className="rounded-xl border border-lf-line bg-lf-mist p-3"
                   >
+                    <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-lf-orange">
+                      Future approval-based
+                    </p>
                     <h4 className="text-sm font-semibold text-lf-navy">
                       {note.title}
                     </h4>

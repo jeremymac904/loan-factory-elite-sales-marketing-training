@@ -15,17 +15,17 @@ export default function RecordingPlaceholder({
   videoSrc,
   videoTitle,
 }: Props) {
+  const statusLabel = videoSrc ? "Video replay" : "Coming soon";
+
   return (
     <div className="card flex flex-col gap-2">
       <div className="flex items-center justify-between">
         <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
           {level}
         </span>
-        {videoSrc && (
-          <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-            Video replay
-          </span>
-        )}
+        <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+          {statusLabel}
+        </span>
       </div>
       <h3 className="h-display text-lg">{title}</h3>
       {description && (

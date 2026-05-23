@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
@@ -8,6 +9,40 @@ type Props = {
 
 export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
   const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
+
+  if (previewEnabled) {
+    return (
+      <div
+        className={
+          variant === "mobile"
+            ? "grid gap-2 rounded-xl border border-lf-orange/30 bg-lf-orangeSoft p-3"
+            : "flex items-center gap-2"
+        }
+      >
+        <Link
+          href="/admin/"
+          className={
+            variant === "mobile"
+              ? "rounded-lg bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal hover:text-lf-orange"
+              : "inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-lf-orange/30 bg-lf-orangeSoft px-3 py-2 text-sm font-semibold text-lf-orangeDark transition hover:border-lf-orange"
+          }
+        >
+          Beta Preview
+        </Link>
+        <Link
+          href="/auth/preview-exit/"
+          className={
+            variant === "mobile"
+              ? "rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-slate hover:text-lf-orange"
+              : "inline-flex items-center justify-center whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold text-lf-slate transition hover:bg-lf-mist hover:text-lf-orange"
+          }
+        >
+          Exit
+        </Link>
+      </div>
+    );
+  }
 
   if (session.status !== "approved" && session.status !== "pending") {
     return (

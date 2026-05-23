@@ -55,6 +55,20 @@ export default function LoginPage() {
             </div>
           </div>
         </div>
+
+        <div className="mt-6 rounded-2xl border border-lf-orange/30 bg-lf-orangeSoft p-6 shadow-card">
+          <h2 className="h-display text-xl">Internal beta preview</h2>
+          <p className="prose-lf mt-2 max-w-3xl text-sm text-lf-slate">
+            Use this when Google/Supabase auth is not ready and Jeremy needs to
+            review the live UI. Preview mode is a session-only review bypass. It
+            is not production auth, does not create real permissions, does not
+            send email, and does not connect Gmail, Drive, n8n, TERA, or AI
+            providers.
+          </p>
+          <Link href="/auth/preview/?next=/" className="btn-primary mt-5">
+            Enter Beta Preview
+          </Link>
+        </div>
       </section>
     </>
   );

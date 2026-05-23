@@ -21,20 +21,23 @@ type SuggestionAuthState =
   | { status: "signed-in"; userId: string; email: string };
 
 export default function SuggestionModal({
-  triggerLabel = "Suggestions?",
+  triggerLabel = "Send Feedback",
   triggerClassName = "rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange",
 }: Props) {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [localOnly, setLocalOnly] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   const supabaseConfigured = hasSupabasePublicConfig(getSupabasePublicConfig());
   const [authState, setAuthState] = useState<SuggestionAuthState>(() =>
     supabaseConfigured ? { status: "loading" } : { status: "not-configured" },
   );
   const [form, setForm] = useState({
-    category: "platform",
-    suggestion: "",
+    name: "",
+    email: "",
+    topic: "platform",
+    feedback: "",
     anonymous: false,
   });
 
@@ -86,18 +89,20 @@ export default function SuggestionModal({
   }
 
   async function saveSuggestion() {
-    const suggestion = form.suggestion.trim();
+    const feedback = form.feedback.trim();
 
     setSaved(false);
+    setLocalOnly(false);
     setSaveError(null);
 
-    if (!suggestion) {
-      setSaveError("Add a suggestion before saving.");
+    if (!feedback) {
+      setSaveError("Add feedback before saving.");
       return;
     }
 
     if (authState.status !== "signed-in") {
-      setSaveError("Sign in with Google before saving to Supabase.");
+      setLocalOnly(true);
+      setSaved(true);
       return;
     }
 
@@ -111,8 +116,13 @@ export default function SuggestionModal({
     const { error } = await supabase.from("suggestions").insert({
       user_id: form.anonymous ? null : authState.userId,
       anonymous: form.anonymous,
-      category: form.category,
-      message: suggestion,
+      category: form.topic,
+      message: [
+        `Name: ${form.anonymous ? "Anonymous" : form.name.trim() || "Not provided"}`,
+        `Email: ${form.anonymous ? "Anonymous" : form.email.trim() || authState.email}`,
+        "",
+        feedback,
+      ].join("\n"),
     });
 
     if (error) {
@@ -125,17 +135,18 @@ export default function SuggestionModal({
 
   return (
     <>
-        <button
-          type="button"
-          className={triggerClassName}
-          onClick={() => {
-            setOpen(true);
-            setSaved(false);
-            setSaveError(null);
-          }}
-        >
-          {triggerLabel}
-        </button>
+      <button
+        type="button"
+        className={triggerClassName}
+        onClick={() => {
+          setOpen(true);
+          setSaved(false);
+          setLocalOnly(false);
+          setSaveError(null);
+        }}
+      >
+        {triggerLabel}
+      </button>
 
       {open && (
         <div
@@ -144,24 +155,25 @@ export default function SuggestionModal({
           aria-modal="true"
           aria-labelledby="suggestion-title"
         >
-          <div className="w-full max-w-lg rounded-2xl border border-lf-line bg-white p-6 shadow-2xl">
+          <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-lf-line bg-white p-6 shadow-2xl">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 id="suggestion-title" className="h-display text-2xl">
-                  Send a suggestion
+                  Send feedback
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
-                  Have an idea, broken link, missing resource, or platform
-                  improvement? Signed-in users can save a category and message
-                  to Supabase. Or copy Jeremy's email and send it manually.
-                  This app will not send email.
+                  Send beta feedback, broken links, missing resources, or
+                  platform ideas. Signed-in users save to Supabase. Signed-out
+                  preview feedback stays local/demo only. This app will not
+                  send email. Do not include borrower names, loan details, or
+                  private file information.
                 </p>
               </div>
               <button
                 type="button"
                 className="rounded-full border border-lf-line px-3 py-1 text-sm font-semibold text-lf-charcoal hover:border-lf-orange hover:text-lf-orange"
                 onClick={() => setOpen(false)}
-                aria-label="Close suggestion form"
+                aria-label="Close feedback form"
               >
                 Close
               </button>
@@ -171,16 +183,45 @@ export default function SuggestionModal({
               <p className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-sm font-semibold text-lf-slate">
                 {authState.status === "signed-in"
                   ? `Saving as ${form.anonymous ? "anonymous feedback" : authState.email}.`
-                  : "Sign in with Google to save feedback in Supabase."}
+                  : "Preview feedback is local/demo only unless you sign in with Google."}
               </p>
               <label className="grid gap-1 text-sm font-semibold text-lf-charcoal">
-                Category
-                <select
-                  value={form.category}
+                Name
+                <input
+                  value={form.name}
                   onChange={(event) =>
                     setForm((current) => ({
                       ...current,
-                      category: event.target.value,
+                      name: event.target.value,
+                    }))
+                  }
+                  disabled={form.anonymous}
+                  className="rounded-lg border border-lf-line px-3 py-2 font-normal outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20 disabled:bg-lf-mist"
+                />
+              </label>
+              <label className="grid gap-1 text-sm font-semibold text-lf-charcoal">
+                Email
+                <input
+                  type="email"
+                  value={form.email}
+                  onChange={(event) =>
+                    setForm((current) => ({
+                      ...current,
+                      email: event.target.value,
+                    }))
+                  }
+                  disabled={form.anonymous}
+                  className="rounded-lg border border-lf-line px-3 py-2 font-normal outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20 disabled:bg-lf-mist"
+                />
+              </label>
+              <label className="grid gap-1 text-sm font-semibold text-lf-charcoal">
+                Topic
+                <select
+                  value={form.topic}
+                  onChange={(event) =>
+                    setForm((current) => ({
+                      ...current,
+                      topic: event.target.value,
                     }))
                   }
                   className="rounded-lg border border-lf-line px-3 py-2 font-normal outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
@@ -193,13 +234,13 @@ export default function SuggestionModal({
                 </select>
               </label>
               <label className="grid gap-1 text-sm font-semibold text-lf-charcoal">
-                Suggestion
+                Feedback
                 <textarea
-                  value={form.suggestion}
+                  value={form.feedback}
                   onChange={(event) =>
                     setForm((current) => ({
                       ...current,
-                      suggestion: event.target.value,
+                      feedback: event.target.value,
                     }))
                   }
                   rows={5}
@@ -218,13 +259,15 @@ export default function SuggestionModal({
                   }
                   className="h-4 w-4 rounded border-lf-line text-lf-orange"
                 />
-                Save as anonymous feedback
+                Send as anonymous feedback
               </label>
             </div>
 
             {saved && (
               <p className="mt-4 rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-sm font-semibold text-green-700">
-                Suggestion saved in Supabase.
+                {localOnly
+                  ? "Feedback captured for this preview session only. It was not submitted to Supabase and no email was sent."
+                  : "Feedback saved in Supabase. No email was sent."}
               </p>
             )}
 
@@ -235,7 +278,11 @@ export default function SuggestionModal({
             )}
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <button type="button" className="btn-secondary" onClick={() => setOpen(false)}>
+              <button
+                type="button"
+                className="btn-secondary"
+                onClick={() => setOpen(false)}
+              >
                 Close
               </button>
               <button type="button" className="btn-secondary" onClick={copyEmail}>
@@ -245,9 +292,9 @@ export default function SuggestionModal({
                 type="button"
                 className="btn-secondary"
                 onClick={saveSuggestion}
-                disabled={authState.status !== "signed-in" || !form.suggestion.trim()}
+                disabled={!form.feedback.trim()}
               >
-                Save suggestion
+                Save feedback
               </button>
             </div>
           </div>

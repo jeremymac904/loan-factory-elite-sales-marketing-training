@@ -21,6 +21,15 @@ const groupIds: Record<LoDevelopmentGroup, string> = {
   Marketing: "marketing",
 };
 
+const askAbout: Record<LoDevelopmentGroup, string> = {
+  "LO Development":
+    "Ask this person about training access, platform questions, onboarding, and support routing.",
+  "Corporate Coaches":
+    "Ask this person about coaching rhythm, script practice, roleplays, and development plans.",
+  Marketing:
+    "Ask this person about brand tone, social drafts, marketing review, and content cleanup.",
+};
+
 export default function SupportTeamDirectory() {
   return (
     <section id="lo-development-support-team" className="container-page py-14">
@@ -97,6 +106,10 @@ export default function SupportTeamDirectory() {
                         </p>
                       </div>
                     </div>
+
+                    <p className="text-sm leading-6 text-lf-slate">
+                      {askAbout[group]}
+                    </p>
 
                     <a
                       href={`mailto:${person.email}`}

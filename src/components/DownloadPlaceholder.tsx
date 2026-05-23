@@ -18,16 +18,26 @@ export default function DownloadPlaceholder({
   secondaryLabel,
 }: Props) {
   const isReady = !!downloadHref;
+  const statusLabel = isReady ? `${format} ready` : "Needs upload";
+
   return (
     <div className="card flex flex-col gap-2">
-      <div>
+      <div className="flex items-center justify-between gap-3">
         <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
           {format} handout
+        </span>
+        <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+          {statusLabel}
         </span>
       </div>
       <h3 className="h-display text-lg">{title}</h3>
       {description && (
         <p className="prose-lf text-sm text-lf-slate">{description}</p>
+      )}
+      {!isReady && (
+        <p className="text-sm font-semibold text-lf-slate">
+          File will appear here after the approved upload.
+        </p>
       )}
       <div className="mt-3 flex flex-wrap gap-2">
         {isReady ? (

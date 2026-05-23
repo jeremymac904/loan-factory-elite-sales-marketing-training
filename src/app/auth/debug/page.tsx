@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AuthDebugTrailView from "@/components/AuthDebugTrail";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
 export const dynamic = "force-dynamic";
@@ -7,6 +8,7 @@ export const metadata = { title: "Auth Debug" };
 
 export default async function AuthDebugPage() {
   const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
   const serverSessionExists =
     session.status === "approved" || session.status === "pending";
   const serverProfile =
@@ -28,6 +30,16 @@ export default async function AuthDebugPage() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
+        {previewEnabled && (
+          <div className="card">
+            <h2 className="h-display text-2xl">Beta preview</h2>
+            <p className="prose-lf mt-3 text-base">
+              Session-only preview is enabled for internal UI review. It is not
+              a Supabase auth session and does not expose token, cookie, API
+              key, or service role values.
+            </p>
+          </div>
+        )}
         <AuthDebugTrailView
           serverSessionExists={serverSessionExists}
           serverStatus={session.status}

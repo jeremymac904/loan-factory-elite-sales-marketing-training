@@ -1,5 +1,6 @@
 import FaceGramExperience from "@/components/FaceGramExperience";
 import FaceGramAccessNotice from "@/components/FaceGramAccessNotice";
+import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { canAccessFaceGram, getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
@@ -8,6 +9,16 @@ export const dynamic = "force-dynamic";
 
 export default async function FaceGramPage() {
   const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
+
+  if (previewEnabled) {
+    return (
+      <FaceGramExperience
+        initialApprovedEmail={betaPreviewEmail}
+        previewMode
+      />
+    );
+  }
 
   if (session.status === "not-configured") {
     return <FaceGramAccessNotice status="not-configured" />;

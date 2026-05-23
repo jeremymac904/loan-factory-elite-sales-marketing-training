@@ -41,7 +41,7 @@ export default function ApexAdvisorPage() {
             See the tiers
           </Link>
           <Link
-            href="/apex-member-area/"
+            href="/member-area/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white"
           >
             Preview member resources
@@ -134,7 +134,11 @@ export default function ApexAdvisorPage() {
                     {tier.ctaLabel}
                   </Link>
                   <Link
-                    href={tier.id === "pro" ? "/apex-advisor-pro/" : "/apex-member-area/"}
+                    href={
+                      tier.id === "pro"
+                        ? "/loan-factory-alliance/"
+                        : "/lo-mastery-coaching/"
+                    }
                     className="btn-secondary"
                   >
                     Learn more
@@ -152,7 +156,7 @@ export default function ApexAdvisorPage() {
           title="The paid coaching member experience."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <Link href="/apex-member-area/" className="card hover:shadow-lift">
+          <Link href="/member-area/" className="card hover:shadow-lift">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
               Member resources
             </p>
@@ -200,7 +204,7 @@ export default function ApexAdvisorPage() {
               accountability and recognition.
             </p>
           </Link>
-          <Link href="/apex-member-area/" className="card hover:shadow-lift">
+          <Link href="/member-area/" className="card hover:shadow-lift">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
               Portal
             </p>

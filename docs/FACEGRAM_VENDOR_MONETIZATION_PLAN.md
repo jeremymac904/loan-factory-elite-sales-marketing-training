@@ -160,4 +160,8 @@ For beta testers, show sponsored/vendor concepts only as controlled examples:
 - No vendor self-service signup
 - No payment UI
 
+Current beta UI shows the concept as "Sponsored lender/vendor placements" and
+"Vendor/Lender Partner Preview." Vendor posting, payment, analytics, directory
+management, and content submission remain unwired.
+
 The beta should teach the concept without opening the publishing or billing surface.

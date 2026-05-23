@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import { betaPreviewCookieName } from "@/lib/betaPreview";
 import { appSessionCookieName } from "@/lib/supabase/app-session";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
@@ -14,6 +15,13 @@ async function signOut() {
     path: "/",
     sameSite: "none",
     secure: true,
+  });
+  cookieStore.set(betaPreviewCookieName, "", {
+    httpOnly: true,
+    maxAge: 0,
+    path: "/",
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
   });
   await supabase?.auth.signOut();
   redirect("/");

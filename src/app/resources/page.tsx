@@ -1,15 +1,10 @@
 import Link from "next/link";
+import GrowthLoops from "@/components/GrowthLoops";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata = { title: "Resources" };
 
 const resources = [
-  {
-    title: "Assessments",
-    description:
-      "Take the Coaching Personality Quiz or the New LO Aptitude & Personality Quiz. Coaching tool only.",
-    href: "/assessments/",
-  },
   {
     title: "Recommended Channels",
     description: "Find approved channels, learning references, and useful internal resource paths.",
@@ -29,6 +24,18 @@ const resources = [
     title: "LO Development Support Team",
     description: "Find LO Development, corporate coach, and marketing review contacts.",
     href: "/support-routing/#lo-development-support-team",
+  },
+  {
+    title: "Anonymous Complaints & Suggestions",
+    description:
+      "Use the global Send Feedback button for suggestions, broken links, complaints, and beta notes.",
+    href: "#feedback",
+  },
+  {
+    title: "Lender Escalation",
+    description:
+      "Manual-review escalation form shell. No email sends or automation during beta.",
+    href: "/lender-escalation/",
   },
 ];
 
@@ -84,6 +91,17 @@ export default function ResourcesPage() {
           ))}
         </div>
       </section>
+      <section id="feedback" className="container-page pb-14">
+        <div className="rounded-2xl border border-lf-orange/30 bg-lf-orangeSoft p-6 shadow-card">
+          <h2 className="h-display text-2xl">Send Feedback</h2>
+          <p className="prose-lf mt-2 max-w-3xl text-sm text-lf-slate">
+            Use the floating Send Feedback button on any page. Feedback never
+            sends email from the app. Signed-in users can save to Supabase;
+            preview users see a local/demo confirmation.
+          </p>
+        </div>
+      </section>
+      <GrowthLoops />
     </>
   );
 }

@@ -218,4 +218,27 @@ Do not add these tables until a migration sprint is explicitly approved.
 - Group creation is not open to everyone.
 - No public publishing is implied.
 - No vendor can publish freely.
+
+## Current Beta UI Build
+
+The beta UI now includes:
+
+- Main FaceGram feed route at `/facegram/`
+- Alias route at `/creator-network/`
+- Group index at `/facegram/groups/`
+- Group detail pages at `/facegram/groups/[slug]/`
+- Local/demo text posting for review
+- Local/demo likes, comments, and saves
+- Static story, reel, event, and sponsored placement previews
+- Clear vendor/lender language that sponsored posting is future and approval-based
+
+Still not wired:
+
+- Supabase post persistence
+- Media uploads
+- Real stories/reels storage
+- Group creation
+- Vendor submission
+- Sponsored content review queue
+- Payments, billing, email sends, n8n, TERA, or public publishing
 - No borrower or loan data is shown.

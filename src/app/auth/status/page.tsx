@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AuthDebugTrailView from "@/components/AuthDebugTrail";
 import AuthClientStatus from "@/components/AuthClientStatus";
+import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
@@ -9,7 +10,9 @@ export const metadata = { title: "Auth Status" };
 
 export default async function AuthStatusPage() {
   const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
   const canAccessAdmin =
+    previewEnabled ||
     session.status === "approved" &&
     (session.permissions?.can_access_admin || session.profile.role === "admin");
   const serverSessionExists =
@@ -47,6 +50,13 @@ export default async function AuthStatusPage() {
             <h2 className="h-display text-2xl">Server session</h2>
             <dl className="mt-5 grid gap-3 text-sm">
               <StatusLine label="Server status" value={session.status} />
+              {previewEnabled && (
+                <>
+                  <StatusLine label="Preview mode" value="Enabled" />
+                  <StatusLine label="Preview email" value={betaPreviewEmail} />
+                  <StatusLine label="Admin access" value="Preview only" />
+                </>
+              )}
               {session.status === "approved" && (
                 <>
                   <StatusLine label="Email" value={session.profile.email} />

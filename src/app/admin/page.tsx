@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
@@ -7,6 +8,11 @@ export const metadata = { title: "Admin" };
 
 export default async function AdminPage() {
   const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
+
+  if (previewEnabled) {
+    return <AdminShell preview />;
+  }
 
   if (session.status === "not-configured") {
     return <AdminNotice title="Supabase setup needed" actionHref="/login/" actionLabel="Open sign in">
@@ -37,6 +43,21 @@ export default async function AdminPage() {
     </AdminNotice>;
   }
 
+  return <AdminShell session={session} />;
+}
+
+function AdminShell({
+  session,
+  preview = false,
+}: {
+  session?: Extract<Awaited<ReturnType<typeof getBetaUserSession>>, { status: "approved" }>;
+  preview?: boolean;
+}) {
+  const email = preview ? betaPreviewEmail : session?.profile.email ?? "";
+  const name = preview ? "Internal Beta Preview" : session?.profile.full_name ?? "Not set";
+  const role = preview ? "Preview Admin" : getRoleLabel(session?.profile.role);
+  const status = preview ? "preview-only" : session?.profile.status ?? "";
+
   return (
     <>
       <section className="relative isolate overflow-hidden bg-lf-navy text-white">
@@ -53,8 +74,9 @@ export default async function AdminPage() {
             User Access
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Current beta user context. Full user management stays in Supabase
-            while the platform is in beta.
+            {preview
+              ? "Internal preview context for UI review. Real user management still stays in Supabase."
+              : "Current beta user context. Full user management stays in Supabase while the platform is in beta."}
           </p>
         </div>
       </section>
@@ -66,23 +88,19 @@ export default async function AdminPage() {
             <dl className="mt-5 grid gap-3 text-sm">
               <div>
                 <dt className="font-semibold text-lf-slate">Email</dt>
-                <dd className="mt-1 text-lf-charcoal">{session.profile.email}</dd>
+                <dd className="mt-1 text-lf-charcoal">{email}</dd>
               </div>
               <div>
                 <dt className="font-semibold text-lf-slate">Name</dt>
-                <dd className="mt-1 text-lf-charcoal">
-                  {session.profile.full_name ?? "Not set"}
-                </dd>
+                <dd className="mt-1 text-lf-charcoal">{name}</dd>
               </div>
               <div>
                 <dt className="font-semibold text-lf-slate">Role</dt>
-                <dd className="mt-1 text-lf-charcoal">
-                  {getRoleLabel(session.profile.role)}
-                </dd>
+                <dd className="mt-1 text-lf-charcoal">{role}</dd>
               </div>
               <div>
                 <dt className="font-semibold text-lf-slate">Status</dt>
-                <dd className="mt-1 text-lf-charcoal">{session.profile.status}</dd>
+                <dd className="mt-1 text-lf-charcoal">{status}</dd>
               </div>
             </dl>
           </div>
@@ -90,9 +108,9 @@ export default async function AdminPage() {
           <div className="card">
             <h2 className="h-display text-2xl">How to manage users</h2>
             <p className="prose-lf mt-3 text-base">
-              Add, deactivate, or change beta roles in Supabase by editing the
-              approved_users table. The OAuth callback syncs approved records
-              into profiles after sign-in.
+              {preview
+                ? "Preview mode only unlocks pages for UI review. It does not add users, change roles, or write to Supabase."
+                : "Add, deactivate, or change beta roles in Supabase by editing the approved_users table. The OAuth callback syncs approved records into profiles after sign-in."}
             </p>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
               Do not put the Supabase service role key in browser code. The app

@@ -74,12 +74,6 @@ const assistants: Assistant[] = [
       "Drafts internal marketing ideas, post outlines, and review-ready content notes without publishing anything.",
     starters: ["Rewrite this post for clarity", "Build a local event idea", "Create a review-ready outline"],
   },
-  {
-    name: "LO Development Helper",
-    description:
-      "Answers practical questions about Sales & Marketing, AI Advantage, FaceGram, coaching resources, and support routing.",
-    starters: ["Where should I start?", "Find the right resource", "Make this easier to explain"],
-  },
 ];
 
 const sourceCards = [
@@ -168,7 +162,23 @@ function apiErrorMessage(
   return "The AI Assistant sandbox could not complete that request.";
 }
 
-export default function AIAssistantHub() {
+function buildDemoResponse(assistant: Assistant, prompt: string) {
+  return [
+    `${assistant.name} demo draft:`,
+    "",
+    `I would help with: ${prompt}`,
+    "",
+    "Next step: paste the exact context you want reviewed, remove borrower/private data, then ask for one draft, checklist, or rewrite.",
+    "",
+    "Draft only. Review before any external use. No rates, fees, APR, approval, underwriting, public publishing, email send, Gmail, Drive, n8n, or TERA action was triggered.",
+  ].join("\n");
+}
+
+export default function AIAssistantHub({
+  previewMode = false,
+}: {
+  previewMode?: boolean;
+}) {
   const [selectedName, setSelectedName] = useState(assistants[0].name);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -191,6 +201,10 @@ export default function AIAssistantHub() {
     () => assistants.find((assistant) => assistant.name === selectedName) ?? assistants[0],
     [selectedName],
   );
+  const demoResponseMode =
+    previewMode ||
+    backendStatus?.sandboxEnabled === false ||
+    backendStatus?.openRouterConfigured === false;
 
   useEffect(() => {
     let cancelled = false;
@@ -241,6 +255,19 @@ export default function AIAssistantHub() {
     setMessages((current) => [...current, userMessage]);
     setInput("");
     setIsSending(true);
+
+    if (demoResponseMode) {
+      setMessages((current) => [
+        ...current,
+        {
+          id: nextMessageId(),
+          role: "assistant",
+          text: buildDemoResponse(assistant, trimmed),
+        },
+      ]);
+      setIsSending(false);
+      return;
+    }
 
     try {
       const response = await fetch("/api/ai/assistant", {
@@ -341,6 +368,11 @@ export default function AIAssistantHub() {
 
   async function transcribeAttachedFile() {
     if (!attachedFile || !isAudioAttachment(attachedFile) || isTranscribing) {
+      return;
+    }
+
+    if (previewMode || backendStatus?.sandboxEnabled === false) {
+      setVoiceNote("Audio transcription is disabled in beta preview/demo mode.");
       return;
     }
 
@@ -457,12 +489,18 @@ export default function AIAssistantHub() {
             <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
               <span
                 className={`rounded-full border px-3 py-1 ${
-                  backendStatus?.sandboxEnabled
+                  previewMode
+                    ? "border-lf-orange bg-lf-orangeSoft text-lf-orangeDark"
+                    : backendStatus?.sandboxEnabled
                     ? "border-lf-orange bg-lf-orangeSoft text-lf-orangeDark"
                     : "border-lf-line bg-lf-mist text-lf-slate"
                 }`}
               >
-                {backendStatus?.sandboxEnabled ? "Draft sandbox" : "Draft sandbox off"}
+                {previewMode
+                  ? "Beta preview demo"
+                  : backendStatus?.sandboxEnabled
+                    ? "Draft sandbox"
+                    : "Draft sandbox off"}
               </span>
               <span className="rounded-full border border-lf-line bg-white px-3 py-1 text-lf-charcoal">
                 Approved users only
@@ -513,7 +551,7 @@ export default function AIAssistantHub() {
               {isSending && (
                 <div className="flex justify-start">
                   <div className="max-w-2xl rounded-2xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold leading-6 text-lf-slate">
-                    Running sandbox draft...
+                    {demoResponseMode ? "Preparing demo draft..." : "Running sandbox draft..."}
                   </div>
                 </div>
               )}

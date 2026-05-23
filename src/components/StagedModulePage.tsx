@@ -28,6 +28,48 @@ export default function StagedModulePage({
   const moduleScripts = scripts.filter((s) => s.module === module.level);
   const modulePrompts = prompts.filter((p) => p.module === module.level);
   const moduleRoleplays = roleplays.filter((r) => r.module === module.level);
+  const assetSlots = [
+    {
+      label: "Video",
+      status: module.trainingVideo ? "Ready" : "Coming Soon",
+      body: module.trainingVideo?.description ?? recordingDescription,
+    },
+    {
+      label: "Audio",
+      status: "Needs Upload",
+      body: "Audio-only lesson slot for the module replay or podcast cutdown.",
+    },
+    {
+      label: "Podcast/tutorial clips",
+      status: "Coming Soon",
+      body: "Short practical clips for review between live classes.",
+    },
+    {
+      label: "Handouts",
+      status: "Coming Soon",
+      body: handoutDescription,
+    },
+    {
+      label: "Slide decks",
+      status: "Needs Upload",
+      body: "Deck slot for the approved module presentation.",
+    },
+    {
+      label: "Scripts",
+      status: moduleScripts.length ? "Ready" : "Coming Soon",
+      body: "Use scripts as starting points and review borrower-facing language.",
+    },
+    {
+      label: "Prompts",
+      status: modulePrompts.length ? "Ready" : "Coming Soon",
+      body: "Draft-only AI prompts for practice, planning, and review.",
+    },
+    {
+      label: "Roleplays and trackers",
+      status: moduleRoleplays.length ? "Ready" : "Coming Soon",
+      body: "Practice drills and tracker slots for weekly accountability.",
+    },
+  ];
 
   return (
     <>
@@ -60,6 +102,29 @@ export default function StagedModulePage({
             title={handoutTitle}
             description={handoutDescription}
           />
+        </div>
+      </section>
+
+      <section className="container-page py-6">
+        <SectionHeading
+          eyebrow="Module assets"
+          title={`${module.level} resource slots.`}
+          description="Every module has a clean place for the core materials. Missing files are clearly marked for beta upload instead of appearing broken."
+        />
+        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {assetSlots.map((slot) => (
+            <article key={slot.label} className="card p-5">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="h-display text-base">{slot.label}</h3>
+                <span className="rounded-full border border-lf-line bg-lf-mist px-2 py-1 text-[11px] font-semibold uppercase tracking-wide text-lf-slate">
+                  {slot.status}
+                </span>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-lf-slate">
+                {slot.body}
+              </p>
+            </article>
+          ))}
         </div>
       </section>
 

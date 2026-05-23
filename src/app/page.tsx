@@ -7,41 +7,45 @@ const dashboardModules = [
   {
     title: "Coaching",
     description:
-      "Paid coaching through LO Mastery and Loan Factory Alliance.",
-    href: "/apex-advisor/",
-    cta: "Explore",
+      "Paid coaching through LO Mastery and Loan Factory Alliance. Start here when you want coaching rhythm, accountability, trackers, and member resources.",
+    href: "/coaching/",
+    cta: "Start with Coaching",
     logos: ["lo-mastery", "loan-factory-alliance"],
   },
   {
     title: "Sales & Marketing",
-    description: "The six-part 101 to 601 training series for Loan Factory LOs.",
+    description:
+      "The six-part 101 to 601 training series for conversations, referral partners, content, pipeline, and execution.",
     href: "/sales-training/",
-    cta: "Open",
+    cta: "View Sales & Marketing",
   },
   {
     title: "AI Advantage",
     description:
-      "Practical AI Training for drafting, practice, review, and safer workflows.",
+      "Practical AI training for prompts, draft review, video lessons, and safer daily workflows.",
     href: "/ai-training/",
-    cta: "Open",
+    cta: "Explore AI Advantage",
     logos: ["ai-advantage"],
   },
   {
     title: "FaceGram",
-    description: "The internal Loan Factory social feed for posts, groups, wins, and feedback.",
+    description:
+      "The internal Loan Factory social feed for posts, groups, training wins, comments, saves, and approved partner previews.",
     href: "/facegram/",
     cta: "Explore",
     logos: ["facegram"],
   },
   {
     title: "AI Assistants",
-    description: "Drafting helpers for coaching, content, scenarios, and review preparation.",
+    description:
+      "Two simple draft assistants for LO support and marketing support. Use them for drafts, checklists, and review prep.",
     href: "/ai-assistants/",
     cta: "Explore",
   },
   {
     title: "Resources",
-    description: "Quick access to guides, support contacts, downloads, and reference materials.",
+    description:
+      "Support contacts, compliance notes, recordings, anonymous suggestions, and manual lender escalation.",
     href: "/resources/",
     cta: "Open",
   },
@@ -91,8 +95,8 @@ export default async function HomePage({ searchParams }: Props) {
           aria-hidden
           className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.46)_48%,rgba(0,0,0,0.84)_100%)]"
         />
-        <div className="relative container-page py-16 md:py-24">
-          <div className="max-w-3xl">
+        <div className="relative container-page grid gap-10 py-16 md:py-20 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.75fr)] lg:items-center">
+          <div>
             <h1 className="chrome-title font-display text-4xl font-semibold tracking-normal md:text-6xl">
               Loan Factory LO Development
             </h1>
@@ -101,8 +105,8 @@ export default async function HomePage({ searchParams }: Props) {
               Factory loan officers.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/apex-advisor/" className="btn-primary">
-                Explore Coaching
+              <Link href="/coaching/" className="btn-primary">
+                Start with Coaching
               </Link>
               <Link
                 href="/sales-training/"
@@ -111,12 +115,37 @@ export default async function HomePage({ searchParams }: Props) {
                 View Sales &amp; Marketing
               </Link>
               <Link
-                href="/ai-assistants/"
+                href="/ai-training/"
                 className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
               >
-                Explore AI Assistants
+                Explore AI Advantage
               </Link>
             </div>
+          </div>
+          <div className="rounded-2xl border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur">
+            <div className="relative aspect-video overflow-hidden rounded-xl bg-black">
+              <video
+                className="h-full w-full object-cover opacity-85"
+                src="/media/platform-motion-background.mp4"
+                muted
+                playsInline
+                autoPlay
+                loop
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                  Intro preview
+                </p>
+                <h2 className="mt-1 font-display text-2xl font-semibold text-white">
+                  Start here, then pick the area you need.
+                </h2>
+              </div>
+            </div>
+            <p className="mt-4 text-sm leading-6 text-white/76">
+              This is the central portal for coaching, training, AI Advantage,
+              FaceGram, assistants, and support resources.
+            </p>
           </div>
         </div>
       </section>

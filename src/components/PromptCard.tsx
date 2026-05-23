@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { PromptItem } from "@/data/prompts";
 
 type Props = {
@@ -5,6 +8,18 @@ type Props = {
 };
 
 export default function PromptCard({ prompt }: Props) {
+  const [copied, setCopied] = useState(false);
+
+  async function copyPrompt() {
+    try {
+      await navigator.clipboard.writeText(prompt.body);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
+  }
+
   return (
     <article
       id={prompt.id}
@@ -15,7 +30,16 @@ export default function PromptCard({ prompt }: Props) {
           {prompt.category}
         </span>
       </div>
-      <h3 className="h-display text-lg">{prompt.title}</h3>
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="h-display text-lg">{prompt.title}</h3>
+        <button
+          type="button"
+          className="shrink-0 rounded-lg border border-lf-line bg-white px-3 py-2 text-xs font-semibold text-lf-navy transition hover:border-lf-orange hover:text-lf-orange"
+          onClick={copyPrompt}
+        >
+          {copied ? "Copied" : "Copy"}
+        </button>
+      </div>
       <p className="prose-lf text-sm text-lf-slate">{prompt.useCase}</p>
       <pre className="code-block">{prompt.body}</pre>
       {prompt.tips && (

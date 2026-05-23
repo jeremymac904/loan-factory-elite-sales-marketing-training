@@ -7,6 +7,7 @@ import {
   faceGramPosts,
   getFaceGramGroup,
 } from "@/data/facegram";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { canAccessFaceGram, getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
@@ -44,20 +45,25 @@ export default async function FaceGramGroupPage({ params }: Props) {
   }
 
   const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
 
-  if (session.status === "not-configured") {
+  if (!previewEnabled && session.status === "not-configured") {
     return <FaceGramAccessNotice status="not-configured" />;
   }
 
-  if (session.status === "signed-out") {
+  if (!previewEnabled && session.status === "signed-out") {
     return <FaceGramAccessNotice status="signed-out" />;
   }
 
-  if (session.status === "pending") {
+  if (!previewEnabled && session.status === "pending") {
     return <FaceGramAccessNotice status="pending" />;
   }
 
-  if (!canAccessFaceGram(session.profile, session.permissions)) {
+  if (
+    !previewEnabled &&
+    session.status === "approved" &&
+    !canAccessFaceGram(session.profile, session.permissions)
+  ) {
     return (
       <FaceGramAccessNotice
         status="role"
@@ -140,7 +146,11 @@ export default async function FaceGramGroupPage({ params }: Props) {
               <textarea
                 rows={2}
                 disabled
-                placeholder="Group posting is coming soon after Supabase saving and moderation are wired."
+                placeholder={
+                  previewEnabled
+                    ? "Group discussion preview. Main feed supports local demo posts."
+                    : "Group posting is coming soon after Supabase saving and moderation are wired."
+                }
                 className="min-h-12 flex-1 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm text-lf-slate outline-none"
               />
             </div>
@@ -242,7 +252,7 @@ export default async function FaceGramGroupPage({ params }: Props) {
                 .map((item) => (
                   <Link
                     key={item.slug}
-                    href={`/creator-network/groups/${item.slug}/`}
+                    href={`/facegram/groups/${item.slug}/`}
                     className="rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-lf-orange"
                   >
                     {item.name}

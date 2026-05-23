@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AIAssistantHub from "@/components/AIAssistantHub";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { canAccessAiAssistants, getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
@@ -8,6 +9,11 @@ export const dynamic = "force-dynamic";
 
 export default async function AIAssistantsPage() {
   const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
+
+  if (previewEnabled) {
+    return <AIAssistantHub previewMode />;
+  }
 
   if (session.status === "not-configured") {
     return (

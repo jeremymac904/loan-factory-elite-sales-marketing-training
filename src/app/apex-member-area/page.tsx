@@ -170,7 +170,7 @@ export default function ApexMemberAreaPage() {
             Sign In
           </Link>
           <Link
-            href="/apex-advisor/"
+            href="/coaching/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
             View Coaching Tiers
@@ -319,10 +319,10 @@ export default function ApexMemberAreaPage() {
             access.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/apex-advisor/" className="btn-primary">
+            <Link href="/coaching/" className="btn-primary">
               Compare Tiers
             </Link>
-            <Link href="/apex-advisor-pro/" className="btn-secondary">
+            <Link href="/loan-factory-alliance/" className="btn-secondary">
               View Loan Factory Alliance
             </Link>
           </div>

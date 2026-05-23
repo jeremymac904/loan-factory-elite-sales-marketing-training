@@ -119,6 +119,10 @@ In beta, show the concept but keep it locked down:
 - Avoid payment language beyond roadmap docs
 - Do not show fake vendor messaging or fake analytics
 
+Current beta UI uses static sponsored/vendor examples only. No vendor can submit
+content, no reviewer can approve content, and no sponsored placement can be
+published from the app.
+
 ## Future Data Model
 
 Planning-only fields for `facegram_sponsored_items`:

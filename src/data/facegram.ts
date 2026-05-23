@@ -72,19 +72,35 @@ export const faceGramGroups: FaceGramGroup[] = [
     ],
   },
   {
-    slug: "aes-vendors",
-    name: "AEs + Vendors",
-    visibility: "Approved participation",
-    memberCount: "156 members",
-    category: "Partners",
-    coverTitle: "AEs + Vendors",
-    coverSubtitle: "Approved internal ideas and promotion summaries",
+    slug: "team-leaders",
+    name: "Team Leaders",
+    visibility: "Internal group",
+    memberCount: "118 members",
+    category: "Leadership",
+    coverTitle: "Team Leaders",
+    coverSubtitle: "Team coaching, accountability, and group support",
     description:
-      "A controlled space where approved AEs and vendors can participate in internal education, idea sharing, and promotion summaries.",
+      "A leader space for weekly accountability prompts, team training assignments, script practice, and team FaceGram group support.",
     rules: [
-      "Participation must be approved.",
+      "Do not share private team member details outside the right group.",
+      "Keep coaching examples practical and respectful.",
+      "Route marketing-sensitive examples to review.",
+    ],
+  },
+  {
+    slug: "vendor-lender-partner-preview",
+    name: "Vendor/Lender Partner Preview",
+    visibility: "Approval-based future group",
+    memberCount: "Preview only",
+    category: "Partners",
+    coverTitle: "Vendor/Lender Partner Preview",
+    coverSubtitle: "Sponsored content model, locked for beta",
+    description:
+      "A controlled preview of how approved vendors and wholesale lenders may later share reviewed training classes, resources, and sponsored placements.",
+    rules: [
+      "Vendor posting is not open in beta.",
       "No borrower data or production files.",
-      "Promotions are internal summaries, not public offers.",
+      "Sponsored resources require admin or marketing approval.",
     ],
   },
   {
@@ -194,7 +210,7 @@ export const faceGramPosts: FaceGramPost[] = [
 
 export const faceGramShortcuts = [
   { label: "Home Feed", href: "/facegram/" },
-  { label: "Groups", href: "/creator-network/groups/" },
+  { label: "Groups", href: "/facegram/groups/" },
   { label: "Audience Quality Panel", href: "/audience-quality-panel/" },
   { label: "AI Assistants", href: "/ai-assistants/" },
 ];

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { GatedSurface } from "@/lib/roles";
 import { canAccessGate, getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
@@ -15,7 +16,9 @@ export default function RoleGate({ gate, children }: Props) {
 
 async function RoleGateContent({ gate, children }: Props) {
   const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
   const allowed =
+    previewEnabled ||
     session.status === "approved" &&
     canAccessGate(gate, session.profile, session.permissions);
 
