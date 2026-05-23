@@ -130,72 +130,32 @@ export default function BrowserAuthCallbackPage() {
         syncProfileSucceeded: false,
       });
 
-      const response = await fetch("/auth/sync-profile/", {
-        method: "POST",
-        credentials: "same-origin",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          accessToken: data.session.access_token,
-          expiresAt: data.session.expires_at ?? null,
-          expiresIn: data.session.expires_in ?? null,
-          refreshToken: data.session.refresh_token,
-          next,
-        }),
-      });
-
-      let body:
-        | { redirectTo?: string; reason?: string; debug?: AuthDebugTrail }
-        | null = null;
-
-      try {
-        body = (await response.json()) as {
-          redirectTo?: string;
-          reason?: string;
-          debug?: AuthDebugTrail;
-        };
-      } catch {
-        body = null;
-      }
-
-      if (body?.debug) {
-        mergeAuthDebugTrail(body.debug);
-      }
-
-      if (!response.ok || !body?.redirectTo) {
-        const stage = body?.reason
-          ? `browser-sync-${body.reason}`
-          : "browser-sync-profile";
-
-        console.error("Supabase browser token sync failed", {
-          status: response.status,
-          stage,
-        });
-
-        mergeAuthDebugTrail({
-          callbackStage: stage,
-          syncProfileSucceeded: false,
-          lastErrorCode: body?.debug?.lastErrorCode ?? stage,
-          lastErrorMessage:
-            body?.debug?.lastErrorMessage ??
-            "Browser session reached sync-profile but did not complete.",
-        });
-
-        window.location.replace(
-          `/login/?error=auth-callback&stage=${encodeURIComponent(stage)}`,
-        );
-        return;
-      }
-
       window.sessionStorage.removeItem(authNextStorageKey);
-      mergeAuthDebugTrail({
-        callbackStage: "browser-sync-complete",
-        syncProfileSucceeded: true,
-        lastErrorCode: null,
-        lastErrorMessage: null,
+
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = "/auth/sync-profile/";
+      form.style.display = "none";
+
+      const fields: Record<string, string> = {
+        accessToken: data.session.access_token,
+        expiresAt: String(data.session.expires_at ?? ""),
+        expiresIn: String(data.session.expires_in ?? ""),
+        next,
+        refreshToken: data.session.refresh_token,
+        responseMode: "redirect",
+      };
+
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        input.value = value;
+        form.appendChild(input);
       });
-      window.location.replace(body.redirectTo);
+
+      document.body.appendChild(form);
+      form.submit();
     }
 
     void finishSignIn();

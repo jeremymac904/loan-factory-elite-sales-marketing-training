@@ -60,6 +60,8 @@ type SafeSyncDebug = {
   lastErrorMessage: string | null;
 };
 
+type SyncProfileResponseMode = "json" | "redirect";
+
 function getCookieOptions(request: NextRequest): CookieOptions {
   const forwardedProto = request.headers.get("x-forwarded-proto");
   const secure =
@@ -105,12 +107,56 @@ function jsonWithCookies(
   return response;
 }
 
+function redirectWithCookies(
+  request: NextRequest,
+  path: string,
+  cookiesToSet: CookieToSet[] = [],
+) {
+  const response = NextResponse.redirect(new URL(path, request.url), 303);
+
+  if (cookiesToSet.length > 0) {
+    response.headers.set(
+      "Cache-Control",
+      "private, no-cache, no-store, must-revalidate, max-age=0",
+    );
+    response.headers.set("Expires", "0");
+    response.headers.set("Pragma", "no-cache");
+  }
+
+  cookiesToSet.forEach(({ name, value, options }) => {
+    response.cookies.set(name, value, options);
+  });
+
+  return response;
+}
+
+function pendingRedirectPath(reason: string) {
+  if (
+    reason === "domain" ||
+    reason === "pending" ||
+    reason === "profile-sync" ||
+    reason === "approval-sync"
+  ) {
+    return `/access-pending/?reason=${encodeURIComponent(reason)}`;
+  }
+
+  return `/login/?error=auth-callback&stage=sync-profile-${encodeURIComponent(
+    reason,
+  )}`;
+}
+
 function pending(
+  request: NextRequest,
   reason: string,
+  responseMode: SyncProfileResponseMode,
   status = 200,
   cookiesToSet: CookieToSet[] = [],
   debug: Partial<SafeSyncDebug> = {},
 ) {
+  if (responseMode === "redirect") {
+    return redirectWithCookies(request, pendingRedirectPath(reason), cookiesToSet);
+  }
+
   return jsonWithCookies(
     {
       reason,
@@ -199,9 +245,10 @@ function queueSessionCookies(
 
 export async function POST(request: NextRequest) {
   const config = getSupabasePublicConfig();
+  let responseMode: SyncProfileResponseMode = "json";
 
   if (!hasSupabasePublicConfig(config)) {
-    return pending("setup", 503);
+    return pending(request, "setup", responseMode, 503);
   }
 
   const cookiesToSet: CookieToSet[] = [];
@@ -227,13 +274,38 @@ export async function POST(request: NextRequest) {
   let receivedSession = false;
 
   try {
-    const body = (await request.json()) as SyncProfileRequestBody;
-    next = getSafeNextPath(body.next ?? null);
-    accessToken = typeof body.accessToken === "string" ? body.accessToken : null;
-    expiresAt = typeof body.expiresAt === "number" ? body.expiresAt : null;
-    expiresIn = typeof body.expiresIn === "number" ? body.expiresIn : null;
-    refreshToken =
-      typeof body.refreshToken === "string" ? body.refreshToken : null;
+    const contentType = request.headers.get("content-type") ?? "";
+
+    if (
+      contentType.includes("application/x-www-form-urlencoded") ||
+      contentType.includes("multipart/form-data")
+    ) {
+      const formData = await request.formData();
+      const getFormString = (key: string) => {
+        const value = formData.get(key);
+        return typeof value === "string" && value.trim() ? value : null;
+      };
+      const formExpiresAt = Number(getFormString("expiresAt"));
+      const formExpiresIn = Number(getFormString("expiresIn"));
+
+      responseMode =
+        getFormString("responseMode") === "redirect" ? "redirect" : "json";
+      next = getSafeNextPath(getFormString("next"));
+      accessToken = getFormString("accessToken");
+      expiresAt = Number.isFinite(formExpiresAt) ? formExpiresAt : null;
+      expiresIn = Number.isFinite(formExpiresIn) ? formExpiresIn : null;
+      refreshToken = getFormString("refreshToken");
+    } else {
+      const body = (await request.json()) as SyncProfileRequestBody;
+      next = getSafeNextPath(body.next ?? null);
+      accessToken =
+        typeof body.accessToken === "string" ? body.accessToken : null;
+      expiresAt = typeof body.expiresAt === "number" ? body.expiresAt : null;
+      expiresIn = typeof body.expiresIn === "number" ? body.expiresIn : null;
+      refreshToken =
+        typeof body.refreshToken === "string" ? body.refreshToken : null;
+    }
+
     receivedSession = Boolean(accessToken && refreshToken);
   } catch {
     next = "/";
@@ -248,7 +320,7 @@ export async function POST(request: NextRequest) {
         message: validationError?.message ?? "Missing validated user",
         status: validationError?.status,
       });
-      return pending("session-validate", 401, cookiesToSet, {
+      return pending(request, "session-validate", responseMode, 401, cookiesToSet, {
         syncProfileReceivedSession: receivedSession,
         lastErrorMessage:
           validationError?.message ?? "Supabase browser token validation failed.",
@@ -286,7 +358,7 @@ export async function POST(request: NextRequest) {
   const email = activeUser?.email?.toLowerCase().trim();
 
   if (!activeUser || !email) {
-    return pending("missing-user", 401, cookiesToSet, {
+    return pending(request, "missing-user", responseMode, 401, cookiesToSet, {
       syncProfileReceivedSession: receivedSession,
       syncProfileCookieWriteAttempted: cookiesToSet.length > 0,
       syncProfileCookieCount: cookiesToSet.length,
@@ -295,7 +367,7 @@ export async function POST(request: NextRequest) {
 
   if (!isLoanFactoryEmail(email)) {
     await supabase.auth.signOut();
-    return pending("domain", 403, cookiesToSet, {
+    return pending(request, "domain", responseMode, 403, cookiesToSet, {
       syncProfileReceivedSession: receivedSession,
       profileEmail: email,
       lastErrorMessage: "Signed-in email is not a Loan Factory email.",
@@ -305,7 +377,7 @@ export async function POST(request: NextRequest) {
   const admin = createSupabaseAdminClient();
 
   if (!admin) {
-    return pending("setup", 503, cookiesToSet, {
+    return pending(request, "setup", responseMode, 503, cookiesToSet, {
       syncProfileReceivedSession: receivedSession,
       profileEmail: email,
     });
@@ -320,7 +392,7 @@ export async function POST(request: NextRequest) {
 
   if (approvalError) {
     logSupabaseSyncError("Supabase approved user lookup failed", approvalError);
-    return pending("approval-sync", 500, cookiesToSet, {
+    return pending(request, "approval-sync", responseMode, 500, cookiesToSet, {
       syncProfileReceivedSession: receivedSession,
       profileEmail: email,
       lastErrorMessage: "Approved user lookup failed.",
@@ -348,7 +420,7 @@ export async function POST(request: NextRequest) {
 
   if (profileError) {
     logSupabaseSyncError("Supabase profile upsert failed", profileError);
-    return pending("profile-sync", 500, cookiesToSet, {
+    return pending(request, "profile-sync", responseMode, 500, cookiesToSet, {
       syncProfileReceivedSession: receivedSession,
       profileEmail: email,
       profileRole: approvedUser?.role ?? null,
@@ -358,12 +430,16 @@ export async function POST(request: NextRequest) {
   }
 
   if (!approvedUser) {
-    return pending("pending", 200, cookiesToSet, {
+    return pending(request, "pending", responseMode, 200, cookiesToSet, {
       syncProfileReceivedSession: receivedSession,
       profileEmail: email,
       profileStatus,
       lastErrorMessage: "User is not active in approved_users.",
     });
+  }
+
+  if (responseMode === "redirect") {
+    return redirectWithCookies(request, next, cookiesToSet);
   }
 
   return jsonWithCookies(
