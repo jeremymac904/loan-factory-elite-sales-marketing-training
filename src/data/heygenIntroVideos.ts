@@ -22,7 +22,49 @@ export const heygenIntroVideos: HeyGenIntroVideo[] = [
     title: "Edward - Coaching Platform",
   },
   {
+    route: "/coaching/",
+    speaker: "Edward",
+    label: "Watch Edward's Coaching Intro",
+    embedUrl: "https://app.heygen.com/embeds/e3b29b2422d04793b478aaab5d13e7c3",
+    title: "Edward - Coaching Platform",
+  },
+  {
+    route: "/lo-mastery-coaching/",
+    speaker: "Edward",
+    label: "Watch Edward's Coaching Intro",
+    embedUrl: "https://app.heygen.com/embeds/e3b29b2422d04793b478aaab5d13e7c3",
+    title: "Edward - Coaching Platform",
+  },
+  {
+    route: "/loan-factory-alliance/",
+    speaker: "Edward",
+    label: "Watch Edward's Coaching Intro",
+    embedUrl: "https://app.heygen.com/embeds/e3b29b2422d04793b478aaab5d13e7c3",
+    title: "Edward - Coaching Platform",
+  },
+  {
+    route: "/member-area/",
+    speaker: "Edward",
+    label: "Watch Edward's Coaching Intro",
+    embedUrl: "https://app.heygen.com/embeds/e3b29b2422d04793b478aaab5d13e7c3",
+    title: "Edward - Coaching Platform",
+  },
+  {
+    route: "/apex-member-area/",
+    speaker: "Edward",
+    label: "Watch Edward's Coaching Intro",
+    embedUrl: "https://app.heygen.com/embeds/e3b29b2422d04793b478aaab5d13e7c3",
+    title: "Edward - Coaching Platform",
+  },
+  {
     route: "/sales-training/",
+    speaker: "Jeremy",
+    label: "Watch Jeremy's Training Intro",
+    embedUrl: "https://app.heygen.com/embeds/495b155fa8a54ebf89f6d688bef29804",
+    title: "Jeremy - Sales & Marketing",
+  },
+  {
+    route: "/101-foundation/",
     speaker: "Jeremy",
     label: "Watch Jeremy's Training Intro",
     embedUrl: "https://app.heygen.com/embeds/495b155fa8a54ebf89f6d688bef29804",
@@ -37,6 +79,27 @@ export const heygenIntroVideos: HeyGenIntroVideo[] = [
   },
   {
     route: "/creator-network/",
+    speaker: "Thuan",
+    label: "Watch Thuan's FaceGram Intro",
+    embedUrl: "https://app.heygen.com/embeds/6e86d933511c4c35901a798b74b09598",
+    title: "Thuan - FaceGram",
+  },
+  {
+    route: "/creator-network/groups/",
+    speaker: "Thuan",
+    label: "Watch Thuan's FaceGram Intro",
+    embedUrl: "https://app.heygen.com/embeds/6e86d933511c4c35901a798b74b09598",
+    title: "Thuan - FaceGram",
+  },
+  {
+    route: "/facegram/",
+    speaker: "Thuan",
+    label: "Watch Thuan's FaceGram Intro",
+    embedUrl: "https://app.heygen.com/embeds/6e86d933511c4c35901a798b74b09598",
+    title: "Thuan - FaceGram",
+  },
+  {
+    route: "/facegram/groups/",
     speaker: "Thuan",
     label: "Watch Thuan's FaceGram Intro",
     embedUrl: "https://app.heygen.com/embeds/6e86d933511c4c35901a798b74b09598",
@@ -68,6 +131,15 @@ export const heygenIntroVideos: HeyGenIntroVideo[] = [
 export function findHeyGenIntroVideo(pathname: string) {
   const normalizedPath =
     pathname === "/" ? pathname : pathname.endsWith("/") ? pathname : `${pathname}/`;
+  const exactMatch = heygenIntroVideos.find(
+    (video) => video.route === normalizedPath,
+  );
 
-  return heygenIntroVideos.find((video) => video.route === normalizedPath);
+  if (exactMatch) {
+    return exactMatch;
+  }
+
+  return [...heygenIntroVideos]
+    .filter((video) => video.route !== "/" && normalizedPath.startsWith(video.route))
+    .sort((a, b) => b.route.length - a.route.length)[0];
 }

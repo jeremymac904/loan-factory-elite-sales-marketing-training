@@ -6,31 +6,32 @@ import { findHeyGenIntroVideo } from "@/data/heygenIntroVideos";
 
 export default function HeyGenVideoWidget() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [state, setState] = useState({ pathname: "", open: true });
   const video = findHeyGenIntroVideo(pathname);
+  const open = state.pathname === pathname ? state.open : true;
 
   if (!video) return null;
 
   return (
     <aside
-      className="fixed bottom-4 right-4 z-40 max-w-[calc(100vw-2rem)] sm:left-4 sm:right-auto"
+      className="fixed bottom-20 left-3 z-40 max-w-[calc(100vw-1.5rem)] sm:bottom-5 sm:left-5"
       aria-label={`${video.speaker} intro video`}
     >
       {open ? (
-        <div className="w-[min(420px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-white/10 bg-lf-navy text-white shadow-2xl">
-          <div className="flex items-start justify-between gap-4 border-b border-white/10 bg-black/30 px-4 py-3">
+        <div className="w-[min(440px,calc(100vw-1.5rem))] overflow-hidden rounded-xl border border-white/10 bg-[#080808] text-white shadow-2xl ring-1 ring-black/50">
+          <div className="flex items-start justify-between gap-4 border-b border-white/10 bg-black px-4 py-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
                 {video.speaker}
               </p>
-              <h2 className="mt-0.5 text-sm font-semibold leading-5">
+              <h2 className="mt-0.5 text-sm font-semibold leading-5 text-white">
                 {video.label}
               </h2>
             </div>
             <button
               type="button"
-              className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-white/80 transition hover:border-lf-orange hover:text-lf-orange"
-              onClick={() => setOpen(false)}
+              className="rounded-full border border-white/20 px-3 py-1 text-xs font-semibold text-white/85 transition hover:border-lf-orange hover:text-lf-orange"
+              onClick={() => setState({ pathname, open: false })}
               aria-label="Minimize intro video"
             >
               Minimize
@@ -51,8 +52,8 @@ export default function HeyGenVideoWidget() {
       ) : (
         <button
           type="button"
-          className="group flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-lf-navy p-0 text-left text-white shadow-2xl transition hover:-translate-y-0.5 hover:border-lf-orange sm:h-auto sm:w-auto sm:max-w-[min(330px,calc(100vw-2rem))] sm:justify-start sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3"
-          onClick={() => setOpen(true)}
+          className="group flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-[#080808] p-0 text-left text-white shadow-2xl ring-1 ring-black/50 transition hover:-translate-y-0.5 hover:border-lf-orange sm:h-auto sm:w-auto sm:max-w-[min(330px,calc(100vw-1.5rem))] sm:justify-start sm:gap-3 sm:rounded-xl sm:px-4 sm:py-3"
+          onClick={() => setState({ pathname, open: true })}
           aria-label={video.label}
         >
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lf-orange text-[11px] font-bold uppercase tracking-wide text-white shadow-sm">

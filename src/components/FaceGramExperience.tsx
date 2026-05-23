@@ -18,15 +18,6 @@ import {
   lenderPromotionNotes,
 } from "@/data/facegram";
 
-const postOptions = [
-  { label: "Text post", status: "Local demo ready" },
-  { label: "Image post", status: "Needs upload rules" },
-  { label: "Video/Reel", status: "Needs storage rules" },
-  { label: "Story", status: "Static preview" },
-  { label: "Poll", status: "Coming soon" },
-  { label: "Feedback request", status: "Coming soon" },
-];
-
 const stories = [
   { label: "Create story", image: "/team/andre-king.png" },
   { label: "Training win", image: "/team/edward-arvizo.png" },
@@ -346,20 +337,7 @@ export default function FaceGramExperience({
                     Post
                   </button>
                 </div>
-                <div className="mt-4 grid gap-2 border-t border-lf-line pt-4 sm:grid-cols-3">
-                  {postOptions.map((option) => (
-                    <div
-                      key={option.label}
-                      className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-sm font-semibold text-lf-charcoal"
-                    >
-                      {option.label}
-                      <span className="mt-1 block text-xs font-normal text-lf-slate">
-                        {option.status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-3 text-xs font-semibold text-lf-slate">
+                <p className="mt-4 border-t border-lf-line pt-3 text-xs font-semibold text-lf-slate">
                   Media upload, public sharing, vendor posting, and external
                   publishing stay off until Supabase saving and moderation are
                   wired.
@@ -475,7 +453,7 @@ export default function FaceGramExperience({
                     </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 border-t border-lf-line text-center text-sm font-semibold text-lf-slate sm:grid-cols-4">
+                <div className="grid grid-cols-3 border-t border-lf-line text-center text-sm font-semibold text-lf-slate">
                   <button
                     type="button"
                     className="px-2 py-3 hover:bg-lf-mist hover:text-lf-orange"
@@ -505,13 +483,11 @@ export default function FaceGramExperience({
                       Local only
                     </span>
                   </button>
-                  <div className="px-2 py-3 text-lf-slate">
-                    Share internally
-                    <span className="mt-1 block text-xs font-normal">
-                      Coming soon
-                    </span>
-                  </div>
                 </div>
+                <p className="border-t border-lf-line px-4 py-3 text-xs font-semibold text-lf-slate">
+                  Internal sharing stays off until permissions and moderation
+                  are wired.
+                </p>
                 <div id={`comments-${post.id}`} className="border-t border-lf-line p-4">
                   <div className="grid gap-2">
                     {post.comments.map((comment, index) => (

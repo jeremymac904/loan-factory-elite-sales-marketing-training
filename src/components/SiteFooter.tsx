@@ -4,7 +4,7 @@ import { brandAssets } from "@/data/brandAssets";
 
 const footerLinks = [
   { href: "/", label: "Home" },
-  { href: "/apex-advisor/", label: "Coaching" },
+  { href: "/coaching/", label: "Coaching" },
   { href: "/sales-training/", label: "Sales & Marketing" },
   { href: "/ai-training/", label: "AI Advantage" },
   { href: "/facegram/", label: "FaceGram" },
@@ -18,7 +18,7 @@ const footerLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-20 border-t border-lf-line bg-lf-mist">
+    <footer className="mt-20 border-t border-lf-line bg-white">
       <div className="container-page py-10">
         <div className="flex flex-col items-start gap-5 border-b border-lf-line pb-6 md:flex-row md:items-center md:justify-between">
           <BrandImage

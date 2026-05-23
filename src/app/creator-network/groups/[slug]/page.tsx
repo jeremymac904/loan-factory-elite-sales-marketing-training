@@ -33,7 +33,6 @@ const tabs = [
   { label: "Rules", href: "#rules" },
 ];
 
-const engagementPreviewActions = ["Like", "Comment", "Save", "Share internally"];
 export const dynamic = "force-dynamic";
 
 export default async function FaceGramGroupPage({ params }: Props) {
@@ -154,19 +153,10 @@ export default async function FaceGramGroupPage({ params }: Props) {
                 className="min-h-12 flex-1 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm text-lf-slate outline-none"
               />
             </div>
-            <div className="mt-4 grid gap-2 border-t border-lf-line pt-4 sm:grid-cols-3">
-              {["Feeling/activity", "Poll", "Ask for feedback"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-sm font-semibold text-lf-charcoal"
-                >
-                  {item}
-                  <span className="mt-1 block text-xs font-normal text-lf-slate">
-                    Coming soon
-                  </span>
-                </div>
-              ))}
-            </div>
+            <p className="mt-4 border-t border-lf-line pt-3 text-sm font-semibold text-lf-slate">
+              Group posting opens after Supabase saving and moderation are
+              wired. Use the main FaceGram feed to review local demo posting.
+            </p>
           </article>
 
           {faceGramPosts.map((post) => (
@@ -195,19 +185,10 @@ export default async function FaceGramGroupPage({ params }: Props) {
               <div className="mt-4 rounded-xl bg-lf-mist p-4 text-sm font-semibold text-lf-charcoal">
                 {post.mediaLabel}
               </div>
-              <div className="mt-4 grid grid-cols-2 border-t border-lf-line pt-3 text-center text-sm font-semibold text-lf-slate sm:grid-cols-4">
-                {engagementPreviewActions.map((action) => (
-                  <div
-                    key={action}
-                    className="rounded-lg px-2 py-2"
-                  >
-                    {action}
-                    <span className="mt-1 block text-xs font-normal text-lf-slate">
-                      Coming soon
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <p className="mt-4 border-t border-lf-line pt-3 text-sm font-semibold text-lf-slate">
+                Likes, comments, saves, and internal sharing are available as
+                local demo interactions in the main FaceGram feed.
+              </p>
             </article>
           ))}
         </div>

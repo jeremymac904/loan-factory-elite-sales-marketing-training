@@ -95,8 +95,8 @@ export default async function HomePage({ searchParams }: Props) {
           aria-hidden
           className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.46)_48%,rgba(0,0,0,0.84)_100%)]"
         />
-        <div className="relative container-page grid gap-10 py-16 md:py-20 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.75fr)] lg:items-center">
-          <div>
+        <div className="relative container-page grid gap-10 py-16 md:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.55fr)] lg:items-center">
+          <div className="max-w-3xl">
             <h1 className="chrome-title font-display text-4xl font-semibold tracking-normal md:text-6xl">
               Loan Factory LO Development
             </h1>
@@ -122,30 +122,24 @@ export default async function HomePage({ searchParams }: Props) {
               </Link>
             </div>
           </div>
-          <div className="rounded-2xl border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur">
-            <div className="relative aspect-video overflow-hidden rounded-xl bg-black">
-              <video
-                className="h-full w-full object-cover opacity-85"
-                src="/media/platform-motion-background.mp4"
-                muted
-                playsInline
-                autoPlay
-                loop
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                  Intro preview
-                </p>
-                <h2 className="mt-1 font-display text-2xl font-semibold text-white">
-                  Start here, then pick the area you need.
-                </h2>
+          <div className="rounded-xl border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+              Start here
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-white">
+              Pick one area. Take one action.
+            </h2>
+            <div className="mt-5 grid gap-3 text-sm text-white/82">
+              <div className="rounded-lg border border-white/10 bg-black/25 p-3">
+                Coaching for accountability and member resources.
+              </div>
+              <div className="rounded-lg border border-white/10 bg-black/25 p-3">
+                Sales & Marketing for the 101-601 training path.
+              </div>
+              <div className="rounded-lg border border-white/10 bg-black/25 p-3">
+                AI Advantage, FaceGram, Assistants, and Resources for daily help.
               </div>
             </div>
-            <p className="mt-4 text-sm leading-6 text-white/76">
-              This is the central portal for coaching, training, AI Advantage,
-              FaceGram, assistants, and support resources.
-            </p>
           </div>
         </div>
       </section>
