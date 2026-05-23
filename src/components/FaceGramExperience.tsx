@@ -3,8 +3,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import BrandImage from "@/components/BrandImage";
-import { brandAssets } from "@/data/brandAssets";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import {
   getSupabasePublicConfig,
@@ -48,6 +46,9 @@ export default function FaceGramExperience({
 }) {
   const [entered, setEntered] = useState(false);
   const [draftPost, setDraftPost] = useState("");
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [displayName, setDisplayName] = useState("Loan Factory LO");
+  const [profileTitle, setProfileTitle] = useState("Loan Officer");
   const [posts, setPosts] = useState(() =>
     faceGramPosts.map((post, index) => ({
       ...post,
@@ -132,8 +133,8 @@ export default function FaceGramExperience({
     setPosts((current) => [
       {
         id: `local-${Date.now()}`,
-        author: previewMode ? "Beta Preview User" : "Loan Factory LO",
-        role: previewMode ? "Internal beta preview" : "Loan Officer",
+        author: displayName,
+        role: profileTitle,
         avatar: "/team/andre-king.png",
         group: "FaceGram",
         time: "Just now",
@@ -150,6 +151,19 @@ export default function FaceGramExperience({
     ]);
     setDraftPost("");
     setEntered(true);
+  }
+
+  function addStoryPrompt(label: string) {
+    setDraftPost(
+      label === "Create story"
+        ? "Story idea: "
+        : `${label}: `,
+    );
+    setEntered(true);
+  }
+
+  function setUploadPlaceholder(kind: string) {
+    setDraftPost(`${kind} upload is coming soon. For now, write the post text here: `);
   }
 
   function toggleLike(id: string) {
@@ -191,43 +205,19 @@ export default function FaceGramExperience({
 
   return (
     <>
-      <section className="border-b border-lf-line bg-white">
-        <div className="mx-auto flex w-full max-w-[1480px] items-center gap-3 px-4 py-3">
-          <div className="flex shrink-0 rounded-xl bg-white p-1">
-            <BrandImage
-              asset={brandAssets.facegram}
-              heightClass="h-10"
-            />
-          </div>
-          <div className="min-w-0">
-            <h1 className="font-display text-xl font-semibold leading-6 text-lf-navy">
-              FaceGram
-            </h1>
-            <p className="mt-0.5 text-sm leading-5 text-lf-slate">
-              <span className="font-semibold text-lf-charcoal">What this is:</span>{" "}
-              Loan Factory&apos;s internal place to share ideas, wins,
-              questions, scripts, videos, and marketing examples.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section id="facegram-feed" className="bg-[#f0f2f5] py-5">
         <div className="grid w-full gap-5 px-4 sm:px-6 lg:grid-cols-[300px_minmax(0,1fr)_320px] xl:grid-cols-[320px_minmax(0,1fr)_360px]">
           <aside className="hidden space-y-3 lg:block">
             <div className="rounded-2xl bg-white p-4 shadow-card">
               <div className="flex items-center gap-3">
-                <div className="flex shrink-0 rounded-xl bg-white p-1">
-                  <BrandImage
-                    asset={brandAssets.facegram}
-                    heightClass="h-11"
-                  />
-                </div>
                 <div>
-                  <h2 className="font-display text-lg font-semibold text-lf-navy">
+                  <h2 className="metal-title text-2xl">
                     FaceGram
                   </h2>
-                  <p className="text-xs text-lf-slate">Internal community</p>
+                  <p className="text-xs text-lf-slate">
+                    Internal ideas, wins, questions, scripts, videos, and
+                    marketing examples.
+                  </p>
                 </div>
               </div>
               <nav className="mt-4 grid gap-1" aria-label="FaceGram shortcuts">
@@ -241,6 +231,42 @@ export default function FaceGramExperience({
                   </Link>
                 ))}
               </nav>
+            </div>
+
+            <div id="profile" className="rounded-2xl bg-white p-4 shadow-card">
+              <h3 className="font-display text-lg font-semibold text-lf-navy">
+                Your FaceGram profile
+              </h3>
+              <p className="mt-1 text-sm text-lf-slate">
+                Set how your name appears in the beta feed.
+              </p>
+              <button
+                type="button"
+                className="btn-secondary mt-4"
+                onClick={() => setProfileOpen((current) => !current)}
+              >
+                {profileOpen ? "Close profile" : "Edit profile"}
+              </button>
+              {profileOpen && (
+                <div className="mt-4 grid gap-3">
+                  <input
+                    value={displayName}
+                    onChange={(event) => setDisplayName(event.target.value)}
+                    className="rounded-lg border border-lf-line px-3 py-2 text-sm"
+                    aria-label="Display name"
+                  />
+                  <input
+                    value={profileTitle}
+                    onChange={(event) => setProfileTitle(event.target.value)}
+                    className="rounded-lg border border-lf-line px-3 py-2 text-sm"
+                    aria-label="Title"
+                  />
+                  <p className="text-xs text-lf-slate">
+                    Local beta profile only. Nothing is published outside this
+                    browser.
+                  </p>
+                </div>
+              )}
             </div>
 
             <div className="rounded-2xl bg-white p-4 shadow-card">
@@ -324,9 +350,18 @@ export default function FaceGramExperience({
                   />
                 </div>
                 <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
-                  <p className="text-xs font-semibold text-lf-slate">
-                    Review only: this post stays in your browser for now.
-                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Photo", "Video", "Story", "Reel"].map((kind) => (
+                      <button
+                        key={kind}
+                        type="button"
+                        className="rounded-lg border border-lf-line bg-white px-3 py-2 text-xs font-semibold text-lf-slate hover:border-lf-orange hover:text-lf-orange"
+                        onClick={() => setUploadPlaceholder(kind)}
+                      >
+                        {kind} coming soon
+                      </button>
+                    ))}
+                  </div>
                   <button
                     type="button"
                     className="btn-primary"
@@ -336,9 +371,10 @@ export default function FaceGramExperience({
                     Post
                   </button>
                 </div>
-                <p className="mt-4 border-t border-lf-line pt-3 text-xs font-semibold text-lf-slate">
-                  Photos, videos, public sharing, vendor posting, and external
-                  publishing are not turned on yet.
+                <p className="mt-4 border-t border-lf-line pt-3 text-xs text-lf-slate">
+                  Text posts save locally in this beta preview. Uploads, public
+                  sharing, vendor posting, and external publishing are not
+                  turned on.
                 </p>
               </div>
             ) : (
@@ -364,9 +400,11 @@ export default function FaceGramExperience({
 
             <div className="grid grid-cols-2 gap-3 overflow-hidden sm:grid-cols-5">
               {stories.map((story) => (
-                <article
+                <button
                   key={story.label}
-                  className="relative min-h-36 overflow-hidden rounded-2xl bg-lf-navy shadow-card"
+                  type="button"
+                  className="relative min-h-36 overflow-hidden rounded-2xl bg-lf-navy text-left shadow-card transition hover:-translate-y-0.5 hover:shadow-lift"
+                  onClick={() => addStoryPrompt(story.label)}
                 >
                   <img
                     src={story.image}
@@ -377,7 +415,7 @@ export default function FaceGramExperience({
                   <p className="absolute bottom-3 left-3 right-3 text-sm font-semibold text-white">
                     {story.label}
                   </p>
-                </article>
+                </button>
               ))}
             </div>
 

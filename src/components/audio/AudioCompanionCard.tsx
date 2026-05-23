@@ -15,6 +15,10 @@ function statusClass(label: string) {
     return "border-lf-orange bg-lf-orange text-white";
   }
 
+  if (label === "In Production") {
+    return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
+  }
+
   if (label === "Needs Drive Upload") {
     return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
   }
@@ -93,27 +97,15 @@ export default function AudioCompanionCard({ companion, compact = false }: Props
         </div>
       ) : (
         <div className="rounded-xl border border-dashed border-lf-line bg-lf-mist p-4 text-sm leading-6 text-lf-slate">
-          Audio companion prompt is ready. Audio file will appear here after
-          NotebookLM generation and Drive upload.
+          {statusLabel === "In Production"
+            ? "Audio companion is in production. It will appear here after review and approved upload."
+            : statusLabel === "Needs Drive Upload"
+              ? "Audio companion needs review and Drive upload before it can play here."
+              : "Audio companion coming soon. The player will appear here after review and approved upload."}
         </div>
       )}
 
       <div className="flex flex-wrap items-center gap-3 text-sm">
-        {companion.sourceNotebookUrl && (
-          <a
-            href={companion.sourceNotebookUrl}
-            className="font-semibold text-lf-navy hover:text-lf-orange"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open source notebook
-          </a>
-        )}
-        {companion.customPromptFile && (
-          <span className="break-all text-lf-slate">
-            Prompt source: {companion.customPromptFile.split("#")[0]}
-          </span>
-        )}
         {companion.route && companion.track === "core" && (
           <Link
             href={`${companion.route}/`}

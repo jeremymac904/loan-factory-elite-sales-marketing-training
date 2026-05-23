@@ -7,8 +7,8 @@ import DownloadPlaceholder from "@/components/DownloadPlaceholder";
 import SectionHeading from "@/components/SectionHeading";
 import DoThisToday from "@/components/DoThisToday";
 import ClassRegistration from "@/components/ClassRegistration";
-import GeminiGemCallout from "@/components/GeminiGemCallout";
 import AudioCompanionCard from "@/components/audio/AudioCompanionCard";
+import SalesMathCalculator from "@/components/SalesMathCalculator";
 import { getAudioCompanionByRoute } from "@/data/audioCompanions";
 import { findModule } from "@/data/modules";
 import { scripts } from "@/data/scripts";
@@ -102,34 +102,36 @@ export default function Module101Page() {
       </section>
 
       <section className="container-page py-6">
-        <SectionHeading
-          eyebrow="Sales math"
-          title="Work backward from your income goal."
-          description="The math gets to one number: how many real conversations you need each business day."
-        />
-        <ol className="prose-lf mt-4 list-decimal space-y-2 pl-5 text-base">
-          <li>
-            Annual income goal divided by average revenue per closing equals
-            closings needed.
-          </li>
-          <li>
-            Closings needed divided by your closing rate equals applications
-            needed.
-          </li>
-          <li>
-            Applications needed divided by pre qual to app conversion equals pre
-            quals needed.
-          </li>
-          <li>
-            Pre quals needed divided by conversation to pre qual conversion
-            equals conversations needed.
-          </li>
-          <li>Divide by 50 working weeks to get a weekly conversation target.</li>
-        </ol>
-        <p className="prose-lf mt-3 text-base">
-          For most new Loan Factory LOs, the answer lands at 5 to 8 real
-          conversations per business day.
-        </p>
+        <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <div>
+            <SectionHeading
+              eyebrow="Sales math"
+              title="Work backward from your income goal."
+              description="The math gets to one number: how many real conversations you need each business day."
+            />
+            <ol className="prose-lf mt-4 list-decimal space-y-2 pl-5 text-base">
+              <li>
+                Start with your income goal and average loan amount.
+              </li>
+              <li>
+                Choose the compensation model that matches your role.
+              </li>
+              <li>
+                Adjust closing, application, prequal, and conversation
+                assumptions.
+              </li>
+              <li>
+                Use the weekly and daily conversation targets to plan your
+                calendar.
+              </li>
+            </ol>
+            <p className="prose-lf mt-3 text-base">
+              For most newer LOs, the output often points to a clear daily
+              conversation target. Use it for planning, not promises.
+            </p>
+          </div>
+          <SalesMathCalculator />
+        </div>
       </section>
 
       <section className="container-page py-6">
@@ -206,12 +208,9 @@ export default function Module101Page() {
       <section className="container-page py-12">
         <SectionHeading
           eyebrow="AI prompt"
-          title="Your first Gemini Gem AI Twin prompt."
+          title="Your first AI draft helper prompt."
           description="Paste simple context into AI. Read the draft. Make it sound like you before using it."
         />
-        <div className="mt-6">
-          <GeminiGemCallout />
-        </div>
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {module101Prompts.map((p) => (
             <PromptCard key={p.id} prompt={p} />

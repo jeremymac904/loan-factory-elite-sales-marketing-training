@@ -29,7 +29,7 @@ export default function PlatformModulePage({ module, children }: Props) {
           className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(242,106,31,0.24),transparent_34%),linear-gradient(135deg,#000000_0%,#111111_46%,#2b2b2b_100%)]"
         />
         <div className="relative container-page py-16 md:py-20">
-          <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+          <h1 className="metal-title-dark max-w-3xl text-4xl md:text-5xl">
             {module.title}
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-white/85">

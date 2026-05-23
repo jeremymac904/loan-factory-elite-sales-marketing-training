@@ -9,7 +9,12 @@ export type LoDevelopmentPerson = {
   role: string;
   group: LoDevelopmentGroup;
   email: string;
-  image: string;
+  image?: string;
+  phone?: string;
+  additionalPhone?: string;
+  teamBrand?: string;
+  profileUrl?: string;
+  description?: string;
   sortOrder: number;
 };
 
@@ -29,6 +34,20 @@ export const loDevelopmentPeople: LoDevelopmentPerson[] = [
     email: "andre.king@loanfactory.com",
     image: "/team/andre-king.png",
     sortOrder: 10,
+  },
+  {
+    id: "jeremy-mcdonald",
+    name: "Jeremy McDonald",
+    role: "LO Development, AI, and Marketing Strategy Consultant",
+    group: "LO Development",
+    email: "jeremy.mcdonald@loanfactory.com",
+    phone: "904-442-3213",
+    additionalPhone: "904-506-0181",
+    teamBrand: "The Legends Mortgage Team | Team Leader",
+    profileUrl: "https://www.loanfactory.com/jeremymcdonald",
+    description:
+      "Ask Jeremy about AI strategy, marketing systems, LO Development platform direction, content workflows, training systems, and practical ways to use AI to create more conversations and better follow-up.",
+    sortOrder: 15,
   },
   {
     id: "kevin-truong",

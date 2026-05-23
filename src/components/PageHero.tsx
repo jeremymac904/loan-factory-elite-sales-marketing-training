@@ -64,7 +64,7 @@ export default function PageHero({
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        <h1 className="metal-title-dark mt-5 max-w-3xl text-4xl md:text-5xl">
           {title}
         </h1>
         {body && (

@@ -49,7 +49,7 @@ export default function ModuleHero({
         <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
           {level}
         </p>
-        <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        <h1 className="metal-title-dark mt-5 text-4xl md:text-5xl">
           {title}
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-white/85">{promise}</p>

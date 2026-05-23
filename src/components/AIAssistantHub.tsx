@@ -65,8 +65,8 @@ const assistants: Assistant[] = [
   {
     name: "LO Support Assistant",
     description:
-      "Helps with training questions, next-step checklists, roleplay practice, and simple follow-up plans.",
-    starters: ["Build my next-step checklist", "Practice a first call", "Summarize this training note"],
+      "Helps you find the right training, support contact, resource, or next step.",
+    starters: ["Find the right resource", "Build my next-step checklist", "Summarize this training note"],
   },
   {
     name: "Marketing Support Assistant",
@@ -93,19 +93,7 @@ const sourceCards = [
     title: "LO Mastery",
     type: "Coaching resources",
     excerpt: "Coaching rhythm, scorecards, trackers, leaderboards, and member resources.",
-    href: "/apex-advisor/",
-  },
-  {
-    title: "Audience Quality Panel",
-    type: "Review layer",
-    excerpt: "Content quality scoring model for borrower, partner, risk, marketing, and peer review.",
-    href: "/audience-quality-panel/",
-  },
-  {
-    title: "AI LO Training Drive",
-    type: "Drive folder",
-    excerpt: "Custom GPTs, Google Workspace Automation, NotebookLM, Gemini setup, and AI Takeoff resources.",
-    href: "https://drive.google.com/drive/folders/133w74YcUtK4w8g2Xa8Ttp7j2W7RVw1vz?usp=sharing",
+    href: "/coaching/",
   },
 ];
 
@@ -114,9 +102,6 @@ const historyItems = [
   "Marketing draft review",
   "Training next steps",
 ];
-
-const initialAssistantMessage =
-  "Choose one assistant, add helpful context, then ask for a draft, roleplay, checklist, or review. Outputs are draft-only.";
 
 let messageIdCounter = 1;
 
@@ -180,13 +165,7 @@ export default function AIAssistantHub({
   previewMode?: boolean;
 }) {
   const [selectedName, setSelectedName] = useState(assistants[0].name);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: 1,
-      role: "assistant",
-      text: initialAssistantMessage,
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [attachedFile, setAttachedFile] = useState<AttachedFile | null>(null);
   const [voiceNote, setVoiceNote] = useState("");
@@ -205,6 +184,9 @@ export default function AIAssistantHub({
     previewMode ||
     backendStatus?.sandboxEnabled === false ||
     backendStatus?.openRouterConfigured === false;
+  const showSources =
+    messages.some((message) => message.role === "user") &&
+    messages.some((message) => message.role === "assistant");
 
   useEffect(() => {
     let cancelled = false;
@@ -320,13 +302,7 @@ export default function AIAssistantHub({
   }
 
   function newChat() {
-    setMessages([
-      {
-        id: nextMessageId(),
-        role: "assistant",
-        text: `New ${selectedAssistant.name} chat ready. Ask for a draft, checklist, roleplay, or review.`,
-      },
-    ]);
+    setMessages([]);
     setInput("");
     setAttachedFile(null);
     setVoiceNote("");
@@ -372,7 +348,7 @@ export default function AIAssistantHub({
     }
 
     if (previewMode || backendStatus?.sandboxEnabled === false) {
-      setVoiceNote("Audio transcription is not turned on in preview mode.");
+      setVoiceNote("Audio transcription is not turned on yet.");
       return;
     }
 
@@ -436,14 +412,20 @@ export default function AIAssistantHub({
   }
 
   return (
-    <section className="min-h-[calc(100vh-5rem)] overflow-x-hidden bg-lf-mist">
+    <section className="min-h-[calc(100vh-5rem)] overflow-x-hidden bg-white">
       <div className="grid min-h-[calc(100vh-5rem)] min-w-0 lg:grid-cols-[280px_minmax(0,1fr)_320px]">
-        <aside className="min-w-0 border-b border-lf-line bg-lf-navy p-4 text-white lg:border-b-0 lg:border-r">
-          <button type="button" className="btn-primary w-full" onClick={newChat}>
-            New chat
-          </button>
+        <aside className="min-w-0 border-b border-lf-line bg-lf-mist p-4 text-lf-charcoal lg:border-b-0 lg:border-r">
+          <div className="grid gap-2">
+            <button
+              type="button"
+              className="rounded-lg border border-lf-line bg-white px-3 py-3 text-left text-sm font-semibold text-lf-navy transition hover:border-lf-orange hover:text-lf-orange"
+              onClick={newChat}
+            >
+              New Chat
+            </button>
+          </div>
           <div className="mt-6">
-            <p className="text-xs font-semibold uppercase tracking-wide text-white/55">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
               Assistants
             </p>
             <div className="mt-3 grid gap-1">
@@ -454,7 +436,7 @@ export default function AIAssistantHub({
                   className={`rounded-lg px-3 py-2 text-left text-sm font-semibold transition ${
                     selectedAssistant.name === assistant.name
                       ? "bg-lf-orange text-white"
-                      : "text-white/82 hover:bg-white/10"
+                      : "text-lf-charcoal hover:bg-white hover:text-lf-orange"
                   }`}
                   onClick={() => setSelectedName(assistant.name)}
                 >
@@ -464,14 +446,14 @@ export default function AIAssistantHub({
             </div>
           </div>
           <div className="mt-8">
-            <p className="text-xs font-semibold uppercase tracking-wide text-white/55">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
               Example chat topics
             </p>
             <div className="mt-3 grid gap-2">
               {historyItems.map((item) => (
                 <div
                   key={item}
-                  className="rounded-lg border border-white/10 px-3 py-2 text-sm text-white/78"
+                  className="rounded-lg border border-lf-line bg-white px-3 py-2 text-sm text-lf-slate"
                 >
                   {item}
                 </div>
@@ -480,197 +462,197 @@ export default function AIAssistantHub({
           </div>
         </aside>
 
-        <main className="flex min-h-[720px] min-w-0 flex-col bg-white">
-          <div className="border-b border-lf-line px-5 py-5 md:px-8">
-            <h1 className="h-display text-3xl">{selectedAssistant.name}</h1>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-lf-slate">
-              {selectedAssistant.description}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
-              <span
-                className={`rounded-full border px-3 py-1 ${
-                  previewMode
-                    ? "border-lf-orange bg-lf-orangeSoft text-lf-orangeDark"
-                    : backendStatus?.sandboxEnabled
-                    ? "border-lf-orange bg-lf-orangeSoft text-lf-orangeDark"
-                    : "border-lf-line bg-lf-mist text-lf-slate"
-                }`}
-              >
-                {previewMode
-                    ? "Preview mode"
-                    : backendStatus?.sandboxEnabled
-                    ? "Draft mode"
-                    : "Draft mode off"}
-              </span>
-              <span className="rounded-full border border-lf-line bg-white px-3 py-1 text-lf-charcoal">
-                Approved users only
-              </span>
-              <span className="rounded-full border border-lf-line bg-white px-3 py-1 text-lf-charcoal">
-                No external sends
-              </span>
-            </div>
+        <main className="flex min-h-[calc(100vh-5rem)] min-w-0 flex-col bg-white">
+          <div className="sr-only">
+            <h1>{selectedAssistant.name}</h1>
             {backendStatusNote && (
-              <p className="mt-2 text-sm font-semibold text-lf-orangeDark">
+              <p>
                 {backendStatusNote}
               </p>
             )}
           </div>
 
-          <div className="flex-1 overflow-hidden px-5 py-6 md:px-8">
-            <div className="mb-6 grid gap-3 md:grid-cols-3">
-              {selectedAssistant.starters.map((starter) => (
-                <button
-                  key={starter}
-                  type="button"
-                  className="rounded-xl border border-lf-line bg-lf-mist p-4 text-left text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
-                  onClick={() => void sendMessage(starter)}
-                  disabled={isSending}
-                >
-                  {starter}
-                </button>
-              ))}
-            </div>
-
-            <div className="space-y-4 pb-36">
-              {messages.map((message) => (
-                <div
-                  key={message.id}
-                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
-                >
+          <div className="flex-1 overflow-y-auto px-5 py-8 md:px-8">
+            {messages.length === 0 ? (
+              <div className="mx-auto flex min-h-[52vh] max-w-2xl flex-col items-center justify-center text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-lf-navy text-2xl font-black text-white shadow-card">
+                  LF
+                </div>
+                <h2 className="h-display mt-5 text-3xl">
+                  {selectedAssistant.name}
+                </h2>
+                <p className="mt-3 max-w-xl text-sm leading-6 text-lf-slate">
+                  {selectedAssistant.description}
+                </p>
+                <div className="mt-6 grid w-full gap-3 sm:grid-cols-3">
+                  {selectedAssistant.starters.map((starter) => (
+                    <button
+                      key={starter}
+                      type="button"
+                      className="rounded-xl border border-lf-line bg-white p-4 text-left text-sm font-semibold text-lf-charcoal shadow-sm transition hover:border-lf-orange hover:text-lf-orange"
+                      onClick={() => void sendMessage(starter)}
+                      disabled={isSending}
+                    >
+                      {starter}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="mx-auto max-w-3xl space-y-4 pb-36">
+                {messages.map((message) => (
                   <div
-                    className={`max-w-2xl whitespace-pre-wrap rounded-2xl px-4 py-3 text-sm leading-6 ${
-                      message.role === "user"
-                        ? "bg-lf-navy text-white"
-                        : "border border-lf-line bg-lf-mist text-lf-charcoal"
-                    }`}
+                    key={message.id}
+                    className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                   >
-                    {message.text}
+                    <div
+                      className={`max-w-2xl whitespace-pre-wrap rounded-2xl px-4 py-3 text-sm leading-6 ${
+                        message.role === "user"
+                          ? "bg-lf-navy text-white"
+                          : "border border-lf-line bg-lf-mist text-lf-charcoal"
+                      }`}
+                    >
+                      {message.text}
+                    </div>
                   </div>
-                </div>
-              ))}
-              {isSending && (
-                <div className="flex justify-start">
-                  <div className="max-w-2xl rounded-2xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold leading-6 text-lf-slate">
-                    {demoResponseMode ? "Preparing draft..." : "Preparing draft..."}
+                ))}
+                {isSending && (
+                  <div className="flex justify-start">
+                    <div className="max-w-2xl rounded-2xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold leading-6 text-lf-slate">
+                      {demoResponseMode ? "Preparing draft..." : "Preparing draft..."}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          <div className="sticky bottom-0 min-w-0 border-t border-lf-line bg-white/95 p-4 backdrop-blur md:p-5">
-            {attachedFile && (
-              <div className="mb-3 flex items-center gap-3 rounded-xl border border-lf-line bg-lf-mist p-3 text-sm text-lf-charcoal">
-                {attachedFile.previewUrl && (
-                  <img
-                    src={attachedFile.previewUrl}
-                    alt={attachedFile.name}
-                    className="h-12 w-12 rounded-lg object-cover"
-                  />
-                )}
-                <span className="font-semibold">{attachedFile.name}</span>
-                <button
-                  type="button"
-                  className="ml-auto text-lf-slate hover:text-lf-orange"
-                  onClick={removeAttachedFile}
-                >
-                  Remove
-                </button>
-                {isAudioAttachment(attachedFile) && (
-                  <button
-                    type="button"
-                    className="btn-secondary"
-                    onClick={() => void transcribeAttachedFile()}
-                    disabled={isTranscribing}
-                  >
-                    {isTranscribing ? "Transcribing" : "Transcribe audio"}
-                  </button>
                 )}
               </div>
             )}
-            {voiceNote && (
-              <p className="mb-2 text-sm font-semibold text-lf-orangeDark">
-                {voiceNote}
-              </p>
-            )}
-            <div className="flex min-w-0 items-end gap-2 rounded-2xl border border-lf-line bg-lf-mist p-2 shadow-card">
-              <input
-                ref={fileInputRef}
-                type="file"
-                className="hidden"
-                onChange={(event) => handleFile(event.target.files?.[0])}
-              />
-              <button
-                type="button"
-                className="rounded-xl border border-lf-line bg-white px-3 py-3 text-sm font-bold text-lf-charcoal hover:border-lf-orange hover:text-lf-orange"
-                onClick={() => fileInputRef.current?.click()}
-                aria-label="Attach file"
-              >
-                +
-              </button>
-              <textarea
-                value={input}
-                onChange={(event) => setInput(event.target.value)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter" && !event.shiftKey) {
-                    event.preventDefault();
-                    void sendMessage();
-                  }
-                }}
-                rows={1}
-                placeholder={`Message ${selectedAssistant.name}`}
-                className="max-h-32 min-h-11 min-w-0 flex-1 resize-none bg-transparent px-2 py-3 text-sm outline-none"
-              />
-              <button
-                type="button"
-                className="rounded-xl border border-lf-line bg-white px-3 py-3 text-sm font-bold text-lf-charcoal hover:border-lf-orange hover:text-lf-orange"
-                onClick={startVoiceInput}
-                aria-label="Use microphone"
-                disabled={isSending}
-              >
-                Mic
-              </button>
-              <button
-                type="button"
-                className="btn-primary min-h-11"
-                onClick={() => void sendMessage()}
-                disabled={isSending}
-              >
-                {isSending ? "Sending" : "Send"}
-              </button>
+          </div>
+
+          <div className="sticky bottom-0 min-w-0 border-t border-lf-line bg-white/95 p-4 backdrop-blur md:p-5">
+            <div className="mx-auto max-w-3xl">
+              {attachedFile && (
+                <div className="mb-3 flex items-center gap-3 rounded-xl border border-lf-line bg-lf-mist p-3 text-sm text-lf-charcoal">
+                  {attachedFile.previewUrl && (
+                    <img
+                      src={attachedFile.previewUrl}
+                      alt={attachedFile.name}
+                      className="h-12 w-12 rounded-lg object-cover"
+                    />
+                  )}
+                  <span className="font-semibold">{attachedFile.name}</span>
+                  <button
+                    type="button"
+                    className="ml-auto text-lf-slate hover:text-lf-orange"
+                    onClick={removeAttachedFile}
+                  >
+                    Remove
+                  </button>
+                  {isAudioAttachment(attachedFile) && (
+                    <button
+                      type="button"
+                      className="btn-secondary"
+                      onClick={() => void transcribeAttachedFile()}
+                      disabled={isTranscribing}
+                    >
+                      {isTranscribing ? "Transcribing" : "Transcribe audio"}
+                    </button>
+                  )}
+                </div>
+              )}
+              {voiceNote && (
+                <p className="mb-2 text-sm font-semibold text-lf-orangeDark">
+                  {voiceNote}
+                </p>
+              )}
+              <div className="flex min-w-0 items-end gap-2 rounded-2xl border border-lf-line bg-lf-mist p-2 shadow-card">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  className="hidden"
+                  onChange={(event) => handleFile(event.target.files?.[0])}
+                />
+                <button
+                  type="button"
+                  className="rounded-xl border border-lf-line bg-white px-3 py-3 text-sm font-bold text-lf-charcoal hover:border-lf-orange hover:text-lf-orange"
+                  onClick={() => fileInputRef.current?.click()}
+                  aria-label="Attach file"
+                >
+                  +
+                </button>
+                <textarea
+                  value={input}
+                  onChange={(event) => setInput(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" && !event.shiftKey) {
+                      event.preventDefault();
+                      void sendMessage();
+                    }
+                  }}
+                  rows={1}
+                  placeholder={`Message ${selectedAssistant.name}`}
+                  className="max-h-32 min-h-11 min-w-0 flex-1 resize-none bg-transparent px-2 py-3 text-sm outline-none"
+                />
+                <button
+                  type="button"
+                  className="rounded-xl border border-lf-line bg-white px-3 py-3 text-sm font-bold text-lf-charcoal hover:border-lf-orange hover:text-lf-orange"
+                  onClick={startVoiceInput}
+                  aria-label="Use microphone"
+                  disabled={isSending}
+                >
+                  Mic
+                </button>
+                <button
+                  type="button"
+                  className="btn-primary min-h-11"
+                  onClick={() => void sendMessage()}
+                  disabled={isSending}
+                >
+                  {isSending ? "Sending" : "Send"}
+                </button>
+              </div>
             </div>
           </div>
         </main>
 
         <aside className="min-w-0 border-t border-lf-line bg-white p-5 lg:border-l lg:border-t-0">
-          <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-            Helpful sources
-          </p>
-          <h2 className="h-display mt-2 text-2xl">Where to look next</h2>
-          <div className="mt-5 grid gap-4">
-            {sourceCards.map((source) => (
-              <a
-                key={source.title}
-                href={source.href}
-                className="rounded-xl border border-lf-line bg-lf-mist p-4 transition hover:border-lf-orange hover:bg-white"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                      {source.type}
+          {showSources ? (
+            <>
+              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                Helpful sources
+              </p>
+              <h2 className="h-display mt-2 text-2xl">Where to look next</h2>
+              <div className="mt-5 grid gap-4">
+                {sourceCards.map((source) => (
+                  <a
+                    key={source.title}
+                    href={source.href}
+                    className="rounded-xl border border-lf-line bg-lf-mist p-4 transition hover:border-lf-orange hover:bg-white"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                          {source.type}
+                        </p>
+                        <h3 className="h-display mt-1 text-base">
+                          {source.title}
+                        </h3>
+                      </div>
+                      <span aria-hidden className="text-lf-orange">
+                        ↗
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm leading-6 text-lf-slate">
+                      {source.excerpt}
                     </p>
-                    <h3 className="h-display mt-1 text-base">{source.title}</h3>
-                  </div>
-                  <span aria-hidden className="text-lf-orange">
-                    ↗
-                  </span>
-                </div>
-                <p className="mt-2 text-sm leading-6 text-lf-slate">
-                  {source.excerpt}
-                </p>
-              </a>
-            ))}
-          </div>
+                  </a>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="rounded-2xl border border-dashed border-lf-line bg-lf-mist p-4 text-sm leading-6 text-lf-slate">
+              Sources appear here only after an answer points you to a useful
+              training page or resource.
+            </div>
+          )}
         </aside>
       </div>
     </section>

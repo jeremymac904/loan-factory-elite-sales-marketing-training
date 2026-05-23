@@ -29,10 +29,10 @@ export const faceGramGroups: FaceGramGroup[] = [
     visibility: "Internal group",
     memberCount: "668 members",
     category: "Onboarding",
-    coverTitle: "Pass the SAFE Exam",
-    coverSubtitle: "Newbie Loan Officer Group",
+    coverTitle: "First 90 Days at Loan Factory",
+    coverSubtitle: "Systems, first files, first conversations, and where to ask questions",
     description:
-      "A starting place for new loan officers to ask questions, find study support, share wins, and build early confidence.",
+      "A starting place for new loan officers to ask questions, learn Loan Factory systems, build a daily rhythm, discuss first files, and get help with first conversations.",
     rules: [
       "Keep questions practical and respectful.",
       "Do not post borrower data or private files.",
@@ -211,29 +211,31 @@ export const faceGramPosts: FaceGramPost[] = [
 export const faceGramShortcuts = [
   { label: "Home Feed", href: "/facegram/" },
   { label: "Groups", href: "/facegram/groups/" },
-  { label: "Audience Quality Panel", href: "/audience-quality-panel/" },
+  { label: "Profile", href: "/facegram/#profile" },
+  { label: "Saved", href: "/facegram/#saved-posts" },
+  { label: "Events", href: "/facegram/groups/team-leaders/?tab=events" },
   { label: "AI Assistants", href: "/ai-assistants/" },
 ];
 
 export const lenderPromotionNotes = [
   {
-    title: "Weekly lender highlights",
+    title: "Rocket training spotlight",
     body:
-      "Reviewed lender training or resource highlights can appear here later.",
+      "Demo sponsored placement for reviewed lender training. Approval required before any vendor content appears in beta.",
   },
   {
-    title: "Future automation source",
+    title: "PennyMac partner resource",
     body:
-      "Later, approved lender resources can be summarized for internal review.",
+      "Demo sponsored placement for a lender resource or class. No vendor self-posting is enabled.",
   },
 ];
 
 export const faceGramRightRail = [
-  "Training reminders",
-  "Trending topics",
-  "Upcoming coaching calls",
-  "Top internal posts",
-  "New groups",
+  "Training reminder: use 101 Foundation this week",
+  "Trending topic: first-call follow-up",
+  "Upcoming: coaching calendar",
+  "Saved posts: local only during beta",
+  "New groups: open the Groups page",
 ];
 
 export function getFaceGramGroup(slug: string) {

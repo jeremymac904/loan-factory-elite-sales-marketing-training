@@ -1,8 +1,6 @@
 import Link from "next/link";
-import BrandImage from "@/components/BrandImage";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import { brandAssets } from "@/data/brandAssets";
 
 export const metadata = { title: "Coaching Member Area" };
 
@@ -11,19 +9,19 @@ const dashboardCards = [
     title: "This week's coaching focus",
     body: "Prepare for Power Hour, follow up with referral partners, and protect a daily call block.",
     action: "Open Coaching Rhythm",
-    href: "#coaching-rhythm",
+    href: "/apex-calendar/",
   },
   {
     title: "Advisor Scorecard",
     body: "See your activity, partner touches, training progress, and weekly accountability notes.",
     action: "View Scorecards",
-    href: "#trackers-scorecards",
+    href: "/trackers/",
   },
   {
     title: "Member Resource Library",
     body: "Find recordings, scripts, handouts, tracker links, and useful training channels.",
     action: "Open Resources",
-    href: "#member-resources",
+    href: "/recordings/",
   },
 ];
 
@@ -31,17 +29,17 @@ const memberAreas = [
   {
     title: "Coaching Rhythm",
     body: "Power Hour, group coaching, coaching emails, and Alliance coaching cadence.",
-    href: "#coaching-rhythm",
+    href: "/apex-calendar/",
   },
   {
     title: "Resource Library",
     body: "Scripts, handouts, recordings, documents, and coaching references.",
-    href: "#member-resources",
+    href: "/recordings/",
   },
   {
     title: "Trackers and Scorecards",
     body: "Track calls, follow-up, partner touches, deal movement, and weekly consistency.",
-    href: "#trackers-scorecards",
+    href: "/trackers/",
   },
   {
     title: "Past Recordings",
@@ -56,22 +54,22 @@ const memberAreas = [
   {
     title: "Advisor Scorecard",
     body: "Track weekly action, practice, follow-up, and coaching notes.",
-    href: "#advisor-scorecard",
+    href: "/trackers/",
   },
   {
     title: "Greatness Tracker",
     body: "Track the daily habits that create better conversations and stronger consistency.",
-    href: "#greatness-tracker",
+    href: "/tracker/",
   },
   {
     title: "Deal Flow Tracker",
     body: "Stay clear on active opportunities, follow-up dates, next actions, and pipeline health.",
-    href: "#deal-flow-tracker",
+    href: "/trackers/",
   },
   {
     title: "Referral Partner Tracker",
     body: "Track Realtor and referral partner touches, appointments, notes, and next steps.",
-    href: "#referral-partner-tracker",
+    href: "/trackers/",
   },
   {
     title: "Leaderboard",
@@ -112,6 +110,14 @@ const resourceGroups = [
     title: "Documents",
     items: ["PDF handouts", "Coaching worksheets", "Favorite YouTube channel library"],
   },
+  {
+    title: "Trackers and scorecards",
+    items: [
+      "Greatness tracker",
+      "Deal flow tracker",
+      "Referral partner tracker",
+    ],
+  },
 ];
 
 const trackers = [
@@ -151,20 +157,6 @@ export default function ApexMemberAreaPage() {
         }
         backgroundImage="/media/dark-hero-background.png"
       >
-        <div className="mb-6 flex flex-wrap items-center gap-3">
-          <div className="inline-flex rounded-xl bg-white/95 p-2 shadow-card">
-            <BrandImage
-              asset={brandAssets["lo-mastery"]}
-              heightClass="h-14 md:h-16"
-            />
-          </div>
-          <div className="inline-flex rounded-xl bg-white/95 p-2 shadow-card">
-            <BrandImage
-              asset={brandAssets["loan-factory-alliance"]}
-              heightClass="h-14 md:h-16"
-            />
-          </div>
-        </div>
         <div className="flex flex-wrap gap-3">
           <Link href="/login/" className="btn-primary">
             Sign In
@@ -200,7 +192,7 @@ export default function ApexMemberAreaPage() {
         <div className="container-page py-14">
         <SectionHeading
           title="Coaching member areas"
-          description="Each area supports paid coaching. Sales & Marketing 101-601 remains its own training path."
+          description="Each area supports paid coaching with recordings, scripts, trackers, scorecards, calendars, and weekly accountability."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {memberAreas.map((area) => (
@@ -227,10 +219,7 @@ export default function ApexMemberAreaPage() {
             />
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/apex-calendar/" className="btn-primary">
-                Open Calendar
-              </Link>
-              <Link href="/apex-mastermind/" className="btn-secondary">
-                Open Mastermind
+                Open Coaching Calendar
               </Link>
             </div>
           </div>
@@ -258,7 +247,7 @@ export default function ApexMemberAreaPage() {
               handouts, tracker links, and favorite training references.
             </p>
           </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {resourceGroups.map((group) => (
               <article
                 key={group.title}
@@ -290,17 +279,9 @@ export default function ApexMemberAreaPage() {
               <p className="prose-lf mt-2 text-sm text-lf-slate">
                 {tracker.body}
               </p>
-              <div className="mt-5 grid gap-2 text-sm text-lf-slate">
-                <div className="rounded-lg bg-lf-mist px-3 py-2">
-                  This week&apos;s focus
-                </div>
-                <div className="rounded-lg bg-lf-mist px-3 py-2">
-                  Current score
-                </div>
-                <div className="rounded-lg bg-lf-mist px-3 py-2">
-                  Next action
-                </div>
-              </div>
+              <Link href="/trackers/" className="btn-secondary mt-5">
+                Open tracker page
+              </Link>
             </article>
           ))}
         </div>

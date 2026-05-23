@@ -10,6 +10,7 @@ html,
 body {
   background: #ffffff;
   color: #111111;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -71,6 +72,8 @@ a {
   .chrome-title {
     position: relative;
     display: inline-block;
+    max-width: 100%;
+    overflow-wrap: break-word;
     color: transparent;
     background:
       linear-gradient(110deg, #f8f8f8 0%, #9f9f9f 18%, #ffffff 31%, #f26a1f 42%, #ffffff 48%, #b9b9b9 58%, #f6f6f6 74%, #747474 100%),
@@ -86,6 +89,47 @@ a {
 
   .chrome-title::after {
     content: none;
+  }
+
+  .metal-title {
+    @apply font-display font-semibold tracking-normal;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    color: transparent;
+    background:
+      linear-gradient(110deg, #111111 0%, #767676 18%, #ffffff 32%, #f26a1f 43%, #ffffff 50%, #8e8e8e 64%, #111111 100%),
+      linear-gradient(180deg, #ffffff 0%, #a8a8a8 48%, #2b2b2b 100%);
+    background-size: 230% 100%, 100% 100%;
+    background-position: 0% 50%, 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    letter-spacing: 0;
+    animation: chrome-title-shine 5.8s ease-in-out infinite;
+  }
+
+  .metal-title-dark {
+    @apply font-display font-semibold tracking-normal;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    color: transparent;
+    background:
+      linear-gradient(110deg, #ffffff 0%, #a4a4a4 18%, #ffffff 31%, #f26a1f 43%, #ffffff 50%, #b9b9b9 64%, #ededed 100%),
+      linear-gradient(180deg, #ffffff 0%, #9a9a9a 48%, #ffffff 100%);
+    background-size: 230% 100%, 100% 100%;
+    background-position: 0% 50%, 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    letter-spacing: 0;
+    text-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
+    animation: chrome-title-shine 5.8s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chrome-title,
+  .metal-title,
+  .metal-title-dark {
+    animation: none;
   }
 }
 

@@ -1,6 +1,5 @@
 import PromptCard from "@/components/PromptCard";
 import SectionHeading from "@/components/SectionHeading";
-import GeminiGemCallout from "@/components/GeminiGemCallout";
 import { prompts, promptCategories } from "@/data/prompts";
 
 export const metadata = { title: "AI Prompt Library" };
@@ -23,10 +22,6 @@ export default function PromptLibraryPage() {
             borrower-facing or public before use.
           </p>
         </div>
-      </section>
-
-      <section className="container-page pt-10">
-        <GeminiGemCallout compact showWalkthroughLink={false} />
       </section>
 
       <section className="container-page py-12">

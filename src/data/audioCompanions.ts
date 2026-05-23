@@ -2,6 +2,7 @@ import audioCompanionPackage from "../../docs/notebooklm-audio-companions/audio-
 
 export type AudioCompanionStatus =
   | "prompt-ready"
+  | "generating"
   | "generated"
   | "downloaded"
   | "needs-drive-upload"
@@ -76,11 +77,12 @@ export function getDriveAudioUrl(companion: AudioCompanion) {
 
 export function getAudioStatusLabel(status: AudioCompanionStatus) {
   if (status === "published") return "Published";
+  if (status === "generating") return "In Production";
   if (status === "downloaded" || status === "generated") {
     return "Needs Drive Upload";
   }
   if (status === "needs-drive-upload") return "Needs Drive Upload";
-  return "Prompt Ready";
+  return "Coming Soon";
 }
 
 export function getAudioCompanionByRoute(route: string) {

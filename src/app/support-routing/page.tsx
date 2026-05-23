@@ -43,7 +43,7 @@ export default function SupportRoutingPage() {
           className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(242,106,31,0.28),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.92),rgba(17,17,17,0.64),rgba(0,0,0,0.9))]"
         />
         <div className="relative container-page py-16 md:py-20">
-          <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+          <h1 className="metal-title-dark max-w-3xl text-4xl md:text-5xl">
             Find the Right Support Person
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-white/85">

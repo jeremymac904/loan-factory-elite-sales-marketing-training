@@ -16,7 +16,7 @@
   "audioCompanions": [
     {
       "id": "101-foundation-audio-companion",
-      "title": "101 Foundation — The Loan Factory Operating System",
+      "title": "101 Foundation \u2014 The Loan Factory Operating System",
       "session": "101 Foundation",
       "track": "core",
       "route": "/101-foundation",
@@ -24,7 +24,7 @@
       "sourceNotebookUrl": "https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e",
       "sourceNotebookTitle": "(Sales & Marketing Masterclass) - YouTube",
       "customPromptFile": "NOTEBOOKLM_AUDIO_PROMPTS_101_601.md#101-foundation-the-loan-factory-operating-system",
-      "status": "generating",
+      "status": "downloaded",
       "notebooklmTaskId": "0a3ef731-fd56-4223-8236-9b5f069ae897",
       "generateOptions": {
         "format": "deep-dive",
@@ -32,17 +32,24 @@
         "language": "en"
       },
       "submittedAt": "2026-05-23T10:38:00Z",
-      "audioFileName": null,
-      "localAudioPath": null,
+      "audioFileName": "101-foundation-audio-companion.mp3",
+      "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/101-foundation-audio-companion.mp3",
       "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/101-foundation", "/audio-training", "/training-library"],
-      "notes": "Foundation episode. Run first — sets the rhythm referenced by every other episode. Generation kicked off via NotebookLM CLI."
+      "websitePlacement": [
+        "/101-foundation",
+        "/audio-training",
+        "/training-library"
+      ],
+      "notes": "Foundation episode. Run first \u2014 sets the rhythm referenced by every other episode. Generation kicked off via NotebookLM CLI.",
+      "audioByteSize": 76889913,
+      "downloadedAt": "2026-05-23T18:50:10Z",
+      "notebooklmArtifactTitle": "Daily habits for a Michelin star mortgage"
     },
     {
       "id": "201-borrower-conversion-audio-companion",
-      "title": "201 Borrower Conversion — Win the First Call",
+      "title": "201 Borrower Conversion \u2014 Win the First Call",
       "session": "201 Borrower Conversion",
       "track": "core",
       "route": "/201-borrower-conversion",
@@ -50,18 +57,32 @@
       "sourceNotebookUrl": "https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e",
       "sourceNotebookTitle": "(Sales & Marketing Masterclass) - YouTube",
       "customPromptFile": "NOTEBOOKLM_AUDIO_PROMPTS_101_601.md#201-borrower-conversion-win-the-first-call",
-      "status": "prompt-ready",
-      "audioFileName": null,
-      "localAudioPath": null,
+      "status": "downloaded",
+      "audioFileName": "201-borrower-conversion-audio-companion.mp3",
+      "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/201-borrower-conversion-audio-companion.mp3",
       "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/201-borrower-conversion", "/audio-training", "/training-library"],
-      "notes": "First-call structure + follow-up cadence. Highest immediate-value episode for new LOs."
+      "websitePlacement": [
+        "/201-borrower-conversion",
+        "/audio-training",
+        "/training-library"
+      ],
+      "notes": "First-call structure + follow-up cadence. Highest immediate-value episode for new LOs.",
+      "notebooklmTaskId": "4a0933f1-df4b-4893-9383-728f81340a0b",
+      "generateOptions": {
+        "format": "deep-dive",
+        "length": "long",
+        "language": "en"
+      },
+      "submittedAt": "2026-05-23T18:32:08Z",
+      "audioByteSize": 71986086,
+      "notebooklmArtifactTitle": "Win the first call borrower conversion",
+      "downloadedAt": "2026-05-23T18:50:10Z"
     },
     {
       "id": "301-referral-partner-growth-audio-companion",
-      "title": "301 Referral Partner Growth — Build the Partner Engine",
+      "title": "301 Referral Partner Growth \u2014 Build the Partner Engine",
       "session": "301 Referral Partner Growth",
       "track": "core",
       "route": "/301-referral-partner-growth",
@@ -69,18 +90,32 @@
       "sourceNotebookUrl": "https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e",
       "sourceNotebookTitle": "(Sales & Marketing Masterclass) - YouTube",
       "customPromptFile": "NOTEBOOKLM_AUDIO_PROMPTS_101_601.md#301-referral-partner-growth-build-the-partner-engine",
-      "status": "prompt-ready",
-      "audioFileName": null,
-      "localAudioPath": null,
+      "status": "downloaded",
+      "audioFileName": "301-referral-partner-growth-audio-companion.mp3",
+      "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/301-referral-partner-growth-audio-companion.mp3",
       "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/301-referral-partner-growth", "/audio-training", "/training-library"],
-      "notes": "Realtor + referral partner cadence. Pair with the High-Trust Realtor bonus episode."
+      "websitePlacement": [
+        "/301-referral-partner-growth",
+        "/audio-training",
+        "/training-library"
+      ],
+      "notes": "Realtor + referral partner cadence. Pair with the High-Trust Realtor bonus episode.",
+      "notebooklmTaskId": "9274e0e9-6db9-4f05-99a8-5097909b5270",
+      "generateOptions": {
+        "format": "deep-dive",
+        "length": "long",
+        "language": "en"
+      },
+      "submittedAt": "2026-05-23T18:32:08Z",
+      "audioByteSize": 95641332,
+      "notebooklmArtifactTitle": "Stop Shaking the Referral Vending Machine",
+      "downloadedAt": "2026-05-23T18:50:10Z"
     },
     {
       "id": "401-content-marketing-audio-companion",
-      "title": "401 Content and Marketing — Local Authority, Compliant Content",
+      "title": "401 Content and Marketing \u2014 Local Authority, Compliant Content",
       "session": "401 Content and Marketing",
       "track": "core",
       "route": "/401-content-and-marketing",
@@ -88,18 +123,32 @@
       "sourceNotebookUrl": "https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e",
       "sourceNotebookTitle": "(Sales & Marketing Masterclass) - YouTube",
       "customPromptFile": "NOTEBOOKLM_AUDIO_PROMPTS_101_601.md#401-content-and-marketing-local-authority-compliant-content",
-      "status": "prompt-ready",
-      "audioFileName": null,
-      "localAudioPath": null,
+      "status": "downloaded",
+      "audioFileName": "401-content-marketing-audio-companion.mp3",
+      "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/401-content-marketing-audio-companion.mp3",
       "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/401-content-and-marketing", "/audio-training", "/training-library"],
-      "notes": "Compliance-safe content rhythm. Pair with the Social Media Conversations bonus episode."
+      "websitePlacement": [
+        "/401-content-and-marketing",
+        "/audio-training",
+        "/training-library"
+      ],
+      "notes": "Compliance-safe content rhythm. Pair with the Social Media Conversations bonus episode.",
+      "notebooklmTaskId": "424a27b4-c90e-4bb2-8ebb-2e68e99d37cb",
+      "generateOptions": {
+        "format": "deep-dive",
+        "length": "long",
+        "language": "en"
+      },
+      "submittedAt": "2026-05-23T18:32:08Z",
+      "audioByteSize": 48989136,
+      "notebooklmArtifactTitle": "Building local authority through compliant content",
+      "downloadedAt": "2026-05-23T18:50:10Z"
     },
     {
       "id": "501-pipeline-sales-systems-audio-companion",
-      "title": "501 Pipeline and Sales Systems — Run the Engine Like a Pro",
+      "title": "501 Pipeline and Sales Systems \u2014 Run the Engine Like a Pro",
       "session": "501 Pipeline and Sales Systems",
       "track": "core",
       "route": "/501-pipeline-and-sales-systems",
@@ -107,18 +156,32 @@
       "sourceNotebookUrl": "https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e",
       "sourceNotebookTitle": "(Sales & Marketing Masterclass) - YouTube",
       "customPromptFile": "NOTEBOOKLM_AUDIO_PROMPTS_101_601.md#501-pipeline-and-sales-systems-run-the-engine-like-a-pro",
-      "status": "prompt-ready",
-      "audioFileName": null,
-      "localAudioPath": null,
+      "status": "downloaded",
+      "audioFileName": "501-pipeline-sales-systems-audio-companion.mp3",
+      "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/501-pipeline-sales-systems-audio-companion.mp3",
       "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/501-pipeline-and-sales-systems", "/audio-training", "/training-library"],
-      "notes": "TERA discipline + weekly review. Run second after 101 for highest team lift."
+      "websitePlacement": [
+        "/501-pipeline-and-sales-systems",
+        "/audio-training",
+        "/training-library"
+      ],
+      "notes": "TERA discipline + weekly review. Run second after 101 for highest team lift.",
+      "notebooklmTaskId": "6ef9ca59-561a-4a70-8246-6f521916ed6b",
+      "generateOptions": {
+        "format": "deep-dive",
+        "length": "long",
+        "language": "en"
+      },
+      "submittedAt": "2026-05-23T18:32:08Z",
+      "audioByteSize": 69945879,
+      "notebooklmArtifactTitle": "Building a Sane Mortgage Pipeline Engine",
+      "downloadedAt": "2026-05-23T18:50:10Z"
     },
     {
       "id": "601-elite-execution-audio-companion",
-      "title": "601 Elite Execution — Build Your Niche, Own Your System",
+      "title": "601 Elite Execution \u2014 Build Your Niche, Own Your System",
       "session": "601 Elite Execution",
       "track": "core",
       "route": "/601-elite-execution",
@@ -126,14 +189,28 @@
       "sourceNotebookUrl": "https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e",
       "sourceNotebookTitle": "(Sales & Marketing Masterclass) - YouTube",
       "customPromptFile": "NOTEBOOKLM_AUDIO_PROMPTS_101_601.md#601-elite-execution-build-your-niche-own-your-system",
-      "status": "prompt-ready",
-      "audioFileName": null,
-      "localAudioPath": null,
+      "status": "downloaded",
+      "audioFileName": "601-elite-execution-audio-companion.mp3",
+      "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/601-elite-execution-audio-companion.mp3",
       "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/601-elite-execution", "/audio-training", "/training-library"],
-      "notes": "Niche + weekly operating system + mentor cadence. Series closer."
+      "websitePlacement": [
+        "/601-elite-execution",
+        "/audio-training",
+        "/training-library"
+      ],
+      "notes": "Niche + weekly operating system + mentor cadence. Series closer.",
+      "notebooklmTaskId": "ec5fc3ec-926b-48c0-8841-3935a70a9596",
+      "generateOptions": {
+        "format": "deep-dive",
+        "length": "long",
+        "language": "en"
+      },
+      "submittedAt": "2026-05-23T18:32:08Z",
+      "audioByteSize": 89103172,
+      "notebooklmArtifactTitle": "Close More Loans By Shrinking Your Database",
+      "downloadedAt": "2026-05-23T18:50:10Z"
     },
     {
       "id": "psychological-sales-for-mortgage-los",
@@ -151,7 +228,10 @@
       "driveTargetFolder": "02 Audio Training/Bonus Podcasts",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/audio-training", "/201-borrower-conversion"],
+      "websitePlacement": [
+        "/audio-training",
+        "/201-borrower-conversion"
+      ],
       "notes": "Pair with 201 Borrower Conversion and 601 Elite Execution."
     },
     {
@@ -170,7 +250,10 @@
       "driveTargetFolder": "02 Audio Training/Bonus Podcasts",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/audio-training", "/301-referral-partner-growth"],
+      "websitePlacement": [
+        "/audio-training",
+        "/301-referral-partner-growth"
+      ],
       "notes": "Pair with 301 Referral Partner Growth."
     },
     {
@@ -189,8 +272,11 @@
       "driveTargetFolder": "02 Audio Training/Bonus Podcasts",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/audio-training", "/ai-training"],
-      "notes": "First bonus to produce — highest team-adoption lift."
+      "websitePlacement": [
+        "/audio-training",
+        "/ai-training"
+      ],
+      "notes": "First bonus to produce \u2014 highest team-adoption lift."
     },
     {
       "id": "follow-up-that-does-not-sound-desperate",
@@ -208,7 +294,10 @@
       "driveTargetFolder": "02 Audio Training/Bonus Podcasts",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/audio-training", "/501-pipeline-and-sales-systems"],
+      "websitePlacement": [
+        "/audio-training",
+        "/501-pipeline-and-sales-systems"
+      ],
       "notes": "Universal pipeline fix. Pair with 201 + 501."
     },
     {
@@ -227,7 +316,11 @@
       "driveTargetFolder": "02 Audio Training/Bonus Podcasts",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/audio-training", "/501-pipeline-and-sales-systems", "/601-elite-execution"],
+      "websitePlacement": [
+        "/audio-training",
+        "/501-pipeline-and-sales-systems",
+        "/601-elite-execution"
+      ],
       "notes": "Frames the whole series. Useful for Sunday-night planning."
     },
     {
@@ -246,7 +339,10 @@
       "driveTargetFolder": "02 Audio Training/Bonus Podcasts",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/audio-training", "/training-library"],
+      "websitePlacement": [
+        "/audio-training",
+        "/training-library"
+      ],
       "notes": "Series closer / playback hub. Drives behavior change after consumption."
     },
     {
@@ -265,7 +361,10 @@
       "driveTargetFolder": "02 Audio Training/Bonus Podcasts",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/audio-training", "/401-content-and-marketing"],
+      "websitePlacement": [
+        "/audio-training",
+        "/401-content-and-marketing"
+      ],
       "notes": "Pair with 401 Content and Marketing."
     },
     {
@@ -284,7 +383,11 @@
       "driveTargetFolder": "02 Audio Training/Bonus Podcasts",
       "driveFileId": null,
       "duration": null,
-      "websitePlacement": ["/audio-training", "/201-borrower-conversion", "/601-elite-execution"],
+      "websitePlacement": [
+        "/audio-training",
+        "/201-borrower-conversion",
+        "/601-elite-execution"
+      ],
       "notes": "Immediate first-call lift. Senior LO favorite."
     }
   ]

@@ -2,6 +2,7 @@ import Link from "next/link";
 /* eslint-disable @next/next/no-img-element */
 import { notFound } from "next/navigation";
 import FaceGramAccessNotice from "@/components/FaceGramAccessNotice";
+import type { FaceGramGroup } from "@/data/facegram";
 import {
   faceGramGroups,
   faceGramPosts,
@@ -13,6 +14,7 @@ import { getBetaUserSession } from "@/lib/supabase/session";
 
 type Props = {
   params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ tab?: string }> | { tab?: string };
 };
 
 export function generateStaticParams() {
@@ -28,15 +30,22 @@ export async function generateMetadata({ params }: Props) {
 }
 
 const tabs = [
-  { label: "Discussion", href: "#discussion" },
-  { label: "About", href: "#about" },
-  { label: "Rules", href: "#rules" },
+  { id: "feed", label: "Feed" },
+  { id: "discussion", label: "Discussion" },
+  { id: "about", label: "About" },
+  { id: "rules", label: "Rules" },
+  { id: "photos", label: "Photos" },
+  { id: "files", label: "Files" },
+  { id: "events", label: "Events" },
+  { id: "live", label: "Live" },
+  { id: "videos", label: "Videos" },
 ];
 
 export const dynamic = "force-dynamic";
 
-export default async function FaceGramGroupPage({ params }: Props) {
+export default async function FaceGramGroupPage({ params, searchParams }: Props) {
   const { slug } = await params;
+  const query = searchParams ? await searchParams : {};
   const group = getFaceGramGroup(slug);
 
   if (!group) {
@@ -71,6 +80,10 @@ export default async function FaceGramGroupPage({ params }: Props) {
     );
   }
 
+  const activeTab = tabs.some((tab) => tab.id === query.tab)
+    ? query.tab!
+    : "feed";
+
   return (
     <main className="bg-[#f0f2f5]">
       <section className="border-b border-lf-line bg-white">
@@ -85,7 +98,7 @@ export default async function FaceGramGroupPage({ params }: Props) {
                 <p className="text-sm font-semibold uppercase tracking-wide text-white/75">
                   {group.coverSubtitle}
                 </p>
-                <h1 className="mt-2 max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-6xl">
+                <h1 className="metal-title-dark mt-2 max-w-3xl text-4xl md:text-6xl">
                   {group.coverTitle}
                 </h1>
               </div>
@@ -100,15 +113,6 @@ export default async function FaceGramGroupPage({ params }: Props) {
               <p className="mt-1 text-sm font-semibold text-lf-slate">
                 {group.visibility} · {group.memberCount}
               </p>
-              <div className="mt-3 flex -space-x-2">
-                {["andre", "edward", "duyen", "kevin", "tara", "jay"].map((name) => (
-                  <div
-                    key={name}
-                    className="h-8 w-8 rounded-full border-2 border-white bg-lf-orange"
-                    aria-hidden
-                  />
-                ))}
-              </div>
             </div>
             <p className="max-w-sm rounded-xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold text-lf-slate">
               Group invites, sharing, and join controls are not turned on yet.
@@ -121,76 +125,29 @@ export default async function FaceGramGroupPage({ params }: Props) {
             aria-label={`${group.name} sections`}
           >
             {tabs.map((tab) => (
-              <a
-                key={tab.label}
-                href={tab.href}
+              <Link
+                key={tab.id}
+                href={`/facegram/groups/${group.slug}/?tab=${tab.id}`}
                 className={`whitespace-nowrap rounded-lg px-4 py-3 text-sm font-semibold ${
-                  tab.label === "Discussion"
+                  tab.id === activeTab
                     ? "bg-lf-orange text-white"
                     : "text-lf-charcoal hover:bg-lf-mist hover:text-lf-orange"
                 }`}
               >
                 {tab.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
       </section>
 
       <section className="mx-auto grid max-w-5xl gap-5 px-4 py-6 lg:grid-cols-[minmax(0,1fr)_340px]">
-        <div id="discussion" className="space-y-5">
-          <article className="rounded-2xl bg-white p-4 shadow-card">
-            <div className="flex gap-3">
-              <div className="h-11 w-11 rounded-full bg-lf-orange" aria-hidden />
-              <textarea
-                rows={2}
-                disabled
-                placeholder={
-                  previewEnabled
-                    ? "Group discussion preview. Use the main feed to try a review-only post."
-                    : "Group posting is coming soon after saving and moderation are ready."
-                }
-                className="min-h-12 flex-1 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm text-lf-slate outline-none"
-              />
-            </div>
-            <p className="mt-4 border-t border-lf-line pt-3 text-sm font-semibold text-lf-slate">
-              Group posting opens after saving and moderation are ready. Use
-              the main FaceGram feed to try review-only posting.
-            </p>
-          </article>
-
-          {faceGramPosts.map((post) => (
-            <article key={post.title} className="rounded-2xl bg-white p-5 shadow-card">
-              <div className="flex items-start gap-3">
-                <img
-                  src={post.avatar}
-                  alt={post.author}
-                  className="h-12 w-12 rounded-full object-cover"
-                />
-                <div>
-                  <h3 className="font-display text-base font-semibold text-lf-navy">
-                    {post.author}
-                  </h3>
-                  <p className="text-xs text-lf-slate">
-                    {post.role} · {post.time}
-                  </p>
-                </div>
-              </div>
-              <h4 className="mt-4 text-lg font-semibold text-lf-navy">
-                {post.title}
-              </h4>
-              <p className="mt-2 text-sm leading-6 text-lf-charcoal">
-                {post.body}
-              </p>
-              <div className="mt-4 rounded-xl bg-lf-mist p-4 text-sm font-semibold text-lf-charcoal">
-                {post.mediaLabel}
-              </div>
-              <p className="mt-4 border-t border-lf-line pt-3 text-sm font-semibold text-lf-slate">
-                Likes, comments, and saves are available as review-only
-                interactions in the main FaceGram feed.
-              </p>
-            </article>
-          ))}
+        <div className="space-y-5">
+          <GroupTabContent
+            activeTab={activeTab}
+            group={group}
+            previewEnabled={previewEnabled}
+          />
         </div>
 
         <aside id="about" className="space-y-5 lg:sticky lg:top-24 lg:h-fit">
@@ -244,5 +201,160 @@ export default async function FaceGramGroupPage({ params }: Props) {
         </aside>
       </section>
     </main>
+  );
+}
+
+function GroupTabContent({
+  activeTab,
+  group,
+  previewEnabled,
+}: {
+  activeTab: string;
+  group: FaceGramGroup;
+  previewEnabled: boolean;
+}) {
+  if (activeTab === "about") {
+    return (
+      <article className="rounded-2xl bg-white p-5 shadow-card">
+        <h2 className="font-display text-2xl font-semibold text-lf-navy">
+          About {group.name}
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-lf-slate">
+          {group.description}
+        </p>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <div className="rounded-xl border border-lf-line bg-lf-mist p-4 text-sm text-lf-charcoal">
+            {group.visibility}
+          </div>
+          <div className="rounded-xl border border-lf-line bg-lf-mist p-4 text-sm text-lf-charcoal">
+            {group.memberCount}
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+  if (activeTab === "rules") {
+    return (
+      <article className="rounded-2xl bg-white p-5 shadow-card">
+        <h2 className="font-display text-2xl font-semibold text-lf-navy">
+          Group rules
+        </h2>
+        <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm leading-6 text-lf-slate">
+          {group.rules.map((rule) => (
+            <li key={rule}>{rule}</li>
+          ))}
+        </ol>
+      </article>
+    );
+  }
+
+  if (activeTab === "photos") {
+    return <ComingSoonPanel title="Photos" body="Image uploads will appear here after file storage and moderation are ready." />;
+  }
+
+  if (activeTab === "files") {
+    return (
+      <article className="rounded-2xl bg-white p-5 shadow-card">
+        <h2 className="font-display text-2xl font-semibold text-lf-navy">
+          Group files
+        </h2>
+        <p className="mt-2 text-sm leading-6 text-lf-slate">
+          Files will support PDFs, spreadsheets, slide decks, forms,
+          templates, scripts, and docs after storage and review rules are
+          approved.
+        </p>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          {["PDFs", "Spreadsheets", "Slide decks", "Scripts"].map((item) => (
+            <div key={item} className="rounded-xl border border-lf-line bg-lf-mist p-4 text-sm font-semibold text-lf-charcoal">
+              {item} coming soon
+            </div>
+          ))}
+        </div>
+      </article>
+    );
+  }
+
+  if (activeTab === "events") {
+    return <ComingSoonPanel title="Group events" body="Scheduled group events, office hours, and training sessions will appear here." />;
+  }
+
+  if (activeTab === "live") {
+    return <ComingSoonPanel title="Live sessions" body="Live sessions are not turned on yet. Future sessions will require moderation and approval." />;
+  }
+
+  if (activeTab === "videos") {
+    return <ComingSoonPanel title="Group videos" body="Training videos, uploaded post videos, and live replays will appear here after review." />;
+  }
+
+  return (
+    <>
+      <article className="rounded-2xl bg-white p-4 shadow-card">
+        <div className="flex gap-3">
+          <div className="h-11 w-11 rounded-full bg-lf-orange" aria-hidden />
+          <textarea
+            rows={2}
+            disabled
+            placeholder={
+              previewEnabled
+                ? "Group discussion preview. Use the main feed to try a review-only post."
+                : "Group posting is coming soon after saving and moderation are ready."
+            }
+            className="min-h-12 flex-1 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm text-lf-slate outline-none"
+          />
+        </div>
+        <p className="mt-4 border-t border-lf-line pt-3 text-sm font-semibold text-lf-slate">
+          Group posting opens after saving and moderation are ready. Use the
+          main FaceGram feed to try review-only posting.
+        </p>
+      </article>
+
+      {faceGramPosts.map((post) => (
+        <article key={post.title} className="rounded-2xl bg-white p-5 shadow-card">
+          <div className="flex items-start gap-3">
+            <img
+              src={post.avatar}
+              alt={post.author}
+              className="h-12 w-12 rounded-full object-cover"
+            />
+            <div>
+              <h3 className="font-display text-base font-semibold text-lf-navy">
+                {post.author}
+              </h3>
+              <p className="text-xs text-lf-slate">
+                {post.role} | {post.time}
+              </p>
+            </div>
+          </div>
+          <h4 className="mt-4 text-lg font-semibold text-lf-navy">
+            {post.title}
+          </h4>
+          <p className="mt-2 text-sm leading-6 text-lf-charcoal">
+            {post.body}
+          </p>
+          <div className="mt-4 rounded-xl bg-lf-mist p-4 text-sm font-semibold text-lf-charcoal">
+            {post.mediaLabel}
+          </div>
+          <p className="mt-4 border-t border-lf-line pt-3 text-sm font-semibold text-lf-slate">
+            Likes, comments, and saves are available as review-only
+            interactions in the main FaceGram feed.
+          </p>
+        </article>
+      ))}
+    </>
+  );
+}
+
+function ComingSoonPanel({ title, body }: { title: string; body: string }) {
+  return (
+    <article className="rounded-2xl bg-white p-5 shadow-card">
+      <h2 className="font-display text-2xl font-semibold text-lf-navy">
+        {title}
+      </h2>
+      <p className="mt-2 text-sm leading-6 text-lf-slate">{body}</p>
+      <p className="mt-5 rounded-xl border border-dashed border-lf-line bg-lf-mist p-4 text-sm font-semibold text-lf-slate">
+        Coming soon
+      </p>
+    </article>
   );
 }

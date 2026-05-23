@@ -1,8 +1,6 @@
 import Link from "next/link";
-import BrandImage from "@/components/BrandImage";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import { brandAssets } from "@/data/brandAssets";
 import { apexTiers } from "@/data/apex";
 
 export const metadata = { title: "LO Mastery Coaching" };
@@ -24,9 +22,6 @@ export default function LoMasteryCoachingPage() {
         }
         backgroundImage="/media/dark-hero-background.png"
       >
-        <div className="mb-6 inline-flex rounded-xl bg-white/95 p-2 shadow-card">
-          <BrandImage asset={brandAssets["lo-mastery"]} heightClass="h-16" />
-        </div>
         <div className="flex flex-wrap gap-3">
           <Link href="/member-area/" className="btn-primary">
             Preview Member Area

@@ -24,9 +24,9 @@ export default function AudioTrainingPage() {
         title="Audio Training Library"
         body={
           <p>
-            NotebookLM audio companions will help loan officers review the
-            Sales & Marketing lessons while driving, walking, or preparing for
-            the next coaching conversation.
+            Audio companions help loan officers review Sales & Marketing
+            lessons while driving, walking, or preparing for the next coaching
+            conversation.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -47,15 +47,15 @@ export default function AudioTrainingPage() {
 
       <section className="container-page py-10">
         <div className="grid gap-4 md:grid-cols-3">
-          {["Prompt Ready", "Published", "Needs Drive Upload"].map((label) => (
+          {["Coming Soon", "Published", "Needs Drive Upload"].map((label) => (
             <article key={label} className="card p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
                 {label}
               </p>
               <p className="mt-2 h-display text-3xl">{statusCount(label)}</p>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
-                {label === "Prompt Ready"
-                  ? "Prompt is ready for NotebookLM generation."
+                {label === "Coming Soon"
+                  ? "Audio companion is planned and waiting for production."
                   : label === "Published"
                     ? "Drive audio is ready to play on the site."
                     : "Audio exists or is expected, but needs Drive upload details."}

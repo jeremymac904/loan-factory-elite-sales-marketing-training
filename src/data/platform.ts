@@ -154,7 +154,7 @@ export const platformModules: PlatformModule[] = [
     currentStatus:
       "The read-only beta module is available for Team Leader planning and review.",
     nextAction:
-      "Jeremy and Andre review sample lanes before live campaign saving, AI scoring, or scorecard persistence.",
+      "LO Development reviews sample lanes before live campaign saving, AI scoring, or scorecard persistence.",
     connections: [
       "Connects to Team Leader OS.",
       "Uses LO Support Assistant and Marketing Support Assistant drafts.",

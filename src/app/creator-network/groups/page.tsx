@@ -41,7 +41,7 @@ export default async function FaceGramGroupsPage() {
     <>
       <section className="bg-lf-navy text-white">
         <div className="container-page py-14">
-          <h1 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
+          <h1 className="metal-title-dark text-4xl md:text-5xl">
             FaceGram Groups
           </h1>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-white/80">

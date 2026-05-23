@@ -83,12 +83,12 @@ export const roles: Role[] = [
     name: "Loan Officer",
     group: "Loan Officer",
     description:
-      "Apex Advisor, Sales & Marketing, AI Training, FaceGram, AI Assistants, and Resources.",
+      "Coaching, Sales & Marketing, AI Advantage, FaceGram, AI Assistants, and Resources.",
     dashboardHref: "/",
     highlights: [
       "Sales & Marketing 101-601",
-      "Apex Advisor",
-      "AI Training",
+      "LO Mastery Coaching",
+      "AI Advantage",
       "FaceGram",
     ],
   },

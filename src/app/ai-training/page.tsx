@@ -1,8 +1,6 @@
 import Link from "next/link";
-import BrandImage from "@/components/BrandImage";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import { brandAssets } from "@/data/brandAssets";
 import {
   aiTrainingPaths,
   aiTrainingStartHere,
@@ -10,17 +8,6 @@ import {
 } from "@/data/aiTrainingVideos";
 
 export const metadata = { title: "AI Advantage" };
-
-const driveResources = [
-  {
-    title: "AI LO Training Drive",
-    href: "https://drive.google.com/drive/folders/133w74YcUtK4w8g2Xa8Ttp7j2W7RVw1vz?usp=sharing",
-  },
-  {
-    title: "Jeremy and Andre BD Folder",
-    href: "https://drive.google.com/drive/folders/164oRV4Vn1XRh6UTySL52USyXDugfQp6a?usp=sharing",
-  },
-];
 
 function compactTitle(title: string) {
   return title.replace("AI Training", "AI Advantage").replace(" - Recording", "");
@@ -31,35 +18,7 @@ function clipRange(start: string, end: string) {
   return `${start || "?"}-${end || "?"}`;
 }
 
-function statusClass(status: string) {
-  if (status.includes("Selective")) {
-    return "border-lf-line bg-white text-lf-charcoal";
-  }
-
-  if (status.includes("Source")) {
-    return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
-  }
-
-  return "border-lf-orange/40 bg-lf-orange text-white";
-}
-
-function trainingStatusLabel(status: string) {
-  if (status.includes("Selective")) return "Use selected lessons";
-  if (status.includes("Source")) return "Notes indexed";
-  if (status.includes("Ready")) return "Lesson plan ready";
-  return "Coming soon";
-}
-
 export default function AITrainingPage() {
-  const totalSegments = aiTrainingVideos.reduce(
-    (count, video) => count + video.segments.length,
-    0,
-  );
-  const keepSegments = aiTrainingVideos.reduce(
-    (count, video) =>
-      count + video.segments.filter((segment) => segment.keep).length,
-    0,
-  );
   return (
     <>
       <PageHero
@@ -74,12 +33,6 @@ export default function AITrainingPage() {
         backgroundImage="/media/dark-hero-background.png"
         overlayOpacity={0.68}
       >
-        <div className="mb-6 inline-flex rounded-xl bg-white/95 p-3 shadow-card">
-          <BrandImage
-            asset={brandAssets["ai-advantage"]}
-            heightClass="h-16 md:h-20"
-          />
-        </div>
         <div className="flex flex-wrap gap-3">
           <a href="#start-here" className="btn-primary">
             Start here
@@ -100,29 +53,14 @@ export default function AITrainingPage() {
       </PageHero>
 
       <section id="start-here" className="container-page py-14">
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <SectionHeading
-              eyebrow="Start here"
-              title="Start with these five lessons."
-              description="If you are new to AI, start here. These lessons show practical ways to save time without skipping review."
-            />
-            <div className="mt-6 grid gap-3">
-              {driveResources.map((resource) => (
-                <a
-                  key={resource.href}
-                  href={resource.href}
-                  className="rounded-xl border border-lf-line bg-white p-4 text-sm font-semibold text-lf-charcoal shadow-card transition hover:border-lf-orange hover:text-lf-orange"
-                >
-                  {resource.title}
-                  <span aria-hidden className="ml-2 text-lf-orange">
-                    {"->"}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="grid gap-3">
+        <div className="mx-auto max-w-4xl text-center">
+          <SectionHeading
+            eyebrow="Start here"
+            title="Start with these five lessons."
+            description="If you are new to AI, start here. These lessons show practical ways to save time without skipping review."
+          />
+        </div>
+        <div className="mx-auto mt-8 grid max-w-5xl gap-3 md:grid-cols-2">
             {aiTrainingStartHere.map((lesson, index) => (
               <article
                 key={lesson}
@@ -140,7 +78,6 @@ export default function AITrainingPage() {
                 </div>
               </article>
             ))}
-          </div>
         </div>
       </section>
 
@@ -153,15 +90,23 @@ export default function AITrainingPage() {
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {aiTrainingPaths.map((path) => (
-              <article key={path.title} id={path.anchor} className="card">
+              <Link
+                key={path.title}
+                id={path.anchor}
+                href={`/ai-training/${path.anchor}/`}
+                className="card hover:shadow-lift"
+              >
                 <h3 className="h-display text-xl">{path.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-lf-slate">
                   {path.description}
                 </p>
-                <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                <p className="mt-5 text-sm font-semibold text-lf-orange">
+                  Open path &rarr;
+                </p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-lf-slate">
                   Good for: {path.tags.join(", ")}
                 </p>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -171,13 +116,13 @@ export default function AITrainingPage() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="Full video library"
-            title="AI training recordings and lesson notes"
-            description={`${totalSegments} lesson notes are mapped. ${keepSegments} are marked as useful first-watch lessons. Video links will appear as each lesson is approved for beta use.`}
+            title="AI training videos and lesson highlights"
+            description="Choose a training topic below. Each video includes a short preview, key takeaways, and next steps. YouTube clips will appear as each training segment is approved."
           />
           <div className="rounded-2xl border border-lf-line bg-white p-4 text-sm text-lf-slate shadow-card sm:max-w-sm">
             <strong className="text-lf-navy">How to use this page:</strong>{" "}
-            start with the first five lessons, then open the matching recording
-            section when you want timestamps.
+            start with one topic, open the lesson highlights, then try one
+            prompt or workflow the same week.
           </div>
         </div>
 
@@ -193,12 +138,8 @@ export default function AITrainingPage() {
                     {compactTitle(video.title)}
                   </h3>
                 </div>
-                <span
-                  className={`rounded-full border px-3 py-1 text-xs font-semibold ${statusClass(
-                    video.status,
-                  )}`}
-                >
-                  {trainingStatusLabel(video.status)}
+                <span className="rounded-full border border-lf-line bg-lf-mist px-3 py-1 text-xs font-semibold text-lf-slate">
+                  Video coming soon
                 </span>
               </div>
 
@@ -212,7 +153,7 @@ export default function AITrainingPage() {
 
               <div className="mt-5">
                 <h4 className="text-sm font-semibold text-lf-navy">
-                  Best lessons
+                  Lesson highlights
                 </h4>
                 <ul className="mt-2 space-y-2 text-sm text-lf-slate">
                   {video.bestClipsToCutFirst.slice(0, 3).map((clip) => (
@@ -227,66 +168,11 @@ export default function AITrainingPage() {
               </div>
 
               <div className="mt-auto flex flex-wrap gap-3 pt-6">
-                <a href={`#segments-${video.id}`} className="btn-primary">
-                  View lesson notes
-                </a>
+                <Link href={`/ai-training/recordings/${video.id}/`} className="btn-primary">
+                  Open lesson highlights
+                </Link>
               </div>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="container-page py-14">
-        <SectionHeading
-          eyebrow="Lesson notes"
-          title="Open a recording to find the useful lessons."
-          description="These notes help you jump to the parts that matter most. Only useful first-watch lessons are shown here."
-        />
-        <div className="mt-8 grid gap-4">
-          {aiTrainingVideos.map((video) => (
-            <details
-              key={video.id}
-              id={`segments-${video.id}`}
-              className="rounded-2xl border border-lf-line bg-white shadow-card"
-            >
-              <summary className="cursor-pointer list-none p-5">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                      {video.category}
-                    </p>
-                    <h3 className="h-display text-xl">
-                      {compactTitle(video.title)}
-                    </h3>
-                  </div>
-                  <span className="text-sm font-semibold text-lf-charcoal">
-                    {video.segments.length} notes
-                  </span>
-                </div>
-              </summary>
-              <div className="grid gap-3 border-t border-lf-line p-5">
-                {video.segments.filter((segment) => segment.keep).map((segment) => (
-                  <article
-                    key={segment.id}
-                    className="grid gap-4 rounded-xl border border-lf-line bg-lf-mist p-4 lg:grid-cols-[0.35fr_1fr]"
-                  >
-                    <div>
-                      <p className="text-sm font-semibold text-lf-navy">
-                        {clipRange(segment.start, segment.end)}
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lf-charcoal">
-                        {segment.bestStandaloneClipTitle}
-                      </h4>
-                      <p className="mt-2 text-sm leading-6 text-lf-slate">
-                        {segment.whatJeremyCovers || segment.reason}
-                      </p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </details>
           ))}
         </div>
       </section>

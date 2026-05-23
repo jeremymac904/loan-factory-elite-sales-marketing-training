@@ -16,8 +16,8 @@ const primaryNav = [
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-lf-line bg-white/95 backdrop-blur">
-      <div className="mx-auto flex min-h-20 w-full max-w-[1500px] items-center justify-between gap-5 px-5 py-3 sm:px-8">
-        <div className="flex w-full items-center justify-between gap-4 lg:w-auto">
+      <div className="mx-auto flex min-h-20 w-full max-w-[1500px] items-center justify-between gap-4 px-5 py-3 sm:px-8 lg:grid lg:grid-cols-[260px_minmax(0,1fr)_260px]">
+        <div className="flex min-w-0 flex-1 items-center justify-between gap-4 lg:flex-none lg:justify-start">
           <Link
             href="/"
             className="flex min-w-0 items-center"
@@ -25,7 +25,7 @@ export default function SiteHeader() {
           >
             <BrandImage
               asset={brandAssets["loan-factory"]}
-              heightClass="h-8 sm:h-9"
+              heightClass="h-10 sm:h-12"
             />
           </Link>
 
@@ -50,21 +50,22 @@ export default function SiteHeader() {
           </details>
         </div>
 
-        <div className="hidden min-w-0 items-center justify-end gap-3 lg:flex">
-          <nav
-            className="flex min-w-0 items-center justify-end gap-2"
-            aria-label="Primary navigation"
-          >
-            {primaryNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="inline-flex items-center whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-semibold text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-orange xl:px-3 xl:text-[15px]"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+        <nav
+          className="hidden min-w-0 items-center justify-center gap-2 lg:flex"
+          aria-label="Primary navigation"
+        >
+          {primaryNav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="inline-flex items-center whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-semibold text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-orange xl:px-3 xl:text-[15px]"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="hidden min-w-0 items-center justify-end lg:flex">
           <HeaderAuthStatus />
         </div>
       </div>

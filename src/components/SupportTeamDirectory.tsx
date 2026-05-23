@@ -92,31 +92,80 @@ export default function SupportTeamDirectory() {
                     className="card flex h-full flex-col gap-4"
                   >
                     <div className="flex items-center gap-4">
-                      <Image
-                        src={person.image}
-                        alt={`${person.name} headshot`}
-                        width={96}
-                        height={96}
-                        className="h-20 w-20 shrink-0 rounded-full object-cover"
-                      />
+                      {person.image ? (
+                        <Image
+                          src={person.image}
+                          alt={`${person.name} headshot`}
+                          width={96}
+                          height={96}
+                          className="h-20 w-20 shrink-0 rounded-full object-cover"
+                        />
+                      ) : (
+                        <div
+                          aria-hidden
+                          className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-lf-navy text-xl font-bold text-white"
+                        >
+                          {person.name
+                            .split(" ")
+                            .map((part) => part[0])
+                            .join("")
+                            .slice(0, 2)}
+                        </div>
+                      )}
                       <div className="min-w-0">
                         <h4 className="h-display text-lg">{person.name}</h4>
                         <p className="mt-1 text-sm leading-5 text-lf-slate">
                           {person.role}
                         </p>
+                        {person.teamBrand && (
+                          <p className="mt-1 text-xs font-semibold text-lf-orangeDark">
+                            {person.teamBrand}
+                          </p>
+                        )}
                       </div>
                     </div>
 
                     <p className="text-sm leading-6 text-lf-slate">
-                      {askAbout[group]}
+                      {person.description ?? askAbout[group]}
                     </p>
 
-                    <a
-                      href={`mailto:${person.email}`}
-                      className="mt-auto inline-flex w-fit items-center rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-navy transition hover:border-lf-orange hover:text-lf-orange"
-                    >
-                      {person.email}
-                    </a>
+                    <div className="mt-auto flex flex-wrap gap-2">
+                      <a
+                        href={`mailto:${person.email}`}
+                        className="inline-flex w-fit items-center rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-navy transition hover:border-lf-orange hover:text-lf-orange"
+                      >
+                        {person.email}
+                      </a>
+                      {person.phone && (
+                        <a
+                          href={`tel:${person.phone.replace(/[^0-9+]/g, "")}`}
+                          className="inline-flex w-fit items-center rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-navy transition hover:border-lf-orange hover:text-lf-orange"
+                        >
+                          {person.phone}
+                        </a>
+                      )}
+                      {person.additionalPhone && (
+                        <a
+                          href={`tel:${person.additionalPhone.replace(
+                            /[^0-9+]/g,
+                            "",
+                          )}`}
+                          className="inline-flex w-fit items-center rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-navy transition hover:border-lf-orange hover:text-lf-orange"
+                        >
+                          {person.additionalPhone}
+                        </a>
+                      )}
+                      {person.profileUrl && (
+                        <a
+                          href={person.profileUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex w-fit items-center rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-navy transition hover:border-lf-orange hover:text-lf-orange"
+                        >
+                          Profile
+                        </a>
+                      )}
+                    </div>
                   </article>
                 ))}
               </div>

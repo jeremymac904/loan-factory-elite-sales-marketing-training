@@ -36,7 +36,7 @@ export function PersonaShell({
           className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(242,106,31,0.28),transparent_32%),linear-gradient(135deg,#000000_0%,#111111_52%,#2d2d2d_100%)]"
         />
         <div className="relative container-page py-16 md:py-20">
-          <h1 className="max-w-4xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+          <h1 className="metal-title-dark max-w-4xl text-4xl md:text-5xl">
             {title}
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-white/85">

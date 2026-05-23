@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import BrandImage from "@/components/BrandImage";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
-import { BrandAsset, brandAssets } from "@/data/brandAssets";
 
 const dashboardModules = [
   {
@@ -11,7 +9,6 @@ const dashboardModules = [
       "Get coaching, accountability, trackers, and member resources through LO Mastery or Loan Factory Alliance.",
     href: "/coaching/",
     cta: "Start with Coaching",
-    logos: ["lo-mastery", "loan-factory-alliance"],
   },
   {
     title: "Sales & Marketing",
@@ -26,7 +23,6 @@ const dashboardModules = [
       "Learn simple ways to use AI for drafts, scripts, marketing ideas, and better daily follow-up.",
     href: "/ai-training/",
     cta: "Explore AI Advantage",
-    logos: ["ai-advantage"],
   },
   {
     title: "FaceGram",
@@ -34,7 +30,6 @@ const dashboardModules = [
       "Share internal ideas, wins, questions, scripts, videos, and marketing examples with other Loan Factory LOs.",
     href: "/facegram/",
     cta: "Explore",
-    logos: ["facegram"],
   },
   {
     title: "AI Assistants",
@@ -105,30 +100,30 @@ export default async function HomePage({ searchParams }: Props) {
               Find the training, scripts, AI help, coaching, and support you
               need to grow your business.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/coaching/" className="btn-primary">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link href="/coaching/" className="btn-primary w-full sm:w-auto">
                 Start with Coaching
               </Link>
               <Link
                 href="/sales-training/"
-                className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
+                className="btn-secondary w-full border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20 sm:w-auto"
               >
                 View Sales &amp; Marketing
               </Link>
               <Link
                 href="/ai-training/"
-                className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
+                className="btn-secondary w-full border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20 sm:w-auto"
               >
                 Explore AI Advantage
               </Link>
             </div>
           </div>
-          <div className="rounded-xl border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur">
+          <div className="min-w-0 rounded-xl border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
               Start here
             </p>
-            <h2 className="mt-2 font-display text-2xl font-semibold text-white">
-                Pick one area. Take one clear next step.
+            <h2 className="mt-2 break-words font-display text-2xl font-semibold text-white">
+              Pick one area. Take one clear next step.
             </h2>
             <div className="mt-5 grid gap-3 text-sm text-white/82">
               <div className="rounded-lg border border-white/10 bg-black/25 p-3">
@@ -164,65 +159,47 @@ export default async function HomePage({ searchParams }: Props) {
         </article>
       </section>
 
-      <section className="container-page py-14">
-        <div className="flex max-w-3xl flex-col gap-3">
-          <h2 className="h-display text-3xl">What do you need today?</h2>
-          <p className="prose-lf text-lf-slate">
-            Pick one card. Each one takes you to a useful next step without
-            extra clutter.
-          </p>
-        </div>
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {dashboardModules.map((module) => (
-            <article
-              key={module.href}
-              className="card flex min-h-52 flex-col gap-4 transition hover:-translate-y-0.5 hover:shadow-lift"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="h-display text-xl">{module.title}</h3>
-                {"logos" in module && module.logos && (
-                  <div className="flex shrink-0 items-center gap-2">
-                    {(module.logos as BrandAsset["id"][]).map((logo) => (
-                      <BrandImage
-                        key={logo}
-                        asset={brandAssets[logo]}
-                        heightClass="h-10"
-                        className="rounded-md"
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-              <p className="prose-lf text-sm text-lf-slate">
-                {module.description}
-              </p>
-              <Link
-                href={module.href}
-                className="mt-auto inline-flex w-fit items-center rounded-lg bg-lf-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-lf-orange"
-              >
-                {module.cta}
-                <span aria-hidden className="ml-2">
-                  &rarr;
-                </span>
-              </Link>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="container-page pb-14">
-        <div className="rounded-2xl border border-lf-line bg-lf-mist p-6 shadow-card md:flex md:items-center md:justify-between md:gap-6">
-          <div className="max-w-3xl">
-            <h2 className="h-display text-2xl">Team Leader growth planning</h2>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Use 1+1+1=5 to choose a community, pick a buyer, Realtor, or
-              recruiting audience, and assign weekly campaign lanes. Read-only
-              during beta.
+      <section className="relative isolate overflow-hidden py-14">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
+        />
+        <div aria-hidden className="absolute inset-0 bg-white/90" />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(242,106,31,0.16),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.92),rgba(245,246,248,0.94))]"
+        />
+        <div className="relative container-page">
+          <div className="flex max-w-3xl flex-col gap-3">
+            <h2 className="h-display text-3xl">What do you need today?</h2>
+            <p className="prose-lf text-lf-slate">
+              Pick one card. Each one takes you to a useful next step without
+              extra clutter.
             </p>
           </div>
-          <Link href="/one-plus-one-five/" className="btn-primary mt-5 md:mt-0">
-            Open 1+1+1=5
-          </Link>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {dashboardModules.map((module) => (
+              <article
+                key={module.href}
+                className="card flex min-h-52 flex-col gap-4 bg-white/95 transition hover:-translate-y-0.5 hover:shadow-lift"
+              >
+                <h3 className="metal-title text-2xl">{module.title}</h3>
+                <p className="prose-lf text-sm text-lf-slate">
+                  {module.description}
+                </p>
+                <Link
+                  href={module.href}
+                  className="mt-auto inline-flex w-fit items-center rounded-lg bg-lf-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-lf-orange"
+                >
+                  {module.cta}
+                  <span aria-hidden className="ml-2">
+                    &rarr;
+                  </span>
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </>

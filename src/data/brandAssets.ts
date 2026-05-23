@@ -49,7 +49,7 @@ export const brandAssets: Record<BrandAsset["id"], BrandAsset> = {
     alt: "FaceGram logo",
     filePath: "/logos/lo-development/facegram.png",
     usage:
-      "Primary user-facing mark for the Creator Network / FaceGram community experience.",
+      "Primary user-facing mark for the FaceGram community experience.",
     background: "both",
   },
   "lo-mastery": {

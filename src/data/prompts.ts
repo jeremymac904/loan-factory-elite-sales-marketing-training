@@ -158,6 +158,138 @@ Tone: professional, calm, helpful.`,
 4. Weekly content cadence (video, post, GBP, newsletter).
 5. One starter benchmark to track at day 30, 60, 90. No production guarantees.`,
   },
+  {
+    id: "call-prep-partner-meeting",
+    category: "Call Prep",
+    module: "301",
+    level: "Beginner",
+    title: "Referral partner call prep.",
+    useCase: "Use this before a Realtor, CPA, builder, or attorney call.",
+    body: `Prepare me for a 20 minute referral partner call. Partner type: [type]. What I know: [paste only public or non-private context]. Output: one simple opening, five discovery questions, one way I can be useful this week, and one clear next step. No rate, fee, APR, approval, or underwriting claims.`,
+    tips:
+      "Keep the call about their business first. Do not pitch before you understand what they need.",
+  },
+  {
+    id: "follow-up-text-after-call",
+    category: "Follow Up",
+    module: "201",
+    level: "Beginner",
+    title: "After-call text follow-up.",
+    useCase: "Send a short text after a borrower or partner conversation.",
+    body: `Draft a short follow-up text after my call with [person]. Context: [paste]. Keep it under 55 words, warm, specific, and clear. End with one next step. Do not include rates, fees, APR, payments, approval language, or underwriting decisions.`,
+    tips:
+      "Text should sound like you. Add one real detail from the conversation before sending.",
+  },
+  {
+    id: "realtor-open-house-follow-up",
+    category: "Realtor Outreach",
+    module: "301",
+    level: "Intermediate",
+    title: "Open house follow-up.",
+    useCase: "Follow up after seeing a Realtor's open house or listing.",
+    body: `Write a peer-to-peer follow-up to [agent] about [listing/open house]. Mention one specific detail I noticed. Offer one useful idea for helping buyers prepare before touring. Keep it under 90 words. No bragging, no rate quotes, no payment examples, no approval claims.`,
+    tips:
+      "The goal is a useful conversation, not a canned pitch.",
+  },
+  {
+    id: "partner-meeting-recap",
+    category: "Partner Meeting",
+    module: "301",
+    level: "Intermediate",
+    title: "Partner meeting recap.",
+    useCase: "Turn meeting notes into a clean recap and next-step plan.",
+    body: `Summarize these partner meeting notes: [paste]. Output: 1. what I learned about their business, 2. the main opportunity, 3. one useful follow-up item for me, 4. one follow-up item for them, 5. a short recap email draft. No rate, fee, APR, approval, or underwriting claims.`,
+    tips:
+      "Send recaps quickly while the conversation is still fresh.",
+  },
+  {
+    id: "social-post-past-client",
+    category: "Social Post",
+    module: "401",
+    level: "Beginner",
+    title: "Past-client value post.",
+    useCase: "Create a simple post that reminds past clients you are still a resource.",
+    body: `Draft three social post options for past clients. Topic: [topic]. Keep each under 90 words. Make the post helpful, plain-English, and conversation-starting. No rates, payments, fees, guarantees, approvals, or underwriting advice. End with a soft CTA.`,
+    tips:
+      "Pick the post that sounds most natural, then edit it before publishing.",
+  },
+  {
+    id: "short-video-realtor-tip",
+    category: "Short Video Script",
+    module: "401",
+    level: "Beginner",
+    title: "Realtor partner video tip.",
+    useCase: "Write a short video for Realtor relationships.",
+    body: `Write a 45 second video script for Realtors about [topic]. Structure: 3 second hook, one practical tip, one example, one soft CTA. Use plain language. No rate, APR, fee, payment, approval, eligibility, or underwriting claims.`,
+    tips:
+      "Read it out loud. If it sounds like an ad, make it more conversational.",
+  },
+  {
+    id: "gbp-weekly-local-education",
+    category: "Google Business Profile",
+    module: "401",
+    level: "Beginner",
+    title: "Local education GBP post.",
+    useCase: "Draft one Google Business Profile post for local visibility.",
+    body: `Draft a Google Business Profile post for [city/neighborhood]. Topic: [topic]. Keep it under 85 words. Include one locally relevant detail. Make it educational and conversation-focused. No rates, fees, APR, payments, guarantees, approvals, or underwriting claims.`,
+    tips:
+      "Public posts need review. Validate local details before publishing.",
+  },
+  {
+    id: "past-client-check-in-text",
+    category: "Past Client",
+    module: "501",
+    level: "Beginner",
+    title: "Past-client check-in text.",
+    useCase: "Send a short relationship-first text to past clients.",
+    body: `Draft a short check-in text to a past client. Context I remember: [paste]. Goal: be useful and human, not salesy. Under 55 words. No rates, payments, fees, approval language, or refinance claims. End with a simple question.`,
+    tips:
+      "Do not send the same text to everyone. Add one personal detail.",
+  },
+  {
+    id: "pipeline-stuck-file-review",
+    category: "Pipeline Review",
+    module: "501",
+    level: "Intermediate",
+    title: "Stuck file next-step review.",
+    useCase: "Use this when a file has not moved in several days.",
+    body: `Review this pipeline note for a stuck file: [paste non-private status, last touch, next step]. Output: likely bottleneck, one call to make, one question to ask, one internal next step, and one borrower-friendly draft update. Do not include approvals, underwriting decisions, rates, fees, APR, or guarantees.`,
+    tips:
+      "Use TERA and current company process as the source of truth.",
+  },
+  {
+    id: "weekly-summary-team-leader",
+    category: "Weekly Summary",
+    module: "501",
+    level: "Intermediate",
+    title: "Team leader weekly summary.",
+    useCase: "Summarize a week of team activity for coaching discussion.",
+    body: `Create a weekly team summary from these activity notes: [paste]. Output: three wins, three stuck points, one coaching theme, one suggested focus for next week, and one question for the team. Do not include borrower PII or private loan details.`,
+    tips:
+      "Use this as a coaching prep draft, not a public report.",
+  },
+  {
+    id: "roleplay-realtor-objection",
+    category: "Roleplay",
+    module: "301",
+    level: "Intermediate",
+    title: "Realtor objection practice.",
+    useCase: "Practice a Realtor conversation without sounding scripted.",
+    body: `Roleplay as a busy Realtor who already has three preferred lenders. Push back on me twice. Then pause and coach my response. Focus on curiosity, value, consistency, and a clear next step. No promises, no pricing claims, and no thing-of-value language.`,
+    tips:
+      "Have the assistant coach your tone after the roleplay.",
+  },
+  {
+    id: "niche-content-calendar",
+    category: "Niche Plan",
+    module: "601",
+    level: "Advanced",
+    title: "30 day niche content calendar.",
+    useCase: "Turn a niche into weekly content and outreach ideas.",
+    body: `Build a 30 day content and outreach calendar for this niche: [niche]. Market: [city]. Output four weekly themes, eight social post ideas, four short video ideas, four partner outreach ideas, and one simple weekly metric. No production guarantees, no rate/payment examples, and no approval claims.`,
+    tips:
+      "Start with a small niche you can actually serve and talk to every week.",
+  },
 ];
 
 export const promptCategories = [
