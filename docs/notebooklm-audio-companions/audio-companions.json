@@ -24,14 +24,21 @@
       "sourceNotebookUrl": "https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e",
       "sourceNotebookTitle": "(Sales & Marketing Masterclass) - YouTube",
       "customPromptFile": "NOTEBOOKLM_AUDIO_PROMPTS_101_601.md#101-foundation-the-loan-factory-operating-system",
-      "status": "prompt-ready",
+      "status": "generating",
+      "notebooklmTaskId": "0a3ef731-fd56-4223-8236-9b5f069ae897",
+      "generateOptions": {
+        "format": "deep-dive",
+        "length": "long",
+        "language": "en"
+      },
+      "submittedAt": "2026-05-23T10:38:00Z",
       "audioFileName": null,
       "localAudioPath": null,
       "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
       "driveFileId": null,
       "duration": null,
       "websitePlacement": ["/101-foundation", "/audio-training", "/training-library"],
-      "notes": "Foundation episode. Run first — sets the rhythm referenced by every other episode."
+      "notes": "Foundation episode. Run first — sets the rhythm referenced by every other episode. Generation kicked off via NotebookLM CLI."
     },
     {
       "id": "201-borrower-conversion-audio-companion",
