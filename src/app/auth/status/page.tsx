@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AuthDebugTrailView from "@/components/AuthDebugTrail";
 import AuthClientStatus from "@/components/AuthClientStatus";
 import { getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
@@ -11,6 +12,12 @@ export default async function AuthStatusPage() {
   const canAccessAdmin =
     session.status === "approved" &&
     (session.permissions?.can_access_admin || session.profile.role === "admin");
+  const serverSessionExists =
+    session.status === "approved" || session.status === "pending";
+  const serverProfile =
+    session.status === "approved" || session.status === "pending"
+      ? session.profile
+      : null;
 
   return (
     <>
@@ -77,6 +84,14 @@ export default async function AuthStatusPage() {
           </div>
 
           <AuthClientStatus />
+
+          <AuthDebugTrailView
+            serverSessionExists={serverSessionExists}
+            serverStatus={session.status}
+            serverProfileEmail={serverProfile?.email}
+            serverProfileRole={serverProfile?.role}
+            serverProfileStatus={serverProfile?.status}
+          />
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">

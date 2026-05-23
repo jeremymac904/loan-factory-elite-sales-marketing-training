@@ -3,8 +3,12 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-
-const authNextStorageKey = "loan-factory-auth-next";
+import {
+  authNextStorageKey,
+  type AuthDebugTrail,
+  mergeAuthDebugTrail,
+  sanitizeAuthDebugMessage,
+} from "@/lib/supabase/debug";
 
 type CallbackState =
   | { status: "working"; message: string }
@@ -22,11 +26,23 @@ export default function BrowserAuthCallbackPage() {
     async function finishSignIn() {
       const searchParams = new URLSearchParams(window.location.search);
       const code = searchParams.get("code");
+      const callbackStage =
+        searchParams.get("stage") ?? "browser-callback-loaded";
       const fallbackNext =
         window.sessionStorage.getItem(authNextStorageKey) ?? "/";
       const next = searchParams.get("next") ?? fallbackNext;
 
+      mergeAuthDebugTrail({
+        callbackStage,
+        hasCode: Boolean(code),
+      });
+
       if (!code) {
+        mergeAuthDebugTrail({
+          callbackStage: "browser-callback-missing-code",
+          lastErrorCode: "MissingCode",
+          lastErrorMessage: "The browser callback did not receive a code.",
+        });
         window.location.replace(
           "/login/?error=missing-code&stage=browser-callback-missing-code",
         );
@@ -36,15 +52,34 @@ export default function BrowserAuthCallbackPage() {
       const supabase = createBrowserSupabaseClient();
 
       if (!supabase) {
+        mergeAuthDebugTrail({
+          callbackStage: "browser-callback-config",
+          lastErrorCode: "SupabaseNotConfigured",
+          lastErrorMessage: "Supabase public configuration is missing.",
+        });
         window.location.replace(
           "/login/?error=supabase-not-configured&stage=browser-callback-config",
         );
         return;
       }
 
+      mergeAuthDebugTrail({
+        browserExchangeAttempted: true,
+        browserExchangeSucceeded: false,
+      });
+
       const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
       if (error || !data.session) {
+        mergeAuthDebugTrail({
+          callbackStage: "browser-callback-exchange",
+          browserExchangeSucceeded: false,
+          browserSessionExists: false,
+          lastErrorCode: error?.name ?? "MissingBrowserSession",
+          lastErrorMessage: sanitizeAuthDebugMessage(
+            error?.message ?? "Missing browser session after exchange.",
+          ),
+        });
         console.error("Supabase browser callback exchange failed", {
           message: error?.message ?? "Missing browser session after exchange",
           name: error?.name,
@@ -59,11 +94,28 @@ export default function BrowserAuthCallbackPage() {
       }
 
       if (!data.session.access_token || !data.session.refresh_token) {
+        mergeAuthDebugTrail({
+          callbackStage: "browser-session-missing",
+          browserExchangeSucceeded: true,
+          browserSessionExists: false,
+          lastErrorCode: "BrowserSessionMissingTokens",
+          lastErrorMessage: "Browser session did not include both token fields.",
+        });
         window.location.replace(
           "/login/?error=auth-callback&stage=browser-session-missing",
         );
         return;
       }
+
+      const {
+        data: { session: browserSession },
+      } = await supabase.auth.getSession();
+
+      mergeAuthDebugTrail({
+        browserExchangeSucceeded: true,
+        browserSessionExists: Boolean(browserSession?.user),
+        profileEmail: browserSession?.user.email ?? data.session.user.email,
+      });
 
       if (active) {
         setState({
@@ -71,6 +123,12 @@ export default function BrowserAuthCallbackPage() {
           message: "Checking beta access...",
         });
       }
+
+      mergeAuthDebugTrail({
+        syncProfileAttempted: true,
+        syncProfileReceivedSession: true,
+        syncProfileSucceeded: false,
+      });
 
       const response = await fetch("/auth/sync-profile/", {
         method: "POST",
@@ -85,15 +143,22 @@ export default function BrowserAuthCallbackPage() {
         }),
       });
 
-      let body: { redirectTo?: string; reason?: string } | null = null;
+      let body:
+        | { redirectTo?: string; reason?: string; debug?: AuthDebugTrail }
+        | null = null;
 
       try {
         body = (await response.json()) as {
           redirectTo?: string;
           reason?: string;
+          debug?: AuthDebugTrail;
         };
       } catch {
         body = null;
+      }
+
+      if (body?.debug) {
+        mergeAuthDebugTrail(body.debug);
       }
 
       if (!response.ok || !body?.redirectTo) {
@@ -106,6 +171,13 @@ export default function BrowserAuthCallbackPage() {
           stage,
         });
 
+        mergeAuthDebugTrail({
+          callbackStage: stage,
+          syncProfileSucceeded: false,
+          lastErrorCode: stage,
+          lastErrorMessage: "Browser session reached sync-profile but did not complete.",
+        });
+
         window.location.replace(
           `/login/?error=auth-callback&stage=${encodeURIComponent(stage)}`,
         );
@@ -113,6 +185,12 @@ export default function BrowserAuthCallbackPage() {
       }
 
       window.sessionStorage.removeItem(authNextStorageKey);
+      mergeAuthDebugTrail({
+        callbackStage: "browser-sync-complete",
+        syncProfileSucceeded: true,
+        lastErrorCode: null,
+        lastErrorMessage: null,
+      });
       window.location.replace(body.redirectTo);
     }
 

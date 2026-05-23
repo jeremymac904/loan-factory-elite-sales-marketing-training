@@ -6,8 +6,12 @@ import {
   hasSupabasePublicConfig,
 } from "@/lib/supabase/config";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-
-const authNextStorageKey = "loan-factory-auth-next";
+import {
+  authNextStorageKey,
+  mergeAuthDebugTrail,
+  sanitizeAuthDebugMessage,
+  writeAuthDebugTrail,
+} from "@/lib/supabase/debug";
 
 export default function GoogleSignInButton() {
   const [loading, setLoading] = useState(false);
@@ -35,6 +39,26 @@ export default function GoogleSignInButton() {
     const redirectTo = new URL("/auth/callback", window.location.origin);
 
     window.sessionStorage.setItem(authNextStorageKey, "/");
+    writeAuthDebugTrail({
+      callbackStage: "oauth-start-clicked",
+      hasCode: false,
+      oauthStartAttempted: true,
+      oauthStartSucceeded: false,
+      browserExchangeAttempted: false,
+      browserExchangeSucceeded: false,
+      browserSessionExists: false,
+      syncProfileAttempted: false,
+      syncProfileReceivedSession: false,
+      syncProfileSucceeded: false,
+      syncProfileCookieWriteAttempted: false,
+      syncProfileCookieCount: 0,
+      serverSessionExists: false,
+      profileEmail: null,
+      profileRole: null,
+      profileStatus: null,
+      lastErrorCode: null,
+      lastErrorMessage: null,
+    });
 
     const { data, error: signInError } = await supabase.auth.signInWithOAuth({
       provider: "google",
@@ -43,17 +67,27 @@ export default function GoogleSignInButton() {
         queryParams: {
           prompt: "select_account",
         },
-        skipBrowserRedirect: true,
       },
     });
 
     if (signInError || !data.url) {
+      mergeAuthDebugTrail({
+        callbackStage: "oauth-start-failed",
+        oauthStartSucceeded: false,
+        lastErrorCode: signInError?.name ?? "MissingOAuthUrl",
+        lastErrorMessage: sanitizeAuthDebugMessage(
+          signInError?.message ?? "Missing Google OAuth redirect URL.",
+        ),
+      });
       setLoading(false);
       setError("Google sign-in could not start. Please try again.");
       return;
     }
 
-    window.location.assign(data.url);
+    mergeAuthDebugTrail({
+      callbackStage: "oauth-start-redirecting",
+      oauthStartSucceeded: true,
+    });
   }
 
   return (
