@@ -23,7 +23,7 @@ const driveResources = [
 ];
 
 function compactTitle(title: string) {
-  return title.replace(" - Recording", "");
+  return title.replace("AI Training", "AI Advantage").replace(" - Recording", "");
 }
 
 function clipRange(start: string, end: string) {
@@ -66,10 +66,9 @@ export default function AITrainingPage() {
         title="AI Advantage"
         body={
           <p>
-            AI Advantage is the practical AI Training path for Loan Factory
-            loan officers: Gemini, NotebookLM, Google Workspace, Google
-            Business Profile, AI Twins, content automation, and safe AI
-            workflows.
+            Learn simple ways to use AI for better follow-up, cleaner drafts,
+            stronger marketing ideas, and faster prep. AI gives you a draft;
+            you still review and decide what to use.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -105,8 +104,8 @@ export default function AITrainingPage() {
           <div>
             <SectionHeading
               eyebrow="Start here"
-              title="The first five AI Advantage lessons every LO should watch."
-              description="This path pulls the strongest beginner clips from the timestamp breakdowns so a new loan officer knows exactly where to begin."
+              title="Start with these five lessons."
+              description="If you are new to AI, start here. These lessons show practical ways to save time without skipping review."
             />
             <div className="mt-6 grid gap-3">
               {driveResources.map((resource) => (
@@ -135,8 +134,8 @@ export default function AITrainingPage() {
                 <div>
                   <h3 className="h-display text-lg">{lesson}</h3>
                   <p className="mt-2 text-sm leading-6 text-lf-slate">
-                    Find this lesson in the library below, then use the notes
-                    to practice the workflow without guessing where to begin.
+                    Find this lesson in the library below, then try one small
+                    action the same day.
                   </p>
                 </div>
               </article>
@@ -149,8 +148,8 @@ export default function AITrainingPage() {
         <div className="container-page py-14">
           <SectionHeading
             eyebrow="Training paths"
-            title="Nine practical AI Advantage paths from the timestamp breakdowns"
-            description="Each path points loan officers to practical AI skills they can use for drafting, review, planning, and safer daily workflow."
+            title="Nine practical AI Advantage paths"
+            description="Each path teaches one useful way to draft, review, plan, follow up, or create better marketing ideas."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {aiTrainingPaths.map((path) => (
@@ -159,16 +158,9 @@ export default function AITrainingPage() {
                 <p className="mt-3 text-sm leading-6 text-lf-slate">
                   {path.description}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {path.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-lf-line bg-lf-mist px-2.5 py-1 text-xs font-semibold text-lf-slate"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                  Good for: {path.tags.join(", ")}
+                </p>
               </article>
             ))}
           </div>
@@ -179,8 +171,8 @@ export default function AITrainingPage() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="Full video library"
-            title="Seven unique AI training recordings are indexed."
-            description={`${totalSegments} timestamped lesson notes are mapped. ${keepSegments} are marked as useful first-watch lessons. Video links will appear as each lesson is approved for beta use.`}
+            title="AI training recordings and lesson notes"
+            description={`${totalSegments} lesson notes are mapped. ${keepSegments} are marked as useful first-watch lessons. Video links will appear as each lesson is approved for beta use.`}
           />
           <div className="rounded-2xl border border-lf-line bg-white p-4 text-sm text-lf-slate shadow-card sm:max-w-sm">
             <strong className="text-lf-navy">How to use this page:</strong>{" "}
@@ -247,8 +239,8 @@ export default function AITrainingPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="Lesson notes"
-          title="Open each recording to find the practical lessons."
-          description="These timestamp notes help loan officers jump to the parts that matter most. Only useful first-watch lessons are shown here."
+          title="Open a recording to find the useful lessons."
+          description="These notes help you jump to the parts that matter most. Only useful first-watch lessons are shown here."
         />
         <div className="mt-8 grid gap-4">
           {aiTrainingVideos.map((video) => (
@@ -306,15 +298,14 @@ export default function AITrainingPage() {
             <Link href="/ai-assistants/" className="card p-4 hover:shadow-lift">
               <h3 className="font-semibold text-lf-navy">AI Assistants</h3>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
-                Use AI Twin and prompt clips as source concepts for assistant
-                starter prompts.
+                Ask for help with LO support or marketing drafts.
               </p>
             </Link>
             <Link href="/prompts/" className="card p-4 hover:shadow-lift">
               <h3 className="font-semibold text-lf-navy">Prompt Library</h3>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
-                Connect Gemini, NotebookLM, and content QA clips to reusable
-                prompt practice.
+                Copy prompts for call prep, follow-up, partner outreach,
+                marketing, roleplay, and weekly review.
               </p>
             </Link>
             <Link
@@ -323,15 +314,14 @@ export default function AITrainingPage() {
             >
               <h3 className="font-semibold text-lf-navy">Training Library</h3>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
-                Future home for published lessons once clips are cut and hosted
-                outside GitHub.
+                Find published lessons after recordings are approved and added.
               </p>
             </Link>
             <Link href="/assessments/" className="card p-4 hover:shadow-lift">
               <h3 className="font-semibold text-lf-navy">Assessments</h3>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
-                Coaching Personality Quiz and New LO Aptitude Quiz to match
-                each LO to the right AI training path. Coaching tool only.
+                Use coaching quizzes to pick a better training path. Coaching
+                tool only.
               </p>
             </Link>
           </div>

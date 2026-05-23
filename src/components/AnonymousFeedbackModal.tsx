@@ -75,7 +75,7 @@ export default function AnonymousFeedbackModal({
                   Anonymous complaints and suggestions
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
-                  Share feedback, complaints, missing resources, platform issues,
+                  Share feedback, complaints, missing resources, confusing pages,
                   or ideas for improving LO Development programs.
                 </p>
               </div>

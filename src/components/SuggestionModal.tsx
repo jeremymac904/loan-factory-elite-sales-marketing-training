@@ -109,7 +109,7 @@ export default function SuggestionModal({
     const supabase = createBrowserSupabaseClient();
 
     if (!supabase) {
-      setSaveError("Supabase is not configured for this environment yet.");
+      setSaveError("Feedback saving is not ready in this environment yet.");
       return;
     }
 
@@ -162,11 +162,11 @@ export default function SuggestionModal({
                   Send feedback
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
-                  Send beta feedback, broken links, missing resources, or
-                  platform ideas. Signed-in users save to Supabase. Signed-out
-                  preview feedback stays local/demo only. This app will not
-                  send email. Do not include borrower names, loan details, or
-                  private file information.
+                  Tell us what is confusing, broken, missing, or worth
+                  improving. The app will not send email. If you are not signed
+                  in, your feedback is only shown as a preview confirmation.
+                  Do not include borrower names, loan details, or private file
+                  information.
                 </p>
               </div>
               <button
@@ -183,7 +183,7 @@ export default function SuggestionModal({
               <p className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-sm font-semibold text-lf-slate">
                 {authState.status === "signed-in"
                   ? `Saving as ${form.anonymous ? "anonymous feedback" : authState.email}.`
-                  : "Preview feedback is local/demo only unless you sign in with Google."}
+                  : "Preview only: sign in with Google if you need to submit feedback."}
               </p>
               <label className="grid gap-1 text-sm font-semibold text-lf-charcoal">
                 Name
@@ -226,7 +226,7 @@ export default function SuggestionModal({
                   }
                   className="rounded-lg border border-lf-line px-3 py-2 font-normal outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
                 >
-                  <option value="platform">Platform</option>
+                  <option value="platform">Website or app</option>
                   <option value="content">Content</option>
                   <option value="broken_link">Broken link</option>
                   <option value="feature">Feature request</option>
@@ -266,8 +266,8 @@ export default function SuggestionModal({
             {saved && (
               <p className="mt-4 rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-sm font-semibold text-green-700">
                 {localOnly
-                  ? "Feedback captured for this preview session only. It was not submitted to Supabase and no email was sent."
-                  : "Feedback saved in Supabase. No email was sent."}
+                  ? "Feedback captured for this preview session only. It was not submitted and no email was sent."
+                  : "Feedback saved. No email was sent."}
               </p>
             )}
 

@@ -46,26 +46,26 @@ export default function Module101Page() {
       <section className="container-page py-6">
         <SectionHeading
           eyebrow="Replay and handout"
-          title="Session materials."
+          title="Watch the lesson and download the handouts."
         />
         <div className="mt-6 grid gap-5 md:grid-cols-3">
           <RecordingPlaceholder
             level="101"
-            title="The Loan Factory Operating System. Live walkthrough."
-            description="Jeremy runs one full Loan Factory LO day from 8 a.m. to 5 p.m. Activity standard, weekly rhythm, first follow ups, AI assisted drafting."
+            title="101 live walkthrough"
+            description="Jeremy walks through a full Loan Factory LO day: activity standard, weekly rhythm, first follow-ups, and AI-assisted drafting."
             videoSrc={module101.trainingVideo?.embedUrl}
             videoTitle={module101.trainingVideo?.title}
           />
           <DownloadPlaceholder
             title="101 Live class deck"
             format="PPTX"
-            description="Premium revised deck. 10 slides, six Q and A pauses, brand aligned, embedded speaker notes. Ready for live class or Gamma upload."
+            description="Class slides for the 101 Foundation lesson."
             downloadHref="/downloads/Elite_Sales_Marketing_Training_101_REVISED.pptx"
           />
           <DownloadPlaceholder
             title="101 Mortgage Sales Foundation handout"
             format="Word"
-            description="Purpose, what you will learn, broker value prop, first call script, tracker basics, today's assignment, compliance notes, next step."
+            description="What you will learn, first-call script, tracker basics, today's assignment, safety notes, and next step."
             downloadHref="/downloads/101_foundation_handout.docx"
           />
         </div>
@@ -75,7 +75,7 @@ export default function Module101Page() {
         <SectionHeading
           eyebrow="Broker value proposition"
           title="The 30 second intro every LO uses."
-          description="Use this anywhere. Lead with what 240+ wholesale lenders means for the borrower in plain English. Confirm NMLS ID before public use."
+          description="Use this to explain what you do in plain English. Confirm your NMLS ID before public use."
         />
         <div className="mt-6">
           {module101Scripts
@@ -90,7 +90,7 @@ export default function Module101Page() {
         <SectionHeading
           eyebrow="Sales math"
           title="Work backward from your income goal."
-          description="The math gets to one number. The number of real conversations you need to run every business day."
+          description="The math gets to one number: how many real conversations you need each business day."
         />
         <ol className="prose-lf mt-4 list-decimal space-y-2 pl-5 text-base">
           <li>
@@ -120,7 +120,7 @@ export default function Module101Page() {
       <section className="container-page py-6">
         <SectionHeading
           eyebrow="Weekly operating rhythm"
-          title="The week, in one page."
+          title="Your week, in one page."
         />
         <div className="mt-6 grid gap-5 md:grid-cols-3">
           <div className="card">
@@ -154,7 +154,7 @@ export default function Module101Page() {
         <SectionHeading
           eyebrow="Where to find your first 25 conversations"
           title="Practical sources, grouped by warmth."
-          description="The fastest path to 25 logged conversations this week is the people who already know you, the people you already serve, and the partners who already touch the same clients."
+          description="Start with people who already know you, people you already serve, and partners who already help the same clients."
         />
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {conversationSources.map((group) => (
@@ -192,7 +192,7 @@ export default function Module101Page() {
         <SectionHeading
           eyebrow="AI prompt"
           title="Your first Gemini Gem AI Twin prompt."
-          description="Paste your context into your Gemini Gem AI Twin. Read the draft. Make it sound like you. Send."
+          description="Paste simple context into AI. Read the draft. Make it sound like you before using it."
         />
         <div className="mt-6">
           <GeminiGemCallout />

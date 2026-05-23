@@ -9,9 +9,9 @@ export default function AiTwinProjectsPage() {
     <section className="container-page py-12">
       <AITwinNav />
       <SectionHeading
-        eyebrow="Project workspace"
-        title="Create project briefs before anything is wired."
-        description="This beta shell shows the project shape: role context, attached sources, instructions, tasks, connector needs, and a testing checklist."
+        eyebrow="Project examples"
+        title="Turn an idea into a clear project brief."
+        description="This preview shows how a Twin could help organize a project: goal, sources, instructions, tasks, needed connections, and a testing checklist."
       />
       <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <article className="card">
@@ -22,9 +22,9 @@ export default function AiTwinProjectsPage() {
             {aiTwinProjectExample.title}
           </h2>
           <p className="prose-lf mt-2 text-sm text-lf-slate">
-            A future project builder will create instructions, attach sources,
-            define connector needs, and generate a testing checklist. This
-            preview does not save to Supabase.
+            A future project builder can turn a rough idea into clear
+            instructions, source lists, tasks, and a testing checklist. This
+            preview does not save anything.
           </p>
           <div className="mt-5 grid gap-2">
             {aiTwinProjectExample.sources.map((source) => (
@@ -42,8 +42,8 @@ export default function AiTwinProjectsPage() {
             ))}
           </ol>
           <p className="mt-5 rounded-xl border border-lf-orange/30 bg-lf-orangeSoft p-4 text-sm font-semibold text-lf-orangeDark">
-            Connector requirements, n8n specs, Gmail/Drive access, and external
-            actions remain blocked until explicitly approved.
+            Email, Drive, automations, and external actions stay blocked until
+            Jeremy explicitly approves them.
           </p>
         </article>
       </div>

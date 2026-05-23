@@ -17,7 +17,7 @@ export const loDevelopmentDepartmentContact = {
   name: "LO Development",
   email: "lodevelopment@loanfactory.com",
   description:
-    "Use this department email for LO development questions, training routing, and platform support direction.",
+    "Use this department email for LO Development questions, training help, and support direction.",
 };
 
 export const loDevelopmentPeople: LoDevelopmentPerson[] = [

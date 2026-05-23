@@ -27,9 +27,9 @@ export const aiTwinProfiles: AiTwinProfile[] = [
     displayName: "Admin Twin",
     role: "admin",
     summary:
-      "Platform oversight, beta feedback review, project planning, FaceGram moderation review, support routing, and internal communications.",
+      "Helps admins review beta feedback, plan projects, route support issues, review FaceGram moderation notes, and draft internal updates.",
     helpsWith: [
-      "Create platform project briefs",
+      "Create project briefs",
       "Review beta feedback themes",
       "Draft support routing plans",
       "Review FaceGram moderation summaries",
@@ -49,7 +49,7 @@ export const aiTwinProfiles: AiTwinProfile[] = [
       "read_private_user_drive_without_user_oauth",
     ],
     defaultKnowledgeSources: [
-      "LO Development platform docs",
+      "LO Development docs",
       "Beta feedback summaries",
       "FaceGram moderation rules",
       "Support routing docs",
@@ -84,7 +84,7 @@ export const aiTwinProfiles: AiTwinProfile[] = [
     displayName: "Team Leader Twin",
     role: "team_leader",
     summary:
-      "Team coaching, training assignments, accountability prompts, team FaceGram group support, script practice, and partner strategy.",
+      "Helps team leaders coach their team, assign training, write accountability prompts, support team FaceGram groups, practice scripts, and plan partner outreach.",
     helpsWith: [
       "Create weekly team plans",
       "Draft training assignments",
@@ -145,7 +145,7 @@ export const aiTwinProfiles: AiTwinProfile[] = [
       "Prepare coaching notes",
       "Draft LO development plans",
       "Interpret quiz reports for coaching",
-      "Recommend training modules",
+      "Recommend training lessons",
     ],
     allowedActions: [
       "create_coaching_prep",
@@ -164,7 +164,7 @@ export const aiTwinProfiles: AiTwinProfile[] = [
     defaultKnowledgeSources: [
       "Coaching profile docs",
       "Quiz/report examples",
-      "Sales & Marketing modules",
+      "Sales & Marketing lessons",
       "Roleplay prompts",
       "Tracker guidance",
     ],
@@ -176,7 +176,7 @@ export const aiTwinProfiles: AiTwinProfile[] = [
     starterPrompts: [
       "Prepare coaching notes for a first-call roleplay.",
       "Create a 30-day development plan from this profile.",
-      "Recommend training modules for this coaching blocker.",
+      "Recommend training lessons for this coaching blocker.",
     ],
     toneGuidelines: ["coach-like", "specific", "behavior-focused", "supportive"],
     reviewRules: [
@@ -253,12 +253,12 @@ export const aiTwinProfiles: AiTwinProfile[] = [
     displayName: "LO Development Twin",
     role: "lo_development",
     summary:
-      "Onboarding support, training recommendations, support routing, platform feedback review, escalation triage, and user progress summaries.",
+      "Helps LO Development staff with onboarding, training recommendations, support routing, feedback review, escalation triage, and progress summaries.",
     helpsWith: [
       "Draft onboarding support",
       "Recommend training paths",
       "Triage support requests",
-      "Summarize platform feedback",
+      "Summarize beta feedback",
     ],
     allowedActions: [
       "draft_onboarding_support",
@@ -278,7 +278,7 @@ export const aiTwinProfiles: AiTwinProfile[] = [
       "Support routing docs",
       "Training path docs",
       "AI Advantage docs",
-      "Sales & Marketing modules",
+      "Sales & Marketing lessons",
       "Beta feedback summaries",
     ],
     connectedServices: {
@@ -294,7 +294,7 @@ export const aiTwinProfiles: AiTwinProfile[] = [
     toneGuidelines: ["helpful", "simple", "operational", "calm"],
     reviewRules: [
       "Keep guidance practical.",
-      "Do not expose private feedback beyond role permissions.",
+      "Do not share private feedback outside the right approved group.",
       "Do not send or trigger external actions.",
       "Do not use borrower PII.",
     ],

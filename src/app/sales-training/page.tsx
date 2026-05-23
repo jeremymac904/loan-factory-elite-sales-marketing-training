@@ -14,8 +14,8 @@ export default function SalesTrainingPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="101 to 601"
-          title="The six-part Sales & Marketing training series"
-          description="This is the 101 through 601 training series for Loan Factory LOs. It is training content, scripts, prompts, roleplays, trackers, and resources. It is separate from paid coaching."
+          title="Six lessons to help you create more business"
+          description="Use 101 through 601 for sales training, scripts, prompts, roleplays, trackers, and resources. This training path is separate from paid coaching."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {modules.map((item) => (
@@ -27,6 +27,9 @@ export default function SalesTrainingPage() {
               <p className="prose-lf mt-2 text-sm text-lf-slate">
                 {item.corePromise}
               </p>
+              <span className="mt-5 inline-flex text-sm font-semibold text-lf-orange">
+                Start lesson &rarr;
+              </span>
             </Link>
           ))}
         </div>

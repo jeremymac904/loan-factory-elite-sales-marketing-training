@@ -13,20 +13,20 @@ export default function Page() {
       <StagedModulePage
         module={moduleData}
         handoutTitle="601 Niche Plan Template"
-        handoutDescription="12 week niche plan template, AI workflow checklist, scorecard template, partner roster."
-        recordingDescription="Jeremy presents a real niche campaign plan with the AI stack used to build and run it."
+        handoutDescription="12 week niche plan template, AI prompt checklist, scorecard template, partner roster."
+        recordingDescription="Jeremy presents a niche campaign plan and the AI prompts used to support it."
       />
       <section className="container-page py-6">
         <SectionHeading
           eyebrow="Certification"
           title="Earn the Loan Factory Elite badge."
-          description="Certification recognizes the work, not a production guarantee. We do not promise outcomes. We certify the system."
+          description="Certification recognizes completed work and practice. It does not promise production or business results."
         />
         <ol className="prose-lf mt-6 list-decimal space-y-2 pl-5 text-base">
           <li>All assignments through 101 to 601 completed.</li>
           <li>Two recorded calls scored above the first call rubric threshold.</li>
           <li>One 12 week niche plan submitted.</li>
-          <li>One AI workflow demonstrated live to your coach.</li>
+          <li>One AI prompt routine demonstrated live to your coach.</li>
           <li>Weekly tracker submitted at least four times during the series.</li>
         </ol>
       </section>

@@ -10,8 +10,8 @@ export default function MyTwinPage() {
       <AITwinNav />
       <SectionHeading
         eyebrow="My Twin"
-        title="Choose the role context to review."
-        description="In production, Supabase role permissions will select the user's Twin automatically. Beta preview shows all role examples for Jeremy review."
+        title="Choose a role to review."
+        description="Later, sign-in will choose the right Twin automatically. For beta review, this page shows each role example."
       />
       <div className="mt-8 grid gap-5 lg:grid-cols-2">
         {aiTwinProfiles.map((twin) => (
@@ -22,7 +22,7 @@ export default function MyTwinPage() {
             </p>
             <div className="mt-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                Starter prompts
+                Example things to ask
               </p>
               <div className="mt-3 grid gap-2">
                 {twin.starterPrompts.map((prompt) => (

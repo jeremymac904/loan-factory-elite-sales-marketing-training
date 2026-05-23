@@ -9,19 +9,19 @@ export const metadata = { title: "Coaching Member Area" };
 const dashboardCards = [
   {
     title: "This week's coaching focus",
-    body: "Power Hour preparation, referral partner follow-up, and a cleaner daily call block.",
+    body: "Prepare for Power Hour, follow up with referral partners, and protect a daily call block.",
     action: "Open Coaching Rhythm",
     href: "#coaching-rhythm",
   },
   {
     title: "Advisor Scorecard",
-    body: "Review activity, consistency, partner touches, training progress, and accountability notes.",
+    body: "See your activity, partner touches, training progress, and weekly accountability notes.",
     action: "View Scorecards",
     href: "#trackers-scorecards",
   },
   {
     title: "Member Resource Library",
-    body: "Find recordings, scripts, documents, handouts, tracker links, and favorite YouTube channels.",
+    body: "Find recordings, scripts, handouts, tracker links, and useful training channels.",
     action: "Open Resources",
     href: "#member-resources",
   },
@@ -30,17 +30,17 @@ const dashboardCards = [
 const memberAreas = [
   {
     title: "Coaching Rhythm",
-    body: "Daily Power Hour, biweekly group coaching, motivational emails, and Pro coaching cadence.",
+    body: "Power Hour, group coaching, coaching emails, and Alliance coaching cadence.",
     href: "#coaching-rhythm",
   },
   {
     title: "Resource Library",
-    body: "Member resources for scripts, handouts, recordings, documents, and coaching references.",
+    body: "Scripts, handouts, recordings, documents, and coaching references.",
     href: "#member-resources",
   },
   {
     title: "Trackers and Scorecards",
-    body: "Greatness Tracker, Deal Flow Tracker, Referral Partner Tracker, and Advisor Scorecard.",
+    body: "Track calls, follow-up, partner touches, deal movement, and weekly consistency.",
     href: "#trackers-scorecards",
   },
   {
@@ -55,7 +55,7 @@ const memberAreas = [
   },
   {
     title: "Advisor Scorecard",
-    body: "Use a weekly scorecard to track consistent action, practice, follow-up, and coaching notes.",
+    body: "Track weekly action, practice, follow-up, and coaching notes.",
     href: "#advisor-scorecard",
   },
   {
@@ -144,9 +144,9 @@ export default function ApexMemberAreaPage() {
         title="Coaching Member Area"
         body={
           <p>
-            The paid coaching member home for LO Mastery and Loan Factory
-            Alliance resources, daily rhythm, member recordings, scripts,
-            trackers, scorecards, certifications, and leaderboards.
+            Your paid coaching home for LO Mastery and Loan Factory Alliance
+            resources, recordings, scripts, trackers, scorecards,
+            certifications, and leaderboards.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -180,8 +180,8 @@ export default function ApexMemberAreaPage() {
 
       <section className="container-page py-14">
         <SectionHeading
-          title="Member Dashboard"
-          description="Start here when you need the next coaching action, the right resource, or your weekly accountability view."
+          title="Start here"
+          description="Use these cards when you need the next coaching action, the right resource, or your weekly accountability view."
         />
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
           {dashboardCards.map((card) => (
@@ -198,9 +198,9 @@ export default function ApexMemberAreaPage() {
 
       <section className="bg-lf-mist">
         <div className="container-page py-14">
-          <SectionHeading
-            title="Coaching member areas"
-            description="Each area supports paid coaching. Sales & Marketing 101-601 remains its own training series."
+        <SectionHeading
+          title="Coaching member areas"
+          description="Each area supports paid coaching. Sales & Marketing 101-601 remains its own training path."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {memberAreas.map((area) => (
@@ -210,7 +210,7 @@ export default function ApexMemberAreaPage() {
                   {area.body}
                 </p>
                 <span className="mt-5 inline-flex text-sm font-semibold text-lf-orange">
-                  Open &rarr;
+                  Go there &rarr;
                 </span>
               </Link>
             ))}
@@ -223,7 +223,7 @@ export default function ApexMemberAreaPage() {
           <div>
             <SectionHeading
               title="Coaching Rhythm"
-              description="LO Mastery gives members a recurring coaching cadence with daily and weekly accountability built around action."
+              description="LO Mastery gives members a steady coaching rhythm with daily and weekly accountability built around action."
             />
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/apex-calendar/" className="btn-primary">
@@ -281,7 +281,7 @@ export default function ApexMemberAreaPage() {
       <section id="trackers-scorecards" className="container-page py-14">
         <SectionHeading
           title="Trackers and Scorecards"
-          description="Use these tools to keep activity, partner development, deal movement, and coaching rhythm visible."
+          description="Use these tools to keep activity, partner development, deal movement, and coaching rhythm easy to see."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {trackers.map((tracker) => (
@@ -310,7 +310,7 @@ export default function ApexMemberAreaPage() {
         <div className="rounded-2xl border border-lf-line bg-lf-orangeSoft p-6 shadow-card">
           <h2 className="h-display text-2xl">Membership path</h2>
           <p className="prose-lf mt-2 max-w-3xl text-sm text-lf-slate">
-            LO Mastery is the Level I paid coaching platform. LO Mastery
+            LO Mastery is the Level I paid coaching program. LO Mastery
             includes biweekly group coaching, Power Hour, member resources,
             daily motivational email, Certified Mortgage Advisor designation,
             and accountability tools. Loan Factory Alliance adds weekly

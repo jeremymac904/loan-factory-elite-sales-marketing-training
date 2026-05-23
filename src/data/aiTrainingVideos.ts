@@ -75,7 +75,7 @@ export const aiTrainingPaths = [
   },
   {
     "title": "Google AI Studio",
-    "description": "Learn how to prototype AI apps, iterate with suggestions, and understand when an AI tool belongs in your LO workflow.",
+    "description": "Learn how to try simple AI app ideas, improve them with feedback, and understand when an AI tool belongs in your LO routine.",
     "tags": [
       "AI Studio",
       "AI apps",

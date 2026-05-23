@@ -31,8 +31,8 @@ export default function GrowthLoops() {
               Vote on what should improve next.
             </h2>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Beta-safe local voting for review. Admin statuses show the simple
-              build loop: Planned, In Progress, Built, or Not Now.
+              Vote on what would help you most. These votes are for beta
+              review only and do not save yet.
             </p>
             <div className="mt-6 grid gap-3">
               {featureIdeas.map((idea) => (
@@ -72,8 +72,8 @@ export default function GrowthLoops() {
               One simple action loop.
             </h2>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Professional weekly challenges keep beta testers trying the
-              platform without turning it into a giant gamification system.
+              Weekly challenges help beta testers try one practical sales,
+              marketing, or AI action at a time.
             </p>
             <div className="mt-6 grid gap-3">
               {challenges.map((challenge) => (
@@ -97,7 +97,7 @@ export default function GrowthLoops() {
               ))}
             </div>
             <p className="mt-4 text-sm font-semibold text-lf-orangeDark">
-              Local/demo completion only. No leaderboard points are saved yet.
+              Preview-only completion. No leaderboard points are saved yet.
             </p>
           </div>
         </div>

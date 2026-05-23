@@ -9,11 +9,11 @@ export default function ApexLaunchCallPage() {
   return (
     <>
       <PageHero
-        eyebrow="Platform launch"
+        eyebrow="Coaching launch"
         title="Loan Factory Coaching is launching."
         body={
           <p>
-            Where Top Loan Officers Are Built. The coaching platform brings
+            Where Top Loan Officers Are Built. Loan Factory Coaching brings
             together LO Mastery, Loan Factory Alliance, daily rhythm, member
             resources, certifications, scorecards, leaderboards, and Alliance
             mastermind access.
@@ -22,9 +22,9 @@ export default function ApexLaunchCallPage() {
         }
         backgroundImage="/media/dark-hero-background.png"
       >
-        <span className="inline-flex items-center gap-2 rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+        <p className="text-xs font-bold uppercase tracking-wide text-lf-orange">
           Launch date . TBD
-        </span>
+        </p>
       </PageHero>
 
       <section className="container-page py-12">
@@ -45,7 +45,7 @@ export default function ApexLaunchCallPage() {
         <div className="container-page py-12">
           <SectionHeading
             eyebrow="What launches"
-            title="The full coaching platform."
+            title="The full coaching program."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             <div className="card">
@@ -97,11 +97,11 @@ export default function ApexLaunchCallPage() {
       <section className="container-page py-12">
         <SectionHeading
           eyebrow="Want a faster path"
-          title="Explore the platform now."
+          title="Explore coaching now."
         />
         <div className="mt-6 flex flex-wrap gap-3">
           <Link href="/apex-advisor/" className="btn-primary">
-            See platform tiers
+            See coaching tiers
           </Link>
           <Link href="/sales-training/" className="btn-secondary">
             View Sales &amp; Marketing Training
@@ -115,7 +115,7 @@ export default function ApexLaunchCallPage() {
       <section className="container-page pb-20">
         <ComplianceCallout title="Compliance review" variant="default">
           <p>
-            Loan Factory Coaching is a Loan Factory training and development platform.
+            Loan Factory Coaching is a Loan Factory training and development program.
             Membership, certifications, live coaching, and mastermind access
             are not guarantees of production, income, or business results. Any
             launch content used outside this portal still requires Loan Factory

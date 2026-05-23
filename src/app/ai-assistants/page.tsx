@@ -22,8 +22,7 @@ export default async function AIAssistantsPage() {
         actionHref="/login/"
         actionLabel="Open sign in"
       >
-        Supabase auth must be configured before beta users can use AI
-        Assistants.
+        Google sign-in must be ready before beta users can use AI Assistants.
       </AIAssistantNotice>
     );
   }
@@ -62,7 +61,7 @@ export default async function AIAssistantsPage() {
         actionLabel="Open resources"
       >
         Your current role is {getRoleLabel(session.profile.role)}. Ask Jeremy or
-        LO Development to review your Supabase role permissions.
+        LO Development to review your access.
       </AIAssistantNotice>
     );
   }

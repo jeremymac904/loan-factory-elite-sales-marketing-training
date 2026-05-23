@@ -4,11 +4,11 @@ import SectionHeading from "@/components/SectionHeading";
 export const metadata = { title: "AI Twin Drive Sources" };
 
 const steps = [
-  "User authorizes a future Drive read-only connection.",
-  "User selects approved folders or files.",
-  "System indexes metadata and safe document summaries.",
-  "AI creates source maps and knowledge packs.",
-  "User attaches approved sources to a Twin or project.",
+  "You choose to connect a Drive folder in the future.",
+  "You select the folders or files you want used.",
+  "The system reads safe summaries and file details.",
+  "The Twin creates a source map so the project has clear context.",
+  "You attach approved sources to a Twin or project.",
 ];
 
 export default function DriveSourcesPage() {
@@ -17,15 +17,15 @@ export default function DriveSourcesPage() {
       <AITwinNav />
       <SectionHeading
         eyebrow="Drive sources"
-        title="Future Drive knowledge workflow"
-        description="This is a static workflow shell only. No Google Drive API, OAuth scope, folder read, file ingest, or Supabase write is wired."
+        title="Future help organizing Drive files"
+        description="Drive is not connected. This page shows how selected folders could later become source maps, project briefs, and reusable knowledge packs."
       />
       <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
         <article className="card">
           <h2 className="h-display text-2xl">Connected now</h2>
           <p className="prose-lf mt-3 text-sm text-lf-slate">
-            Nothing. This page shows how Drive sources should work later while
-            keeping private files isolated by user and role.
+            Nothing. This page only shows the future idea. Private files stay
+            isolated by user and role.
           </p>
         </article>
         <article className="card">

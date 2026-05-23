@@ -7,8 +7,8 @@ type Props = {
 
 const copyByStatus = {
   "not-configured": {
-    title: "FaceGram setup needed",
-    body: "FaceGram is Loan Factory's internal community. Supabase auth must be configured before the internal feed can open.",
+    title: "FaceGram sign-in setup needed",
+    body: "FaceGram is Loan Factory's internal community. Sign-in must be ready before the internal feed can open.",
     actionHref: "/login/",
     actionLabel: "Open sign in",
   },
@@ -26,7 +26,7 @@ const copyByStatus = {
   },
   role: {
     title: "FaceGram role required",
-    body: "Your current beta role is not enabled for FaceGram. Ask Jeremy or LO Development to review your Supabase role permissions.",
+    body: "Your current beta access does not include FaceGram. Ask Jeremy or LO Development to review your access.",
     actionHref: "/resources/",
     actionLabel: "Open resources",
   },

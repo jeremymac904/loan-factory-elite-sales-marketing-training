@@ -15,14 +15,14 @@ export default function Page() {
         module={moduleData}
         handoutTitle="401 Compliance Safe Content Decision Tree"
         handoutDescription="A one page checklist every LO runs before publishing borrower facing content."
-        recordingDescription="Jeremy shoots a 60 second Reel end to end on his phone, then breaks down the hook and CTA."
+        recordingDescription="Jeremy records a 60-second video example on his phone, then explains the hook and next step."
       />
 
       <section className="container-page py-6">
         <SectionHeading
           eyebrow="Safe content decision tree"
           title="Run every public post through these steps."
-          description="If any step says rewrite, rewrite. If any step says compliance review, send it to review."
+          description="If any step says rewrite, rewrite. If any step says review, send it to the right review person."
         />
         <ol className="prose-lf mt-6 space-y-3 text-base">
           {safeContentDecisionTree.map((s) => (

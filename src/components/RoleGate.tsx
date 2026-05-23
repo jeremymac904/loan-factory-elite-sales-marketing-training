@@ -37,11 +37,11 @@ async function RoleGateContent({ gate, children }: Props) {
         </h2>
         <p className="prose-lf mt-3 text-base">
           {session.status === "not-configured"
-            ? "Supabase env vars are not configured for this environment yet."
+            ? "Sign-in setup is not ready in this environment yet."
             : session.status === "signed-out"
               ? "Sign in with an approved Loan Factory Google account to continue."
               : session.status === "pending"
-                ? "Your account is signed in, but access has not been approved in Supabase yet."
+                ? "Your account is signed in, but access has not been approved yet."
                 : `Your current role is ${getRoleLabel(session.profile.role)}.`}
         </p>
         <div className="mt-5 flex flex-wrap gap-3">

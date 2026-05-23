@@ -15,10 +15,10 @@ export default function ApexAdvisorPage() {
         title="LO Mastery and Loan Factory Alliance."
         body={
           <p>
-            Paid coaching for Loan Factory loan officers who want
-            accountability, coaching rhythm, practical resources, scorecards,
-            and leaderboards. Sales &amp; Marketing remains the separate
-            101-601 training series.
+            Paid coaching for Loan Factory loan officers who want a clearer
+            weekly plan, more accountability, stronger follow-up, and practical
+            help from coaches. Sales &amp; Marketing is still a separate
+            101-601 training path.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -52,29 +52,29 @@ export default function ApexAdvisorPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="What is coaching"
-          title="Paid coaching, accountability, and member resources."
-          description="LO Mastery and Loan Factory Alliance are separate from the Sales & Marketing 101 to 601 training series. This is the coaching membership layer for loan officers who want calls, daily coaching touchpoints, trackers, scorecards, resource libraries, and accountability."
+          title="Coaching gives you a plan and someone to help you stay on it."
+          description="LO Mastery and Loan Factory Alliance are paid coaching programs. Use them when you want calls, accountability, trackers, scorecards, recordings, and coaching resources. Use Sales & Marketing for the separate 101-601 training lessons."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           <div className="card">
             <h3 className="h-display text-lg">Coach</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Biweekly group coaching for LO Mastery members. Loan Factory
-              Alliance members get a deeper weekly coaching rhythm.
+              Join coaching calls, review what is working, and leave with a
+              clearer next step for the week.
             </p>
           </div>
           <div className="card">
             <h3 className="h-display text-lg">Track</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Greatness Tracker, Deal Flow Tracker, Referral Partner Tracker,
-              Advisor Scorecard, and coaching leaderboards.
+              Use trackers and scorecards to see your conversations, partner
+              touches, follow-up, and weekly consistency.
             </p>
           </div>
           <div className="card">
             <h3 className="h-display text-lg">Resource</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Member area with past training recordings, scripts, documents,
-              PDF handouts, and favorite YouTube channel library.
+              Find recordings, scripts, handouts, documents, and favorite
+              training references in one member area.
             </p>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function ApexAdvisorPage() {
           <SectionHeading
             eyebrow="Membership tiers"
             title="Pick the coaching rhythm that fits your work."
-            description="LO Mastery is $249 per month. Loan Factory Alliance is $449 per month and adds a stronger weekly coaching cadence, Breakfast Club, advanced certifications, and deeper mastermind access."
+            description="LO Mastery is $249 per month. Loan Factory Alliance is $449 per month and adds more frequent coaching, Breakfast Club, advanced certifications, and mastermind access. Pricing is pending final approval."
           />
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {apexTiers.map((tier) => (
@@ -117,7 +117,7 @@ export default function ApexAdvisorPage() {
                 <p className="prose-lf text-sm">{tier.description}</p>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-                    What is included
+                    What you get
                   </p>
                   <ul className="prose-lf mt-2 list-disc space-y-1 pl-5 text-sm">
                     {tier.includes.map((item) => (
@@ -153,7 +153,7 @@ export default function ApexAdvisorPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="What is inside"
-          title="The paid coaching member experience."
+          title="What members can open"
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           <Link href="/member-area/" className="card hover:shadow-lift">
@@ -162,8 +162,8 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Resource area</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Past training recordings, scripts, documents, PDF handouts, and
-              favorite YouTube channels.
+              Past recordings, scripts, documents, handouts, and favorite
+              training channels.
             </p>
           </Link>
           <Link href="/apex-certifications/" className="card hover:shadow-lift">
@@ -172,7 +172,7 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Certifications</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Certified Mortgage Advisor plus advanced Alliance specialty tracks.
+              Track completion for LO Mastery and future Alliance specialty paths.
             </p>
           </Link>
           <Link href="/apex-calendar/" className="card hover:shadow-lift">
@@ -181,8 +181,7 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Calendar</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Biweekly coaching, daily Power Hour, Pro Breakfast Club, and
-              weekly Pro calls.
+              Coaching calls, Power Hour, Breakfast Club, and member events.
             </p>
           </Link>
           <Link href="/apex-mastermind/" className="card hover:shadow-lift">
@@ -220,8 +219,8 @@ export default function ApexAdvisorPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Assessments</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Coaching Personality Quiz and New LO Aptitude Quiz. Profile
-              output guides scripts, training path, and team leader notes.
+              Coaching quizzes that help match an LO to scripts, practice, and
+              the next training step. Coaching tool only.
             </p>
           </Link>
         </div>
@@ -229,9 +228,9 @@ export default function ApexAdvisorPage() {
 
       <section className="container-page pb-20">
         <p className="max-w-3xl text-sm leading-6 text-lf-slate">
-          Paid coaching materials support coaching and development. Borrower,
-          Realtor, recruiting, and marketing use still needs the proper Loan
-          Factory review before use.
+          Coaching materials are for internal development. Borrower, Realtor,
+          recruiting, and marketing use still needs the proper Loan Factory
+          review before use.
         </p>
       </section>
     </>

@@ -13,9 +13,8 @@ export default function LenderEscalationPage() {
         title="Lender Escalation"
         body={
           <p>
-            A beta-safe form shell for lender escalation requests. It captures
-            the details needed for LO Development review without sending email
-            or triggering automation.
+            Use this when a lender issue needs manual LO Development review.
+            During beta, this form does not send email or run automations.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -28,7 +27,7 @@ export default function LenderEscalationPage() {
       <section className="container-page py-12">
         <SectionHeading
           title="What happens next"
-          description="For beta, this is local/demo capture only. Later, Andre-approved OAuth and a manual approval flow can send from the right LO Development sender with copied stakeholders."
+          description="For beta, this saves only on this screen. Later, an approved manual review flow can send from the right LO Development email with the right people copied."
         />
         <div className="mt-8">
           <LenderEscalationForm />

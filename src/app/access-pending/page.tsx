@@ -6,13 +6,13 @@ const reasonMessages: Record<string, string> = {
   domain:
     "This beta is limited to Google accounts using the loanfactory.com domain.",
   setup:
-    "Supabase server env vars are not fully configured yet, so approval status cannot be checked.",
+    "The sign-in approval check is not ready yet. Ask Jeremy or LO Development to review setup.",
   "approval-sync":
-    "Your Google login worked, but the approved user list could not be checked. Ask Jeremy to run the Supabase beta schema and grant SQL.",
+    "Your Google login worked, but the approved user list could not be checked. Ask Jeremy or LO Development to review your access.",
   "profile-sync":
-    "Your Google login worked, but the profile record could not be synced. Ask Jeremy to run the Supabase profile sync grant SQL and check the profiles table.",
+    "Your Google login worked, but your profile could not be saved. Ask Jeremy or LO Development to review your access.",
   pending:
-    "Your Loan Factory Google account is signed in, but your email is not active in approved_users yet.",
+    "Your Loan Factory Google account is signed in, but your email is not on the approved beta list yet.",
 };
 
 type Props = {
@@ -37,9 +37,8 @@ export default async function AccessPendingPage({ searchParams }: Props) {
             Access Pending
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Your sign-in was received. The beta platform checks both your Loan
-            Factory email domain and the Supabase approved user list before
-            opening protected areas.
+            Your sign-in was received. We still need to confirm that your Loan
+            Factory email is approved for beta access.
           </p>
         </div>
       </section>

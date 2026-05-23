@@ -13,8 +13,9 @@ export default async function BetaPreviewBanner() {
       <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-2 px-5 py-2 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <p>
           <strong className="text-lf-navy">Beta Preview Mode:</strong> internal
-          UI review only. This is not production authentication and it does not
-          allow external sends, Gmail, Drive, n8n, TERA, or AI credit use.
+          review only. This is not real sign-in. It cannot send email, connect
+          private files, run automations, change Loan Factory systems, or use AI
+          credits.
         </p>
         <Link href="/auth/preview-exit/" className="font-semibold text-lf-orangeDark">
           Exit preview

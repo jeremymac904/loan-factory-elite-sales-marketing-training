@@ -79,14 +79,14 @@ export default function LenderEscalationForm() {
           Save for Manual Review
         </button>
         <p className="text-sm font-semibold text-lf-slate">
-          No email, n8n, OAuth, or external send is triggered.
+          No email, automation, Google connection, or external send is triggered.
         </p>
       </div>
 
       {saved && (
         <p className="mt-4 rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-sm font-semibold text-green-700">
-          Escalation captured locally for beta preview only. Manual review is
-          still required before any external contact.
+          Escalation captured for beta preview only. Manual review is still
+          required before anyone contacts the lender.
         </p>
       )}
     </div>

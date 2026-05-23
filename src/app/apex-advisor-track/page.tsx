@@ -15,8 +15,8 @@ export default function ApexAdvisorTrackPage() {
         title="Sales & Marketing. 101 through 601."
         body={
           <p>
-            This preserved route now points to the Sales & Marketing training
-            path: six modules, one at a time, with scripts, prompts, roleplays,
+            This legacy route now points to the Sales & Marketing training
+            path: six lessons, one at a time, with scripts, prompts, roleplays,
             trackers, and resources for Loan Factory loan officers.
           </p>
         }
@@ -38,8 +38,8 @@ export default function ApexAdvisorTrackPage() {
       <section className="container-page py-14">
         <SectionHeading
           eyebrow="What this track does"
-          title="One installable behavior per week, for six weeks."
-          description="The Sales & Marketing training series installs one specific behavior per module. It is training content, not the paid coaching membership."
+          title="One useful behavior per week, for six weeks."
+          description="The Sales & Marketing training series teaches one specific behavior per lesson. It is training content, not the paid coaching membership."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           <div className="card">
@@ -68,7 +68,7 @@ export default function ApexAdvisorTrackPage() {
             </p>
             <h3 className="h-display mt-1 text-lg">Scripts and trackers</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Each module connects to scripts, prompts, roleplays, handouts,
+              Each lesson connects to scripts, prompts, roleplays, handouts,
               and activity tracking.
             </p>
           </div>
@@ -79,8 +79,8 @@ export default function ApexAdvisorTrackPage() {
         <div className="container-page py-14">
           <SectionHeading
             eyebrow="The path"
-            title="Six modules. One week at a time."
-            description="Start with 101. Stay in sequence. Each module adds one specific layer to the system."
+            title="Six lessons. One week at a time."
+            description="Start with 101. Stay in sequence. Each lesson adds one specific layer."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {modules.map((m) => (
@@ -114,7 +114,7 @@ export default function ApexAdvisorTrackPage() {
           <Link href="/prompts/" className="card hover:shadow-lift">
             <h3 className="h-display text-lg">AI Prompt Library</h3>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Gemini Gem AI Twin prompts for call prep, follow up, partner
+              AI prompts for call prep, follow up, partner
               outreach, content, roleplay, and weekly review.
             </p>
           </Link>

@@ -95,9 +95,9 @@ const modes: AssistantMode[] = [
     name: "Advanced AI Workflow Coach",
     level: "Advanced",
     whatItDoesNow:
-      "Today, use the niche plan prompt and the prompt library. Build workflows in your Gemini Gem AI Twin, n8n, Claude Code, or Codex.",
+      "Today, use the niche plan prompt and the prompt library to plan one repeatable AI routine.",
     whatItWillDo:
-      "Helps the LO design an AI workflow stack from inputs to outputs to LO review steps.",
+      "Helps the LO design a simple AI routine from input, to draft, to human review.",
     exampleAsks: [
       "Design a self employed niche workflow with prep, follow up, and content.",
       "Build a roleplay loop that scores me against the first call rubric.",

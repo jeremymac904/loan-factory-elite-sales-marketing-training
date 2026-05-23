@@ -24,7 +24,7 @@ export default function GoogleSignInButton() {
 
     if (!configured) {
       setLoading(false);
-      setError("Supabase is not configured for this environment yet.");
+      setError("Google sign-in is not ready in this environment yet.");
       return;
     }
 
@@ -32,7 +32,7 @@ export default function GoogleSignInButton() {
 
     if (!supabase) {
       setLoading(false);
-      setError("Supabase is not configured for this environment yet.");
+      setError("Google sign-in is not ready in this environment yet.");
       return;
     }
 
@@ -107,9 +107,8 @@ export default function GoogleSignInButton() {
       </button>
       {!configured && (
         <p className="rounded-lg border border-lf-orange/30 bg-lf-orangeSoft px-3 py-2 text-sm font-semibold text-lf-orangeDark">
-          Supabase public env vars are not configured yet. Add
-          NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to enable
-          Google sign-in.
+          Google sign-in is not ready here yet. Use Beta Preview if Jeremy only
+          needs to review the pages.
         </p>
       )}
       {error && (

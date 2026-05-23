@@ -11,7 +11,7 @@ export default function Page() {
       module={moduleData}
       handoutTitle="501 Pipeline Review Template"
       handoutDescription="Friday pipeline review template, status definitions, past client routine by tenure."
-      recordingDescription="Jeremy runs his own pipeline review live. Status calls, next steps, AI assisted follow up."
+      recordingDescription="Jeremy walks through a pipeline review: status calls, next steps, and AI-assisted follow-up drafts."
     />
   );
 }

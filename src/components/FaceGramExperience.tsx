@@ -205,9 +205,8 @@ export default function FaceGramExperience({
             </h1>
             <p className="mt-0.5 text-sm leading-5 text-lf-slate">
               <span className="font-semibold text-lf-charcoal">What this is:</span>{" "}
-              Loan Factory&apos;s internal social community for loan officers,
-              AEs, approved vendors, corporate coaches, marketing reviewers,
-              and internal teams.
+              Loan Factory&apos;s internal place to share ideas, wins,
+              questions, scripts, videos, and marketing examples.
             </p>
           </div>
         </div>
@@ -280,8 +279,8 @@ export default function FaceGramExperience({
                   Welcome to FaceGram
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
-                  Enter the internal community feed to review posts, groups,
-                  coaching reminders, and internal examples.
+                  Enter the internal feed to review posts, groups, coaching
+                  reminders, and examples from other Loan Factory people.
                 </p>
                 <button
                   type="button"
@@ -326,7 +325,7 @@ export default function FaceGramExperience({
                 </div>
                 <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
                   <p className="text-xs font-semibold text-lf-slate">
-                    Local beta post only. Nothing is saved to Supabase yet.
+                    Review only: this post stays in your browser for now.
                   </p>
                   <button
                     type="button"
@@ -338,9 +337,8 @@ export default function FaceGramExperience({
                   </button>
                 </div>
                 <p className="mt-4 border-t border-lf-line pt-3 text-xs font-semibold text-lf-slate">
-                  Media upload, public sharing, vendor posting, and external
-                  publishing stay off until Supabase saving and moderation are
-                  wired.
+                  Photos, videos, public sharing, vendor posting, and external
+                  publishing are not turned on yet.
                 </p>
               </div>
             ) : (
@@ -391,8 +389,8 @@ export default function FaceGramExperience({
                   </p>
                   <h3 className="h-display mt-1 text-lg">Short training clips</h3>
                   <p className="mt-2 text-sm leading-6 text-lf-slate">
-                    Static preview for short internal coaching and marketing
-                    examples. Upload and playback rules come later.
+                    Short internal coaching and marketing clips will come
+                    later after upload rules are ready.
                   </p>
                 </article>
                 <article className="rounded-xl border border-lf-line bg-lf-mist p-4">
@@ -401,8 +399,8 @@ export default function FaceGramExperience({
                   </p>
                   <h3 className="h-display mt-1 text-lg">Training posts</h3>
                   <p className="mt-2 text-sm leading-6 text-lf-slate">
-                    Future event cards for classes, office hours, and sponsored
-                    lender/vendor training after approval.
+                    Event cards can later show classes, office hours, and
+                    reviewed lender/vendor training.
                   </p>
                 </article>
               </div>
@@ -486,7 +484,7 @@ export default function FaceGramExperience({
                 </div>
                 <p className="border-t border-lf-line px-4 py-3 text-xs font-semibold text-lf-slate">
                   Internal sharing stays off until permissions and moderation
-                  are wired.
+                  are ready.
                 </p>
                 <div id={`comments-${post.id}`} className="border-t border-lf-line p-4">
                   <div className="grid gap-2">
@@ -527,8 +525,8 @@ export default function FaceGramExperience({
 
           <aside className="space-y-4 lg:sticky lg:top-24 lg:h-fit">
             <div className="rounded-2xl bg-white p-4 shadow-card">
-              <h3 className="font-display text-lg font-semibold text-lf-navy">
-                Sponsored lender/vendor placements
+                <h3 className="font-display text-lg font-semibold text-lf-navy">
+                  Sponsored lender/vendor placements
               </h3>
               <div className="mt-3 grid gap-3">
                 {lenderPromotionNotes.map((note) => (
@@ -537,7 +535,7 @@ export default function FaceGramExperience({
                     className="rounded-xl border border-lf-line bg-lf-mist p-3"
                   >
                     <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-lf-orange">
-                      Future approval-based
+                      Approval required
                     </p>
                     <h4 className="text-sm font-semibold text-lf-navy">
                       {note.title}

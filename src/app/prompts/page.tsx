@@ -10,17 +10,17 @@ export default function PromptLibraryPage() {
     <>
       <section className="bg-lf-navy text-white">
         <div className="container-page py-14">
-          <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
+          <p className="text-xs font-bold uppercase tracking-wide text-lf-orange">
             Library
-          </span>
+          </p>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
-            AI Prompt Library
+            Prompt Library
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Gemini Gem AI Twin ready prompts for call prep, follow up, partner outreach,
-            content, roleplay, and weekly review. Every output is a draft. Read
-            it. Personalize it. Compliance review anything borrower or public
-            facing.
+            Copy a prompt when you need help with call prep, follow-up,
+            partner outreach, content, roleplay, or weekly review. Every AI
+            answer is only a draft. Read it, edit it, and review anything
+            borrower-facing or public before use.
           </p>
         </div>
       </section>

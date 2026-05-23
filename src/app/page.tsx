@@ -7,7 +7,7 @@ const dashboardModules = [
   {
     title: "Coaching",
     description:
-      "Paid coaching through LO Mastery and Loan Factory Alliance. Start here when you want coaching rhythm, accountability, trackers, and member resources.",
+      "Get coaching, accountability, trackers, and member resources through LO Mastery or Loan Factory Alliance.",
     href: "/coaching/",
     cta: "Start with Coaching",
     logos: ["lo-mastery", "loan-factory-alliance"],
@@ -15,14 +15,14 @@ const dashboardModules = [
   {
     title: "Sales & Marketing",
     description:
-      "The six-part 101 to 601 training series for conversations, referral partners, content, pipeline, and execution.",
+      "Use the 101-601 training path to start more conversations, improve follow-up, and build stronger Realtor relationships.",
     href: "/sales-training/",
     cta: "View Sales & Marketing",
   },
   {
     title: "AI Advantage",
     description:
-      "Practical AI training for prompts, draft review, video lessons, and safer daily workflows.",
+      "Learn simple ways to use AI for drafts, scripts, marketing ideas, and better daily follow-up.",
     href: "/ai-training/",
     cta: "Explore AI Advantage",
     logos: ["ai-advantage"],
@@ -30,7 +30,7 @@ const dashboardModules = [
   {
     title: "FaceGram",
     description:
-      "The internal Loan Factory social feed for posts, groups, training wins, comments, saves, and approved partner previews.",
+      "Share internal ideas, wins, questions, scripts, videos, and marketing examples with other Loan Factory LOs.",
     href: "/facegram/",
     cta: "Explore",
     logos: ["facegram"],
@@ -38,14 +38,14 @@ const dashboardModules = [
   {
     title: "AI Assistants",
     description:
-      "Two simple draft assistants for LO support and marketing support. Use them for drafts, checklists, and review prep.",
+      "Ask for help with LO support or marketing drafts. Everything is draft-only until you review it.",
     href: "/ai-assistants/",
     cta: "Explore",
   },
   {
     title: "Resources",
     description:
-      "Support contacts, compliance notes, recordings, anonymous suggestions, and manual lender escalation.",
+      "Find support contacts, compliance reminders, recordings, feedback, and manual lender escalation.",
     href: "/resources/",
     cta: "Open",
   },
@@ -101,8 +101,8 @@ export default async function HomePage({ searchParams }: Props) {
               Loan Factory LO Development
             </h1>
             <p className="mt-5 text-lg leading-8 text-white/85 md:text-xl">
-              Training, coaching, AI tools, and internal resources for Loan
-              Factory loan officers.
+              Find the training, scripts, AI help, coaching, and support you
+              need to grow your business.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/coaching/" className="btn-primary">
@@ -127,17 +127,17 @@ export default async function HomePage({ searchParams }: Props) {
               Start here
             </p>
             <h2 className="mt-2 font-display text-2xl font-semibold text-white">
-              Pick one area. Take one action.
+                Pick one area. Take one clear next step.
             </h2>
             <div className="mt-5 grid gap-3 text-sm text-white/82">
               <div className="rounded-lg border border-white/10 bg-black/25 p-3">
-                Coaching for accountability and member resources.
+                Need accountability? Start with Coaching.
               </div>
               <div className="rounded-lg border border-white/10 bg-black/25 p-3">
-                Sales & Marketing for the 101-601 training path.
+                Need more conversations? Start Sales & Marketing.
               </div>
               <div className="rounded-lg border border-white/10 bg-black/25 p-3">
-                AI Advantage, FaceGram, Assistants, and Resources for daily help.
+                Need daily help? Use AI Advantage, FaceGram, Assistants, or Resources.
               </div>
             </div>
           </div>
@@ -146,10 +146,10 @@ export default async function HomePage({ searchParams }: Props) {
 
       <section className="container-page py-14">
         <div className="flex max-w-3xl flex-col gap-3">
-          <h2 className="h-display text-3xl">Choose your training area.</h2>
+          <h2 className="h-display text-3xl">What do you need today?</h2>
           <p className="prose-lf text-lf-slate">
-            Pick the card that matches what you need right now. Each area opens
-            to training, tools, or resources with no extra dashboard clutter.
+            Pick one card. Each one takes you to a useful next step without
+            extra clutter.
           </p>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-2">

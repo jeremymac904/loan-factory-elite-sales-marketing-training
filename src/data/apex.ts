@@ -22,12 +22,12 @@ export const apexTiers: ApexTier[] = [
     logoAssetId: "lo-mastery",
     price: "$249",
     priceSuffix: "per month",
-    tagline: "The foundation tier for serious loan officers.",
+    tagline: "A simple coaching rhythm for loan officers who want consistency.",
     href: "/apex-advisor/",
     ctaLabel: "Join LO Mastery",
     ctaHref: "/apex-launch-call/",
     description:
-      "A paid coaching membership with biweekly group coaching, the daily Power Hour Smile and Dial call, daily motivational coaching email, member resources, recordings, scripts, documents, handouts, trackers, scorecards, and leaderboard access.",
+      "A paid coaching membership with group coaching, Power Hour, coaching email, member resources, recordings, scripts, handouts, trackers, scorecards, and leaderboard access.",
     bestFor:
       "Loan officers who want structure, coaching rhythm, accountability, and a clear member resource area.",
     includes: [
@@ -51,12 +51,12 @@ export const apexTiers: ApexTier[] = [
     logoAssetId: "loan-factory-alliance",
     price: "$449",
     priceSuffix: "per month",
-    tagline: "Everything in LO Mastery plus live coaching and community.",
+    tagline: "More coaching touchpoints for LOs who want deeper accountability.",
     href: "/apex-advisor-pro/",
     ctaLabel: "Join Loan Factory Alliance",
     ctaHref: "/apex-launch-call/",
     description:
-      "Everything in LO Mastery plus weekly coaching calls, the daily Breakfast Club call, a more specific daily coaching email, advanced certifications, priority accountability, the Alliance leaderboard, and deeper mastermind access.",
+      "Everything in LO Mastery plus weekly coaching calls, Breakfast Club, more specific coaching emails, advanced certifications, priority accountability, the Alliance leaderboard, and mastermind access.",
     bestFor:
       "Loan officers who want a tighter coaching cadence, stronger accountability, and advanced specialty-track development.",
     includes: [

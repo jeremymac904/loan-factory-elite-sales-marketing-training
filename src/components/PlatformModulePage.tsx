@@ -37,7 +37,7 @@ export default function PlatformModulePage({ module, children }: Props) {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/" className="btn-primary">
-              Home
+              Back to home
             </Link>
           </div>
         </div>
@@ -45,14 +45,14 @@ export default function PlatformModulePage({ module, children }: Props) {
 
       <section className="container-page py-14">
         <SectionHeading
-          eyebrow="Overview"
-          title="What this module does"
+          eyebrow="Start here"
+          title="What you will find here"
           description={module.summary}
         />
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          <ListCard title="Who it is for" items={module.whoFor} />
-          <ListCard title="Tools included" items={module.tools} />
-          <ListCard title="Resources included" items={module.resources} />
+          <ListCard title="Best for" items={module.whoFor} />
+          <ListCard title="What you can use" items={module.tools} />
+          <ListCard title="What to open next" items={module.resources} />
         </div>
       </section>
 

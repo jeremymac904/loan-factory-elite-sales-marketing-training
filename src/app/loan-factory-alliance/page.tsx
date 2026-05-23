@@ -17,9 +17,9 @@ export default function LoanFactoryAlliancePage() {
         title="Loan Factory Alliance"
         body={
           <p>
-            Alliance is the advanced paid coaching tier for LOs who want a
-            tighter weekly cadence, deeper accountability, advanced access, and
-            future specialty tracks.
+            Loan Factory Alliance is the advanced paid coaching program for LOs
+            who want more frequent coaching, stronger accountability, and
+            deeper member access.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -53,9 +53,8 @@ export default function LoanFactoryAlliancePage() {
             <article key={item} className="card">
               <h2 className="h-display text-lg">{item}</h2>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                Designed for stronger weekly execution. Beta preview content is
-                static until member permissions and advanced resources are
-                finalized.
+                Designed for stronger weekly execution. Some advanced
+                resources are still being added for beta review.
               </p>
             </article>
           ))}
@@ -70,8 +69,7 @@ export default function LoanFactoryAlliancePage() {
               $449<span className="ml-2 text-base font-medium text-lf-slate">per month</span>
             </p>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Pricing is shown for beta review and remains subject to final
-              Jeremy approval before public rollout.
+              Pricing pending final approval before public rollout.
             </p>
           </div>
         </div>

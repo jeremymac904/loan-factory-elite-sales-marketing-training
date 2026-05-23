@@ -10,13 +10,13 @@ export default function AiTwinsPage() {
   return (
     <>
       <PageHero
-        eyebrow="AI Twin System"
-        title="Role-based AI Twins"
+        eyebrow="AI Twins"
+        title="Future AI helpers by role"
         body={
           <p>
-            A Phase 1 preview of Admin, Team Leader, Corporate Coach,
-            Marketing, and LO Development AI Twins. This shell uses local
-            example data only.
+            AI Twins will eventually help approved admins, team leaders,
+            coaches, marketing reviewers, and LO Development staff plan work,
+            review drafts, organize sources, and prepare next steps.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -29,7 +29,7 @@ export default function AiTwinsPage() {
             href="/ai-twins/projects/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
-            View Projects
+            View project examples
           </Link>
         </div>
       </PageHero>
@@ -41,14 +41,11 @@ export default function AiTwinsPage() {
       <section className="container-page pb-14">
         <SectionHeading
           title="What this is"
-          description="Each role gets a focused assistant that understands the user's role, allowed actions, blocked actions, and knowledge sources."
+          description="Each Twin is focused on one job role. It should only use the sources and actions that role is allowed to use."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {aiTwinProfiles.map((twin) => (
             <article key={twin.id} className="card">
-              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                {twin.role.replace(/_/g, " ")}
-              </p>
               <h2 className="h-display mt-1 text-2xl">{twin.displayName}</h2>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
                 {twin.summary}
@@ -70,9 +67,9 @@ export default function AiTwinsPage() {
           <div className="card">
             <h2 className="h-display text-2xl">Connected now</h2>
             <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Local example JSON only. No Gmail, Drive, Supabase writes, AI
-              provider calls, OAuth scopes, n8n workflows, email sends, or TERA
-              actions are wired.
+              Example cards only. Private files, database saving, AI calls,
+              automations, email sends, and Loan Factory system changes are not
+              connected.
             </p>
           </div>
         </div>

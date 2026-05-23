@@ -8,7 +8,7 @@ const supportSections = [
   {
     title: "LO Development Support",
     description:
-      "Training questions, platform resources, onboarding guidance, and LO Development program support.",
+      "Training questions, onboarding help, resource questions, and LO Development program support.",
     href: "#lo-development",
     cta: "View LO Development contacts",
   },
@@ -44,11 +44,11 @@ export default function SupportRoutingPage() {
         />
         <div className="relative container-page py-16 md:py-20">
           <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
-            Support Routing
+            Find the Right Support Person
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-white/85">
-            Find the right internal contact for LO Development, coaching,
-            marketing review, training resources, and platform support.
+            Choose the right internal contact for training, coaching,
+            marketing review, resources, or LO Development support.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="#lo-development-support-team" className="btn-primary">

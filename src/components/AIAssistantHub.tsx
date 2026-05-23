@@ -65,21 +65,21 @@ const assistants: Assistant[] = [
   {
     name: "LO Support Assistant",
     description:
-      "Helps loan officers turn training notes into draft checklists, roleplays, and next-step plans for human review.",
-    starters: ["Build my next-step checklist", "Roleplay a first call", "Summarize this training note"],
+      "Helps with training questions, next-step checklists, roleplay practice, and simple follow-up plans.",
+    starters: ["Build my next-step checklist", "Practice a first call", "Summarize this training note"],
   },
   {
     name: "Marketing Support Assistant",
     description:
-      "Drafts internal marketing ideas, post outlines, and review-ready content notes without publishing anything.",
-    starters: ["Rewrite this post for clarity", "Build a local event idea", "Create a review-ready outline"],
+      "Helps clean up marketing ideas, post outlines, and content drafts before human review.",
+    starters: ["Rewrite this post clearly", "Build a local event idea", "Create a review-ready outline"],
   },
 ];
 
 const sourceCards = [
   {
     title: "101 Foundation",
-    type: "Training module",
+    type: "Training lesson",
     excerpt: "Daily rhythm, first conversations, scripts, prompts, and tracker habits.",
     href: "/101-foundation/",
   },
@@ -116,7 +116,7 @@ const historyItems = [
 ];
 
 const initialAssistantMessage =
-  "Choose one simple assistant, attach context if useful, then ask for a draft, roleplay, checklist, or review pass. Outputs are draft-only.";
+  "Choose one assistant, add helpful context, then ask for a draft, roleplay, checklist, or review. Outputs are draft-only.";
 
 let messageIdCounter = 1;
 
@@ -152,25 +152,25 @@ function apiErrorMessage(
   }
 
   if (status === 401 || status === 403) {
-    return "Sign in with an approved Loan Factory account to use the AI Assistant sandbox.";
+    return "Sign in with an approved Loan Factory account to use the AI Assistant preview.";
   }
 
   if (status === 503) {
-    return "The AI Assistant sandbox needs server environment variables before it can run.";
+    return "The AI Assistant preview needs to be turned on before it can run.";
   }
 
-  return "The AI Assistant sandbox could not complete that request.";
+  return "The AI Assistant preview could not complete that request.";
 }
 
 function buildDemoResponse(assistant: Assistant, prompt: string) {
   return [
-    `${assistant.name} demo draft:`,
+    `${assistant.name} draft:`,
     "",
     `I would help with: ${prompt}`,
     "",
-    "Next step: paste the exact context you want reviewed, remove borrower/private data, then ask for one draft, checklist, or rewrite.",
+    "Next step: paste only the context needed, remove borrower/private data, then ask for one draft, checklist, or rewrite.",
     "",
-    "Draft only. Review before any external use. No rates, fees, APR, approval, underwriting, public publishing, email send, Gmail, Drive, n8n, or TERA action was triggered.",
+    "Draft only. Review before external use. No rates, fees, APR, approvals, underwriting, public posts, email sends, file access, automations, or system changes were triggered.",
   ].join("\n");
 }
 
@@ -324,7 +324,7 @@ export default function AIAssistantHub({
       {
         id: nextMessageId(),
         role: "assistant",
-        text: `New ${selectedAssistant.name} chat ready. Ask for a draft, checklist, roleplay, or review pass.`,
+        text: `New ${selectedAssistant.name} chat ready. Ask for a draft, checklist, roleplay, or review.`,
       },
     ]);
     setInput("");
@@ -372,7 +372,7 @@ export default function AIAssistantHub({
     }
 
     if (previewMode || backendStatus?.sandboxEnabled === false) {
-      setVoiceNote("Audio transcription is disabled in beta preview/demo mode.");
+      setVoiceNote("Audio transcription is not turned on in preview mode.");
       return;
     }
 
@@ -497,10 +497,10 @@ export default function AIAssistantHub({
                 }`}
               >
                 {previewMode
-                  ? "Beta preview demo"
-                  : backendStatus?.sandboxEnabled
-                    ? "Draft sandbox"
-                    : "Draft sandbox off"}
+                    ? "Preview mode"
+                    : backendStatus?.sandboxEnabled
+                    ? "Draft mode"
+                    : "Draft mode off"}
               </span>
               <span className="rounded-full border border-lf-line bg-white px-3 py-1 text-lf-charcoal">
                 Approved users only
@@ -551,7 +551,7 @@ export default function AIAssistantHub({
               {isSending && (
                 <div className="flex justify-start">
                   <div className="max-w-2xl rounded-2xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold leading-6 text-lf-slate">
-                    {demoResponseMode ? "Preparing demo draft..." : "Running sandbox draft..."}
+                    {demoResponseMode ? "Preparing draft..." : "Preparing draft..."}
                   </div>
                 </div>
               )}
@@ -644,9 +644,9 @@ export default function AIAssistantHub({
 
         <aside className="min-w-0 border-t border-lf-line bg-white p-5 lg:border-l lg:border-t-0">
           <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-            Source previews
+            Helpful sources
           </p>
-          <h2 className="h-display mt-2 text-2xl">What this assistant would use</h2>
+          <h2 className="h-display mt-2 text-2xl">Where to look next</h2>
           <div className="mt-5 grid gap-4">
             {sourceCards.map((source) => (
               <a

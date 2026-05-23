@@ -15,9 +15,9 @@ export default async function AdminPage() {
   }
 
   if (session.status === "not-configured") {
-    return <AdminNotice title="Supabase setup needed" actionHref="/login/" actionLabel="Open sign in">
-      Supabase public env vars are missing in this environment. Add the
-      Netlify/Supabase env vars before beta authentication can run.
+    return <AdminNotice title="Admin sign-in setup needed" actionHref="/login/" actionLabel="Open sign in">
+      Google sign-in setup is not ready in this environment, so admin access
+      cannot be checked yet.
     </AdminNotice>;
   }
 
@@ -38,8 +38,8 @@ export default async function AdminPage() {
 
   if (!canAccessAdmin) {
     return <AdminNotice title="Admin role required" actionHref="/" actionLabel="Back to home">
-      Your current role is {getRoleLabel(session.profile.role)}. Supabase admin
-      access is limited to users with can_access_admin.
+      Your current role is {getRoleLabel(session.profile.role)}. Ask Jeremy or
+      LO Development to review admin access.
     </AdminNotice>;
   }
 
@@ -67,16 +67,16 @@ function AdminShell({
           style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
         />
         <div className="relative container-page py-14">
-          <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
+          <p className="text-xs font-bold uppercase tracking-wide text-lf-orange">
             Admin beta
-          </span>
+          </p>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
-            User Access
+            Admin Access
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
             {preview
-              ? "Internal preview context for UI review. Real user management still stays in Supabase."
-              : "Current beta user context. Full user management stays in Supabase while the platform is in beta."}
+              ? "Internal preview context for UI review. This does not change real users or permissions."
+              : "Current beta user context. Full user management stays in the approved access list during beta."}
           </p>
         </div>
       </section>
@@ -109,12 +109,11 @@ function AdminShell({
             <h2 className="h-display text-2xl">How to manage users</h2>
             <p className="prose-lf mt-3 text-base">
               {preview
-                ? "Preview mode only unlocks pages for UI review. It does not add users, change roles, or write to Supabase."
-                : "Add, deactivate, or change beta roles in Supabase by editing the approved_users table. The OAuth callback syncs approved records into profiles after sign-in."}
+                ? "Preview mode only opens pages for UI review. It does not add users, change roles, or save access changes."
+                : "Add, deactivate, or change beta users in the approved access list. After sign-in, the app checks that list before opening protected pages."}
             </p>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Do not put the Supabase service role key in browser code. The app
-              only uses it in the server-side callback to sync approved users.
+              Do not put private keys or secret values in browser code.
             </p>
           </div>
         </div>

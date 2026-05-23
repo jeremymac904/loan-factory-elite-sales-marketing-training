@@ -20,7 +20,7 @@ export default function ModuleSummarySections({ module }: Props) {
       <AssignmentBox items={module.assignment} />
 
       <section>
-        <h2 className="h-display text-2xl">Tracker metrics</h2>
+        <h2 className="h-display text-2xl">What to track</h2>
         <ul className="prose-lf mt-3 list-disc space-y-1 pl-5 text-base">
           {module.trackerMetrics.map((m) => (
             <li key={m}>{m}</li>
@@ -30,7 +30,7 @@ export default function ModuleSummarySections({ module }: Props) {
 
       <section className="grid gap-5 md:grid-cols-2">
         <div className="card">
-          <h2 className="h-display text-lg">Coach notes</h2>
+          <h2 className="h-display text-lg">For coaches</h2>
           <ul className="prose-lf mt-3 list-disc space-y-1 pl-5 text-sm">
             {module.coachNotes.map((c) => (
               <li key={c}>{c}</li>
@@ -38,7 +38,7 @@ export default function ModuleSummarySections({ module }: Props) {
           </ul>
         </div>
         <div className="card">
-          <h2 className="h-display text-lg">Team leader notes</h2>
+          <h2 className="h-display text-lg">For team leaders</h2>
           <ul className="prose-lf mt-3 list-disc space-y-1 pl-5 text-sm">
             {module.teamLeaderNotes.map((c) => (
               <li key={c}>{c}</li>
@@ -48,7 +48,7 @@ export default function ModuleSummarySections({ module }: Props) {
       </section>
 
       <section className="card">
-        <h2 className="h-display text-lg">Review notes</h2>
+          <h2 className="h-display text-lg">Safety reminders</h2>
         <ul className="prose-lf mt-3 list-disc space-y-1 pl-5 text-sm">
           {module.complianceWatchOuts.map((c) => (
             <li key={c}>{c}</li>
@@ -58,7 +58,7 @@ export default function ModuleSummarySections({ module }: Props) {
 
       {module.behaviorChange && (
         <section className="card border-lf-orange/40 bg-lf-orangeSoft/40">
-          <h2 className="h-display text-lg">Expected behavior change</h2>
+          <h2 className="h-display text-lg">Goal for this lesson</h2>
           <p className="prose-lf mt-2 text-sm">{module.behaviorChange}</p>
         </section>
       )}

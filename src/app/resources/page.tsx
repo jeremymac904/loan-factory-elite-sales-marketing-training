@@ -7,17 +7,17 @@ export const metadata = { title: "Resources" };
 const resources = [
   {
     title: "Recommended Channels",
-    description: "Find approved channels, learning references, and useful internal resource paths.",
+    description: "Find useful learning channels and trusted training references.",
     href: "/recommended-channels/",
   },
   {
     title: "Compliance Notes",
-    description: "Review language reminders and escalation points before external-facing use.",
+    description: "Check language reminders before using anything with borrowers, Realtors, or the public.",
     href: "/compliance/",
   },
   {
     title: "Recordings",
-    description: "Open class recordings, replays, and training video references.",
+    description: "Watch class recordings, replays, and training video references.",
     href: "/recordings/",
   },
   {
@@ -28,13 +28,13 @@ const resources = [
   {
     title: "Anonymous Complaints & Suggestions",
     description:
-      "Use the global Send Feedback button for suggestions, broken links, complaints, and beta notes.",
+      "Use Send Feedback for suggestions, broken links, complaints, and beta notes.",
     href: "#feedback",
   },
   {
     title: "Lender Escalation",
     description:
-      "Manual-review escalation form shell. No email sends or automation during beta.",
+      "Request manual help with a lender issue. No email or automation is sent during beta.",
     href: "/lender-escalation/",
   },
 ];
@@ -58,8 +58,8 @@ export default function ResourcesPage() {
             Resources
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-white/85">
-            A simple hub for recommended channels, compliance notes,
-            recordings, support contacts, and LO Development feedback.
+            Find training references, support contacts, compliance reminders,
+            recordings, feedback, and manual lender escalation.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/support-routing/#lo-development-support-team" className="btn-primary">
@@ -77,8 +77,8 @@ export default function ResourcesPage() {
 
       <section className="container-page py-14">
         <SectionHeading
-          title="What do you need?"
-          description="Pick the resource area that matches the question in front of you."
+          title="What do you need help with?"
+          description="Pick the resource area that matches your question right now."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {resources.map((resource) => (
@@ -95,9 +95,9 @@ export default function ResourcesPage() {
         <div className="rounded-2xl border border-lf-orange/30 bg-lf-orangeSoft p-6 shadow-card">
           <h2 className="h-display text-2xl">Send Feedback</h2>
           <p className="prose-lf mt-2 max-w-3xl text-sm text-lf-slate">
-            Use the floating Send Feedback button on any page. Feedback never
-            sends email from the app. Signed-in users can save to Supabase;
-            preview users see a local/demo confirmation.
+            Use the floating Send Feedback button on any page. The app does not
+            send email. Signed-in users can save feedback; preview users see a
+            preview-only confirmation.
           </p>
         </div>
       </section>

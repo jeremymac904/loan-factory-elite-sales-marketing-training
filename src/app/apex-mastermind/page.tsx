@@ -16,7 +16,7 @@ const callAgenda = [
   },
   {
     block: "25 to 45",
-    topic: "Theme of the month. Advanced TERA workflows, partner plays, or content systems.",
+    topic: "Theme of the month. Advanced partner plays, content systems, or follow-up routines.",
   },
   {
     block: "45 to 55",

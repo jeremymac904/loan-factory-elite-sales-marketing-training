@@ -8,7 +8,7 @@ import {
 
 const groupDescriptions: Record<LoDevelopmentGroup, string> = {
   "LO Development":
-    "Training ownership, LO development questions, and platform support direction.",
+    "Training access, LO Development questions, and support direction.",
   "Corporate Coaches":
     "Loan officer coaches who reinforce training, review execution, and support behavior change.",
   Marketing:
@@ -23,7 +23,7 @@ const groupIds: Record<LoDevelopmentGroup, string> = {
 
 const askAbout: Record<LoDevelopmentGroup, string> = {
   "LO Development":
-    "Ask this person about training access, platform questions, onboarding, and support routing.",
+    "Ask this person about training access, onboarding, and where to get help.",
   "Corporate Coaches":
     "Ask this person about coaching rhythm, script practice, roleplays, and development plans.",
   Marketing:
@@ -38,11 +38,11 @@ export default function SupportTeamDirectory() {
           LO Development Support Team
         </p>
         <h2 className="h-display mt-2 text-3xl">
-          Who supports this platform
+          Who can help you
         </h2>
         <p className="prose-lf mt-3 text-lf-slate">
-          Use this directory to find the right internal support path for LO
-          development, corporate coaching, and approved marketing review.
+          Use this directory to find the right person for LO Development,
+          coaching, and approved marketing review.
         </p>
       </div>
 

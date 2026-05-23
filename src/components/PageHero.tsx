@@ -60,9 +60,9 @@ export default function PageHero({
 
       <div className="relative container-page py-16 md:py-20">
         {eyebrow && (
-          <span className="rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide">
+          <p className="text-xs font-bold uppercase tracking-wide text-lf-orange">
             {eyebrow}
-          </span>
+          </p>
         )}
         <h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
           {title}

@@ -37,7 +37,7 @@ export default function StagedModulePage({
     {
       label: "Audio",
       status: "Needs Upload",
-      body: "Audio-only lesson slot for the module replay or podcast cutdown.",
+      body: "Audio lesson for LOs who want to review this training while driving or walking.",
     },
     {
       label: "Podcast/tutorial clips",
@@ -52,22 +52,22 @@ export default function StagedModulePage({
     {
       label: "Slide decks",
       status: "Needs Upload",
-      body: "Deck slot for the approved module presentation.",
+      body: "Class slides will appear here after the final deck is uploaded.",
     },
     {
       label: "Scripts",
       status: moduleScripts.length ? "Ready" : "Coming Soon",
-      body: "Use scripts as starting points and review borrower-facing language.",
+      body: "Start with these words, then make them sound like you before using them.",
     },
     {
       label: "Prompts",
       status: modulePrompts.length ? "Ready" : "Coming Soon",
-      body: "Draft-only AI prompts for practice, planning, and review.",
+      body: "Use these prompts to get a first draft. Read and edit before using anything.",
     },
     {
       label: "Roleplays and trackers",
       status: moduleRoleplays.length ? "Ready" : "Coming Soon",
-      body: "Practice drills and tracker slots for weekly accountability.",
+      body: "Practice the conversation and track the activity that creates more follow-up.",
     },
   ];
 
@@ -90,7 +90,7 @@ export default function StagedModulePage({
       <section className="container-page py-12">
         <SectionHeading
           eyebrow="Replay and handout"
-          title="Coming with the live session."
+          title="Watch the lesson and grab the handout."
         />
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           <RecordingPlaceholder
@@ -107,9 +107,9 @@ export default function StagedModulePage({
 
       <section className="container-page py-6">
         <SectionHeading
-          eyebrow="Module assets"
-          title={`${module.level} resource slots.`}
-          description="Every module has a clean place for the core materials. Missing files are clearly marked for beta upload instead of appearing broken."
+          eyebrow="Training materials"
+          title={`${module.level} materials.`}
+          description="Each training page has a clear place for videos, audio, handouts, scripts, prompts, roleplays, and trackers. Missing files are marked clearly."
         />
         <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {assetSlots.map((slot) => (
@@ -130,10 +130,10 @@ export default function StagedModulePage({
 
       {moduleScripts.length > 0 && (
         <section className="container-page py-6">
-          <SectionHeading
-            eyebrow="Scripts"
-            title={`${module.level} scripts.`}
-            description="Starting points. Customize the language. Confirm NMLS ID. Compliance review any public, borrower facing, or Realtor facing use."
+        <SectionHeading
+          eyebrow="Scripts"
+          title={`${module.level} scripts.`}
+          description="Use these as starting points. Add your NMLS ID where required. Send public, borrower-facing, or Realtor-facing language through the right review path."
           />
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             {moduleScripts.map((s) => (
@@ -145,10 +145,10 @@ export default function StagedModulePage({
 
       {modulePrompts.length > 0 && (
         <section className="container-page py-6">
-          <SectionHeading
-            eyebrow="AI prompts"
-            title={`${module.level} AI prompts.`}
-            description="Use these inside your Gemini Gem AI Twin. Paste context. Read the draft. Personalize. Send."
+        <SectionHeading
+          eyebrow="AI prompts"
+          title={`${module.level} AI prompts.`}
+          description="Use these to ask AI for a first draft. Remove private borrower details. Read, edit, and review before using the result."
           />
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             {modulePrompts.map((p) => (
@@ -160,10 +160,10 @@ export default function StagedModulePage({
 
       {moduleRoleplays.length > 0 && (
         <section className="container-page py-6">
-          <SectionHeading
-            eyebrow="Roleplay"
-            title={`${module.level} practice block.`}
-            description="Run with a partner. 8 to 12 minutes including feedback. Coach to the lowest two areas each week."
+        <SectionHeading
+          eyebrow="Roleplay"
+          title={`${module.level} practice block.`}
+          description="Practice with a partner for 8 to 12 minutes. Keep the feedback simple: what worked, what sounded unclear, and what to try next."
           />
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             {moduleRoleplays.map((r) => (

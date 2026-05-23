@@ -48,7 +48,7 @@ export const faceGramGroups: FaceGramGroup[] = [
     coverTitle: "Spanish-Speaking LOs",
     coverSubtitle: "Scripts, questions, and community support",
     description:
-      "A language-group space for bilingual LOs to discuss scripts, training ideas, and community-specific examples.",
+      "A place for bilingual LOs to discuss scripts, training ideas, and community examples.",
     rules: [
       "Keep content internal to Loan Factory.",
       "Use reviewed wording before any external adaptation.",
@@ -144,11 +144,11 @@ export const faceGramGroups: FaceGramGroup[] = [
     coverTitle: "AI Advantage",
     coverSubtitle: "Prompt practice and safer draft review",
     description:
-      "A group for prompt practice, Gemini Gem AI Twin setup, NotebookLM lessons, and AI workflow questions.",
+      "A group for prompt practice, AI setup questions, NotebookLM lessons, and safer draft review.",
     rules: [
       "Do not paste borrower data into prompts.",
       "Review every AI draft before using it.",
-      "Use TERA as the system of record.",
+      "Use official Loan Factory systems as the source of truth.",
     ],
   },
   {
@@ -219,12 +219,12 @@ export const lenderPromotionNotes = [
   {
     title: "Weekly lender highlights",
     body:
-      "Approved lender promotion summaries can appear here after review.",
+      "Reviewed lender training or resource highlights can appear here later.",
   },
   {
     title: "Future automation source",
     body:
-      "Later, automation can review approved lender promotional emails and surface internal summaries.",
+      "Later, approved lender resources can be summarized for internal review.",
   },
 ];
 

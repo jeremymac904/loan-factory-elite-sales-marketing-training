@@ -54,7 +54,7 @@ export default function ModuleHero({
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-white/85">{promise}</p>
         <p className="mt-3 text-sm uppercase tracking-wide text-white/60">
-          Audience: {audience}
+          Best for: {audience}
         </p>
         {outcomes.length > 0 && (
           <div className="mt-8 grid gap-3 md:grid-cols-2">

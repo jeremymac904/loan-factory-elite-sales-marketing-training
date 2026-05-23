@@ -35,7 +35,7 @@ export const platformModules: PlatformModule[] = [
     href: "/apex-advisor/",
     status: "Live foundation",
     summary:
-      "The paid coaching platform for Loan Factory loan officers who want a stronger daily rhythm, accountability, resources, and scorecards through LO Mastery and Loan Factory Alliance.",
+      "Paid coaching for Loan Factory loan officers who want a stronger weekly rhythm, clearer accountability, practical resources, and simple scorecards.",
     whoFor: ["Producing LOs", "Coaching members", "Team leaders"],
     tools: [
       "Biweekly group coaching",
@@ -70,7 +70,7 @@ export const platformModules: PlatformModule[] = [
     href: "/sales-training/",
     status: "Live foundation",
     summary:
-      "The six-part 101 to 601 Sales & Marketing training series for conversations, conversion, referral partners, content, pipeline, and execution.",
+      "The six-part 101-601 training path for better conversations, stronger follow-up, Realtor partner growth, marketing, pipeline, and execution.",
     whoFor: ["New LOs", "Experienced LOs", "Team leaders", "Coaches"],
     tools: [
       "101 to 601 curriculum",
@@ -88,7 +88,7 @@ export const platformModules: PlatformModule[] = [
       "601 Elite Execution",
     ],
     currentStatus:
-      "Existing training routes remain live and are now surfaced as a parent module.",
+      "The 101-601 lessons are ready to review and stay separate from paid coaching.",
     nextAction:
       "Add route aliases under /sales-training/[level] after Jeremy confirms the final URL pattern.",
     connections: [
@@ -104,7 +104,7 @@ export const platformModules: PlatformModule[] = [
     href: "/ai-training/",
     status: "Experience preview",
     summary:
-      "A practical training path for using AI safely inside Loan Factory workflows, with Gemini Gem AI Twin guidance, prompt practice, and review habits.",
+      "Simple AI training for loan officers who want help drafting, planning, reviewing, and staying organized without skipping human review.",
     whoFor: ["LOs", "Team leaders", "Coaches"],
     tools: [
       "AI usage playbook",
@@ -115,10 +115,10 @@ export const platformModules: PlatformModule[] = [
     resources: [
       "Prompt Library",
       "AI Coaching Assistant walkthrough",
-      "Content QA workflow",
+      "Content review steps",
     ],
     currentStatus:
-      "Training page is organized around prompt practice, Gemini setup, NotebookLM, and content QA.",
+      "The page points LOs to beginner lessons, prompt practice, video notes, and review habits.",
     nextAction:
       "Confirm approved AI provider posture before any live assistant integration.",
     connections: [
@@ -164,7 +164,7 @@ export const platformModules: PlatformModule[] = [
     href: "/training-library/",
     status: "Live foundation",
     summary:
-      "The searchable home for scripts, roleplays, audio training, recordings, prompts, handouts, trackers, and approved internal resources.",
+      "One place to find scripts, roleplays, audio, recordings, prompts, handouts, trackers, and approved internal resources.",
     whoFor: ["All LOs", "Team leaders", "Coaches", "Marketing reviewers"],
     tools: [
       "Resource catalog",
@@ -182,11 +182,11 @@ export const platformModules: PlatformModule[] = [
       "Tracker",
     ],
     currentStatus:
-      "Existing resource routes are live; this sprint adds a unified library front door.",
+      "Resource routes are live and grouped into one simple library.",
     nextAction:
       "Move large media delivery to Drive or another approved asset system before production hardening.",
     connections: [
-      "Stores approved resources from every module.",
+      "Stores approved resources from every training area.",
       "Receives promoted FaceGram posts after review.",
       "Feeds AI Assistant source material.",
     ],
@@ -198,7 +198,7 @@ export const platformModules: PlatformModule[] = [
     href: "/facegram/",
     status: "Experience preview",
     summary:
-      "An employee-only internal community feed where LOs, AEs, approved vendors, coaches, and internal teams share ideas, questions, examples, wins, and feedback.",
+      "Loan Factory's internal community where LOs and support teams share ideas, questions, wins, scripts, videos, and marketing examples.",
     whoFor: [
       "Loan Factory employees",
       "LOs",
@@ -224,7 +224,7 @@ export const platformModules: PlatformModule[] = [
       "Audience Quality Panel",
     ],
     currentStatus:
-      "Internal community experience is visible with feed, groups, trends, and AI Assistant entry point.",
+      "The internal feed, groups, comments, saves, and examples are visible for beta review.",
     nextAction:
       "Confirm internal rollout scope and moderation ownership before backend work.",
     connections: [
@@ -240,7 +240,7 @@ export const platformModules: PlatformModule[] = [
     href: "/ai-assistants/",
     status: "Experience preview",
     summary:
-      "The internal assistant hub for sales coaching, marketing, scenario structuring, TERA workflow guidance, and content review drafts.",
+      "A simple place to ask for LO support or marketing help. The assistants create drafts, checklists, roleplays, and review notes.",
     whoFor: ["LOs", "Team leaders", "Coaches", "Admins", "Marketing reviewers"],
     tools: [
       "Assistant catalog",
@@ -252,14 +252,14 @@ export const platformModules: PlatformModule[] = [
       "AI Assistant Hub plan",
       "Prompt library",
       "Compliance notes",
-      "Content QA workflow",
+      "Content review steps",
     ],
     currentStatus:
-      "Local assistant interface is available with assistant switching, chat messages, source previews, attachments, and voice fallback.",
+      "The assistant screen is available for approved users and preview review. Public users cannot spend AI credits.",
     nextAction:
       "Confirm provider governance, source grounding, and review queues before live model wiring.",
     connections: [
-      "Supports every module.",
+      "Supports each training area.",
       "Routes content to human review.",
       "Uses Audience Quality Panel as a QA layer later.",
     ],
@@ -284,7 +284,7 @@ export const platformModules: PlatformModule[] = [
       "Audience Quality Panel plan",
       "AI panel scoring rubric",
       "Market response personas",
-      "Content QA workflow",
+      "Content review steps",
     ],
     currentStatus:
       "Audience review model is visible for content quality, audience reaction, and human review preparation.",
@@ -319,7 +319,7 @@ export const platformModules: PlatformModule[] = [
     connections: [
       "Surfaces coaching events.",
       "Supports Friday tracker review.",
-      "Connects team leader cadences to training modules.",
+      "Connects team leader cadences to training lessons.",
     ],
   },
   {
@@ -356,7 +356,7 @@ export const platformModules: PlatformModule[] = [
     status: "Live foundation",
     summary:
       "A quick-access hub for recommended channels, compliance notes, recordings, support contacts, and LO Development feedback.",
-    whoFor: ["All platform users"],
+    whoFor: ["All Loan Factory beta users"],
     tools: [
       "Recommended channels",
       "Compliance notes",
@@ -374,9 +374,9 @@ export const platformModules: PlatformModule[] = [
     currentStatus:
       "Resources are organized around the support paths LOs need most often.",
     nextAction:
-      "Use the global Send Feedback bubble for platform issues, missing resources, and suggestions.",
+      "Use the global Send Feedback button for confusing pages, missing resources, and suggestions.",
     connections: [
-      "Supports all modules.",
+      "Supports all training areas.",
       "Links brand and compliance references.",
       "Keeps non-curriculum resources discoverable.",
     ],
@@ -388,7 +388,7 @@ export const platformModules: PlatformModule[] = [
     href: "/support-routing/",
     status: "Requires human review",
     summary:
-      "A simple contact guide for LO Development, coaching, marketing review, platform suggestions, and anonymous feedback.",
+      "A simple contact guide for LO Development, coaching, marketing review, suggestions, and anonymous feedback.",
     whoFor: ["LOs", "LO Development", "Team leaders", "Coaches", "Admins"],
     tools: [
       "LO Development contacts",
@@ -404,7 +404,7 @@ export const platformModules: PlatformModule[] = [
     connections: [
       "Routes sensitive assistant outputs to people.",
       "Connects LOs to training and coaching paths.",
-      "Keeps TERA and production issues directed to the proper human owner.",
+      "Keeps production issues directed to the proper human owner.",
     ],
   },
 ];

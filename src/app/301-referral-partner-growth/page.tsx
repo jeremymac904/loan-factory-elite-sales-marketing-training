@@ -13,7 +13,7 @@ export default function Page() {
         module={moduleData}
         handoutTitle="301 Partner Playbook"
         handoutDescription="Realtor strategy, partner value prop, listing agent call, RESPA dos and don'ts."
-        recordingDescription="Jeremy runs a live Realtor first meeting roleplay, then breaks it down."
+        recordingDescription="Jeremy runs a Realtor first-meeting roleplay, then explains what worked and what to fix."
       />
       <section className="container-page pb-16">
         <ComplianceCallout title="RESPA Section 8 reminder" variant="warning">

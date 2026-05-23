@@ -9,9 +9,9 @@ export default function AiTwinSourcesPage() {
     <section className="container-page py-12">
       <AITwinNav />
       <SectionHeading
-        eyebrow="Connected sources"
-        title="Knowledge source map"
-        description="Phase 1 shows which sources each Twin should eventually use. No private Gmail or Drive content is connected in beta preview."
+        eyebrow="Sources"
+        title="What each Twin should be allowed to use"
+        description="This preview shows the kinds of training notes, docs, and review rules each Twin may use later. Private Gmail and Drive files are not connected."
       />
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {aiTwinProfiles.map((twin) => (
@@ -28,8 +28,8 @@ export default function AiTwinSourcesPage() {
               Connected now
             </p>
             <p className="mt-1 text-sm text-lf-slate">
-              Local example source list only. OAuth and document ingestion are
-              future work.
+              Example source list only. No email, Drive files, or private
+              documents are connected.
             </p>
           </article>
         ))}

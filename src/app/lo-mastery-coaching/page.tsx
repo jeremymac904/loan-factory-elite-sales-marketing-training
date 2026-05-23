@@ -17,9 +17,9 @@ export default function LoMasteryCoachingPage() {
         title="Loan Factory LO Mastery Coaching"
         body={
           <p>
-            LO Mastery is the paid coaching layer for loan officers who want a
-            simple weekly rhythm, accountability, scorecards, scripts,
-            recordings, and practical coaching resources.
+            LO Mastery is paid coaching for loan officers who want a simple
+            weekly plan, accountability, scorecards, scripts, recordings, and
+            coaching resources.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -50,9 +50,8 @@ export default function LoMasteryCoachingPage() {
             <article key={item} className="card">
               <h2 className="h-display text-lg">{item}</h2>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                Built for weekly action, coaching review, and practical
-                execution. Beta preview content is static until member
-                permissions and uploads are finalized.
+                Built for weekly action and coaching review. Some member
+                uploads are still being added for beta review.
               </p>
             </article>
           ))}
@@ -67,8 +66,7 @@ export default function LoMasteryCoachingPage() {
               $249<span className="ml-2 text-base font-medium text-lf-slate">per month</span>
             </p>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Pricing is shown for beta review and remains subject to final
-              Jeremy approval before public rollout.
+              Pricing pending final approval before public rollout.
             </p>
           </div>
         </div>

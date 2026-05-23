@@ -111,8 +111,8 @@ export default async function FaceGramGroupPage({ params }: Props) {
               </div>
             </div>
             <p className="max-w-sm rounded-xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold text-lf-slate">
-              Group invites, sharing, and join controls stay off until admin
-              approval and member permissions are wired.
+              Group invites, sharing, and join controls are not turned on yet.
+              This keeps the beta safe while review rules are finished.
             </p>
           </div>
 
@@ -147,15 +147,15 @@ export default async function FaceGramGroupPage({ params }: Props) {
                 disabled
                 placeholder={
                   previewEnabled
-                    ? "Group discussion preview. Main feed supports local demo posts."
-                    : "Group posting is coming soon after Supabase saving and moderation are wired."
+                    ? "Group discussion preview. Use the main feed to try a review-only post."
+                    : "Group posting is coming soon after saving and moderation are ready."
                 }
                 className="min-h-12 flex-1 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm text-lf-slate outline-none"
               />
             </div>
             <p className="mt-4 border-t border-lf-line pt-3 text-sm font-semibold text-lf-slate">
-              Group posting opens after Supabase saving and moderation are
-              wired. Use the main FaceGram feed to review local demo posting.
+              Group posting opens after saving and moderation are ready. Use
+              the main FaceGram feed to try review-only posting.
             </p>
           </article>
 
@@ -186,8 +186,8 @@ export default async function FaceGramGroupPage({ params }: Props) {
                 {post.mediaLabel}
               </div>
               <p className="mt-4 border-t border-lf-line pt-3 text-sm font-semibold text-lf-slate">
-                Likes, comments, saves, and internal sharing are available as
-                local demo interactions in the main FaceGram feed.
+                Likes, comments, and saves are available as review-only
+                interactions in the main FaceGram feed.
               </p>
             </article>
           ))}
