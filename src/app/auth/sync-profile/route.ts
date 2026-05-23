@@ -15,6 +15,11 @@ import {
 import { getSafeNextPath } from "@/lib/supabase/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import {
+  appSessionCookieName,
+  appSessionMaxAge,
+  createAppSessionCookieValue,
+} from "@/lib/supabase/app-session";
+import {
   getSupabasePublicConfig,
   hasSupabasePublicConfig,
   isLoanFactoryEmail,
@@ -437,6 +442,22 @@ export async function POST(request: NextRequest) {
       profileEmail: email,
       profileStatus,
       lastErrorMessage: "User is not active in approved_users.",
+    });
+  }
+
+  const appSessionCookieValue = createAppSessionCookieValue(activeUser);
+
+  if (appSessionCookieValue) {
+    cookiesToSet.push({
+      name: appSessionCookieName,
+      value: appSessionCookieValue,
+      options: {
+        httpOnly: true,
+        maxAge: appSessionMaxAge,
+        path: "/",
+        sameSite: "none",
+        secure: getCookieOptions(request).secure,
+      },
     });
   }
 

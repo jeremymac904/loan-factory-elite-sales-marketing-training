@@ -8,6 +8,11 @@ import {
   isApprovedProfile,
 } from "@/lib/supabase/auth";
 import {
+  appSessionCookieName,
+  parseAppSessionCookieValue,
+} from "@/lib/supabase/app-session";
+import { createSupabaseAdminClient } from "@/lib/supabase/admin";
+import {
   getSupabasePublicConfig,
   hasSupabasePublicConfig,
 } from "@/lib/supabase/config";
@@ -127,6 +132,38 @@ async function getCookieBackedUser() {
   return { user, supabase };
 }
 
+async function getAppCookieBackedUser() {
+  const cookieStore = await cookies();
+  const appSession = parseAppSessionCookieValue(
+    cookieStore.get(appSessionCookieName)?.value,
+  );
+
+  if (!appSession) {
+    return { user: null, supabase: null };
+  }
+
+  const admin = createSupabaseAdminClient();
+
+  if (!admin) {
+    return { user: null, supabase: null };
+  }
+
+  const {
+    data: { user },
+    error,
+  } = await admin.auth.admin.getUserById(appSession.userId);
+
+  if (
+    error ||
+    !user ||
+    user.email?.toLowerCase().trim() !== appSession.email
+  ) {
+    return { user: null, supabase: null };
+  }
+
+  return { user, supabase: admin };
+}
+
 export async function getBetaUserSession(): Promise<BetaUserSession> {
   let supabase: SupabaseClient | null = await createServerSupabaseClient();
 
@@ -150,6 +187,12 @@ export async function getBetaUserSession(): Promise<BetaUserSession> {
     const cookieBackedSession = await getCookieBackedUser();
     activeUser = cookieBackedSession.user;
     supabase = cookieBackedSession.supabase;
+  }
+
+  if (!activeUser || !supabase) {
+    const appCookieBackedSession = await getAppCookieBackedUser();
+    activeUser = appCookieBackedSession.user;
+    supabase = appCookieBackedSession.supabase;
   }
 
   if (!activeUser || !supabase) {
