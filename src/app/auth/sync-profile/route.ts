@@ -19,6 +19,7 @@ import {
   hasSupabasePublicConfig,
   isLoanFactoryEmail,
 } from "@/lib/supabase/config";
+import { getUserFromAccessToken } from "@/lib/supabase/token-validation";
 
 export const dynamic = "force-dynamic";
 
@@ -196,41 +197,6 @@ function queueSessionCookies(
   });
 }
 
-async function validateAccessToken(
-  config: { supabaseUrl: string; supabaseAnonKey: string },
-  accessToken: string,
-): Promise<
-  | { user: User; error: null }
-  | { user: null; error: { message: string; status: number } }
-> {
-  const response = await fetch(`${config.supabaseUrl}/auth/v1/user`, {
-    cache: "no-store",
-    headers: {
-      apikey: config.supabaseAnonKey,
-      Authorization: `Bearer ${accessToken}`,
-    },
-  });
-
-  if (!response.ok) {
-    let message = "Supabase Auth user validation failed.";
-
-    try {
-      const body = (await response.json()) as { msg?: unknown; message?: unknown };
-      const responseMessage = body.message ?? body.msg;
-
-      if (typeof responseMessage === "string" && responseMessage.trim()) {
-        message = responseMessage;
-      }
-    } catch {
-      // Keep the generic safe message when Supabase returns non-JSON.
-    }
-
-    return { user: null, error: { message, status: response.status } };
-  }
-
-  return { user: (await response.json()) as User, error: null };
-}
-
 export async function POST(request: NextRequest) {
   const config = getSupabasePublicConfig();
 
@@ -274,8 +240,8 @@ export async function POST(request: NextRequest) {
   }
 
   if (accessToken && refreshToken) {
-    const { user: validatedUser, error: validationError } =
-      await validateAccessToken(config, accessToken);
+    const { user: validatedUser, error: validationError, method } =
+      await getUserFromAccessToken(accessToken);
 
     if (validationError || !validatedUser) {
       console.error("Supabase browser token validation failed", {
@@ -288,6 +254,8 @@ export async function POST(request: NextRequest) {
           validationError?.message ?? "Supabase browser token validation failed.",
       });
     }
+
+    console.info("Supabase browser token validation succeeded", { method });
 
     const sessionExpiresIn = expiresIn ?? 3600;
     const sessionExpiresAt =

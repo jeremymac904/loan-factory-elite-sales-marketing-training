@@ -12,6 +12,7 @@ import {
   hasSupabasePublicConfig,
 } from "@/lib/supabase/config";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getUserFromAccessToken } from "@/lib/supabase/token-validation";
 
 export type BetaUserSession =
   | { status: "not-configured"; user: null; profile: null; permissions: null }
@@ -117,10 +118,7 @@ async function getCookieBackedUser() {
     return { user: null, supabase: null };
   }
 
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser(session.access_token);
+  const { user, error } = await getUserFromAccessToken(session.access_token);
 
   if (error || !user) {
     return { user: null, supabase: null };
