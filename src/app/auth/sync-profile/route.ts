@@ -22,6 +22,7 @@ import {
 import { getUserFromAccessToken } from "@/lib/supabase/token-validation";
 
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
 type ApprovedUserRow = {
   email: string;
@@ -69,6 +70,7 @@ function getCookieOptions(request: NextRequest): CookieOptions {
 
   return {
     ...DEFAULT_COOKIE_OPTIONS,
+    sameSite: "none",
     secure,
   };
 }
