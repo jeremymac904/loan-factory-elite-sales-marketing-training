@@ -123,6 +123,10 @@ export default function AuthDebugTrailView({
           value={trail.callbackStage ?? "Not recorded"}
         />
         <StatusLine
+          label="expectedCallbackPath"
+          value={trail.expectedCallbackPath ?? "Not recorded"}
+        />
+        <StatusLine
           label="oauthStartAttempted"
           value={formatBoolean(trail.oauthStartAttempted)}
         />

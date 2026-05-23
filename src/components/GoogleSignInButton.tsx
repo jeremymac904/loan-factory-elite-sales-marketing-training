@@ -36,11 +36,15 @@ export default function GoogleSignInButton() {
       return;
     }
 
-    const redirectTo = new URL("/auth/callback", window.location.origin);
+    const redirectTo = new URL(
+      "/auth/browser-callback",
+      window.location.origin,
+    );
 
     window.sessionStorage.setItem(authNextStorageKey, "/");
     writeAuthDebugTrail({
       callbackStage: "oauth-start-clicked",
+      expectedCallbackPath: "/auth/browser-callback",
       hasCode: false,
       oauthStartAttempted: true,
       oauthStartSucceeded: false,
@@ -86,6 +90,7 @@ export default function GoogleSignInButton() {
 
     mergeAuthDebugTrail({
       callbackStage: "oauth-start-redirecting",
+      expectedCallbackPath: "/auth/browser-callback",
       oauthStartSucceeded: true,
     });
   }

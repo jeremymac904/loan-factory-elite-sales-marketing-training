@@ -3,6 +3,7 @@ export const authNextStorageKey = "loan-factory-auth-next";
 
 export type AuthDebugTrail = {
   callbackStage?: string;
+  expectedCallbackPath?: string;
   hasCode?: boolean;
   oauthStartAttempted?: boolean;
   oauthStartSucceeded?: boolean;
