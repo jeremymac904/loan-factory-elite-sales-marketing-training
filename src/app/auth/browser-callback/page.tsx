@@ -138,6 +138,8 @@ export default function BrowserAuthCallbackPage() {
         },
         body: JSON.stringify({
           accessToken: data.session.access_token,
+          expiresAt: data.session.expires_at ?? null,
+          expiresIn: data.session.expires_in ?? null,
           refreshToken: data.session.refresh_token,
           next,
         }),

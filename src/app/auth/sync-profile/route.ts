@@ -7,7 +7,12 @@ import {
   stringToBase64URL,
   type CookieOptions,
 } from "@supabase/ssr";
-import type { PostgrestError, Session, User } from "@supabase/supabase-js";
+import {
+  createClient,
+  type PostgrestError,
+  type Session,
+  type User,
+} from "@supabase/supabase-js";
 import { getSafeNextPath } from "@/lib/supabase/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import {
@@ -29,6 +34,8 @@ type ApprovedUserRow = {
 
 type SyncProfileRequestBody = {
   accessToken?: string | null;
+  expiresAt?: number | null;
+  expiresIn?: number | null;
   next?: string | null;
   refreshToken?: string | null;
 };
@@ -190,6 +197,19 @@ function queueSessionCookies(
   });
 }
 
+function createTokenValidationClient(config: {
+  supabaseUrl: string;
+  supabaseAnonKey: string;
+}) {
+  return createClient(config.supabaseUrl, config.supabaseAnonKey, {
+    auth: {
+      autoRefreshToken: false,
+      detectSessionInUrl: false,
+      persistSession: false,
+    },
+  });
+}
+
 export async function POST(request: NextRequest) {
   const config = getSupabasePublicConfig();
 
@@ -214,6 +234,8 @@ export async function POST(request: NextRequest) {
   let next = "/";
 
   let accessToken: string | null = null;
+  let expiresAt: number | null = null;
+  let expiresIn: number | null = null;
   let refreshToken: string | null = null;
   let receivedSession = false;
 
@@ -221,6 +243,8 @@ export async function POST(request: NextRequest) {
     const body = (await request.json()) as SyncProfileRequestBody;
     next = getSafeNextPath(body.next ?? null);
     accessToken = typeof body.accessToken === "string" ? body.accessToken : null;
+    expiresAt = typeof body.expiresAt === "number" ? body.expiresAt : null;
+    expiresIn = typeof body.expiresIn === "number" ? body.expiresIn : null;
     refreshToken =
       typeof body.refreshToken === "string" ? body.refreshToken : null;
     receivedSession = Boolean(accessToken && refreshToken);
@@ -229,33 +253,43 @@ export async function POST(request: NextRequest) {
   }
 
   if (accessToken && refreshToken) {
-    const { data: sessionData, error: sessionError } =
-      await supabase.auth.setSession({
-        access_token: accessToken,
-        refresh_token: refreshToken,
-      });
+    const validator = createTokenValidationClient(config);
+    const {
+      data: { user: validatedUser },
+      error: validationError,
+    } = await validator.auth.getUser(accessToken);
 
-    if (sessionError) {
-      console.error("Supabase server session sync failed", {
-        message: sessionError.message,
-        name: sessionError.name,
-        status: sessionError.status,
+    if (validationError || !validatedUser) {
+      console.error("Supabase browser token validation failed", {
+        message: validationError?.message ?? "Missing validated user",
+        name: validationError?.name,
+        status: validationError?.status,
       });
-      return pending("session-sync", 401, cookiesToSet, {
+      return pending("session-validate", 401, cookiesToSet, {
         syncProfileReceivedSession: receivedSession,
-        lastErrorMessage: "Supabase server session sync failed.",
+        lastErrorMessage: "Supabase browser token validation failed.",
       });
     }
 
-    if (sessionData.session) {
-      syncedUser = sessionData.session.user;
-      queueSessionCookies(
-        request,
-        cookiesToSet,
-        config.supabaseUrl,
-        sessionData.session,
-      );
-    }
+    const sessionExpiresIn = expiresIn ?? 3600;
+    const sessionExpiresAt =
+      expiresAt ?? Math.floor(Date.now() / 1000) + sessionExpiresIn;
+    const validatedSession: Session = {
+      access_token: accessToken,
+      expires_at: sessionExpiresAt,
+      expires_in: sessionExpiresIn,
+      refresh_token: refreshToken,
+      token_type: "bearer",
+      user: validatedUser,
+    };
+
+    syncedUser = validatedUser;
+    queueSessionCookies(
+      request,
+      cookiesToSet,
+      config.supabaseUrl,
+      validatedSession,
+    );
   }
 
   const {
