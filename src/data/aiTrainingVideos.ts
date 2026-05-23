@@ -179,7 +179,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI in the Marketplace - 2026_02_11 13_27 PST - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_53_43 PM UTC-4.md",
-    "driveStatus": "Needs Drive Upload",
+    "driveStatus": "Upload pending",
     "tags": [
       "Gemini",
       "AI Twin",
@@ -448,7 +448,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_03_03 13_48 PST - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_53_06 PM UTC-4.md",
-    "driveStatus": "Needs Drive Upload",
+    "driveStatus": "Upload pending",
     "tags": [
       "NotebookLM",
       "AI Twin",
@@ -491,7 +491,7 @@ export const aiTrainingVideos = [
         "end": "11:00 (approximate)",
         "duration": "01:27",
         "clipType": "Recap",
-        "whatJeremyCovers": "Sets the agenda for the training session, focusing on using NotebookLM for marketing and becoming a market expert. Jeremy also mentions available multilingual walkthroughs for setting up an \"AI Twin\" and connecting Google Drive to Gemini.",
+        "whatJeremyCovers": "Sets the agenda for the training session, focusing on using NotebookLM for marketing and becoming a market expert. Jeremy also mentions available multilingual walkthroughs for setting up an \"AI Twin\" and connecting approved source folders to Gemini.",
         "whatAppearsOnScreen": "Video call interface showing participants.",
         "bestStandaloneClipTitle": "Overview: Marketing with NotebookLM and AI Twins",
         "suggestedClipFilename": "notebooklm-ai-twin-training-overview.mp4",
@@ -561,7 +561,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_03_17 14_45 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_52_42 PM UTC-4.md",
-    "driveStatus": "Needs Drive Upload",
+    "driveStatus": "Upload pending",
     "tags": [
       "Google AI Studio",
       "Loan Factory Ally",
@@ -831,7 +831,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_03_31 14_52 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_52_12 PM UTC-4.md",
-    "driveStatus": "Needs Drive Upload",
+    "driveStatus": "Upload pending",
     "tags": [
       "enterprise AI",
       "NotebookLM",
@@ -890,7 +890,7 @@ export const aiTrainingVideos = [
         "duration": "02:42",
         "clipType": "Tutorial",
         "whatJeremyCovers": "How to prompt Gemini to analyze an uploaded pipeline spreadsheet to identify closing dates and missing documents, then instantly draft follow-up emails directly into Gmail.",
-        "whatAppearsOnScreen": "Gemini chat analyzing dummy pipeline data and the \"Draft in Gmail\" feature.",
+        "whatAppearsOnScreen": "Gemini chat analyzing sample pipeline data and the \"Draft in Gmail\" feature.",
         "bestStandaloneClipTitle": "Automating Pipeline Follow-ups with Gemini",
         "suggestedClipFilename": "gemini-pipeline-email-automation.mp4",
         "keep": true,
@@ -1019,7 +1019,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_04_14 14_43 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_51_16 PM UTC-4.md",
-    "driveStatus": "Needs Drive Upload",
+    "driveStatus": "Upload pending",
     "tags": [
       "Gemini",
       "NotebookLM",
@@ -1086,14 +1086,14 @@ export const aiTrainingVideos = [
       },
       {
         "id": "ai-training-2026-04-14-05",
-        "title": "Gmail Automation: Lender Guides to Drive",
+        "title": "Gmail Automation: Lender Guide Organization",
         "start": "04:33",
         "end": "07:12",
         "duration": "2:39",
         "clipType": "Tutorial",
-        "whatJeremyCovers": "Uses Workspace Studio \"Flows\" to automatically move emails with lender guidelines or matrices into a specific Google Drive folder.",
-        "whatAppearsOnScreen": "Gmail interface, Workspace Studio sidebar, \"Flows\" setup screen, and folder creation in Google Drive.",
-        "bestStandaloneClipTitle": "Automatically Organizing Lender Guides in Google Drive",
+        "whatJeremyCovers": "Uses Workspace Studio \"Flows\" to automatically organize emails with lender guidelines or matrices into an approved workspace folder.",
+        "whatAppearsOnScreen": "Gmail interface, Workspace Studio sidebar, \"Flows\" setup screen, and folder setup.",
+        "bestStandaloneClipTitle": "Automatically Organizing Lender Guides",
         "suggestedClipFilename": "gmail-automation-lender-guides-drive.mp4",
         "keep": true,
         "reason": "Directly solves a common administrative pain point for loan officers."
@@ -1232,7 +1232,7 @@ export const aiTrainingVideos = [
       },
       {
         "segmentId": "ai-training-2026-04-14-05",
-        "clipTitle": "Automatically Organizing Lender Guides in Google Drive",
+        "clipTitle": "Automatically Organizing Lender Guides",
         "start": "04:33",
         "end": "07:12",
         "suggestedOutputFilename": "gmail-automation-lender-guides-drive.mp4",
@@ -1256,7 +1256,7 @@ export const aiTrainingVideos = [
     "suggestedMicroLessonTitles": [
       "Prompting Gemini for a 30-Day Local Marketing Calendar",
       "Setting Up Your Market-Specific NotebookLM",
-      "Automatically Organizing Lender Guides in Google Drive",
+      "Automatically Organizing Lender Guides",
       "Why You Must Review AI-Generated Content"
     ]
   },
@@ -1276,7 +1276,7 @@ export const aiTrainingVideos = [
     "duplicateMarkdownFiles": [],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_04_28 14_51 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_48_49 PM UTC-4.md",
-    "driveStatus": "Needs Drive Upload",
+    "driveStatus": "Upload pending",
     "tags": [
       "Custom GPTs",
       "AI Twin",
@@ -1485,7 +1485,7 @@ export const aiTrainingVideos = [
     ],
     "sourceVideoLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/AI Training - 2026_05_12 14_50 PDT - Recording.mp4",
     "sourceMarkdownLocalPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/Loan Factory AI Training Videos/Gemini Export May 22, 2026 at 2_50_07 PM UTC-4.md",
-    "driveStatus": "Needs Drive Upload; duplicate local MP4 copies need review",
+    "driveStatus": "Upload pending; duplicate local MP4 copies need review",
     "tags": [
       "Google Business Profile",
       "local SEO",

@@ -54,9 +54,9 @@ function AdminShell({
   preview?: boolean;
 }) {
   const email = preview ? betaPreviewEmail : session?.profile.email ?? "";
-  const name = preview ? "Internal Beta Preview" : session?.profile.full_name ?? "Not set";
-  const role = preview ? "Preview Admin" : getRoleLabel(session?.profile.role);
-  const status = preview ? "preview-only" : session?.profile.status ?? "";
+  const name = preview ? "Internal Review" : session?.profile.full_name ?? "Not set";
+  const role = preview ? "Review Admin" : getRoleLabel(session?.profile.role);
+  const status = preview ? "review-only" : session?.profile.status ?? "";
 
   return (
     <>
@@ -75,7 +75,7 @@ function AdminShell({
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
             {preview
-              ? "Internal preview context for UI review. This does not change real users or permissions."
+              ? "Internal review context for UI review. This does not change real users or permissions."
               : "Current beta user context. Full user management stays in the approved access list during beta."}
           </p>
         </div>
@@ -109,7 +109,7 @@ function AdminShell({
             <h2 className="h-display text-2xl">How to manage users</h2>
             <p className="prose-lf mt-3 text-base">
               {preview
-                ? "Preview mode only opens pages for UI review. It does not add users, change roles, or save access changes."
+                ? "Internal review access only opens pages for UI review. It does not add users, change roles, or save access changes."
                 : "Add, deactivate, or change beta users in the approved access list. After sign-in, the app checks that list before opening protected pages."}
             </p>
             <p className="prose-lf mt-3 text-sm text-lf-slate">

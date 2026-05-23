@@ -34,21 +34,21 @@ export default function AITrainingPage() {
         overlayOpacity={0.68}
       >
         <div className="flex flex-wrap gap-3">
-          <a href="#start-here" className="btn-primary">
-            Start here
-          </a>
-          <a
-            href="#video-library"
+          <Link href="/ai-training/gemini-ai-twin/" className="btn-primary">
+            Start with Gemini AI Twin
+          </Link>
+          <Link
+            href="/ai-training/recordings/ai-marketplace-2026-02-11/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
-            View video library
-          </a>
-          <a
+            Open first lesson
+          </Link>
+          <Link
             href="/prompts/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
             Open prompt library
-          </a>
+          </Link>
         </div>
       </PageHero>
 
@@ -139,7 +139,7 @@ export default function AITrainingPage() {
                   </h3>
                 </div>
                 <span className="rounded-full border border-lf-line bg-lf-mist px-3 py-1 text-xs font-semibold text-lf-slate">
-                  Video coming soon
+                  Upload pending
                 </span>
               </div>
 

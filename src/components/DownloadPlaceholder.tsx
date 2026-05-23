@@ -18,7 +18,7 @@ export default function DownloadPlaceholder({
   secondaryLabel,
 }: Props) {
   const isReady = !!downloadHref;
-  const statusLabel = isReady ? `${format} ready` : "Needs upload";
+  const statusLabel = isReady ? `${format} ready` : "Under review";
 
   return (
     <div className="card flex flex-col gap-2">
@@ -36,7 +36,7 @@ export default function DownloadPlaceholder({
       )}
       {!isReady && (
         <p className="text-sm font-semibold text-lf-slate">
-          File will appear here after the approved upload.
+          File appears here after review and approved publishing.
         </p>
       )}
       <div className="mt-3 flex flex-wrap gap-2">

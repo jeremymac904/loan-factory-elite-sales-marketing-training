@@ -1,26 +1,27 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import { NextResponse } from "next/server";
 import { betaPreviewCookieName } from "@/lib/betaPreview";
 
 export const dynamic = "force-dynamic";
 
-async function exitPreview() {
-  const cookieStore = await cookies();
-  cookieStore.set(betaPreviewCookieName, "", {
+function exitPreview(request: Request) {
+  const requestUrl = new URL(request.url);
+  const response = NextResponse.redirect(new URL("/", requestUrl));
+
+  response.cookies.set(betaPreviewCookieName, "", {
     httpOnly: true,
     maxAge: 0,
     path: "/",
     sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    secure: requestUrl.protocol === "https:",
   });
 
-  redirect("/");
+  return response;
 }
 
-export async function GET() {
-  await exitPreview();
+export function GET(request: Request) {
+  return exitPreview(request);
 }
 
-export async function POST() {
-  await exitPreview();
+export function POST(request: Request) {
+  return exitPreview(request);
 }

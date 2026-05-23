@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import {
   getSupabasePublicConfig,
@@ -37,6 +37,8 @@ type FaceGramAuthState =
   | { status: "pending"; email: string }
   | { status: "approved"; email: string };
 
+type ComposerKind = "Text" | "Photo" | "Video" | "Story" | "Reel";
+
 export default function FaceGramExperience({
   initialApprovedEmail,
   previewMode = false,
@@ -46,9 +48,15 @@ export default function FaceGramExperience({
 }) {
   const [entered, setEntered] = useState(false);
   const [draftPost, setDraftPost] = useState("");
+  const [composerKind, setComposerKind] = useState<ComposerKind>("Text");
+  const [fileAccept, setFileAccept] = useState("image/*");
+  const [mediaPreviewUrl, setMediaPreviewUrl] = useState<string | null>(null);
+  const [mediaName, setMediaName] = useState("");
   const [profileOpen, setProfileOpen] = useState(false);
   const [displayName, setDisplayName] = useState("Loan Factory LO");
   const [profileTitle, setProfileTitle] = useState("Loan Officer");
+  const [followedAuthors, setFollowedAuthors] = useState<string[]>([]);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [posts, setPosts] = useState(() =>
     faceGramPosts.map((post, index) => ({
       ...post,
@@ -57,6 +65,8 @@ export default function FaceGramExperience({
       comments: ["Helpful internal example."],
       saved: false,
       liked: false,
+      mediaUrl: null as string | null,
+      composerKind: "Text" as ComposerKind,
     })),
   );
   const [commentDrafts, setCommentDrafts] = useState<Record<string, string>>({});
@@ -138,9 +148,11 @@ export default function FaceGramExperience({
         avatar: "/team/andre-king.png",
         group: "FaceGram",
         time: "Just now",
-        title: "Beta preview text post",
+        title: `${composerKind} post`,
         body,
         mediaLabel: "Text post",
+        mediaUrl: mediaPreviewUrl,
+        composerKind,
         accent: "orange",
         likes: 0,
         comments: [],
@@ -150,10 +162,14 @@ export default function FaceGramExperience({
       ...current,
     ]);
     setDraftPost("");
+    setComposerKind("Text");
+    setMediaPreviewUrl(null);
+    setMediaName("");
     setEntered(true);
   }
 
   function addStoryPrompt(label: string) {
+    setComposerKind("Story");
     setDraftPost(
       label === "Create story"
         ? "Story idea: "
@@ -162,8 +178,44 @@ export default function FaceGramExperience({
     setEntered(true);
   }
 
-  function setUploadPlaceholder(kind: string) {
-    setDraftPost(`${kind} upload is coming soon. For now, write the post text here: `);
+  function startMediaPost(kind: ComposerKind) {
+    setComposerKind(kind);
+
+    if (kind === "Photo" || kind === "Video") {
+      const accept = kind === "Photo" ? "image/*" : "video/*";
+      setFileAccept(accept);
+      if (fileInputRef.current) {
+        fileInputRef.current.accept = accept;
+      }
+      fileInputRef.current?.click();
+      return;
+    }
+
+    setDraftPost((current) =>
+      current.trim() ? current : `${kind} idea: `,
+    );
+  }
+
+  function handleMediaFile(file: File | undefined) {
+    if (!file) return;
+    if (mediaPreviewUrl) URL.revokeObjectURL(mediaPreviewUrl);
+    setMediaPreviewUrl(URL.createObjectURL(file));
+    setMediaName(file.name);
+    setDraftPost((current) =>
+      current.trim() ? current : `${composerKind} post: `,
+    );
+  }
+
+  function toggleFollow(author: string) {
+    setFollowedAuthors((current) =>
+      current.includes(author)
+        ? current.filter((item) => item !== author)
+        : [...current, author],
+    );
+  }
+
+  function focusComment(id: string) {
+    document.getElementById(`comment-input-${id}`)?.focus();
   }
 
   function toggleLike(id: string) {
@@ -349,16 +401,51 @@ export default function FaceGramExperience({
                     className="min-h-12 resize-none rounded-2xl border border-lf-line bg-[#f0f2f5] px-4 py-3 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
                   />
                 </div>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept={fileAccept}
+                  className="hidden"
+                  onChange={(event) => handleMediaFile(event.target.files?.[0])}
+                />
+                {(mediaPreviewUrl || composerKind !== "Text") && (
+                  <div className="mt-3 rounded-xl border border-lf-line bg-lf-mist p-3">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                      {composerKind} composer
+                    </p>
+                    {mediaPreviewUrl && composerKind === "Photo" && (
+                      <img
+                        src={mediaPreviewUrl}
+                        alt={mediaName}
+                        className="mt-3 max-h-72 w-full rounded-xl object-cover"
+                      />
+                    )}
+                    {mediaPreviewUrl && composerKind === "Video" && (
+                      <video
+                        src={mediaPreviewUrl}
+                        controls
+                        className="mt-3 max-h-72 w-full rounded-xl bg-black"
+                      />
+                    )}
+                    {mediaName && (
+                      <p className="mt-2 text-xs text-lf-slate">{mediaName}</p>
+                    )}
+                  </div>
+                )}
                 <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
                   <div className="flex flex-wrap gap-2">
-                    {["Photo", "Video", "Story", "Reel"].map((kind) => (
+                    {(["Text", "Photo", "Video", "Story", "Reel"] as ComposerKind[]).map((kind) => (
                       <button
                         key={kind}
                         type="button"
-                        className="rounded-lg border border-lf-line bg-white px-3 py-2 text-xs font-semibold text-lf-slate hover:border-lf-orange hover:text-lf-orange"
-                        onClick={() => setUploadPlaceholder(kind)}
+                        className={`rounded-lg border px-3 py-2 text-xs font-semibold ${
+                          composerKind === kind
+                            ? "border-lf-orange bg-lf-orangeSoft text-lf-orangeDark"
+                            : "border-lf-line bg-white text-lf-slate hover:border-lf-orange hover:text-lf-orange"
+                        }`}
+                        onClick={() => startMediaPost(kind)}
                       >
-                        {kind} coming soon
+                        {kind}
                       </button>
                     ))}
                   </div>
@@ -372,9 +459,8 @@ export default function FaceGramExperience({
                   </button>
                 </div>
                 <p className="mt-4 border-t border-lf-line pt-3 text-xs text-lf-slate">
-                  Text posts save locally in this beta preview. Uploads, public
-                  sharing, vendor posting, and external publishing are not
-                  turned on.
+                  Posts and media previews save locally in this browser. Public
+                  sharing, vendor posting, and external publishing stay off.
                 </p>
               </div>
             ) : (
@@ -427,8 +513,8 @@ export default function FaceGramExperience({
                   </p>
                   <h3 className="h-display mt-1 text-lg">Short training clips</h3>
                   <p className="mt-2 text-sm leading-6 text-lf-slate">
-                    Short internal coaching and marketing clips will come
-                    later after upload rules are ready.
+                    Use the Reel composer above to draft a short internal
+                    training clip for beta review.
                   </p>
                 </article>
                 <article className="rounded-xl border border-lf-line bg-lf-mist p-4">
@@ -437,8 +523,8 @@ export default function FaceGramExperience({
                   </p>
                   <h3 className="h-display mt-1 text-lg">Training posts</h3>
                   <p className="mt-2 text-sm leading-6 text-lf-slate">
-                    Event cards can later show classes, office hours, and
-                    reviewed lender/vendor training.
+                    Share class reminders, office-hour notes, and reviewed
+                    lender/vendor training ideas in the feed.
                   </p>
                 </article>
               </div>
@@ -461,6 +547,13 @@ export default function FaceGramExperience({
                         {post.role} · {post.group} · {post.time}
                       </p>
                     </div>
+                    <button
+                      type="button"
+                      className="rounded-lg border border-lf-line bg-white px-3 py-2 text-xs font-semibold text-lf-navy hover:border-lf-orange hover:text-lf-orange"
+                      onClick={() => toggleFollow(post.author)}
+                    >
+                      {followedAuthors.includes(post.author) ? "Following" : "Follow"}
+                    </button>
                   </div>
                   <h4 className="mt-4 text-lg font-semibold text-lf-navy">
                     {post.title}
@@ -471,8 +564,23 @@ export default function FaceGramExperience({
                 </div>
                 <div className={`bg-gradient-to-br ${accentClasses[post.accent]} p-5 text-white`}>
                   <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                    {post.mediaLabel}
+                    {post.composerKind === "Text" ? post.mediaLabel : post.composerKind}
                   </p>
+                  {post.mediaUrl && post.composerKind === "Photo" && (
+                    <img
+                      src={post.mediaUrl}
+                      alt=""
+                      className="mt-4 max-h-96 w-full rounded-xl object-cover"
+                    />
+                  )}
+                  {post.mediaUrl && post.composerKind === "Video" && (
+                    <video
+                      src={post.mediaUrl}
+                      controls
+                      className="mt-4 max-h-96 w-full rounded-xl bg-black"
+                    />
+                  )}
+                  {!post.mediaUrl && (
                   <div className="mt-4 grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
                     <div className="flex min-h-44 items-end rounded-xl bg-white/12 p-4">
                       <p className="max-w-xs font-display text-2xl font-semibold">
@@ -488,6 +596,7 @@ export default function FaceGramExperience({
                       </div>
                     </div>
                   </div>
+                  )}
                 </div>
                 <div className="grid grid-cols-3 border-t border-lf-line text-center text-sm font-semibold text-lf-slate">
                   <button
@@ -500,15 +609,16 @@ export default function FaceGramExperience({
                       {post.likes} reactions
                     </span>
                   </button>
-                  <a
-                    href={`#comments-${post.id}`}
+                  <button
+                    type="button"
                     className="px-2 py-3 hover:bg-lf-mist hover:text-lf-orange"
+                    onClick={() => focusComment(post.id)}
                   >
                     Comment
                     <span className="mt-1 block text-xs font-normal">
                       {post.comments.length} comments
                     </span>
-                  </a>
+                  </button>
                   <button
                     type="button"
                     className="px-2 py-3 hover:bg-lf-mist hover:text-lf-orange"
@@ -545,6 +655,7 @@ export default function FaceGramExperience({
                         }))
                       }
                       placeholder="Add a beta comment"
+                      id={`comment-input-${post.id}`}
                       className="min-w-0 flex-1 rounded-lg border border-lf-line px-3 py-2 text-sm outline-none focus:border-lf-orange focus:ring-2 focus:ring-lf-orange/20"
                     />
                     <button

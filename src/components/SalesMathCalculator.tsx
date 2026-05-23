@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { FormEvent, useState } from "react";
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -27,68 +27,55 @@ export default function SalesMathCalculator() {
   const [averageLoanAmount, setAverageLoanAmount] = useState(425000);
   const [bps, setBps] = useState(150);
   const [customBps, setCustomBps] = useState(150);
-  const [employmentType, setEmploymentType] = useState<
-    "w2" | "1099" | "team"
-  >("w2");
-  const [teamSplit, setTeamSplit] = useState(70);
+  const [splitPercent, setSplitPercent] = useState(90);
   const [houseFee, setHouseFee] = useState(595);
   const [manualClosingsGoal, setManualClosingsGoal] = useState(0);
   const [applicationToClosing, setApplicationToClosing] = useState(65);
   const [prequalToApplication, setPrequalToApplication] = useState(55);
   const [conversationToPrequal, setConversationToPrequal] = useState(30);
+  const [results, setResults] = useState(() =>
+    calculate({
+      incomeGoal,
+      averageLoanAmount,
+      effectiveBps: bps,
+      splitPercent,
+      houseFee,
+      manualClosingsGoal,
+      applicationToClosing,
+      prequalToApplication,
+      conversationToPrequal,
+    }),
+  );
 
-  const effectiveBps = bps === 0 ? customBps : bps;
-
-  const results = useMemo(() => {
-    const grossRevenuePerClosing = averageLoanAmount * (effectiveBps / 10000);
-    const loShare =
-      employmentType === "w2"
-        ? grossRevenuePerClosing * 0.9
-        : employmentType === "1099"
-          ? grossRevenuePerClosing
-          : grossRevenuePerClosing * (teamSplit / 100);
-    const loCompPerClosing = Math.max(0, loShare - houseFee);
-    const closingsNeededByIncome =
-      loCompPerClosing > 0 ? incomeGoal / loCompPerClosing : 0;
-    const closingsNeeded =
-      manualClosingsGoal > 0 ? manualClosingsGoal : closingsNeededByIncome;
-    const applicationsNeeded = closingsNeeded / (applicationToClosing / 100);
-    const prequalsNeeded = applicationsNeeded / (prequalToApplication / 100);
-    const conversationsNeeded = prequalsNeeded / (conversationToPrequal / 100);
-    const weeklyConversations = conversationsNeeded / 50;
-    const dailyConversations = weeklyConversations / 5;
-
-    return {
-      grossRevenuePerClosing,
-      loCompPerClosing,
-      closingsNeeded,
-      applicationsNeeded,
-      prequalsNeeded,
-      weeklyConversations,
-      dailyConversations,
-    };
-  }, [
-    applicationToClosing,
-    averageLoanAmount,
-    conversationToPrequal,
-    effectiveBps,
-    employmentType,
-    houseFee,
-    incomeGoal,
-    manualClosingsGoal,
-    prequalToApplication,
-    teamSplit,
-  ]);
+  function updateResults(event?: FormEvent<HTMLFormElement>) {
+    event?.preventDefault();
+    setResults(
+      calculate({
+        incomeGoal,
+        averageLoanAmount,
+        effectiveBps: bps === 0 ? customBps : bps,
+        splitPercent,
+        houseFee,
+        manualClosingsGoal,
+        applicationToClosing,
+        prequalToApplication,
+        conversationToPrequal,
+      }),
+    );
+  }
 
   return (
-    <div className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
+    <form
+      className="rounded-2xl border border-lf-line bg-white p-5 shadow-card"
+      onSubmit={updateResults}
+    >
       <h3 className="h-display text-2xl">Sales math calculator</h3>
       <p className="mt-2 text-sm leading-6 text-lf-slate">
         Work backward from an income goal to the conversations you need each
-        week. Adjust the assumptions so the math matches your role and market.
+        week. Adjust the assumptions, then update the results.
       </p>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
+      <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <NumberField
           label="Annual income goal"
           value={incomeGoal}
@@ -121,28 +108,12 @@ export default function SalesMathCalculator() {
             onChange={setCustomBps}
           />
         )}
-        <label className="grid gap-2 text-sm font-semibold text-lf-charcoal">
-          Employment type
-          <select
-            value={employmentType}
-            onChange={(event) =>
-              setEmploymentType(event.target.value as "w2" | "1099" | "team")
-            }
-            className="rounded-lg border border-lf-line bg-white px-3 py-2 text-sm"
-          >
-            <option value="w2">W-2: 90% LO / 10% Loan Factory</option>
-            <option value="1099">1099 experienced: 100% minus house fee</option>
-            <option value="team">Team/custom split</option>
-          </select>
-        </label>
-        {employmentType === "team" && (
-          <NumberField
-            label="LO split percentage"
-            value={teamSplit}
-            onChange={setTeamSplit}
-            suffix="%"
-          />
-        )}
+        <NumberField
+          label="Split percentage"
+          value={splitPercent}
+          onChange={setSplitPercent}
+          suffix="%"
+        />
         <NumberField
           label="House fee"
           value={houseFee}
@@ -174,6 +145,10 @@ export default function SalesMathCalculator() {
         />
       </div>
 
+      <button type="submit" className="btn-primary mt-5 w-full sm:w-auto">
+        Calculate / Update Results
+      </button>
+
       <div className="mt-6 grid gap-3 rounded-xl bg-lf-mist p-4 sm:grid-cols-2">
         <Result label="Gross revenue per closing" value={money(results.grossRevenuePerClosing)} />
         <Result label="Estimated LO comp per closing" value={money(results.loCompPerClosing)} />
@@ -187,11 +162,55 @@ export default function SalesMathCalculator() {
       <p className="mt-4 text-xs leading-5 text-lf-slate">
         For internal planning only. Actual compensation depends on current Loan
         Factory compensation plan, role, team agreement, and approved company
-        policy. This is not a compensation guarantee, payroll advice, pricing,
-        approval, underwriting, rate, APR, fee, or borrower-cost quote.
+        policy.
       </p>
-    </div>
+    </form>
   );
+}
+
+function calculate({
+  incomeGoal,
+  averageLoanAmount,
+  effectiveBps,
+  splitPercent,
+  houseFee,
+  manualClosingsGoal,
+  applicationToClosing,
+  prequalToApplication,
+  conversationToPrequal,
+}: {
+  incomeGoal: number;
+  averageLoanAmount: number;
+  effectiveBps: number;
+  splitPercent: number;
+  houseFee: number;
+  manualClosingsGoal: number;
+  applicationToClosing: number;
+  prequalToApplication: number;
+  conversationToPrequal: number;
+}) {
+    const grossRevenuePerClosing = averageLoanAmount * (effectiveBps / 10000);
+    const loShare = grossRevenuePerClosing * (splitPercent / 100);
+    const loCompPerClosing = Math.max(0, loShare - houseFee);
+    const closingsNeededByIncome =
+      loCompPerClosing > 0 ? incomeGoal / loCompPerClosing : 0;
+    const closingsNeeded =
+      manualClosingsGoal > 0 ? manualClosingsGoal : closingsNeededByIncome;
+    const applicationsNeeded = closingsNeeded / (applicationToClosing / 100);
+    const prequalsNeeded = applicationsNeeded / (prequalToApplication / 100);
+    const conversationsNeeded = prequalsNeeded / (conversationToPrequal / 100);
+    const weeklyConversations = conversationsNeeded / 50;
+    const dailyConversations = weeklyConversations / 5;
+
+    return {
+      grossRevenuePerClosing,
+      loCompPerClosing,
+      closingsNeeded,
+      applicationsNeeded,
+      prequalsNeeded,
+      weeklyConversations,
+      dailyConversations,
+    };
 }
 
 function NumberField({
@@ -227,11 +246,11 @@ function NumberField({
 
 function Result({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg bg-white p-3">
+    <div className="min-w-0 rounded-lg bg-white p-3">
       <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
         {label}
       </p>
-      <p className="mt-1 font-display text-xl font-semibold text-lf-navy">
+      <p className="mt-1 break-words font-display text-xl font-semibold text-lf-navy">
         {value}
       </p>
     </div>

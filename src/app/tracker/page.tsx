@@ -53,13 +53,16 @@ export default function TrackerPage() {
         <SectionHeading
           eyebrow="Downloads"
           title="CSV template and tracker form."
-          description="CSV headers below match the form spec. A downloadable CSV will live here after compliance review."
+          description="Download the starter CSV or copy the field list into your team's tracker."
         />
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           <DownloadPlaceholder
             title="Weekly Tracker CSV"
             format="CSV"
             description="One row per LO per week. Drop into Google Sheets or Airtable."
+            downloadHref={`data:text/csv;charset=utf-8,${encodeURIComponent(
+              `${trackerCsvHeaders.join(",")}\n`,
+            )}`}
           />
           <DownloadPlaceholder
             title="Weekly Tracker Google Form (template)"

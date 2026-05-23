@@ -259,7 +259,7 @@ export const platformModules: PlatformModule[] = [
       "Content review steps",
     ],
     currentStatus:
-      "The assistant screen is available for approved users and preview review. Public users cannot spend AI credits.",
+      "The assistant screen is available for approved users and internal review. Public users cannot run assistant requests.",
     nextAction:
       "Confirm provider governance, source grounding, and review queues before live model wiring.",
     connections: [

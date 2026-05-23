@@ -28,7 +28,7 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
               : "inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-lf-orange/30 bg-lf-orangeSoft px-3 py-2 text-sm font-semibold text-lf-orangeDark transition hover:border-lf-orange"
           }
         >
-          Beta Preview
+          Internal Review
         </Link>
         <Link
           href="/auth/preview-exit/"

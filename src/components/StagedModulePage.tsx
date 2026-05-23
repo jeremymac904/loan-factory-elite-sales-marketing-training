@@ -34,42 +34,42 @@ export default function StagedModulePage({
   const assetSlots = [
     {
       label: "Video",
-      status: module.trainingVideo ? "Ready" : "Coming Soon",
+      status: module.trainingVideo ? "Ready" : "Upload pending",
       body: module.trainingVideo?.description ?? recordingDescription,
     },
     {
       label: "Audio",
-      status: "Needs Upload",
+      status: "In review",
       body: "Audio lesson for LOs who want to review this training while driving or walking.",
     },
     {
       label: "Podcast/tutorial clips",
-      status: "Coming Soon",
+      status: "Upload pending",
       body: "Short practical clips for review between live classes.",
     },
     {
       label: "Handouts",
-      status: "Coming Soon",
+      status: "Under review",
       body: handoutDescription,
     },
     {
       label: "Slide decks",
-      status: "Needs Upload",
+      status: "Under review",
       body: "Class slides will appear here after the final deck is uploaded.",
     },
     {
       label: "Scripts",
-      status: moduleScripts.length ? "Ready" : "Coming Soon",
+      status: moduleScripts.length ? "Ready" : "Under review",
       body: "Start with these words, then make them sound like you before using them.",
     },
     {
       label: "Prompts",
-      status: modulePrompts.length ? "Ready" : "Coming Soon",
+      status: modulePrompts.length ? "Ready" : "Under review",
       body: "Use these prompts to get a first draft. Read and edit before using anything.",
     },
     {
       label: "Roleplays and trackers",
-      status: moduleRoleplays.length ? "Ready" : "Coming Soon",
+      status: moduleRoleplays.length ? "Ready" : "Under review",
       body: "Practice the conversation and track the activity that creates more follow-up.",
     },
   ];

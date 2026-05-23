@@ -47,8 +47,7 @@ export type DriveAsset = {
   status: DriveAssetStatus;
 };
 
-export const driveFolderUrl =
-  "https://drive.google.com/drive/folders/1Rt8gY1GBIp_0LK_LW_gZY3UVVEptlhTD?usp=sharing";
+export const driveFolderUrl = "/training-library/";
 
 export const driveFolderStructure: { id: string; name: string; description: string }[] = [
   { id: "01", name: "01 Course Videos", description: "Recorded live sessions and module walkthroughs." },

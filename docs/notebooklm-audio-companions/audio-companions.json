@@ -42,7 +42,7 @@
         "/audio-training",
         "/training-library"
       ],
-      "notes": "Foundation episode. Run first \u2014 sets the rhythm referenced by every other episode. Generation kicked off via NotebookLM CLI.",
+      "notes": "Foundation episode. Run first \u2014 sets the rhythm referenced by every other episode.",
       "audioByteSize": 76889913,
       "downloadedAt": "2026-05-23T18:50:10Z",
       "notebooklmArtifactTitle": "Daily habits for a Michelin star mortgage"

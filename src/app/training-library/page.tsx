@@ -17,11 +17,6 @@ const library = [
   { title: "Assessments", href: "/assessments/", status: "Beta" },
 ];
 
-const comingSoonLibrary = [
-  { title: "Flashcards", status: "Coming soon" },
-  { title: "PDFs and handouts", status: "Needs upload" },
-];
-
 export default function TrainingLibraryPage() {
   const platformModule = getPlatformModule("training-library");
 
@@ -45,25 +40,13 @@ export default function TrainingLibraryPage() {
               </p>
             </Link>
           ))}
-          {comingSoonLibrary.map((item) => (
-            <article key={item.title} className="card bg-lf-mist">
-              <span className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-                {item.status}
-              </span>
-              <h3 className="h-display mt-2 text-lg">{item.title}</h3>
-              <p className="prose-lf mt-2 text-sm text-lf-slate">
-                This resource is not live yet. Upload or approve the asset
-                before linking it for beta users.
-              </p>
-            </article>
-          ))}
         </div>
       </section>
 
       <section className="container-page pb-14">
         <SectionHeading
           title="Audio companions"
-          description="The 101-601 NotebookLM prompts are ready. Audio players will appear after MP3 generation and Drive upload."
+          description="Audio players appear here after the companion files are reviewed and approved for publishing."
         />
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
           {coreAudioCompanions.map((companion) => (

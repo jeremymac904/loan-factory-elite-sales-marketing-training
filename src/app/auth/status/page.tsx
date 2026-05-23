@@ -52,9 +52,9 @@ export default async function AuthStatusPage() {
               <StatusLine label="Server status" value={session.status} />
               {previewEnabled && (
                 <>
-                  <StatusLine label="Preview mode" value="Enabled" />
-                  <StatusLine label="Preview email" value={betaPreviewEmail} />
-                  <StatusLine label="Admin access" value="Preview only" />
+                  <StatusLine label="Internal review access" value="Enabled" />
+                  <StatusLine label="Review email" value={betaPreviewEmail} />
+                  <StatusLine label="Admin access" value="Review only" />
                 </>
               )}
               {session.status === "approved" && (

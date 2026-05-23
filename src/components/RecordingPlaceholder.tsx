@@ -15,7 +15,7 @@ export default function RecordingPlaceholder({
   videoSrc,
   videoTitle,
 }: Props) {
-  const statusLabel = videoSrc ? "Video replay" : "Coming soon";
+  const statusLabel = videoSrc ? "Video replay" : "Upload pending";
 
   return (
     <div className="card flex flex-col gap-2">

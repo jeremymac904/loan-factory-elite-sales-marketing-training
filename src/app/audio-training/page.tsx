@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AudioCompanionCard from "@/components/audio/AudioCompanionCard";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
@@ -33,32 +34,32 @@ export default function AudioTrainingPage() {
         overlayOpacity={0.68}
       >
         <div className="flex flex-wrap gap-3">
-          <a href="#core-audio" className="btn-primary">
+          <Link href="/audio-training/#core-audio" className="btn-primary">
             Start with 101-601 audio
-          </a>
-          <a
-            href="#bonus-audio"
+          </Link>
+          <Link
+            href="/audio-training/#bonus-audio"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
             View bonus audio
-          </a>
+          </Link>
         </div>
       </PageHero>
 
       <section className="container-page py-10">
         <div className="grid gap-4 md:grid-cols-3">
-          {["Coming Soon", "Published", "Needs Drive Upload"].map((label) => (
+          {["Planned", "Published", "In Review"].map((label) => (
             <article key={label} className="card p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
                 {label}
               </p>
               <p className="mt-2 h-display text-3xl">{statusCount(label)}</p>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
-                {label === "Coming Soon"
+                {label === "Planned"
                   ? "Audio companion is planned and waiting for production."
                   : label === "Published"
-                    ? "Drive audio is ready to play on the site."
-                    : "Audio exists or is expected, but needs Drive upload details."}
+                    ? "Audio is ready to play on the site."
+                    : "Audio has been created and is waiting for review and publishing."}
               </p>
             </article>
           ))}
@@ -68,7 +69,7 @@ export default function AudioTrainingPage() {
       <section id="core-audio" className="container-page py-10 scroll-mt-24">
         <SectionHeading
           title="Core 101-601 audio companions"
-          description="Each Sales & Marketing lesson has one matching audio companion. When the MP3 is generated and uploaded to Drive, the player appears automatically."
+          description="Each Sales & Marketing lesson has one matching audio companion. After review and approved publishing, the player appears automatically."
         />
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
           {coreAudioCompanions.map((companion) => (

@@ -10,19 +10,25 @@ export const runtime = "nodejs";
 
 export async function GET() {
   const access = await getAiSandboxAccess();
+  const status = getPublicAiSandboxStatus(getAiSandboxConfig());
 
   if (!access.allowed) {
     return NextResponse.json(
       {
-        error: access.status,
+        ...status,
+        accessAllowed: false,
+        accessStatus: access.status,
         message: access.message,
-        externalActionsEnabled: false,
       },
-      { status: 403, headers: { "Cache-Control": "no-store" } },
+      { headers: { "Cache-Control": "no-store" } },
     );
   }
 
-  return NextResponse.json(getPublicAiSandboxStatus(getAiSandboxConfig()), {
+  return NextResponse.json({
+    ...status,
+    accessAllowed: true,
+    accessStatus: access.status,
+  }, {
     headers: { "Cache-Control": "no-store" },
   });
 }

@@ -19,7 +19,7 @@ function statusClass(label: string) {
     return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
   }
 
-  if (label === "Needs Drive Upload") {
+  if (label === "In Review") {
     return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
   }
 
@@ -88,20 +88,16 @@ export default function AudioCompanionCard({ companion, compact = false }: Props
             aria-label={`Audio companion for ${companion.title}`}
           >
             <source src={audioUrl} type="audio/mpeg" />
-            Your browser does not support audio playback.{" "}
-            <a href={audioUrl} className="font-semibold text-lf-orange underline">
-              Open the Drive audio file
-            </a>
-            .
+            Your browser does not support audio playback.
           </audio>
         </div>
       ) : (
         <div className="rounded-xl border border-dashed border-lf-line bg-lf-mist p-4 text-sm leading-6 text-lf-slate">
           {statusLabel === "In Production"
             ? "Audio companion is in production. It will appear here after review and approved upload."
-            : statusLabel === "Needs Drive Upload"
-              ? "Audio companion needs review and Drive upload before it can play here."
-              : "Audio companion coming soon. The player will appear here after review and approved upload."}
+            : statusLabel === "In Review"
+              ? "Audio companion is under review. The player appears after approved upload."
+              : "Audio companion is planned. The player appears after review and approved upload."}
         </div>
       )}
 

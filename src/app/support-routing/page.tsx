@@ -9,21 +9,21 @@ const supportSections = [
     title: "LO Development Support",
     description:
       "Training questions, onboarding help, resource questions, and LO Development program support.",
-    href: "#lo-development",
+    href: "/support-routing/#lo-development",
     cta: "View LO Development contacts",
   },
   {
     title: "Corporate Coaches",
     description:
       "Coaching rhythm, accountability questions, LO Mastery support, and loan officer development.",
-    href: "#corporate-coaches",
+    href: "/support-routing/#corporate-coaches",
     cta: "View corporate coaches",
   },
   {
     title: "Marketing Review",
     description:
       "Content review, campaign questions, internal examples, and approved marketing feedback.",
-    href: "#marketing",
+    href: "/support-routing/#marketing",
     cta: "View marketing contacts",
   },
 ];
@@ -51,7 +51,7 @@ export default function SupportRoutingPage() {
             marketing review, resources, or LO Development support.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="#lo-development-support-team" className="btn-primary">
+            <Link href="/support-routing/#lo-development-support-team" className="btn-primary">
               Find support contacts
             </Link>
             <Link

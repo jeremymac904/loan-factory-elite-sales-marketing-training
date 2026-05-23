@@ -12,13 +12,12 @@ export default async function BetaPreviewBanner() {
     <div className="border-b border-lf-orange/30 bg-lf-orangeSoft text-lf-charcoal">
       <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-2 px-5 py-2 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <p>
-          <strong className="text-lf-navy">Beta Preview Mode:</strong> internal
-          review only. This is not real sign-in. It cannot send email, connect
-          private files, run automations, change Loan Factory systems, or use AI
-          credits.
+          <strong className="text-lf-navy">Internal review access:</strong>{" "}
+          pages are open for Jeremy's beta walkthrough without changing real
+          users, files, automations, or Loan Factory systems.
         </p>
         <Link href="/auth/preview-exit/" className="font-semibold text-lf-orangeDark">
-          Exit preview
+          Exit review
         </Link>
       </div>
     </div>

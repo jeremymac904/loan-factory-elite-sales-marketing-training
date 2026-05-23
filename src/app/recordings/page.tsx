@@ -16,8 +16,8 @@ export default function RecordingsPage() {
             Session Recordings
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Past and upcoming session replays grouped by module. Placeholders
-            today. Replays will live here as they are produced.
+            Past and upcoming session replays grouped by module. Approved
+            replays show here as they are published for beta review.
           </p>
         </div>
       </section>

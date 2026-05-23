@@ -1,5 +1,4 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import { NextResponse } from "next/server";
 import { betaPreviewCookieName } from "@/lib/betaPreview";
 
 export const dynamic = "force-dynamic";
@@ -14,22 +13,24 @@ function safeNext(searchParams: URLSearchParams) {
   return next;
 }
 
-async function enterPreview(request: Request) {
-  const cookieStore = await cookies();
-  cookieStore.set(betaPreviewCookieName, "1", {
+function enterPreview(request: Request) {
+  const requestUrl = new URL(request.url);
+  const response = NextResponse.redirect(new URL(safeNext(requestUrl.searchParams), requestUrl));
+
+  response.cookies.set(betaPreviewCookieName, "1", {
     httpOnly: true,
     path: "/",
     sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    secure: requestUrl.protocol === "https:",
   });
 
-  redirect(safeNext(new URL(request.url).searchParams));
+  return response;
 }
 
-export async function GET(request: Request) {
-  await enterPreview(request);
+export function GET(request: Request) {
+  return enterPreview(request);
 }
 
-export async function POST(request: Request) {
-  await enterPreview(request);
+export function POST(request: Request) {
+  return enterPreview(request);
 }

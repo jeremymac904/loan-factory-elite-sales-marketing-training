@@ -74,13 +74,6 @@ export default function PromptCard({ prompt }: Props) {
           >
             Download .md
           </button>
-          <button
-            type="button"
-            className="rounded-lg border border-lf-line bg-lf-mist px-3 py-2 text-xs font-semibold text-lf-slate"
-            disabled
-          >
-            Google Doc coming soon
-          </button>
         </div>
       </div>
       <p className="prose-lf text-sm text-lf-slate">{prompt.useCase}</p>

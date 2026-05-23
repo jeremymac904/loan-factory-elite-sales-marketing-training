@@ -137,14 +137,14 @@ function apiErrorMessage(
   }
 
   if (status === 401 || status === 403) {
-    return "Sign in with an approved Loan Factory account to use the AI Assistant preview.";
+    return "Sign in with an approved Loan Factory account to use the AI Assistant.";
   }
 
   if (status === 503) {
-    return "The AI Assistant preview needs to be turned on before it can run.";
+    return "The AI Assistant needs to be turned on before it can run.";
   }
 
-  return "The AI Assistant preview could not complete that request.";
+  return "The AI Assistant could not complete that request.";
 }
 
 function buildDemoResponse(assistant: Assistant, prompt: string) {
@@ -182,8 +182,8 @@ export default function AIAssistantHub({
   );
   const demoResponseMode =
     previewMode ||
-    backendStatus?.sandboxEnabled === false ||
-    backendStatus?.openRouterConfigured === false;
+    !backendStatus?.sandboxEnabled ||
+    !backendStatus?.openRouterConfigured;
   const showSources =
     messages.some((message) => message.role === "user") &&
     messages.some((message) => message.role === "assistant");

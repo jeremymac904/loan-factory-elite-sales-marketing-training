@@ -57,15 +57,14 @@ export default function LoginPage() {
         </div>
 
         <div className="mt-6 rounded-2xl border border-lf-orange/30 bg-lf-orangeSoft p-6 shadow-card">
-          <h2 className="h-display text-xl">Internal beta preview</h2>
+          <h2 className="h-display text-xl">Internal review access</h2>
           <p className="prose-lf mt-2 max-w-3xl text-sm text-lf-slate">
             Use this only when Jeremy needs to review the site and Google sign
-            in is not ready. Preview mode opens the pages for review, but it is
-            not real security. It does not send email, connect private files,
-            run automations, change Loan Factory systems, or use AI credits.
+            in is not ready. Internal review access opens the pages, but it is
+            not real production security and does not change real systems.
           </p>
           <Link href="/auth/preview/?next=/" className="btn-primary mt-5">
-            Enter Beta Preview
+            Enter Internal Review
           </Link>
         </div>
       </section>
