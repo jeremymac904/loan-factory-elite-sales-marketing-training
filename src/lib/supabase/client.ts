@@ -8,5 +8,9 @@ export function createBrowserSupabaseClient() {
     return null;
   }
 
-  return createBrowserClient(config.supabaseUrl, config.supabaseAnonKey);
+  return createBrowserClient(config.supabaseUrl, config.supabaseAnonKey, {
+    auth: {
+      detectSessionInUrl: false,
+    },
+  });
 }
