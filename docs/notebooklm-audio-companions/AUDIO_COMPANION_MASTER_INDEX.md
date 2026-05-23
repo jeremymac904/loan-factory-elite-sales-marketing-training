@@ -1,6 +1,6 @@
 # Audio Companion Master Index — Loan Factory Elite Sales & Marketing
 
-**Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5bd35-e6d9-4158-a45b-2e761a34531e)
+**Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e)
 **Production target system:** Google NotebookLM Studio Audio Overview
 **Distribution:** Google Drive (audio files) + this repo (metadata + page placement)
 **Status as of doc creation:** All 14 prompts ready to paste. No audio downloaded yet — see `AUDIO_PRODUCTION_STATUS_REPORT.md` for the blocker.

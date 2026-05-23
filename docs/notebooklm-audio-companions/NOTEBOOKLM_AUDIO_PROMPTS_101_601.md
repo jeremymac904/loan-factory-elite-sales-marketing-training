@@ -2,7 +2,7 @@
 
 **Purpose:** Paste each prompt verbatim into NotebookLM Studio → Customize → Create Audio Overview for the corresponding session of the Loan Factory Elite Sales & Marketing Training Series.
 
-**Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5bd35-e6d9-4158-a45b-2e761a34531e)
+**Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e)
 
 **Branding floor (applies to every prompt):**
 - Always say **Loan Factory**.
@@ -198,7 +198,7 @@ STYLE: Two-host conversational audio overview, ~18 to 24 minutes. Senior, reflec
 ## How to use each prompt
 
 1. Open the source notebook in NotebookLM:
-   https://notebooklm.google.com/notebook/9c5bd35-e6d9-4158-a45b-2e761a34531e
+   https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e
 2. Open Studio panel → Audio Overview → "Customize".
 3. Paste one prompt block above (the entire `…` block, including the constraints).
 4. (Optional) Toggle the relevant sources for that session if they exist in the notebook. If not, leave all sources selected; the prompt narrows the focus.

@@ -2,7 +2,7 @@
 
 **Purpose:** Eight bonus audio companions that pair with the 101–601 core series. Each is a standalone "podcast-style" episode an LO can listen to in the car or between calls.
 
-**Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5bd35-e6d9-4158-a45b-2e761a34531e)
+**Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e)
 
 **Branding floor (every prompt enforces):**
 - Loan Factory · LO or loan officer (never "ELO") · TERA (never "MOSO")

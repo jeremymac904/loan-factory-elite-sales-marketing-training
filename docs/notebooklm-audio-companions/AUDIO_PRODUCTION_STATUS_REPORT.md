@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-23
 **Workspace:** `loan-factory-product-starter-kit/apps/loan-factory-elite-sales-marketing-training`
-**Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5bd35-e6d9-4158-a45b-2e761a34531e)
+**Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e)
 
 ---
 
@@ -35,7 +35,7 @@ The local NotebookLM CLI (`notebooklm-py` v0.3.4, installed at `~/bin/notebooklm
 For each of the 14 audio companions:
 
 1. Open the source notebook in NotebookLM:
-   https://notebooklm.google.com/notebook/9c5bd35-e6d9-4158-a45b-2e761a34531e
+   https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e
 2. Open Studio panel → Audio Overview → Customize
 3. Paste the matching prompt block from `NOTEBOOKLM_AUDIO_PROMPTS_101_601.md` or `BONUS_SALES_MARKETING_AUDIO_PROMPTS.md`
 4. Click Generate
