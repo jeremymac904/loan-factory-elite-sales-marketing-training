@@ -1,7 +1,6 @@
 import Link from "next/link";
 import AnonymousFeedbackModal from "@/components/AnonymousFeedbackModal";
 import SectionHeading from "@/components/SectionHeading";
-import SuggestionModal from "@/components/SuggestionModal";
 import SupportTeamDirectory from "@/components/SupportTeamDirectory";
 
 export const metadata = { title: "Support Routing" };
@@ -83,20 +82,6 @@ export default function SupportRoutingPage() {
               </span>
             </Link>
           ))}
-
-          <article className="card">
-            <h2 className="h-display text-xl">Platform Suggestions</h2>
-            <p className="prose-lf mt-2 text-sm text-lf-slate">
-              Send Jeremy an idea, broken link, missing resource, or platform
-              improvement.
-            </p>
-            <div className="mt-5">
-              <SuggestionModal
-                triggerLabel="Send platform suggestion"
-                triggerClassName="btn-primary"
-              />
-            </div>
-          </article>
 
           <article className="card border-lf-orange/30">
             <h2 className="h-display text-xl">

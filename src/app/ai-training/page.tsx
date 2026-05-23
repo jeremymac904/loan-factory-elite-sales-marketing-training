@@ -43,6 +43,13 @@ function statusClass(status: string) {
   return "border-lf-orange/40 bg-lf-orange text-white";
 }
 
+function trainingStatusLabel(status: string) {
+  if (status.includes("Selective")) return "Use selected lessons";
+  if (status.includes("Source")) return "Notes indexed";
+  if (status.includes("Ready")) return "Lesson plan ready";
+  return "Coming soon";
+}
+
 export default function AITrainingPage() {
   const totalSegments = aiTrainingVideos.reduce(
     (count, video) => count + video.segments.length,
@@ -128,9 +135,8 @@ export default function AITrainingPage() {
                 <div>
                   <h3 className="h-display text-lg">{lesson}</h3>
                   <p className="mt-2 text-sm leading-6 text-lf-slate">
-                    Find this clip in the library below, then use the matching
-                    micro-lesson queue entry when it is time to cut the training
-                    video.
+                    Find this lesson in the library below, then use the notes
+                    to practice the workflow without guessing where to begin.
                   </p>
                 </div>
               </article>
@@ -174,7 +180,7 @@ export default function AITrainingPage() {
           <SectionHeading
             eyebrow="Full video library"
             title="Seven unique AI training recordings are indexed."
-            description={`${totalSegments} timestamped segments are mapped. ${keepSegments} are marked as useful first-watch lessons. Uploaded video links can be added as each lesson is approved.`}
+            description={`${totalSegments} timestamped lesson notes are mapped. ${keepSegments} are marked as useful first-watch lessons. Video links will appear as each lesson is approved for beta use.`}
           />
           <div className="rounded-2xl border border-lf-line bg-white p-4 text-sm text-lf-slate shadow-card sm:max-w-sm">
             <strong className="text-lf-navy">How to use this page:</strong>{" "}
@@ -200,7 +206,7 @@ export default function AITrainingPage() {
                     video.status,
                   )}`}
                 >
-                  {video.status}
+                  {trainingStatusLabel(video.status)}
                 </span>
               </div>
 
@@ -214,7 +220,7 @@ export default function AITrainingPage() {
 
               <div className="mt-5">
                 <h4 className="text-sm font-semibold text-lf-navy">
-                  Top clips
+                  Best lessons
                 </h4>
                 <ul className="mt-2 space-y-2 text-sm text-lf-slate">
                   {video.bestClipsToCutFirst.slice(0, 3).map((clip) => (
@@ -230,7 +236,7 @@ export default function AITrainingPage() {
 
               <div className="mt-auto flex flex-wrap gap-3 pt-6">
                 <a href={`#segments-${video.id}`} className="btn-primary">
-                  View segments
+                  View lesson notes
                 </a>
               </div>
             </article>
@@ -240,9 +246,9 @@ export default function AITrainingPage() {
 
       <section className="container-page py-14">
         <SectionHeading
-          eyebrow="Segment index"
-          title="Open each recording to find the useful lessons."
-          description="These timestamp notes help loan officers jump to the parts that matter most. Items that are not useful as standalone lessons stay hidden from this page."
+          eyebrow="Lesson notes"
+          title="Open each recording to find the practical lessons."
+          description="These timestamp notes help loan officers jump to the parts that matter most. Only useful first-watch lessons are shown here."
         />
         <div className="mt-8 grid gap-4">
           {aiTrainingVideos.map((video) => (
@@ -262,7 +268,7 @@ export default function AITrainingPage() {
                     </h3>
                   </div>
                   <span className="text-sm font-semibold text-lf-charcoal">
-                    {video.segments.length} segments
+                    {video.segments.length} notes
                   </span>
                 </div>
               </summary>

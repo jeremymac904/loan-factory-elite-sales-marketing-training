@@ -307,7 +307,7 @@ export const aiTrainingVideos = [
         "end": "19:17",
         "duration": "01:19",
         "clipType": "Warning / guardrail",
-        "whatJeremyCovers": "Why using Loan Factory’s enterprise Gemini Pro account is safe for private data (1003s, paystubs) compared to free versions.",
+        "whatJeremyCovers": "Why approved Loan Factory AI tools are different from personal AI accounts, and why borrower documents still need the current company-approved handling rules.",
         "whatAppearsOnScreen": "Jeremy speaking.",
         "bestStandaloneClipTitle": "AI Data Security for Loan Officers",
         "suggestedClipFilename": "ai-data-security-compliance.mp4",
