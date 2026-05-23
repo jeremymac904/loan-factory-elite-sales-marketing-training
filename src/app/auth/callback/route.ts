@@ -1,5 +1,14 @@
-import { createServerClient, type CookieOptions } from "@supabase/ssr";
-import type { PostgrestError, User } from "@supabase/supabase-js";
+import {
+  DEFAULT_COOKIE_OPTIONS,
+  combineChunks,
+  createChunks,
+  createServerClient,
+  isChunkLike,
+  stringFromBase64URL,
+  stringToBase64URL,
+  type CookieOptions,
+} from "@supabase/ssr";
+import type { PostgrestError, Session, User } from "@supabase/supabase-js";
 import { NextResponse, type NextRequest } from "next/server";
 import { getSafeNextPath } from "@/lib/supabase/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
@@ -27,6 +36,22 @@ type CookieToSet = {
   value: string;
   options: CookieOptions;
 };
+
+type ManualExchangeResult =
+  | {
+      data: { session: Session; user: User };
+      error: null;
+      stage: null;
+    }
+  | {
+      data: null;
+      error: {
+        message: string;
+        name: string;
+        status?: number;
+      };
+      stage: "callback-missing-verifier" | "callback-token-exchange";
+    };
 
 function logSupabaseSyncError(context: string, error: PostgrestError | null) {
   if (!error) return;
@@ -94,6 +119,202 @@ function redirectWithCookies(
 
 function pendingPath(reason: string) {
   return `/access-pending/?reason=${encodeURIComponent(reason)}`;
+}
+
+function getSupabaseAuthCookieName(supabaseUrl: string) {
+  return `sb-${new URL(supabaseUrl).hostname.split(".")[0]}-auth-token`;
+}
+
+function getCookieOptions(request: NextRequest): CookieOptions {
+  const forwardedProto = request.headers.get("x-forwarded-proto");
+  const secure =
+    forwardedProto === "https" || request.nextUrl.protocol === "https:";
+
+  return {
+    ...DEFAULT_COOKIE_OPTIONS,
+    secure,
+  };
+}
+
+function parseStorageValue(value: string) {
+  const decoded = value.startsWith("base64-")
+    ? stringFromBase64URL(value.substring("base64-".length))
+    : value;
+
+  try {
+    return JSON.parse(decoded) as string;
+  } catch {
+    return null;
+  }
+}
+
+async function readCodeVerifier(request: NextRequest, supabaseUrl: string) {
+  const cookieName = `${getSupabaseAuthCookieName(supabaseUrl)}-code-verifier`;
+  const cookieValue = await combineChunks(cookieName, async (chunkName) => {
+    return request.cookies.get(chunkName)?.value ?? null;
+  });
+
+  if (!cookieValue || typeof cookieValue !== "string") {
+    return null;
+  }
+
+  const storageValue = parseStorageValue(cookieValue);
+
+  if (!storageValue) {
+    return null;
+  }
+
+  const [codeVerifier] = storageValue.split("/");
+  return codeVerifier || null;
+}
+
+function queueCookieRemoval(
+  cookiesToSet: CookieToSet[],
+  request: NextRequest,
+  cookieName: string,
+) {
+  const baseOptions = getCookieOptions(request);
+
+  request.cookies
+    .getAll()
+    .filter((cookie) => isChunkLike(cookie.name, cookieName))
+    .forEach((cookie) => {
+      cookiesToSet.push({
+        name: cookie.name,
+        value: "",
+        options: { ...baseOptions, maxAge: 0 },
+      });
+    });
+}
+
+function queueSessionCookies(
+  cookiesToSet: CookieToSet[],
+  request: NextRequest,
+  supabaseUrl: string,
+  session: Session,
+) {
+  const cookieName = getSupabaseAuthCookieName(supabaseUrl);
+  const staleCookieNames = new Set(
+    request.cookies
+      .getAll()
+      .filter((cookie) => isChunkLike(cookie.name, cookieName))
+      .map((cookie) => cookie.name),
+  );
+  const encodedSession = `base64-${stringToBase64URL(JSON.stringify(session))}`;
+  const sessionChunks = createChunks(cookieName, encodedSession);
+  const baseOptions = getCookieOptions(request);
+
+  sessionChunks.forEach(({ name }) => {
+    staleCookieNames.delete(name);
+  });
+
+  staleCookieNames.forEach((name) => {
+    cookiesToSet.push({
+      name,
+      value: "",
+      options: { ...baseOptions, maxAge: 0 },
+    });
+  });
+
+  sessionChunks.forEach(({ name, value }) => {
+    cookiesToSet.push({
+      name,
+      value,
+      options: {
+        ...baseOptions,
+        maxAge: DEFAULT_COOKIE_OPTIONS.maxAge,
+      },
+    });
+  });
+
+  queueCookieRemoval(cookiesToSet, request, `${cookieName}-code-verifier`);
+}
+
+async function exchangeCodeWithTokenEndpoint(
+  request: NextRequest,
+  code: string,
+  config: { supabaseUrl: string; supabaseAnonKey: string },
+): Promise<ManualExchangeResult> {
+  const codeVerifier = await readCodeVerifier(request, config.supabaseUrl);
+
+  if (!codeVerifier) {
+    return {
+      data: null,
+      error: {
+        message: "PKCE code verifier cookie was not present on callback.",
+        name: "AuthPKCECodeVerifierMissingError",
+        status: 400,
+      },
+      stage: "callback-missing-verifier",
+    };
+  }
+
+  const response = await fetch(
+    `${config.supabaseUrl}/auth/v1/token?grant_type=pkce`,
+    {
+      method: "POST",
+      headers: {
+        apikey: config.supabaseAnonKey,
+        Authorization: `Bearer ${config.supabaseAnonKey}`,
+        "Content-Type": "application/json",
+        "X-Client-Info": "loan-factory-auth-callback",
+      },
+      body: JSON.stringify({
+        auth_code: code,
+        code_verifier: codeVerifier,
+      }),
+      cache: "no-store",
+    },
+  );
+
+  const bodyText = await response.text();
+  let body: Record<string, unknown> | null = null;
+
+  try {
+    body = bodyText ? (JSON.parse(bodyText) as Record<string, unknown>) : null;
+  } catch {
+    body = null;
+  }
+
+  if (!response.ok) {
+    return {
+      data: null,
+      error: {
+        message:
+          typeof body?.msg === "string"
+            ? body.msg
+            : typeof body?.message === "string"
+              ? body.message
+              : "Supabase token endpoint rejected the auth code.",
+        name: "AuthPKCEGrantCodeExchangeError",
+        status: response.status,
+      },
+      stage: "callback-token-exchange",
+    };
+  }
+
+  const session = body as Session | null;
+
+  if (!session?.access_token || !session.refresh_token || !session.user) {
+    return {
+      data: null,
+      error: {
+        message: "Supabase token endpoint returned an incomplete session.",
+        name: "AuthInvalidTokenResponseError",
+        status: response.status,
+      },
+      stage: "callback-token-exchange",
+    };
+  }
+
+  return {
+    data: {
+      session,
+      user: session.user,
+    },
+    error: null,
+    stage: null,
+  };
 }
 
 async function syncApprovedProfile(user: User) {
@@ -195,26 +416,47 @@ export async function GET(request: NextRequest) {
   });
 
   const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+  let signedInUser = data.user;
 
-  if (error || !data.user) {
-    console.error("Supabase OAuth callback exchange failed", {
-      hasCode: Boolean(code),
-      hasUser: Boolean(data.user),
-      message: error?.message ?? "Missing user after code exchange",
-      name: error?.name,
-      status: error?.status,
-      stage: "callback-exchange",
-    });
-
-    return redirectWithCookies(
+  if (error || !signedInUser || !data.session) {
+    const manualExchange = await exchangeCodeWithTokenEndpoint(
       request,
-      "/login/?error=auth-callback&stage=callback-exchange",
-      cookiesToSet,
-      headersToSet,
+      code,
+      config,
     );
+
+    if (manualExchange.error || !manualExchange.data) {
+      console.error("Supabase OAuth callback exchange failed", {
+        hasCode: Boolean(code),
+        hasUser: Boolean(signedInUser),
+        manualStage: manualExchange.stage,
+        message:
+          manualExchange.error?.message ??
+          error?.message ??
+          "Missing user after code exchange",
+        name: manualExchange.error?.name ?? error?.name,
+        status: manualExchange.error?.status ?? error?.status,
+        stage: "callback-exchange",
+      });
+
+      return redirectWithCookies(
+        request,
+        `/login/?error=auth-callback&stage=${manualExchange.stage ?? "callback-exchange"}`,
+        cookiesToSet,
+        headersToSet,
+      );
+    }
+
+    queueSessionCookies(
+      cookiesToSet,
+      request,
+      config.supabaseUrl,
+      manualExchange.data.session,
+    );
+    signedInUser = manualExchange.data.user;
   }
 
-  const profileSync = await syncApprovedProfile(data.user);
+  const profileSync = await syncApprovedProfile(signedInUser);
 
   if (profileSync.status !== "approved") {
     if (profileSync.reason === "domain") {
