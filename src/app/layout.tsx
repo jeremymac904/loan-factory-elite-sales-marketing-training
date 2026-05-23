@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HeyGenVideoWidget from "@/components/HeyGenVideoWidget";
+import SuggestionModal from "@/components/SuggestionModal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,6 +30,10 @@ export default function RootLayout({
         <main>{children}</main>
         <SiteFooter />
         <HeyGenVideoWidget />
+        <SuggestionModal
+          triggerLabel="Send Feedback"
+          triggerClassName="fixed right-4 top-24 z-40 rounded-full bg-lf-orange px-4 py-3 text-sm font-bold text-white shadow-2xl transition hover:-translate-y-0.5 hover:bg-lf-orangeDark focus:outline-none focus:ring-2 focus:ring-lf-orange/30"
+        />
       </body>
     </html>
   );

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import BrandImage from "./BrandImage";
-import SuggestionModal from "./SuggestionModal";
 import { brandAssets } from "@/data/brandAssets";
 
 const footerLinks = [
@@ -68,7 +67,6 @@ export default function SiteFooter() {
               jeremy.mcdonald@loanfactory.com
             </a>
           </p>
-          <SuggestionModal />
         </div>
       </div>
     </footer>

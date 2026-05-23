@@ -78,21 +78,6 @@ export default function SuggestionModal({
     };
   }, [supabaseConfigured]);
 
-  const subject = encodeURIComponent("LO Development Platform Suggestion");
-  const body = encodeURIComponent(
-    [
-      "Have an idea, broken link, missing resource, or platform improvement?",
-      "",
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Category: ${form.category}`,
-      `Anonymous: ${form.anonymous ? "Yes" : "No"}`,
-      "",
-      "Suggestion:",
-      form.suggestion,
-    ].join("\n"),
-  );
-
   async function copyEmail() {
     try {
       await navigator.clipboard.writeText(jeremyEmail);
@@ -162,7 +147,8 @@ export default function SuggestionModal({
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
                   Have an idea, broken link, missing resource, or platform
-                  improvement? Send it to Jeremy.
+                  improvement? Save it here when signed in, or copy Jeremy's
+                  email and send it manually. This app will not send email.
                 </p>
               </div>
               <button
@@ -279,12 +265,6 @@ export default function SuggestionModal({
               >
                 Save suggestion
               </button>
-              <a
-                href={`mailto:${jeremyEmail}?subject=${subject}&body=${body}`}
-                className="btn-primary"
-              >
-                Email Jeremy
-              </a>
             </div>
           </div>
         </div>
