@@ -401,6 +401,7 @@ export async function GET(request: NextRequest) {
   }
 
   const supabase = createServerClient(config.supabaseUrl, config.supabaseAnonKey, {
+    cookieOptions: getCookieOptions(request),
     cookies: {
       getAll() {
         return request.cookies.getAll();

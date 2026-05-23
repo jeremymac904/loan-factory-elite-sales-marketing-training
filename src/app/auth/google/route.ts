@@ -17,6 +17,18 @@ type CookieToSet = {
   options: CookieOptions;
 };
 
+function getCookieOptions(request: NextRequest): CookieOptions {
+  const forwardedProto = request.headers.get("x-forwarded-proto");
+  const secure =
+    forwardedProto === "https" || request.nextUrl.protocol === "https:";
+
+  return {
+    path: "/",
+    sameSite: "lax",
+    secure,
+  };
+}
+
 function responseWithCookies(
   response: NextResponse,
   cookiesToSet: CookieToSet[],
@@ -69,6 +81,7 @@ export async function GET(request: NextRequest) {
   }
 
   const supabase = createServerClient(config.supabaseUrl, config.supabaseAnonKey, {
+    cookieOptions: getCookieOptions(request),
     cookies: {
       getAll() {
         return request.cookies.getAll();
