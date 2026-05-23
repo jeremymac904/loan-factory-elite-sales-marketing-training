@@ -176,8 +176,10 @@ export default function BrowserAuthCallbackPage() {
         mergeAuthDebugTrail({
           callbackStage: stage,
           syncProfileSucceeded: false,
-          lastErrorCode: stage,
-          lastErrorMessage: "Browser session reached sync-profile but did not complete.",
+          lastErrorCode: body?.debug?.lastErrorCode ?? stage,
+          lastErrorMessage:
+            body?.debug?.lastErrorMessage ??
+            "Browser session reached sync-profile but did not complete.",
         });
 
         window.location.replace(

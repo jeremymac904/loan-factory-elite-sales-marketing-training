@@ -8,7 +8,6 @@ import {
   type CookieOptions,
 } from "@supabase/ssr";
 import {
-  createClient,
   type PostgrestError,
   type Session,
   type User,
@@ -197,17 +196,39 @@ function queueSessionCookies(
   });
 }
 
-function createTokenValidationClient(config: {
-  supabaseUrl: string;
-  supabaseAnonKey: string;
-}) {
-  return createClient(config.supabaseUrl, config.supabaseAnonKey, {
-    auth: {
-      autoRefreshToken: false,
-      detectSessionInUrl: false,
-      persistSession: false,
+async function validateAccessToken(
+  config: { supabaseUrl: string; supabaseAnonKey: string },
+  accessToken: string,
+): Promise<
+  | { user: User; error: null }
+  | { user: null; error: { message: string; status: number } }
+> {
+  const response = await fetch(`${config.supabaseUrl}/auth/v1/user`, {
+    cache: "no-store",
+    headers: {
+      apikey: config.supabaseAnonKey,
+      Authorization: `Bearer ${accessToken}`,
     },
   });
+
+  if (!response.ok) {
+    let message = "Supabase Auth user validation failed.";
+
+    try {
+      const body = (await response.json()) as { msg?: unknown; message?: unknown };
+      const responseMessage = body.message ?? body.msg;
+
+      if (typeof responseMessage === "string" && responseMessage.trim()) {
+        message = responseMessage;
+      }
+    } catch {
+      // Keep the generic safe message when Supabase returns non-JSON.
+    }
+
+    return { user: null, error: { message, status: response.status } };
+  }
+
+  return { user: (await response.json()) as User, error: null };
 }
 
 export async function POST(request: NextRequest) {
@@ -253,21 +274,18 @@ export async function POST(request: NextRequest) {
   }
 
   if (accessToken && refreshToken) {
-    const validator = createTokenValidationClient(config);
-    const {
-      data: { user: validatedUser },
-      error: validationError,
-    } = await validator.auth.getUser(accessToken);
+    const { user: validatedUser, error: validationError } =
+      await validateAccessToken(config, accessToken);
 
     if (validationError || !validatedUser) {
       console.error("Supabase browser token validation failed", {
         message: validationError?.message ?? "Missing validated user",
-        name: validationError?.name,
         status: validationError?.status,
       });
       return pending("session-validate", 401, cookiesToSet, {
         syncProfileReceivedSession: receivedSession,
-        lastErrorMessage: "Supabase browser token validation failed.",
+        lastErrorMessage:
+          validationError?.message ?? "Supabase browser token validation failed.",
       });
     }
 
