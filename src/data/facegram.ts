@@ -219,23 +219,51 @@ export const faceGramShortcuts = [
 
 export const lenderPromotionNotes = [
   {
+    sponsor: "Rocket",
+    label: "Sponsored / Demo placement",
     title: "Rocket training spotlight",
+    cta: "View resource",
+    accent: "R",
     body:
-      "Demo sponsored placement for reviewed lender training. Approval required before any vendor content appears in beta.",
+      "Reviewed lender training example for internal education. Vendor content requires LO Development approval before it appears in beta.",
   },
   {
+    sponsor: "PennyMac",
+    label: "Sponsored / Demo placement",
     title: "PennyMac partner resource",
+    cta: "Learn more",
+    accent: "P",
     body:
-      "Demo sponsored placement for a lender resource or class. No vendor self-posting is enabled.",
+      "Partner resource example for a future class, guide, or replay. Vendor self-posting is not enabled.",
   },
 ];
 
 export const faceGramRightRail = [
-  "Training reminder: use 101 Foundation this week",
-  "Trending topic: first-call follow-up",
-  "Upcoming: coaching calendar",
-  "Saved posts: local only during beta",
-  "New groups: open the Groups page",
+  {
+    title: "101 Foundation this week",
+    body: "Practice the first-call follow-up and post one sentence that worked.",
+    action: "Open training reminder",
+  },
+  {
+    title: "First-call follow-up",
+    body: "Compare quick openers, next-step questions, and cleaner handoffs.",
+    action: "View topic",
+  },
+  {
+    title: "Coaching calendar",
+    body: "See group check-ins, script practice, and office-hour reminders.",
+    action: "View schedule",
+  },
+  {
+    title: "Saved posts",
+    body: "Review posts you bookmarked from the feed during this session.",
+    action: "Open saved posts",
+  },
+  {
+    title: "New groups",
+    body: "Browse active FaceGram groups for training, coaching, and team support.",
+    action: "Open groups",
+  },
 ];
 
 export function getFaceGramGroup(slug: string) {

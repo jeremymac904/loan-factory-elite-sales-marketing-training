@@ -176,8 +176,10 @@ export default function FaceGramGroupTabs({ activeTab, group }: Props) {
       <MediaPanel
         title="Live sessions"
         items={[
-          "No live session scheduled right now",
-          "Next live session will show date, host, and replay path here",
+          "Live coaching room",
+          "Replay watchlist",
+          "Host notes",
+          "Group questions",
         ]}
       />
     );
@@ -281,7 +283,9 @@ export default function FaceGramGroupTabs({ activeTab, group }: Props) {
               onClick={() => toggleSave(post.id)}
             >
               {post.saved ? "Saved" : "Save"}
-              <span className="block text-xs font-normal">Local</span>
+              <span className="block text-xs font-normal">
+                {post.saved ? "Bookmarked" : "For later"}
+              </span>
             </button>
           </div>
           <div className="mt-4 grid gap-2">
@@ -334,21 +338,47 @@ function InfoCard({ label, value }: { label: string; value: string }) {
 }
 
 function MediaPanel({ title, items }: { title: string; items: string[] }) {
+  const [activeItem, setActiveItem] = useState<string | null>(null);
+
   return (
-    <article className="rounded-2xl bg-white p-5 shadow-card">
-      <h2 className="font-display text-2xl font-semibold text-lf-navy">
-        {title}
-      </h2>
-      <div className="mt-5 grid gap-3 sm:grid-cols-2">
-        {items.map((item) => (
-          <div
-            key={item}
-            className="rounded-xl border border-lf-line bg-lf-mist p-4 text-sm font-semibold text-lf-charcoal"
-          >
-            {item}
+    <>
+      <article className="rounded-2xl bg-white p-5 shadow-card">
+        <h2 className="font-display text-2xl font-semibold text-lf-navy">
+          {title}
+        </h2>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          {items.map((item) => (
+            <button
+              key={item}
+              type="button"
+              className="rounded-xl border border-lf-line bg-lf-mist p-4 text-left text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:bg-white hover:text-lf-orange"
+              onClick={() => setActiveItem(item)}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+      </article>
+      {activeItem && (
+        <div className="fixed inset-0 z-50 grid place-items-center bg-black/55 px-4 py-6">
+          <div className="w-full max-w-lg rounded-2xl bg-white p-5 shadow-lift">
+            <button
+              type="button"
+              className="ml-auto block rounded-full border border-lf-line px-3 py-1 text-xs font-semibold text-lf-slate hover:border-lf-orange hover:text-lf-orange"
+              onClick={() => setActiveItem(null)}
+            >
+              Close
+            </button>
+            <h3 className="font-display text-2xl font-semibold text-lf-navy">
+              {activeItem}
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-lf-slate">
+              This group area is ready for internal files, replays, notes, and
+              discussion items tied to {title.toLowerCase()}.
+            </p>
           </div>
-        ))}
-      </div>
-    </article>
+        </div>
+      )}
+    </>
   );
 }
