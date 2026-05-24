@@ -1,6 +1,8 @@
 import Link from "next/link";
+import AiAdvantageVideoCard from "@/components/AiAdvantageVideoCard";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
+import { aiAdvantagePublishedVideos } from "@/data/aiAdvantagePublishedVideos";
 import {
   aiTrainingPaths,
   aiTrainingStartHere,
@@ -49,6 +51,12 @@ export default function AITrainingPage() {
           >
             Open prompt library
           </Link>
+          <Link
+            href="/ai-training/video-library/"
+            className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
+          >
+            Watch video lessons
+          </Link>
         </div>
       </PageHero>
 
@@ -78,6 +86,24 @@ export default function AITrainingPage() {
                 </div>
               </article>
             ))}
+        </div>
+      </section>
+
+      <section className="container-page py-14">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <SectionHeading
+            eyebrow="Published micro-lessons"
+            title="AI Advantage video lessons"
+            description="These short YouTube lessons are ready to watch inside the platform. Start with one video, try one prompt or workflow, and review every AI draft before use."
+          />
+          <Link href="/ai-training/video-library/" className="btn-primary">
+            Open full video library
+          </Link>
+        </div>
+        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          {aiAdvantagePublishedVideos.map((video) => (
+            <AiAdvantageVideoCard key={video.rowId} video={video} />
+          ))}
         </div>
       </section>
 

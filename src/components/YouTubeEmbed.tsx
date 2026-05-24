@@ -15,7 +15,7 @@ export default function YouTubeEmbed({ src, title, className }: Props) {
         src={src}
         title={title}
         loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer; autoplay; clipboard-write; compute-pressure; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       />
     </div>

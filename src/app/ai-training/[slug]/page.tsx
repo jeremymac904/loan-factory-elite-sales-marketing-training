@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AiAdvantageVideoCard from "@/components/AiAdvantageVideoCard";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
+import { getAiAdvantagePublishedVideosForPath } from "@/data/aiAdvantagePublishedVideos";
 import { aiTrainingPaths, aiTrainingVideos } from "@/data/aiTrainingVideos";
 
 type Props = {
@@ -88,6 +90,7 @@ export default async function AITrainingPathPage({ params }: Props) {
   if (!path) notFound();
 
   const videos = matchingVideos(slug);
+  const publishedVideos = getAiAdvantagePublishedVideosForPath(slug);
   const actions = weeklyActions[slug] ?? [
     "Pick one safe AI use case.",
     "Try one draft.",
@@ -151,6 +154,24 @@ export default async function AITrainingPathPage({ params }: Props) {
           </article>
         </div>
       </section>
+
+      {publishedVideos.length > 0 && (
+        <section className="container-page pb-14">
+          <SectionHeading
+            title="Published video lessons"
+            description="Watch the verified YouTube micro-lessons for this AI Advantage path."
+          />
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            {publishedVideos.map((video) => (
+              <AiAdvantageVideoCard
+                key={video.rowId}
+                video={video}
+                compact
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="bg-lf-mist">
         <div className="container-page py-14">
