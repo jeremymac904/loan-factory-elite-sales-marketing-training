@@ -17,7 +17,7 @@ export default function AiAdvantageVideoCard({ video, compact = false }: Props) 
       />
       <div className="flex flex-1 flex-col p-5">
         <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-          {video.rowId} | YouTube | Unlisted
+          AI Advantage &gt; {video.librarySection}
         </p>
         <h3 className="h-display mt-2 text-xl">{video.title}</h3>
         {!compact && (

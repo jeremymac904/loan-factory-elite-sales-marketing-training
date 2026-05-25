@@ -2,23 +2,13 @@ import Link from "next/link";
 import AiAdvantageVideoCard from "@/components/AiAdvantageVideoCard";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import { aiAdvantagePublishedVideos } from "@/data/aiAdvantagePublishedVideos";
 import {
-  aiTrainingPaths,
-  aiTrainingStartHere,
-  aiTrainingVideos,
-} from "@/data/aiTrainingVideos";
+  aiAdvantageVideoSectionOrder,
+  getAiAdvantagePublishedVideosForSection,
+} from "@/data/aiAdvantagePublishedVideos";
+import { aiTrainingPaths, aiTrainingStartHere } from "@/data/aiTrainingVideos";
 
 export const metadata = { title: "AI Advantage" };
-
-function compactTitle(title: string) {
-  return title.replace("AI Training", "AI Advantage").replace(" - Recording", "");
-}
-
-function clipRange(start: string, end: string) {
-  if (!start && !end) return "Key section";
-  return `${start || "?"}-${end || "?"}`;
-}
 
 export default function AITrainingPage() {
   return (
@@ -40,7 +30,7 @@ export default function AITrainingPage() {
             Start with Gemini AI Twin
           </Link>
           <Link
-            href="/ai-training/recordings/ai-marketplace-2026-02-11/"
+            href="/ai-training/video-library/test-001/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
             Open first lesson
@@ -101,9 +91,11 @@ export default function AITrainingPage() {
           </Link>
         </div>
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          {aiAdvantagePublishedVideos.map((video) => (
-            <AiAdvantageVideoCard key={video.rowId} video={video} />
-          ))}
+          {aiAdvantageVideoSectionOrder.flatMap((section) =>
+            getAiAdvantagePublishedVideosForSection(section).map((video) => (
+              <AiAdvantageVideoCard key={video.rowId} video={video} />
+            )),
+          )}
         </div>
       </section>
 
@@ -135,68 +127,6 @@ export default function AITrainingPage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="video-library" className="container-page py-14">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading
-            eyebrow="Full video library"
-            title="AI lesson guides and highlights"
-            description="Choose a training topic below. Each guide gives you key takeaways, practice ideas, and one next step."
-          />
-          <div className="rounded-2xl border border-lf-line bg-white p-4 text-sm text-lf-slate shadow-card sm:max-w-sm">
-            <strong className="text-lf-navy">How to use this page:</strong>{" "}
-            start with one topic, open the lesson highlights, then try one
-            prompt or workflow the same week.
-          </div>
-        </div>
-
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          {aiTrainingVideos.map((video) => (
-            <article key={video.id} className="card flex flex-col">
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                    {video.date} · {video.duration}
-                  </p>
-                  <h3 className="mt-2 h-display text-xl">
-                    {compactTitle(video.title)}
-                  </h3>
-                </div>
-              </div>
-
-              <p className="mt-4 text-sm leading-6 text-lf-charcoal">
-                {video.topic}
-              </p>
-              <p className="mt-3 text-sm leading-6 text-lf-slate">
-                <strong className="text-lf-navy">Recommended use:</strong>{" "}
-                {video.recommendedUse}
-              </p>
-
-              <div className="mt-5">
-                <h4 className="text-sm font-semibold text-lf-navy">
-                  Lesson highlights
-                </h4>
-                <ul className="mt-2 space-y-2 text-sm text-lf-slate">
-                  {video.bestClipsToCutFirst.slice(0, 3).map((clip) => (
-                    <li key={clip.segmentId}>
-                      <span className="font-semibold text-lf-charcoal">
-                        {clipRange(clip.start, clip.end)}:
-                      </span>{" "}
-                      {clip.clipTitle}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-auto flex flex-wrap gap-3 pt-6">
-                <Link href={`/ai-training/recordings/${video.id}/`} className="btn-primary">
-                  Open lesson guide
-                </Link>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 

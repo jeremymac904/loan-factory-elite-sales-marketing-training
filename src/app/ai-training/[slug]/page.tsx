@@ -4,7 +4,7 @@ import AiAdvantageVideoCard from "@/components/AiAdvantageVideoCard";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { getAiAdvantagePublishedVideosForPath } from "@/data/aiAdvantagePublishedVideos";
-import { aiTrainingPaths, aiTrainingVideos } from "@/data/aiTrainingVideos";
+import { aiTrainingPaths } from "@/data/aiTrainingVideos";
 
 type Props = {
   params: Promise<{ slug: string }> | { slug: string };
@@ -58,20 +58,6 @@ const weeklyActions: Record<string, string[]> = {
   ],
 };
 
-function matchingVideos(slug: string) {
-  const path = aiTrainingPaths.find((item) => item.anchor === slug);
-  if (!path) return [];
-
-  return aiTrainingVideos
-    .filter((video) =>
-      [video.category, ...video.tags]
-        .join(" ")
-        .toLowerCase()
-        .includes(path.title.split(" ")[0].toLowerCase()),
-    )
-    .slice(0, 3);
-}
-
 export function generateStaticParams() {
   return aiTrainingPaths.map((path) => ({ slug: path.anchor }));
 }
@@ -89,7 +75,6 @@ export default async function AITrainingPathPage({ params }: Props) {
 
   if (!path) notFound();
 
-  const videos = matchingVideos(slug);
   const publishedVideos = getAiAdvantagePublishedVideosForPath(slug);
   const actions = weeklyActions[slug] ?? [
     "Pick one safe AI use case.",
@@ -172,35 +157,6 @@ export default async function AITrainingPathPage({ params }: Props) {
           </div>
         </section>
       )}
-
-      <section className="bg-lf-mist">
-        <div className="container-page py-14">
-          <SectionHeading
-            title="Related lesson guides"
-            description="Use these guides for takeaways, practice ideas, and safe next steps."
-          />
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {(videos.length ? videos : aiTrainingVideos.slice(0, 3)).map((video) => (
-              <Link
-                key={video.id}
-                href={`/ai-training/recordings/${video.id}/`}
-                className="card hover:shadow-lift"
-              >
-                <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                  {video.duration}
-                </p>
-                <h3 className="h-display mt-2 text-lg">{video.category}</h3>
-                <p className="mt-2 text-sm leading-6 text-lf-slate">
-                  {video.topic}
-                </p>
-                <span className="mt-5 inline-flex text-sm font-semibold text-lf-orange">
-                  Open lesson guide &rarr;
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="container-page py-14">
         <div className="rounded-2xl border border-lf-orange/30 bg-lf-orangeSoft p-5 text-sm leading-6 text-lf-charcoal">

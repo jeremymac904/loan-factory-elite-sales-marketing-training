@@ -1,3 +1,10 @@
+export type AiAdvantageVideoSection =
+  | "Foundations"
+  | "AI Twin Setup"
+  | "Client Communication"
+  | "Marketing & Content"
+  | "Content Creation";
+
 export type AiAdvantagePublishedVideo = {
   rowId: string;
   slug: string;
@@ -10,9 +17,20 @@ export type AiAdvantagePublishedVideo = {
   privacy: "unlisted";
   platformSection: "AI Advantage";
   source: "YouTube";
+  librarySection: AiAdvantageVideoSection;
   pathSlug: string;
+  sourceFileName: string;
+  suggestedLessonPage: string;
   notes: string;
 };
+
+export const aiAdvantageVideoSectionOrder: AiAdvantageVideoSection[] = [
+  "Foundations",
+  "AI Twin Setup",
+  "Client Communication",
+  "Marketing & Content",
+  "Content Creation",
+];
 
 export const aiAdvantagePublishedVideos = [
   {
@@ -20,7 +38,7 @@ export const aiAdvantagePublishedVideos = [
     slug: "test-001",
     title: "AI Advantage: AI Training Overview, Content Research and Automation",
     description:
-      "Start here for a quick overview of the AI Advantage training library, content research workflow, and how these lessons help LOs work faster with review.",
+      "Start here for the big-picture tour of AI Advantage, content research, and how these lessons help loan officers work faster with review.",
     youtubeVideoId: "c8zULkTrwGU",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=c8zULkTrwGU",
     youtubeEmbedUrl: "https://www.youtube.com/embed/c8zULkTrwGU",
@@ -28,15 +46,21 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
+    librarySection: "Foundations",
     pathSlug: "notebooklm",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    sourceFileName:
+      "ai-advantage__2026-04-14__ai-training-overview-content-research-and-automation__0000-0055.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/foundations/ai-training-overview",
+    notes:
+      "Series overview and orientation clip. Good as the first lesson in the library. Originally the pipeline test upload.",
   },
   {
     rowId: "AIA-002",
     slug: "aia-002",
-    title: "Gemini Gems vs. Generic AI",
+    title: "AI Advantage: AI Data Security for Loan Officers",
     description:
-      "Understand why a role-specific Gemini Gem gives cleaner, more consistent drafts than a generic AI chat.",
+      "Learn the security basics: protect private information, keep borrower data out of AI tools, and use human review before anything leaves Loan Factory.",
     youtubeVideoId: "ozTujCSxaqE",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=ozTujCSxaqE",
     youtubeEmbedUrl: "https://www.youtube.com/embed/ozTujCSxaqE",
@@ -44,15 +68,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "gemini-ai-twin",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "Foundations",
+    pathSlug: "ai-safety",
+    sourceFileName:
+      "ai-advantage__2026-02-11__ai-data-security-for-loan-officers__1758-1917.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/foundations/ai-data-security-for-loan-officers",
+    notes: "Compliance and security foundation. Pair early with onboarding.",
   },
   {
     rowId: "AIA-003",
     slug: "aia-003",
-    title: "Starting the AI Twin Setup",
+    title: "AI Advantage: AI Powered Loan Status Updates",
     description:
-      "See the first setup steps for creating a Gemini-based AI Twin that supports your day-to-day loan officer work.",
+      "Use AI to draft clearer loan status updates while keeping judgment, accuracy, and review in the process.",
     youtubeVideoId: "5BPKlTxCJPU",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=5BPKlTxCJPU",
     youtubeEmbedUrl: "https://www.youtube.com/embed/5BPKlTxCJPU",
@@ -60,15 +89,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "gemini-ai-twin",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "Client Communication",
+    pathSlug: "gmail-workspace",
+    sourceFileName:
+      "ai-advantage__2026-02-11__ai-powered-loan-status-updates__5645-5825.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/client-communication/ai-powered-loan-status-updates",
+    notes: "Borrower communication automation.",
   },
   {
     rowId: "AIA-004",
     slug: "aia-004",
-    title: "Training Your AI on Your Persona",
+    title: "AI Advantage: Automating your Daily Market Updates",
     description:
-      "Learn what information helps AI match your voice while keeping review, judgment, and safety in place.",
+      "Turn daily market information into a repeatable draft workflow for reviewed education and follow-up content.",
     youtubeVideoId: "ti-AwZl14vk",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=ti-AwZl14vk",
     youtubeEmbedUrl: "https://www.youtube.com/embed/ti-AwZl14vk",
@@ -76,15 +110,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "gemini-ai-twin",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "Marketing & Content",
+    pathSlug: "social-realtor-marketing",
+    sourceFileName:
+      "ai-advantage__2026-02-11__automating-your-daily-market-updates__5144-5305.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/marketing/automating-daily-market-updates",
+    notes: "Daily market content automation.",
   },
   {
     rowId: "AIA-005",
     slug: "aia-005",
-    title: "Finalizing Your Gemini Gem Setup",
+    title: "AI Advantage: Dominating your Local Market with AI",
     description:
-      "Walk through the final Gemini Gem setup steps so your assistant is easier to use in real LO workflows.",
+      "Use local market context to create stronger education and marketing ideas without making claims that require review first.",
     youtubeVideoId: "dynRVCanBGA",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=dynRVCanBGA",
     youtubeEmbedUrl: "https://www.youtube.com/embed/dynRVCanBGA",
@@ -92,15 +131,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "gemini-ai-twin",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "Marketing & Content",
+    pathSlug: "google-business-profile",
+    sourceFileName:
+      "ai-advantage__2026-02-11__dominating-your-local-market-with-ai__3852-4100.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/marketing/dominating-your-local-market-with-ai",
+    notes: "Local market and SEO angle.",
   },
   {
     rowId: "AIA-006",
     slug: "aia-006",
-    title: "Rapid Content Creation with AI Twin",
+    title: "AI Advantage: Drafting Client Emails in Gmail",
     description:
-      "Use an AI Twin to draft social ideas and short video outlines faster, then review every draft before external use.",
+      "Draft clearer client emails in Gmail faster, then review every word before sending anything externally.",
     youtubeVideoId: "GBfe2N9Du64",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=GBfe2N9Du64",
     youtubeEmbedUrl: "https://www.youtube.com/embed/GBfe2N9Du64",
@@ -108,15 +152,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "social-realtor-marketing",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "Client Communication",
+    pathSlug: "gmail-workspace",
+    sourceFileName:
+      "ai-advantage__2026-02-11__drafting-client-emails-in-gmail__4340-4545.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/client-communication/drafting-client-emails-in-gmail",
+    notes: "Gmail and Gemini drafting.",
   },
   {
     rowId: "AIA-007",
     slug: "aia-007",
-    title: "Multi-Language Content Strategy",
+    title: "AI Advantage: Finalizing your Gemini Gem Setup",
     description:
-      "Draft content for different audiences with plain-language review steps before anything is used publicly.",
+      "Finish the Gemini Gem setup sequence so your AI helper is easier to use in practical loan officer workflows.",
     youtubeVideoId: "Saz-qFxCu1Y",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=Saz-qFxCu1Y",
     youtubeEmbedUrl: "https://www.youtube.com/embed/Saz-qFxCu1Y",
@@ -124,15 +173,21 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "social-realtor-marketing",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "AI Twin Setup",
+    pathSlug: "gemini-ai-twin",
+    sourceFileName:
+      "ai-advantage__2026-02-11__finalizing-your-gemini-gem-setup__0736-0907.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-twin/finalizing-gemini-gem-setup",
+    notes:
+      "Part of the AI Twin setup sequence. Suggest ordering after Starting the AI Twin Setup.",
   },
   {
     rowId: "AIA-008",
     slug: "aia-008",
-    title: "Improving AI Tone with Bio Docs",
+    title: "AI Advantage: Gemini Gems vs Generic AI",
     description:
-      "Use approved personal background notes to help AI draft in a voice that sounds more like you.",
+      "See why a role-specific Gemini Gem can produce cleaner, more consistent drafts than a generic AI chat.",
     youtubeVideoId: "3LzjDAMkk04",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=3LzjDAMkk04",
     youtubeEmbedUrl: "https://www.youtube.com/embed/3LzjDAMkk04",
@@ -140,15 +195,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
+    librarySection: "AI Twin Setup",
     pathSlug: "gemini-ai-twin",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    sourceFileName:
+      "ai-advantage__2026-02-11__gemini-gems-vs-generic-ai__0141-0317.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-twin/gemini-gems-vs-generic-ai",
+    notes: "Why custom Gems beat generic prompts.",
   },
   {
     rowId: "AIA-009",
     slug: "aia-009",
-    title: "AI Data Security for Loan Officers",
+    title: "AI Advantage: Improving AI Tone with Bio Docs",
     description:
-      "Review the safety mindset for AI tools: protect private information, use approved systems, and keep human review in charge.",
+      "Use approved background notes to help AI draft in a tone that sounds more like you while keeping review in place.",
     youtubeVideoId: "L_FBdXpkYG0",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=L_FBdXpkYG0",
     youtubeEmbedUrl: "https://www.youtube.com/embed/L_FBdXpkYG0",
@@ -156,15 +216,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "ai-safety",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "AI Twin Setup",
+    pathSlug: "gemini-ai-twin",
+    sourceFileName:
+      "ai-advantage__2026-02-11__improving-ai-tone-with-bio-docs__1406-1650.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-twin/improving-ai-tone-with-bio-docs",
+    notes: "Personalization via bio documents.",
   },
   {
     rowId: "AIA-010",
     slug: "aia-010",
-    title: "Dominating Your Local Market with AI",
+    title: "AI Advantage: Multi Language Content Strategy",
     description:
-      "Use local knowledge to create stronger marketing ideas without making claims that need review first.",
+      "Plan bilingual and multilingual outreach drafts with plain-language review before anything is used publicly.",
     youtubeVideoId: "uBSDv9RVgaQ",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=uBSDv9RVgaQ",
     youtubeEmbedUrl: "https://www.youtube.com/embed/uBSDv9RVgaQ",
@@ -172,15 +237,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "google-business-profile",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "Marketing & Content",
+    pathSlug: "social-realtor-marketing",
+    sourceFileName:
+      "ai-advantage__2026-02-11__multi-language-content-strategy__1200-1405.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/marketing/multi-language-content-strategy",
+    notes: "Bilingual and multilingual outreach.",
   },
   {
     rowId: "AIA-012",
     slug: "aia-012",
-    title: "Automating Your Daily Market Updates",
+    title: "AI Advantage: Starting the AI Twin Setup",
     description:
-      "Turn market updates into a repeatable draft workflow while keeping review and judgment in the process.",
+      "Begin the AI Twin setup track with the first practical steps for a Gemini-based loan officer helper.",
     youtubeVideoId: "zNwOFHZ2XbM",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=zNwOFHZ2XbM",
     youtubeEmbedUrl: "https://www.youtube.com/embed/zNwOFHZ2XbM",
@@ -188,15 +258,21 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "gmail-workspace",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "AI Twin Setup",
+    pathSlug: "gemini-ai-twin",
+    sourceFileName:
+      "ai-advantage__2026-02-11__starting-the-ai-twin-setup__0318-0510.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-twin/starting-ai-twin-setup",
+    notes:
+      "Entry point for the AI Twin setup track. Suggest ordering before Finalizing your Gemini Gem Setup.",
   },
   {
     rowId: "AIA-015",
     slug: "aia-015",
-    title: "Overview: Marketing with NotebookLM and AI Twins",
+    title: "AI Advantage: Creating Video Content with HeyGen AI Clones",
     description:
-      "Learn how source-grounded research and AI Twins can help organize marketing ideas for review.",
+      "See how AI video can support training and content planning when scripts and public use are reviewed first.",
     youtubeVideoId: "AC-jBgffnHc",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=AC-jBgffnHc",
     youtubeEmbedUrl: "https://www.youtube.com/embed/AC-jBgffnHc",
@@ -204,15 +280,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "notebooklm",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "Content Creation",
+    pathSlug: "heygen-ai-video",
+    sourceFileName:
+      "ai-advantage__2026-03-03__creating-video-content-with-heygen-ai-clones__1248-1440.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/content-creation/heygen-ai-clones",
+    notes: "Video avatar production.",
   },
   {
     rowId: "AIA-016",
     slug: "aia-016",
-    title: "Creating Video Content with HeyGen AI Clones",
+    title: "AI Advantage: Overview Marketing with NotebookLM and AI Twins",
     description:
-      "See how AI video can support training and content planning when scripts and public use are reviewed first.",
+      "Use source-grounded research and AI Twins to organize marketing ideas before review and use.",
     youtubeVideoId: "Jou4jrGFKsg",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=Jou4jrGFKsg",
     youtubeEmbedUrl: "https://www.youtube.com/embed/Jou4jrGFKsg",
@@ -220,15 +301,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "heygen-ai-video",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "Marketing & Content",
+    pathSlug: "notebooklm",
+    sourceFileName:
+      "ai-advantage__2026-03-03__overview-marketing-with-notebooklm-and-ai-twins__0933-1100.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/marketing/notebooklm-ai-twins-overview",
+    notes: "NotebookLM plus AI Twin marketing overview.",
   },
   {
     rowId: "AIA-052",
     slug: "aia-052",
-    title: "Personalizing Your Gemini Twin via Voice Interview",
+    title: "AI Advantage: How to Build your Public Loan Officer AI Twin",
     description:
-      "Use a guided interview approach to capture your voice and business style for better AI draft support.",
+      "Learn how a public-facing loan officer AI Twin can be planned while keeping approved content, guardrails, and review in place.",
     youtubeVideoId: "kH9VDBwwuh0",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=kH9VDBwwuh0",
     youtubeEmbedUrl: "https://www.youtube.com/embed/kH9VDBwwuh0",
@@ -236,15 +322,20 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
+    librarySection: "AI Twin Setup",
     pathSlug: "gemini-ai-twin",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    sourceFileName:
+      "ai-advantage__2026-04-28__how-to-build-your-public-loan-officer-ai-twin__0737-0843.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-twin/public-loan-officer-ai-twin",
+    notes: "Public-facing AI Twin build.",
   },
   {
     rowId: "AIA-056",
     slug: "aia-056",
-    title: "Why Every LO Needs a Google Business Profile",
+    title: "AI Advantage: Automate your Social Posts with Gemini AI",
     description:
-      "Learn why a complete Google Business Profile matters for local visibility and stronger community presence.",
+      "Use Gemini to draft social post ideas faster, then review tone, claims, and compliance-sensitive language before use.",
     youtubeVideoId: "AFPffFdcmQo",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=AFPffFdcmQo",
     youtubeEmbedUrl: "https://www.youtube.com/embed/AFPffFdcmQo",
@@ -252,8 +343,13 @@ export const aiAdvantagePublishedVideos = [
     privacy: "unlisted",
     platformSection: "AI Advantage",
     source: "YouTube",
-    pathSlug: "google-business-profile",
-    notes: "Verified Claude YouTube batch upload. Use only this supplied URL.",
+    librarySection: "Marketing & Content",
+    pathSlug: "social-realtor-marketing",
+    sourceFileName:
+      "ai-advantage__2026-05-12__automate-your-social-posts-with-gemini-ai__2532-3304.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/marketing/automate-social-posts-with-gemini-ai",
+    notes: "Social posting automation with Gemini.",
   },
 ] satisfies AiAdvantagePublishedVideo[];
 
@@ -263,4 +359,12 @@ export function getAiAdvantagePublishedVideo(slug: string) {
 
 export function getAiAdvantagePublishedVideosForPath(pathSlug: string) {
   return aiAdvantagePublishedVideos.filter((video) => video.pathSlug === pathSlug);
+}
+
+export function getAiAdvantagePublishedVideosForSection(
+  section: AiAdvantageVideoSection,
+) {
+  return aiAdvantagePublishedVideos.filter(
+    (video) => video.librarySection === section,
+  );
 }

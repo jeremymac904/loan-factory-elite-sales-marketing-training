@@ -2,7 +2,10 @@ import Link from "next/link";
 import AiAdvantageVideoCard from "@/components/AiAdvantageVideoCard";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import { aiAdvantagePublishedVideos } from "@/data/aiAdvantagePublishedVideos";
+import {
+  aiAdvantageVideoSectionOrder,
+  getAiAdvantagePublishedVideosForSection,
+} from "@/data/aiAdvantagePublishedVideos";
 
 export const metadata = {
   title: "AI Advantage Video Library",
@@ -39,13 +42,26 @@ export default function AiAdvantageVideoLibraryPage() {
 
       <section className="container-page py-14">
         <SectionHeading
-          title="Published YouTube micro-lessons"
-          description="These verified unlisted YouTube lessons are ready to watch inside the platform. Pick one lesson, try one practical action, and review every AI draft before use."
+          title="AI Advantage video lessons"
+          description="These are the approved YouTube lessons ready to watch inside the platform. Pick one lesson, try one practical action, and review every AI draft before use."
         />
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          {aiAdvantagePublishedVideos.map((video) => (
-            <AiAdvantageVideoCard key={video.rowId} video={video} />
-          ))}
+        <div className="mt-8 space-y-12">
+          {aiAdvantageVideoSectionOrder.map((section) => {
+            const videos = getAiAdvantagePublishedVideosForSection(section);
+
+            if (!videos.length) return null;
+
+            return (
+              <div key={section}>
+                <h2 className="h-display text-2xl">{section}</h2>
+                <div className="mt-5 grid gap-5 lg:grid-cols-2">
+                  {videos.map((video) => (
+                    <AiAdvantageVideoCard key={video.rowId} video={video} />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 

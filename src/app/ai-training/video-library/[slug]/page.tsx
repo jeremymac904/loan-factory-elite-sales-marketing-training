@@ -68,7 +68,7 @@ export default async function AiAdvantageVideoDetailPage({ params }: Props) {
             />
             <div className="p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                {video.rowId} | YouTube | Unlisted
+                AI Advantage &gt; {video.librarySection}
               </p>
               <h2 className="h-display mt-2 text-2xl">{video.title}</h2>
               <p className="mt-3 text-sm leading-6 text-lf-slate">
@@ -84,7 +84,10 @@ export default async function AiAdvantageVideoDetailPage({ params }: Props) {
             />
             <ol className="prose-lf mt-5 list-decimal space-y-2 pl-5 text-sm">
               <li>Watch the short lesson.</li>
-              <li>Write down one workflow you can improve this week.</li>
+              <li>
+                Write down one {video.librarySection.toLowerCase()} workflow
+                you can improve this week.
+              </li>
               <li>Use the Prompt Library to draft a safe first version.</li>
               <li>Review the draft before it leaves your desk.</li>
             </ol>
