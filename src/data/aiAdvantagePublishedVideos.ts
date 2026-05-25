@@ -314,7 +314,7 @@ export const aiAdvantagePublishedVideos = [
     slug: "aia-052",
     title: "AI Advantage: How to Build your Public Loan Officer AI Twin",
     description:
-      "Learn how a public-facing loan officer AI Twin can be planned while keeping approved content, guardrails, and review in place.",
+      "Review how a public-facing loan officer AI Twin can be planned. Do not publish or share one until content, disclosures, guardrails, and compliance review are approved.",
     youtubeVideoId: "kH9VDBwwuh0",
     youtubeVideoUrl: "https://www.youtube.com/watch?v=kH9VDBwwuh0",
     youtubeEmbedUrl: "https://www.youtube.com/embed/kH9VDBwwuh0",
