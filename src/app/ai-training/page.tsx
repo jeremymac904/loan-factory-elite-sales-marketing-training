@@ -30,7 +30,7 @@ export default function AITrainingPage() {
             Start with Gemini AI Twin
           </Link>
           <Link
-            href="/ai-training/video-library/test-001/"
+            href="/ai-training/video-library/aiadv-001/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
             Open first lesson

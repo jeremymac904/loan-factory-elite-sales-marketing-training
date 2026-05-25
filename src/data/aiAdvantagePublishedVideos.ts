@@ -3,7 +3,9 @@ export type AiAdvantageVideoSection =
   | "AI Twin Setup"
   | "Client Communication"
   | "Marketing & Content"
-  | "Content Creation";
+  | "Content Creation"
+  | "AI Apps & Automation"
+  | "Platform & Updates";
 
 export type AiAdvantagePublishedVideo = {
   rowId: string;
@@ -30,12 +32,14 @@ export const aiAdvantageVideoSectionOrder: AiAdvantageVideoSection[] = [
   "Client Communication",
   "Marketing & Content",
   "Content Creation",
+  "AI Apps & Automation",
+  "Platform & Updates",
 ];
 
 export const aiAdvantagePublishedVideos = [
   {
-    rowId: "TEST-001",
-    slug: "test-001",
+    rowId: "AIADV-001",
+    slug: "aiadv-001",
     title: "AI Advantage: AI Training Overview, Content Research and Automation",
     description:
       "Start here for the big-picture tour of AI Advantage, content research, and how these lessons help loan officers work faster with review.",
@@ -53,11 +57,11 @@ export const aiAdvantagePublishedVideos = [
     suggestedLessonPage:
       "/lo-development/ai-advantage/foundations/ai-training-overview",
     notes:
-      "Series overview and orientation clip. Good as the first lesson in the library. Originally the pipeline test upload.",
+      "Series overview and orientation clip. Good as the first lesson in the library.",
   },
   {
-    rowId: "AIA-002",
-    slug: "aia-002",
+    rowId: "AIADV-002",
+    slug: "aiadv-002",
     title: "AI Advantage: AI Data Security for Loan Officers",
     description:
       "Learn the security basics: protect private information, keep borrower data out of AI tools, and use human review before anything leaves Loan Factory.",
@@ -77,8 +81,8 @@ export const aiAdvantagePublishedVideos = [
     notes: "Compliance and security foundation. Pair early with onboarding.",
   },
   {
-    rowId: "AIA-003",
-    slug: "aia-003",
+    rowId: "AIADV-003",
+    slug: "aiadv-003",
     title: "AI Advantage: AI Powered Loan Status Updates",
     description:
       "Use AI to draft clearer loan status updates while keeping judgment, accuracy, and review in the process.",
@@ -98,8 +102,8 @@ export const aiAdvantagePublishedVideos = [
     notes: "Borrower communication automation.",
   },
   {
-    rowId: "AIA-004",
-    slug: "aia-004",
+    rowId: "AIADV-004",
+    slug: "aiadv-004",
     title: "AI Advantage: Automating your Daily Market Updates",
     description:
       "Turn daily market information into a repeatable draft workflow for reviewed education and follow-up content.",
@@ -119,8 +123,8 @@ export const aiAdvantagePublishedVideos = [
     notes: "Daily market content automation.",
   },
   {
-    rowId: "AIA-005",
-    slug: "aia-005",
+    rowId: "AIADV-005",
+    slug: "aiadv-005",
     title: "AI Advantage: Dominating your Local Market with AI",
     description:
       "Use local market context to create stronger education and marketing ideas without making claims that require review first.",
@@ -140,8 +144,8 @@ export const aiAdvantagePublishedVideos = [
     notes: "Local market and SEO angle.",
   },
   {
-    rowId: "AIA-006",
-    slug: "aia-006",
+    rowId: "AIADV-006",
+    slug: "aiadv-006",
     title: "AI Advantage: Drafting Client Emails in Gmail",
     description:
       "Draft clearer client emails in Gmail faster, then review every word before sending anything externally.",
@@ -161,8 +165,8 @@ export const aiAdvantagePublishedVideos = [
     notes: "Gmail and Gemini drafting.",
   },
   {
-    rowId: "AIA-007",
-    slug: "aia-007",
+    rowId: "AIADV-007",
+    slug: "aiadv-007",
     title: "AI Advantage: Finalizing your Gemini Gem Setup",
     description:
       "Finish the Gemini Gem setup sequence so your AI helper is easier to use in practical loan officer workflows.",
@@ -183,8 +187,8 @@ export const aiAdvantagePublishedVideos = [
       "Part of the AI Twin setup sequence. Suggest ordering after Starting the AI Twin Setup.",
   },
   {
-    rowId: "AIA-008",
-    slug: "aia-008",
+    rowId: "AIADV-008",
+    slug: "aiadv-008",
     title: "AI Advantage: Gemini Gems vs Generic AI",
     description:
       "See why a role-specific Gemini Gem can produce cleaner, more consistent drafts than a generic AI chat.",
@@ -204,8 +208,8 @@ export const aiAdvantagePublishedVideos = [
     notes: "Why custom Gems beat generic prompts.",
   },
   {
-    rowId: "AIA-009",
-    slug: "aia-009",
+    rowId: "AIADV-009",
+    slug: "aiadv-009",
     title: "AI Advantage: Improving AI Tone with Bio Docs",
     description:
       "Use approved background notes to help AI draft in a tone that sounds more like you while keeping review in place.",
@@ -225,8 +229,8 @@ export const aiAdvantagePublishedVideos = [
     notes: "Personalization via bio documents.",
   },
   {
-    rowId: "AIA-010",
-    slug: "aia-010",
+    rowId: "AIADV-010",
+    slug: "aiadv-010",
     title: "AI Advantage: Multi Language Content Strategy",
     description:
       "Plan bilingual and multilingual outreach drafts with plain-language review before anything is used publicly.",
@@ -246,8 +250,29 @@ export const aiAdvantagePublishedVideos = [
     notes: "Bilingual and multilingual outreach.",
   },
   {
-    rowId: "AIA-012",
-    slug: "aia-012",
+    rowId: "AIADV-011",
+    slug: "aiadv-011",
+    title: "AI Advantage: Rapid Content Creation with AI Twin",
+    description:
+      "Move faster from idea to draft by using an AI Twin to produce starter content for review. Edit the tone, verify facts, and keep human review in the loop before public use.",
+    youtubeVideoId: "q3aN611Kv3w",
+    youtubeVideoUrl: "https://www.youtube.com/watch?v=q3aN611Kv3w",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/q3aN611Kv3w",
+    status: "published",
+    privacy: "unlisted",
+    platformSection: "AI Advantage",
+    source: "YouTube",
+    librarySection: "Marketing & Content",
+    pathSlug: "social-realtor-marketing",
+    sourceFileName:
+      "ai-advantage__2026-02-11__rapid-content-creation-with-ai-twin__0908-1136.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/marketing/rapid-content-creation-with-ai-twin",
+    notes: "AI Twin powered content velocity. Pair with the AI Twin setup track.",
+  },
+  {
+    rowId: "AIADV-012",
+    slug: "aiadv-012",
     title: "AI Advantage: Starting the AI Twin Setup",
     description:
       "Begin the AI Twin setup track with the first practical steps for a Gemini-based loan officer helper.",
@@ -268,8 +293,50 @@ export const aiAdvantagePublishedVideos = [
       "Entry point for the AI Twin setup track. Suggest ordering before Finalizing your Gemini Gem Setup.",
   },
   {
-    rowId: "AIA-015",
-    slug: "aia-015",
+    rowId: "AIADV-013",
+    slug: "aiadv-013",
+    title: "AI Advantage: Training Your AI on Your Persona",
+    description:
+      "Feed your AI Twin the approved persona details that shape its tone and style. Keep private borrower data out and review everything that gets used externally.",
+    youtubeVideoId: "92ziHhq7vzQ",
+    youtubeVideoUrl: "https://www.youtube.com/watch?v=92ziHhq7vzQ",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/92ziHhq7vzQ",
+    status: "published",
+    privacy: "unlisted",
+    platformSection: "AI Advantage",
+    source: "YouTube",
+    librarySection: "AI Twin Setup",
+    pathSlug: "gemini-ai-twin",
+    sourceFileName:
+      "ai-advantage__2026-02-11__training-your-ai-on-your-persona__0511-0735.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-twin/training-your-ai-on-your-persona",
+    notes: "Persona tuning step in the AI Twin setup sequence.",
+  },
+  {
+    rowId: "AIADV-014",
+    slug: "aiadv-014",
+    title: "AI Advantage: Why Every Loan Officer Needs an AI Twin",
+    description:
+      "See the why behind the AI Twin: faster drafts, more consistent tone, and a starting point you still review before anything leaves Loan Factory.",
+    youtubeVideoId: "BS9JBfg5XIw",
+    youtubeVideoUrl: "https://www.youtube.com/watch?v=BS9JBfg5XIw",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/BS9JBfg5XIw",
+    status: "published",
+    privacy: "unlisted",
+    platformSection: "AI Advantage",
+    source: "YouTube",
+    librarySection: "AI Twin Setup",
+    pathSlug: "gemini-ai-twin",
+    sourceFileName:
+      "ai-advantage__2026-02-11__why-every-loan-officer-needs-an-ai-twin__0000-0140.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-twin/why-every-loan-officer-needs-an-ai-twin",
+    notes: "Orientation lesson for the AI Twin setup track.",
+  },
+  {
+    rowId: "AIADV-015",
+    slug: "aiadv-015",
     title: "AI Advantage: Creating Video Content with HeyGen AI Clones",
     description:
       "See how AI video can support training and content planning when scripts and public use are reviewed first.",
@@ -289,8 +356,8 @@ export const aiAdvantagePublishedVideos = [
     notes: "Video avatar production.",
   },
   {
-    rowId: "AIA-016",
-    slug: "aia-016",
+    rowId: "AIADV-016",
+    slug: "aiadv-016",
     title: "AI Advantage: Overview Marketing with NotebookLM and AI Twins",
     description:
       "Use source-grounded research and AI Twins to organize marketing ideas before review and use.",
@@ -310,8 +377,115 @@ export const aiAdvantagePublishedVideos = [
     notes: "NotebookLM plus AI Twin marketing overview.",
   },
   {
-    rowId: "AIA-052",
-    slug: "aia-052",
+    rowId: "AIADV-017",
+    slug: "aiadv-017",
+    title: "AI Advantage: Upcoming Updates to Loan Factory's MOS Platform",
+    description:
+      "Preview the direction of Loan Factory's MOS platform updates so you can plan training time and workflow changes ahead of release. Always confirm specifics with internal release notes before publishing anything externally.",
+    youtubeVideoId: "wN3AIyOLFEU",
+    youtubeVideoUrl: "https://www.youtube.com/watch?v=wN3AIyOLFEU",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/wN3AIyOLFEU",
+    status: "published",
+    privacy: "unlisted",
+    platformSection: "AI Advantage",
+    source: "YouTube",
+    librarySection: "Platform & Updates",
+    pathSlug: "google-ai-studio",
+    sourceFileName:
+      "ai-advantage__2026-03-03__upcoming-updates-to-loan-factory-s-mos-platform__0732-0932.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/platform-updates/loan-factory-mos-platform",
+    notes:
+      "Loan Factory MOS platform direction. Internal preview only; confirm with official release notes.",
+  },
+  {
+    rowId: "AIADV-018",
+    slug: "aiadv-018",
+    title: "AI Advantage: 3 Essential AI Apps for Loan Officers",
+    description:
+      "A short tour of three AI apps that can save loan officers time on prep, drafts, and follow-up. Use them as draft helpers and keep human review in the loop.",
+    youtubeVideoId: "t5YVs8Ry7jU",
+    youtubeVideoUrl: "https://www.youtube.com/watch?v=t5YVs8Ry7jU",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/t5YVs8Ry7jU",
+    status: "published",
+    privacy: "unlisted",
+    platformSection: "AI Advantage",
+    source: "YouTube",
+    librarySection: "AI Apps & Automation",
+    pathSlug: "custom-gpts",
+    sourceFileName:
+      "ai-advantage__2026-03-17__3-essential-ai-apps-for-loan-officers__0101-0320.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-apps/3-essential-ai-apps-for-loan-officers",
+    notes: "Tool selection orientation for AI app evaluation.",
+  },
+  {
+    rowId: "AIADV-019",
+    slug: "aiadv-019",
+    title: "AI Advantage: Advanced AI App Building / Vibe Coding",
+    description:
+      "Explore how loan officers can sketch and build their own internal AI helpers. Bring any new build to LO Development for review before connecting it to live workflows.",
+    youtubeVideoId: "hBFNvV8hueE",
+    youtubeVideoUrl: "https://www.youtube.com/watch?v=hBFNvV8hueE",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/hBFNvV8hueE",
+    status: "published",
+    privacy: "unlisted",
+    platformSection: "AI Advantage",
+    source: "YouTube",
+    librarySection: "AI Apps & Automation",
+    pathSlug: "google-ai-studio",
+    sourceFileName:
+      "ai-advantage__2026-03-17__advanced-ai-app-building-vibe-coding__1340-1659.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-apps/advanced-ai-app-building-vibe-coding",
+    notes:
+      "AI app building / vibe coding intro. Builds must go through LO Development before live connections.",
+  },
+  {
+    rowId: "AIADV-020",
+    slug: "aiadv-020",
+    title: "AI Advantage: Automating Social Media with Loan Factory Ally",
+    description:
+      "See how Loan Factory Ally helps loan officers organize and draft social posts faster. Review tone, claims, and compliance-sensitive language before anything is scheduled or published.",
+    youtubeVideoId: "S6qXWfcryMI",
+    youtubeVideoUrl: "https://www.youtube.com/watch?v=S6qXWfcryMI",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/S6qXWfcryMI",
+    status: "published",
+    privacy: "unlisted",
+    platformSection: "AI Advantage",
+    source: "YouTube",
+    librarySection: "AI Apps & Automation",
+    pathSlug: "social-realtor-marketing",
+    sourceFileName:
+      "ai-advantage__2026-03-17__automating-social-media-with-loan-factory-ally__2754-3220.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-apps/automating-social-media-with-loan-factory-ally",
+    notes: "Social automation with Loan Factory Ally.",
+  },
+  {
+    rowId: "AIADV-021",
+    slug: "aiadv-021",
+    title: "AI Advantage: Creating an AI Twin for Multilingual Marketing",
+    description:
+      "Plan a multilingual AI Twin so you can serve borrowers in more than one language. Use plain-language review and an approved translator step before public use.",
+    youtubeVideoId: "A2XyhL3S7vQ",
+    youtubeVideoUrl: "https://www.youtube.com/watch?v=A2XyhL3S7vQ",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/A2XyhL3S7vQ",
+    status: "published",
+    privacy: "unlisted",
+    platformSection: "AI Advantage",
+    source: "YouTube",
+    librarySection: "AI Apps & Automation",
+    pathSlug: "gemini-ai-twin",
+    sourceFileName:
+      "ai-advantage__2026-03-17__creating-an-ai-twin-for-multilingual-marketing__5246-5510.mp4",
+    suggestedLessonPage:
+      "/lo-development/ai-advantage/ai-apps/creating-an-ai-twin-for-multilingual-marketing",
+    notes: "Multilingual AI Twin for bilingual outreach.",
+  },
+  {
+    rowId: "AIADV-052",
+    slug: "aiadv-052",
     title: "AI Advantage: How to Build your Public Loan Officer AI Twin",
     description:
       "Review how a public-facing loan officer AI Twin can be planned. Do not publish or share one until content, disclosures, guardrails, and compliance review are approved.",
@@ -331,8 +505,8 @@ export const aiAdvantagePublishedVideos = [
     notes: "Public-facing AI Twin build.",
   },
   {
-    rowId: "AIA-056",
-    slug: "aia-056",
+    rowId: "AIADV-056",
+    slug: "aiadv-056",
     title: "AI Advantage: Automate your Social Posts with Gemini AI",
     description:
       "Use Gemini to draft social post ideas faster, then review tone, claims, and compliance-sensitive language before use.",
