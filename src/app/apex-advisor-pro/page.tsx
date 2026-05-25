@@ -30,8 +30,8 @@ const proBenefits = [
     body: "More frequent check-ins and a deeper operating rhythm for members who want to be pushed.",
   },
   {
-    title: "Advanced mastermind access",
-    body: "Deeper peer review, Alliance leaderboard visibility, and advanced mastermind access.",
+    title: "Advanced group coaching access",
+    body: "Deeper peer review, Alliance leaderboard visibility, and advanced group coaching access.",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function ApexAdvisorProPage() {
             Loan Factory Alliance includes everything in LO Mastery, then adds
             weekly coaching calls, the daily Breakfast Club call, more specific
             coaching email, advanced certifications, priority accountability,
-            and deeper mastermind access.
+            and deeper group coaching access.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -78,7 +78,7 @@ export default function ApexAdvisorProPage() {
         <SectionHeading
           eyebrow="What you get"
           title="Everything in LO Mastery, plus six Alliance upgrades."
-          description="Alliance adds a stronger weekly coaching cadence, Breakfast Club, advanced certifications, priority accountability, the Alliance leaderboard, and deeper mastermind access."
+          description="Alliance adds a stronger weekly coaching cadence, Breakfast Club, advanced certifications, priority accountability, the Alliance leaderboard, and deeper group coaching access."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {proBenefits.map((b) => (
@@ -105,8 +105,8 @@ export default function ApexAdvisorProPage() {
             <Link href={pro.ctaHref} className="btn-primary">
               {pro.ctaLabel}
             </Link>
-            <Link href="/apex-mastermind/" className="btn-secondary">
-              See the Alliance Mastermind
+            <Link href="/member-area/" className="btn-secondary">
+              Open member area
             </Link>
           </div>
         </div>

@@ -8,7 +8,7 @@ export const metadata = { title: "Calendar" };
 const eventTypes = [
   "Power Hour",
   "Breakfast Club",
-  "Alliance Mastermind",
+  "Alliance Advanced Coaching",
   "101 to 601 training sessions",
   "Friday tracker review",
   "Certification review windows",

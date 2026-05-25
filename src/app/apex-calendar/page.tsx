@@ -7,14 +7,14 @@ export const metadata = { title: "Coaching Calendar" };
 type SampleEvent = {
   date: string;
   title: string;
-  type: "Group Coaching" | "Mastermind" | "Breakfast Club" | "Workshop";
+  type: "Group Coaching" | "Advanced Coaching" | "Breakfast Club" | "Workshop";
   tier: "All Members" | "Alliance Only";
   description: string;
 };
 
 const sampleEvents: SampleEvent[] = [
   {
-    date: "Biweekly . Time TBD",
+    date: "Biweekly . Time shared in member channel",
     title: "LO Mastery Group Coaching",
     type: "Group Coaching",
     tier: "All Members",
@@ -22,15 +22,15 @@ const sampleEvents: SampleEvent[] = [
       "Biweekly group coaching for LO Mastery members. Bring a deal, partner question, content question, or accountability item.",
   },
   {
-    date: "Weekly . Time TBD",
+    date: "Weekly . Time shared in member channel",
     title: "Loan Factory Alliance Coaching Call",
-    type: "Mastermind",
+    type: "Advanced Coaching",
     tier: "Alliance Only",
     description:
       "Weekly Alliance coaching call for deeper accountability, deal flow review, and production rhythm.",
   },
   {
-    date: "Daily . Time TBD",
+    date: "Daily . Time shared in member channel",
     title: "Breakfast Club",
     type: "Breakfast Club",
     tier: "Alliance Only",
@@ -38,7 +38,7 @@ const sampleEvents: SampleEvent[] = [
       "Daily Alliance rhythm call for focus, mindset, accountability, and execution planning.",
   },
   {
-    date: "Quarterly . Date TBD",
+    date: "Quarterly . Date shared in member channel",
     title: "Personality Workshop Live Debrief",
     type: "Workshop",
     tier: "All Members",

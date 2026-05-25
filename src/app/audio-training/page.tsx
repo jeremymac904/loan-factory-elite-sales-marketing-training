@@ -7,7 +7,6 @@ import {
   bonusAudioCompanions,
   coreAudioCompanions,
   getAudioStatusLabel,
-  productionOrderAudioCompanions,
 } from "@/data/audioCompanions";
 
 export const metadata = { title: "Audio Training Library" };
@@ -88,31 +87,6 @@ export default function AudioTrainingPage() {
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="container-page py-12">
-        <SectionHeading
-          title="Recommended production order"
-          description="Use this order when reviewing and publishing the highest-value lessons first."
-        />
-        <ol className="mt-6 grid gap-3 md:grid-cols-2">
-          {productionOrderAudioCompanions.map((companion, index) => (
-            <li
-              key={companion.id}
-              className="rounded-xl border border-lf-line bg-white p-4 shadow-card"
-            >
-              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                {index + 1}. {getAudioStatusLabel(companion.status)}
-              </p>
-              <p className="mt-1 font-semibold text-lf-navy">
-                {companion.title}
-              </p>
-              <p className="mt-1 text-sm text-lf-slate">
-                {companion.session ?? "Bonus audio"}
-              </p>
-            </li>
-          ))}
-        </ol>
       </section>
 
       <section className="container-page pb-16">

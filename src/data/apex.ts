@@ -56,7 +56,7 @@ export const apexTiers: ApexTier[] = [
     ctaLabel: "Join Loan Factory Alliance",
     ctaHref: "/apex-launch-call/",
     description:
-      "Everything in LO Mastery plus weekly coaching calls, Breakfast Club, more specific coaching emails, advanced certifications, priority accountability, the Alliance leaderboard, and mastermind access.",
+      "Everything in LO Mastery plus weekly coaching calls, Breakfast Club, more specific coaching emails, advanced certifications, priority accountability, the Alliance leaderboard, and advanced group coaching access.",
     bestFor:
       "Loan officers who want a tighter coaching cadence, stronger accountability, and advanced specialty-track development.",
     includes: [
@@ -67,10 +67,10 @@ export const apexTiers: ApexTier[] = [
       "Advanced certifications",
       "Military Housing Specialist",
       "Investor Specialist",
-      "Future specialty tracks (planned)",
+      "Approved specialty tracks",
       "Priority accountability",
       "Loan Factory Alliance leaderboard",
-      "Advanced mastermind access",
+      "Advanced group coaching access",
       "Deeper coaching rhythm",
     ],
   },
@@ -105,10 +105,10 @@ export const apexCertifications = [
   },
   {
     id: "future-specialty-tracks",
-    name: "Future Specialty Tracks",
-    requirement: "Planned. Jeremy approval required before launch.",
+    name: "Approved Specialty Tracks",
+    requirement: "Jeremy approval required before a specialty track is added.",
     summary:
-      "Future Alliance specialty tracks can be added after the content, review process, and approval language are confirmed.",
+      "Alliance specialty tracks are added only after content, review process, and approval language are confirmed.",
     eligibleTiers: ["Loan Factory Alliance"],
   },
 ];

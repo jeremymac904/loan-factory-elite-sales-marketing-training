@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import ComplianceCallout from "@/components/ComplianceCallout";
 
-export const metadata = { title: "Alliance Mastermind" };
+export const metadata = { title: "Alliance Advanced Coaching" };
 
 const callAgenda = [
   {
@@ -31,7 +31,7 @@ const callAgenda = [
 const communityValues = [
   {
     title: "Closed door",
-    body: "Loan Factory Alliance members only. What gets shared in the mastermind stays in the mastermind.",
+    body: "Loan Factory Alliance members only. What gets shared in the coaching room stays in the coaching room.",
   },
   {
     title: "Bring the work",
@@ -52,12 +52,12 @@ export default function ApexMastermindPage() {
     <>
       <PageHero
         eyebrow="Alliance only"
-        title="The Alliance Mastermind."
+        title="Alliance Advanced Coaching"
         body={
           <p>
             The Loan Factory Alliance community where serious loan officers
             share work, share wins, and hold each other to a higher standard.
-            Monthly live mastermind calls. A closed community. One commitment a
+            Monthly live advanced coaching calls. A closed community. One commitment a
             month.
           </p>
         }
@@ -71,8 +71,8 @@ export default function ApexMastermindPage() {
       <section className="container-page py-12">
         <SectionHeading
           eyebrow="What it is"
-          title="A mastermind, not a webinar."
-          description="The Alliance Mastermind is a live coaching and peer community for Loan Factory Alliance members. Smaller cohort, live coaching, real deals, real partners, real content."
+          title="Live coaching, not a webinar."
+          description="Alliance Advanced Coaching is a live peer coaching community for Loan Factory Alliance members. Smaller cohort, live coaching, real deals, real partners, real content."
         />
       </section>
 
@@ -124,7 +124,7 @@ export default function ApexMastermindPage() {
         <div className="container-page py-12">
           <SectionHeading
             eyebrow="Access"
-            title="Mastermind access is included in Loan Factory Alliance."
+            title="Advanced coaching access is included in Loan Factory Alliance."
           />
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/apex-launch-call/" className="btn-primary">
@@ -140,9 +140,9 @@ export default function ApexMastermindPage() {
       <section className="container-page pb-20 pt-10">
         <ComplianceCallout title="Compliance review" variant="default">
           <p>
-            The Alliance Mastermind is a coaching and community program. It is not
+            Alliance Advanced Coaching is a coaching and community program. It is not
             a guarantee of production, income, or business results. Anything
-            created in or shared from the mastermind for borrowers, Realtors,
+            created in or shared from the coaching room for borrowers, Realtors,
             or the public still requires Loan Factory compliance review before
             use.
           </p>

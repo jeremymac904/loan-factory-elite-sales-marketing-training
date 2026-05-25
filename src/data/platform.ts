@@ -1,7 +1,7 @@
 export type PlatformStatus =
   | "Live foundation"
   | "Experience preview"
-  | "Planned"
+  | "Planning reference"
   | "Requires source content"
   | "Requires sandbox wiring"
   | "Requires human review";
@@ -305,7 +305,7 @@ export const platformModules: PlatformModule[] = [
     title: "Calendar",
     shortTitle: "Calendar",
     href: "/calendar/",
-    status: "Planned",
+    status: "Planning reference",
     summary:
       "A unified view of training sessions, coaching blocks, LO Mastery events, Power Hour, Breakfast Club, review windows, and launch milestones.",
     whoFor: ["LOs", "Team leaders", "Coaches", "LO Development"],

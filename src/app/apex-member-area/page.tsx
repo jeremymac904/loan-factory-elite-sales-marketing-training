@@ -296,7 +296,7 @@ export default function ApexMemberAreaPage() {
             daily motivational email, Certified Mortgage Advisor designation,
             and accountability tools. Loan Factory Alliance adds weekly
             coaching, Daily Breakfast Club, advanced certifications, deeper
-            coaching rhythm, Alliance leaderboard, and advanced mastermind
+            coaching rhythm, Alliance leaderboard, and advanced group coaching
             access.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import GrowthLoops from "@/components/GrowthLoops";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata = { title: "Resources" };
@@ -107,7 +106,6 @@ export default function ResourcesPage() {
           </p>
         </div>
       </section>
-      <GrowthLoops />
     </>
   );
 }

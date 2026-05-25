@@ -10,31 +10,30 @@ export default function ApexLaunchCallPage() {
     <>
       <PageHero
         eyebrow="Coaching launch"
-        title="Loan Factory Coaching is launching."
+        title="Request coaching access."
         body={
           <p>
-            Where Top Loan Officers Are Built. Loan Factory Coaching brings
-            together LO Mastery, Loan Factory Alliance, daily rhythm, member
-            resources, certifications, scorecards, leaderboards, and Alliance
-            mastermind access.
-            Drop your email to be on the launch list.
+            Loan Factory Coaching brings together LO Mastery, Loan Factory
+            Alliance, daily rhythm, member resources, certifications,
+            scorecards, leaderboards, and advanced group coaching access. Email
+            Jeremy when you want help choosing the right coaching lane.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
       >
-        <p className="text-xs font-bold uppercase tracking-wide text-lf-orange">
-          Launch date . TBD
-        </p>
+        <Link href="/coaching/" className="btn-primary">
+          Compare coaching options
+        </Link>
       </PageHero>
 
       <section className="container-page py-12">
         <SectionHeading
-          eyebrow="Get on the launch list"
-          title="Be first to know when coaching opens."
-          description="Email Jeremy to be added to the Loan Factory Coaching interest list."
+          eyebrow="Manual next step"
+          title="Ask which coaching option fits you."
+          description="Email Jeremy with your current goal, team situation, and whether you are considering LO Mastery or Loan Factory Alliance."
         />
         <a
-          href="mailto:jeremy.mcdonald@loanfactory.com?subject=Loan%20Factory%20Coaching%20Interest%20List"
+          href="mailto:jeremy.mcdonald@loanfactory.com?subject=Loan%20Factory%20Coaching%20Access"
           className="btn-primary mt-8"
         >
           Email Jeremy
@@ -73,7 +72,7 @@ export default function ApexLaunchCallPage() {
               <h3 className="h-display text-lg">Alliance coaching rhythm</h3>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
                 Weekly coaching calls, daily Breakfast Club, priority
-                accountability, and advanced mastermind access.
+                accountability, and advanced group coaching access.
               </p>
             </div>
             <div className="card">
@@ -106,8 +105,8 @@ export default function ApexLaunchCallPage() {
           <Link href="/sales-training/" className="btn-secondary">
             View Sales &amp; Marketing Training
           </Link>
-          <Link href="/apex-mastermind/" className="btn-secondary">
-            See the Alliance Mastermind
+          <Link href="/member-area/" className="btn-secondary">
+            Open Member Area
           </Link>
         </div>
       </section>
@@ -116,7 +115,7 @@ export default function ApexLaunchCallPage() {
         <ComplianceCallout title="Compliance review" variant="default">
           <p>
             Loan Factory Coaching is a Loan Factory training and development program.
-            Membership, certifications, live coaching, and mastermind access
+            Membership, certifications, live coaching, and advanced group coaching access
             are not guarantees of production, income, or business results. Any
             launch content used outside this portal still requires Loan Factory
             compliance review before use.
