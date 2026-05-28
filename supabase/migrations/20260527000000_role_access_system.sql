@@ -1,6 +1,29 @@
 begin;
 
 -- ============================================================
+-- 0. Expand role check constraints to allow new role values
+-- ============================================================
+
+alter table public.approved_users drop constraint if exists approved_users_role_check;
+alter table public.profiles drop constraint if exists profiles_role_check;
+
+alter table public.approved_users add constraint approved_users_role_check
+  check (role = any (array[
+    'master_admin', 'admin', 'lo_development_lead', 'lo_development_member',
+    'lo_development', 'loan_officer_support', 'corporate_coach', 'marketing',
+    'team_leader', 'coaching_member_level_1', 'coaching_member_level_2',
+    'loan_officer', 'support_staff', 'vendor_partner_future'
+  ]));
+
+alter table public.profiles add constraint profiles_role_check
+  check (role = any (array[
+    'master_admin', 'admin', 'lo_development_lead', 'lo_development_member',
+    'lo_development', 'loan_officer_support', 'corporate_coach', 'marketing',
+    'team_leader', 'coaching_member_level_1', 'coaching_member_level_2',
+    'loan_officer', 'support_staff', 'vendor_partner_future'
+  ]));
+
+-- ============================================================
 -- 1. Extend profiles table with new fields
 -- ============================================================
 
