@@ -5,9 +5,10 @@ type Props = {
 };
 
 /**
- * Status reads either `Live` or `Coming Soon`. Colors are brand only.
+ * Status reads `Live`, `Beta outline`, or `Coming Soon`. Colors are brand only.
  *   Live          orange dot + orange text. The signal color.
- *   Coming Soon   silver chip. Quiet.
+ *   Beta outline  silver chip. Quiet. Page is usable but still being filled in.
+ *   Coming Soon   silver chip. Quiet. Page is intentionally not yet teachable.
  */
 const styles: Record<ModuleStatus, string> = {
   full: "bg-lf-orangeSoft text-lf-orangeDark border-lf-orange/40",

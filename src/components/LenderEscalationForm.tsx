@@ -17,13 +17,42 @@ const initialForm = {
   requestedHelp: "",
 };
 
+type SubmitState =
+  | { status: "idle" }
+  | { status: "submitting" }
+  | { status: "submitted" }
+  | { status: "local-only"; reason: string }
+  | { status: "error"; message: string };
+
+const RECOVERABLE_LOCAL_FALLBACK_CODES = new Set([
+  "supabase-not-configured",
+  "supabase-unavailable",
+  "signed-out",
+  "access-pending",
+]);
+
+const localFallbackMessages: Record<string, string> = {
+  "supabase-not-configured":
+    "Supabase is not configured in this environment, so the note was saved in this browser for LO Development.",
+  "supabase-unavailable":
+    "Could not reach the submission service, so the note was saved in this browser for LO Development.",
+  "signed-out":
+    "You are signed out, so the note was saved in this browser. Sign in with your Loan Factory Google account to submit it directly.",
+  "access-pending":
+    "Your beta access is still pending, so the note was saved in this browser for LO Development.",
+};
+
 export default function LenderEscalationForm() {
   const [form, setForm] = useState(initialForm);
-  const [saved, setSaved] = useState(false);
+  const [submitState, setSubmitState] = useState<SubmitState>({
+    status: "idle",
+  });
 
   function updateField(field: keyof typeof initialForm, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
-    setSaved(false);
+    if (submitState.status === "submitted" || submitState.status === "error") {
+      setSubmitState({ status: "idle" });
+    }
   }
 
   function saveLocal() {
@@ -43,8 +72,62 @@ export default function LenderEscalationForm() {
     } catch {
       localStorage.setItem("lf_lender_escalations", JSON.stringify([entry]));
     }
+  }
 
-    setSaved(true);
+  async function submitEscalation() {
+    if (!form.explanation.trim()) {
+      setSubmitState({
+        status: "error",
+        message: "Add the explanation before submitting.",
+      });
+      return;
+    }
+
+    setSubmitState({ status: "submitting" });
+
+    try {
+      const response = await fetch("/api/lender-escalation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        setSubmitState({ status: "submitted" });
+        return;
+      }
+
+      const payload = (await response.json().catch(() => null)) as {
+        error?: unknown;
+        message?: unknown;
+      } | null;
+      const errorCode =
+        typeof payload?.error === "string" ? payload.error : "";
+
+      if (RECOVERABLE_LOCAL_FALLBACK_CODES.has(errorCode)) {
+        saveLocal();
+        setSubmitState({
+          status: "local-only",
+          reason:
+            localFallbackMessages[errorCode] ??
+            "Saved in this browser for LO Development.",
+        });
+        return;
+      }
+
+      const message =
+        typeof payload?.message === "string" && payload.message.trim()
+          ? payload.message
+          : "Could not submit the escalation. Please try again.";
+      setSubmitState({ status: "error", message });
+    } catch {
+      saveLocal();
+      setSubmitState({
+        status: "local-only",
+        reason:
+          "Could not reach the submission service, so the note was saved in this browser for LO Development.",
+      });
+    }
   }
 
   return (
@@ -92,18 +175,38 @@ export default function LenderEscalationForm() {
       </div>
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        <button type="button" className="btn-primary" onClick={saveLocal}>
-          Save Review Note
+        <button
+          type="button"
+          className="btn-primary"
+          onClick={submitEscalation}
+          disabled={submitState.status === "submitting"}
+        >
+          {submitState.status === "submitting"
+            ? "Submitting..."
+            : "Submit to LO Development"}
         </button>
         <p className="text-sm font-semibold text-lf-slate">
-          Saved entries stay in this browser for LO Development review.
+          Submissions route to LO Development. If you are signed out or
+          Supabase is unavailable, the note saves in this browser instead.
         </p>
       </div>
 
-      {saved && (
+      {submitState.status === "submitted" && (
         <p className="mt-4 rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-sm font-semibold text-green-700">
-          Escalation note saved in this browser. Manual review is still
+          Escalation submitted to LO Development. Manual review is still
           required before anyone contacts the lender.
+        </p>
+      )}
+
+      {submitState.status === "local-only" && (
+        <p className="mt-4 rounded-lg border border-lf-orange/40 bg-lf-orangeSoft px-3 py-2 text-sm font-semibold text-lf-orangeDark">
+          {submitState.reason}
+        </p>
+      )}
+
+      {submitState.status === "error" && (
+        <p className="mt-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700">
+          {submitState.message}
         </p>
       )}
     </div>

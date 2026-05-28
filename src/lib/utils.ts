@@ -1,12 +1,14 @@
 export type ModuleStatus = "full" | "summary" | "coming-soon";
 
 /**
- * Public-facing label per status. The brief required `Fully Built` and
- * `Staged` to be retired. Anything not 100% complete reads as `Coming Soon`.
+ * Public-facing label per status. `summary` means a usable beta outline with
+ * working Do This Today, prompts, and assignment, but the full library is
+ * still being filled in. `coming-soon` means the page exists but is intentionally
+ * not yet teachable.
  */
 export const moduleStatusLabel: Record<ModuleStatus, string> = {
   full: "Live",
-  summary: "Coming Soon",
+  summary: "Beta outline",
   "coming-soon": "Coming Soon",
 };
 

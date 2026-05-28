@@ -133,7 +133,7 @@ export const modules: ModuleSummary[] = [
     corePromise:
       "You turn more first conversations into clear next steps and completed applications.",
     audience: "Any LO with at least 30 days of LO experience.",
-    status: "summary",
+    status: "full",
     levels: ["Intermediate"],
     doThisToday: [
       "Run one first call using the High Trust Intake.",
@@ -193,7 +193,7 @@ export const modules: ModuleSummary[] = [
     theme: "Referral partner growth",
     corePromise: "You build a repeatable plan for new Realtor and referral partner conversations.",
     audience: "Any LO with a stable borrower process.",
-    status: "summary",
+    status: "full",
     levels: ["Intermediate", "Advanced", "Compliance Review"],
     doThisToday: [
       "Pick five priority Realtors from your market.",
@@ -257,7 +257,7 @@ export const modules: ModuleSummary[] = [
     corePromise:
       "You build a local presence that helps borrowers and Realtors understand what you do.",
     audience: "Any LO ready to be visible.",
-    status: "summary",
+    status: "full",
     levels: ["Intermediate", "Advanced", "Compliance Review"],
     doThisToday: [
       "Record one 60 second video on your phone using the hook then example then CTA structure.",

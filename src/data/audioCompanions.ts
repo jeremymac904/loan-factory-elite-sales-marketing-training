@@ -10,6 +10,14 @@ export type AudioCompanionStatus =
 
 export type AudioCompanionTrack = "core" | "bonus";
 
+/**
+ * Public-facing shape only. Internal NotebookLM identifiers, source notebook
+ * URLs, local file paths, Drive target folders, and raw audio filenames are
+ * intentionally stripped before this data ships to the client bundle. The full
+ * production record lives in `docs/notebooklm-audio-companions/` and the
+ * publishing workflow is documented in
+ * `docs/AUDIO_COMPANIONS_PUBLISHING_GUIDE.md`.
+ */
 export type AudioCompanion = {
   id: string;
   title: string;
@@ -17,26 +25,54 @@ export type AudioCompanion = {
   track: AudioCompanionTrack;
   route: string;
   type: string;
-  sourceNotebookUrl?: string;
-  sourceNotebookTitle?: string;
-  customPromptFile?: string;
   status: AudioCompanionStatus;
-  audioFileName: string | null;
-  localAudioPath: string | null;
-  driveTargetFolder: string;
   driveFileId: string | null;
   duration: string | null;
   websitePlacement: string[];
   notes?: string;
 };
 
-type AudioCompanionPackage = {
-  audioCompanions: AudioCompanion[];
+type RawAudioCompanion = AudioCompanion & {
+  sourceNotebookUrl?: string;
+  sourceNotebookTitle?: string;
+  customPromptFile?: string;
+  audioFileName?: string | null;
+  localAudioPath?: string | null;
+  driveTargetFolder?: string;
+  notebooklmTaskId?: string;
+  notebooklmArtifactTitle?: string;
+  audioByteSize?: number;
+  downloadedAt?: string;
+  submittedAt?: string;
+  generateOptions?: Record<string, unknown>;
 };
 
-export const audioCompanions = (
+type AudioCompanionPackage = {
+  audioCompanions: RawAudioCompanion[];
+};
+
+function toClientSafeAudioCompanion(raw: RawAudioCompanion): AudioCompanion {
+  return {
+    id: raw.id,
+    title: raw.title,
+    session: raw.session,
+    track: raw.track,
+    route: raw.route,
+    type: raw.type,
+    status: raw.status,
+    // A companion only renders a Drive player when it is `published` AND has a
+    // confirmed driveFileId. Anything else is `null` so the card falls back to
+    // the "Audio version under review" placeholder state.
+    driveFileId: raw.status === "published" ? raw.driveFileId ?? null : null,
+    duration: raw.duration ?? null,
+    websitePlacement: raw.websitePlacement,
+    notes: raw.notes,
+  };
+}
+
+export const audioCompanions: AudioCompanion[] = (
   audioCompanionPackage as AudioCompanionPackage
-).audioCompanions;
+).audioCompanions.map(toClientSafeAudioCompanion);
 
 export const coreAudioCompanions = audioCompanions.filter(
   (companion) => companion.track === "core",
@@ -58,17 +94,14 @@ const productionOrderIds = [
   "weekly-sales-operating-system",
   "objection-handling-not-salesy",
   "psychological-sales-for-mortgage-los",
-  "social-media-starts-conversations",
-  "high-trust-realtor-relationships",
-  "turning-training-into-closings",
 ];
 
-export const productionOrderAudioCompanions = productionOrderIds
+export const productionOrderedAudioCompanions = productionOrderIds
   .map((id) => audioCompanions.find((companion) => companion.id === id))
-  .filter((companion): companion is AudioCompanion => Boolean(companion));
+  .filter((companion): companion is AudioCompanion => companion !== undefined);
 
 export function getDriveAudioUrl(companion: AudioCompanion) {
-  if (!companion.driveFileId) {
+  if (companion.status !== "published" || !companion.driveFileId) {
     return null;
   }
 
@@ -77,15 +110,8 @@ export function getDriveAudioUrl(companion: AudioCompanion) {
 
 export function getAudioStatusLabel(status: AudioCompanionStatus) {
   if (status === "published") return "Published";
-  if (status === "generating") return "Audio in production";
-  if (
-    status === "downloaded" ||
-    status === "generated" ||
-    status === "needs-drive-upload"
-  ) {
-    return "Audio under review";
-  }
-  return "Audio under review";
+  if (status === "generating") return "Audio version in production";
+  return "Audio version under review";
 }
 
 export function getAudioCompanionByRoute(route: string) {

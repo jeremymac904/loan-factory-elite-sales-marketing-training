@@ -15,12 +15,12 @@ function statusClass(label: string) {
     return "border-lf-orange bg-lf-orange text-white";
   }
 
-  if (label === "Audio in production") {
+  if (label === "Audio version in production") {
     return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
   }
 
-  if (label === "Audio under review") {
-    return "border-lf-orange/40 bg-lf-orangeSoft text-lf-orangeDark";
+  if (label === "Audio version under review") {
+    return "border-lf-line bg-lf-mist text-lf-slate";
   }
 
   return "border-lf-line bg-lf-mist text-lf-slate";
@@ -93,9 +93,9 @@ export default function AudioCompanionCard({ companion, compact = false }: Props
         </div>
       ) : (
         <div className="rounded-xl border border-dashed border-lf-line bg-lf-mist p-4 text-sm leading-6 text-lf-slate">
-          {statusLabel === "Audio in production"
-            ? "Audio is being prepared. Approved audio appears here after review."
-            : "Audio under review. Approved audio appears here after review."}
+          {statusLabel === "Audio version in production"
+            ? "The audio version of this lesson is being prepared. It appears here once it is reviewed and approved."
+            : "Audio version under review. The player appears here once the approved audio is published."}
         </div>
       )}
 

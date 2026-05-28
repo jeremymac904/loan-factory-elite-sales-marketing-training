@@ -47,7 +47,7 @@ export default function AudioTrainingPage() {
 
       <section className="container-page py-10">
         <div className="grid gap-4 md:grid-cols-3">
-          {["Audio under review", "Published"].map((label) => (
+          {["Audio version under review", "Published"].map((label) => (
             <article key={label} className="card p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
                 {label}
@@ -55,8 +55,8 @@ export default function AudioTrainingPage() {
               <p className="mt-2 h-display text-3xl">{statusCount(label)}</p>
               <p className="mt-2 text-sm leading-6 text-lf-slate">
                 {label === "Published"
-                    ? "Audio is ready to play on the site."
-                    : "Audio is ready for review."}
+                  ? "Audio is approved and plays inside the platform."
+                  : "Audio script is finished. The player appears here once review is complete."}
               </p>
             </article>
           ))}

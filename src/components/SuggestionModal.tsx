@@ -9,6 +9,13 @@ import {
 
 const jeremyEmail = "jeremy.mcdonald@loanfactory.com";
 
+const RECOVERABLE_LOCAL_FALLBACK_CODES = new Set([
+  "supabase-not-configured",
+  "supabase-unavailable",
+  "signed-out",
+  "access-pending",
+]);
+
 type Props = {
   triggerLabel?: string;
   triggerClassName?: string;
@@ -107,33 +114,48 @@ export default function SuggestionModal({
       return;
     }
 
-    const supabase = createBrowserSupabaseClient();
+    try {
+      const response = await fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          topic: form.topic,
+          anonymous: form.anonymous,
+          feedback,
+        }),
+      });
 
-    if (!supabase) {
+      if (response.ok) {
+        setSaved(true);
+        return;
+      }
+
+      const payload = (await response.json().catch(() => null)) as {
+        error?: unknown;
+        message?: unknown;
+      } | null;
+      const errorCode =
+        typeof payload?.error === "string" ? payload.error : "";
+
+      if (RECOVERABLE_LOCAL_FALLBACK_CODES.has(errorCode)) {
+        saveLocalFeedback(feedback);
+        setLocalOnly(true);
+        setSaved(true);
+        return;
+      }
+
+      const message =
+        typeof payload?.message === "string" && payload.message.trim()
+          ? payload.message
+          : "Feedback could not be submitted.";
+      setSaveError(message);
+    } catch {
       saveLocalFeedback(feedback);
       setLocalOnly(true);
       setSaved(true);
-      return;
     }
-
-    const { error } = await supabase.from("suggestions").insert({
-      user_id: form.anonymous ? null : authState.userId,
-      anonymous: form.anonymous,
-      category: form.topic,
-      message: [
-        `Name: ${form.anonymous ? "Anonymous" : form.name.trim() || "Not provided"}`,
-        `Email: ${form.anonymous ? "Anonymous" : form.email.trim() || authState.email}`,
-        "",
-        feedback,
-      ].join("\n"),
-    });
-
-    if (error) {
-      setSaveError(error.message);
-      return;
-    }
-
-    setSaved(true);
   }
 
   function saveLocalFeedback(feedback: string) {
