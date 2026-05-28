@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ClipLibraryRail from "@/components/ClipLibraryRail";
 import SectionHeading from "@/components/SectionHeading";
 import SupportTeamDirectory from "@/components/SupportTeamDirectory";
 
@@ -84,6 +85,12 @@ export default function SupportRoutingPage() {
 
         </div>
       </section>
+
+      <ClipLibraryRail
+        title="Support routing clips"
+        description="Short clips that answer common support-routing, system, Marketplace, and ticket questions."
+        section="Loan Officer Support"
+      />
 
       <SupportTeamDirectory />
     </>

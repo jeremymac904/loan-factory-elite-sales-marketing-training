@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ClipLibraryRail from "@/components/ClipLibraryRail";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata = { title: "Resources" };
@@ -18,6 +19,12 @@ const resources = [
     title: "Recordings",
     description: "Watch class recordings, replays, and training video references.",
     href: "/recordings/",
+  },
+  {
+    title: "LO Development Clip Library",
+    description:
+      "Find short support and training clips staged for approved Loan Factory users.",
+    href: "/training-library/clips/",
   },
   {
     title: "LO Development Support Team",
@@ -96,6 +103,11 @@ export default function ResourcesPage() {
           ))}
         </div>
       </section>
+      <ClipLibraryRail
+        title="Resource clips for common LO questions"
+        description="Internal training cutdowns that help approved Loan Factory users find practical answers faster."
+        section="Loan Officer Support"
+      />
       <section id="feedback" className="container-page pb-14">
         <div className="rounded-2xl border border-lf-orange/30 bg-lf-orangeSoft p-6 shadow-card">
           <h2 className="h-display text-2xl">Send Feedback</h2>

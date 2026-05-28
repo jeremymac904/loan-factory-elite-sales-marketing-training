@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AiAdvantageVideoCard from "@/components/AiAdvantageVideoCard";
+import ClipLibraryRail from "@/components/ClipLibraryRail";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import {
@@ -78,6 +79,13 @@ export default function AITrainingPage() {
             ))}
         </div>
       </section>
+
+      <ClipLibraryRail
+        title="AI support clip"
+        description="Internal LO Development clip metadata connected to the AI Advantage support path."
+        section="AI Advantage"
+        limit={1}
+      />
 
       <section className="container-page py-14">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">

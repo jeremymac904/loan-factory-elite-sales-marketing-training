@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ClipLibraryRail from "@/components/ClipLibraryRail";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { apexTiers } from "@/data/apex";
@@ -194,6 +195,12 @@ export default function ApexAdvisorPage() {
           </Link>
         </div>
       </section>
+
+      <ClipLibraryRail
+        title="Coaching support clips"
+        description="Internal LO Development clips that help explain corporate coach support and early LO development resources."
+        section="Corporate Coach Resources"
+      />
 
       <section className="container-page pb-20">
         <p className="max-w-3xl text-sm leading-6 text-lf-slate">

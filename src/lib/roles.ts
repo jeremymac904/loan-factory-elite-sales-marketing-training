@@ -205,11 +205,17 @@ const TEAM_LEADER_GUIDE_ACCESS: RoleId[] = [
   "marketing",
 ];
 
-export type GatedSurface = "coach-guide" | "team-leader-guide";
+const CLIP_LIBRARY_ACCESS: RoleId[] = roles.map((role) => role.id);
+
+export type GatedSurface =
+  | "coach-guide"
+  | "team-leader-guide"
+  | "clip-library";
 
 const accessByGate: Record<GatedSurface, RoleId[]> = {
   "coach-guide": COACH_GUIDE_ACCESS,
   "team-leader-guide": TEAM_LEADER_GUIDE_ACCESS,
+  "clip-library": CLIP_LIBRARY_ACCESS,
 };
 
 export function isAllowed(gate: GatedSurface, role: RoleId | null): boolean {

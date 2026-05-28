@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ClipLibraryRail from "@/components/ClipLibraryRail";
 import PlatformModulePage from "@/components/PlatformModulePage";
 import SectionHeading from "@/components/SectionHeading";
 import { modules } from "@/data/modules";
@@ -34,6 +35,11 @@ export default function SalesTrainingPage() {
           ))}
         </div>
       </section>
+      <ClipLibraryRail
+        title="Sales and marketing training clips"
+        description="Short internal clips covering leads, follow-up, Google reviews, marketing materials, and campaign tools."
+        section="Sales & Marketing"
+      />
     </PlatformModulePage>
   );
 }

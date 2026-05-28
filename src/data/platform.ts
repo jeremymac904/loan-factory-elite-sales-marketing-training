@@ -461,6 +461,7 @@ export const platformNav: NavGroup[] = [
       { label: "Roleplays", href: "/roleplays/" },
       { label: "Prompts", href: "/prompts/" },
       { label: "Recordings", href: "/recordings/" },
+      { label: "Clip Library", href: "/training-library/clips/" },
       { label: "Tracker", href: "/tracker/" },
     ],
   },

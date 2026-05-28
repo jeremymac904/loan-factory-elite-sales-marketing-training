@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ClipLibraryRail from "@/components/ClipLibraryRail";
 import PlatformModulePage from "@/components/PlatformModulePage";
 import SectionHeading from "@/components/SectionHeading";
 import AudioCompanionCard from "@/components/audio/AudioCompanionCard";
@@ -13,6 +14,11 @@ const library = [
   { title: "Roleplays", href: "/roleplays/", status: "Live" },
   { title: "Prompts", href: "/prompts/", status: "Live" },
   { title: "Recordings", href: "/recordings/", status: "Library" },
+  {
+    title: "LO Development Clip Library",
+    href: "/training-library/clips/",
+    status: "Library",
+  },
   { title: "Tracker", href: "/tracker/", status: "Tool" },
   { title: "Assessments", href: "/assessments/", status: "Beta" },
 ];
@@ -42,6 +48,12 @@ export default function TrainingLibraryPage() {
           ))}
         </div>
       </section>
+
+      <ClipLibraryRail
+        title="Short LO Development training clips"
+        description="Searchable cutdowns from existing internal training recordings, staged for approved Loan Factory users."
+        limit={4}
+      />
 
       <section className="container-page pb-14">
         <SectionHeading

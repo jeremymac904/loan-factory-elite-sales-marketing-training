@@ -116,6 +116,10 @@ export function canAccessGate(
     ].includes(profile.role ?? "");
   }
 
+  if (gate === "clip-library") {
+    return true;
+  }
+
   return false;
 }
 
