@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 import { approvedUserSeeds } from "@/data/approvedUsers";
@@ -177,16 +177,14 @@ export default async function AdminUsersPage() {
           </table>
         </div>
 
-        <div className="mt-8 rounded-xl border border-lf-orange/30 bg-lf-orangeSoft p-5">
-          <h2 className="text-sm font-bold uppercase tracking-wide text-lf-orangeDark">
-            Beta note
+        <div className="mt-8 rounded-xl border border-lf-line bg-lf-mist p-5">
+          <h2 className="text-sm font-bold uppercase tracking-wide text-lf-slate">
+            Access management
           </h2>
           <p className="prose-lf mt-2 text-sm text-lf-charcoal">
-            User management during beta is handled through the Supabase
-            approved_users table. To add or change a user, update the
-            approved_users records in Supabase SQL Editor and run the role
-            access migration. Full in-app user management is planned for
-            post-beta.
+            Users are managed through the Supabase role-access system. Approved
+            users and roles have been seeded for beta. Full in-app user editing
+            is planned for a later phase.
           </p>
         </div>
       </section>

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
+import { approvedUserSeeds } from "@/data/approvedUsers";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Admin" };
@@ -56,6 +57,11 @@ const adminLinks = [
   { label: "Platform Status", href: "/auth/status/" },
 ];
 
+const roleGroupCount = new Set(approvedUserSeeds.map((u) => u.role)).size;
+const departmentCount = new Set(
+  approvedUserSeeds.map((u) => u.department).filter(Boolean),
+).size;
+
 function AdminShell({
   session,
   preview = false,
@@ -63,11 +69,6 @@ function AdminShell({
   session?: Extract<Awaited<ReturnType<typeof getBetaUserSession>>, { status: "approved" }>;
   preview?: boolean;
 }) {
-  const email = preview ? betaPreviewEmail : session?.profile.email ?? "";
-  const name = preview ? "Internal Review" : session?.profile.full_name ?? "Not set";
-  const role = preview ? "Review Admin" : getRoleLabel(session?.profile.role);
-  const status = preview ? "review-only" : session?.profile.status ?? "";
-
   return (
     <>
       <section className="relative isolate overflow-hidden bg-lf-navy text-white">
@@ -77,43 +78,73 @@ function AdminShell({
           style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
         />
         <div className="relative container-page py-14">
-          <p className="text-xs font-bold uppercase tracking-wide text-lf-orange">
-            Admin beta
-          </p>
+          <div className="flex items-center gap-3">
+            <p className="text-xs font-bold uppercase tracking-wide text-lf-orange">
+              Admin
+            </p>
+            {preview && (
+              <span className="rounded-full border border-lf-orange/40 bg-lf-orange/20 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-lf-orange">
+                Beta Preview Mode
+              </span>
+            )}
+          </div>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
-            Admin Access
+            Admin Dashboard
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
             {preview
-              ? "Internal review context for UI review. This does not change real users or permissions."
-              : "Current beta user context. Full user management stays in the approved access list during beta."}
+              ? "You are viewing this page in beta preview mode. No real user session is active. This is for internal UI review only."
+              : `Signed in as ${session?.profile.full_name ?? session?.profile.email ?? "admin"}.`}
           </p>
         </div>
       </section>
 
       <section className="container-page py-12">
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="card">
-            <h2 className="h-display text-2xl">Current user</h2>
-            <dl className="mt-5 grid gap-3 text-sm">
-              <div>
-                <dt className="font-semibold text-lf-slate">Email</dt>
-                <dd className="mt-1 text-lf-charcoal">{email}</dd>
+          {preview ? (
+            <div className="card border-lf-orange/30 bg-lf-orangeSoft/30">
+              <div className="flex items-center gap-2">
+                <h2 className="h-display text-2xl">Beta Preview Mode</h2>
+                <span className="rounded-full bg-lf-orange px-2.5 py-0.5 text-xs font-bold text-white">
+                  Preview
+                </span>
               </div>
-              <div>
-                <dt className="font-semibold text-lf-slate">Name</dt>
-                <dd className="mt-1 text-lf-charcoal">{name}</dd>
+              <p className="prose-lf mt-3 text-sm text-lf-charcoal">
+                You are browsing in beta preview mode. This does not represent a
+                real user session. No data is being read from or written to
+                Supabase. Sign in with your Loan Factory Google account to see
+                your real profile and permissions.
+              </p>
+              <div className="mt-4">
+                <Link href="/login/" className="btn-primary text-sm">
+                  Sign in with Google
+                </Link>
               </div>
-              <div>
-                <dt className="font-semibold text-lf-slate">Role</dt>
-                <dd className="mt-1 text-lf-charcoal">{role}</dd>
+            </div>
+          ) : (
+            <div className="card">
+              <div className="flex items-center gap-2">
+                <h2 className="h-display text-2xl">Current user</h2>
+                <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-800">
+                  Google Authenticated
+                </span>
               </div>
-              <div>
-                <dt className="font-semibold text-lf-slate">Status</dt>
-                <dd className="mt-1 text-lf-charcoal">{status}</dd>
-              </div>
-            </dl>
-          </div>
+              <dl className="mt-5 grid gap-3 text-sm">
+                <ProfileField label="Name" value={session?.profile.full_name ?? "Not set"} />
+                <ProfileField label="Email" value={session?.profile.email ?? ""} />
+                <div>
+                  <dt className="font-semibold text-lf-slate">Role</dt>
+                  <dd className="mt-1">
+                    <span className="inline-block rounded-full bg-lf-navy px-2.5 py-0.5 text-xs font-semibold text-white">
+                      {getRoleLabel(session?.profile.role)}
+                    </span>
+                  </dd>
+                </div>
+                <ProfileField label="Department" value={session?.profile.department ?? "—"} />
+                <ProfileField label="Status" value={session?.profile.status ?? "—"} />
+              </dl>
+            </div>
+          )}
 
           <div className="card">
             <h2 className="h-display text-2xl">Admin tools</h2>
@@ -131,8 +162,42 @@ function AdminShell({
             </nav>
           </div>
         </div>
+
+        <div className="mt-8 rounded-xl border border-lf-line bg-lf-mist p-5">
+          <h2 className="text-sm font-bold uppercase tracking-wide text-lf-slate">
+            Platform status
+          </h2>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <StatusItem label="Approved users" value={String(approvedUserSeeds.length)} />
+            <StatusItem label="Roles" value={`${roleGroupCount} active`} />
+            <StatusItem label="Departments" value={String(departmentCount)} />
+            <StatusItem label="Auth" value="Google OAuth" />
+          </div>
+          <p className="prose-lf mt-4 text-xs text-lf-slate">
+            Role access is managed through Supabase. Beta preview mode is
+            available for internal UI review without a live session.
+          </p>
+        </div>
       </section>
     </>
+  );
+}
+
+function ProfileField({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <dt className="font-semibold text-lf-slate">{label}</dt>
+      <dd className="mt-1 text-lf-charcoal">{value}</dd>
+    </div>
+  );
+}
+
+function StatusItem({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-lg border border-lf-line bg-white px-4 py-3">
+      <p className="text-xs font-semibold text-lf-slate">{label}</p>
+      <p className="mt-1 text-lg font-bold text-lf-charcoal">{value}</p>
+    </div>
   );
 }
 
