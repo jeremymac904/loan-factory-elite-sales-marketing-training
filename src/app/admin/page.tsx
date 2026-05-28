@@ -49,10 +49,11 @@ export default async function AdminPage() {
 
 const adminLinks = [
   { label: "Users & Access", href: "/admin/users" },
+  { label: "View-As Mode", href: "/admin/view-as" },
   { label: "Feedback", href: "/admin/quiz-review" },
   { label: "Lender Escalations", href: "/lender-escalation/" },
   { label: "FaceGram Moderation", href: "/facegram/" },
-  { label: "AI Assistants", href: "/ai-assistants/" },
+  { label: "AI Assistant Settings", href: "/admin/ai-assistants" },
   { label: "Coaching Members", href: "/coaching/" },
   { label: "Platform Status", href: "/auth/status/" },
 ];

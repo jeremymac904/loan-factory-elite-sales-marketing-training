@@ -32,6 +32,14 @@ export type ProfileRow = {
   primary_role?: string | null;
   notes?: string | null;
   last_sign_in_at?: string | null;
+  bio?: string | null;
+  nmls?: string | null;
+  states_licensed?: string[] | null;
+  preferred_language?: string | null;
+  timezone?: string | null;
+  coaching_tier?: string | null;
+  ai_twin_enabled?: boolean | null;
+  profile_visibility?: string | null;
 };
 
 export type RolePermissionsRow = {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import BetaPreviewBanner from "@/components/BetaPreviewBanner";
+import ViewAsBanner from "@/components/ViewAsBanner";
 import HeyGenVideoWidget from "@/components/HeyGenVideoWidget";
 import SuggestionModal from "@/components/SuggestionModal";
 import "./globals.css";
@@ -35,6 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen bg-white antialiased">
         <SiteHeader />
+        <ViewAsBanner />
         <BetaPreviewBanner />
         <main>{children}</main>
         <SiteFooter />

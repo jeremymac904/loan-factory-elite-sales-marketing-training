@@ -151,13 +151,19 @@ export default async function ProfilePage() {
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/profile/edit/" className="btn-primary">
+            Edit profile
+          </Link>
           {showAdmin && (
-            <Link href="/admin/" className="btn-primary">
+            <Link href="/admin/" className="btn-secondary">
               Admin
             </Link>
           )}
+          <Link href="/settings/google/" className="btn-secondary">
+            Google connections
+          </Link>
           <Link href="/" className="btn-secondary">
-            Back to home
+            Home
           </Link>
           <Link
             href="/auth/sign-out/"
