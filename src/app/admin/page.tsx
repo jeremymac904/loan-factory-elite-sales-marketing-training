@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
-import { getRoleLabel } from "@/lib/supabase/auth";
+import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
 export const dynamic = "force-dynamic";
@@ -34,7 +34,7 @@ export default async function AdminPage() {
   }
 
   const canAccessAdmin =
-    session.permissions?.can_access_admin || session.profile.role === "admin";
+    session.permissions?.can_access_admin || isAdminRole(session.profile.role);
 
   if (!canAccessAdmin) {
     return <AdminNotice title="Admin role required" actionHref="/" actionLabel="Back to home">
@@ -45,6 +45,16 @@ export default async function AdminPage() {
 
   return <AdminShell session={session} />;
 }
+
+const adminLinks = [
+  { label: "Users & Access", href: "/admin/users" },
+  { label: "Feedback", href: "/admin/quiz-review" },
+  { label: "Lender Escalations", href: "/lender-escalation/" },
+  { label: "FaceGram Moderation", href: "/facegram/" },
+  { label: "AI Assistants", href: "/ai-assistants/" },
+  { label: "Coaching Members", href: "/coaching/" },
+  { label: "Platform Status", href: "/auth/status/" },
+];
 
 function AdminShell({
   session,
@@ -106,15 +116,19 @@ function AdminShell({
           </div>
 
           <div className="card">
-            <h2 className="h-display text-2xl">How to manage users</h2>
-            <p className="prose-lf mt-3 text-base">
-              {preview
-                ? "Internal review access only opens pages for UI review. It does not add users, change roles, or save access changes."
-                : "Add, deactivate, or change beta users in the approved access list. After sign-in, the app checks that list before opening protected pages."}
-            </p>
-            <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Do not put private keys or secret values in browser code.
-            </p>
+            <h2 className="h-display text-2xl">Admin tools</h2>
+            <nav className="mt-4 grid gap-2">
+              {adminLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-center justify-between rounded-lg border border-lf-line px-4 py-3 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
+                >
+                  <span>{link.label}</span>
+                  <span aria-hidden className="text-lf-slate">&rarr;</span>
+                </Link>
+              ))}
+            </nav>
           </div>
         </div>
       </section>

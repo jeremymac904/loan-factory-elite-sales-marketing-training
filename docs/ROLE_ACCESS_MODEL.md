@@ -1,168 +1,99 @@
-# Role Access Model
+# Role-Based Access Model
 
-**Status:** Beta auth foundation added. Supabase Google Auth, `approved_users`, `profiles`, `role_permissions`, and RLS now provide the beta access model. Future production SSO/TERA alignment remains a separate decision.
+**Status:** Role-based access system implemented with expanded roles, multi-role support, and full user seeds.
 **Owner:** Jeremy McDonald, with Andre and Edward to confirm scopes.
-**Last updated:** 2026-05-22
+**Last updated:** 2026-05-27
 
-This document defines twelve roles that the LO Development Platform must support, the access scope for each, and what is explicitly out of scope for that role.
+## Overview
+
+The LO Development Platform uses a role-based access system backed by Supabase.
+Users sign in with their `@loanfactory.com` Google Workspace email. On sign-in,
+the auth callback checks the `approved_users` table and creates/updates a
+`profiles` row with the matching role and status.
 
 **Beta reminder:** Public landing/resource pages remain reviewable. Protected beta surfaces use Supabase role checks. TERA remains separate; this app does not read from or write to TERA.
 
 ---
 
-## 1. Jeremy McDonald — Owner Admin
+## Roles
 
-**Who they are:** Platform architect, builder, and owner of AI workflow, training system, and day-to-day platform support.
-
-**Can see / access:** Everything. Every module, every record, every admin tool, every audit log, every billing reference. Owner Preview, `/admin`, all gated content.
-
-**Can edit / manage:** Platform configuration, content, data files, deployments, integrations, role assignments. May change any setting.
-
-**Cannot access:** Nothing inside the platform. (External: not the LOS — TERA owns LOS data. Not corporate finance systems. Not HR systems.)
-
----
-
-## 2. Andre — LO Development Owner (Leadership)
-
-**Who they are:** Owner of LO Development at Loan Factory. Owns the LO Development team (Tara, Kevin, Benjamin), member assignments, ramp standards.
-
-**Can see / access:** Full read across every module. LO Development ops dashboards, team progress, member rosters, escalation queues, Coach Hub read-only, Apex member status, training completion data, 1+1=5 program status.
-
-**Can edit / manage:** LO Development operational data (assignments, routing rules, ramp plans). May flag any content for review. May approve module priorities and rollout sequencing.
-
-**Cannot access:** Owner Admin platform configuration (deployments, integrations, secrets). May request changes; cannot make them.
+| Role | DB Key | Access Level | Primary Audience |
+|------|--------|-------------|-----------------|
+| Master Admin | `master_admin` | Full platform + user management | Jeremy McDonald |
+| Admin | `admin` | Full operational access | Senior internal admins (Thuan) |
+| LO Development Lead | `lo_development_lead` | Admin-lite + LO Dev leadership | Andre King |
+| LO Development Member | `lo_development_member` | LO Dev resources + coaching | LO Dev contributors |
+| Loan Officer Support | `loan_officer_support` | Support routing + lender escalation | LO Support team |
+| Corporate Coach | `corporate_coach` | Coaching areas + FaceGram moderation | Corporate coaches |
+| Marketing | `marketing` | Marketing review + FaceGram content | Marketing team |
+| Team Leader | `team_leader` | 1+1+1=5 + team resources | Team leaders |
+| LO Mastery Coaching | `coaching_member_level_1` | $249 coaching member resources | Coaching members |
+| Loan Factory Alliance | `coaching_member_level_2` | $449 alliance member resources | Alliance members |
+| Loan Officer | `loan_officer` | Standard beta platform | Approved LOs |
+| Vendor Partner (Future) | `vendor_partner_future` | Reserved — not enabled in beta | Future FaceGram/vendor |
 
 ---
 
-## 3. Edward — Corporate Coaching Lead
+## Multi-Role Support
 
-**Who they are:** Owns and leads corporate coaching direction. Sets coaching standards, certification standards, and Coach Hub design.
+The `user_roles` table is a join table mapping `user_email` to multiple roles.
+The `approved_users.role` field remains the primary/display role.
 
-**Can see / access:** Full access to Corporate Coach Hub, all coaching playbooks, all coach session notes (subject to coach/member privacy rules to be confirmed), member coaching progress, certification reviews.
-
-**Can edit / manage:** Coach Hub playbooks, certification standards, coaching session templates, member assignments to coaches.
-
-**Cannot access:** Apex Advisor billing or paid coaching subscription management (handled outside the platform). Owner Admin platform configuration. LO Development team operational routing (Andre's domain).
-
----
-
-## 4. Tara — LO Development team member
-
-**Who they are:** LO Development team member supporting Andre. Member-facing operations.
-
-**Can see / access:** LO Development content, assigned LO progress, routing tools, escalation map, training completion for assigned LOs, post-onboarding check-in queue.
-
-**Can edit / manage:** Member-facing routing actions, check-in notes for assigned LOs, escalation handoffs.
-
-**Cannot access:** Other LO Development team members' assigned-LO records (unless reassigned). Coach session notes (Edward's domain). Owner Admin configuration. Apex billing.
+Current multi-role users:
+- **Jeremy McDonald:** `master_admin` + `team_leader`
+- **Benjamin Huynh:** `lo_development_member` + `loan_officer_support`
 
 ---
 
-## 5. Kevin — LO Development team member
+## Permission Matrix
 
-Same scope as Tara. Distinct LO assignments.
+The `role_permissions` table maps each role to boolean permission flags:
 
----
-
-## 6. Benjamin — LO Development team member
-
-Same scope as Tara. Distinct LO assignments.
-
----
-
-## 7. Corporate Coach
-
-**Who they are:** A certified corporate coach delivering coaching sessions to assigned members.
-
-**Can see / access:** Coach Hub, their assigned members, session notes for their assigned members, call agendas, certification progress for their members.
-
-**Can edit / manage:** Session notes for their own assigned members, call agendas, certification reviews they conduct.
-
-**Cannot access:** Other coaches' members or session notes. LO Development operational routing. Owner Admin. Apex billing. Other coaches' playbook drafts (unless shared).
+| Permission | master_admin | admin | lo_dev_lead | lo_dev_member | lo_support | coach | marketing | team_leader | coaching_1 | coaching_2 | loan_officer |
+|-----------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| can_access_admin | Y | Y | Y | - | - | - | - | - | - | - | - |
+| can_access_coaching | Y | Y | Y | Y | - | Y | - | Y | Y | Y | - |
+| can_access_facegram | Y | Y | Y | Y | - | Y | Y | Y | Y | Y | Y |
+| can_access_ai_assistants | Y | Y | Y | Y | - | Y | Y | Y | Y | Y | Y |
+| can_access_resources | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y |
+| can_moderate_facegram | Y | Y | Y | - | - | Y | Y | - | - | - | - |
+| can_review_marketing | Y | Y | - | - | - | - | Y | - | - | - | - |
+| can_access_lo_development | Y | Y | Y | Y | - | - | - | - | - | - | - |
+| can_access_support | Y | Y | Y | - | Y | - | - | - | - | - | - |
+| can_access_team_leader | Y | Y | - | - | - | - | - | Y | - | - | - |
+| can_manage_users | Y | Y | - | - | - | - | - | - | - | - | - |
 
 ---
 
-## 8. Team Leader
+## Auth Flow
 
-**Who they are:** Leads a team of LOs. Owns recruiting, ramp, and performance for their team.
-
-**Can see / access:** Team Leader OS, their team's progress, content kits, leaderboard for their team, 1+1=5 campaigns, recruiting kits, their team's scorecards.
-
-**Can edit / manage:** Their team's scorecards, their team's meeting agendas, their team's recruiting tracker, their team's 1+1=5 campaign customizations.
-
-**Cannot access:** Other teams' data. Coach session notes. LO Development routing tools (read-only at most). Owner Admin. Apex billing.
-
----
-
-## 9. Loan Officer
-
-**Who they are:** A producing or new LO at Loan Factory.
-
-**Can see / access:** Their assigned training path, their own Apex Advisor tier content (if subscribed), Training Library, AI Assistant Hub, Recommended Channels, Personality Workshop, their own member area landing.
-
-**Can edit / manage:** Their own progress, their own roleplay submissions, their own tracker entries, their own personality workshop results.
-
-**Cannot access:** Other LOs' data. Team Leader OS (unless they are a team leader). Corporate Coach Hub. LO Development routing tools. Apex content not in their tier. Owner Admin.
+1. User clicks "Sign In" on `/login/`
+2. Google OAuth via Supabase Auth (`/auth/google/`)
+3. Callback at `/auth/callback/` exchanges code for session
+4. `syncApprovedProfile()` checks `approved_users` table
+5. If approved: profile upserted with role + status `approved`, user redirected to app
+6. If not approved: profile created with status `pending`, user redirected to `/access-pending/`
 
 ---
 
-## 10. Marketing Reviewer — Victoria
+## App-Side Access Checks
 
-**Who they are:** Marketing reviewer responsible for approving recruiting and public-facing content.
-
-**Can see / access:** Read and review access to all marketing, recruiting, and public-facing content across the platform — 1+1=5 content kits, recruiting kits, Apex Advisor landing copy, sales training landing copy, anything that mentions Loan Factory externally.
-
-**Can edit / manage:** Approval status on review items. May leave review comments. May block publication.
-
-**Cannot access:** Internal coaching notes, LO-private progress data, Apex billing, Owner Admin configuration, LO Development routing internals.
+- `getBetaUserSession()` in `src/lib/supabase/session.ts` — returns session with profile and permissions
+- `isAdminRole(role)` — checks for `master_admin`, `admin`, or `lo_development_lead`
+- `canAccessGate(gate, profile, permissions)` — checks gated surfaces
+- RLS policies on Supabase enforce row-level security server-side
 
 ---
 
-## 11. Training Academy (Loan Factory)
+## Seeded Users
 
-**Who they are:** Loan Factory's Training Academy team, responsible for the broader training content lifecycle.
-
-**Can see / access:** Training Library content management, quiz and flashcard management, recording catalog, audio brief catalog, NotebookLM output catalog.
-
-**Can edit / manage:** Training Library catalog metadata, quiz banks, flashcard sets, content categorization.
-
-**Cannot access:** Apex billing, Coach session notes, LO-private progress beyond Training Library completion data, Owner Admin configuration, 1+1=5 team-leader-private campaign customizations.
+See `src/data/approvedUsers.ts` for the full list of 35 approved beta users.
+See `supabase/migrations/20260527000000_role_access_system.sql` for the SQL seed.
 
 ---
 
-## 12. Read Only Leadership
+## Open Items
 
-**Who they are:** Senior Loan Factory leadership not in LO Development or Coaching day-to-day, but who need visibility.
-
-**Can see / access:** Dashboard view with high-level progress metrics — training completion rates, Apex membership counts, leaderboard summaries, recruiting pipeline summaries, coaching engagement summaries.
-
-**Can edit / manage:** Nothing. Read-only.
-
-**Cannot access:** Individual LO records, coach session notes, recruiting candidate details, billing, Owner Admin configuration, content editing.
-
----
-
-## Role-to-route summary matrix
-
-| Route family | Owner | Andre | Edward | LO Dev team | Coach | Team Leader | LO | Victoria | Training Academy | Read-only Leadership |
-|--------------|-------|-------|--------|-------------|-------|-------------|----|----|------------------|----------------------|
-| `/apex-*` | Full | Read | Read | Read | — | — | Tier-gated | Marketing-only | — | Summary |
-| `/sales-training/*` | Full | Read | Read | Read | — | Read | Read | Marketing-only | Manage | Summary |
-| `/ai-assistants/*` | Full | Read | Read | Read | Read | Read | Read | Marketing-only | — | Summary |
-| `/team-leader-os/*` | Full | Read | — | Read | — | Manage own team | — | Marketing-only | — | Summary |
-| `/corporate-coach-hub/*` | Full | Read | Manage | — | Manage own members | — | — | — | — | Summary |
-| `/one-plus-one-five/*` | Full | Read | — | Read | — | Manage own team | — | Marketing approval required | — | Summary |
-| `/training-library/*` | Full | Read | Read | Read | Read | Read | Read | Marketing-only | Manage | Summary |
-| `/owner-preview` | Full | — | — | — | — | — | — | — | — | — |
-| `/admin` (production) | Full | Audit-read | — | — | — | — | — | — | — | — |
-
-"—" means no access. "Read" means read-only. "Manage" means read + edit. "Summary" means aggregated, non-individual metrics only.
-
----
-
-## Open items for Andre and Edward
-
-- Andre: confirm LO Development team member access scopes (Section 4 / 5 / 6). Should team members see each other's assigned LOs, or strictly their own?
-- Edward: confirm coach privacy rules for Section 7. Are session notes shared across coaches by default, or private to the coach + member?
-- Both: confirm whether team leaders can see Coach Hub data for their team members, or whether that boundary is strict.
-- Confirm where Victoria sits in the approval workflow — gating publication, or post-hoc review?
+- Andre: confirm LO Development team member access scopes
+- Edward: confirm coach privacy rules for session notes
+- Both: confirm whether team leaders can see Coach Hub data for their team members

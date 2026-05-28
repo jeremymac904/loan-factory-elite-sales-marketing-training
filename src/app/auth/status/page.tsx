@@ -2,7 +2,7 @@ import Link from "next/link";
 import AuthDebugTrailView from "@/components/AuthDebugTrail";
 import AuthClientStatus from "@/components/AuthClientStatus";
 import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
-import { getRoleLabel } from "@/lib/supabase/auth";
+import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
 export const dynamic = "force-dynamic";
@@ -14,7 +14,7 @@ export default async function AuthStatusPage() {
   const canAccessAdmin =
     previewEnabled ||
     session.status === "approved" &&
-    (session.permissions?.can_access_admin || session.profile.role === "admin");
+    (session.permissions?.can_access_admin || isAdminRole(session.profile.role));
   const serverSessionExists =
     session.status === "approved" || session.status === "pending";
   const serverProfile =

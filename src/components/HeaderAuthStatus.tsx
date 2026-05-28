@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { isBetaPreviewEnabled } from "@/lib/betaPreview";
-import { getRoleLabel } from "@/lib/supabase/auth";
+import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
 type Props = {
@@ -64,9 +64,9 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
     session.status === "approved" ? getRoleLabel(session.profile.role) : "Pending";
   const email = profile?.email ?? session.user.email ?? "Signed in";
   const destination =
-    session.status === "approved" && session.profile.role === "admin"
+    session.status === "approved" && isAdminRole(session.profile.role)
       ? "/admin/"
-      : "/resources/";
+      : "/profile/";
 
   return (
     <div

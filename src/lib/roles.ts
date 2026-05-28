@@ -1,21 +1,21 @@
 export type RoleId =
+  | "master-admin"
   | "admin"
+  | "lo-development-lead"
+  | "lo-development-member"
   | "corporate-coach"
   | "team-leader"
   | "marketing"
+  | "loan-officer-support"
+  | "coaching-member-level-1"
+  | "coaching-member-level-2"
   | "loan-officer"
   | "support-staff";
 
 export type Role = {
   id: RoleId;
   name: string;
-  group:
-    | "Admin"
-    | "Corporate Coach"
-    | "Team Leader"
-    | "Marketing"
-    | "Loan Officer"
-    | "Support Staff";
+  group: string;
   description: string;
   dashboardHref: string;
   highlights: string[];
@@ -23,17 +23,59 @@ export type Role = {
 
 export const roles: Role[] = [
   {
+    id: "master-admin",
+    name: "Master Admin",
+    group: "Admin",
+    description:
+      "Full platform access including user management, all admin areas, and system settings.",
+    dashboardHref: "/admin/",
+    highlights: [
+      "Full platform access",
+      "User and role management",
+      "All admin controls",
+      "System settings",
+    ],
+  },
+  {
     id: "admin",
     name: "Admin",
     group: "Admin",
     description:
-      "Platform overview for Jeremy, Andre, Tara, Benjamin, Edward, Kevin, and approved admin users.",
-    dashboardHref: "/resources/",
+      "Platform overview for senior admins with near-full operational access.",
+    dashboardHref: "/admin/",
     highlights: [
       "Platform overview",
       "Content and admin links",
-      "Moderation and review concepts",
-      "User and support directory",
+      "Moderation and review",
+      "User directory",
+    ],
+  },
+  {
+    id: "lo-development-lead",
+    name: "LO Development Lead",
+    group: "LO Development",
+    description:
+      "LO Development leadership access with coaching visibility and training direction.",
+    dashboardHref: "/resources/",
+    highlights: [
+      "LO Development resources",
+      "Feedback review",
+      "Coaching visibility",
+      "Training direction",
+    ],
+  },
+  {
+    id: "lo-development-member",
+    name: "LO Development",
+    group: "LO Development",
+    description:
+      "LO Development contributor access for assigned sections and resources.",
+    dashboardHref: "/resources/",
+    highlights: [
+      "Assigned sections",
+      "Training resources",
+      "Support tools",
+      "Coaching resources",
     ],
   },
   {
@@ -76,6 +118,48 @@ export const roles: Role[] = [
       "Approved adaptation concepts",
       "Compliance notes",
       "Marketing resource paths",
+    ],
+  },
+  {
+    id: "loan-officer-support",
+    name: "Loan Officer Support",
+    group: "Loan Officer Support",
+    description:
+      "Support resources, lender escalation review, and help area access.",
+    dashboardHref: "/support-routing/",
+    highlights: [
+      "Support routing",
+      "Lender escalation review",
+      "Help areas",
+      "User support tools",
+    ],
+  },
+  {
+    id: "coaching-member-level-1",
+    name: "LO Mastery Coaching",
+    group: "Coaching Member",
+    description:
+      "LO Mastery Coaching member resources at the $249 access level.",
+    dashboardHref: "/lo-mastery-coaching/",
+    highlights: [
+      "LO Mastery resources",
+      "Coaching sessions",
+      "Sales & Marketing training",
+      "AI Advantage",
+    ],
+  },
+  {
+    id: "coaching-member-level-2",
+    name: "Loan Factory Alliance",
+    group: "Coaching Member",
+    description:
+      "Loan Factory Alliance member resources at the $449 access level.",
+    dashboardHref: "/loan-factory-alliance/",
+    highlights: [
+      "Alliance resources",
+      "Advanced coaching",
+      "Full training library",
+      "AI Advantage",
     ],
   },
   {

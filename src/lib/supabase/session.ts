@@ -36,10 +36,10 @@ export type BetaUserSession =
     };
 
 const profileSelect =
-  "id,email,full_name,role,department,title,avatar_url,status";
+  "id,email,full_name,role,department,title,avatar_url,status,phone,secondary_phone,profile_url,team_brand,primary_role,notes,last_sign_in_at";
 
 const permissionSelect =
-  "role,can_access_admin,can_access_coaching,can_access_facegram,can_access_ai_assistants,can_access_resources,can_moderate_facegram,can_review_marketing";
+  "role,can_access_admin,can_access_coaching,can_access_facegram,can_access_ai_assistants,can_access_resources,can_moderate_facegram,can_review_marketing,can_access_lo_development,can_access_support,can_access_team_leader,can_manage_users";
 
 type CookieSession = {
   access_token?: string;
