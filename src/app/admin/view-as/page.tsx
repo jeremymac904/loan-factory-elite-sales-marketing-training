@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { isBetaPreviewEnabled } from "@/lib/betaPreview";
-import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
-import { getBetaUserSession } from "@/lib/supabase/session";
+import { getRoleLabel } from "@/lib/supabase/auth";
+import { resolveAdminAccess } from "@/lib/supabase/adminAccess";
 import { getViewAsState } from "@/lib/viewAs";
 import { approvedUserSeeds } from "@/data/approvedUsers";
 import ViewAsControls from "@/components/ViewAsControls";
@@ -24,27 +23,20 @@ const roleOptions = [
 ];
 
 export default async function AdminViewAsPage() {
-  const session = await getBetaUserSession();
-  const previewEnabled = await isBetaPreviewEnabled();
+  const access = await resolveAdminAccess();
   const currentViewAs = await getViewAsState();
 
-  const isMasterAdmin =
-    previewEnabled ||
-    (session.status === "approved" && session.profile.role === "master_admin");
-
-  const isAdmin =
-    previewEnabled ||
-    (session.status === "approved" &&
-      (session.profile.role === "master_admin" ||
-        isAdminRole(session.profile.role)));
-
-  if (!isAdmin) {
+  if (!access.allowed) {
+    const resolvedLabel = access.resolvedRole
+      ? getRoleLabel(access.resolvedRole)
+      : "no resolved role";
     return (
       <section className="container-page py-16">
         <div className="card max-w-2xl">
           <h1 className="h-display text-3xl">Admin access required</h1>
           <p className="prose-lf mt-3">
-            View-As mode is available to master admins only.
+            View-As requires Master Admin or Admin access. Your current
+            resolved role is: <strong>{resolvedLabel}</strong>.
           </p>
           <Link href="/admin/" className="btn-primary mt-6 inline-block">
             Back to admin
@@ -53,6 +45,9 @@ export default async function AdminViewAsPage() {
       </section>
     );
   }
+
+  const isMasterAdmin =
+    access.resolvedRole === "master_admin" || access.reason === "preview";
 
   return (
     <>

@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { isAdminRole } from "@/lib/supabase/auth";
-import { getBetaUserSession } from "@/lib/supabase/session";
+import { getRoleLabel } from "@/lib/supabase/auth";
+import { resolveAdminAccess } from "@/lib/supabase/adminAccess";
 import {
   VIEW_AS_COOKIE,
   encodeViewAsValue,
@@ -18,14 +18,17 @@ type ViewAsBody = {
 };
 
 export async function POST(request: NextRequest) {
-  const session = await getBetaUserSession();
+  const access = await resolveAdminAccess();
 
-  if (
-    session.status !== "approved" ||
-    !(session.profile.role === "master_admin" || isAdminRole(session.profile.role))
-  ) {
+  if (!access.allowed) {
+    const resolvedLabel = access.resolvedRole
+      ? getRoleLabel(access.resolvedRole)
+      : "no resolved role";
     return NextResponse.json(
-      { error: "Only admins can use View-As mode." },
+      {
+        error: `View-As requires Master Admin or Admin access. Your current resolved role is: ${resolvedLabel}.`,
+        reason: access.reason,
+      },
       { status: 403 },
     );
   }
@@ -37,7 +40,10 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const response = NextResponse.json({ ok: true });
+  const response = NextResponse.json({
+    ok: true,
+    resolvedVia: access.reason,
+  });
 
   if (body.clear || !body.role) {
     response.cookies.set(VIEW_AS_COOKIE, "", { maxAge: 0, path: "/" });
