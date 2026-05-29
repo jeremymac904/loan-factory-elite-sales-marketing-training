@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
+import { roleCanCoach } from "@/lib/coachAccess";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
 type Props = {
@@ -29,6 +30,16 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
           }
         >
           Internal Review
+        </Link>
+        <Link
+          href="/coach-command-center/"
+          className={
+            variant === "mobile"
+              ? "rounded-lg bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal hover:text-lf-orange"
+              : "inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-lf-orange/30 bg-lf-orangeSoft px-3 py-2 text-sm font-semibold text-lf-orangeDark transition hover:border-lf-orange"
+          }
+        >
+          Coach Center
         </Link>
         <Link
           href="/auth/preview-exit/"
@@ -67,6 +78,8 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
     session.status === "approved" && isAdminRole(session.profile.role)
       ? "/admin/"
       : "/profile/";
+  const showCoach =
+    session.status === "approved" && roleCanCoach(session.profile.role);
 
   return (
     <div
@@ -76,6 +89,18 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
           : "flex items-center gap-2"
       }
     >
+      {showCoach && (
+        <Link
+          href="/coach-command-center/"
+          className={
+            variant === "mobile"
+              ? "rounded-lg bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal hover:text-lf-orange"
+              : "inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
+          }
+        >
+          Coach Center
+        </Link>
+      )}
       <Link
         href={destination}
         className={
