@@ -58,6 +58,12 @@ const quickTools: { title: string; description: string; href: string }[] = [
     description: "Onboarding, path, certification, and AI Twin status.",
     href: "/coach-command-center/member-progress/",
   },
+  {
+    title: "Market Mentor Studio",
+    description:
+      "Use Market Mentor with a coaching member — market updates, rate explainers, buy-vs-rent, and video scripts.",
+    href: "/market-mentor/",
+  },
 ];
 
 export default async function CoachCommandCenterPage() {

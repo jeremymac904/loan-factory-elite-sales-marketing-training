@@ -110,6 +110,20 @@ export default async function MemberAreaPage() {
           ))}
         </div>
 
+        {(access.isMember || access.isStaff) && (
+          <div className="mt-8 card max-w-2xl border-lf-orange/30 bg-lf-orangeSoft/30">
+            <h2 className="h-display text-xl">Market Mentor Studio</h2>
+            <p className="prose-lf mt-2 text-sm">
+              Market updates, rate explainers, buy-vs-rent, cost-of-waiting, and
+              video scripts to use with borrowers and Realtors. Core tools on LO
+              Mastery; advanced tools on Loan Factory Alliance.
+            </p>
+            <Link href="/market-mentor/" className="btn-primary mt-4 inline-block">
+              Open Market Mentor Studio
+            </Link>
+          </div>
+        )}
+
         {!access.isMember && !access.isStaff && (
           <div className="mt-8 card max-w-2xl">
             <h2 className="h-display text-xl">New to Loan Factory coaching?</h2>

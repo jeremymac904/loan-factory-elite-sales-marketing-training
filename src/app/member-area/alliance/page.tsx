@@ -55,6 +55,12 @@ const sections = [
     premium: true,
   },
   {
+    title: "Market Mentor Studio (advanced)",
+    description: "Advanced Market Mentor tools — debt consolidation, Realtor market updates, roleplay, and the video studio.",
+    href: "/market-mentor/",
+    premium: true,
+  },
+  {
     title: "Everything in LO Mastery",
     description: "All LO Mastery Coaching content plus the upgrades above.",
     href: "/member-area/lo-mastery/",

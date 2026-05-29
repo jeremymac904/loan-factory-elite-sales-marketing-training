@@ -51,6 +51,11 @@ const sections = [
     description: "Your daily AI coaching assistant — Power Hour prompts, follow-up drafts, accountability check-ins.",
     href: "/ai-assistants/my-ai-twin/",
   },
+  {
+    title: "Market Mentor Studio",
+    description: "Market updates, rate explainers, buy-vs-rent, and cost-of-waiting tools to use with borrowers and Realtors.",
+    href: "/market-mentor/",
+  },
 ];
 
 export default async function LoMasteryMemberAreaPage() {

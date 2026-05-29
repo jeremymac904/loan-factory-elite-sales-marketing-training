@@ -168,6 +168,7 @@ export const trainingAssignables: { category: string; title: string; href: strin
   { category: "Prompts", title: "Prompt library", href: "/prompts/" },
   { category: "Roleplay", title: "Roleplay scenarios", href: "/roleplays/" },
   { category: "Scorecard", title: "Weekly execution scorecard", href: "/coach-command-center/scorecards/" },
+  { category: "Market Mentor", title: "Market Mentor Studio exercise", href: "/market-mentor/" },
 ];
 
 export const coachAiPrompts: { title: string; prompt: string }[] = [

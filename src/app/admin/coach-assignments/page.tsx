@@ -2,6 +2,7 @@ import Link from "next/link";
 import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
+import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import {
   assignedPeople,
   statusMeta,
@@ -82,6 +83,18 @@ export default async function AdminCoachAssignmentsPage() {
     count: assignedPeople.filter((p) => p.relationship === section.relationship)
       .length,
   }));
+
+  // Safe read-only check of the live coaching_assignments table (no writes).
+  const admin = createSupabaseAdminClient();
+  let liveCount: number | null = null;
+  let liveError = false;
+  if (admin) {
+    const { count, error } = await admin
+      .from("coaching_assignments")
+      .select("id", { count: "exact", head: true });
+    if (error) liveError = true;
+    else liveCount = count ?? 0;
+  }
 
   return (
     <>
@@ -164,6 +177,27 @@ export default async function AdminCoachAssignmentsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="container-page pb-4">
+        <div className="card border-lf-line bg-lf-mist">
+          <h2 className="h-display text-xl">Live assignment persistence</h2>
+          <p className="prose-lf mt-1 text-sm">
+            {admin === null
+              ? "Supabase admin is not configured in this environment — live coaching assignments will read here once connected."
+              : liveError
+                ? "Could not read live coaching assignments right now."
+                : `${liveCount} live coaching assignment${liveCount === 1 ? "" : "s"} in Supabase (coaching_assignments).`}
+          </p>
+          <p className="prose-lf mt-2 text-xs text-lf-slate">
+            The live <code>coaching_assignments</code> table keys on Supabase
+            user IDs + coaching tier. Assignment editing here writes once the
+            assignment model is reconciled (relationship column + email→user
+            resolution). See <code>docs/COACH_ASSIGNMENT_MODEL.md</code> for the
+            exact path. No assignment data is written from this view yet — the
+            coverage below reflects sample data.
+          </p>
         </div>
       </section>
 

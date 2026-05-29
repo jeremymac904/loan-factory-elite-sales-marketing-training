@@ -193,6 +193,17 @@ export default function ApexAdvisorPage() {
               the next training step. Coaching tool only.
             </p>
           </Link>
+          <Link href="/market-mentor/" className="card hover:shadow-lift">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+              Coaching tool
+            </p>
+            <h3 className="h-display mt-1 text-lg">Market Mentor Studio</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              Market updates, rate explainers, buy-vs-rent, and video scripts.
+              Core tools for LO Mastery; advanced tools for Loan Factory
+              Alliance.
+            </p>
+          </Link>
         </div>
       </section>
 
