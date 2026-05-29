@@ -114,8 +114,8 @@ export default async function MyAiTwinPage() {
               <ConnectionRow label="Calendar" status="future" />
             </div>
             <div className="mt-5 flex gap-3">
-              <Link href="/settings/google/" className="btn-secondary text-sm">
-                Manage Google connections
+              <Link href="/ai-assistants/connections/" className="btn-secondary text-sm">
+                Manage connections
               </Link>
               <Link href="/ai-assistants/knowledge/" className="btn-secondary text-sm">
                 Knowledge sources

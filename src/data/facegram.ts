@@ -222,17 +222,19 @@ export const lenderPromotionNotes = [
     sponsor: "Rocket",
     label: "Sponsored / Demo placement",
     title: "Rocket training spotlight",
-    cta: "View resource",
+    cta: "Open training library",
     accent: "R",
+    href: "/training-library/",
     body:
-      "Reviewed lender training example for internal education. Vendor content requires LO Development approval before it appears in beta.",
+      "Reviewed lender training example for internal education. Vendor content requires LO Development approval before it appears for approved Loan Factory users.",
   },
   {
     sponsor: "PennyMac",
     label: "Sponsored / Demo placement",
     title: "PennyMac partner resource",
-    cta: "Learn more",
+    cta: "Open resources",
     accent: "P",
+    href: "/resources/",
     body:
       "Partner resource example for a future class, guide, or replay. Vendor self-posting is not enabled.",
   },
@@ -242,27 +244,32 @@ export const faceGramRightRail = [
   {
     title: "101 Foundation this week",
     body: "Practice the first-call follow-up and post one sentence that worked.",
-    action: "Open training reminder",
+    action: "Open 101 Foundation",
+    href: "/101-foundation/",
   },
   {
     title: "First-call follow-up",
     body: "Compare quick openers, next-step questions, and cleaner handoffs.",
-    action: "View topic",
+    action: "Open the 201 lesson",
+    href: "/201-borrower-conversion/",
   },
   {
     title: "Coaching calendar",
     body: "See group check-ins, script practice, and office-hour reminders.",
-    action: "View schedule",
+    action: "Open calendar",
+    href: "/calendar/",
   },
   {
     title: "Saved posts",
     body: "Review posts you bookmarked from the feed during this session.",
     action: "Open saved posts",
+    href: "/facegram/saved/",
   },
   {
     title: "New groups",
     body: "Browse active FaceGram groups for training, coaching, and team support.",
     action: "Open groups",
+    href: "/facegram/groups/",
   },
 ];
 

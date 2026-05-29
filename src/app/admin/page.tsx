@@ -51,11 +51,12 @@ const adminLinks = [
   { label: "Users & Access", href: "/admin/users" },
   { label: "View-As Mode", href: "/admin/view-as" },
   { label: "Quiz Review", href: "/admin/quiz-review" },
-  { label: "Lender Escalations", href: "/lender-escalation/" },
+  { label: "Feedback & Suggestions", href: "/admin/feedback" },
+  { label: "Lender Escalations", href: "/admin/lender-escalations" },
   { label: "FaceGram Moderation", href: "/facegram/" },
   { label: "AI Assistant Settings", href: "/admin/ai-assistants" },
   { label: "Coaching Members", href: "/coaching/" },
-  { label: "Platform Status", href: "/auth/status/" },
+  { label: "Platform Status", href: "/admin/platform-status" },
 ];
 
 const roleGroupCount = new Set(approvedUserSeeds.map((u) => u.role)).size;

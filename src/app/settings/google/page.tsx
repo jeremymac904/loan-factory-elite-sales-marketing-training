@@ -116,9 +116,12 @@ export default async function GoogleSettingsPage() {
                     {badge.label}
                   </span>
                   {s.status === "setup-required" && (
-                    <button type="button" disabled className="btn-secondary text-sm opacity-60">
-                      Approve (setup needed)
-                    </button>
+                    <Link
+                      href="/auth/google/?next=/settings/google/"
+                      className="btn-secondary text-sm"
+                    >
+                      Connect Google
+                    </Link>
                   )}
                 </div>
               </div>
@@ -132,7 +135,7 @@ export default async function GoogleSettingsPage() {
             <li>Each scope requires explicit approval from your Google account.</li>
             <li>Scope approvals store in <code>google_connections</code> in Supabase.</li>
             <li>Send permission requires an additional safety confirmation.</li>
-            <li>Bulk sending is never enabled in beta.</li>
+            <li>Bulk sending is never enabled — drafts only.</li>
             <li>You can revoke any scope at any time.</li>
           </ul>
         </div>
