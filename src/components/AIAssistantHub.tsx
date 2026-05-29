@@ -525,7 +525,7 @@ export default function AIAssistantHub({
                 {isSending && (
                   <div className="flex justify-start">
                     <div className="max-w-2xl rounded-2xl border border-lf-line bg-lf-mist px-4 py-3 text-sm font-semibold leading-6 text-lf-slate">
-                      {demoResponseMode ? "Preparing draft..." : "Preparing draft..."}
+                      {demoResponseMode ? "Preparing demo draft..." : "Preparing draft..."}
                     </div>
                   </div>
                 )}

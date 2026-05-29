@@ -12,7 +12,7 @@ const reasonMessages: Record<string, string> = {
   "profile-sync":
     "Your Google login worked, but your profile could not be saved. Ask Jeremy or LO Development to review your access.",
   pending:
-    "Your Loan Factory Google account is signed in, but your email is not on the approved beta list yet.",
+    "Your Loan Factory Google account is signed in, but your email is not on the approved access list yet.",
 };
 
 type Props = {
@@ -38,7 +38,7 @@ export default async function AccessPendingPage({ searchParams }: Props) {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
             Your sign-in was received. We still need to confirm that your Loan
-            Factory email is approved for beta access.
+            Factory email is approved for access.
           </p>
         </div>
       </section>

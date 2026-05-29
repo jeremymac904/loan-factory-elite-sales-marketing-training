@@ -183,8 +183,7 @@ export default async function AdminUsersPage() {
           </h2>
           <p className="prose-lf mt-2 text-sm text-lf-charcoal">
             Users are managed through the Supabase role-access system. Approved
-            users and roles have been seeded for beta. Full in-app user editing
-            is planned for a later phase.
+            users and roles are seeded there. This view is read-only.
           </p>
         </div>
       </section>

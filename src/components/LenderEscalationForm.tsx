@@ -39,7 +39,7 @@ const localFallbackMessages: Record<string, string> = {
   "signed-out":
     "You are signed out, so the note was saved in this browser. Sign in with your Loan Factory Google account to submit it directly.",
   "access-pending":
-    "Your beta access is still pending, so the note was saved in this browser for LO Development.",
+    "Your approved access is still pending, so the note was saved in this browser for LO Development.",
 };
 
 export default function LenderEscalationForm() {

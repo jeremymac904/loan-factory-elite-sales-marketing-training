@@ -2,6 +2,9 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import ComplianceCallout from "@/components/ComplianceCallout";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
+import { isAdminRole } from "@/lib/supabase/auth";
+import { getBetaUserSession } from "@/lib/supabase/session";
 import {
   sampleReports,
   statusLabel,
@@ -9,6 +12,7 @@ import {
 } from "@/data/sampleQuizReports";
 import { coachingProfiles, newLoReadinessProfiles } from "@/data/coachingProfiles";
 
+export const dynamic = "force-dynamic";
 export const metadata = { title: "Admin Quiz Review" };
 
 const roleViews = [
@@ -29,7 +33,33 @@ const roleViews = [
   },
 ];
 
-export default function AdminQuizReviewPage() {
+export default async function AdminQuizReviewPage() {
+  const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
+
+  const isAdmin =
+    previewEnabled ||
+    (session.status === "approved" &&
+      (session.permissions?.can_access_admin ||
+        isAdminRole(session.profile.role)));
+
+  if (!isAdmin) {
+    return (
+      <section className="container-page py-16">
+        <div className="card max-w-2xl">
+          <h1 className="h-display text-3xl">Admin access required</h1>
+          <p className="prose-lf mt-3">
+            Quiz Review is for approved Loan Factory admins. Ask Jeremy or LO
+            Development to review your access.
+          </p>
+          <Link href="/" className="btn-primary mt-6 inline-block">
+            Back to home
+          </Link>
+        </div>
+      </section>
+    );
+  }
+
   const totals = {
     personality: sampleReports.filter((r) => r.kind === "personality").length,
     newLo: sampleReports.filter((r) => r.kind === "new-lo").length,
@@ -84,7 +114,7 @@ export default function AdminQuizReviewPage() {
           <SectionHeading
             eyebrow="Role-based views"
             title="Three viewing roles, one shared report shape."
-            description="Each role sees the same underlying report but with different controls and routing. Wiring to roles + database is intentionally not built yet."
+            description="Each role sees the same underlying report with role-specific controls and routing."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {roleViews.map((view) => (
@@ -161,7 +191,7 @@ export default function AdminQuizReviewPage() {
                     type="button"
                     className="btn-secondary text-xs"
                     disabled
-                    title="Local preview only — wiring deferred"
+                    title="Local preview only"
                   >
                     Assign next training
                   </button>

@@ -71,6 +71,7 @@ export default async function FaceGramMessagesPage() {
       <section className="container-page py-8">
         <FaceGramMessagesView
           previewMode={previewEnabled}
+          currentEmail={currentEmail}
           recipients={recipients}
         />
       </section>

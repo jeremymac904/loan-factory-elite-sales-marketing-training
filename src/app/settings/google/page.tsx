@@ -50,7 +50,7 @@ const statusBadges: Record<string, { label: string; class: string }> = {
     label: "Setup needed",
     class: "bg-yellow-100 text-yellow-800",
   },
-  future: { label: "Coming soon", class: "bg-lf-mist text-lf-slate" },
+  future: { label: "Not enabled", class: "bg-lf-mist text-lf-slate" },
 };
 
 export default async function GoogleSettingsPage() {

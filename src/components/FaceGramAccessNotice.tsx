@@ -14,7 +14,7 @@ const copyByStatus = {
   },
   "signed-out": {
     title: "Sign in required",
-    body: "FaceGram is only for approved Loan Factory beta users. Sign in with your Loan Factory Google account to continue.",
+    body: "FaceGram is only for approved Loan Factory users. Sign in with your Loan Factory Google account to continue.",
     actionHref: "/login/",
     actionLabel: "Sign in",
   },
@@ -26,7 +26,7 @@ const copyByStatus = {
   },
   role: {
     title: "FaceGram role required",
-    body: "Your current beta access does not include FaceGram. Ask Jeremy or LO Development to review your access.",
+    body: "Your current access does not include FaceGram. Ask Jeremy or LO Development to review your access.",
     actionHref: "/resources/",
     actionLabel: "Open resources",
   },

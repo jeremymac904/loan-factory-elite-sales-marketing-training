@@ -260,7 +260,7 @@ export default function FaceGramExperience({
     if (!canPost) {
       setDetailModal({
         title: "FaceGram access",
-        body: "Sign in with approved beta access to post, comment, save, and share internal training ideas.",
+        body: "Sign in with approved Loan Factory access to post, comment, save, and share internal training ideas.",
         actionLabel: "Go to login",
         href: "/login/",
       });
@@ -689,7 +689,7 @@ export default function FaceGramExperience({
                   Posting requires approved access
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
-                  Sign in with approved Loan Factory beta access to post,
+                  Sign in with approved Loan Factory access to post,
                   comment, save, and follow people.
                 </p>
                 {isPending ? (
