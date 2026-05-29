@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
+import { roleCanCoach } from "@/lib/coachAccess";
 import { getBetaUserSession } from "@/lib/supabase/session";
 
 export const dynamic = "force-dynamic";
@@ -68,6 +69,9 @@ export default async function ProfilePage() {
   const showAdmin =
     previewEnabled ||
     (session.status === "approved" && isAdminRole(session.profile.role));
+  const showCoach =
+    previewEnabled ||
+    (session.status === "approved" && roleCanCoach(session.profile.role));
 
   return (
     <>
@@ -157,6 +161,11 @@ export default async function ProfilePage() {
           <Link href="/settings/" className="btn-secondary">
             Settings
           </Link>
+          {showCoach && (
+            <Link href="/coach-command-center/" className="btn-secondary">
+              Coach Center
+            </Link>
+          )}
           {showAdmin && (
             <Link href="/admin/" className="btn-secondary">
               Admin

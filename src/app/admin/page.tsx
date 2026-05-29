@@ -49,6 +49,8 @@ export default async function AdminPage() {
 
 const adminLinks = [
   { label: "Users & Access", href: "/admin/users" },
+  { label: "Coach Command Center", href: "/coach-command-center" },
+  { label: "Coach Assignments", href: "/admin/coach-assignments" },
   { label: "View-As Mode", href: "/admin/view-as" },
   { label: "Quiz Review", href: "/admin/quiz-review" },
   { label: "Feedback & Suggestions", href: "/admin/feedback" },

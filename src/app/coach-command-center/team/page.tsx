@@ -1,0 +1,242 @@
+import Link from "next/link";
+import { getCoachAccess } from "@/lib/coachAccess";
+import CoachCommandNav from "@/components/coach/CoachCommandNav";
+import { peopleForScope, statusMeta } from "@/data/coachCommandCenter";
+
+export const dynamic = "force-dynamic";
+export const metadata = { title: "My People · Coach Command Center" };
+
+export default async function CoachTeamPage() {
+  const access = await getCoachAccess();
+  const people = peopleForScope(access.scope);
+
+  return (
+    <>
+      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center opacity-35"
+          style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
+        />
+        <div className="relative container-page py-14">
+          <p className="text-xs font-bold uppercase tracking-wide text-lf-orange">
+            Coach Command Center
+          </p>
+          <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
+            My People
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg text-white/85">
+            The LOs, members, and team you coach — with their next coaching step
+            at a glance.
+          </p>
+          {access.viewingAsLabel && (
+            <p className="mt-4 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
+              View-As preview: {access.viewingAsLabel}
+            </p>
+          )}
+        </div>
+      </section>
+
+      <CoachCommandNav
+        current="/coach-command-center/team/"
+        showAdmin={access.seesAll}
+      />
+
+      <section className="container-page py-12">
+        {people.length === 0 ? (
+          <div className="card max-w-2xl">
+            <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+              No one assigned yet
+            </span>
+            <h2 className="h-display mt-1 text-2xl">
+              You don&apos;t have anyone assigned to coach right now.
+            </h2>
+            <p className="prose-lf mt-3 text-sm">
+              When LOs, members, or team members are assigned to you, they show
+              up here with their last activity, next coaching step, and quick
+              actions. If you should have people assigned, ask Jeremy or LO
+              Development to set up your assignments.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/coach-command-center/" className="btn-primary">
+                Command Center overview
+              </Link>
+              <Link href="/coaching/" className="btn-secondary">
+                Coaching overview
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <h2 className="h-display text-2xl">
+                  {people.length} {people.length === 1 ? "person" : "people"} you
+                  coach
+                </h2>
+                <p className="prose-lf mt-1 text-sm">
+                  Coaching status reflects engagement, not compliance. Use the
+                  quick actions to add a note, send a coaching message, or open a
+                  scorecard.
+                </p>
+              </div>
+            </div>
+
+            {/* Desktop / tablet table */}
+            <div className="card mt-6 hidden overflow-x-auto p-0 lg:block">
+              <table className="w-full text-left text-sm">
+                <thead className="border-b border-lf-line bg-lf-mist/60 text-xs uppercase tracking-wide text-lf-slate">
+                  <tr>
+                    <th className="px-4 py-3 font-semibold">Name</th>
+                    <th className="px-4 py-3 font-semibold">Role</th>
+                    <th className="px-4 py-3 font-semibold">Program / tier</th>
+                    <th className="px-4 py-3 font-semibold">Coach</th>
+                    <th className="px-4 py-3 font-semibold">Last activity</th>
+                    <th className="px-4 py-3 font-semibold">Next task</th>
+                    <th className="px-4 py-3 font-semibold">Status</th>
+                    <th className="px-4 py-3 font-semibold">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-lf-line">
+                  {people.map((p) => (
+                    <tr key={p.id} className="align-top hover:bg-lf-mist/40">
+                      <td className="px-4 py-3">
+                        <div className="font-semibold text-lf-charcoal">
+                          {p.name}
+                        </div>
+                        <a
+                          href={`mailto:${p.email}`}
+                          className="text-xs text-lf-orange hover:underline"
+                        >
+                          {p.email}
+                        </a>
+                      </td>
+                      <td className="px-4 py-3 text-lf-slate">{p.role}</td>
+                      <td className="px-4 py-3 text-lf-slate">{p.program}</td>
+                      <td className="px-4 py-3 text-lf-slate">{p.coach}</td>
+                      <td className="px-4 py-3 text-lf-slate">
+                        {p.lastActivity}
+                      </td>
+                      <td className="px-4 py-3 text-lf-charcoal">{p.nextTask}</td>
+                      <td className="px-4 py-3">
+                        <span
+                          className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${statusMeta[p.status].class}`}
+                        >
+                          {statusMeta[p.status].label}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3">
+                        <div className="flex flex-wrap gap-2">
+                          <Link
+                            href="/coach-command-center/coaching-notes/"
+                            className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
+                          >
+                            Notes
+                          </Link>
+                          <Link
+                            href="/coach-command-center/messages/"
+                            className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
+                          >
+                            Message
+                          </Link>
+                          <Link
+                            href="/coach-command-center/scorecards/"
+                            className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
+                          >
+                            Scorecard
+                          </Link>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile / small screen cards */}
+            <div className="mt-6 grid gap-4 md:grid-cols-2 lg:hidden">
+              {people.map((p) => (
+                <div key={p.id} className="card flex flex-col gap-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-base font-semibold text-lf-charcoal">
+                        {p.name}
+                      </h3>
+                      <a
+                        href={`mailto:${p.email}`}
+                        className="text-xs text-lf-orange hover:underline"
+                      >
+                        {p.email}
+                      </a>
+                    </div>
+                    <span
+                      className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold ${statusMeta[p.status].class}`}
+                    >
+                      {statusMeta[p.status].label}
+                    </span>
+                  </div>
+                  <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                    <div>
+                      <dt className="text-xs font-semibold text-lf-slate">
+                        Role
+                      </dt>
+                      <dd className="text-lf-charcoal">{p.role}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs font-semibold text-lf-slate">
+                        Program / tier
+                      </dt>
+                      <dd className="text-lf-charcoal">{p.program}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs font-semibold text-lf-slate">
+                        Coach
+                      </dt>
+                      <dd className="text-lf-charcoal">{p.coach}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs font-semibold text-lf-slate">
+                        Last activity
+                      </dt>
+                      <dd className="text-lf-charcoal">{p.lastActivity}</dd>
+                    </div>
+                    <div className="col-span-2">
+                      <dt className="text-xs font-semibold text-lf-slate">
+                        Next task
+                      </dt>
+                      <dd className="text-lf-charcoal">{p.nextTask}</dd>
+                    </div>
+                  </dl>
+                  <div className="mt-auto flex flex-wrap gap-2 border-t border-lf-line pt-3">
+                    <Link
+                      href="/coach-command-center/coaching-notes/"
+                      className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
+                    >
+                      Notes
+                    </Link>
+                    <Link
+                      href="/coach-command-center/messages/"
+                      className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
+                    >
+                      Message
+                    </Link>
+                    <Link
+                      href="/coach-command-center/scorecards/"
+                      className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
+                    >
+                      Scorecard
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="prose-lf mt-6 text-xs text-lf-slate">
+              Manual tracking for now. Automation can be connected later.
+            </p>
+          </>
+        )}
+      </section>
+    </>
+  );
+}
