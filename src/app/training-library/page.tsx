@@ -21,6 +21,7 @@ const library = [
   },
   { title: "Tracker", href: "/tracker/", status: "Tool" },
   { title: "Assessments", href: "/assessments/", status: "Tool" },
+  { title: "Market Mentor Studio", href: "/market-mentor/", status: "Tool" },
 ];
 
 export default function TrainingLibraryPage() {

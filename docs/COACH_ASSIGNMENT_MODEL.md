@@ -34,6 +34,43 @@ approved users read coaching data; admins get full access; sensitive coach text
 
 ## Managing assignments
 `/admin/coach-assignments` shows coaching coverage grouped by relationship and
-flags LOs that are stuck/inactive as "needs attention" (coaching language).
-Assignment editing UI writes to the tables above once connected; until then,
-assignments are seeded/sample and managed by LO Development.
+flags LOs that are stuck/inactive as "needs attention" (coaching language). It
+also reads the live `coaching_assignments` table (count) read-only. Until the
+reconciliation below is done, assignments shown are sample data managed by LO
+Development.
+
+## Live persistence status & reconciliation (exact blocker + path)
+**Finding (2026-05-28):** the production database already has a
+`public.coaching_assignments` table (RLS-enabled, 0 rows) with columns
+`id, coach_user_id (uuid), member_user_id (uuid), coaching_tier (text), status,
+assigned_at`. This is a **paid-coaching, user-ID-based** design. It pre-dates the
+Coach Command Center migration.
+
+**Why the CCC migration was NOT auto-applied to prod:**
+1. The CCC migration (`20260528130000_coach_command_center.sql`) creates
+   `coach_assignments` (singular, email-based) which would be a confusing
+   **duplicate** of the existing `coaching_assignments`.
+2. The existing table keys on Supabase `user_id`s, but only ~2 `profiles` rows
+   exist today (most approved LOs in `approved_users` have not signed in, so they
+   have no `user_id` yet). Email→user_id resolution would fail for most LOs, so
+   writing assignments now would create incomplete/bad data.
+Writing guessed data to a production auth-linked table is not safe, so the write
+UI is intentionally deferred (no fake "saved").
+
+**Exact path to enable live assignment editing (additive, non-destructive):**
+1. Standardize on the existing `public.coaching_assignments` table (do NOT add
+   the duplicate `coach_assignments`). Add a `relationship text default
+   'paid_coaching'` column (additive) to support team_leader / corporate_coach /
+   paid_coaching in one table — apply via Supabase MCP `apply_migration` or the
+   Supabase SQL editor / CLI (no manual paste required from Jeremy).
+2. Decide the member key: either (a) populate `profiles` for approved LOs on
+   first sign-in (already happens) and resolve email→user_id at assign time, or
+   (b) add nullable `coach_email` / `member_email` columns so assignments can be
+   created before an LO signs in, backfilling `*_user_id` on first sign-in.
+3. Build the admin-gated write API (`POST /api/coach-assignments`) using the
+   service-role admin client, validating relationship + tier, upsert-only.
+4. Wire the `/admin/coach-assignments` form to that API; flip the page from
+   sample to live.
+The genuinely-new CCC tables (activity logs, notes, tasks, scorecards, messages,
+email drafts, calendar, member progress) in the migration are non-duplicative and
+can be applied as-is when their write features are built.
