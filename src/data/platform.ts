@@ -259,7 +259,7 @@ export const platformModules: PlatformModule[] = [
       "Content review steps",
     ],
     currentStatus:
-      "The assistant screen is available for approved users and internal review. Public users cannot run assistant requests.",
+      "The assistant screen is available for approved Loan Factory users and internal review. Only approved users can run assistant requests.",
     nextAction:
       "Confirm provider governance, source grounding, and review queues before live model wiring.",
     connections: [
@@ -360,7 +360,7 @@ export const platformModules: PlatformModule[] = [
     status: "Live foundation",
     summary:
       "A quick-access hub for recommended channels, compliance notes, recordings, support contacts, and LO Development feedback.",
-    whoFor: ["All Loan Factory beta users"],
+    whoFor: ["All approved Loan Factory users"],
     tools: [
       "Recommended channels",
       "Compliance notes",

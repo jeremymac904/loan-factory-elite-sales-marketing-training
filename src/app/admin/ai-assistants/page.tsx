@@ -2,6 +2,7 @@ import Link from "next/link";
 import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
+import { getPublicAiSandboxStatus } from "@/lib/ai/config";
 import { seedAiTwinPersonas } from "@/data/aiTwinPersonas";
 import { approvedUserSeeds } from "@/data/approvedUsers";
 
@@ -30,6 +31,11 @@ export default async function AdminAiAssistantsPage() {
       </section>
     );
   }
+
+  const aiStatus = getPublicAiSandboxStatus();
+  const providerStatus = aiStatus.openRouterConfigured
+    ? `Connected · ${aiStatus.openRouterModel}`
+    : "Not connected";
 
   const tierCounts = approvedUserSeeds.reduce<Record<string, number>>(
     (acc, user) => {
@@ -100,9 +106,9 @@ export default async function AdminAiAssistantsPage() {
           <div className="card lg:col-span-2">
             <h2 className="h-display text-2xl">Provider status</h2>
             <div className="mt-4 grid gap-2 sm:grid-cols-3">
-              <StatusCard label="AI provider" value="See /api/ai/status" />
+              <StatusCard label="AI provider" value={providerStatus} />
               <StatusCard label="Persona store" value="Supabase ai_twins" />
-              <StatusCard label="Knowledge index" value="Per-user (planned)" />
+              <StatusCard label="Knowledge index" value="Per-user (activates with Drive scope)" />
             </div>
             <p className="mt-4 text-xs text-lf-slate">
               AI Twin records save to the <code>ai_twins</code> Supabase table.

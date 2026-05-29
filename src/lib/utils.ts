@@ -1,15 +1,15 @@
 export type ModuleStatus = "full" | "summary" | "coming-soon";
 
 /**
- * Public-facing label per status. `summary` means a usable beta outline with
- * working Do This Today, prompts, and assignment, but the full library is
- * still being filled in. `coming-soon` means the page exists but is intentionally
- * not yet teachable.
+ * Status label per module status, shown to approved Loan Factory users.
+ * `summary` means a usable outline with working Do This Today, prompts, and
+ * assignment, but the full library is still being filled in. `coming-soon`
+ * marks a module whose full lesson is still in development.
  */
 export const moduleStatusLabel: Record<ModuleStatus, string> = {
   full: "Live",
-  summary: "Beta outline",
-  "coming-soon": "Coming Soon",
+  summary: "Outline",
+  "coming-soon": "In development",
 };
 
 export type SkillLevel =

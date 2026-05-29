@@ -18,11 +18,12 @@ type Message = {
   unread?: boolean;
 };
 
-const seedMessages: Message[] = [
+// Seed inbox templates. The "to" address is filled in with the signed-in user
+// so the demo thread reflects whoever is viewing it, not a hardcoded account.
+const seedTemplates: Omit<Message, "to">[] = [
   {
     id: "msg-1",
     from: "andre.king@loanfactory.com",
-    to: "jeremy.mcdonald@loanfactory.com",
     body: "Got a minute? Want to align on the next LO Development push.",
     time: "1h ago",
     unread: true,
@@ -30,30 +31,39 @@ const seedMessages: Message[] = [
   {
     id: "msg-2",
     from: "edward.arvizo@loanfactory.com",
-    to: "jeremy.mcdonald@loanfactory.com",
     body: "Coaching session recap is ready — want me to share it in FaceGram?",
     time: "3h ago",
   },
   {
     id: "msg-3",
     from: "duyen@loanfactory.com",
-    to: "jeremy.mcdonald@loanfactory.com",
     body: "Marketing review is clear for the next FaceGram batch.",
     time: "yesterday",
   },
 ];
 
+// Fallback identity for internal review/preview when there is no signed-in user.
+const PREVIEW_IDENTITY = "you@loanfactory.com";
+
 type Props = {
   previewMode: boolean;
+  currentEmail: string | null;
   recipients: Recipient[];
 };
 
-export default function FaceGramMessagesView({ previewMode, recipients }: Props) {
+export default function FaceGramMessagesView({
+  previewMode,
+  currentEmail,
+  recipients,
+}: Props) {
+  const me = currentEmail ?? PREVIEW_IDENTITY;
   const [activeRecipient, setActiveRecipient] = useState<string | null>(
-    seedMessages[0]?.from ?? null,
+    seedTemplates[0]?.from ?? null,
   );
   const [draft, setDraft] = useState("");
-  const [messages, setMessages] = useState<Message[]>(seedMessages);
+  const [messages, setMessages] = useState<Message[]>(() =>
+    seedTemplates.map((template) => ({ ...template, to: me })),
+  );
   const [searchTerm, setSearchTerm] = useState("");
   const [composeOpen, setComposeOpen] = useState(false);
 
@@ -79,7 +89,7 @@ export default function FaceGramMessagesView({ previewMode, recipients }: Props)
     if (!activeRecipient || !draft.trim()) return;
     const newMessage: Message = {
       id: `msg-${Date.now()}`,
-      from: "jeremy.mcdonald@loanfactory.com",
+      from: me,
       to: activeRecipient,
       body: draft.trim(),
       time: "just now",
@@ -183,7 +193,7 @@ export default function FaceGramMessagesView({ previewMode, recipients }: Props)
 
             <div className="flex-1 space-y-3 overflow-y-auto py-4">
               {activeThread.map((m) => {
-                const fromMe = m.from === "jeremy.mcdonald@loanfactory.com";
+                const fromMe = m.from === me;
                 return (
                   <div
                     key={m.id}

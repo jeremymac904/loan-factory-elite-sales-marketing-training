@@ -120,7 +120,7 @@ export default function BrowserAuthCallbackPage() {
       if (active) {
         setState({
           status: "working",
-          message: "Checking beta access...",
+          message: "Checking approved access...",
         });
       }
 

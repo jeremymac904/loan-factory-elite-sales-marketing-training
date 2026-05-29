@@ -212,7 +212,7 @@ export const faceGramShortcuts = [
   { label: "Home Feed", href: "/facegram/" },
   { label: "Groups", href: "/facegram/groups/" },
   { label: "Profile", href: "/facegram/#profile" },
-  { label: "Saved", href: "/facegram/#saved-posts" },
+  { label: "Saved", href: "/facegram/saved/" },
   { label: "Events", href: "/facegram/groups/team-leaders/?tab=events" },
   { label: "AI Assistants", href: "/ai-assistants/" },
 ];

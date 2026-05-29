@@ -41,7 +41,7 @@ export default function LoginPage() {
             <h2 className="h-display text-xl">Who can get in?</h2>
             <ul className="prose-lf mt-3 list-disc space-y-1 pl-5 text-base">
               <li>Only loanfactory.com Google accounts are allowed.</li>
-              <li>Your email must be on the approved beta list.</li>
+              <li>Your email must be on the approved access list.</li>
               <li>If you are not approved yet, you will see Access Pending.</li>
               <li>Ask Jeremy or LO Development if you need access.</li>
             </ul>

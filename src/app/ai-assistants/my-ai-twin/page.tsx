@@ -146,8 +146,8 @@ export default async function MyAiTwinPage() {
               works in demo mode — drafts use seeded templates without burning
               live AI credits.
             </p>
-            <Link href="/api/ai/status" className="text-sm font-semibold text-lf-orange hover:underline">
-              View AI provider status &rarr;
+            <Link href="/ai-assistants/" className="text-sm font-semibold text-lf-orange hover:underline">
+              View AI provider status in the AI Assistant Hub &rarr;
             </Link>
           </div>
         </div>
@@ -168,7 +168,7 @@ function ConnectionRow({
       ? { class: "bg-green-100 text-green-800", text: "Connected" }
       : status === "setup-required"
         ? { class: "bg-yellow-100 text-yellow-800", text: "Setup needed" }
-        : { class: "bg-lf-mist text-lf-slate", text: "Coming soon" };
+        : { class: "bg-lf-mist text-lf-slate", text: "Planned" };
 
   return (
     <div className="flex items-center justify-between rounded-lg border border-lf-line bg-white px-4 py-2.5 text-sm">

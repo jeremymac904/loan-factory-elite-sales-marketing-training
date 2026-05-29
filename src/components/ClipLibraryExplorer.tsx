@@ -80,15 +80,8 @@ export default function ClipLibraryExplorer() {
       <section className="container-page py-10">
         <div className="grid gap-4 md:grid-cols-3">
           <StatCard label="Internal training clips" value={loDevelopmentClipLibrary.length} />
-          <StatCard label="Approved user access" value={loDevelopmentClipLibrary.length} />
-          <StatCard
-            label="Video embeds to add"
-            value={
-              loDevelopmentClipLibrary.filter(
-                (clip) => clip.youtubeStatus === "youtube_hold",
-              ).length
-            }
-          />
+          <StatCard label="Source trainings" value={options.sources.length} />
+          <StatCard label="Topic categories" value={options.categories.length} />
         </div>
       </section>
 

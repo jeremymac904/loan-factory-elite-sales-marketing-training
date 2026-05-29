@@ -117,7 +117,7 @@ export default function CoachReportsPage() {
                   type="button"
                   className="btn-secondary text-xs"
                   disabled
-                  title="Local preview only — wiring deferred"
+                  title="Local preview only"
                 >
                   Review with coach
                 </button>
@@ -125,7 +125,7 @@ export default function CoachReportsPage() {
                   type="button"
                   className="btn-secondary text-xs"
                   disabled
-                  title="Local preview only — wiring deferred"
+                  title="Local preview only"
                 >
                   Assign next training path
                 </button>

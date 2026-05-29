@@ -55,7 +55,7 @@ export async function getAiSandboxAccess(): Promise<AiSandboxAccess> {
     return {
       allowed: false,
       status: "pending",
-      message: "Your account is signed in, but beta access is still pending.",
+      message: "Your account is signed in, but approved access is still pending.",
     };
   }
 

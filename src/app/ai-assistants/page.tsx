@@ -22,7 +22,8 @@ export default async function AIAssistantsPage() {
         actionHref="/login/"
         actionLabel="Open sign in"
       >
-        Google sign-in must be ready before beta users can use AI Assistants.
+        Google sign-in must be ready before approved Loan Factory users can use
+        AI Assistants.
       </AIAssistantNotice>
     );
   }
@@ -34,7 +35,7 @@ export default async function AIAssistantsPage() {
         actionHref="/login/"
         actionLabel="Sign in"
       >
-        AI Assistants are only for approved Loan Factory beta users. Sign in
+        AI Assistants are only for approved Loan Factory users. Sign in
         with your Loan Factory Google account to continue.
       </AIAssistantNotice>
     );

@@ -141,7 +141,7 @@ export default async function ProfilePage() {
                     </span>
                   ) : (
                     <span className="rounded-full bg-lf-mist px-2.5 py-0.5 text-xs font-semibold text-lf-slate">
-                      Coming Soon
+                      Not enabled
                     </span>
                   )}
                 </div>
