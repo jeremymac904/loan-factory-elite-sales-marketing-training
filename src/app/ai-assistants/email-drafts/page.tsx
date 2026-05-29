@@ -67,9 +67,9 @@ export default function EmailDraftsPage() {
               </p>
               <p className="prose-lf mt-3 text-sm">{t.body}</p>
               <div className="mt-4 flex gap-2">
-                <button type="button" disabled className="btn-primary text-sm opacity-60">
-                  Create draft (Gmail setup needed)
-                </button>
+                <Link href="/settings/google/" className="btn-secondary text-sm">
+                  Connect Gmail to enable drafts
+                </Link>
               </div>
             </div>
           ))}
@@ -80,7 +80,7 @@ export default function EmailDraftsPage() {
           <p className="prose-lf mt-2 text-lf-charcoal">
             Send buttons are intentionally disabled until your Gmail connection
             is explicitly approved. The platform always prefers Create Draft
-            over Send. No bulk sending is enabled in beta.
+            over Send. Bulk sending is never enabled — drafts only.
           </p>
         </div>
       </section>

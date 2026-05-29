@@ -154,6 +154,9 @@ export default async function ProfilePage() {
           <Link href="/profile/edit/" className="btn-primary">
             Edit profile
           </Link>
+          <Link href="/settings/" className="btn-secondary">
+            Settings
+          </Link>
           {showAdmin && (
             <Link href="/admin/" className="btn-secondary">
               Admin

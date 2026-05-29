@@ -20,7 +20,7 @@ const library = [
     status: "Library",
   },
   { title: "Tracker", href: "/tracker/", status: "Tool" },
-  { title: "Assessments", href: "/assessments/", status: "Beta" },
+  { title: "Assessments", href: "/assessments/", status: "Tool" },
 ];
 
 export default function TrainingLibraryPage() {

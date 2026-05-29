@@ -75,14 +75,13 @@ export default function AiTwinTasksPage() {
                   {task.cadence}
                 </span>
               </div>
-              <button
-                type="button"
-                disabled
-                className="btn-secondary text-sm opacity-60"
-                title="Task scheduling activates once Google Calendar connection is approved."
+              <Link
+                href="/settings/google/"
+                className="btn-secondary text-sm"
+                title="Task scheduling activates once your Google Calendar connection is approved."
               >
-                Activate (setup needed)
-              </button>
+                Connect Calendar
+              </Link>
             </div>
           ))}
         </div>

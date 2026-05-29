@@ -382,7 +382,8 @@ export default function FaceGramExperience({
           savedPosts.length > 0
             ? `You have ${savedPosts.length} saved post${savedPosts.length === 1 ? "" : "s"} in this browser session.`
             : "Save useful FaceGram posts from the feed and they will appear here during this session.",
-        actionLabel: "Review feed",
+        actionLabel: "Open saved posts",
+        href: item.href,
       });
       return;
     }
@@ -391,6 +392,7 @@ export default function FaceGramExperience({
       title: item.title,
       body: item.body,
       actionLabel: item.action,
+      href: item.href,
     });
   }
 
@@ -973,8 +975,9 @@ export default function FaceGramExperience({
                       onClick={() =>
                         setDetailModal({
                           title: note.title,
-                          body: `${note.body} This opens the internal resource summary for review.`,
+                          body: `${note.body} This opens the internal resource for review.`,
                           actionLabel: note.cta,
+                          href: note.href,
                         })
                       }
                     >
