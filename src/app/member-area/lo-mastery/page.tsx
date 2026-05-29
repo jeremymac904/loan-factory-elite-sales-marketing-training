@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { getCoachingAccess } from "@/lib/coachingAccess";
+import LockedResourceCard from "@/components/LockedResourceCard";
 
+export const dynamic = "force-dynamic";
 export const metadata = { title: "LO Mastery Coaching · Member Area" };
 
 const sections = [
@@ -50,7 +53,10 @@ const sections = [
   },
 ];
 
-export default function LoMasteryMemberAreaPage() {
+export default async function LoMasteryMemberAreaPage() {
+  const access = await getCoachingAccess();
+  const open = access.canLoMastery;
+
   return (
     <>
       <section className="relative isolate overflow-hidden bg-lf-navy text-white">
@@ -73,26 +79,69 @@ export default function LoMasteryMemberAreaPage() {
           <p className="mt-3 max-w-2xl text-lg text-white/85">
             Daily rhythm, accountability, and coaching to grow your business.
           </p>
+          {access.viewingAsLabel && (
+            <p className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
+              View-As preview: {access.viewingAsLabel}
+            </p>
+          )}
         </div>
       </section>
 
+      {!open && (
+        <section className="container-page pt-8">
+          <div className="card border-lf-orange/40 bg-lf-orangeSoft/40">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orangeDark">
+              Coaching membership
+            </p>
+            <h2 className="h-display mt-1 text-2xl">
+              LO Mastery Coaching is a paid coaching membership.
+            </h2>
+            <p className="prose-lf mt-2 text-sm">
+              LO Mastery ($249/mo) gives you the daily Power Hour rhythm, biweekly
+              group coaching, the Certified Mortgage Advisor track, scripts,
+              trackers, and your coaching AI assistant. Preview what&apos;s
+              included below, then talk to the coaching team to join.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link href="/lo-mastery-coaching/" className="btn-primary">
+                See LO Mastery & join
+              </Link>
+              <Link href="/support-routing/" className="btn-secondary">
+                Contact the coaching team
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="container-page py-10">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {sections.map((s) => (
-            <Link
-              key={s.href}
-              href={s.href}
-              className="card flex flex-col gap-2 transition hover:-translate-y-0.5 hover:shadow-lift"
-            >
-              <h2 className="text-base font-semibold text-lf-charcoal">
-                {s.title}
-              </h2>
-              <p className="text-sm text-lf-slate">{s.description}</p>
-              <span className="mt-auto inline-flex items-center text-sm font-semibold text-lf-orange">
-                Open <span aria-hidden className="ml-2">&rarr;</span>
-              </span>
-            </Link>
-          ))}
+          {sections.map((s) =>
+            open ? (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="card flex flex-col gap-2 transition hover:-translate-y-0.5 hover:shadow-lift"
+              >
+                <h2 className="text-base font-semibold text-lf-charcoal">
+                  {s.title}
+                </h2>
+                <p className="text-sm text-lf-slate">{s.description}</p>
+                <span className="mt-auto inline-flex items-center text-sm font-semibold text-lf-orange">
+                  Open <span aria-hidden className="ml-2">&rarr;</span>
+                </span>
+              </Link>
+            ) : (
+              <LockedResourceCard
+                key={s.href}
+                title={s.title}
+                description={s.description}
+                message="Join LO Mastery Coaching to unlock this resource."
+                ctaHref="/lo-mastery-coaching/"
+                ctaLabel="Join LO Mastery"
+              />
+            ),
+          )}
         </div>
       </section>
     </>
