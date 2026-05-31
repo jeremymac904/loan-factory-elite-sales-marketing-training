@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:48,900
+TERA Lead Pipeline
+
+2
+00:01:48,900 --> 00:04:02,000
+Approximate caption: How to add leads and navigate core pipeline tabs in TERA.

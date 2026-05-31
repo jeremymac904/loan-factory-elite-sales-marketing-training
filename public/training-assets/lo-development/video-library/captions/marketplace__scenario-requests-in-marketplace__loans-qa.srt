@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:50,850
+Scenario Requests in Marketplace
+
+2
+00:00:50,850 --> 00:01:53,000
+Approximate caption: How Marketplace scenario requests can reach multiple AEs.

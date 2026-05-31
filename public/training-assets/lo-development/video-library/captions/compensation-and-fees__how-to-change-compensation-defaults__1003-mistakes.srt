@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:59,850
+How to Change Compensation Defaults
+
+2
+00:00:59,850 --> 00:02:13,000
+Approximate caption: Where compensation defaults live and what to change in important settings.

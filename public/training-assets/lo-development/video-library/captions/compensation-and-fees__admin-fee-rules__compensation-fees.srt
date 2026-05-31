@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:00,750
+Admin Fee Rules
+
+2
+00:01:00,750 --> 00:02:15,000
+Approximate caption: What to watch for around admin fee handling.

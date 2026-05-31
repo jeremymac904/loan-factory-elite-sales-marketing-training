@@ -1,0 +1,216 @@
+{
+  "name": "LO Development — YouTube Gradual Upload (DRAFT, DISABLED)",
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "meta": {
+    "draft": true,
+    "doNotActivate": true,
+    "owner": "Power Agent 4 — YouTube Upload n8n Automation (draft)",
+    "purpose": "Upload LO Development cutdown clips to Jeremy's YouTube gradually (5/day at 8:00 AM America/Los_Angeles) as UNLISTED drafts, skipping already-uploaded clips, with retry and status tracking. NOTHING is uploaded until Jeremy approves and the workflow is manually activated.",
+    "safety": [
+      "active=false — workflow must NOT be activated without Jeremy's explicit approval.",
+      "privacyStatus is hard-coded to 'unlisted' on the upload node.",
+      "notifySubscribers is hard-coded to false on the upload node.",
+      "Batch is capped at 5 clips/run to stay well under the ~6/day practical YouTube upload limit and the 10,000 quota-unit/day cap (one resumable upload = ~1,600 units; 5 = ~8,000).",
+      "Credentials are placeholders ('REPLACE_*'); no real OAuth tokens are stored in this file."
+    ],
+    "credentialPlaceholders": {
+      "youTubeOAuth2Api": "REPLACE_WITH_JEREMY_YOUTUBE_OAUTH2_CREDENTIAL (scope: https://www.googleapis.com/auth/youtube.upload + youtube.force-ssl)",
+      "googleDriveOAuth2Api": "REPLACE_WITH_JEREMY_GOOGLE_DRIVE_OAUTH2_CREDENTIAL (scope: https://www.googleapis.com/auth/drive.readonly) — only needed if pulling source mp4 from Drive instead of local n8n binary."
+    }
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * *"
+            }
+          ]
+        }
+      },
+      "id": "schedule-8am",
+      "name": "Daily 8:00 AM Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-1040, 320],
+      "notes": "Fires once per day at 08:00. Set the n8n instance timezone to America/Los_Angeles so 8 AM is Pacific. DISABLED until workflow is activated."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Load the upload queue manifest (committed at\n// docs/video-library/youtube/upload-queue-manifest.json).\n// In production, point this read at the deployed copy or fetch it from the\n// repo / a Google Sheet. Here we keep it explicit and side-effect free.\n//\n// DO NOT hard-code Drive/YouTube URLs. The manifest is the single source of\n// truth for what has and has not been uploaded.\nconst fs = require('fs');\nconst MANIFEST_PATH = $env.LF_UPLOAD_QUEUE_PATH || '/data/upload-queue-manifest.json';\nlet manifest;\ntry {\n  manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));\n} catch (e) {\n  throw new Error('Could not read upload queue manifest at ' + MANIFEST_PATH + ': ' + e.message);\n}\nconst rows = Array.isArray(manifest.queue) ? manifest.queue : [];\nreturn rows.map((r) => ({ json: r }));"
+      },
+      "id": "read-queue",
+      "name": "Read Upload Queue Manifest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-820, 320],
+      "notes": "Reads the 91-clip queue. Replace the file read with whatever store Jeremy chooses (committed JSON, Google Sheet, Supabase table). Keep the field shape identical to upload-queue-manifest.json."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "not-uploaded",
+              "leftValue": "={{ $json.queueStatus }}",
+              "rightValue": "pending",
+              "operator": { "type": "string", "operation": "equals" }
+            },
+            {
+              "id": "no-youtube-id",
+              "leftValue": "={{ $json.youtubeVideoId }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "empty", "singleValue": true }
+            }
+          ]
+        }
+      },
+      "id": "filter-not-uploaded",
+      "name": "Keep Only Not-Yet-Uploaded",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [-600, 320],
+      "notes": "Skip-already-uploaded logic: only clips with queueStatus='pending' AND an empty youtubeVideoId pass. Idempotent — re-running the same day never re-uploads a finished clip."
+    },
+    {
+      "parameters": {
+        "maxItems": 5
+      },
+      "id": "limit-batch",
+      "name": "Limit Daily Batch (5)",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [-380, 320],
+      "notes": "Quota guard: at most 5 clips/run. 5 resumable uploads ~= 8,000 quota units, under the 10,000/day cap, and under the ~6/day practical upload limit. At 5/day the full 91-clip library finishes in ~19 calendar days."
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ $json.title }}",
+        "regionCode": "US",
+        "categoryId": "27",
+        "options": {
+          "description": "={{ $json.description || $json.title }}",
+          "privacyStatus": "unlisted",
+          "notifySubscribers": false,
+          "tags": "={{ ($json.tags || []).join(',') }}",
+          "defaultLanguage": "en",
+          "selfDeclaredMadeForKids": false
+        },
+        "binaryProperty": "data"
+      },
+      "id": "youtube-upload",
+      "name": "YouTube Upload (UNLISTED)",
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [-120, 320],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "REPLACE_WITH_JEREMY_YOUTUBE_OAUTH2_CREDENTIAL",
+          "name": "Jeremy YouTube (youtube.upload) — REPLACE"
+        }
+      },
+      "continueOnFail": true,
+      "notes": "privacyStatus=unlisted and notifySubscribers=false are NON-NEGOTIABLE. categoryId 27 = Education. The mp4 binary must be supplied on the 'data' property — add an upstream 'Read Binary File' or 'Google Drive: Download' node that resolves $json.localFileName / $json.driveFileLink before this node when wiring the real run. continueOnFail lets one bad file be caught by the failure branch instead of stopping the batch."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "typeValidation": "loose" },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "has-error",
+              "leftValue": "={{ $json.error }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "notEmpty", "singleValue": true }
+            }
+          ]
+        }
+      },
+      "id": "if-upload-failed",
+      "name": "Did Upload Fail?",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [140, 320],
+      "notes": "Splits the success path from the failure path. Items with an 'error' field are routed to the retry/record-failure branch."
+    },
+    {
+      "parameters": {
+        "jsCode": "// SUCCESS branch — build the status patch for this clip.\n// Records the real YouTube id/url returned by the upload node. Never\n// fabricates a URL: if the upload node did not return an id, this is treated\n// as a failure upstream.\nreturn items.map((item) => {\n  const j = item.json;\n  const videoId = j.id || j.videoId || (j.snippet && j.resourceId && j.resourceId.videoId) || '';\n  return {\n    json: {\n      clipId: j.clipId,\n      rowId: j.rowId,\n      queueStatus: videoId ? 'uploaded' : 'pending',\n      youtubeVideoId: videoId || null,\n      youtubeVideoUrl: videoId ? ('https://www.youtube.com/watch?v=' + videoId) : null,\n      youtubeEmbedUrl: videoId ? ('https://www.youtube.com/embed/' + videoId) : null,\n      privacyStatus: 'unlisted',\n      uploadedAt: new Date().toISOString(),\n      attempts: (j.attempts || 0) + 1,\n      lastAttemptAt: new Date().toISOString(),\n      errorMessage: null\n    }\n  };\n});"
+      },
+      "id": "record-success",
+      "name": "Record Success (status patch)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [380, 200],
+      "notes": "Produces a status patch keyed by clipId. Persist this back to the manifest store (committed JSON via PR, Google Sheet, or Supabase). The patch only ever sets 'uploaded' when a real videoId exists."
+    },
+    {
+      "parameters": {
+        "jsCode": "// FAILURE branch — increment attempts and decide retry vs. needs_review.\n// Up to 3 attempts; after that the clip is flagged needs_review (no infinite\n// loops, no quota waste). Tomorrow's 8 AM run naturally retries 'pending' items.\nreturn items.map((item) => {\n  const j = item.json;\n  const attempts = (j.attempts || 0) + 1;\n  const maxAttempts = 3;\n  const exhausted = attempts >= maxAttempts;\n  return {\n    json: {\n      clipId: j.clipId,\n      rowId: j.rowId,\n      queueStatus: exhausted ? 'needs_review' : 'pending',\n      attempts,\n      lastAttemptAt: new Date().toISOString(),\n      errorMessage: String(j.error || 'unknown upload error'),\n      youtubeVideoId: null,\n      youtubeVideoUrl: null,\n      youtubeEmbedUrl: null\n    }\n  };\n});"
+      },
+      "id": "record-failure",
+      "name": "Record Failure / Retry Decision",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [380, 440],
+      "notes": "Failure-retry: clips stay 'pending' (auto-retried next run) until 3 attempts, then 'needs_review'. Persist the same way as the success patch."
+    },
+    {
+      "parameters": {
+        "jsCode": "// REPORT — summarize the run for a human. This is a DRAFT: it only builds a\n// plain summary object and returns it. It does NOT send email / chat / SMS\n// (those require Jeremy's approval). Wire a notification node here later if\n// desired.\nconst all = $input.all().map((i) => i.json);\nconst uploaded = all.filter((r) => r.queueStatus === 'uploaded');\nconst retrying = all.filter((r) => r.queueStatus === 'pending' && r.errorMessage);\nconst needsReview = all.filter((r) => r.queueStatus === 'needs_review');\nreturn [{\n  json: {\n    runAt: new Date().toISOString(),\n    batchSize: all.length,\n    uploadedCount: uploaded.length,\n    retryingCount: retrying.length,\n    needsReviewCount: needsReview.length,\n    uploaded: uploaded.map((r) => ({ clipId: r.clipId, youtubeVideoId: r.youtubeVideoId })),\n    needsReview: needsReview.map((r) => ({ clipId: r.clipId, errorMessage: r.errorMessage })),\n    note: 'DRAFT report node — no outbound message sent.'\n  }\n}];"
+      },
+      "id": "build-report",
+      "name": "Build Run Report (no send)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 320],
+      "notes": "Aggregates success + failure into one report object. Intentionally does NOT send anything outbound."
+    }
+  ],
+  "connections": {
+    "Daily 8:00 AM Trigger": {
+      "main": [[{ "node": "Read Upload Queue Manifest", "type": "main", "index": 0 }]]
+    },
+    "Read Upload Queue Manifest": {
+      "main": [[{ "node": "Keep Only Not-Yet-Uploaded", "type": "main", "index": 0 }]]
+    },
+    "Keep Only Not-Yet-Uploaded": {
+      "main": [[{ "node": "Limit Daily Batch (5)", "type": "main", "index": 0 }]]
+    },
+    "Limit Daily Batch (5)": {
+      "main": [[{ "node": "YouTube Upload (UNLISTED)", "type": "main", "index": 0 }]]
+    },
+    "YouTube Upload (UNLISTED)": {
+      "main": [[{ "node": "Did Upload Fail?", "type": "main", "index": 0 }]]
+    },
+    "Did Upload Fail?": {
+      "main": [
+        [{ "node": "Record Failure / Retry Decision", "type": "main", "index": 0 }],
+        [{ "node": "Record Success (status patch)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Record Success (status patch)": {
+      "main": [[{ "node": "Build Run Report (no send)", "type": "main", "index": 0 }]]
+    },
+    "Record Failure / Retry Decision": {
+      "main": [[{ "node": "Build Run Report (no send)", "type": "main", "index": 0 }]]
+    }
+  },
+  "pinData": {}
+}

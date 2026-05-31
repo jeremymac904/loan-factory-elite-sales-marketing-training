@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:47,550
+Wholesale Compensation Breakdown
+
+2
+00:01:47,550 --> 00:03:59,000
+Approximate caption: The difference between lender-paid and borrower-paid mechanics in wholesale.

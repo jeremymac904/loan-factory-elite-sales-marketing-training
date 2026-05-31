@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:48,600
+Initial Compensation Settings
+
+2
+00:00:48,600 --> 00:01:48,000
+Approximate caption: How initial compensation settings affect website and correspondent caps.

@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:33,750
+Rate Alerts Intro
+
+2
+00:00:33,750 --> 00:01:15,000
+Approximate caption: How rate alerts notify clients and LOs when pricing changes.

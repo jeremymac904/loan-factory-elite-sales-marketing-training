@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:27,300
+Borrower Paid Mechanics: Reducing Comp
+
+2
+00:01:27,300 --> 00:03:14,000
+Approximate caption: How reducing comp can affect borrower-paid pricing.

@@ -1,0 +1,27 @@
+{
+  "$comment": "Reference definition only — NOT activated this sprint. Daily DRY-RUN of the Drive->YouTube replacement. Enabling requires Jeremy's approval. The --apply step is never scheduled.",
+  "name": "lo-dev-video-drive-to-youtube-replacement",
+  "description": "Daily DRY-RUN: read the YouTube upload-status manifest and report which LO Development clips are ready to flip from the Google Drive fallback to the YouTube embed. Writes a dated report; notifies Jeremy if anything is newly replaceable. Does not write the data file, commit, push, or deploy.",
+  "enabled": false,
+  "schedule": {
+    "type": "cron",
+    "cron": "0 8 * * *",
+    "timezone": "America/Chicago"
+  },
+  "workingDirectory": "/Volumes/LegendsOS/macmini-m1/LoanFactory-Thuan/loan-factory-live",
+  "command": "node scripts/replace-drive-with-youtube.mjs --json",
+  "onSuccess": {
+    "renderReportFrom": "automation/replacement/daily-report-template.md",
+    "writeReportTo": "automation/replacement/reports/{{YYYY-MM-DD}}-replacement-report.md",
+    "notifyJeremyWhen": "counts.newlyReplaced > 0",
+    "notifyMessage": "Drive->YouTube replacement DRY-RUN: {{counts.newlyReplaced}} LO Development clip(s) now have a real YouTube id and are ready to flip. Review the report, then run `node scripts/replace-drive-with-youtube.mjs --apply` when approved."
+  },
+  "safety": {
+    "neverApply": true,
+    "neverGit": true,
+    "neverDeploy": true,
+    "neverUpload": true,
+    "privacyMustBe": "unlisted",
+    "notifySubscribers": false
+  }
+}

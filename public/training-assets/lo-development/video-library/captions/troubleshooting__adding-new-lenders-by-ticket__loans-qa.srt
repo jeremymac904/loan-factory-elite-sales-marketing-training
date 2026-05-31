@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:46,200
+Adding New Lenders by Ticket
+
+2
+00:01:46,200 --> 00:03:56,000
+Approximate caption: How to request a new wholesale lender through the ticket process.

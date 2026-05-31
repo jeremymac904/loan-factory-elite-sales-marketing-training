@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:44,400
+Non Target Compensation Strategy: Built In Rates
+
+2
+00:01:44,400 --> 00:03:52,000
+Approximate caption: How non-target comp strategy affects pricing options.

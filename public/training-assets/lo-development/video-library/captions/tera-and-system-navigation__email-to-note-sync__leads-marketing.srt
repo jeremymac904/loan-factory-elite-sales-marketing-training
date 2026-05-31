@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:26,550
+Email to Note Sync
+
+2
+00:00:26,550 --> 00:00:59,000
+Approximate caption: How to sync external emails directly into client notes.

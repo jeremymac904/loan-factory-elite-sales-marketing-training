@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:27,300
+Borrower Paid versus Lender Paid Optics: Client Conversation
+
+2
+00:01:27,300 --> 00:03:14,000
+Approximate caption: How to keep borrower-paid and lender-paid explanations simple.

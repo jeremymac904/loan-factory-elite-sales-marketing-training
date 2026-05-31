@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:32,400
+Google Chat Spaces
+
+2
+00:00:32,400 --> 00:01:12,000
+Approximate caption: How Google Chat Spaces can be used for peer-to-peer support.

@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:20,700
+Manual Comp Overrides
+
+2
+00:00:20,700 --> 00:00:46,000
+Approximate caption: How to manually type comp overrides in the pricer.

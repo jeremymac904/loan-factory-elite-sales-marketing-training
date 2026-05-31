@@ -1,0 +1,63 @@
+{
+  "_comment": "DRAFT / INACTIVE reference n8n workflow — NOT to be imported or activated this sprint. 'active' is false. Daily DRY-RUN only; shells out to the same Node script. No --apply, no git, no deploy, no uploads. Optional secondary runner; AionUI scheduled task is primary.",
+  "name": "LO Dev — Drive→YouTube Replacement (DRY-RUN, INACTIVE)",
+  "active": false,
+  "settings": {
+    "timezone": "America/Chicago"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * *"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Daily 08:00 (America/Chicago)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "command": "cd /Volumes/LegendsOS/macmini-m1/LoanFactory-Thuan/loan-factory-live && node scripts/replace-drive-with-youtube.mjs --json"
+      },
+      "id": "execute-replacement-dry-run",
+      "name": "Replacement DRY-RUN (no --apply)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [520, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse the JSON_REPORT block from the script stdout and decide whether to notify.\nconst out = $input.first().json.stdout || '';\nconst m = out.match(/JSON_REPORT_BEGIN\\n([\\s\\S]*?)\\nJSON_REPORT_END/);\nif (!m) return [{ json: { ok: false, reason: 'no JSON report in stdout' } }];\nconst report = JSON.parse(m[1]);\nreturn [{ json: { ok: true, newlyReplaced: report.counts.newlyReplaced, report } }];"
+      },
+      "id": "parse-report",
+      "name": "Parse report (notify only — no writes)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [800, 300]
+    }
+  ],
+  "connections": {
+    "Daily 08:00 (America/Chicago)": {
+      "main": [[{ "node": "Replacement DRY-RUN (no --apply)", "type": "main", "index": 0 }]]
+    },
+    "Replacement DRY-RUN (no --apply)": {
+      "main": [[{ "node": "Parse report (notify only — no writes)", "type": "main", "index": 0 }]]
+    }
+  },
+  "_safety": {
+    "active": false,
+    "dryRunOnly": true,
+    "neverApply": true,
+    "neverGitOrDeploy": true,
+    "neverUpload": true,
+    "note": "This workflow only REPORTS. The data-file write (--apply) is intentionally not in this graph and must be a human-approved local action."
+  }
+}

@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:35,100
+Loan Factory IQ
+
+2
+00:00:35,100 --> 00:01:18,000
+Approximate caption: How Loan Factory IQ supports automated client engagement.

@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:07,950
+Loan Factory Fee Schedule
+
+2
+00:01:07,950 --> 00:02:31,000
+Approximate caption: How the Loan Factory fee schedule and split logic affect take-home pay.

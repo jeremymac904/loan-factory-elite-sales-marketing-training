@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:24,150
+Borrower Paid versus Lender Paid Optics: Explaining the Tradeoff
+
+2
+00:01:24,150 --> 00:03:07,000
+Approximate caption: How lender-paid and borrower-paid options may look different to clients.

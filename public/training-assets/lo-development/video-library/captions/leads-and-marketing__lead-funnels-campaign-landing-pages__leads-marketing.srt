@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:11,100
+Lead Funnels: Campaign Landing Pages
+
+2
+00:01:11,100 --> 00:02:38,000
+Approximate caption: How lead funnels can support campaign-specific borrower paths.

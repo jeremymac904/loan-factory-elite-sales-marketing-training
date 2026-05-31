@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:41,250
+EPO Risks
+
+2
+00:01:41,250 --> 00:03:45,000
+Approximate caption: How EPO risk connects to lender credits and payoff timing.

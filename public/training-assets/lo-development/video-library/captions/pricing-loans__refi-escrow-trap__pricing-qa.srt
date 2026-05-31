@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:27,750
+Refi Escrow Trap
+
+2
+00:01:27,750 --> 00:03:15,000
+Approximate caption: Why refinance cash-to-close can be distorted by escrow cycles.

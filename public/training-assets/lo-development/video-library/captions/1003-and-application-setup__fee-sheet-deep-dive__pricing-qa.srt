@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:21,900
+Fee Sheet Deep Dive
+
+2
+00:01:21,900 --> 00:03:02,000
+Approximate caption: How Section A, B, C, E costs differ from prepaids and escrows.

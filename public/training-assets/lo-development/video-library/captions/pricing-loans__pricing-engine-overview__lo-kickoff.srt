@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:53,100
+Pricing Engine Overview
+
+2
+00:00:53,100 --> 00:01:58,000
+Approximate caption: What the pricing engine is and how it supports lender comparison.

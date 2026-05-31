@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:10,650
+Setting Rate Alerts: Target Fields and Notifications
+
+2
+00:01:10,650 --> 00:02:37,000
+Approximate caption: How target fields and notifications complete the rate alert workflow.

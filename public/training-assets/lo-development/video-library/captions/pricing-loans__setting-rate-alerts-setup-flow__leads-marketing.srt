@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:15,600
+Setting Rate Alerts: Setup Flow
+
+2
+00:01:15,600 --> 00:02:48,000
+Approximate caption: How to begin setting target rates and notification preferences.

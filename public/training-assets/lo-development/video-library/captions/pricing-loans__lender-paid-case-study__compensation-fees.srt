@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:01:44,400
+Lender Paid Case Study
+
+2
+00:01:44,400 --> 00:03:52,000
+Approximate caption: How discount points are calculated from a 100-base price.

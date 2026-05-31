@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:50,850
+Changing Compensation Rules
+
+2
+00:00:50,850 --> 00:01:53,000
+Approximate caption: Rules for lender-paid and borrower-paid compensation changes.

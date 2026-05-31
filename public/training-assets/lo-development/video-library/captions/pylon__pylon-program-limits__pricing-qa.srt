@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:21,600
+Pylon Program Limits
+
+2
+00:00:21,600 --> 00:00:48,000
+Approximate caption: What product types were identified as ineligible for Pylon in this training.
