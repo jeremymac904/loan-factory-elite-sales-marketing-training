@@ -79,8 +79,8 @@ export default async function AdminPlatformStatusPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-white/85">
             A read-only view of how the platform is wired right now —
-            integrations, the role system, deployment, and counts derived from
-            the current configuration.
+            integrations, database and storage readiness, the role system,
+            deployment, and counts derived from the current configuration.
           </p>
         </div>
       </section>
@@ -101,9 +101,15 @@ export default async function AdminPlatformStatusPage() {
                 connected={aiStatus.groqConfigured}
               />
               <StatusRow
-                label="Supabase (data + auth)"
+                label="Supabase database + auth"
                 value={supabaseConfigured ? "Configured" : "Not configured"}
                 connected={supabaseConfigured}
+              />
+              <StatusRow
+                label="Storage / uploads"
+                value="Disabled (draft-only)"
+                connected={false}
+                neutral
               />
               <StatusRow
                 label="External sends / uploads"

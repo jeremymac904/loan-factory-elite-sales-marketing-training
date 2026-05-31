@@ -13,30 +13,30 @@ description: Create Loan Factory branded content for the $449 Loan Factory Allia
 ---
 
 ## 1. What Loan Factory Alliance is
-Alliance is the **premium** paid program — the elite mastermind room for producing LOs and team leaders. It's high-touch and high-standard: small-group strategy, advanced loan structuring, partner/recruiting systems, AI workflow labs, monthly production review, business-plan review vs. actuals, and a quarterly business review (QBR). Membership is application-only and continuation is earned through engagement.
+Alliance is the **premium** paid program — the advanced mastermind room for producing LOs and team leaders. It's high-touch and high-standard: small-group strategy, advanced loan structuring, partner/recruiting systems, AI workflow labs, monthly production review, business-plan review vs. actuals, and a quarterly business review (QBR). Membership is application-only and continuation is earned through engagement.
 
-> "Elite is a different room. Entry filters for ability. Continuation filters for engagement." · "The relationship is the product." · "Two things kill an elite room: no standards and no proximity."
+> "Alliance is a different room. Entry filters for ability. Continuation filters for engagement." · "The relationship is the product." · "Two things kill an advanced room: no standards and no proximity."
 
 Alliance is the higher of the two **paid** programs (LO Mastery is $249). Keep both clearly distinct from the **free** Sales & Marketing 101–601 series.
 
 ## 2. Source documents this skill relies on
 - **Coaching Program Source Map** (program structure)
-- **Master Strategy** (Elite tier model, rituals, certifications, recognition, AI Suite, financial logic)
-- **Coach Playbook** + **Coach Operations Knowledge** (Elite delivery model, 1:1 + QBR cadence, escalation, privacy)
+- **Master Strategy** (Alliance model, rituals, certifications, recognition, AI Suite, financial logic)
+- **Coach Playbook** + **Coach Operations Knowledge** (Alliance delivery model, 1:1 + QBR cadence, escalation, privacy)
 - **Coaching Program Meeting Notes** (Alliance = exclusive application-only mastermind, ~20 spots)
-- **Pilot Launch Packet** (Elite add-ons, success criteria, roles)
+- **Pilot Launch Packet** (Alliance add-ons, success criteria, roles)
 - **Team Leader Operating System** (for team-leader Alliance members: Operating Council, scorecard, QBR, certification path) — the canonical "Coach Command Center" operating standard.
 
 Pull real structures; don't invent. Mark gaps `{{NEEDS_FROM_JEREMY: <field>}}`.
 
 ## 3. Grounded building blocks
-**Elite/Alliance rituals:** monthly small-group strategy (8–12); monthly Elite production review; monthly business-plan review vs. actuals; 1 private hour/mo with an expert coach; AI Workflow Concierge build per quarter; **Quarterly Business Review (QBR)**; quarterly Elite recognition.
+**Alliance rituals:** monthly small-group strategy (8–12); monthly production review; monthly business-plan review vs. actuals; 1 private hour/mo with an expert coach; AI Workflow Concierge build per quarter; **Quarterly Business Review (QBR)**; quarterly Alliance recognition.
 
 **QBR agenda:** production · partners · pipeline · recruiting · retention · training · AI workflow adoption · risks · next-quarter plan → output is a written next-quarter commitment.
 
 **Team Leader Operating Council agenda** (for team-leader members): 5-min timed production update per leader → one rotating leadership topic → 15-min open Q&A → one 2-week commitment per leader → close. (80% quarterly attendance to stay in good standing.)
 
-**Advanced certifications / ladders:** Elite Producer / Elite Producer Honors; Team Leader Certified / Advanced / Mentor.
+**Advanced certifications / ladders:** Advanced Producer / Advanced Producer Honors; Team Leader Certified / Advanced / Mentor.
 
 **Selection signal:** 24+ units/year OR $8M+ volume; recent partner-growth move; willing to present case studies; finishes what they start.
 

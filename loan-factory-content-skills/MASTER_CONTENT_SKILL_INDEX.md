@@ -56,7 +56,7 @@ Four content skills (each loads the rules + the style guide that matches the for
 | **Sales & Marketing 101–601** | Sales & Marketing Source Map · 101–601 module docs/decks · Mortgage Communication Library · Legends Mortgage / Team Leader Operating System (TERA) · sales scripts / prompts / roleplays · Marketing Compliance Rules |
 | **AI Advantage** | AI Training Source Map · AI Training Roadmap · HeyGen Integration Handoff · HeyGen Video Agent Prompting System · HeyGen Integration Map · AI Assistant Hub docs · Gemini/GPT/Claude training docs · YouTube/clip library docs |
 
-> **Naming note:** the underlying strategy docs predate the rebrand and use "Growth/Elite ($250/$750)." The current, authoritative program names and prices are **LO Mastery ($249)** and **Loan Factory Alliance ($449)** (confirmed in the Coaching Program Meeting Notes). Use the current names/prices; reuse the docs' frameworks (trackers, certifications, curriculum, AI Suite, coaching philosophy).
+> **Naming note:** the underlying strategy docs predate the rebrand and use stale tier names/prices. The current, authoritative program names and prices are **LO Mastery ($249)** and **Loan Factory Alliance ($449)** (confirmed in the Coaching Program Meeting Notes). Use the current names/prices; reuse the docs' frameworks (trackers, certifications, curriculum, AI Suite, coaching philosophy).
 
 ---
 

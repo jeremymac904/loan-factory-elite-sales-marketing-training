@@ -73,9 +73,10 @@ export default async function AdminViewAsPage() {
             View-As Mode
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Preview the platform as any seeded user or role. Useful for
-            recording training walkthroughs. You stay signed in as yourself —
-            destructive actions remain disabled while previewing.
+            Preview the platform as any seeded user or role. View as a role for
+            recording training walkthroughs and validating access. You stay
+            signed in as yourself — destructive actions remain disabled while
+            previewing.
           </p>
         </div>
       </section>

@@ -131,7 +131,7 @@ export const roleDashboards: RoleDashboard[] = [
     eyebrow: "LO Development",
     title: "LO Development command center",
     description:
-      "The working desk for program direction, content readiness, support routing, coaching visibility, and launch follow-through.",
+      "The working desk for onboarding status, post-onboarding check-ins, support needs, coaching assignments, escalations, content readiness, walkthroughs, publishing tools, open issues, and launch follow-through.",
     primaryHref: "/training-academy/",
     primaryLabel: "Open Training Academy",
     secondaryHref: "/department-routing/",
@@ -149,7 +149,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Training Academy",
             description:
-              "Assign modules, review lesson packs, and route missing resources.",
+              "Assign modules, review lesson packs, and route training recommendations or missing resources.",
             href: "/training-academy/",
             owner: "Training Academy",
             status: "Ready",
@@ -179,7 +179,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Support routing",
             description:
-              "Route common issues, first-file questions, system access, and escalation guidance.",
+              "Route support needs, first-file questions, post-onboarding check-ins, system access, and escalation guidance.",
             href: "/loan-officer-support/",
             owner: "LO Support",
             status: "Ready",
@@ -187,7 +187,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Coach Command Center",
             description:
-              "Review member progress, scorecards, coach notes, and assignments.",
+              "Review member progress, scorecards, coach notes, coaching assignments, and recommended next actions.",
             href: "/coach-command-center/",
             owner: "Corporate Coaches",
             status: "Live",
@@ -195,7 +195,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Asset readiness",
             description:
-              "Use the library and checklist to identify uploads, replays, clips, and handouts still awaiting review.",
+              "Use the library and checklist to identify open issues, uploads, replays, clips, and handouts still awaiting review.",
             href: "/training-library/",
             owner: "LO Development",
             status: "Needs review",
@@ -204,9 +204,9 @@ export const roleDashboards: RoleDashboard[] = [
       },
     ],
     nextActions: [
-      "Confirm owners for every support category before live rollout.",
-      "Review all public-facing copy for compliance-safe language.",
-      "Promote approved internal examples into FaceGram and the library.",
+      "Review onboarding status and post-onboarding check-ins before live rollout.",
+      "Confirm owners for support needs, escalations, walkthroughs, and publishing tools.",
+      "Promote approved internal examples into FaceGram and the library after copy review.",
     ],
   },
   {
@@ -297,7 +297,7 @@ export const roleDashboards: RoleDashboard[] = [
     eyebrow: "Loan Officer Support",
     title: "Support triage dashboard",
     description:
-      "A practical support desk for access issues, first-file questions, common workflow blockers, escalation routing, and recommended training.",
+      "A practical support queue for access issues, first-file questions, common workflow blockers, escalation routing, and recommended training.",
     primaryHref: "/support-routing/",
     primaryLabel: "Open support routing",
     secondaryHref: "/resources/",
@@ -309,7 +309,7 @@ export const roleDashboards: RoleDashboard[] = [
     ],
     sections: [
       {
-        title: "Request lanes",
+        title: "Support queue request lanes",
         description: "Start support in the safest lane.",
         cards: [
           {
@@ -406,7 +406,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Training path",
             description:
-              "Review the suggested sequence for new LOs, experienced LOs, and coaches.",
+              "Review training recommendations for new LOs, experienced LOs, and coaches.",
             href: "/training-path/",
             owner: "Training Academy",
             status: "Live",
@@ -712,7 +712,7 @@ export const roleDashboards: RoleDashboard[] = [
     eyebrow: "Loan Officer",
     title: "Loan officer dashboard",
     description:
-      "The everyday LO home for training, coaching options, AI help, FaceGram, resources, support, and safe content creation.",
+      "The Normal LO view for training, coaching options, AI help, FaceGram, resources, support, and safe content creation.",
     primaryHref: "/sales-training/",
     primaryLabel: "Start 101-601",
     secondaryHref: "/support-routing/",

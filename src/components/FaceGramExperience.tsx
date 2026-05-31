@@ -575,9 +575,9 @@ export default function FaceGramExperience({
           <main className="space-y-4">
             {!entered && (
               <div className="rounded-2xl border border-lf-line bg-white/85 p-5 shadow-card">
-                <h2 className="font-display text-2xl font-semibold text-lf-navy">
+                <h1 className="font-display text-2xl font-semibold text-lf-navy">
                   Welcome to FaceGram
-                </h2>
+                </h1>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
                   Share internal wins, ask questions, practice scripts, review
                   examples, and learn from other Loan Factory people.

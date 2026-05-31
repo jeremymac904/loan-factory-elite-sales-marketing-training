@@ -37,7 +37,7 @@ LO name · team leader · week ending · new referral-partner contacts · realto
 
 **Member AI Suite (10):** FAQ Bot · Email & Text Copilot · Loan Structuring Copilot · Social & Video Content Generator · Realtor Partner Kit · AI Roleplay Coach · AI Coaching Companion · AI Tracker Summary · AI Coaching Prep Doc · AI QBR Generator.
 
-**Producer recognition ladder:** Producer Certified → Growth Producer → Elite Producer → Elite Producer Honors.
+**Producer recognition ladder:** Producer Certified → Growth Producer → Advanced Producer → Advanced Producer Honors.
 
 **Coaching cadence:** weekly tracker → AI Tracker Summary → coach commentary; auto Friday accountability email; group session + monthly direct check-in; 3 missed weeks → Coaching Concierge outreach.
 

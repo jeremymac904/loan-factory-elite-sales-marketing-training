@@ -16,7 +16,7 @@ export default function SalesTrainingPage() {
         <SectionHeading
           eyebrow="101 to 601"
           title="Six lessons to help you create more business"
-          description="Use 101 through 601 for sales training, scripts, prompts, roleplays, trackers, and resources. This training path is separate from paid coaching."
+          description="Use 101 through 601 for free internal sales training, scripts, prompts, roleplays, trackers, and resources. This training path is separate from paid coaching."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {modules.map((item) => (
