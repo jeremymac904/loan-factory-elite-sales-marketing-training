@@ -38,7 +38,8 @@ const sections = [
   },
   {
     title: "Resource library",
-    description: "Sales & Marketing 101-601, AI Advantage, and coaching resources.",
+    description:
+      "Paid coaching resources plus separate free Sales & Marketing 101-601 and AI Advantage references.",
     href: "/resources/",
   },
   {

@@ -5,6 +5,7 @@ import SectionHeading from "@/components/SectionHeading";
 import AudioCompanionCard from "@/components/audio/AudioCompanionCard";
 import { coreAudioCompanions } from "@/data/audioCompanions";
 import { driveAssets } from "@/data/driveAssets";
+import { marketingTrainingAssets } from "@/data/marketingTrainingAssets";
 import { getPlatformModule } from "@/data/platform";
 
 export const metadata = { title: "Training Library" };
@@ -16,6 +17,11 @@ const library = [
   { title: "Prompts", href: "/prompts/", status: "Live" },
   { title: "Recordings", href: "/recordings/", status: "Library" },
   { title: "Video Library", href: "/ai-training/video-library/", status: "Library" },
+  {
+    title: "Marketing Setup Assets",
+    href: "/training-library/marketing-assets/",
+    status: "Library",
+  },
   {
     title: "LO Development Clip Library",
     href: "/training-library/clips/",
@@ -65,6 +71,90 @@ export default function TrainingLibraryPage() {
         description="Searchable cutdowns from existing internal training recordings, staged for approved Loan Factory users."
         limit={4}
       />
+
+      <section className="container-page py-14">
+        <SectionHeading
+          eyebrow="Marketing asset package"
+          title="Loan Factory marketing setup resources."
+          description="Source-backed internal resources from Jeremy's downloaded package. These support the free Sales and Marketing 101 through 601 path and AI Advantage, not paid coaching progress."
+        />
+        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          {marketingTrainingAssets.map((asset) => (
+            <article key={asset.id} id={asset.id} className="card">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                    {asset.category}
+                  </p>
+                  <h3 className="h-display mt-1 text-xl">{asset.title}</h3>
+                </div>
+                <span className="rounded-full bg-lf-mist px-3 py-1 text-xs font-semibold text-lf-slate">
+                  {asset.estimatedTime}
+                </span>
+              </div>
+              <p className="prose-lf mt-3 text-sm text-lf-slate">
+                {asset.description}
+              </p>
+              <dl className="mt-5 grid gap-4 text-sm md:grid-cols-2">
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                    Audience
+                  </dt>
+                  <dd className="mt-1 text-lf-charcoal">{asset.audience}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                    Source type
+                  </dt>
+                  <dd className="mt-1 text-lf-charcoal">{asset.sourceType}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                    Related resources
+                  </dt>
+                  <dd className="mt-1 text-lf-charcoal">
+                    {asset.relatedResources.join(", ")}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                    Next action
+                  </dt>
+                  <dd className="mt-1 text-lf-charcoal">{asset.nextAction}</dd>
+                </div>
+              </dl>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {asset.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-lf-orangeSoft px-2.5 py-1 text-xs font-semibold text-lf-orangeDark"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-5 rounded-xl border border-lf-line bg-lf-mist p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                  Asset status
+                </p>
+                <p className="prose-lf mt-2 text-sm text-lf-slate">
+                  {asset.missingAssetWarning}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {asset.assetStatuses.map((status) => (
+                    <span
+                      key={status}
+                      className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-lf-charcoal"
+                    >
+                      {status}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="container-page pb-14">
         <SectionHeading

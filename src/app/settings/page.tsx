@@ -63,7 +63,7 @@ export default async function SettingsPage() {
   const profile =
     !previewEnabled && session.status === "approved" ? session.profile : null;
   const name =
-    profile?.full_name ?? (previewEnabled ? "Internal Review" : "Your account");
+    profile?.full_name ?? (previewEnabled ? "Your account" : "Your account");
   const email = profile?.email ?? (previewEnabled ? betaPreviewEmail : "");
   const role = previewEnabled ? "Review" : getRoleLabel(profile?.role);
 

@@ -6,12 +6,13 @@ import { trainingAssignables } from "@/data/coachCommandCenter";
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Training Assignment · Coach Command Center" };
 
+// Finding #7: 101-601 is FREE Sales & Marketing training. It is offered as an
+// assignable resource but is clearly labeled free and is NEVER counted as
+// paid-coaching progress. Paid coaching resources (AI Advantage, clips,
+// scripts, etc.) are grouped separately.
 export default async function CoachTrainingPlanPage() {
   const access = await getCoachAccess();
 
-  // Group the assignable training resources by their category so a coach can
-  // scan lessons, AI Advantage, clips, scripts, prompts, roleplays, and the
-  // weekly scorecard in one place. Order follows the source data.
   const categories: string[] = [];
   const grouped = new Map<string, typeof trainingAssignables>();
   for (const item of trainingAssignables) {
@@ -38,8 +39,8 @@ export default async function CoachTrainingPlanPage() {
             Training Assignment
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-white/85">
-            Pick the lessons, clips, scripts, and reps to assign your LOs — open
-            any resource to review it before you assign it as a coaching task.
+            Assign lessons, clips, scripts, and reps as coaching tasks — open any
+            resource to review it first.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -54,23 +55,19 @@ export default async function CoachTrainingPlanPage() {
         showAdmin={access.seesAll}
       />
 
-      <section className="container-page py-10">
-        <div className="card border-lf-orange/40 bg-lf-orangeSoft/40">
-          <p className="text-xs font-semibold uppercase tracking-wide text-lf-orangeDark">
-            How assigning works
+      <section className="container-page py-8">
+        <div className="card border-lf-orange/40 bg-lf-orangeSoft/30">
+          <p className="prose-lf text-sm">
+            <span className="font-semibold text-lf-charcoal">
+              Free vs paid is kept separate.
+            </span>{" "}
+            Sales &amp; Marketing 101-601 is free internal training you can
+            assign — but completing it is never counted as paid-coaching
+            progress. Record assignments in your coaching notes and follow up on
+            the next check-in. Assignments are tracked manually until task
+            automation is connected.
           </p>
-          <h2 className="h-display mt-1 text-2xl">
-            Assign a resource as a coaching task.
-          </h2>
-          <p className="prose-lf mt-2 text-sm">
-            When you assign one of these, the coach records it as an internal
-            coaching task — a tracked commitment for the LO to complete and for
-            you to follow up on. Assignments are stored as internal coaching
-            tasks and tracked manually until task automation is connected. Open a
-            resource below to review it, then note the assignment in your
-            coaching notes and follow up on the next check-in.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
+          <div className="mt-3 flex flex-wrap gap-3">
             <Link
               href="/coach-command-center/coaching-notes/"
               className="btn-primary"
@@ -86,9 +83,17 @@ export default async function CoachTrainingPlanPage() {
         <div className="mt-8 grid gap-8">
           {categories.map((category) => {
             const items = grouped.get(category) ?? [];
+            const isFree = items.some((i) => i.free);
             return (
               <div key={category}>
-                <h2 className="h-display text-xl">{category}</h2>
+                <div className="flex items-center gap-2">
+                  <h2 className="h-display text-xl">{category}</h2>
+                  {isFree && (
+                    <span className="rounded-full bg-lf-mist px-2.5 py-0.5 text-xs font-semibold text-lf-slate">
+                      Free · not paid-coaching progress
+                    </span>
+                  )}
+                </div>
                 <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   {items.map((item) => (
                     <Link

@@ -8,11 +8,11 @@
 
 ### What is LO Mastery
 
-LO Mastery is a Loan Factory training and development platform for loan officers. It brings the Sales and Marketing 101-601, live coaching, certifications, summits, and the Alliance Mastermind community into one operating system.
+LO Mastery is the $249 paid coaching program for Loan Factory loan officers. It brings live coaching, accountability, certifications, member resources, and community into one operating system while keeping the free Sales and Marketing 101-601 training separate.
 
 ### What is the Sales and Marketing 101-601
 
-The Sales and Marketing 101-601 is the foundation course inside the platform. Six modules, 101 through 601, that install one behavior a week with scripts, AI prompts, roleplays, audio training, and a weekly tracker.
+The Sales and Marketing 101-601 is the free internal foundation training path. Six modules, 101 through 601, install one behavior at a time with scripts, AI prompts, roleplays, audio training, and a weekly tracker. It is not paid coaching progress.
 
 ### Who is LO Mastery for
 

@@ -33,8 +33,8 @@ export default async function CoachMemberProgressPage() {
             Member Progress
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Where each member stands across onboarding, training path,
-            certification, and their AI Twin — with the next coaching step.
+            Paid coaching progress for LO Mastery and Loan Factory Alliance,
+            separate from free internal Sales and Marketing 101 through 601.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-4 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -51,12 +51,14 @@ export default async function CoachMemberProgressPage() {
 
       <section className="container-page py-12">
         <div className="card border-lf-orange/40 bg-lf-orangeSoft/30">
-          <h2 className="h-display text-lg">Reading the activity indicator</h2>
+          <h2 className="h-display text-lg">Paid coaching progress only</h2>
           <p className="prose-lf mt-2 text-sm">
-            The badge on each member is a <strong>coaching activity</strong>{" "}
-            indicator — how engaged they are right now — so you know where to
-            spend your coaching time. It is not a compliance or performance
-            score.
+            LO Mastery is the $249 tier. Loan Factory Alliance is the $449 tier.
+            This view tracks coaching attendance, weekly commitments, activity
+            tracker status, certification progress, accountability score, coach
+            notes, resource completion, and next action. It intentionally does
+            not mix Sales and Marketing 101 through 601 completion into paid
+            coaching progress.
           </p>
           <div className="mt-4 flex flex-wrap gap-3 text-xs">
             {(["active", "needs_nudge", "stuck", "inactive"] as const).map(
@@ -81,8 +83,8 @@ export default async function CoachMemberProgressPage() {
               No member progress is available right now.
             </h2>
             <p className="prose-lf mt-3 text-sm">
-              As members begin onboarding, complete training, and submit
-              scorecards, their progress appears here so you can coach the next
+              As members attend coaching, complete commitments, and submit
+              scorecards, their activity appears here so you can coach the next
               step.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -96,77 +98,66 @@ export default async function CoachMemberProgressPage() {
           </div>
         ) : (
           <>
-            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {memberProgress.map((m) => (
-                <div key={m.id} className="card flex flex-col gap-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h3 className="text-base font-semibold text-lf-charcoal">
-                        {m.name}
-                      </h3>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-                        {m.tier}
-                      </p>
-                    </div>
-                    <span
-                      className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold ${statusMeta[m.status].class}`}
-                    >
-                      {statusMeta[m.status].label}
-                    </span>
-                  </div>
-
-                  <p className="rounded-lg bg-lf-mist px-3 py-2 text-xs text-lf-slate">
-                    {activityNote[m.status]}
-                  </p>
-
-                  <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
-                    <ProgressField label="Onboarding" value={m.onboarding} />
-                    <ProgressField label="Training path" value={m.path} />
-                    <ProgressField
-                      label="Last scorecard"
-                      value={m.lastScorecard}
-                    />
-                    <ProgressField
-                      label="Certification"
-                      value={m.certification}
-                    />
-                    <ProgressField
-                      label="Training progress"
-                      value={m.trainingProgress}
-                    />
-                    <ProgressField label="AI Twin" value={m.aiTwin} />
-                  </dl>
-
-                  <div className="mt-auto border-t border-lf-line pt-3">
-                    <p className="text-xs font-semibold text-lf-slate">
-                      Next coaching action
-                    </p>
-                    <p className="mt-1 text-sm font-semibold text-lf-charcoal">
-                      {m.nextAction}
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <Link
-                        href="/coach-command-center/scorecards/"
-                        className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
-                      >
-                        Scorecard
-                      </Link>
-                      <Link
-                        href="/coach-command-center/training-plan/"
-                        className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
-                      >
-                        Training plan
-                      </Link>
-                      <Link
-                        href="/coach-command-center/coaching-notes/"
-                        className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
-                      >
-                        Notes
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="card mt-8 overflow-x-auto p-0">
+              <table className="w-full text-left text-sm">
+                <thead className="border-b border-lf-line bg-lf-mist/60 text-xs uppercase tracking-wide text-lf-slate">
+                  <tr>
+                    <th className="px-4 py-2 font-semibold">Member</th>
+                    <th className="px-4 py-2 font-semibold">Tier</th>
+                    <th className="px-4 py-2 font-semibold">Attendance</th>
+                    <th className="px-4 py-2 font-semibold">Commitments</th>
+                    <th className="px-4 py-2 font-semibold">Activity tracker</th>
+                    <th className="px-4 py-2 font-semibold">Certification</th>
+                    <th className="px-4 py-2 font-semibold">Accountability</th>
+                    <th className="px-4 py-2 font-semibold">Resources</th>
+                    <th className="px-4 py-2 font-semibold">Coach notes</th>
+                    <th className="px-4 py-2 font-semibold">Next action</th>
+                    <th className="px-4 py-2 font-semibold">Status</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-lf-line">
+                  {memberProgress.map((m) => (
+                    <tr key={m.id} className="align-top hover:bg-lf-mist/40">
+                      <td className="px-4 py-2">
+                        <p className="font-semibold text-lf-charcoal">{m.name}</p>
+                        <p className="mt-1 text-xs text-lf-slate">
+                          {activityNote[m.status]}
+                        </p>
+                      </td>
+                      <td className="px-4 py-2 text-lf-slate">{m.tier}</td>
+                      <td className="px-4 py-2 text-lf-slate">
+                        {m.coachingAttendance}
+                      </td>
+                      <td className="px-4 py-2 text-lf-slate">
+                        {m.weeklyCommitments}
+                      </td>
+                      <td className="px-4 py-2 text-lf-slate">
+                        {m.activityTracker}
+                      </td>
+                      <td className="px-4 py-2 text-lf-slate">
+                        {m.certification}
+                      </td>
+                      <td className="px-4 py-2 font-semibold text-lf-charcoal">
+                        {m.accountabilityScore}
+                      </td>
+                      <td className="px-4 py-2 text-lf-slate">
+                        {m.resourceCompletion}
+                      </td>
+                      <td className="px-4 py-2 text-lf-slate">{m.coachNotes}</td>
+                      <td className="px-4 py-2 text-lf-orangeDark">
+                        {m.nextAction}
+                      </td>
+                      <td className="px-4 py-2">
+                        <span
+                          className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold ${statusMeta[m.status].class}`}
+                        >
+                          {statusMeta[m.status].label}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
 
             <p className="prose-lf mt-6 text-xs text-lf-slate">
@@ -176,14 +167,5 @@ export default async function CoachMemberProgressPage() {
         )}
       </section>
     </>
-  );
-}
-
-function ProgressField({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <dt className="text-xs font-semibold text-lf-slate">{label}</dt>
-      <dd className="mt-0.5 text-lf-charcoal">{value}</dd>
-    </div>
   );
 }

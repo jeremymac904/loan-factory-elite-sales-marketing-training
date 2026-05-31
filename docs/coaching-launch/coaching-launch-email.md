@@ -23,11 +23,11 @@ Hey {{first_name}},
 
 I built LO Mastery because most loan officers do not need another course. They need a platform.
 
-A place that pulls the training, the live coaching, the certifications, the summits, and the community into one operating system. So you spend less time guessing and more time closing.
+A place that pulls live coaching, accountability, certifications, summits, and community into one operating system. So you spend less time guessing and more time doing the work.
 
 Today I am opening the doors.
 
-**LO Mastery** at $249 per month is the foundation tier. You get the full Sales and Marketing 101-601 (101 through 601), the scripts and AI prompts, the roleplays, the audio training, the weekly tracker, and the Personality Workshop. Everything you need to actually run a clean week.
+**LO Mastery** at $249 per month is the paid coaching tier. You get the coaching rhythm, scripts and AI prompts, roleplays, member resources, scorecards, and the Personality Workshop. The free internal Sales and Marketing 101-601 remains a separate training reference.
 
 **Loan Factory Alliance** at $449 per month is the Pro tier. You get everything in LO Mastery plus monthly live mastermind calls, direct coaching access, advanced TERA workflows, priority content requests, the Alliance Summit, and the Alliance Mastermind community.
 

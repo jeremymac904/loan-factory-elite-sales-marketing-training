@@ -403,7 +403,7 @@ export const modules: ModuleSummary[] = [
       "AI prompt routine",
       "Team leader accountability",
       "Next 90 day plan",
-      "Certification requirements",
+      "Completion requirements",
     ],
     assignment: [
       "Submit your 12 week niche plan.",

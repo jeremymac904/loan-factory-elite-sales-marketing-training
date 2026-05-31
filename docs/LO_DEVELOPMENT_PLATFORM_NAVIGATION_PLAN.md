@@ -92,7 +92,7 @@ The platform is **one product** with eight modules. The modules link to each oth
 
 **Key relationships:**
 
-- **Sales and Marketing 101-601 (101–601)** is the foundational curriculum. **LO Mastery** is the paid coaching layer on top of it; many coaching modules link back into the corresponding 101–601 content. **AI Training** teaches LOs how to use the AI tools that show up across the rest of the platform.
+- **Sales and Marketing 101-601 (101–601)** is the free foundational curriculum. **LO Mastery** and **Loan Factory Alliance** are separate paid coaching programs that may link back into 101–601 as reference material while tracking coaching commitments separately. **AI Training** teaches LOs how to use the AI tools that show up across the rest of the platform.
 - **1+1+1=5** is the team growth playbook. It links into **Team Leader OS** (the operating tools for team leaders) and into **AI Assistants** (specifically the 1+1+1=5 Growth Assistant and Referral Partner Assistant).
 - **Training Library** is the unified content catalog. It surfaces content owned by LO Mastery, Sales and Marketing 101-601, AI Training, and 1+1+1=5 — without duplicating it.
 - **Coach Hub** is the coach-facing surface. It pulls member progress from every module and feeds back into coaching sessions.

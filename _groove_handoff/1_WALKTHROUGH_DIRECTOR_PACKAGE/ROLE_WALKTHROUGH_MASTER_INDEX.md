@@ -44,7 +44,7 @@ Andre King's lens as LO Development Lead: the full sales-training stack (101 thr
 - Estimated runtime: 6–8 minutes
 
 ### 4. Corporate Coach Walkthrough
-Coaching workspace tour: `/coaching`, `/apex-member-area`, `/coach-guide`, and `/coach-reports`. Shows how a coach reviews assigned LOs and plans sessions.
+Coaching workspace tour: `/coaching`, `/member-area`, `/coach-guide`, and `/coach-reports`. Shows how a coach reviews assigned LOs and plans sessions.
 - File: `corporate_coach_walkthrough.md`
 - Estimated runtime: 5–7 minutes
 
@@ -64,7 +64,7 @@ Member tier walkthrough for the $249 LO Mastery program inside `/member-area/lo-
 - Estimated runtime: 4–6 minutes
 
 ### 8. Alliance 449 Walkthrough
-Member tier walkthrough for the $449 Alliance program inside `/member-area/alliance`. Highlights the elite execution surface and the higher-tier deliverables versus LO Mastery.
+Member tier walkthrough for the $449 Alliance program inside `/member-area/alliance`. Highlights the advanced coaching deliverables versus LO Mastery.
 - File: `alliance_449_walkthrough.md`
 - Estimated runtime: 4–6 minutes
 

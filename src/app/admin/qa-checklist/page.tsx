@@ -74,22 +74,39 @@ export default function AdminQaChecklistPage() {
         </div>
       </PageHero>
 
-      <section className="container-page py-12">
+      <section className="container-page py-10">
         <SectionHeading
           eyebrow="Checklist"
           title="Do not call the sprint complete until these items are true."
           description="This checklist is intentionally local-first. It does not perform external actions."
         />
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {checklist.map((group) => (
-            <article key={group.title} className="card">
-              <h2 className="h-display text-xl">{group.title}</h2>
-              <ul className="prose-lf mt-4 list-disc space-y-2 pl-5 text-sm">
+        <div className="mt-6 grid gap-3 md:grid-cols-2">
+          {checklist.map((group, index) => (
+            <details
+              key={group.title}
+              open={index < 2}
+              className="card group p-0"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4">
+                <span className="flex items-center gap-2">
+                  <span className="h-display text-lg">{group.title}</span>
+                  <span className="rounded-full bg-lf-mist px-2 py-0.5 text-xs font-semibold text-lf-slate">
+                    {group.items.length} items
+                  </span>
+                </span>
+                <span
+                  aria-hidden
+                  className="text-lf-slate transition group-open:rotate-180"
+                >
+                  ▾
+                </span>
+              </summary>
+              <ul className="prose-lf list-disc space-y-1.5 px-5 pb-5 pl-9 text-sm">
                 {group.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </article>
+            </details>
           ))}
         </div>
       </section>

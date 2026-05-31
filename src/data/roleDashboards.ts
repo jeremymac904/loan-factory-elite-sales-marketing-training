@@ -131,14 +131,14 @@ export const roleDashboards: RoleDashboard[] = [
     eyebrow: "LO Development",
     title: "LO Development command center",
     description:
-      "The working desk for onboarding status, post-onboarding check-ins, support needs, coaching assignments, escalations, content readiness, walkthroughs, publishing tools, open issues, and launch follow-through.",
-    primaryHref: "/training-academy/",
-    primaryLabel: "Open Training Academy",
+      "One desk for the LO journey: training buildout, support routing, coaching operations, content readiness, and launch follow-through.",
+    primaryHref: "/admin/qa-checklist/",
+    primaryLabel: "Open launch QA",
     secondaryHref: "/department-routing/",
     secondaryLabel: "Review departments",
     metrics: [
-      { label: "Program", value: "101-601" },
-      { label: "Libraries", value: "Scripts + clips" },
+      { label: "Training path", value: "101–601" },
+      { label: "Coaching tiers", value: "Mastery + Alliance" },
       { label: "Workflow", value: "Review gated" },
     ],
     sections: [
@@ -149,15 +149,15 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Training Academy",
             description:
-              "Assign modules, review lesson packs, and route training recommendations or missing resources.",
+              "Assign modules, review lesson packs, and route missing resources.",
             href: "/training-academy/",
             owner: "Training Academy",
             status: "Ready",
           },
           {
-            title: "Sales and Marketing 101-601",
+            title: "Sales and Marketing 101–601",
             description:
-              "Review the six-part LO training path and all companion resources.",
+              "Free internal LO training path, Foundation through Execution System.",
             href: "/sales-training/",
             owner: "LO Development",
             status: "Live",
@@ -165,7 +165,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Content skills",
             description:
-              "Open the brand, email, PDF, deck, FaceGram, AI Advantage, and coaching output rules.",
+              "Brand, email, PDF, deck, FaceGram, and AI Advantage output rules.",
             href: "/content-skills/",
             owner: "Jeremy",
             status: "Ready",
@@ -179,7 +179,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Support routing",
             description:
-              "Route support needs, first-file questions, post-onboarding check-ins, system access, and escalation guidance.",
+              "Triage access, first-file, and post-onboarding check-ins with clear escalation.",
             href: "/loan-officer-support/",
             owner: "LO Support",
             status: "Ready",
@@ -187,7 +187,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Coach Command Center",
             description:
-              "Review member progress, scorecards, coach notes, coaching assignments, and recommended next actions.",
+              "Member progress, scorecards, coach notes, and coaching assignments.",
             href: "/coach-command-center/",
             owner: "Corporate Coaches",
             status: "Live",
@@ -195,7 +195,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Asset readiness",
             description:
-              "Use the library and checklist to identify open issues, uploads, replays, clips, and handouts still awaiting review.",
+              "Find uploads, replays, clips, and handouts still awaiting review.",
             href: "/training-library/",
             owner: "LO Development",
             status: "Needs review",
@@ -204,9 +204,9 @@ export const roleDashboards: RoleDashboard[] = [
       },
     ],
     nextActions: [
-      "Review onboarding status and post-onboarding check-ins before live rollout.",
-      "Confirm owners for support needs, escalations, walkthroughs, and publishing tools.",
-      "Promote approved internal examples into FaceGram and the library after copy review.",
+      "Walk every role with View-As before approving a deploy.",
+      "Clear the Asset readiness queue: label missing clips and handouts.",
+      "Confirm support and escalation owners are current in Department Routing.",
     ],
   },
   {

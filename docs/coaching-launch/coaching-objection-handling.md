@@ -9,7 +9,7 @@
 
 ## Objection 1. The price is too high
 
-The price is the work. $249 per month for LO Mastery or $449 per month for Loan Factory Alliance is not the cost of a course. It is the cost of a platform that pulls the training, the live coaching, the certifications, and the community into one operating system.
+The price is the work. $249 per month for LO Mastery or $449 per month for Loan Factory Alliance is not the cost of a course. It is the cost of paid coaching, accountability, certifications, and community around the work.
 
 If you close one extra deal a year because of what you learn here, the math is finished.
 
@@ -21,13 +21,13 @@ This is not a guarantee. It is a math reality. You decide if you are willing to 
 
 Good. Keep your coach. LO Mastery is a platform, not a one-on-one coach.
 
-The platform gives you the curriculum, the scripts, the AI prompts, the roleplays, the tracker, and the community. The Pro tier adds live mastermind calls. Your existing coach can plug into the system, not compete with it.
+LO Mastery gives you paid coaching structure, scripts, AI prompts, roleplays, trackers, and community. Loan Factory Alliance adds advanced live coaching and mastermind work. Your existing coach can reference the system, not compete with it.
 
 ---
 
 ## Objection 3. I do not have time
 
-LO Mastery is built around one behavior a week, not a thirty hour curriculum. The Sales and Marketing 101-601 is six modules. One module a week. Each module installs one behavior with a script, a prompt, a roleplay, and a tracker line.
+LO Mastery is built around one coaching commitment at a time, not a thirty hour curriculum. The free internal Sales and Marketing 101-601 series remains a separate six-module training path that coaching members may reference.
 
 If you do not have time for one behavior a week, the issue is not LO Mastery. The issue is the calendar.
 
@@ -47,15 +47,15 @@ Yes, if you are honest about your gaps. Most experienced LOs are leaking pipelin
 
 ## Objection 6. Why not just buy a course
 
-Because a course ends. A platform compounds.
+Because a course ends. Coaching compounds when the LO follows through.
 
-LO Mastery includes the course (the Sales and Marketing 101-601), the certifications, the live calls, the resource libraries, and the community. You get the curriculum and the system that surrounds it.
+LO Mastery provides paid coaching, certifications, live calls, resource libraries, and community. Members may use the free internal Sales and Marketing 101-601 as a reference, but it is not sold as paid coaching progress.
 
 ---
 
 ## Objection 7. What is the difference between LO Mastery and Loan Factory Alliance
 
-LO Mastery is $249 per month. You get the Sales and Marketing 101-601, the resource libraries, the member area, and eligibility for the ACLO certification.
+LO Mastery is $249 per month. You get the paid coaching resource library, member area, coaching rhythm, and eligibility for the ACLO certification. The free internal Sales and Marketing 101-601 remains available separately as training reference material.
 
 Loan Factory Alliance is $449 per month. You get everything in LO Mastery plus monthly live mastermind calls, direct coaching access, advanced TERA workflows, priority content requests, the Alliance Summit, and the Alliance Mastermind community.
 

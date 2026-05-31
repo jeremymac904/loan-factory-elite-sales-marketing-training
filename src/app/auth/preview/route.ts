@@ -1,36 +1,20 @@
 import { NextResponse } from "next/server";
-import { betaPreviewCookieName } from "@/lib/betaPreview";
 
 export const dynamic = "force-dynamic";
 
-function safeNext(searchParams: URLSearchParams) {
-  const next = searchParams.get("next");
-
-  if (!next || !next.startsWith("/") || next.startsWith("//")) {
-    return "/";
-  }
-
-  return next;
-}
-
-function enterPreview(request: Request) {
-  const requestUrl = new URL(request.url);
-  const response = NextResponse.redirect(new URL(safeNext(requestUrl.searchParams), requestUrl));
-
-  response.cookies.set(betaPreviewCookieName, "1", {
-    httpOnly: true,
-    path: "/",
-    sameSite: "lax",
-    secure: requestUrl.protocol === "https:",
-  });
-
-  return response;
+// Internal Review access has been retired. This route no longer sets the
+// lf_beta_preview cookie. Both GET and POST simply redirect to /login/ so the
+// preview bypass can no longer be entered. isBetaPreviewEnabled() and its call
+// sites are intentionally left in place elsewhere; those branches are now
+// unreachable because this cookie is never set here.
+function redirectToLogin(request: Request) {
+  return NextResponse.redirect(new URL("/login/", request.url));
 }
 
 export function GET(request: Request) {
-  return enterPreview(request);
+  return redirectToLogin(request);
 }
 
 export function POST(request: Request) {
-  return enterPreview(request);
+  return redirectToLogin(request);
 }

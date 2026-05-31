@@ -3,11 +3,10 @@ import { getCoachAccess } from "@/lib/coachAccess";
 import {
   peopleForScope,
   statusMeta,
-  coachAiPrompts,
   type AssignedPerson,
 } from "@/data/coachCommandCenter";
 import CoachCommandNav from "@/components/coach/CoachCommandNav";
-import CopyDraftButton from "@/components/coach/CopyDraftButton";
+import CoachingNotesWorkspace from "@/components/coach/CoachingNotesWorkspace";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Coaching Notes · Coach Command Center" };
@@ -20,6 +19,16 @@ const noteSections: { key: string; label: string; hint: string }[] = [
     key: "coaching_notes",
     label: "Coaching notes",
     hint: "What you covered this session — themes, observations, what's working.",
+  },
+  {
+    key: "note_type",
+    label: "Note type",
+    hint: "1:1 coaching, scorecard review, re-engagement, training assignment, or meeting recap.",
+  },
+  {
+    key: "tags",
+    label: "Tags",
+    hint: "Searchable coaching labels such as scorecard, realtor-outreach, re-engage, pipeline.",
   },
   {
     key: "stuck_points",
@@ -37,6 +46,11 @@ const noteSections: { key: string; label: string; hint: string }[] = [
     hint: "The single highest-leverage commitment for this person.",
   },
   {
+    key: "action_items",
+    label: "Action items",
+    hint: "Owner, due date, assigned resource, and verification for each follow-up.",
+  },
+  {
     key: "follow_up_date",
     label: "Follow-up date",
     hint: "When you'll check back in on the committed next step.",
@@ -44,7 +58,7 @@ const noteSections: { key: string; label: string; hint: string }[] = [
   {
     key: "assigned_training",
     label: "Assigned training",
-    hint: "Lessons or paths assigned from the Training Plan (101 → 601, AI Advantage).",
+    hint: "Coaching resources assigned from the Training Plan, clip library, scripts, or roleplays.",
   },
   {
     key: "assigned_clips",
@@ -174,50 +188,21 @@ export default async function CoachingNotesPage() {
       />
 
       <section className="container-page py-10">
-        <div className="card border-lf-orange/40 bg-lf-orangeSoft/30">
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orangeDark">
-                AI coaching assistant
-              </p>
-              <h2 className="h-display mt-1 text-2xl">
-                Prompts to prep, summarize, and draft
-              </h2>
-              <p className="prose-lf mt-2 max-w-2xl text-sm">
-                Copy any prompt and paste it into the{" "}
-                <Link
-                  href="/ai-assistants/"
-                  className="font-semibold text-lf-orange hover:underline"
-                >
-                  AI Assistant
-                </Link>
-                . Once an AI provider is connected, these prompts run there
-                directly against this person&apos;s coaching context.
-              </p>
-            </div>
-            <Link href="/ai-assistants/" className="btn-secondary text-sm">
-              Open AI Assistant
-            </Link>
-          </div>
-
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            {coachAiPrompts.map((p) => (
-              <div
-                key={p.title}
-                className="flex flex-col gap-3 rounded-lg border border-lf-line bg-white px-4 py-3"
-              >
-                <div>
-                  <h3 className="text-sm font-semibold text-lf-charcoal">
-                    {p.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-lf-slate">{p.prompt}</p>
-                </div>
-                <div className="mt-auto">
-                  <CopyDraftButton text={p.prompt} copyLabel="Copy prompt" />
-                </div>
-              </div>
-            ))}
-          </div>
+        <CoachingNotesWorkspace people={people} />
+        <div className="card mt-5 border-lf-line bg-lf-mist">
+          <h2 className="h-display text-xl">Persistence status</h2>
+          <p className="prose-lf mt-2 text-sm">
+            Existing schema includes{" "}
+            <code>coaching_notes.note</code>, <code>stuck_points</code>,{" "}
+            <code>wins</code>, <code>next_action</code>,{" "}
+            <code>follow_up_date</code>, and <code>private</code>. It does not
+            yet include note type, tags, or structured action items. The form
+            saves locally for now and Lead can review the additive migration
+            proposal before Supabase writes are wired.
+          </p>
+          <p className="mt-3 text-sm font-semibold text-lf-charcoal">
+            Schema proposal: docs/COACHING_NOTES_SCHEMA_PROPOSAL.md
+          </p>
         </div>
       </section>
 

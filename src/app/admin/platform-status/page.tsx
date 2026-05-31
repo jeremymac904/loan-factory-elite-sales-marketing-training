@@ -86,10 +86,18 @@ export default async function AdminPlatformStatusPage() {
       </section>
 
       <section className="container-page py-10">
-        <div className="grid gap-6 lg:grid-cols-2">
+        {/* Role-system metric strip above the fold */}
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <MetricCard label="Approved users (seed)" value={String(approvedUserSeeds.length)} />
+          <MetricCard label="Distinct roles" value={String(roleCount)} />
+          <MetricCard label="Admin-tier roles" value={String(adminRoleCount)} />
+          <MetricCard label="Departments" value={String(departmentCount)} />
+        </div>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
           <div className="card">
-            <h2 className="h-display text-2xl">Integrations</h2>
-            <div className="mt-4 grid gap-2">
+            <h2 className="h-display text-xl">Integrations</h2>
+            <div className="mt-3 grid gap-2">
               <StatusRow
                 label="AI provider (OpenRouter)"
                 value={providerValue}
@@ -118,72 +126,47 @@ export default async function AdminPlatformStatusPage() {
                 neutral
               />
             </div>
-            <p className="mt-4 text-xs text-lf-slate">
+            <p className="mt-3 text-xs text-lf-slate">
               External actions stay disabled platform-wide. AI features run in
               draft-only mode and do not send or upload on a user&apos;s behalf.
             </p>
           </div>
 
           <div className="card">
-            <h2 className="h-display text-2xl">Role system</h2>
+            <h2 className="h-display text-xl">Role system &amp; deployment</h2>
             <p className="prose-lf mt-2 text-sm">
               Access is resolved through Supabase roles and{" "}
               <code>role_permissions</code>. <strong>master_admin</strong> is
               the top role and carries full access across every gated surface.
             </p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              <MetricCard label="Approved users (seed)" value={String(approvedUserSeeds.length)} />
-              <MetricCard label="Distinct roles" value={String(roleCount)} />
-              <MetricCard label="Admin-tier roles" value={String(adminRoleCount)} />
-              <MetricCard label="Departments" value={String(departmentCount)} />
-            </div>
-            <Link
-              href="/admin/users"
-              className="mt-4 inline-block text-sm font-semibold text-lf-orange hover:underline"
-            >
-              Manage users &amp; access &rarr;
-            </Link>
-          </div>
-
-          <div className="card">
-            <h2 className="h-display text-2xl">Deployment</h2>
-            <dl className="mt-4 grid gap-3 text-sm">
+            <dl className="mt-3 grid gap-2 text-sm">
               <DetailRow label="Host" value="Netlify" />
               <DetailRow label="Deploy source" value="Netlify from main" />
               <DetailRow label="Framework" value="Next.js (App Router)" />
               <DetailRow label="Authentication" value="Google OAuth via Supabase" />
             </dl>
+            <Link
+              href="/admin/users"
+              className="mt-3 inline-block text-sm font-semibold text-lf-orange hover:underline"
+            >
+              Manage users &amp; access &rarr;
+            </Link>
           </div>
+        </div>
 
-          <div className="card">
-            <h2 className="h-display text-2xl">Review queues</h2>
-            <p className="prose-lf mt-2 text-sm">
-              Submission queues are reviewed manually by LO Development. Open
-              each queue to see live rows from Supabase.
-            </p>
-            <div className="mt-4 grid gap-2">
-              <Link
-                href="/admin/feedback"
-                className="flex items-center justify-between rounded-lg border border-lf-line px-4 py-3 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
-              >
-                <span>Feedback &amp; Suggestions</span>
-                <span aria-hidden className="text-lf-slate">&rarr;</span>
-              </Link>
-              <Link
-                href="/admin/lender-escalations"
-                className="flex items-center justify-between rounded-lg border border-lf-line px-4 py-3 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
-              >
-                <span>Lender Escalations</span>
-                <span aria-hidden className="text-lf-slate">&rarr;</span>
-              </Link>
-              <Link
-                href="/admin/ai-assistants"
-                className="flex items-center justify-between rounded-lg border border-lf-line px-4 py-3 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
-              >
-                <span>AI Assistant Settings</span>
-                <span aria-hidden className="text-lf-slate">&rarr;</span>
-              </Link>
-            </div>
+        {/* Review queues as a compact dropdown navigator */}
+        <div className="mt-6 rounded-xl border border-lf-line bg-lf-mist p-5">
+          <h2 className="text-sm font-bold uppercase tracking-wide text-lf-slate">
+            Review queues
+          </h2>
+          <p className="prose-lf mt-1 text-xs text-lf-slate">
+            Reviewed manually by LO Development. Open a queue to see live rows
+            from Supabase.
+          </p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            <QueueLink href="/admin/feedback" label="Feedback & Suggestions" />
+            <QueueLink href="/admin/lender-escalations" label="Lender Escalations" />
+            <QueueLink href="/admin/ai-assistants" label="AI Assistant Settings" />
           </div>
         </div>
       </section>
@@ -215,6 +198,18 @@ function StatusRow({
         {value}
       </span>
     </div>
+  );
+}
+
+function QueueLink({ href, label }: { href: string; label: string }) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center justify-between rounded-lg border border-lf-line bg-white px-4 py-3 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
+    >
+      <span>{label}</span>
+      <span aria-hidden className="text-lf-slate">&rarr;</span>
+    </Link>
   );
 }
 

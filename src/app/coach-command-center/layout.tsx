@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { getCoachAccess } from "@/lib/coachAccess";
+import CoachAssistantPanel from "@/components/coach/CoachAssistantPanel";
+import { peopleForScope } from "@/data/coachCommandCenter";
 
 // Gate the whole /coach-command-center subtree to coaches, team leaders, and
 // admins (View-As aware). Normal LOs without a coach/team-leader/admin role do
@@ -38,5 +40,15 @@ export default async function CoachCommandCenterLayout({
     );
   }
 
-  return <>{children}</>;
+  const people = peopleForScope(access.scope);
+
+  return (
+    <>
+      {children}
+      <CoachAssistantPanel
+        people={people}
+        coachLabel={access.effectiveRoleLabel}
+      />
+    </>
+  );
 }

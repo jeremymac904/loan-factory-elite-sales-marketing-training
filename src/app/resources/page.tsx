@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ClipLibraryRail from "@/components/ClipLibraryRail";
 import SectionHeading from "@/components/SectionHeading";
+import { marketingTrainingAssets } from "@/data/marketingTrainingAssets";
 
 export const metadata = { title: "Resources" };
 
@@ -25,6 +26,12 @@ const resources = [
     description:
       "Find short support and training clips staged for approved Loan Factory users.",
     href: "/training-library/clips/",
+  },
+  {
+    title: "Marketing Setup Assets",
+    description:
+      "Open Facebook Ads, Google Ads, visitor audiences, lead widgets, and QM Pricer guides.",
+    href: "/training-library/marketing-assets/",
   },
   {
     title: "LO Development Support Team",
@@ -103,6 +110,64 @@ export default function ResourcesPage() {
           ))}
         </div>
       </section>
+
+      <section className="bg-lf-mist">
+        <div className="container-page py-14">
+          <SectionHeading
+            eyebrow="Marketing training cards"
+            title="Source-backed setup resources."
+            description="Use these internal resource cards to find the new marketing setup assets. They connect to free Sales and Marketing lessons and AI Advantage, not paid coaching progress."
+          />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {marketingTrainingAssets.map((asset) => (
+              <article key={asset.id} className="card flex flex-col gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                    {asset.track}
+                  </p>
+                  <h3 className="h-display mt-1 text-xl">{asset.title}</h3>
+                </div>
+                <p className="prose-lf text-sm text-lf-slate">
+                  {asset.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {asset.tags.slice(0, 4).map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-lf-orangeSoft px-2.5 py-1 text-xs font-semibold text-lf-orangeDark"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="grid gap-3 text-sm">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                      Related lessons
+                    </p>
+                    <p className="mt-1 text-lf-charcoal">
+                      {asset.relatedLessons.join(", ")}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                      What to do next
+                    </p>
+                    <p className="mt-1 text-lf-charcoal">{asset.nextAction}</p>
+                  </div>
+                </div>
+                <Link
+                  href={`/training-library/#${asset.id}`}
+                  className="mt-auto inline-flex text-sm font-semibold text-lf-orange"
+                >
+                  {asset.buttonText} &rarr;
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <ClipLibraryRail
         title="Resource clips for common LO questions"
         description="Internal training cutdowns that help approved Loan Factory users find practical answers faster."

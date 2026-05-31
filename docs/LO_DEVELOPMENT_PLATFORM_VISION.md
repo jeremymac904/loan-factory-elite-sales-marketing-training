@@ -53,7 +53,7 @@ The platform is composed of eight modules that share one identity model, one nav
 ```
 
 - **Sales and Marketing 101-601 (101–601)** is the foundational curriculum every LO progresses through.
-- **LO Mastery** is the paid coaching layer on top of the curriculum (Tier 1 $249/mo, Tier 2 $449/mo).
+- **LO Mastery** is the $249 paid coaching program, and **Loan Factory Alliance** is the $449 paid coaching program. Both may reference the free 101-601 curriculum, but they track coaching commitments separately.
 - **AI Assistant Hub** surfaces the Gemini Gem AI Twin and the AI Coaching Assistant alongside specialized sales, marketing, team leader, and compliance precheck assistants and a prompt library.
 - **1+1=5 Team Growth Platform** is the team leader's marketing, recruiting, and co-branded campaign system.
 - **Training Library** is the searchable catalog of recordings, scripts, roleplays, trackers, flashcards, quizzes, and Google Drive media.

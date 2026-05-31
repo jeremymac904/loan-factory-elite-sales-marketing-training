@@ -3,6 +3,7 @@ import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 import { approvedUserSeeds } from "@/data/approvedUsers";
+import AdminConsole from "@/components/admin/AdminConsole";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Admin" };
@@ -47,31 +48,6 @@ export default async function AdminPage() {
   return <AdminShell session={session} />;
 }
 
-const adminLinks = [
-  { label: "Users & Access", href: "/admin/users" },
-  { label: "LO Development Dashboard", href: "/lo-development/" },
-  { label: "Training Academy", href: "/training-academy/" },
-  { label: "Loan Officer Support", href: "/loan-officer-support/" },
-  { label: "Marketing Dashboard", href: "/marketing/" },
-  { label: "Department Routing", href: "/department-routing/" },
-  { label: "Coach Command Center", href: "/coach-command-center" },
-  { label: "Coach Assignments", href: "/admin/coach-assignments" },
-  { label: "View-As Mode", href: "/admin/view-as" },
-  { label: "Quiz Review", href: "/admin/quiz-review" },
-  { label: "Training Library", href: "/training-library/" },
-  { label: "Video Library", href: "/ai-training/video-library/" },
-  { label: "Resource Library", href: "/resources/" },
-  { label: "Content Skills", href: "/content-skills/" },
-  { label: "Feedback & Suggestions", href: "/admin/feedback" },
-  { label: "Lender Escalations", href: "/admin/lender-escalations" },
-  { label: "FaceGram Moderation", href: "/facegram/" },
-  { label: "AI Assistant Settings", href: "/admin/ai-assistants" },
-  { label: "Coaching Members", href: "/coaching/" },
-  { label: "Settings", href: "/settings/" },
-  { label: "Launch QA Checklist", href: "/admin/qa-checklist/" },
-  { label: "Platform Status", href: "/admin/platform-status" },
-];
-
 const roleGroupCount = new Set(approvedUserSeeds.map((u) => u.role)).size;
 const departmentCount = new Set(
   approvedUserSeeds.map((u) => u.department).filter(Boolean),
@@ -114,105 +90,27 @@ function AdminShell({
         </div>
       </section>
 
-      <section className="container-page py-12">
-        <div className="grid gap-6 lg:grid-cols-2">
-          {preview ? (
-            <div className="card border-lf-orange/30 bg-lf-orangeSoft/30">
-              <div className="flex items-center gap-2">
-                <h2 className="h-display text-2xl">Beta Preview Mode</h2>
-                <span className="rounded-full bg-lf-orange px-2.5 py-0.5 text-xs font-bold text-white">
-                  Preview
-                </span>
-              </div>
-              <p className="prose-lf mt-3 text-sm text-lf-charcoal">
-                You are browsing in beta preview mode. This does not represent a
-                real user session. No data is being read from or written to
-                Supabase. Sign in with your Loan Factory Google account to see
-                your real profile and permissions.
-              </p>
-              <div className="mt-4">
-                <Link href="/login/" className="btn-primary text-sm">
-                  Sign in with Google
-                </Link>
-              </div>
-            </div>
-          ) : (
-            <div className="card">
-              <div className="flex items-center gap-2">
-                <h2 className="h-display text-2xl">Current user</h2>
-                <span className="rounded-full bg-lf-orangeSoft px-2.5 py-0.5 text-xs font-semibold text-lf-orangeDark">
-                  Google Authenticated
-                </span>
-              </div>
-              <dl className="mt-5 grid gap-3 text-sm">
-                <ProfileField label="Name" value={session?.profile.full_name ?? "Not set"} />
-                <ProfileField label="Email" value={session?.profile.email ?? ""} />
-                <div>
-                  <dt className="font-semibold text-lf-slate">Role</dt>
-                  <dd className="mt-1">
-                    <span className="inline-block rounded-full bg-lf-navy px-2.5 py-0.5 text-xs font-semibold text-white">
-                      {getRoleLabel(session?.profile.role)}
-                    </span>
-                  </dd>
-                </div>
-                <ProfileField label="Department" value={session?.profile.department ?? "—"} />
-                <ProfileField label="Status" value={session?.profile.status ?? "—"} />
-              </dl>
-            </div>
-          )}
-
-          <div className="card">
-            <h2 className="h-display text-2xl">Admin tools</h2>
-            <nav className="mt-4 grid gap-2">
-              {adminLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="flex items-center justify-between rounded-lg border border-lf-line px-4 py-3 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
-                >
-                  <span>{link.label}</span>
-                  <span aria-hidden className="text-lf-slate">&rarr;</span>
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </div>
-
-        <div className="mt-8 rounded-xl border border-lf-line bg-lf-mist p-5">
-          <h2 className="text-sm font-bold uppercase tracking-wide text-lf-slate">
-            Platform status
-          </h2>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <StatusItem label="Approved users" value={String(approvedUserSeeds.length)} />
-            <StatusItem label="Roles" value={`${roleGroupCount} active`} />
-            <StatusItem label="Departments" value={String(departmentCount)} />
-            <StatusItem label="Auth" value="Google OAuth" />
-          </div>
-          <p className="prose-lf mt-4 text-xs text-lf-slate">
-            Role access is managed through Supabase. Beta preview mode is
-            available for internal UI review without a live session.
-          </p>
-        </div>
-      </section>
+      <AdminConsole
+        user={{
+          name: preview
+            ? "Beta preview (no live session)"
+            : session?.profile.full_name ?? "Not set",
+          email: preview ? "—" : session?.profile.email ?? "",
+          roleLabel: preview
+            ? "Preview"
+            : getRoleLabel(session?.profile.role),
+          department: preview ? "—" : session?.profile.department ?? "—",
+          status: preview ? "Preview" : session?.profile.status ?? "—",
+          preview,
+        }}
+        stats={[
+          { label: "Approved users", value: String(approvedUserSeeds.length) },
+          { label: "Roles", value: `${roleGroupCount} active` },
+          { label: "Departments", value: String(departmentCount) },
+          { label: "Auth", value: "Google OAuth" },
+        ]}
+      />
     </>
-  );
-}
-
-function ProfileField({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <dt className="font-semibold text-lf-slate">{label}</dt>
-      <dd className="mt-1 text-lf-charcoal">{value}</dd>
-    </div>
-  );
-}
-
-function StatusItem({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-lg border border-lf-line bg-white px-4 py-3">
-      <p className="text-xs font-semibold text-lf-slate">{label}</p>
-      <p className="mt-1 text-lg font-bold text-lf-charcoal">{value}</p>
-    </div>
   );
 }
 

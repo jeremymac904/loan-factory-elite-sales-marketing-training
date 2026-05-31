@@ -53,8 +53,140 @@ a {
     @apply rounded-2xl border border-lf-line bg-white p-6 shadow-card;
   }
 
+  /* Denser card variants for compact, internal-tool layouts. */
+  .card-compact {
+    @apply rounded-xl border border-lf-line bg-white p-4 shadow-card;
+  }
+
+  .card-tight {
+    @apply rounded-lg border border-lf-line bg-white p-3 shadow-card;
+  }
+
   .pill {
     @apply inline-flex items-center gap-1 rounded-full border border-lf-line bg-white px-2.5 py-0.5 text-xs font-medium text-lf-slate;
+  }
+
+  /* Compact section rhythm: use in place of large py-14/py-16 blocks. */
+  .section-y {
+    @apply py-8 md:py-10;
+  }
+
+  .section-y-tight {
+    @apply py-5 md:py-7;
+  }
+
+  /* Compact metric / stat tile. */
+  .lf-metric {
+    @apply rounded-xl border border-lf-line bg-white px-4 py-3 shadow-card;
+  }
+
+  .lf-metric-label {
+    @apply text-[11px] font-semibold uppercase tracking-wide text-lf-slate;
+  }
+
+  .lf-metric-value {
+    @apply mt-0.5 text-xl font-bold text-lf-charcoal;
+  }
+
+  /* Compact data table. Wrap markup in <div class="lf-table-wrap"> for
+     horizontal scroll on small screens. */
+  .lf-table-wrap {
+    @apply w-full overflow-x-auto rounded-xl border border-lf-line;
+  }
+
+  .lf-table {
+    @apply w-full border-collapse text-left text-sm text-lf-charcoal;
+  }
+
+  .lf-table thead th {
+    @apply whitespace-nowrap border-b border-lf-line bg-lf-mist px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-lf-slate;
+  }
+
+  .lf-table tbody td {
+    @apply border-b border-lf-line/70 px-3 py-2 align-top;
+  }
+
+  .lf-table tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .lf-table tbody tr:hover {
+    @apply bg-lf-mist/60;
+  }
+
+  /* Compact native <select> styled to match the brand. */
+  .lf-select {
+    @apply w-full appearance-none rounded-lg border border-lf-line bg-white bg-[length:1rem] bg-[right_0.6rem_center] bg-no-repeat py-2 pl-3 pr-9 text-sm font-medium text-lf-navy shadow-sm transition focus:border-lf-orange focus:outline-none focus:ring-2 focus:ring-lf-orange/40;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%235F6368'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.06l3.71-3.83a.75.75 0 1 1 1.08 1.04l-4.25 4.39a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  /* Slide-out side panel base. Pair with an overlay + fixed-position wrapper. */
+  .lf-panel {
+    @apply fixed inset-y-0 right-0 z-50 flex w-full max-w-md flex-col overflow-y-auto border-l border-lf-line bg-white shadow-lift;
+  }
+
+  .lf-panel-header {
+    @apply flex items-center justify-between gap-3 border-b border-lf-line px-5 py-4;
+  }
+
+  .lf-panel-body {
+    @apply flex-1 space-y-4 px-5 py-4;
+  }
+
+  .lf-overlay {
+    @apply fixed inset-0 z-40 bg-lf-navy/40 backdrop-blur-sm;
+  }
+
+  /* Tab strip helpers. */
+  .lf-tabs {
+    @apply flex flex-wrap items-center gap-1 rounded-lg border border-lf-line bg-lf-mist p-1;
+  }
+
+  .lf-tab {
+    @apply inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-semibold text-lf-slate transition hover:text-lf-navy;
+  }
+
+  .lf-tab-active {
+    @apply bg-white text-lf-navy shadow-sm;
+  }
+
+  /* Collapsible (native <details>) helpers. */
+  .lf-collapsible {
+    @apply rounded-xl border border-lf-line bg-white;
+  }
+
+  .lf-collapsible > summary {
+    @apply flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-sm font-semibold text-lf-navy;
+  }
+
+  .lf-collapsible > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .lf-collapsible > summary::after {
+    content: "+";
+    @apply text-lg font-normal leading-none text-lf-slate transition-transform;
+  }
+
+  .lf-collapsible[open] > summary::after {
+    content: "\2212";
+  }
+
+  .lf-collapsible-body {
+    @apply border-t border-lf-line px-4 py-3 text-sm text-lf-charcoal;
+  }
+
+  /* Compact status chip (denser than .pill, no overflow). */
+  .lf-chip {
+    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide;
+  }
+
+  .lf-chip-neutral {
+    @apply border-lf-line bg-lf-mist text-lf-slate;
+  }
+
+  .lf-chip-accent {
+    @apply border-lf-orange/30 bg-lf-orangeSoft text-lf-orangeDark;
   }
 
   .btn-primary {

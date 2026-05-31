@@ -3,7 +3,7 @@ import { getRoleLabel } from "@/lib/supabase/auth";
 import { resolveAdminAccess } from "@/lib/supabase/adminAccess";
 import { getViewAsState } from "@/lib/viewAs";
 import { approvedUserSeeds } from "@/data/approvedUsers";
-import ViewAsControls from "@/components/ViewAsControls";
+import ViewAsPicker from "@/components/admin/ViewAsPicker";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "View-As Mode" };
@@ -23,9 +23,16 @@ const roleOptions = [
   "loan_officer",
 ];
 
-export default async function AdminViewAsPage() {
+export default async function AdminViewAsPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ role?: string }>;
+}) {
   const access = await resolveAdminAccess();
   const currentViewAs = await getViewAsState();
+  const params = (await searchParams) ?? {};
+  const initialRole =
+    params.role && roleOptions.includes(params.role) ? params.role : undefined;
 
   if (!access.allowed) {
     const resolvedLabel = access.resolvedRole
@@ -98,7 +105,7 @@ export default async function AdminViewAsPage() {
           </div>
         )}
 
-        <ViewAsControls
+        <ViewAsPicker
           roleOptions={roleOptions}
           userOptions={approvedUserSeeds.map((u) => ({
             email: u.email,
@@ -106,6 +113,8 @@ export default async function AdminViewAsPage() {
             role: u.role,
           }))}
           isMasterAdmin={isMasterAdmin}
+          hasActiveViewAs={Boolean(currentViewAs)}
+          initialRole={initialRole}
         />
 
         <div className="mt-8 rounded-xl border border-lf-line bg-lf-mist p-5 text-sm text-lf-slate">

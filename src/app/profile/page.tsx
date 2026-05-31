@@ -56,7 +56,7 @@ export default async function ProfilePage() {
       ? session.profile
       : null;
   const email = profile?.email ?? (previewEnabled ? betaPreviewEmail : "");
-  const name = profile?.full_name ?? (previewEnabled ? "Internal Review" : "");
+  const name = profile?.full_name ?? "";
   const role = previewEnabled
     ? "Review"
     : getRoleLabel(profile?.role);

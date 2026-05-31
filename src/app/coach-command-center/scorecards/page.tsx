@@ -4,6 +4,7 @@ import CoachCommandNav from "@/components/coach/CoachCommandNav";
 import {
   loMasteryScorecardFields,
   allianceScorecardFields,
+  scorecardReviews,
 } from "@/data/coachCommandCenter";
 
 export const dynamic = "force-dynamic";
@@ -41,6 +42,8 @@ function ScorecardCard({
 
 export default async function ScorecardsPage() {
   const access = await getCoachAccess();
+  const submitted = scorecardReviews.filter((s) => s.status === "submitted");
+  const missing = scorecardReviews.filter((s) => s.status === "missing");
 
   return (
     <>
@@ -58,7 +61,8 @@ export default async function ScorecardsPage() {
             Weekly Scorecards
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-white/85">
-            Printable weekly coaching templates to run live with each LO.
+            LOs submit scorecards. Coaches review trends, commitments, and
+            follow-up actions.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -76,16 +80,17 @@ export default async function ScorecardsPage() {
       <section className="container-page py-10">
         <div className="card border-lf-orange/40 bg-lf-orangeSoft/40">
           <p className="text-xs font-semibold uppercase tracking-wide text-lf-orangeDark">
-            How to use these
+            Ownership model
           </p>
           <h2 className="h-display mt-1 text-2xl">
-            Weekly coaching scorecards, filled in with the LO.
+            LO submits. Coach reviews. Commitments drive follow-up.
           </h2>
           <p className="prose-lf mt-2 text-sm">
-            These are weekly coaching scorecards — fill them in together with the
-            LO during your session, not as a report card after the fact. Print a
-            copy or walk the lines on screen, capture what actually happened, and
-            close by setting next week&apos;s commitment. Activity here feeds the{" "}
+            The coach view shows what was submitted, what is missing, where the
+            activity trend is moving, and which follow-up action the coach owns.
+            Sales and Marketing 101 through 601 remains free internal training
+            and is not counted as paid coaching progress here. Activity detail
+            feeds the{" "}
             <Link
               href="/coach-command-center/activity/"
               className="font-semibold text-lf-orange hover:underline"
@@ -100,11 +105,128 @@ export default async function ScorecardsPage() {
         </div>
       </section>
 
+      <section className="container-page pb-10">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="card">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+              Submitted
+            </p>
+            <p className="mt-2 text-3xl font-semibold text-lf-charcoal">
+              {submitted.length}
+            </p>
+          </div>
+          <div className="card">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+              Missing
+            </p>
+            <p className="mt-2 text-3xl font-semibold text-lf-orange">
+              {missing.length}
+            </p>
+          </div>
+          <div className="card">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+              Up trends
+            </p>
+            <p className="mt-2 text-3xl font-semibold text-lf-charcoal">
+              {scorecardReviews.filter((s) => s.trend === "up").length}
+            </p>
+          </div>
+          <div className="card">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+              Coach actions
+            </p>
+            <p className="mt-2 text-3xl font-semibold text-lf-charcoal">
+              {scorecardReviews.length}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-page pb-10">
+        <div className="card overflow-hidden p-0">
+          <div className="border-b border-lf-line px-4 py-3">
+            <h2 className="h-display text-xl">Coach review queue</h2>
+            <p className="mt-1 text-xs text-lf-slate">
+              Submitted scorecards are ready for coaching review. Missing
+              scorecards need a draft reminder before the next call.
+            </p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead className="border-b border-lf-line bg-lf-mist/60 text-xs uppercase tracking-wide text-lf-slate">
+                <tr>
+                  <th className="px-4 py-2 font-semibold">Member</th>
+                  <th className="px-4 py-2 font-semibold">Status</th>
+                  <th className="px-4 py-2 font-semibold">Trend</th>
+                  <th className="px-4 py-2 font-semibold">Conversation activity</th>
+                  <th className="px-4 py-2 font-semibold">Realtor</th>
+                  <th className="px-4 py-2 font-semibold">Past clients</th>
+                  <th className="px-4 py-2 font-semibold">Pipeline follow-up</th>
+                  <th className="px-4 py-2 font-semibold">Commitments</th>
+                  <th className="px-4 py-2 font-semibold">Coach follow-up</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-lf-line">
+                {scorecardReviews.map((scorecard) => (
+                  <tr key={scorecard.id} className="align-top hover:bg-lf-mist/40">
+                    <td className="px-4 py-2">
+                      <p className="font-semibold text-lf-charcoal">
+                        {scorecard.memberName}
+                      </p>
+                      <p className="text-xs text-lf-slate">{scorecard.tier}</p>
+                    </td>
+                    <td className="px-4 py-2">
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+                          scorecard.status === "submitted"
+                            ? "bg-green-100 text-green-800"
+                            : "bg-lf-orangeSoft text-lf-orangeDark"
+                        }`}
+                      >
+                        {scorecard.status}
+                      </span>
+                    </td>
+                    <td className="px-4 py-2 text-lf-slate">{scorecard.trend}</td>
+                    <td className="px-4 py-2 text-lf-charcoal">
+                      <p>{scorecard.conversationActivity}</p>
+                      <p className="mt-1 text-xs text-lf-slate">
+                        Conversations: {scorecard.conversations ?? "missing"}
+                      </p>
+                    </td>
+                    <td className="px-4 py-2 text-lf-slate">
+                      {scorecard.realtorActivity ?? "missing"}
+                    </td>
+                    <td className="px-4 py-2 text-lf-slate">
+                      {scorecard.pastClientTouches ?? "missing"}
+                    </td>
+                    <td className="px-4 py-2 text-lf-slate">
+                      {scorecard.pipelineFollowUp}
+                    </td>
+                    <td className="px-4 py-2 text-lf-charcoal">
+                      {scorecard.commitments}
+                    </td>
+                    <td className="px-4 py-2 text-lf-orangeDark">
+                      {scorecard.coachFollowUp}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       <section className="container-page pb-14">
+        <h2 className="h-display text-2xl">Scorecard field reference</h2>
+        <p className="prose-lf mt-2 max-w-3xl text-sm">
+          These are the lines LOs submit for paid coaching and team coaching
+          review. Coaches use them for review and follow-up; they do not fill
+          these in as paid coaching progress for the LO.
+        </p>
         <div className="grid gap-6 lg:grid-cols-2">
           <ScorecardCard
             title="LO Mastery weekly execution scorecard"
-            subtitle="For LO Mastery ($249) members — the core weekly rhythm of conversations, activity, training, and commitments."
+            subtitle="For LO Mastery ($249) members — the core weekly rhythm of conversations, activity, coaching resources, and commitments."
             fields={loMasteryScorecardFields}
           />
           <ScorecardCard

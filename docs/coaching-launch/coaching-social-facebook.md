@@ -10,19 +10,19 @@
 
 I built LO Mastery because most loan officers do not need another course. They need a platform.
 
-A place that brings training, live coaching, certifications, summits, and a real community into one operating system. So that a serious loan officer has a clear path, not a pile of PDFs.
+A place that brings paid coaching, accountability, certifications, summits, and a real community into one operating system. So that a serious loan officer has a clear path, not a pile of PDFs.
 
 Today the LO Mastery platform is opening.
 
-→ The Sales and Marketing 101-601. 101 through 601.
-→ Two membership tiers. $249 per month and $449 per month.
+→ Free internal Sales and Marketing 101-601 remains available as training reference.
+→ Paid coaching tiers: LO Mastery $249 per month and Loan Factory Alliance $449 per month.
 → coaching certifications.
 → Monthly live mastermind calls for Pro members.
 → The annual Alliance Summit for Pro members.
 
 If you take this craft seriously, LO Mastery is built for you.
 
-Comment "APEX" and I will send the link.
+Comment "LO MASTERY" and I will send the link.
 
 ---
 

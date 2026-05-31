@@ -8,6 +8,7 @@ import {
   getAiAdvantagePublishedVideosForSection,
 } from "@/data/aiAdvantagePublishedVideos";
 import { aiTrainingPaths, aiTrainingStartHere } from "@/data/aiTrainingVideos";
+import { marketingTrainingAssets } from "@/data/marketingTrainingAssets";
 
 export const metadata = { title: "AI Advantage" };
 
@@ -135,6 +136,43 @@ export default function AITrainingPage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="container-page py-14">
+        <SectionHeading
+          eyebrow="Marketing setup tie-ins"
+          title="Use AI Advantage with the new marketing assets."
+          description="These prompts support the setup lessons without replacing review, compliance judgment, or Loan Factory support."
+        />
+        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          {marketingTrainingAssets.map((asset) => (
+            <article key={asset.id} className="card">
+              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                {asset.title}
+              </p>
+              <h3 className="h-display mt-1 text-xl">
+                {asset.aiAdvantageTieIn.title}
+              </h3>
+              <p className="prose-lf mt-2 text-sm text-lf-slate">
+                {asset.aiAdvantageTieIn.useCase}
+              </p>
+              <div className="mt-4 rounded-xl bg-lf-mist p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                  Prompt starter
+                </p>
+                <p className="prose-lf mt-2 text-sm text-lf-charcoal">
+                  {asset.aiAdvantageTieIn.promptStarter}
+                </p>
+              </div>
+              <Link
+                href={`/training-library/#${asset.id}`}
+                className="mt-5 inline-flex text-sm font-semibold text-lf-orange"
+              >
+                Open source asset &rarr;
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 

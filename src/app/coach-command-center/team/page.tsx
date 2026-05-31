@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getCoachAccess } from "@/lib/coachAccess";
 import CoachCommandNav from "@/components/coach/CoachCommandNav";
+import PersonActionDropdown from "@/components/coach/PersonActionDropdown";
 import { peopleForScope, statusMeta } from "@/data/coachCommandCenter";
 
 export const dynamic = "force-dynamic";
@@ -74,10 +75,9 @@ export default async function CoachTeamPage() {
                   {people.length} {people.length === 1 ? "person" : "people"} you
                   coach
                 </h2>
-                <p className="prose-lf mt-1 text-sm">
-                  Coaching status reflects engagement, not compliance. Use the
-                  quick actions to add a note, send a coaching message, or open a
-                  scorecard.
+              <p className="prose-lf mt-1 text-sm">
+                  Coaching status reflects engagement, not compliance. Use one
+                  action menu per person to keep the page compact.
                 </p>
               </div>
             </div>
@@ -88,19 +88,20 @@ export default async function CoachTeamPage() {
                 <thead className="border-b border-lf-line bg-lf-mist/60 text-xs uppercase tracking-wide text-lf-slate">
                   <tr>
                     <th className="px-4 py-3 font-semibold">Name</th>
-                    <th className="px-4 py-3 font-semibold">Role</th>
-                    <th className="px-4 py-3 font-semibold">Program / tier</th>
-                    <th className="px-4 py-3 font-semibold">Coach</th>
-                    <th className="px-4 py-3 font-semibold">Last activity</th>
-                    <th className="px-4 py-3 font-semibold">Next task</th>
-                    <th className="px-4 py-3 font-semibold">Status</th>
-                    <th className="px-4 py-3 font-semibold">Actions</th>
+                    <th className="px-3 py-2 font-semibold">Role</th>
+                    <th className="px-3 py-2 font-semibold">Program</th>
+                    <th className="px-3 py-2 font-semibold">Last</th>
+                    <th className="px-3 py-2 font-semibold">Next task</th>
+                    <th className="px-3 py-2 font-semibold">Scorecard</th>
+                    <th className="px-3 py-2 font-semibold">Next call</th>
+                    <th className="px-3 py-2 font-semibold">Status</th>
+                    <th className="px-3 py-2 font-semibold">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-lf-line">
                   {people.map((p) => (
-                    <tr key={p.id} className="align-top hover:bg-lf-mist/40">
-                      <td className="px-4 py-3">
+                    <tr key={p.id} className="align-middle hover:bg-lf-mist/40">
+                      <td className="px-3 py-2">
                         <div className="font-semibold text-lf-charcoal">
                           {p.name}
                         </div>
@@ -111,41 +112,25 @@ export default async function CoachTeamPage() {
                           {p.email}
                         </a>
                       </td>
-                      <td className="px-4 py-3 text-lf-slate">{p.role}</td>
-                      <td className="px-4 py-3 text-lf-slate">{p.program}</td>
-                      <td className="px-4 py-3 text-lf-slate">{p.coach}</td>
-                      <td className="px-4 py-3 text-lf-slate">
+                      <td className="px-3 py-2 text-lf-slate">{p.role}</td>
+                      <td className="px-3 py-2 text-lf-slate">{p.program}</td>
+                      <td className="px-3 py-2 text-lf-slate">
                         {p.lastActivity}
                       </td>
-                      <td className="px-4 py-3 text-lf-charcoal">{p.nextTask}</td>
-                      <td className="px-4 py-3">
+                      <td className="px-3 py-2 text-lf-charcoal">{p.nextTask}</td>
+                      <td className="px-3 py-2 text-lf-slate">
+                        {p.scorecardStatus.replace("_", " ")}
+                      </td>
+                      <td className="px-3 py-2 text-lf-slate">{p.nextCall}</td>
+                      <td className="px-3 py-2">
                         <span
                           className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${statusMeta[p.status].class}`}
                         >
                           {statusMeta[p.status].label}
                         </span>
                       </td>
-                      <td className="px-4 py-3">
-                        <div className="flex flex-wrap gap-2">
-                          <Link
-                            href="/coach-command-center/coaching-notes/"
-                            className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
-                          >
-                            Notes
-                          </Link>
-                          <Link
-                            href="/coach-command-center/messages/"
-                            className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
-                          >
-                            Message
-                          </Link>
-                          <Link
-                            href="/coach-command-center/scorecards/"
-                            className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
-                          >
-                            Scorecard
-                          </Link>
-                        </div>
+                      <td className="px-3 py-2">
+                        <PersonActionDropdown person={p} />
                       </td>
                     </tr>
                   ))}
@@ -208,24 +193,7 @@ export default async function CoachTeamPage() {
                     </div>
                   </dl>
                   <div className="mt-auto flex flex-wrap gap-2 border-t border-lf-line pt-3">
-                    <Link
-                      href="/coach-command-center/coaching-notes/"
-                      className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
-                    >
-                      Notes
-                    </Link>
-                    <Link
-                      href="/coach-command-center/messages/"
-                      className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
-                    >
-                      Message
-                    </Link>
-                    <Link
-                      href="/coach-command-center/scorecards/"
-                      className="rounded-lg border border-lf-line px-2.5 py-1 text-xs font-semibold text-lf-slate transition hover:border-lf-orange hover:text-lf-orange"
-                    >
-                      Scorecard
-                    </Link>
+                    <PersonActionDropdown person={p} />
                   </div>
                 </div>
               ))}

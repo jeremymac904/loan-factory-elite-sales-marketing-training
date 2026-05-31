@@ -10,7 +10,7 @@ const knowledgeSources = [
   },
   {
     name: "Sales & Marketing 101-601",
-    description: "Internal training paths from foundation through elite execution.",
+    description: "Internal training paths from foundation through advanced execution.",
     status: "in-platform",
   },
   {

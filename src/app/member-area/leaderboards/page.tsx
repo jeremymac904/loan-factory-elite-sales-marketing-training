@@ -12,9 +12,9 @@ const leaderboardLanes = [
       "Weekly calls, partner touches, follow-up blocks, and completed tracker entries.",
   },
   {
-    title: "Training completion",
+    title: "Coaching resource completion",
     description:
-      "101-601 progress, assigned roleplays, resource reviews, and quiz completion.",
+      "Assigned coaching resources, roleplays, resource reviews, and action-item completion. Free 101-601 course progress is tracked separately.",
   },
   {
     title: "Coaching follow-through",
@@ -37,7 +37,8 @@ export default function MemberLeaderboardsPage() {
         body={
           <p>
             Recognition should focus on effort, consistency, training progress,
-            and useful contribution. Production claims stay out of this surface.
+            coaching follow-through, and useful contribution. Free training
+            completion stays separate from paid coaching leaderboards.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -81,7 +82,7 @@ export default function MemberLeaderboardsPage() {
           <p>
             Leaderboards must not imply guaranteed production, income, approval,
             or business outcomes. They should recognize controllable behaviors
-            and completed training work only.
+            and paid coaching follow-through only.
           </p>
         </ComplianceCallout>
       </section>

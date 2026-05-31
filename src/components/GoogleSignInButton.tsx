@@ -107,8 +107,8 @@ export default function GoogleSignInButton() {
       </button>
       {!configured && (
         <p className="rounded-lg border border-lf-orange/30 bg-lf-orangeSoft px-3 py-2 text-sm font-semibold text-lf-orangeDark">
-          Google sign-in is not ready here yet. Use Internal Review if Jeremy only
-          needs to review the pages.
+          Google sign-in is not ready in this environment yet. Please try again
+          later or contact the LO Development team.
         </p>
       )}
       {error && (
