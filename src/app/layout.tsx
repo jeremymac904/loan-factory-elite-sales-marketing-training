@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CanonicalHostGuard from "@/components/CanonicalHostGuard";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import BetaPreviewBanner from "@/components/BetaPreviewBanner";
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-white antialiased">
+        <CanonicalHostGuard />
         <SiteHeader />
         <ViewAsBanner />
         <BetaPreviewBanner />
