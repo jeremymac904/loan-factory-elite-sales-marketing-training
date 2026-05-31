@@ -12,7 +12,7 @@ import {
   type Session,
   type User,
 } from "@supabase/supabase-js";
-import { getSafeNextPath } from "@/lib/supabase/auth";
+import { getRoleDashboardHref, getSafeNextPath } from "@/lib/supabase/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import {
   appSessionCookieName,
@@ -75,7 +75,11 @@ function getCookieOptions(request: NextRequest): CookieOptions {
 
   return {
     ...DEFAULT_COOKIE_OPTIONS,
-    sameSite: "none",
+    // First-party, single-origin app: Lax is the correct, robust setting and is
+    // what /auth/callback already uses. SameSite=None was being dropped/withheld
+    // by Safari ITP + Chrome third-party-cookie blocking, so the server never saw
+    // the session after the browser-callback handoff and bounced users to "/".
+    sameSite: "lax",
     secure,
   };
 }
@@ -455,21 +459,26 @@ export async function POST(request: NextRequest) {
         httpOnly: true,
         maxAge: appSessionMaxAge,
         path: "/",
-        sameSite: "none",
+        sameSite: "lax",
         secure: getCookieOptions(request).secure,
       },
     });
   }
 
+  // Default landing ("/") goes to the role's dashboard so an approved user lands
+  // on their real home (e.g. master_admin -> /admin/). A real deep-link is honored.
+  const destination =
+    next && next !== "/" ? next : getRoleDashboardHref(approvedUser.role);
+
   if (responseMode === "redirect") {
-    return redirectWithCookies(request, next, cookiesToSet);
+    return redirectWithCookies(request, destination, cookiesToSet);
   }
 
   return jsonWithCookies(
     {
       status: "approved",
       role: approvedUser.role,
-      redirectTo: next,
+      redirectTo: destination,
       debug: {
         callbackStage: "sync-profile-approved",
         syncProfileAttempted: true,

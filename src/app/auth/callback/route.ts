@@ -10,7 +10,7 @@ import {
 } from "@supabase/ssr";
 import type { PostgrestError, Session, User } from "@supabase/supabase-js";
 import { NextResponse, type NextRequest } from "next/server";
-import { getSafeNextPath } from "@/lib/supabase/auth";
+import { getRoleDashboardHref, getSafeNextPath } from "@/lib/supabase/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import {
   getSiteUrl,
@@ -491,5 +491,8 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  return redirectWithCookies(request, next, cookiesToSet, headersToSet);
+  const destination =
+    next && next !== "/" ? next : getRoleDashboardHref(profileSync.role);
+
+  return redirectWithCookies(request, destination, cookiesToSet, headersToSet);
 }

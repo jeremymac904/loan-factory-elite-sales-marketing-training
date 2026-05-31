@@ -24,7 +24,9 @@ function getCookieOptions(request: NextRequest): CookieOptions {
 
   return {
     path: "/",
-    sameSite: "none",
+    // First-party app: Lax keeps the PKCE/session cookies surviving the OAuth
+    // top-level GET redirects while avoiding the SameSite=None third-party drop.
+    sameSite: "lax",
     secure,
   };
 }
