@@ -104,7 +104,7 @@ export const faceGramGroups: FaceGramGroup[] = [
     ],
   },
   {
-    slug: "apex-advisor",
+    slug: "lo-mastery",
     name: "LO Mastery",
     visibility: "Member group",
     memberCount: "491 members",

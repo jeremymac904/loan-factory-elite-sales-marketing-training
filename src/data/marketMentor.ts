@@ -135,6 +135,7 @@ export type MarketMentorAccessRole =
   | "admin"
   | "lo_development_lead"
   | "lo_development_member"
+  | "training_academy"
   | "corporate_coach"
   | "marketing"
   | "team_leader"
@@ -150,6 +151,7 @@ export const marketMentorFullAccessRoles: MarketMentorAccessRole[] = [
   "admin",
   "lo_development_lead",
   "lo_development_member",
+  "training_academy",
   "corporate_coach",
   "marketing",
   "team_leader",

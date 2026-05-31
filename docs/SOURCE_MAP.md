@@ -16,16 +16,16 @@
 |---|---|
 | `src/app/page.tsx` | Current homepage / platform entry |
 | `src/app/recommended-channels/page.tsx` | Recommended channels surface |
-| `src/app/apex-advisor*/` | Apex Advisor route family |
-| `src/app/apex-calendar/` | Apex calendar route |
-| `src/app/apex-certifications/` | Apex certifications route |
-| `src/app/apex-launch-call/` | Apex launch call route |
-| `src/app/apex-leaderboards/` | Apex leaderboard route |
-| `src/app/apex-mastermind/` | Apex mastermind route |
-| `src/app/apex-member-area/` | Apex member area route |
+| `src/app/coaching*/` | LO Mastery route family |
+| `src/app/member-area/calendar/` | LO Mastery calendar route |
+| `src/app/member-area/certifications/` | coaching certifications route |
+| `src/app/support-routing/#corporate-coaches/` | LO Mastery launch call route |
+| `src/app/member-area/leaderboards/` | LO Mastery leaderboard route |
+| `src/app/member-area/mastermind/` | LO Mastery mastermind route |
+| `src/app/member-area/` | coaching member area route |
 | `src/app/personality-workshop/` | Personality workshop route |
 | `src/components/SiteHeader.tsx` | Shared navigation/header |
-| `src/data/apex.ts` | Apex data model/content |
+| `src/data/coaching.ts` | coaching data model/content |
 
 ## Docs Map
 
@@ -37,7 +37,7 @@
 | `docs/LO_DEVELOPMENT_CREATOR_NETWORK_PLAN.md` | Creator Network plan |
 | `docs/LO_DEVELOPMENT_AUDIENCE_QUALITY_PANEL_PLAN.md` | Audience Quality Panel plan |
 | `docs/LO_DEVELOPMENT_AI_ASSISTANT_HUB_PLAN.md` | AI Assistant Hub plan |
-| `docs/apex-launch/` | Apex launch copy package |
+| `docs/coaching-launch/` | LO Mastery launch copy package |
 
 ## Import Notes
 

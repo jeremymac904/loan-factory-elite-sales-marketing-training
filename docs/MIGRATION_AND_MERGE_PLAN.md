@@ -4,26 +4,26 @@
 **Owner:** Jeremy McDonald
 **Last updated:** 2026-05-21
 
-This plan describes how to merge the new modules (AI Assistant Hub, 1+1=5 Team Growth Platform, Team Leader OS, Corporate Coach Hub, LO Support & Development Routing) into the existing repository — which already contains the Elite Sales & Marketing Training site AND the Apex Advisor build — without breaking anything that exists today.
+This plan describes how to merge the new modules (AI Assistant Hub, 1+1=5 Team Growth Platform, Team Leader OS, Corporate Coach Hub, LO Support & Development Routing) into the existing repository — which already contains the Sales and Marketing 101-601 site AND the LO Mastery build — without breaking anything that exists today.
 
 ---
 
 ## 1. Current repo state
 
-The repo already contains both the Elite Sales & Marketing Training surfaces (101–601) AND the Apex Advisor build. From `src/app/`:
+The repo already contains both the Sales and Marketing 101-601 surfaces (101–601) AND the LO Mastery build. From `src/app/`:
 
-**Apex Advisor (built):**
-- `apex-advisor/`
-- `apex-advisor-track/`
-- `apex-advisor-pro/`
-- `apex-certifications/`
-- `apex-calendar/`
-- `apex-leaderboards/`
-- `apex-mastermind/`
-- `apex-launch-call/`
-- `apex-member-area/`
+**LO Mastery (built):**
+- `coaching/`
+- `sales-training/`
+- `loan-factory-alliance/`
+- `member-area/certifications/`
+- `member-area/calendar/`
+- `member-area/leaderboards/`
+- `member-area/mastermind/`
+- `coaching-launch-call/`
+- `member-area/`
 
-**Elite Sales & Marketing Training (built):**
+**Sales and Marketing 101-601 (built):**
 - `101-foundation/`
 - `201-borrower-conversion/`
 - `301-referral-partner-growth/`
@@ -50,11 +50,11 @@ The repo already contains both the Elite Sales & Marketing Training surfaces (10
 - `paths/`
 
 **Data (built):**
-- `src/data/apex.ts`
+- `src/data/coaching.ts`
 - (and any other data files in `src/data/`)
 
 **Docs (built):**
-- `docs/apex-launch/`
+- `docs/coaching-launch/`
 - `docs/audio-transcripts/`
 - `docs/handouts/`
 - `docs/gamma/`
@@ -127,7 +127,7 @@ Plus three unifying surfaces:
 **Step 4 — Extend data layer (additive)**
 - Add `src/data/aiAssistants.ts`, `src/data/onePlusOneFive.ts`, `src/data/teamLeaderOs.ts`, `src/data/corporateCoachHub.ts`, `src/data/trainingLibrary.ts`
 - Each is a typed module config: title, description, sub-route catalog, CTA links, Drive links where applicable
-- Do not modify `src/data/apex.ts` unless the change is strictly additive
+- Do not modify `src/data/coaching.ts` unless the change is strictly additive
 
 **Step 5 — Update navigation (additive)**
 - Open `src/components/SiteHeader.tsx` (already modified — coordinate with Jeremy first)
@@ -225,7 +225,7 @@ The existing `SiteHeader.tsx` already has uncommitted modifications from the pri
 Proposed final top-level nav order (subject to Jeremy's call):
 1. Home
 2. Sales Training
-3. Apex Advisor
+3. LO Mastery
 4. AI Assistants
 5. 1+1=5
 6. Team Leader OS
@@ -268,7 +268,7 @@ Owner Preview is intentionally NOT in the public nav.
 - Does NOT introduce a database
 - Does NOT introduce live AI calls
 - Does NOT introduce payments
-- Does NOT modify Apex Advisor functionality
+- Does NOT modify LO Mastery functionality
 - Does NOT modify the 101–601 curriculum content
 - Does NOT push to GitHub
 - Does NOT deploy

@@ -77,7 +77,7 @@ export const modules: ModuleSummary[] = [
       },
     ],
     trainingVideo: {
-      title: "Elite Sales & Marketing 101 Training Video",
+      title: "Sales and Marketing 101 Training Video",
       youtubeUrl: "https://youtu.be/fdqe2poMc98",
       embedUrl: "https://www.youtube.com/embed/fdqe2poMc98",
       description:
@@ -376,8 +376,8 @@ export const modules: ModuleSummary[] = [
     level: "601",
     slug: "601-elite-execution",
     href: "/601-elite-execution/",
-    title: "601 Elite Execution: Build Your Niche Plan",
-    theme: "Elite execution",
+    title: "601 Execution System: Build Your Niche Plan",
+    theme: "Execution system",
     corePromise:
       "You leave with a written 12-week plan and a simple set of AI prompts you can actually use.",
     audience: "Producer, team leader, or corporate coach.",
@@ -393,7 +393,7 @@ export const modules: ModuleSummary[] = [
       "Use AI prompts across prep, follow-up, content, roleplay, and weekly review.",
       "Build a one page weekly scorecard.",
       "Submit a partner roster of five named priority partners.",
-      "Earn the Loan Factory Elite Sales and Marketing certification.",
+      "Earn the Loan Factory Sales and Marketing 101-601 completion badge.",
     ],
     topics: [
       "Niche strategy (self employed, VA, first time buyer, investor, divorce, builder)",

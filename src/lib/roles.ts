@@ -3,6 +3,7 @@ export type RoleId =
   | "admin"
   | "lo-development-lead"
   | "lo-development-member"
+  | "training-academy"
   | "corporate-coach"
   | "team-leader"
   | "marketing"
@@ -56,7 +57,7 @@ export const roles: Role[] = [
     group: "LO Development",
     description:
       "LO Development leadership access with coaching visibility and training direction.",
-    dashboardHref: "/resources/",
+    dashboardHref: "/lo-development/",
     highlights: [
       "LO Development resources",
       "Feedback review",
@@ -70,7 +71,7 @@ export const roles: Role[] = [
     group: "LO Development",
     description:
       "LO Development contributor access for assigned sections and resources.",
-    dashboardHref: "/resources/",
+    dashboardHref: "/lo-development/",
     highlights: [
       "Assigned sections",
       "Training resources",
@@ -79,14 +80,28 @@ export const roles: Role[] = [
     ],
   },
   {
+    id: "training-academy",
+    name: "Training Academy",
+    group: "LO Development",
+    description:
+      "Training Academy access for module assignments, lesson resources, quizzes, video reviews, and recommended next training.",
+    dashboardHref: "/training-academy/",
+    highlights: [
+      "Training Academy dashboard",
+      "Module assignments",
+      "Video and resource library",
+      "Assessments and handoffs",
+    ],
+  },
+  {
     id: "corporate-coach",
     name: "Corporate Coach",
     group: "Corporate Coach",
     description:
-      "Coaching resources, Apex coaching area, recordings, scripts, and trackers.",
-    dashboardHref: "/apex-member-area/",
+      "Coaching resources, member progress, recordings, scripts, scorecards, and trackers.",
+    dashboardHref: "/coach-command-center/",
     highlights: [
-      "Apex coaching area",
+      "Coach Command Center",
       "Recordings and scripts",
       "Trackers and scorecards",
       "Coach guide",
@@ -112,7 +127,7 @@ export const roles: Role[] = [
     group: "Marketing",
     description:
       "Review queue concepts, FaceGram content review, and approved adaptation resources.",
-    dashboardHref: "/facegram/",
+    dashboardHref: "/marketing/",
     highlights: [
       "FaceGram content review",
       "Approved adaptation concepts",
@@ -140,7 +155,7 @@ export const roles: Role[] = [
     group: "Coaching Member",
     description:
       "LO Mastery Coaching member resources at the $249 access level.",
-    dashboardHref: "/lo-mastery-coaching/",
+    dashboardHref: "/member-area/lo-mastery/",
     highlights: [
       "LO Mastery resources",
       "Coaching sessions",
@@ -154,7 +169,7 @@ export const roles: Role[] = [
     group: "Coaching Member",
     description:
       "Loan Factory Alliance member resources at the $449 access level.",
-    dashboardHref: "/loan-factory-alliance/",
+    dashboardHref: "/member-area/alliance/",
     highlights: [
       "Alliance resources",
       "Advanced coaching",
@@ -168,7 +183,7 @@ export const roles: Role[] = [
     group: "Loan Officer",
     description:
       "Coaching, Sales & Marketing, AI Advantage, FaceGram, AI Assistants, and Resources.",
-    dashboardHref: "/",
+    dashboardHref: "/normal-lo/",
     highlights: [
       "Sales & Marketing 101-601",
       "LO Mastery Coaching",

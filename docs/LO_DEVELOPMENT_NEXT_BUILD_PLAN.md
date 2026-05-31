@@ -5,7 +5,7 @@
 **Last updated:** 2026-05-21
 **Companion docs:** [`LO_DEVELOPMENT_PLATFORM_VISION.md`](./LO_DEVELOPMENT_PLATFORM_VISION.md), [`LO_DEVELOPMENT_PLATFORM_NAVIGATION_PLAN.md`](./LO_DEVELOPMENT_PLATFORM_NAVIGATION_PLAN.md), [`LO_DEVELOPMENT_AI_ASSISTANT_HUB_PLAN.md`](./LO_DEVELOPMENT_AI_ASSISTANT_HUB_PLAN.md), [`LO_DEVELOPMENT_BRAND_UNIFICATION_PLAN.md`](./LO_DEVELOPMENT_BRAND_UNIFICATION_PLAN.md), [`LO_DEVELOPMENT_MODULE_LANDING_PAGE_TEMPLATE.md`](./LO_DEVELOPMENT_MODULE_LANDING_PAGE_TEMPLATE.md), [`DO_NOT_BUILD_YET.md`](./DO_NOT_BUILD_YET.md)
 
-This plan prepares the current Elite Sales & Marketing Training site (which already includes the Apex Advisor build) to become the full unified **Loan Factory LO Development Platform**. It supersedes the prior 48-hour plan because the scope is now bigger and phased: shell first, then content, then prototype polish, then production-prep after TERA/Ally alignment.
+This plan prepares the current Sales and Marketing 101-601 site (which already includes the LO Mastery build) to become the full unified **Loan Factory LO Development Platform**. It supersedes the prior 48-hour plan because the scope is now bigger and phased: shell first, then content, then prototype polish, then production-prep after TERA/Ally alignment.
 
 **Safety rules apply throughout:** no push, no deploy, no real auth, no live AI, no payments, no TERA integration, no public claims that violate the terminology rules. See [`DO_NOT_BUILD_YET.md`](./DO_NOT_BUILD_YET.md).
 
@@ -15,7 +15,7 @@ This plan prepares the current Elite Sales & Marketing Training site (which alre
 
 **Goal:** Stand up the unified shell so every module is reachable, on-brand, and visually consistent. No content depth required yet. Can start immediately with no external approvals.
 
-1. **Extend `SiteHeader.tsx` with all 13 nav areas.** Additive only — preserve every existing entry. Order per [`LO_DEVELOPMENT_PLATFORM_NAVIGATION_PLAN.md`](./LO_DEVELOPMENT_PLATFORM_NAVIGATION_PLAN.md): Home, Apex Advisor, Elite Sales & Marketing, AI Training, 1+1+1=5, Training Library, Team Leader OS, Coach Hub, AI Assistants, Calendar, Trackers, Resources, Support Routing. Coordinate with Jeremy first because SiteHeader has uncommitted changes.
+1. **Extend `SiteHeader.tsx` with all 13 nav areas.** Additive only — preserve every existing entry. Order per [`LO_DEVELOPMENT_PLATFORM_NAVIGATION_PLAN.md`](./LO_DEVELOPMENT_PLATFORM_NAVIGATION_PLAN.md): Home, LO Mastery, Sales and Marketing 101-601, AI Training, 1+1+1=5, Training Library, Team Leader OS, Coach Hub, AI Assistants, Calendar, Trackers, Resources, Support Routing. Coordinate with Jeremy first because SiteHeader has uncommitted changes.
 2. **Build shared components.** `ModuleBanner`, `ModuleCard`, `AssistantCard`, `AudienceCard`, `FeatureGrid`, `ContentListCard`, `CrossModuleCallout`, `ComingNextTimeline`, `CTAFooterBlock`. Drop into `src/components/`. Match the brand unification plan.
 3. **Build the four not-yet-built module landing pages** using the module landing page template:
    - `src/app/ai-training/page.tsx`

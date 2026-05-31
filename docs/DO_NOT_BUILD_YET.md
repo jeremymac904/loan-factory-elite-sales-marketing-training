@@ -33,7 +33,7 @@ Prototype access control = the `/owner-preview` route + "do not link from public
 - [ ] Coupon or promo code logic
 - [ ] Refund flows
 
-Apex Advisor billing happens **outside** the platform. The platform shows tier benefits and gates content by tier label only — no real billing data.
+LO Mastery billing happens **outside** the platform. The platform shows tier benefits and gates content by tier label only — no real billing data.
 
 ---
 
@@ -123,7 +123,7 @@ Prototype hosting = Netlify dev URL only, if and when Jeremy chooses to deploy a
 - [ ] Real coaching notes from any source (placeholder only)
 - [ ] Real member progress data (placeholder only)
 - [ ] Real recruiting candidate data (placeholder only)
-- [ ] Real Apex membership data (placeholder only)
+- [ ] Real coaching membership data (placeholder only)
 - [ ] Any personally identifiable information (PII) — borrower names, LO personal data, candidate contact info, etc.
 
 ---

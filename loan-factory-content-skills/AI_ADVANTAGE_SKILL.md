@@ -57,7 +57,7 @@ Confirm tool/task + output + LO skill level (assume beginner) → load brand rul
 ## 6. Guardrails (never do)
 - Beginner-safe: define terms, show the click path, give one action. No "you should already know this."
 - No hype, income guarantees, manifestation, or "borrow to join."
-- Use **LO**, **TERA** (not MOSO), **Netlify** (not Vercel), **approved Loan Factory users**; no Apex Advisor.
+- Use **LO**, **TERA** (not MOSO), **Netlify** (not Vercel), **approved Loan Factory users**; no deprecated paid-coaching names.
 - Describe AI capability **honestly** — no invented APIs/integrations; note where a step is manual or where TERA is one-way read-only.
 - HeyGen / any consumer-facing AI output: use structured generation, append the NMLS footer, and route mortgage-marketing claims through compliance (NMLS 320841, EHL, rate+APR, sample scenario). Protect DSCR/FHA/HELOC phonetically.
 - Workflow/automation docs: never spend money, send messages, publish, email, or push to production without explicit approval (honor stop conditions).

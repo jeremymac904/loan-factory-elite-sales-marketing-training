@@ -53,7 +53,7 @@ Pick one per video and keep the energy consistent.
 ## 6. Voice & compliance
 - Practical, broker-first, confident, no hype.
 - No income guarantees, no rate promises, no manifestation language, no "borrow to join."
-- Educational framing for anything rate/program-specific. Use LO / TERA / Netlify; never Apex Advisor.
+- Educational framing for anything rate/program-specific. Use LO / TERA / Netlify; never deprecated paid-coaching names.
 
 ## 7. Production note
 Pair with the **heygen-mortgage-avatar** skill for persona/script optimization. Deliver the script container above, paste-ready. Run the Pre-Send Brand Checklist.

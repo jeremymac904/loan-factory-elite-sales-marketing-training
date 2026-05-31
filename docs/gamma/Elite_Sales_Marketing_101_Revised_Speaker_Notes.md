@@ -1,4 +1,4 @@
-# Elite Sales and Marketing Training 101. Revised Speaker Notes.
+# Sales and Marketing 101-601 101. Revised Speaker Notes.
 
 In Jeremy's voice. Plain English. Confident. Practical. Direct. No corporate fluff. No hype. Mortgage specific. Beginner friendly.
 

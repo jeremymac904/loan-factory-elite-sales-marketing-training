@@ -4,13 +4,15 @@ import HeaderAuthStatus from "./HeaderAuthStatus";
 import { brandAssets } from "@/data/brandAssets";
 
 const primaryNav = [
-  { label: "Home", href: "/" },
+  { label: "Dashboard", href: "/normal-lo/" },
+  { label: "LO Dev", href: "/lo-development/" },
+  { label: "Training", href: "/training-academy/" },
   { label: "Coaching", href: "/coaching/" },
-  { label: "Sales & Marketing", href: "/sales-training/" },
-  { label: "AI Advantage", href: "/ai-training/" },
+  { label: "101-601", href: "/sales-training/" },
+  { label: "AI", href: "/ai-training/" },
   { label: "FaceGram", href: "/facegram/" },
-  { label: "AI Assistants", href: "/ai-assistants/" },
-  { label: "Resources", href: "/resources/" },
+  { label: "Support", href: "/loan-officer-support/" },
+  { label: "Admin", href: "/admin/" },
 ];
 
 export default function SiteHeader() {

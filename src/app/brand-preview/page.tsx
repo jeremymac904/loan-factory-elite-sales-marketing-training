@@ -19,9 +19,10 @@ export default function BrandPreviewPage() {
             Brand Preview
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Quick reference for how the Elite Sales and Marketing Training logo
-            and the Loan Factory logo render in this portal. Use this page to
-            confirm contrast before publishing handouts or printed materials.
+            Quick reference for how the Loan Factory platform logo and the
+            Sales and Marketing 101-601 training mark render in this portal.
+            Use this page to confirm contrast before publishing handouts or
+            printed materials.
           </p>
         </div>
       </section>
@@ -29,7 +30,7 @@ export default function BrandPreviewPage() {
       <section className="container-page py-10">
         <SectionHeading
           eyebrow="Hierarchy rule"
-          title="Elite is primary. Loan Factory supports."
+          title="Loan Factory is primary. Program marks support it."
         />
         <p className="prose-lf mt-4 text-base">{brandHierarchyRule}</p>
       </section>
@@ -43,7 +44,7 @@ export default function BrandPreviewPage() {
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           <div className={lightCard}>
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-              Elite training logo
+              Sales and Marketing 101-601 mark
             </p>
             <div className="mt-6 flex items-center justify-center">
               <BrandImage
@@ -75,7 +76,7 @@ export default function BrandPreviewPage() {
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           <div className={darkCard}>
             <p className="text-xs font-semibold uppercase tracking-wide text-white/60">
-              Elite training logo
+              Sales and Marketing 101-601 mark
             </p>
             <div className="mt-6 flex items-center justify-center">
               <BrandImage
@@ -114,7 +115,7 @@ export default function BrandPreviewPage() {
               <BrandImage asset={brandAssets.elite} heightClass="h-11" />
               <span className="flex flex-col leading-tight">
                 <span className="text-[11px] uppercase tracking-wide text-lf-slate">
-                  Elite Sales and Marketing
+                  Sales and Marketing
                 </span>
                 <span className="text-[11px] uppercase tracking-wide text-lf-slate">
                   Training 101 through 601
@@ -122,8 +123,9 @@ export default function BrandPreviewPage() {
               </span>
             </div>
             <p className="prose-lf mt-3 text-xs text-lf-slate">
-              Loan Factory logo intentionally not in the header. Keeps the
-              header light. Loan Factory shows up in the hero and the footer.
+              The current site header uses the Loan Factory platform logo.
+              Training-specific marks stay available for handouts and review
+              surfaces.
             </p>
           </div>
 
@@ -167,9 +169,9 @@ export default function BrandPreviewPage() {
                 </div>
               </div>
               <p className="prose-lf text-sm text-white/85">
-                The Elite training logo reads largest. Loan Factory is below as
-                the supporting brand. The whole block sits on a white chip so
-                both logos read cleanly inside the navy hero.
+                The Loan Factory logo is the platform-level brand. Program
+                marks appear as supporting assets inside specific training or
+                coaching surfaces.
               </p>
             </div>
           </div>

@@ -21,13 +21,13 @@ const sections = [
   {
     title: "Biweekly Mastermind",
     description: "Mastermind sessions for advanced producers and team leaders.",
-    href: "/apex-mastermind/",
+    href: "/member-area/mastermind/",
     premium: true,
   },
   {
     title: "Advanced certifications",
     description: "Advanced certifications including leadership and team builder track.",
-    href: "/apex-certifications/",
+    href: "/member-area/certifications/",
     premium: true,
   },
   {
@@ -45,7 +45,7 @@ const sections = [
   {
     title: "Mastermind resources",
     description: "Mastermind prep docs, scorecards, and recordings.",
-    href: "/apex-mastermind/",
+    href: "/member-area/mastermind/",
     premium: true,
   },
   {

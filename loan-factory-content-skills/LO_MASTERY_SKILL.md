@@ -62,7 +62,7 @@ LO name · team leader · week ending · new referral-partner contacts · realto
 - No income guarantees or production promises ("you'll double your loans"). Outcomes vary.
 - No hype, manifestation, or "borrow money to join" language.
 - Don't call Sales & Marketing a paid program; keep it separate and quieter.
-- Use **LO** (not ELO), **TERA** (not MOSO), **Netlify** (not Vercel), **approved Loan Factory users** (not public). No Apex Advisor.
+- Use **LO** (not ELO), **TERA** (not MOSO), **Netlify** (not Vercel), **approved Loan Factory users** (not public). No deprecated paid-coaching names.
 - Anything that becomes consumer/agent-facing mortgage marketing must follow the marketing compliance rules (NMLS 320841, EHL, rate+APR, sample-scenario, draft footer) and route through compliance.
 - Coaches don't promise outcomes, run team meetings, handle billing, or approve member marketing without compliance routing.
 

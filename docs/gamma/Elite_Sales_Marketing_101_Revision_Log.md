@@ -1,6 +1,6 @@
-# Elite Sales and Marketing Training 101. Revision Log.
+# Sales and Marketing 101-601 101. Revision Log.
 
-Source file: `Elite Sales and Marketing Training 101.pptx` (uploaded by Jeremy).
+Source file: `Sales and Marketing 101-601 101.pptx` (uploaded by Jeremy).
 Revised file: `public/downloads/Elite_Sales_Marketing_Training_101_REVISED.pptx`.
 
 Approach: do not rewrite the training. The structure and slide copy were already strong. Polish the design, fix the missing speaker notes, balance the logo lockup, apply the brand palette, and embed brand hero imagery. 10 slides preserved. Six Q&A pauses preserved.
@@ -11,7 +11,7 @@ Approach: do not rewrite the training. The structure and slide copy were already
 
 - **Design:** Replaced default slide chrome with a dark hero band using `dark-hero-background.png` plus a navy scrim for legibility.
 - **Copy:** Kept the title and subtitle. Kept the "Session 1 of 6" and "For new and experienced LOs" framing.
-- **Brand:** Added a balanced logo lockup on the right side. Elite training logo on top. Orange divider. Loan Factory logo at full readable size beneath it. No "Powered by" wording. Loan Factory reads as equal weight on the lockup panel.
+- **Brand:** Added a balanced logo lockup on the right side. Sales and Marketing training logo on top. Orange divider. Loan Factory logo at full readable size beneath it. No "Powered by" wording. Loan Factory reads as equal weight on the lockup panel.
 - **Notes:** Added a real speaker note in Jeremy's voice (was empty placeholder before).
 
 ### Slide 2. The real problem
@@ -72,10 +72,10 @@ Approach: do not rewrite the training. The structure and slide copy were already
 
 1. Palette: Loan Factory orange `#F26A1F`, orange dark `#C9531A`, orange soft `#FFE3D2`, navy `#0B1F3A`, navy dark `#08172A`, charcoal `#1F2937`, slate `#475569`, mist `#F4F6F8`, line `#E2E8F0`, white. No blue, green, or purple anywhere.
 2. Typography: Helvetica family. Headlines 36 to 48 pt. Section eyebrows 11 pt uppercase orange. Body 11 to 14 pt charcoal on white, white on navy.
-3. Logo lockup: Elite training logo larger or equal to Loan Factory in every appearance. Orange divider line. Both render on white panels when sitting over the navy hero so any dark text in the marks reads.
+3. Logo lockup: Sales and Marketing training logo larger or equal to Loan Factory in every appearance. Orange divider line. Both render on white panels when sitting over the navy hero so any dark text in the marks reads.
 4. Hero backgrounds: `dark-hero-background.png` on slides 1, 3, 5, 7, 10 with a 55 to 70 percent navy dark scrim for text readability.
 5. Q&A pause treatment: orange soft pill with `PAUSE FOR LIVE Q&A` lead and the question beneath, used on slides 3, 5, 6, 7, 8, 9.
-6. Status: every slide has a slide title bar, an orange accent rule, and a consistent footer line `Elite Sales and Marketing Training 101 | Mortgage Sales Foundation | Internal training only`.
+6. Status: every slide has a slide title bar, an orange accent rule, and a consistent footer line `Sales and Marketing 101-601 101 | Mortgage Sales Foundation | Internal training only`.
 
 ## Compliance corrections
 

@@ -1,6 +1,6 @@
 # NotebookLM Audio Companion Prompts — 101–601 Core Series
 
-**Purpose:** Paste each prompt verbatim into NotebookLM Studio → Customize → Create Audio Overview for the corresponding session of the Loan Factory Elite Sales & Marketing Training Series.
+**Purpose:** Paste each prompt verbatim into NotebookLM Studio → Customize → Create Audio Overview for the corresponding session of the Loan Factory Sales and Marketing 101-601 Series.
 
 **Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e)
 
@@ -17,7 +17,7 @@
 ## 101 Foundation — The Loan Factory Operating System
 
 ```
-You are producing the audio companion for "101 Foundation — The Loan Factory Operating System" inside the Loan Factory Elite Sales & Marketing Training Series.
+You are producing the audio companion for "101 Foundation — The Loan Factory Operating System" inside the Loan Factory Sales and Marketing 101-601 Series.
 
 AUDIENCE: A new or growth-track Loan Factory loan officer (LO) listening between calls or on a commute. They want practical execution, not theory.
 
@@ -46,7 +46,7 @@ STYLE: Two-host conversational audio overview, ~12 to 18 minutes. Calm, senior, 
 ## 201 Borrower Conversion — Win the First Call
 
 ```
-You are producing the audio companion for "201 Borrower Conversion — Win the First Call" inside the Loan Factory Elite Sales & Marketing Training Series.
+You are producing the audio companion for "201 Borrower Conversion — Win the First Call" inside the Loan Factory Sales and Marketing 101-601 Series.
 
 AUDIENCE: A producing Loan Factory loan officer who already takes calls but wants to turn more first conversations into real working files.
 
@@ -76,7 +76,7 @@ STYLE: Two-host conversational audio overview, ~14 to 20 minutes. Practical, use
 ## 301 Referral Partner Growth — Build the Partner Engine
 
 ```
-You are producing the audio companion for "301 Referral Partner Growth — Build the Partner Engine" inside the Loan Factory Elite Sales & Marketing Training Series.
+You are producing the audio companion for "301 Referral Partner Growth — Build the Partner Engine" inside the Loan Factory Sales and Marketing 101-601 Series.
 
 AUDIENCE: A Loan Factory loan officer who wants more closings from realtors, financial planners, CPAs, attorneys, and past clients — without bribery, without empty value, and without sounding desperate.
 
@@ -106,7 +106,7 @@ STYLE: Two-host conversational audio overview, ~16 to 22 minutes. Senior, calm, 
 ## 401 Content and Marketing — Local Authority, Compliant Content
 
 ```
-You are producing the audio companion for "401 Content and Marketing — Local Authority, Compliant Content" inside the Loan Factory Elite Sales & Marketing Training Series.
+You are producing the audio companion for "401 Content and Marketing — Local Authority, Compliant Content" inside the Loan Factory Sales and Marketing 101-601 Series.
 
 AUDIENCE: A Loan Factory loan officer who wants social, email, and short-video marketing that earns local authority — without making rate, APR, fee, or approval claims and without sounding like a billboard.
 
@@ -137,7 +137,7 @@ STYLE: Two-host conversational audio overview, ~14 to 20 minutes. Practical, use
 ## 501 Pipeline and Sales Systems — Run the Engine Like a Pro
 
 ```
-You are producing the audio companion for "501 Pipeline and Sales Systems — Run the Engine Like a Pro" inside the Loan Factory Elite Sales & Marketing Training Series.
+You are producing the audio companion for "501 Pipeline and Sales Systems — Run the Engine Like a Pro" inside the Loan Factory Sales and Marketing 101-601 Series.
 
 AUDIENCE: A Loan Factory loan officer who is past the rookie stage, has multiple files in flight, and wants a sane way to manage the pipeline without dropping balls or burning out.
 
@@ -164,10 +164,10 @@ STYLE: Two-host conversational audio overview, ~16 to 22 minutes. Direct, senior
 
 ---
 
-## 601 Elite Execution — Build Your Niche, Own Your System
+## 601 Execution System — Build Your Niche, Own Your System
 
 ```
-You are producing the audio companion for "601 Elite Execution — Build Your Niche, Own Your System" inside the Loan Factory Elite Sales & Marketing Training Series.
+You are producing the audio companion for "601 Execution System — Build Your Niche, Own Your System" inside the Loan Factory Sales and Marketing 101-601 Series.
 
 AUDIENCE: A senior Loan Factory loan officer ready to specialize, build a niche, mentor newer LOs on the team, and run a personal sales operating system that scales without burnout.
 

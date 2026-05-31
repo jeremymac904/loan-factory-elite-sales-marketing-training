@@ -114,8 +114,8 @@ export const paths: LearnerPath[] = [
   {
     id: "advanced",
     slug: "advanced",
-    title: "Elite Execution: Advanced LO and Team Leader Path",
-    tagline: "Elite Execution",
+    title: "Execution System: Advanced LO and Team Leader Path",
+    tagline: "Execution System",
     goal: "Build a scalable sales, marketing, AI, and team operating system.",
     audience:
       "Strong producers, team leaders, coaches, and AI power users comfortable with prompt design, automations, and workflow building.",
@@ -137,7 +137,7 @@ export const paths: LearnerPath[] = [
       {
         level: "601",
         href: "/601-elite-execution/",
-        title: "601 Elite Execution.",
+        title: "601 Execution System.",
       },
     ],
     resources: [

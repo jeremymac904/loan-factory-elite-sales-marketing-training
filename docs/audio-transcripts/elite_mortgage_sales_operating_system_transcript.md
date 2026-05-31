@@ -1,4 +1,4 @@
-# The Elite Mortgage Sales Operating System
+# The Mortgage Sales Operating System
 
 **Transcript status: Pending**
 

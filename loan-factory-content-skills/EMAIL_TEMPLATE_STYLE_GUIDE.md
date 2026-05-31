@@ -49,7 +49,7 @@ The Mortgage Mentor · Loan Factory — LO Development
 ## 6. Don'ts
 - No income guarantees, manifestation language, or "borrow to join."
 - No "public"/customer framing — these are approved Loan Factory users.
-- No Apex Advisor references. Use LO / TERA / Netlify correctly.
+- No deprecated paid-coaching names. Use LO / TERA / Netlify correctly.
 
 ## 7. Production note
 Output as paste-ready plain text by default. Provide subject + preview + body + sign-off. Run the Pre-Send Brand Checklist.

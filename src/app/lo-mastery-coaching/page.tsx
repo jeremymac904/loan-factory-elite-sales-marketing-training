@@ -1,11 +1,11 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import { apexTiers } from "@/data/apex";
+import { coachingTiers } from "@/data/coaching";
 
 export const metadata = { title: "LO Mastery Coaching" };
 
-const loMastery = apexTiers.find((tier) => tier.id === "advisor")!;
+const loMastery = coachingTiers.find((tier) => tier.id === "lo-mastery")!;
 
 export default function LoMasteryCoachingPage() {
   return (
@@ -61,7 +61,8 @@ export default function LoMasteryCoachingPage() {
               $249<span className="ml-2 text-base font-medium text-lf-slate">per month</span>
             </p>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Pricing pending final approval before public rollout.
+              $249 per month. Membership and billing are handled outside this
+              platform.
             </p>
           </div>
         </div>

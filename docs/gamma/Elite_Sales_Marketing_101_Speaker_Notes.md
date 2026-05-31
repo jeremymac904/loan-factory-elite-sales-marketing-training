@@ -1,4 +1,4 @@
-# Elite Sales and Marketing Training 101
+# Sales and Marketing 101-601 101
 ## Speaker Notes. In Jeremy's voice.
 
 Plain English. Confident. Practical. Short sentences. No corporate fluff. Includes what to say live, when to pause, the Q and A question, and what to listen for.

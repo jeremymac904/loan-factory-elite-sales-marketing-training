@@ -56,7 +56,7 @@ All open items in [`TERA_ALLY_STACK_ALIGNMENT_CHECKLIST.md`](./TERA_ALLY_STACK_A
 - [ ] Confirm scope — all public-facing content, all recruiting content, all rate-referencing content (note: platform does not display rates)
 - [ ] Approve all public-facing copy before launch
 - [ ] Approve recruiting kits in 1+1=5 before launch
-- [ ] Approve Apex Advisor landing page copy
+- [ ] Approve LO Mastery landing page copy
 - [ ] Confirm brand standards compliance — palette, voice, terminology
 
 ---
@@ -75,7 +75,7 @@ All open items in [`TERA_ALLY_STACK_ALIGNMENT_CHECKLIST.md`](./TERA_ALLY_STACK_A
 
 ## From Jeremy
 
-- [ ] Confirm Apex Advisor pricing ($249 Tier 1, $449 Tier 2) is finalized
+- [ ] Confirm LO Mastery pricing ($249 Tier 1, $449 Tier 2) is finalized
 - [ ] Confirm whether AI Assistants primarily reference Gemini (Gemini Gem AI Twin) or Claude
 - [ ] Confirm launch sequencing — which module goes live first after the prototype?
 - [ ] Confirm Master workspace copy approach for large assets — do they stay in Drive permanently, or eventually move to a cloud bucket?

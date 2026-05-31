@@ -66,9 +66,9 @@ These are the shared components that every module page uses. They live under `sr
 | **ModuleBanner** | Full-width dark banner with module name, tagline, optional CTA, orange accent stripe | Every module landing page |
 | **ModuleCard** | Dark card with icon, title, description, orange CTA button. Used on home page and on cross-module callouts | Home, module landings, "How it connects" callouts |
 | **FeatureGrid** | 3- or 4-column grid of feature/benefit cards | Module landings (What You Get section) |
-| **PricingBlock** | Tier comparison block (already exists in Apex; generalize) | Apex Advisor; potentially Coach Hub |
-| **CalendarBlock** | Event list / schedule (already exists in Apex calendar; generalize) | Apex calendar, unified Calendar |
-| **LeaderboardTable** | Ranked-list display (already exists in Apex; generalize) | Apex leaderboards |
+| **PricingBlock** | Tier comparison block (already exists in LO Mastery; generalize) | LO Mastery; potentially Coach Hub |
+| **CalendarBlock** | Event list / schedule (already exists in LO Mastery calendar; generalize) | LO Mastery calendar, unified Calendar |
+| **LeaderboardTable** | Ranked-list display (already exists in LO Mastery; generalize) | LO Mastery leaderboards |
 | **ContentListCard** | Catalog item card: title, type pill, description, source, CTA | Training Library, Scripts, Roleplays, Trackers |
 | **AssistantCard** | Dark card with assistant name, audience pill, description, use-case bullets, "Use This Assistant" CTA, guardrail summary | AI Assistant Hub |
 | **AudienceCard** | Small card identifying an audience (LO, Team Leader, Coach, Admin) with icon and short description | Module landings (Who Is This For section) |
@@ -92,8 +92,8 @@ Each module has a tagline used in its `ModuleBanner`. Taglines are draft and req
 
 | Module | Banner palette emphasis | Tagline (draft) |
 |--------|--------------------------|-----------------|
-| Apex Advisor | Orange + subtle gold accent (within orange family) | "Where Top Loan Officers Are Built" |
-| Elite Sales & Marketing | Dark charcoal + silver | "Master the Skills. Own the Market." |
+| LO Mastery | Orange + subtle gold accent (within orange family) | "Where Top Loan Officers Are Built" |
+| Sales and Marketing 101-601 | Dark charcoal + silver | "Master the Skills. Own the Market." |
 | AI Training | Dark + orange | "AI-Powered. Human-Led." |
 | 1+1+1=5 | Charcoal + orange | "Build Teams That Multiply." |
 | Training Library | Dark gray | "Every Resource You Need." |
@@ -147,7 +147,7 @@ Use this checklist on every new module page and every new component:
 - [ ] Confirm exact Loan Factory Orange hex against brand standards
 - [ ] Confirm approved typeface(s) for headings and body
 - [ ] Confirm Loan Factory logo lockups (light, dark, mono)
-- [ ] Confirm whether gold accent within the orange family is acceptable for Apex
+- [ ] Confirm whether gold accent within the orange family is acceptable for LO Mastery
 - [ ] Confirm whether photography is allowed at all, and if so what the approved photography library is
 - [ ] Victoria's review and approval of the per-module taglines in Section 4
 - [ ] Confirm footer compliance/legal copy (with compliance review)

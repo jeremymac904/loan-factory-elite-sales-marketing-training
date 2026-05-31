@@ -5,7 +5,7 @@
 **Last updated:** 2026-05-21
 **Companion docs:** [`LO_DEVELOPMENT_BRAND_UNIFICATION_PLAN.md`](./LO_DEVELOPMENT_BRAND_UNIFICATION_PLAN.md), [`LO_DEVELOPMENT_PLATFORM_NAVIGATION_PLAN.md`](./LO_DEVELOPMENT_PLATFORM_NAVIGATION_PLAN.md)
 
-A single, reusable template for every module landing page in the platform. Use it for: Apex Advisor, Elite Sales & Marketing, AI Training, 1+1+1=5, Training Library, Team Leader OS, Corporate Coach Hub, AI Assistant Hub, Support Routing, and any future module.
+A single, reusable template for every module landing page in the platform. Use it for: LO Mastery, Sales and Marketing 101-601, AI Training, 1+1+1=5, Training Library, Team Leader OS, Corporate Coach Hub, AI Assistant Hub, Support Routing, and any future module.
 
 ---
 
@@ -65,7 +65,7 @@ export interface ComingNextItemProps {
 
 export interface ModuleLandingPageProps {
   module: {
-    name: string;                  // e.g., "Apex Advisor"
+    name: string;                  // e.g., "LO Mastery"
     tagline: string;               // e.g., "Where Top Loan Officers Are Built"
     description: string;           // one-paragraph "What it does"
     primaryCta?: { label: string; href: string };
@@ -267,32 +267,32 @@ export default function ModuleLandingPage({
 
 ---
 
-## 4. Example usage — Apex Advisor
+## 4. Example usage — LO Mastery
 
 ```tsx
-// src/app/apex-advisor/page.tsx
+// src/app/coaching/page.tsx
 import ModuleLandingPage from "@/components/ModuleLandingPage";
 
-export default function ApexAdvisorPage() {
+export default function CoachingPage() {
   return (
     <ModuleLandingPage
       module={{
-        name: "Apex Advisor",
+        name: "LO Mastery",
         tagline: "Where Top Loan Officers Are Built",
         description:
-          "Apex Advisor is Loan Factory's paid coaching program for loan officers who want a structured, accountable path from solid producer to elite producer. Power Hour, Breakfast Club, certifications, leaderboards, mastermind sessions — everything you need to compound your skills and your production.",
-        primaryCta: { label: "Explore Apex Track", href: "/apex-advisor-track" },
+          "LO Mastery is Loan Factory's paid coaching program for loan officers who want a structured, accountable path from solid producer to consistent producer. Power Hour, Breakfast Club, certifications, leaderboards, and mastermind sessions give members a practical rhythm.",
+        primaryCta: { label: "Explore LO Mastery", href: "/lo-mastery-coaching" },
       }}
       audiences={[
         {
           tag: "LO",
           title: "Producing Loan Officers",
           description:
-            "You're already closing loans. Apex helps you compound results with weekly coaching, scripts that work, and accountability that sticks.",
+            "You're already closing loans. LO Mastery helps you compound results with weekly coaching, scripts that work, and accountability that sticks.",
         },
         {
           tag: "LO",
-          title: "Apex Pro Members",
+          title: "LO Mastery Pro Members",
           description:
             "Tier 2 members get deeper mastermind access, advanced certifications, and 1:1 coaching touchpoints.",
         },
@@ -300,7 +300,7 @@ export default function ApexAdvisorPage() {
           tag: "Team Leader",
           title: "Team Leaders",
           description:
-            "Bring your team into Apex to align coaching, accountability, and growth on one shared system.",
+            "Bring your team into LO Mastery to align coaching, accountability, and growth on one shared system.",
         },
       ]}
       features={[
@@ -311,44 +311,44 @@ export default function ApexAdvisorPage() {
         { title: "Mastermind", description: "Quarterly mastermind sessions on advanced strategy." },
         { title: "Member Area", description: "Your home base for tier content, schedules, and resources." },
         { title: "Trackers", description: "Lightweight trackers to keep activity and results visible." },
-        { title: "Summit Access", description: "Annual Apex Summit invitation for active members." },
+        { title: "Summit Access", description: "Annual Alliance Summit invitation for active members." },
       ]}
       content={[
-        { title: "Apex Track Overview", type: "Page", description: "Walk through the full Apex Track curriculum.", source: "In-repo", href: "/apex-advisor-track" },
-        { title: "Apex Pro Tier", type: "Page", description: "What's included in Tier 2.", source: "In-repo", href: "/apex-advisor-pro" },
-        { title: "Certifications", type: "Page", description: "Active certifications and progress.", source: "In-repo", href: "/apex-certifications" },
-        { title: "Apex Calendar", type: "Page", description: "Power Hour, Breakfast Club, and Mastermind schedule.", source: "In-repo", href: "/apex-calendar" },
-        { title: "Leaderboards", type: "Page", description: "Tier and team standings.", source: "In-repo", href: "/apex-leaderboards" },
-        { title: "Mastermind", type: "Page", description: "Mastermind agenda and notes.", source: "In-repo", href: "/apex-mastermind" },
+        { title: "LO Mastery Track Overview", type: "Page", description: "Walk through the full LO Mastery Track curriculum.", source: "In-repo", href: "/sales-training" },
+        { title: "LO Mastery Pro Tier", type: "Page", description: "What's included in Tier 2.", source: "In-repo", href: "/loan-factory-alliance" },
+        { title: "Certifications", type: "Page", description: "Active certifications and progress.", source: "In-repo", href: "/member-area/certifications" },
+        { title: "LO Mastery Calendar", type: "Page", description: "Power Hour, Breakfast Club, and Mastermind schedule.", source: "In-repo", href: "/member-area/calendar" },
+        { title: "Leaderboards", type: "Page", description: "Tier and team standings.", source: "In-repo", href: "/member-area/leaderboards" },
+        { title: "Mastermind", type: "Page", description: "Mastermind agenda and notes.", source: "In-repo", href: "/member-area/mastermind" },
       ]}
       connections={[
         {
-          moduleName: "Elite Sales & Marketing",
+          moduleName: "Sales and Marketing 101-601",
           description:
-            "Apex coaching reinforces the 101–601 curriculum. Drop into Elite content any time.",
+            "LO Mastery coaching reinforces the 101–601 curriculum. Drop into Sales and Marketing content any time.",
           href: "/sales-training",
         },
         {
           moduleName: "AI Assistant Hub",
           description:
-            "The Apex Advisor Coach assistant helps you prep for Power Hour and review your certifications.",
-          href: "/ai-assistants/apex-advisor-coach",
+            "The LO Mastery Coach assistant helps you prep for Power Hour and review your certifications.",
+          href: "/ai-assistants/coaching-coach",
         },
         {
           moduleName: "Training Library",
           description:
-            "Every Apex recording, script, and roleplay shows up in the Training Library catalog.",
+            "Every LO Mastery recording, script, and roleplay shows up in the Training Library catalog.",
           href: "/training-library",
         },
       ]}
       comingNext={[
         { title: "Live Mastermind Recordings", eta: "Q3", description: "Searchable archive of mastermind sessions." },
-        { title: "Certification Quiz Engine", eta: "Q3", description: "In-app quizzes for each Apex certification." },
+        { title: "Certification Quiz Engine", eta: "Q3", description: "In-app quizzes for each LO Mastery certification." },
         { title: "Tier Upgrade Flow", eta: "Pending billing decision", description: "Self-serve Tier 1 → Tier 2 upgrade." },
       ]}
       footerCta={{
-        label: "Open My Apex Member Area",
-        href: "/apex-member-area",
+        label: "Open My LO Mastery Member Area",
+        href: "/member-area",
         supportHref: "/support-routing",
       }}
     />
@@ -368,8 +368,8 @@ This template is the source of truth for module landings. Every one of the 8+ mo
 When the design evolves, the change happens **once in `ModuleLandingPage.tsx`** and every module landing inherits it automatically. That's the unification mechanic.
 
 **Modules this template will be used for:**
-- Apex Advisor (`/apex-advisor`)
-- Elite Sales & Marketing (`/sales-training`)
+- LO Mastery (`/coaching`)
+- Sales and Marketing 101-601 (`/sales-training`)
 - AI Training (`/ai-training`)
 - 1+1+1=5 (`/one-plus-one-five`)
 - Training Library (`/training-library`)
@@ -385,7 +385,7 @@ When the design evolves, the change happens **once in `ModuleLandingPage.tsx`** 
 
 - [ ] Confirm exact Loan Factory Orange hex; update the template once locked
 - [ ] Confirm typeface stack; update Tailwind config and template once locked
-- [ ] Confirm whether existing Apex page should be refactored onto this template now (recommended) or after broader review
+- [ ] Confirm whether existing LO Mastery page should be refactored onto this template now (recommended) or after broader review
 - [ ] Confirm icon source (currently template has no icons; add icon system in a follow-up)
 
 ---

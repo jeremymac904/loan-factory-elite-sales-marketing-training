@@ -49,15 +49,26 @@ export default async function AdminPage() {
 
 const adminLinks = [
   { label: "Users & Access", href: "/admin/users" },
+  { label: "LO Development Dashboard", href: "/lo-development/" },
+  { label: "Training Academy", href: "/training-academy/" },
+  { label: "Loan Officer Support", href: "/loan-officer-support/" },
+  { label: "Marketing Dashboard", href: "/marketing/" },
+  { label: "Department Routing", href: "/department-routing/" },
   { label: "Coach Command Center", href: "/coach-command-center" },
   { label: "Coach Assignments", href: "/admin/coach-assignments" },
   { label: "View-As Mode", href: "/admin/view-as" },
   { label: "Quiz Review", href: "/admin/quiz-review" },
+  { label: "Training Library", href: "/training-library/" },
+  { label: "Video Library", href: "/ai-training/video-library/" },
+  { label: "Resource Library", href: "/resources/" },
+  { label: "Content Skills", href: "/content-skills/" },
   { label: "Feedback & Suggestions", href: "/admin/feedback" },
   { label: "Lender Escalations", href: "/admin/lender-escalations" },
   { label: "FaceGram Moderation", href: "/facegram/" },
   { label: "AI Assistant Settings", href: "/admin/ai-assistants" },
   { label: "Coaching Members", href: "/coaching/" },
+  { label: "Settings", href: "/settings/" },
+  { label: "Launch QA Checklist", href: "/admin/qa-checklist/" },
   { label: "Platform Status", href: "/admin/platform-status" },
 ];
 
@@ -129,7 +140,7 @@ function AdminShell({
             <div className="card">
               <div className="flex items-center gap-2">
                 <h2 className="h-display text-2xl">Current user</h2>
-                <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-800">
+                <span className="rounded-full bg-lf-orangeSoft px-2.5 py-0.5 text-xs font-semibold text-lf-orangeDark">
                   Google Authenticated
                 </span>
               </div>

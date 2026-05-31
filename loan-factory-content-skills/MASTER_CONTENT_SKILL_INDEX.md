@@ -62,7 +62,7 @@ Four content skills (each loads the rules + the style guide that matches the for
 
 ## 3. What each skill must NEVER do
 
-**All skills (global law):** no hype · no income/production guarantees · no manifestation language · no "borrow money to join" · no Apex Advisor / Apex Advisor Pro · always use **LO** (not ELO), **TERA** (not MOSO), **Netlify** (not Vercel), **approved Loan Factory users** (not public). Anything consumer/agent-facing follows the Marketing Compliance Rules (NMLS 320841, EHL, rate+APR, sample scenario, draft footer, route through compliance).
+**All skills (global law):** no hype · no income/production guarantees · no manifestation language · no "borrow money to join" · no deprecated paid-coaching names · always use **LO** (not ELO), **TERA** (not MOSO), **Netlify** (not Vercel), **approved Loan Factory users** (not public). Anything consumer/agent-facing follows the Marketing Compliance Rules (NMLS 320841, EHL, rate+APR, sample scenario, draft footer, route through compliance).
 
 | Skill | Especially never |
 |---|---|

@@ -35,7 +35,7 @@ visible to users.
 
 - `/admin` — added platform status panel, view-as link, ai-assistants link
 - `/admin/users` — cleaned beta note
-- `/member-area` — full rewrite, removed apex re-export
+- `/member-area` — full rewrite, removed legacy re-export
 - `/profile` — added edit button and Google connections link
 
 ## Critical routes verified
@@ -50,7 +50,7 @@ visible to users.
 | `/profile` | Profile view with edit button |
 | `/profile/edit` | Working form, saves to Supabase |
 | `/settings/google` | Scope management UI |
-| `/coaching` | Re-exports apex-advisor (real content) |
+| `/coaching` | Re-exports coaching (real content) |
 | `/member-area` | Tier picker |
 | `/sales-training` | Real content |
 | `/101-foundation` through `/601-elite-execution` | Real content |

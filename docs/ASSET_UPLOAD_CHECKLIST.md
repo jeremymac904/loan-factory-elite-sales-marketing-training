@@ -1,6 +1,6 @@
 # Asset Upload Checklist
 
-Before uploading any media asset to the Loan Factory Elite Sales and Marketing Training Series Drive folder, walk this checklist.
+Before uploading any media asset to the Loan Factory Sales and Marketing 101-601 Series Drive folder, walk this checklist.
 
 ## Per asset
 

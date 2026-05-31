@@ -127,8 +127,8 @@ All routes are authenticated and gated to employees only.
 10. Objection Handling
 11. Events
 12. Recruiting
-13. Apex Advisor
-14. Elite Sales & Marketing
+13. LO Mastery
+14. Sales and Marketing 101-601
 15. 1+1+1=5
 16. AI Training
 
@@ -180,8 +180,8 @@ The Creator Network is a hub that connects to other modules in the LO Developmen
 
 | Connected Module | Connection |
 |---|---|
-| **Elite Sales & Marketing (lessons 101–601)** | Lesson examples and success stories surface in the feed; top posts can become lesson examples |
-| **Apex Advisor** | Coaching wins, advisor recaps, and program highlights flow into the feed |
+| **Sales and Marketing 101-601 (lessons 101–601)** | Lesson examples and success stories surface in the feed; top posts can become lesson examples |
+| **LO Mastery** | Coaching wins, advisor recaps, and program highlights flow into the feed |
 | **AI Training** | Prompt sharing, prompt iteration, prompt library cross-link |
 | **Training Library** | Top posts (Approved Internal Resource) can be promoted into the formal Training Library |
 | **Team Leader OS** | Team Leaders see engagement metrics and team contributions |

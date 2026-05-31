@@ -36,7 +36,7 @@ export default function CalendarPage() {
             </article>
           ))}
         </div>
-        <Link href="/apex-calendar/" className="btn-secondary mt-8">
+        <Link href="/member-area/calendar/" className="btn-secondary mt-8">
           Open current coaching calendar
         </Link>
       </section>

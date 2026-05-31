@@ -1,6 +1,6 @@
 # Audio Training Workflow
 
-This document captures how Loan Factory turns NotebookLM audio overviews and other source grounded audio into training assets for the Elite Sales and Marketing Training Series.
+This document captures how Loan Factory turns NotebookLM audio overviews and other source grounded audio into training assets for the Sales and Marketing 101-601 Series.
 
 ## Source of truth
 

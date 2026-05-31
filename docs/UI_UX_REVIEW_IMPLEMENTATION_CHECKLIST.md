@@ -8,7 +8,7 @@ Each slide is a screenshot of the site with red annotations. This checklist capt
 
 | Annotation | Required fix | Files | Status |
 |---|---|---|---|
-| Remove header text label `Elite Sales and Marketing Training / 101 through 601` | Drop the text block in the header. Logo is enough. | `src/components/SiteHeader.tsx` | Implemented |
+| Remove header text label `Sales and Marketing 101-601 / 101 through 601` | Drop the text block in the header. Logo is enough. | `src/components/SiteHeader.tsx` | Implemented |
 | Need an awesome background video | Add hero background video on the homepage hero. | `src/app/page.tsx`, `public/media/*` | Implemented |
 | Loan Factory logo needs to be as big as the Elite logo | Balance both logos at equal weight. Drop the "Powered by" wording. | `src/app/page.tsx`, `src/components/SiteHeader.tsx`, `src/components/SiteFooter.tsx`, `src/app/brand-preview/page.tsx` | Implemented |
 | Need admin log in | Add a Login link in the header pointing at `/login`. | `src/components/SiteHeader.tsx`, `src/app/login/page.tsx` | Implemented |

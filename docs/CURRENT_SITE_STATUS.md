@@ -19,7 +19,7 @@ Built into a unified Loan Factory LO Development Platform shell with a Supabase 
 The site now positions the app as the Loan Factory LO Development Platform, with visible routes for:
 
 - Loan Factory LO Mastery Coaching / Loan Factory Alliance
-- Elite Sales & Marketing 101-601
+- Sales and Marketing 101-601 101-601
 - AI Training
 - 1+1+1=5
 - Training Library
@@ -47,7 +47,7 @@ The site now positions the app as the Loan Factory LO Development Platform, with
 - `npm run lint` passed.
 - `npm run typecheck` passed.
 - `npm run build` passed with static public routes and dynamic auth/admin/gated routes.
-- Browser QA passed on `/`, `/apex-advisor/`, `/ai-training/`, `/creator-network/`, `/sales-training/`, `/resources/`, `/login/`, `/access-pending/`, and `/admin/`.
+- Browser QA passed on `/`, `/coaching/`, `/ai-training/`, `/creator-network/`, `/sales-training/`, `/resources/`, `/login/`, `/access-pending/`, and `/admin/`.
 - Browser console check reported no errors on tested routes after adding the favicon.
 
 ## Read Before Building

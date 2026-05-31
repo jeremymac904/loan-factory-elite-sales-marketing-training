@@ -93,7 +93,7 @@ The Loan Factory LO Development platform is organized into these areas (match th
 - **Loan Factory** branding and naming throughout.
 
 **Never use / never mention:**
-- **Apex Advisor** or **Apex Advisor Pro** — do not reference at all.
+- **LO Mastery** or **Loan Factory Alliance** — do not reference at all.
 - **Hype language** ("explode," "10x overnight," "secret," "guru," "crush it" as a promise).
 - **Income guarantees** or earnings claims ("you will make $X," "guaranteed income," "replace your salary").
 - **Manifestation / mindset-magic language** ("manifest," "law of attraction," "abundance will flow," "speak it into existence").
@@ -159,7 +159,7 @@ Next steps:
 - [ ] Orange `#F26A1F` / black `#111111` / white system used; no off-brand colors
 - [ ] Logo placed correctly (if visual format)
 - [ ] Uses **LO** (not ELO), **TERA** (not MOSO), **Netlify** (not Vercel), **approved Loan Factory users** (not public)
-- [ ] No Apex Advisor / Apex Advisor Pro references
+- [ ] No deprecated paid-coaching names
 - [ ] No hype, income guarantees, manifestation, or "borrow to join" language
 - [ ] Sales & Marketing treated as free + separate from paid coaching (if referenced)
 - [ ] Correct program + price (LO Mastery $249 / Alliance $449) if referenced

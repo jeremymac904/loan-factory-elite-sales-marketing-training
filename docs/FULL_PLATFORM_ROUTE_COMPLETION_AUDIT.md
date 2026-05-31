@@ -70,8 +70,8 @@ A route-by-route completion record: purpose, audience, status, whether clickable
 |---|---|---|---|---|
 | /coaching | Coaching program overview | Complete | Yes | — |
 | /member-area | Tier picker (gated) | Complete | Yes | Subtree gated by member-area/layout.tsx (prior PR) |
-| /member-area/lo-mastery | LO Mastery $249 hub | Complete | Yes | Cards link to canonical /trackers, /scripts, /resources, /calendar, /apex-* |
-| /member-area/alliance | Alliance $449 hub | Complete | Yes | Cards link to canonical routes incl. /apex-mastermind |
+| /member-area/lo-mastery | LO Mastery $249 hub | Complete | Yes | Cards link to canonical /trackers, /scripts, /resources, /calendar, legacy coaching aliases |
+| /member-area/alliance | Alliance $449 hub | Complete | Yes | Cards link to canonical routes incl. /member-area/mastermind |
 | /member-area/ai-assistant | Redirect to /ai-assistants/my-ai-twin | Complete | Yes | — |
 | /member-area/{resources,trackers,scorecards,recordings,scripts,certifications,calendar} | — | Redirect | Yes | NEW → redirect to canonical top-level routes (no duplicate content; member hubs already link there) |
 

@@ -52,11 +52,11 @@ export default function PersonalityWorkshopPage() {
         backgroundImage="/media/dark-hero-background.png"
       >
         <div className="flex flex-wrap gap-3">
-          <Link href="/apex-launch-call/" className="btn-primary">
+          <Link href="/support-routing/#corporate-coaches" className="btn-primary">
             Join the Workshop
           </Link>
           <Link
-            href="/apex-advisor/"
+            href="/coaching/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white"
           >
             See coaching tiers
@@ -117,10 +117,10 @@ export default function PersonalityWorkshopPage() {
             description="The Personality Workshop is included with both coaching tiers. New loan officers use it to build a foundation. Experienced producers use it to sharpen partner work and content."
           />
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/apex-launch-call/" className="btn-primary">
+            <Link href="/support-routing/#corporate-coaches" className="btn-primary">
               Join the Workshop
             </Link>
-            <Link href="/apex-advisor-track/" className="btn-secondary">
+            <Link href="/sales-training/" className="btn-secondary">
               See the Sales &amp; Marketing Track
             </Link>
           </div>

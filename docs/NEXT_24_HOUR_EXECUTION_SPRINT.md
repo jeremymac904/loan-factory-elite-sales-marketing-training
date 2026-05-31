@@ -8,7 +8,7 @@ Build the visible LO Development Platform shell and prepare it for demo validati
 
 Status: completed locally.
 
-The platform shell now includes homepage/navigation surfaces for Apex Advisor, Elite Sales & Marketing, AI Training, 1+1+1=5, Training Library, Creator Network, AI Assistants, Audience Quality Panel, Calendar, Trackers, Resources, and Support Routing.
+The platform shell now includes homepage/navigation surfaces for LO Mastery, Sales and Marketing 101-601, AI Training, 1+1+1=5, Training Library, Creator Network, AI Assistants, Audience Quality Panel, Calendar, Trackers, Resources, and Support Routing.
 
 Validation completed:
 
@@ -25,7 +25,7 @@ Validation completed:
 ## Priority Build Outcomes
 
 1. Visible LO Development Platform shell.
-2. Apex Advisor navigation and landing experience.
+2. LO Mastery navigation and landing experience.
 3. Creator Network static landing.
 4. AI Assistant Hub surface.
 5. Audience Quality Panel readiness.
@@ -36,10 +36,10 @@ Validation completed:
 
 - `src/app/page.tsx`
 - `src/components/SiteHeader.tsx`
-- `src/app/apex-advisor*/`
-- `src/app/apex-member-area/`
+- `src/app/coaching*/`
+- `src/app/member-area/`
 - `src/app/personality-workshop/`
-- `src/data/apex.ts`
+- `src/data/coaching.ts`
 - `docs/LO_DEVELOPMENT_*`
 
 ## Guardrails

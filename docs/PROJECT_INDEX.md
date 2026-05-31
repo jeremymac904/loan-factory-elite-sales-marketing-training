@@ -6,7 +6,7 @@
 
 ## Project Identity
 
-- Project: Loan Factory LO Development Platform / Elite Sales & Marketing / Apex Advisor.
+- Project: Loan Factory LO Development Platform / Sales and Marketing 101-601 / LO Mastery.
 - Track: Loan Factory.
 - Lane: `loan-factory-product-starter-kit/apps`.
 - Priority: Active / urgent.
@@ -17,7 +17,7 @@
 
 Build a visible LO Development Platform shell with:
 
-- Apex Advisor.
+- LO Mastery.
 - Creator Network static landing.
 - AI Assistant Hub.
 - Audience Quality Panel readiness.
@@ -33,7 +33,7 @@ Build a visible LO Development Platform shell with:
 | Data/config | `src/data/` |
 | Library helpers | `src/lib/` |
 | Planning docs | `docs/` |
-| Apex launch docs | `docs/apex-launch/` |
+| LO Mastery launch docs | `docs/coaching-launch/` |
 | Public assets | `public/` |
 
 ## Important Docs

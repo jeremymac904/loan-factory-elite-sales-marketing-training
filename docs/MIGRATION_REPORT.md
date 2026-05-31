@@ -2,12 +2,12 @@
 
 ## Project
 
-Loan Factory LO Development Platform / Elite Sales & Marketing / Apex Advisor.
+Loan Factory LO Development Platform / Sales and Marketing 101-601 / LO Mastery.
 
 ## Import Summary
 
 - Imported into master workspace: 2026-05-22.
-- Source path: `/Users/JeremyMcDonald/Documents/Claude/Projects/Loan Factory Elite Sales & Marketing Training Series - (101 - 601)/loan-factory-elite-sales-marketing-training`
+- Source path: `/Users/JeremyMcDonald/Documents/Claude/Projects/Loan Factory Sales and Marketing 101-601 Series - (101 - 601)/loan-factory-elite-sales-marketing-training`
 - New canonical local working path: `/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/loan-factory-product-starter-kit/apps/loan-factory-elite-sales-marketing-training`
 - Git branch preserved: `main`
 - Git remote preserved: `https://github.com/jeremymac904/loan-factory-elite-sales-marketing-training.git`
@@ -17,7 +17,7 @@ Loan Factory LO Development Platform / Elite Sales & Marketing / Apex Advisor.
 
 The import preserved the current dirty working state, including modified app files and uncommitted LO Development docs for:
 
-- Apex Advisor.
+- LO Mastery.
 - Creator Network.
 - AI Assistant Hub.
 - Audience Quality Panel.

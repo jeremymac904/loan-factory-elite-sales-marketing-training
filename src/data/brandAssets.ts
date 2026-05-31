@@ -17,12 +17,12 @@ export type BrandAsset = {
 export const brandAssets: Record<BrandAsset["id"], BrandAsset> = {
   elite: {
     id: "elite",
-    name: "Elite Sales and Marketing Training",
-    alt: "Elite Sales and Marketing Training 101 through 601 logo",
+    name: "Sales and Marketing 101-601",
+    alt: "Sales and Marketing 101 through 601 logo",
     filePath: "/images/brand/elite-sales-marketing-training-logo.svg",
     fallbackPath: "/images/brand/elite-sales-marketing-training-logo.png",
     usage:
-      "Primary brand for this training portal. SVG is preferred for crisp scaling. PNG fallback exists at /images/brand/elite-sales-marketing-training-logo.png. Use in the site header lockup, hero brand band, footer, and premium handouts. Always keep at least 24 pixels of clear space around the mark.",
+      "Legacy file asset used as the visual mark for the Sales and Marketing 101-601 training path. SVG is preferred for crisp scaling. Use in training handouts and review surfaces only.",
     background: "both",
   },
   "loan-factory": {
@@ -31,7 +31,7 @@ export const brandAssets: Record<BrandAsset["id"], BrandAsset> = {
     alt: "Loan Factory logo",
     filePath: "/images/brand/loan-factory-logo-transparent.png",
     usage:
-      "Supporting company brand. Use smaller than the Elite training logo on every shared surface. Pair in hero and footer to make the company sponsorship clear without overpowering the training brand.",
+      "Primary company brand for the LO Development Platform. Use in the site header, hero areas, footer, and platform-level handouts.",
     background: "both",
   },
   "ai-advantage": {
@@ -72,4 +72,4 @@ export const brandAssets: Record<BrandAsset["id"], BrandAsset> = {
 };
 
 export const brandHierarchyRule =
-  "On this internal training site, the Elite Sales and Marketing Training logo always reads larger than the Loan Factory logo. Loan Factory is the supporting brand, not the primary brand for this property.";
+  "Loan Factory is the primary brand for the LO Development Platform. Sales and Marketing 101-601, LO Mastery, Loan Factory Alliance, AI Advantage, and FaceGram are sub-brands inside the platform.";

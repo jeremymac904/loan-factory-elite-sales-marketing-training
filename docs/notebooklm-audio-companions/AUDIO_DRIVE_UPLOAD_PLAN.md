@@ -10,7 +10,7 @@
 |---|---|---|
 | Generated in NotebookLM | NotebookLM Studio | Production sandbox |
 | Downloaded locally | `/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/` | Temporary holding before Drive upload. Never committed to git. |
-| Final hosting | Google Drive: `02 Audio Training / Elite Sales & Marketing` | Canonical location. Referenced by `audio-companions.json` `driveFileId`. |
+| Final hosting | Google Drive: `02 Audio Training / Sales and Marketing 101-601` | Canonical location. Referenced by `audio-companions.json` `driveFileId`. |
 | GitHub repo | `audio-companions.json` only | Metadata, not media. |
 
 Audio files larger than 5 MB never enter the repo. Lighter assets (transcripts, small images) can live in the repo if needed.
@@ -21,7 +21,7 @@ Audio files larger than 5 MB never enter the repo. Lighter assets (transcripts, 
 My Drive/
   └─ Loan Factory LO Development/
        └─ 02 Audio Training/
-            ├─ Elite Sales & Marketing/
+            ├─ Sales and Marketing 101-601/
             │    ├─ 101-foundation-audio-companion.mp3
             │    ├─ 101-foundation-audio-companion-transcript.txt
             │    ├─ 201-borrower-conversion-audio-companion.mp3
@@ -87,7 +87,7 @@ For every new audio companion, run this checklist:
 ## What NOT to do
 
 - Don't commit `.mp3` to GitHub. The `.gitignore` should already exclude `*.mp3` — verify before committing anything.
-- Don't put unfinished audio in the public Drive folder. Use `02 Audio Training / Elite Sales & Marketing / drafts/` if mid-production.
+- Don't put unfinished audio in the public Drive folder. Use `02 Audio Training / Sales and Marketing 101-601 / drafts/` if mid-production.
 - Don't store transcripts that include borrower PII anywhere. Strip names and identifiers before saving.
 - Don't email audio links to borrowers or partners until the audio has passed the compliance review (Jeremy sign-off).
 - Don't reference these files from the website until `audio-companions.json` is updated and the file is public-link.

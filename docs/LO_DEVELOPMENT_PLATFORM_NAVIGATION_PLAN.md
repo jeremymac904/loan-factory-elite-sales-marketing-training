@@ -14,8 +14,8 @@ This document defines the navigation model for the unified Loan Factory LO Devel
 The sticky top nav exposes 13 areas. Order matters — left-to-right is how an LO experiences priority and progression through the platform.
 
 1. **Home** — `/`
-2. **Apex Advisor** — `/apex-advisor`
-3. **Elite Sales & Marketing** — `/sales-training`
+2. **LO Mastery** — `/coaching`
+3. **Sales and Marketing 101-601** — `/sales-training`
 4. **AI Training** — `/ai-training`
 5. **1+1+1=5** — `/one-plus-one-five`
 6. **Training Library** — `/training-library`
@@ -72,8 +72,8 @@ The platform is **one product** with eight modules. The modules link to each oth
                                   |
    ----------------------------------------------------------------
    |              |             |             |              |
- Apex          Elite Sales   AI Training   1+1+1=5       Training
- Advisor       & Marketing                 Team Growth   Library
+ LO Mastery          Sales and     AI Training   1+1+1=5       Training
+ Coaching      Marketing 101-601           Team Growth   Library
    |              |             |             |              |
    |              |             |             |              |
    +---- Training Library <----+-------------+--------------+
@@ -82,7 +82,7 @@ The platform is **one product** with eight modules. The modules link to each oth
  Coach Hub <----- Coaching <--- AI Assistants ---> Team Leader OS
                   curriculum    (14 internal      (scorecards,
                   shared by     support tools)    meetings, ramp)
-                  Apex + Elite
+                  LO Mastery + Elite
                                   |
                           Support Routing
                           (post-onboarding,
@@ -92,9 +92,9 @@ The platform is **one product** with eight modules. The modules link to each oth
 
 **Key relationships:**
 
-- **Elite Sales & Marketing (101–601)** is the foundational curriculum. **Apex Advisor** is the paid coaching layer on top of it; many Apex modules link back into the corresponding 101–601 content. **AI Training** teaches LOs how to use the AI tools that show up across the rest of the platform.
+- **Sales and Marketing 101-601 (101–601)** is the foundational curriculum. **LO Mastery** is the paid coaching layer on top of it; many coaching modules link back into the corresponding 101–601 content. **AI Training** teaches LOs how to use the AI tools that show up across the rest of the platform.
 - **1+1+1=5** is the team growth playbook. It links into **Team Leader OS** (the operating tools for team leaders) and into **AI Assistants** (specifically the 1+1+1=5 Growth Assistant and Referral Partner Assistant).
-- **Training Library** is the unified content catalog. It surfaces content owned by Apex, Elite Sales & Marketing, AI Training, and 1+1+1=5 — without duplicating it.
+- **Training Library** is the unified content catalog. It surfaces content owned by LO Mastery, Sales and Marketing 101-601, AI Training, and 1+1+1=5 — without duplicating it.
 - **Coach Hub** is the coach-facing surface. It pulls member progress from every module and feeds back into coaching sessions.
 - **AI Assistants** (the hub of 14 internal support tools) is reachable from anywhere; specific assistants are deep-linked from the module they support (e.g., the Sales Coaching Assistant is linked from inside `/sales-training/201`).
 - **Support Routing** is the connective tissue: post-onboarding check-ins, lender escalation paths, training academy routing, corporate coach routing, feedback/complaint routing. It is reachable from the top nav and is also embedded inside Team Leader OS and Coach Hub workflows.
@@ -116,7 +116,7 @@ The existing `src/components/SiteHeader.tsx` already has uncommitted modificatio
 **Order of nav entries in SiteHeader (left to right):**
 
 ```
-[Logo]  Home  Apex Advisor▾  Elite Sales & Marketing▾  AI Training▾  1+1+1=5▾  Training Library▾  Team Leader OS▾  Coach Hub▾  AI Assistants▾  Calendar  Trackers▾  Resources▾  Support Routing   [Member Area]  [Owner Preview*]
+[Logo]  Home  LO Mastery▾  Sales and Marketing 101-601▾  AI Training▾  1+1+1=5▾  Training Library▾  Team Leader OS▾  Coach Hub▾  AI Assistants▾  Calendar  Trackers▾  Resources▾  Support Routing   [Member Area]  [Owner Preview*]
 ```
 
 \* Owner Preview is only visible when an `?owner=jeremy` query param or local-storage flag is set — prototype only, never linked publicly.
@@ -130,14 +130,14 @@ If the nav becomes too crowded for the viewport, the rightmost items collapse in
 | Nav area | Top route | Sub-routes (dropdown) |
 |----------|-----------|-----------------------|
 | Home | `/` | — |
-| Apex Advisor | `/apex-advisor` | `/apex-advisor-track`, `/apex-advisor-pro`, `/apex-certifications`, `/apex-calendar`, `/apex-leaderboards`, `/apex-mastermind`, `/apex-member-area` |
-| Elite Sales & Marketing | `/sales-training` | `/sales-training/101`, `/201`, `/301`, `/401`, `/501`, `/601` |
+| LO Mastery | `/coaching` | `/sales-training`, `/loan-factory-alliance`, `/member-area/certifications`, `/member-area/calendar`, `/member-area/leaderboards`, `/member-area/mastermind`, `/member-area` |
+| Sales and Marketing 101-601 | `/sales-training` | `/sales-training/101`, `/201`, `/301`, `/401`, `/501`, `/601` |
 | AI Training | `/ai-training` | `/ai-training/foundations`, `/prompt-techniques`, `/gemini-gem-ai-twin`, `/ai-coaching-assistant-walkthrough` |
 | 1+1+1=5 | `/one-plus-one-five` | `/one-plus-one-five/campaigns`, `/recruiting`, `/content-kits`, `/realtor-partnerships` |
 | Training Library | `/training-library` | `/training-library/audio`, `/scripts`, `/roleplays`, `/trackers`, `/flashcards`, `/quizzes`, `/pdfs` |
 | Team Leader OS | `/team-leader-os` | `/team-leader-os/scorecards`, `/meetings`, `/new-lo-ramp`, `/recruiting` |
 | Coach Hub | `/corporate-coach-hub` | `/corporate-coach-hub/playbooks`, `/members`, `/sessions` |
-| AI Assistants | `/ai-assistants` | `/ai-assistants/marketing`, `/sales-coaching`, `/referral-partner`, `/borrower-conversation`, `/underwriting-support`, `/scenario-structuring`, `/tera-workflow-helper`, `/ai-training-coach`, `/content-repurposing`, `/team-leader`, `/compliance-risk-review`, `/apex-advisor-coach`, `/elite-sales-marketing-coach`, `/one-plus-one-five-growth` |
+| AI Assistants | `/ai-assistants` | `/ai-assistants/marketing`, `/sales-coaching`, `/referral-partner`, `/borrower-conversation`, `/underwriting-support`, `/scenario-structuring`, `/tera-workflow-helper`, `/ai-training-coach`, `/content-repurposing`, `/team-leader`, `/compliance-risk-review`, `/coaching-coach`, `/elite-sales-marketing-coach`, `/one-plus-one-five-growth` |
 | Calendar | `/calendar` | — |
 | Trackers | `/trackers` | `/trackers/pipeline`, `/production`, `/recruiting`, `/training-completion` |
 | Resources | `/resources` | `/recommended-channels`, `/personality-workshop`, `/brand-preview` |
@@ -165,7 +165,7 @@ See [`DO_NOT_BUILD_YET.md`](./DO_NOT_BUILD_YET.md).
 ## Update: Creator Network Added to Nav (Pass 3)
 
 - Creator Network is now the 7th item in the 14-area platform nav, between Training Library and Team Leader OS.
-- Updated nav order: Home, Apex Advisor, Elite Sales & Marketing, AI Training, 1+1+1=5, Training Library, **Creator Network**, Team Leader OS, Coach Hub, AI Assistants, Calendar, Trackers, Resources, Support Routing.
+- Updated nav order: Home, LO Mastery, Sales and Marketing 101-601, AI Training, 1+1+1=5, Training Library, **Creator Network**, Team Leader OS, Coach Hub, AI Assistants, Calendar, Trackers, Resources, Support Routing.
 - Creator Network nav dropdown: Feed, Post, Categories, Leaderboard.
 - Creator Network routes:
   - `/creator-network`
@@ -179,8 +179,8 @@ See [`DO_NOT_BUILD_YET.md`](./DO_NOT_BUILD_YET.md).
 
 Creator Network connects to:
 
-- **Elite Sales & Marketing** — posts link to relevant 101–601 lessons; lesson examples can cite Creator Network posts.
-- **Apex Advisor** — coaching wins surface as featured Creator Network posts; Apex members are heavy contributors.
+- **Sales and Marketing 101-601** — posts link to relevant 101–601 lessons; lesson examples can cite Creator Network posts.
+- **LO Mastery** — coaching wins surface as featured Creator Network posts; coaching members are heavy contributors.
 - **Training Library** — top-performing internal posts are promoted into Training Library resources after review.
 - **Team Leader OS** — engagement and contribution data feed into Team Leader OS scorecards.
 - **AI Assistant Hub** — powers the Content Coach (Assistant #15) and the Audience Quality Panel internal QA tool.

@@ -3,7 +3,7 @@
 **Status:** Draft. Auth gating is "none" in prototype; production gating pending TERA/Ally SSO decision.
 **Last updated:** 2026-05-21
 
-This is the proposed final route structure for the Loan Factory LO Development Platform. It unifies the existing Apex Advisor surfaces, the Elite Sales & Marketing Training curriculum, the AI Assistant Hub, the 1+1=5 Team Growth Platform, the Training Library, Team Leader OS, Corporate Coach Hub, and the supporting LO Support & Development Routing under a single navigation shell.
+This is the proposed final route structure for the Loan Factory LO Development Platform. It unifies the existing LO Mastery surfaces, the Sales and Marketing 101-601 curriculum, the AI Assistant Hub, the 1+1=5 Team Growth Platform, the Training Library, Team Leader OS, Corporate Coach Hub, and the supporting LO Support & Development Routing under a single navigation shell.
 
 ---
 
@@ -11,16 +11,16 @@ This is the proposed final route structure for the Loan Factory LO Development P
 
 ```
 /                                  # Home — platform overview
-/apex-advisor                      # Apex Advisor landing (paid coaching)
-/apex-advisor-track                # 101–601 training track inside Apex
-/apex-advisor-pro                  # Pro tier ($449/mo)
-/apex-certifications               # Certification catalog and progress
-/apex-calendar                     # Apex-specific calendar
-/apex-leaderboards                 # Apex leaderboards
-/apex-mastermind                   # Mastermind sessions
-/apex-member-area                  # Apex member area (gated)
+/coaching                      # LO Mastery landing (paid coaching)
+/sales-training                # 101–601 training track inside LO Mastery
+/loan-factory-alliance                  # Pro tier ($449/mo)
+/member-area/certifications               # Certification catalog and progress
+/member-area/calendar                     # LO Mastery-specific calendar
+/member-area/leaderboards                 # LO Mastery leaderboards
+/member-area/mastermind                   # Mastermind sessions
+/member-area                  # coaching member area (gated)
 
-/sales-training                    # Elite Sales & Marketing hub
+/sales-training                    # Sales and Marketing 101-601 hub
 /sales-training/101                #   Foundation
 /sales-training/201                #   Borrower conversion
 /sales-training/301                #   Referral partner growth
@@ -76,14 +76,14 @@ This is the proposed final route structure for the Loan Factory LO Development P
 | Route | Audience | Auth gating (prototype) | Auth gating (production) | Data source |
 |-------|----------|-------------------------|--------------------------|-------------|
 | `/` | All visitors | None | None (logged-in landing or public marketing depending on Victoria/leadership decision) | Static copy in `src/app/page.tsx` |
-| `/apex-advisor` | Apex Tier 1+ | None | SSO + Apex subscription check | `src/data/apex.ts` |
-| `/apex-advisor-track` | Apex Tier 1+ | None | SSO + Apex subscription | `src/data/apex.ts`, training-path data |
-| `/apex-advisor-pro` | Apex Tier 2 | None | SSO + Apex Pro subscription | `src/data/apex.ts` |
-| `/apex-certifications` | Apex members | None | SSO + Apex subscription | Apex data + completion records (production) |
-| `/apex-calendar` | Apex members | None | SSO + Apex subscription | Calendar data (static today; live source TBD) |
-| `/apex-leaderboards` | Apex members | None | SSO + Apex subscription | Placeholder data in prototype; real source TBD |
-| `/apex-mastermind` | Apex members | None | SSO + Apex subscription | Apex data |
-| `/apex-member-area` | Apex members | None | SSO + Apex subscription | Apex data |
+| `/coaching` | LO Mastery Tier 1+ | None | SSO + coaching membership check | `src/data/coaching.ts` |
+| `/sales-training` | LO Mastery Tier 1+ | None | SSO + coaching membership | `src/data/coaching.ts`, training-path data |
+| `/loan-factory-alliance` | LO Mastery Tier 2 | None | SSO + LO Mastery Pro subscription | `src/data/coaching.ts` |
+| `/member-area/certifications` | coaching members | None | SSO + coaching membership | coaching data + completion records (production) |
+| `/member-area/calendar` | coaching members | None | SSO + coaching membership | Calendar data (static today; live source TBD) |
+| `/member-area/leaderboards` | coaching members | None | SSO + coaching membership | Placeholder data in prototype; real source TBD |
+| `/member-area/mastermind` | coaching members | None | SSO + coaching membership | coaching data |
+| `/member-area` | coaching members | None | SSO + coaching membership | coaching data |
 | `/sales-training` | All LOs | None | SSO | Curriculum data (existing 101–601 routes) |
 | `/sales-training/101..601` | All LOs | None | SSO | Existing per-level data |
 | `/ai-assistants` | All LOs | None | SSO | Static catalog of assistants (no live AI in prototype) |
@@ -155,7 +155,7 @@ Top-level nav (left to right):
 
 1. **Home** → `/`
 2. **Sales Training** → `/sales-training`
-3. **Apex Advisor** → `/apex-advisor`
+3. **LO Mastery** → `/coaching`
 4. **AI Assistants** → `/ai-assistants`
 5. **1+1=5** → `/one-plus-one-five`
 6. **Team Leader OS** → `/team-leader-os`

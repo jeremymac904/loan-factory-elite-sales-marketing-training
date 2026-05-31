@@ -15,7 +15,7 @@ This plan is sequenced by working-hour band. It is NOT 48 calendar hours of nons
 - [ ] Confirm `npx tsc --noEmit` passes on `main`
 - [ ] Confirm `npx next build` is NOT required and will NOT be run (per safety rules)
 - [ ] Read `src/components/SiteHeader.tsx` and `src/app/page.tsx` — both have uncommitted modifications — to understand the diff before adding to them
-- [ ] Note any module overlap between current Apex pages and planned new pages
+- [ ] Note any module overlap between current LO Mastery pages and planned new pages
 - [ ] Decide which uncommitted changes need to be committed first vs. carried forward
 
 **Output:** Confirmed inventory + a clean baseline understanding.
@@ -31,7 +31,7 @@ Static pages, no data, no real interactivity. Each is a hero + module summary + 
 - [ ] `src/app/team-leader-os/page.tsx`
 - [ ] `src/app/corporate-coach-hub/page.tsx`
 
-Apply the existing visual shell (Loan Factory orange / dark charcoal). Reuse hero and card components from the Apex Advisor pages where it makes sense — read-only reuse, do not modify Apex components.
+Apply the existing visual shell (Loan Factory orange / dark charcoal). Reuse hero and card components from the LO Mastery pages where it makes sense — read-only reuse, do not modify LO Mastery components.
 
 **Output:** Four new top-level routes load with cohesive premium styling.
 
@@ -43,7 +43,7 @@ Apply the existing visual shell (Loan Factory orange / dark charcoal). Reuse her
 - [ ] Preserve every existing nav entry
 - [ ] Mobile menu: same additive treatment
 - [ ] Walk every route in dev: confirm no 404s, no console errors, no layout breakage at 360px / 768px / 1280px
-- [ ] Confirm hero + footer alignment matches Apex pages
+- [ ] Confirm hero + footer alignment matches LO Mastery pages
 
 **Output:** All new modules reachable from the top nav on desktop and mobile.
 
@@ -126,7 +126,7 @@ Static descriptions + CTAs. No live AI calls.
 
 - [ ] Write `docs/RELEASE_CANDIDATE_NOTES.md` covering:
   - What was added (modules, routes, data files)
-  - What was not touched (existing Apex, existing 101–601 content)
+  - What was not touched (existing LO Mastery, existing 101–601 content)
   - Known limitations (no auth, no live AI, placeholder data)
   - Reviewer checklist (routes to walk, modules to evaluate)
   - Open items kicked back to stakeholders

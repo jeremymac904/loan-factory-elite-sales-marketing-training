@@ -13,6 +13,7 @@ const roleOptions = [
   "admin",
   "lo_development_lead",
   "lo_development_member",
+  "training_academy",
   "loan_officer_support",
   "corporate_coach",
   "marketing",

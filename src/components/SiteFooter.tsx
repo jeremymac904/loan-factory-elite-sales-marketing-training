@@ -3,7 +3,12 @@ import BrandImage from "./BrandImage";
 import { brandAssets } from "@/data/brandAssets";
 
 const footerLinks = [
-  { href: "/", label: "Home" },
+  { href: "/normal-lo/", label: "Loan Officer Dashboard" },
+  { href: "/lo-development/", label: "LO Development" },
+  { href: "/training-academy/", label: "Training Academy" },
+  { href: "/loan-officer-support/", label: "Loan Officer Support" },
+  { href: "/marketing/", label: "Marketing" },
+  { href: "/admin/", label: "Admin" },
   { href: "/coaching/", label: "Coaching" },
   { href: "/sales-training/", label: "Sales & Marketing" },
   { href: "/ai-training/", label: "AI Advantage" },

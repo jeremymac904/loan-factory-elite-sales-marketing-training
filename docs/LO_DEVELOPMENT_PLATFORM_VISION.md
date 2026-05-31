@@ -14,7 +14,7 @@ The **Loan Factory LO Development Platform** is the unified internal home for ev
 
 It is not a product for borrowers. It is not a public marketing site. It is the internal operating system for **LO development, sales training, AI enablement, coaching, and team growth.**
 
-Today, those programs live in scattered surfaces — a separate Elite Sales & Marketing Training site, a separate Apex Advisor paid coaching experience, scattered AI assistant work, an emerging 1+1=5 team growth playbook, and a growing library of recordings, scripts, and decks across Google Drive and NotebookLM. This document defines the parent platform that brings them under one roof.
+Today, those programs live in scattered surfaces — a separate Sales and Marketing 101-601 site, a separate LO Mastery paid coaching experience, scattered AI assistant work, an emerging 1+1=5 team growth playbook, and a growing library of recordings, scripts, and decks across Google Drive and NotebookLM. This document defines the parent platform that brings them under one roof.
 
 ---
 
@@ -23,7 +23,7 @@ Today, those programs live in scattered surfaces — a separate Elite Sales & Ma
 | Audience | What they get from the platform |
 |----------|----------------------------------|
 | New loan officers | Structured onboarding path, 101–601 training, AI coaching assistant, scripts and roleplays |
-| Producing loan officers | Apex Advisor coaching, advanced training, leaderboards, accountability tools |
+| Producing loan officers | LO Mastery coaching, advanced training, leaderboards, accountability tools |
 | Team leaders | Team Leader OS, 1+1=5 growth campaigns, recruiting kits, scorecards, meeting templates |
 | Corporate coaches | Coach Hub, member progress, session notes, certification reviews |
 | LO Development team (Andre, Tara, Kevin, Benjamin) | Routing tools, member tracking, escalation workflows |
@@ -41,7 +41,7 @@ The platform is composed of eight modules that share one identity model, one nav
                               |
    ----------------------------------------------------------------
    |          |          |          |          |          |       |
- Elite      Apex        AI       1+1=5     Training   Team       Corp
+ Elite      LO Mastery        AI       1+1=5     Training   Team       Corp
  Sales &    Advisor     Assistant Team     Library    Leader     Coach
  Marketing  (paid       Hub       Growth              OS         Hub
  Training   coaching)
@@ -52,8 +52,8 @@ The platform is composed of eight modules that share one identity model, one nav
                   (post-onboarding, escalations, feedback)
 ```
 
-- **Elite Sales & Marketing Training (101–601)** is the foundational curriculum every LO progresses through.
-- **Apex Advisor** is the paid coaching layer on top of the curriculum (Tier 1 $249/mo, Tier 2 $449/mo).
+- **Sales and Marketing 101-601 (101–601)** is the foundational curriculum every LO progresses through.
+- **LO Mastery** is the paid coaching layer on top of the curriculum (Tier 1 $249/mo, Tier 2 $449/mo).
 - **AI Assistant Hub** surfaces the Gemini Gem AI Twin and the AI Coaching Assistant alongside specialized sales, marketing, team leader, and compliance precheck assistants and a prompt library.
 - **1+1=5 Team Growth Platform** is the team leader's marketing, recruiting, and co-branded campaign system.
 - **Training Library** is the searchable catalog of recordings, scripts, roleplays, trackers, flashcards, quizzes, and Google Drive media.
@@ -133,7 +133,7 @@ A premium, internal Loan Factory platform. Dark surfaces, premium feel, calm den
 
 **Not used:** blue, green, purple, pastels, or any color outside the approved palette.
 
-Typography, spacing, and component standards align with the existing Elite Sales & Marketing Training shell.
+Typography, spacing, and component standards align with the existing Sales and Marketing 101-601 shell.
 
 ---
 
@@ -144,7 +144,7 @@ To keep scope clean:
 - Not a borrower-facing site
 - Not a public marketing site
 - Not a TERA replacement
-- Not a payments platform (Apex Advisor billing happens outside the platform)
+- Not a payments platform (LO Mastery billing happens outside the platform)
 - Not a CRM (TERA owns CRM)
 - Not an LOS (TERA is the LOS)
 - Not a place that claims free processing, daily companywide training, or production guarantees
@@ -169,8 +169,8 @@ To keep scope clean:
 - **Role:** the internal momentum engine — where platform ideas, wins, and strategies circulate and compound across the team.
 - **Access:** employee-only in v1. No public access. No external publishing.
 - **Connections to every other module:**
-  - **Elite Sales & Marketing** lessons link to Creator Network posts.
-  - **Apex Advisor** coaching connects to wins shared in the Creator Network.
+  - **Sales and Marketing 101-601** lessons link to Creator Network posts.
+  - **LO Mastery** coaching connects to wins shared in the Creator Network.
   - **Training Library** pulls top posts after review and promotion.
   - **Team Leader OS** tracks engagement and contributions.
   - **AI Assistant Hub** powers the **Content Coach** (Assistant #15) and the **Audience Quality Panel** internal QA tool.
@@ -178,8 +178,8 @@ To keep scope clean:
 
 **Full platform module list (updated):**
 
-1. Apex Advisor
-2. Elite Sales & Marketing Training (101–601)
+1. LO Mastery
+2. Sales and Marketing 101-601 (101–601)
 3. AI Training & Assistant Hub
 4. 1+1+1=5 Team Growth
 5. Training Library

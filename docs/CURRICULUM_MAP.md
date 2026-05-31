@@ -42,7 +42,7 @@ The six week training series in one document. Use this as the single reference f
 4. Assignment. Pipeline cleaned and segmented, 20 personalized past client touches, one full Friday pipeline review.
 5. Behavior change. LO retention moves from the industry baseline toward 40%+ over 24 months.
 
-## 601 Elite Execution. Build Your Niche, Own Your System
+## 601 Execution System. Build Your Niche, Own Your System
 
 1. Core promise. You graduate with a written 12 week plan and a working AI stack.
 2. Audience. Producer, team leader, or corporate coach.

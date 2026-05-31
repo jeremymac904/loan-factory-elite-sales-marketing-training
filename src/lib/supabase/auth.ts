@@ -6,6 +6,7 @@ export type BetaRole =
   | "lo_development_lead"
   | "lo_development_member"
   | "lo_development"
+  | "training_academy"
   | "loan_officer_support"
   | "corporate_coach"
   | "marketing"
@@ -63,6 +64,7 @@ export const roleLabels: Record<string, string> = {
   lo_development_lead: "LO Development Lead",
   lo_development_member: "LO Development",
   lo_development: "LO Development",
+  training_academy: "Training Academy",
   loan_officer_support: "Loan Officer Support",
   corporate_coach: "Corporate Coach",
   marketing: "Marketing",
@@ -74,9 +76,32 @@ export const roleLabels: Record<string, string> = {
   vendor_partner_future: "Vendor Partner (Future)",
 };
 
+export const roleDashboardHrefs: Record<string, string> = {
+  master_admin: "/admin/",
+  admin: "/admin/",
+  lo_development_lead: "/lo-development/",
+  lo_development_member: "/lo-development/",
+  lo_development: "/lo-development/",
+  training_academy: "/training-academy/",
+  loan_officer_support: "/loan-officer-support/",
+  corporate_coach: "/coach-command-center/",
+  marketing: "/marketing/",
+  team_leader: "/team-leader-guide/",
+  coaching_member_level_1: "/member-area/lo-mastery/",
+  coaching_member_level_2: "/member-area/alliance/",
+  loan_officer: "/normal-lo/",
+  support_staff: "/loan-officer-support/",
+  vendor_partner_future: "/access-pending/",
+};
+
 export function getRoleLabel(role: string | null | undefined): string {
   if (!role) return "Pending";
   return roleLabels[role] ?? role.replaceAll("_", " ");
+}
+
+export function getRoleDashboardHref(role: string | null | undefined): string {
+  if (!role) return "/profile/";
+  return roleDashboardHrefs[role] ?? "/profile/";
 }
 
 export function isApprovedProfile(
@@ -112,6 +137,7 @@ export function canAccessGate(
       "lo_development",
       "lo_development_member",
       "lo_development_lead",
+      "training_academy",
       "team_leader",
     ].includes(profile.role ?? "");
   }

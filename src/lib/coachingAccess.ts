@@ -9,6 +9,7 @@ const FULL_COACHING_STAFF_ROLES = [
   "lo_development_lead",
   "lo_development_member",
   "lo_development",
+  "training_academy",
   "corporate_coach",
   "team_leader",
 ];

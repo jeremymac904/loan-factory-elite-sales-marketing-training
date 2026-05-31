@@ -29,10 +29,10 @@ export type NavGroup = {
 
 export const platformModules: PlatformModule[] = [
   {
-    id: "apex-advisor",
+    id: "coaching",
     title: "Coaching",
     shortTitle: "Coaching",
-    href: "/apex-advisor/",
+    href: "/coaching/",
     status: "Live foundation",
     summary:
       "Paid coaching for Loan Factory loan officers who want a stronger weekly rhythm, clearer accountability, practical resources, and simple scorecards.",
@@ -85,7 +85,7 @@ export const platformModules: PlatformModule[] = [
       "301 Referral Partner Growth",
       "401 Content and Marketing",
       "501 Pipeline and Sales Systems",
-      "601 Elite Execution",
+      "601 Execution System",
     ],
     currentStatus:
       "The 101-601 lessons are ready to review and stay separate from paid coaching.",
@@ -417,14 +417,14 @@ export const platformNav: NavGroup[] = [
   { label: "Home", href: "/" },
   {
     label: "Coaching",
-    href: "/apex-advisor/",
+    href: "/coaching/",
     items: [
-      { label: "Overview", href: "/apex-advisor/" },
-      { label: "Sales & Marketing Track", href: "/apex-advisor-track/" },
-      { label: "Alliance Membership", href: "/apex-advisor-pro/" },
-      { label: "Certifications", href: "/apex-certifications/" },
-      { label: "Coaching Calendar", href: "/apex-calendar/" },
-      { label: "Member Area", href: "/apex-member-area/" },
+      { label: "Overview", href: "/coaching/" },
+      { label: "LO Mastery", href: "/lo-mastery-coaching/" },
+      { label: "Loan Factory Alliance", href: "/loan-factory-alliance/" },
+      { label: "Certifications", href: "/member-area/certifications/" },
+      { label: "Coaching Calendar", href: "/member-area/calendar/" },
+      { label: "Member Area", href: "/member-area/" },
     ],
   },
   {
@@ -446,7 +446,7 @@ export const platformNav: NavGroup[] = [
         label: "501 Pipeline and Sales Systems",
         href: "/501-pipeline-and-sales-systems/",
       },
-      { label: "601 Elite Execution", href: "/601-elite-execution/" },
+      { label: "601 Execution System", href: "/601-elite-execution/" },
     ],
   },
   { label: "AI Advantage", href: "/ai-training/" },

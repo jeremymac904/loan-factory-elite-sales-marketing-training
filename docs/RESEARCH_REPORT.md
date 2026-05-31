@@ -1,4 +1,4 @@
-# Loan Factory Elite Sales and Marketing Training Series
+# Loan Factory Sales and Marketing 101-601 Series
 ## Deep Research Report and Six Week Curriculum Build (101 through 601)
 
 Prepared for Jeremy McDonald, Loan Factory. Confidential internal working document. Anything public, borrower facing, Realtor facing, or compliance sensitive is flagged COMPLIANCE REVIEW. Anything requiring Andre approval is flagged DECISION NEEDED. Anything dependent on future systems is flagged BLOCKED ON. Assumption: Loan Factory leadership wants TERA referenced as the AI assistant throughout, and the broker value prop framed around access to 240+ wholesale lenders.
@@ -131,7 +131,7 @@ On RESPA Section 8, the CFPB's October 2020 RESPA FAQs make clear that an MSA "i
 
 ---
 
-## 4. Loan Factory Elite Sales and Marketing Philosophy
+## 4. Loan Factory Sales and Marketing 101-601 Philosophy
 
 1. **Practical over theoretical.** Every lesson ends with a single action.
 2. **Broker positive, never bashing.** We talk about what working with 240+ wholesale lenders means for the borrower. We do not attack retail competitors.
@@ -236,7 +236,7 @@ For each week: Title. Core Promise. Skill Level. Main Lesson. Sales Skill. Marke
 - Compliance watch outs: Past client outreach about specific rate or payment terms requires Reg Z disclosures. COMPLIANCE REVIEW.
 - Behavior change: LO retention rate moves from the industry baseline 20% toward 40%+. Per Reichheld/HBR (2014), even a 5 point lift in retention drives 25 to 95% profit growth.
 
-### 601 — Elite Execution
+### 601 — Execution System
 - Title: Build Your Niche, Own Your System.
 - Core promise: You graduate with a written 12 week plan and an AI stack.
 - Skill level: Producer, team leader, corporate coach.
@@ -544,7 +544,7 @@ TERA prompts to draft personalized follow up at scale. Every draft is reviewed a
 
 ---
 
-## 11. Full Module Detail for 601: Elite Execution
+## 11. Full Module Detail for 601: Execution System
 
 ### 11.1 Niche Strategy
 Pick one. Reason: a niche dramatically reduces marketing cost, sharpens content, and accelerates referral trust. Options: self employed, VA, first time buyer, investor (DSCR), divorce, builder, ITIN, jumbo.
@@ -868,7 +868,7 @@ One activity change. One process change. One personal commitment.
 - Final scorecard built.
 - Two final recorded calls scored above threshold.
 
-Loan Factory Certified LF Elite badge issued at 601 completion. DECISION NEEDED on official badge name and renewal cadence.
+Loan Factory Certified LF 101-601 completion badge issued at 601 completion. DECISION NEEDED on official badge name and renewal cadence.
 
 ---
 

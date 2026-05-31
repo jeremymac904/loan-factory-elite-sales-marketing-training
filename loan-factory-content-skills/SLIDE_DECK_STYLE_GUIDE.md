@@ -44,7 +44,7 @@
 ## 6. Content rules
 - Open with the outcome; end with CTA + next steps slide.
 - Speaker-friendly: slides support the talk, don't replace it.
-- Obey all language rules (LO / TERA / Netlify / approved Loan Factory users; no Apex Advisor; no hype/guarantees/manifestation/borrow-to-join).
+- Obey all language rules (LO / TERA / Netlify / approved Loan Factory users; no deprecated paid-coaching names; no hype/guarantees/manifestation/borrow-to-join).
 - Keep Sales & Marketing decks visibly free + separate from paid coaching.
 
 ## 7. Production note

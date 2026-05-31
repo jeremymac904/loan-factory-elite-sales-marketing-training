@@ -4,7 +4,7 @@ The static site is code first. Large media should never become part of the GitHu
 
 ## Folder
 
-Loan Factory Elite Sales and Marketing Training Series asset folder:
+Loan Factory Sales and Marketing 101-601 Series asset folder:
 
 https://drive.google.com/drive/folders/1Rt8gY1GBIp_0LK_LW_gZY3UVVEptlhTD?usp=sharing
 

@@ -55,7 +55,7 @@ export const driveFolderStructure: { id: string; name: string; description: stri
   { id: "03", name: "03 PDF Handouts", description: "Approved PDF handouts per module." },
   { id: "04", name: "04 Slide Decks", description: "PowerPoint and Google Slides decks used in live sessions." },
   { id: "05", name: "05 Screenshots and Walkthroughs", description: "Review screenshots, UI/UX walkthroughs, screen recordings." },
-  { id: "06", name: "06 Logos and Brand Assets", description: "Source files for the Elite and Loan Factory logos." },
+  { id: "06", name: "06 Logos and Brand Assets", description: "Source files for the Loan Factory platform logos." },
   { id: "07", name: "07 NotebookLM Outputs", description: "Source notebooks and exported overviews." },
   { id: "08", name: "08 HeyGen Avatar Videos", description: "Cutdown scripts and rendered HeyGen avatar videos." },
   { id: "09", name: "09 Source Research", description: "Research reports and reference material." },
@@ -75,7 +75,7 @@ export const driveAssets: DriveAsset[] = [
   },
   {
     id: "audio-elite-mortgage-sales-operating-system",
-    title: "The Elite Mortgage Sales Operating System",
+    title: "The Mortgage Sales Operating System",
     type: "audio",
     category: "audio-training",
     siteUsage: "Audio Training Library, Training Blueprint and Coaching Strategy section",

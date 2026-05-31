@@ -24,7 +24,7 @@ const sections = [
   {
     title: "Certified Mortgage Advisor track",
     description: "Progress through the CMA certification path.",
-    href: "/apex-certifications/",
+    href: "/member-area/certifications/",
   },
   {
     title: "Scripts library",
@@ -44,7 +44,7 @@ const sections = [
   {
     title: "Leaderboard",
     description: "Team and member leaderboard for coaching activity and wins.",
-    href: "/apex-leaderboards/",
+    href: "/member-area/leaderboards/",
   },
   {
     title: "LO Mastery Coaching Assistant",

@@ -3,7 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ComplianceCallout from "@/components/ComplianceCallout";
 import { findModule } from "@/data/modules";
 
-export const metadata = { title: "601 Elite Execution" };
+export const metadata = { title: "601 Execution System" };
 
 const moduleData = findModule("601-elite-execution")!;
 
@@ -19,7 +19,7 @@ export default function Page() {
       <section className="container-page py-6">
         <SectionHeading
           eyebrow="Certification"
-          title="Earn the Loan Factory Elite badge."
+          title="Earn the Loan Factory 101-601 completion badge."
           description="Certification recognizes completed work and practice. It does not promise production or business results."
         />
         <ol className="prose-lf mt-6 list-decimal space-y-2 pl-5 text-base">

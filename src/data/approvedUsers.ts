@@ -76,14 +76,14 @@ export const approvedUserSeeds: ApprovedUserSeed[] = [
   },
   {
     email: "katarina@loanfactory.com",
-    role: "lo_development_member",
+    role: "training_academy",
     full_name: "Katarina Phan",
     department: "Training Academy",
     title: null,
   },
   {
     email: "henry.on@loanfactory.com",
-    role: "lo_development_member",
+    role: "training_academy",
     full_name: "Henry On",
     department: "Training Academy",
     title: null,

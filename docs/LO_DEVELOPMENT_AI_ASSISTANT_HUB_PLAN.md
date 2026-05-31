@@ -56,7 +56,7 @@ These guardrails govern every assistant on the platform. They are visible in the
   - Give written feedback on a roleplay submission
   - Suggest a next-best-step after a real call (described by the LO in their own words)
   - Build a personalized practice plan
-- **Source materials:** 101–601 scripts (`src/app/scripts/`), roleplay library (`src/app/roleplays/`), objection library, Apex Advisor curriculum
+- **Source materials:** 101–601 scripts (`src/app/scripts/`), roleplay library (`src/app/roleplays/`), objection library, LO Mastery curriculum
 - **Output type:** Coaching feedback (paragraph), structured rubric scoring, practice plan checklist
 - **Guardrails:**
   - Cannot generate scripts that violate compliance rules
@@ -130,7 +130,7 @@ These guardrails govern every assistant on the platform. They are visible in the
   - Suggest questions to ask the borrower to clarify the scenario
   - Suggest documentation needed to support the scenario
   - Identify when a scenario should go to a senior LO or underwriter
-- **Source materials:** Scenario library, 501 module (Pipeline and Sales Systems), 601 module (Elite Execution)
+- **Source materials:** Scenario library, 501 module (Pipeline and Sales Systems), 601 module (Execution System)
 - **Output type:** Scenario decomposition, clarifying question list, documentation suggestion, escalation note
 - **Guardrails:**
   - No approval claims
@@ -231,25 +231,25 @@ These guardrails govern every assistant on the platform. They are visible in the
 
 ---
 
-### 12. Apex Advisor Coach
+### 12. LO Mastery Coach
 
-- **Audience:** LO (Apex Tier 1 + Tier 2)
+- **Audience:** LO (LO Mastery Tier 1 + Tier 2)
 - **Use cases:**
-  - Guide an Apex member through the current week's curriculum
-  - Help an Apex member prep for Power Hour or Breakfast Club
+  - Guide an coaching member through the current week's curriculum
+  - Help an coaching member prep for Power Hour or Breakfast Club
   - Suggest accountability prompts between coaching sessions
-  - Help an Apex member review their certification progress
-  - Surface relevant Apex resources for a stated goal
-- **Source materials:** Apex Advisor curriculum (`src/data/apex.ts`), Apex member materials, certification rubrics
+  - Help an coaching member review their certification progress
+  - Surface relevant LO Mastery resources for a stated goal
+- **Source materials:** LO Mastery curriculum (`src/data/coaching.ts`), coaching member materials, certification rubrics
 - **Output type:** Curriculum walkthrough, session prep notes, accountability prompts, certification progress summary
 - **Guardrails:**
   - Cannot grant certifications (human review only)
   - Cannot change member tier or billing
-  - Apex coaching content is gated to Apex members in production
+  - LO Mastery coaching content is gated to coaching members in production
 
 ---
 
-### 13. Elite Sales & Marketing Coach
+### 13. Sales and Marketing 101-601 Coach
 
 - **Audience:** LO
 - **Use cases:**

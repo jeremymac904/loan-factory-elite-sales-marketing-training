@@ -1,11 +1,11 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import { apexTiers } from "@/data/apex";
+import { coachingTiers } from "@/data/coaching";
 
 export const metadata = { title: "Loan Factory Alliance" };
 
-const alliance = apexTiers.find((tier) => tier.id === "pro")!;
+const alliance = coachingTiers.find((tier) => tier.id === "alliance")!;
 
 export default function LoanFactoryAlliancePage() {
   return (
@@ -61,7 +61,8 @@ export default function LoanFactoryAlliancePage() {
               $449<span className="ml-2 text-base font-medium text-lf-slate">per month</span>
             </p>
             <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Pricing pending final approval before public rollout.
+              $449 per month. Membership and billing are handled outside this
+              platform.
             </p>
           </div>
         </div>

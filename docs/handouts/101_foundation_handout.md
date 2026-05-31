@@ -1,4 +1,4 @@
-# Elite Sales and Marketing Training 101
+# Sales and Marketing 101-601 101
 ## Mortgage Sales Foundation
 
 A one page operating system every Loan Factory loan officer can run starting Monday.

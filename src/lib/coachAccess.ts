@@ -9,6 +9,7 @@ const COACH_ROLES = [
   "admin",
   "lo_development_lead",
   "lo_development_member",
+  "training_academy",
   "corporate_coach",
   "team_leader",
 ];
@@ -73,7 +74,12 @@ export async function getCoachAccess(): Promise<CoachAccess> {
   if (seesAll) scope = "all";
   else if (roleForGate === "corporate_coach") scope = "corporate_coach";
   else if (roleForGate === "team_leader") scope = "team_leader";
-  else if (roleForGate === "lo_development_member") scope = "lo_development";
+  else if (
+    roleForGate === "lo_development_member" ||
+    roleForGate === "training_academy"
+  ) {
+    scope = "lo_development";
+  }
 
   return {
     status: session.status,

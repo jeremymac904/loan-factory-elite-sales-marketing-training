@@ -5,7 +5,7 @@ description: Create Loan Factory branded content for the FREE internal Sales & M
 
 # Sales & Marketing 101–601 Content Creator
 
-**Program:** Loan Factory Elite Sales & Marketing Training Series (**101 → 601**) — a **FREE, internal** training series. A "six-week operating system for Loan Factory loan officers."
+**Program:** Loan Factory Sales and Marketing 101-601 Series (**101 → 601**) — a **FREE, internal** training series. A "six-week operating system for Loan Factory loan officers."
 **Audience:** Approved Loan Factory users — especially new LOs and LOs re-entering the business; open to anyone who wants the conversations/skills without paying.
 **Voice:** Jeremy-style — broker-first, direct, practical, sales-focused, no corporate fluff.
 **Always load first:** `LOAN_FACTORY_BRAND_OUTPUT_RULES.md` + the relevant style guide.
@@ -52,7 +52,7 @@ Confirm session/topic + output → load brand rules + style guide → pull the r
 ## 6. Guardrails (never do)
 - **Never** present Sales & Marketing as paid coaching or a path to a paid tier as the point. It's free and separate.
 - No hype, income guarantees, manifestation, or "borrow to join."
-- Use **LO**, **TERA** (not MOSO), **Netlify**, **approved Loan Factory users**; no Apex Advisor.
+- Use **LO**, **TERA** (not MOSO), **Netlify**, **approved Loan Factory users**; no deprecated paid-coaching names.
 - Any script/flyer/caption that could face consumers or agents must follow `Loan Factory Marketing Compliance Rules`: include Loan Factory + **NMLS 320841**, LO name + NMLS, licensed states, Equal Housing Lender logo; pair any rate with a matching-prominence **APR**; never invent rates/APR/taxes/HOA/credits; use the sample-scenario template for trigger terms; never advertise the $2,000 Best Price Guarantee in Washington; end with the draft/compliance footer and route through compliance. (FaceGram-internal lesson posts don't need consumer disclosures, but anything leaving the platform does.)
 
 ## 7. Attribution

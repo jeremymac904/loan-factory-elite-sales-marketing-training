@@ -1,5 +1,5 @@
-export type ApexTier = {
-  id: "advisor" | "pro";
+export type CoachingTier = {
+  id: "lo-mastery" | "alliance";
   name: string;
   shortName: string;
   logoAssetId: "lo-mastery" | "loan-factory-alliance";
@@ -14,18 +14,18 @@ export type ApexTier = {
   includes: string[];
 };
 
-export const apexTiers: ApexTier[] = [
+export const coachingTiers: CoachingTier[] = [
   {
-    id: "advisor",
+    id: "lo-mastery",
     name: "Loan Factory LO Mastery Coaching",
     shortName: "LO Mastery",
     logoAssetId: "lo-mastery",
     price: "$249",
     priceSuffix: "per month",
     tagline: "A simple coaching rhythm for loan officers who want consistency.",
-    href: "/apex-advisor/",
+    href: "/lo-mastery-coaching/",
     ctaLabel: "Join LO Mastery",
-    ctaHref: "/apex-launch-call/",
+    ctaHref: "/support-routing/#corporate-coaches",
     description:
       "A paid coaching membership with group coaching, Power Hour, coaching email, member resources, recordings, scripts, handouts, trackers, scorecards, and leaderboard access.",
     bestFor:
@@ -45,16 +45,16 @@ export const apexTiers: ApexTier[] = [
     ],
   },
   {
-    id: "pro",
+    id: "alliance",
     name: "Loan Factory Alliance",
     shortName: "Loan Factory Alliance",
     logoAssetId: "loan-factory-alliance",
     price: "$449",
     priceSuffix: "per month",
     tagline: "More coaching touchpoints for LOs who want deeper accountability.",
-    href: "/apex-advisor-pro/",
+    href: "/loan-factory-alliance/",
     ctaLabel: "Join Loan Factory Alliance",
-    ctaHref: "/apex-launch-call/",
+    ctaHref: "/support-routing/#corporate-coaches",
     description:
       "Everything in LO Mastery plus weekly coaching calls, Breakfast Club, more specific coaching emails, advanced certifications, priority accountability, the Alliance leaderboard, and advanced group coaching access.",
     bestFor:
@@ -76,7 +76,7 @@ export const apexTiers: ApexTier[] = [
   },
 ];
 
-export const apexCertifications = [
+export const coachingCertifications = [
   {
     id: "aclo",
     name: "Certified Mortgage Advisor",
@@ -113,5 +113,5 @@ export const apexCertifications = [
   },
 ];
 
-export const apexCertificationCompliance =
+export const coachingCertificationCompliance =
   "Certifications recognize completion of training and assessments. They are not a guarantee of production, income, or business results.";

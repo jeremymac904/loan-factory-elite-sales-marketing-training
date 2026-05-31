@@ -34,7 +34,7 @@
       "submittedAt": "2026-05-23T10:38:00Z",
       "audioFileName": "101-foundation-audio-companion.mp3",
       "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/101-foundation-audio-companion.mp3",
-      "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
+      "driveTargetFolder": "02 Audio Training/Sales and Marketing 101-601",
       "driveFileId": null,
       "duration": null,
       "websitePlacement": [
@@ -60,7 +60,7 @@
       "status": "downloaded",
       "audioFileName": "201-borrower-conversion-audio-companion.mp3",
       "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/201-borrower-conversion-audio-companion.mp3",
-      "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
+      "driveTargetFolder": "02 Audio Training/Sales and Marketing 101-601",
       "driveFileId": null,
       "duration": null,
       "websitePlacement": [
@@ -93,7 +93,7 @@
       "status": "downloaded",
       "audioFileName": "301-referral-partner-growth-audio-companion.mp3",
       "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/301-referral-partner-growth-audio-companion.mp3",
-      "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
+      "driveTargetFolder": "02 Audio Training/Sales and Marketing 101-601",
       "driveFileId": null,
       "duration": null,
       "websitePlacement": [
@@ -126,7 +126,7 @@
       "status": "downloaded",
       "audioFileName": "401-content-marketing-audio-companion.mp3",
       "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/401-content-marketing-audio-companion.mp3",
-      "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
+      "driveTargetFolder": "02 Audio Training/Sales and Marketing 101-601",
       "driveFileId": null,
       "duration": null,
       "websitePlacement": [
@@ -159,7 +159,7 @@
       "status": "downloaded",
       "audioFileName": "501-pipeline-sales-systems-audio-companion.mp3",
       "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/501-pipeline-sales-systems-audio-companion.mp3",
-      "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
+      "driveTargetFolder": "02 Audio Training/Sales and Marketing 101-601",
       "driveFileId": null,
       "duration": null,
       "websitePlacement": [
@@ -181,8 +181,8 @@
     },
     {
       "id": "601-elite-execution-audio-companion",
-      "title": "601 Elite Execution \u2014 Build Your Niche, Own Your System",
-      "session": "601 Elite Execution",
+      "title": "601 Execution System \u2014 Build Your Niche, Own Your System",
+      "session": "601 Execution System",
       "track": "core",
       "route": "/601-elite-execution",
       "type": "audio-overview",
@@ -192,7 +192,7 @@
       "status": "downloaded",
       "audioFileName": "601-elite-execution-audio-companion.mp3",
       "localAudioPath": "/Volumes/LegendsOS/Jeremy's_2026_Master_Build_Folder/_staging/elite-sales-marketing-notebooklm-audio/601-elite-execution-audio-companion.mp3",
-      "driveTargetFolder": "02 Audio Training/Elite Sales & Marketing",
+      "driveTargetFolder": "02 Audio Training/Sales and Marketing 101-601",
       "driveFileId": null,
       "duration": null,
       "websitePlacement": [
@@ -232,7 +232,7 @@
         "/audio-training",
         "/201-borrower-conversion"
       ],
-      "notes": "Pair with 201 Borrower Conversion and 601 Elite Execution."
+      "notes": "Pair with 201 Borrower Conversion and 601 Execution System."
     },
     {
       "id": "high-trust-realtor-relationships",

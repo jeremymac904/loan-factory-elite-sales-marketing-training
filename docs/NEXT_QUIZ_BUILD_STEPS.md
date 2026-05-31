@@ -23,10 +23,10 @@ read in, replace the generic phrasing in:
 
 Keep the data shape unchanged so the scoring engine and UI stay stable.
 
-## 3. Add the LO Development Profile to the Apex member area
+## 3. Add the LO Development Profile to the coaching member area
 
 Once persistence is agreed, attach the latest Coaching Report to the LO's
-profile in `/apex-member-area/`. Until then, the quiz is take-anytime and
+profile in `/member-area/`. Until then, the quiz is take-anytime and
 results live on-device.
 
 ## 4. Decide on a persistence layer
@@ -53,7 +53,7 @@ real routing.
 ## 6. Add an LO-side recommended training queue
 
 On a completed report, expose a short list of recommended modules and
-scripts directly inside the LO's view of `/apex-member-area/` or
+scripts directly inside the LO's view of `/member-area/` or
 `/training-library/`. Use the existing `suggestedResources` array on each
 profile.
 

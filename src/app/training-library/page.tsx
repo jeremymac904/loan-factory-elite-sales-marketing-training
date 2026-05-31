@@ -4,6 +4,7 @@ import PlatformModulePage from "@/components/PlatformModulePage";
 import SectionHeading from "@/components/SectionHeading";
 import AudioCompanionCard from "@/components/audio/AudioCompanionCard";
 import { coreAudioCompanions } from "@/data/audioCompanions";
+import { driveAssets } from "@/data/driveAssets";
 import { getPlatformModule } from "@/data/platform";
 
 export const metadata = { title: "Training Library" };
@@ -14,11 +15,13 @@ const library = [
   { title: "Roleplays", href: "/roleplays/", status: "Live" },
   { title: "Prompts", href: "/prompts/", status: "Live" },
   { title: "Recordings", href: "/recordings/", status: "Library" },
+  { title: "Video Library", href: "/ai-training/video-library/", status: "Library" },
   {
     title: "LO Development Clip Library",
     href: "/training-library/clips/",
     status: "Library",
   },
+  { title: "Content Skills", href: "/content-skills/", status: "Rules" },
   { title: "Tracker", href: "/tracker/", status: "Tool" },
   { title: "Assessments", href: "/assessments/", status: "Tool" },
   { title: "Market Mentor Studio", href: "/market-mentor/", status: "Tool" },
@@ -26,6 +29,13 @@ const library = [
 
 export default function TrainingLibraryPage() {
   const platformModule = getPlatformModule("training-library");
+  const assetStatusCounts = driveAssets.reduce<Record<string, number>>(
+    (counts, asset) => {
+      counts[asset.status] = (counts[asset.status] ?? 0) + 1;
+      return counts;
+    },
+    {},
+  );
 
   return (
     <PlatformModulePage module={platformModule}>
@@ -55,6 +65,34 @@ export default function TrainingLibraryPage() {
         description="Searchable cutdowns from existing internal training recordings, staged for approved Loan Factory users."
         limit={4}
       />
+
+      <section className="container-page pb-14">
+        <SectionHeading
+          eyebrow="Asset readiness"
+          title="Missing uploads and review items stay visible."
+          description="The platform should not hide unfinished training media. Use this readiness snapshot to decide what needs upload, review, or Drive hosting before launch."
+        />
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {Object.entries(assetStatusCounts).map(([status, count]) => (
+            <div key={status} className="card">
+              <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+                {status}
+              </p>
+              <p className="mt-1 text-3xl font-bold text-lf-charcoal">
+                {count}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/content-skills/" className="btn-primary">
+            Open content skills
+          </Link>
+          <Link href="/department-routing/" className="btn-secondary">
+            Review ownership
+          </Link>
+        </div>
+      </section>
 
       <section className="container-page pb-14">
         <SectionHeading

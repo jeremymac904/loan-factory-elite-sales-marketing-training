@@ -138,7 +138,7 @@ Ranked by impact-to-effort for the internal platform. Each item names the route 
 
 ### Priority 3 — "First 90 Days" structured series for new wholesale-broker LOs
 - **What:** A day-by-day onboarding video series built on the 101 daily activity standard (25+ logged conversations) and weekly rhythm, extended to a 90-day arc.
-- **Why:** Under-served angle, high retention value for new hires, and it feeds the ACLO / Apex Certified path. https://www.xinnix.com/blog/loan-officer-training
+- **Why:** Under-served angle, high retention value for new hires, and it feeds the ACLO / Certified path. https://www.xinnix.com/blog/loan-officer-training
 - **Where:** `/101-foundation` as anchor, with clips in `/training-library/clips`.
 
 ### Priority 4 — Compliance-safe content lab (401 video build-out)
@@ -185,7 +185,7 @@ Use this on every internal video before it ships.
 
 - Does Loan Factory have an existing YouTube channel / handle, and what is already published? (`SOURCE NEEDED`)
 - Which routes are the canonical home for video — `/training-library` + `/training-library/clips`, `/ai-training/video-library`, or both with cross-links?
-- Confirm the naming convention to use in published video titles: the system-of-record routes use 101–601 and `/member-area`; PLATFORM_OVERVIEW.md introduces "Apex Advisor" branding. Which is the public-in-platform label for video?
+- Confirm the naming convention to use in published video titles: the system-of-record routes use 101–601 and `/member-area`; PLATFORM_OVERVIEW.md introduces "LO Mastery" branding. Which is the public-in-platform label for video?
 - Are top-LO interviews cleared for recording/consent, and which tier (LO Mastery vs. Loan Factory Alliance) gets them first?
 - Who approves the compliance pass on each video, and is there an SLA so production isn't blocked?
 

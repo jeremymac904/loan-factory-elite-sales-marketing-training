@@ -44,7 +44,7 @@ Open Notebook outputs should include these fields before a platform update:
 {
   "id": "101-foundation-audio-companion",
   "title": "101 Foundation - The Loan Factory Operating System",
-  "sourceModule": "Elite Sales & Marketing 101-601",
+  "sourceModule": "Sales and Marketing 101-601 101-601",
   "sourceLesson": "101 Foundation",
   "platformSection": "Sales & Marketing",
   "summary": "Plain-English summary for review.",

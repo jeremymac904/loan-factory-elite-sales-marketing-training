@@ -60,7 +60,7 @@ Confirm output + topic → load brand rules + style guide → pull grounded bloc
 ## 6. Guardrails (never do)
 - No income guarantees / production promises; no hype, manifestation, or "borrow to join" language. Premium ≠ hype.
 - Don't call Sales & Marketing a paid program; keep it separate.
-- Use **LO**, **TERA**, **Netlify**, **approved Loan Factory users**; no Apex Advisor.
+- Use **LO**, **TERA**, **Netlify**, **approved Loan Factory users**; no deprecated paid-coaching names.
 - Respect exclusivity honestly (application-only, limited seats) without disparaging non-members.
 - Consumer/agent-facing mortgage marketing follows the compliance rules (NMLS 320841, EHL, rate+APR, sample-scenario, draft footer) and routes through compliance.
 - Privacy: production scorecards are private to member + coach; leaderboards anonymized unless opt-in.

@@ -1,4 +1,4 @@
-# Elite Sales and Marketing Training 101
+# Sales and Marketing 101-601 101
 ## Mortgage Sales Foundation. Gamma upload deck.
 
 This file is ready to drop into Gamma. 10 slides. Six Q and A pauses. Internal training only. Compliance reminders included.
@@ -7,16 +7,16 @@ This file is ready to drop into Gamma. 10 slides. Six Q and A pauses. Internal t
 
 # Slide 1: Title
 
-**Headline:** Elite Sales and Marketing Training 101
+**Headline:** Sales and Marketing 101-601 101
 
 **Subheadline:** Mortgage Sales Foundation. From scattered activity to a simple weekly operating system.
 
 **Body bullets:**
-- Loan Factory Elite Sales and Marketing Training Series
+- Loan Factory Sales and Marketing 101-601 Series
 - Session 1 of 6
 - For new and experienced LOs ready to install a system
 
-**Visual direction:** Dark navy hero background. Elite Sales and Marketing Training logo top center. Loan Factory logo equal weight below it. Orange accent line. No stock photos.
+**Visual direction:** Dark navy hero background. Sales and Marketing 101-601 logo top center. Loan Factory logo equal weight below it. Orange accent line. No stock photos.
 
 **Speaker note:** Welcome the room. Set the rule. We are here to install one system, not collect ideas.
 
@@ -236,7 +236,7 @@ This file is ready to drop into Gamma. 10 slides. Six Q and A pauses. Internal t
 7. Use no cartoon elements.
 8. Use no stock photos unless they feel premium and business focused. Houses, real LO desks, real mortgage moments only.
 9. Use clean backgrounds or subtle gradient panels.
-10. Logo lockup on title and final slide. Elite Sales and Marketing Training logo top. Loan Factory logo equal weight below or beside it. Never tiny.
+10. Logo lockup on title and final slide. Sales and Marketing 101-601 logo top. Loan Factory logo equal weight below or beside it. Never tiny.
 
 ## Compliance guardrails embedded in the deck
 

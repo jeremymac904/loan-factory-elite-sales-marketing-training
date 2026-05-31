@@ -35,7 +35,7 @@
 
 ## 5. Voice rules (from brand rules)
 - Practical, specific, doable today. Celebrate the action, not just the result.
-- Use **LO**, **TERA**, **Netlify**, **approved Loan Factory users**. No Apex Advisor.
+- Use **LO**, **TERA**, **Netlify**, **approved Loan Factory users**. No deprecated paid-coaching names.
 - No income guarantees, no "borrow to join," no manifestation, no hype.
 - Keep Sales & Marketing visibly free + separate from paid coaching.
 

@@ -1,4 +1,4 @@
-# Audio Companion Master Index — Loan Factory Elite Sales & Marketing
+# Audio Companion Master Index — Loan Factory Sales and Marketing 101-601
 
 **Source notebook:** [(Sales & Marketing Masterclass) — YouTube](https://notebooklm.google.com/notebook/9c5cbd35-e6d9-4158-a45b-2e761a34531e)
 **Production target system:** Google NotebookLM Studio Audio Overview
@@ -11,12 +11,12 @@
 
 | ID | Title | Session | Status | Intended page | Audio file (when downloaded) | Drive folder |
 |---|---|---|---|---|---|---|
-| `101-foundation-audio-companion` | The Loan Factory Operating System | 101 Foundation | Prompt ready / audio not generated | `/101-foundation` | `101-foundation-audio-companion.mp3` | `02 Audio Training / Elite Sales & Marketing` |
-| `201-borrower-conversion-audio-companion` | Win the First Call | 201 Borrower Conversion | Prompt ready / audio not generated | `/201-borrower-conversion` | `201-borrower-conversion-audio-companion.mp3` | `02 Audio Training / Elite Sales & Marketing` |
-| `301-referral-partner-growth-audio-companion` | Build the Partner Engine | 301 Referral Partner Growth | Prompt ready / audio not generated | `/301-referral-partner-growth` | `301-referral-partner-growth-audio-companion.mp3` | `02 Audio Training / Elite Sales & Marketing` |
-| `401-content-marketing-audio-companion` | Local Authority, Compliant Content | 401 Content and Marketing | Prompt ready / audio not generated | `/401-content-and-marketing` | `401-content-marketing-audio-companion.mp3` | `02 Audio Training / Elite Sales & Marketing` |
-| `501-pipeline-sales-systems-audio-companion` | Run the Engine Like a Pro | 501 Pipeline and Sales Systems | Prompt ready / audio not generated | `/501-pipeline-and-sales-systems` | `501-pipeline-sales-systems-audio-companion.mp3` | `02 Audio Training / Elite Sales & Marketing` |
-| `601-elite-execution-audio-companion` | Build Your Niche, Own Your System | 601 Elite Execution | Prompt ready / audio not generated | `/601-elite-execution` | `601-elite-execution-audio-companion.mp3` | `02 Audio Training / Elite Sales & Marketing` |
+| `101-foundation-audio-companion` | The Loan Factory Operating System | 101 Foundation | Prompt ready / audio not generated | `/101-foundation` | `101-foundation-audio-companion.mp3` | `02 Audio Training / Sales and Marketing 101-601` |
+| `201-borrower-conversion-audio-companion` | Win the First Call | 201 Borrower Conversion | Prompt ready / audio not generated | `/201-borrower-conversion` | `201-borrower-conversion-audio-companion.mp3` | `02 Audio Training / Sales and Marketing 101-601` |
+| `301-referral-partner-growth-audio-companion` | Build the Partner Engine | 301 Referral Partner Growth | Prompt ready / audio not generated | `/301-referral-partner-growth` | `301-referral-partner-growth-audio-companion.mp3` | `02 Audio Training / Sales and Marketing 101-601` |
+| `401-content-marketing-audio-companion` | Local Authority, Compliant Content | 401 Content and Marketing | Prompt ready / audio not generated | `/401-content-and-marketing` | `401-content-marketing-audio-companion.mp3` | `02 Audio Training / Sales and Marketing 101-601` |
+| `501-pipeline-sales-systems-audio-companion` | Run the Engine Like a Pro | 501 Pipeline and Sales Systems | Prompt ready / audio not generated | `/501-pipeline-and-sales-systems` | `501-pipeline-sales-systems-audio-companion.mp3` | `02 Audio Training / Sales and Marketing 101-601` |
+| `601-elite-execution-audio-companion` | Build Your Niche, Own Your System | 601 Execution System | Prompt ready / audio not generated | `/601-elite-execution` | `601-elite-execution-audio-companion.mp3` | `02 Audio Training / Sales and Marketing 101-601` |
 
 ## Bonus podcast-style companions
 

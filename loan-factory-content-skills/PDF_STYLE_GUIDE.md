@@ -51,7 +51,7 @@ Internal Loan Factory use only · <Program> · <Doc type> · Page X of Y
 - Scannable: headings, bullets, tables, callouts — minimal walls of text.
 - End every PDF with **Your next step** (1 primary CTA) + **Next steps** (2–4 actions).
 - Worksheets/scorecards: leave fill-in space; label every field; include a scoring key or instructions.
-- Obey all language rules: LO / TERA / Netlify / approved Loan Factory users; no Apex Advisor; no hype/guarantees/manifestation/borrow-to-join.
+- Obey all language rules: LO / TERA / Netlify / approved Loan Factory users; no deprecated paid-coaching names; no hype/guarantees/manifestation/borrow-to-join.
 
 ## 7. Production note
 Generate via the **pdf** skill (or **docx** → export). Keep a white-background body + optional black cover. Always run the Pre-Send Brand Checklist from the brand rules file.

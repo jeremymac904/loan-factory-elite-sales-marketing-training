@@ -82,7 +82,7 @@ export const audioTraining: AudioTrainingItem[] = [
     relatedModules: [
       { level: "201", href: "/201-borrower-conversion/", title: "201 Borrower Conversion" },
       { level: "501", href: "/501-pipeline-and-sales-systems/", title: "501 Pipeline and Sales Systems" },
-      { level: "601", href: "/601-elite-execution/", title: "601 Elite Execution" },
+      { level: "601", href: "/601-elite-execution/", title: "601 Execution System" },
     ],
     duration: "Duration not yet logged",
     sourceType: "NotebookLM Audio Overview",
@@ -109,7 +109,7 @@ export const audioTraining: AudioTrainingItem[] = [
     skillLevel: ["Beginner", "Intermediate", "Advanced"],
     relatedModules: [
       { level: "201", href: "/201-borrower-conversion/", title: "201 Borrower Conversion" },
-      { level: "601", href: "/601-elite-execution/", title: "601 Elite Execution" },
+      { level: "601", href: "/601-elite-execution/", title: "601 Execution System" },
     ],
     duration: "Duration not yet logged",
     sourceType: "NotebookLM Audio Overview",
@@ -225,7 +225,7 @@ export const audioTraining: AudioTrainingItem[] = [
     skillLevel: ["Intermediate", "Advanced", "Compliance Review"],
     relatedModules: [
       { level: "201", href: "/201-borrower-conversion/", title: "201 Borrower Conversion" },
-      { level: "601", href: "/601-elite-execution/", title: "601 Elite Execution" },
+      { level: "601", href: "/601-elite-execution/", title: "601 Execution System" },
     ],
     duration: "Duration not yet logged",
     sourceType: "NotebookLM Audio Overview",
@@ -250,7 +250,7 @@ export const audioTraining: AudioTrainingItem[] = [
   // Training Blueprint and Coaching Strategy
   {
     id: "elite-mortgage-sales-operating-system",
-    title: "The Elite Mortgage Sales Operating System",
+    title: "The Mortgage Sales Operating System",
     category: "training-blueprint",
     description:
       "A practical conversation about turning daily activity, partner outreach, follow up, and pipeline review into a repeatable operating system for loan officers. Best starting point for new or inconsistent LOs.",
@@ -285,7 +285,7 @@ export const audioTraining: AudioTrainingItem[] = [
     skillLevel: ["Advanced", "Team Leader", "Coach"],
     relatedModules: [
       { level: "401", href: "/401-content-and-marketing/", title: "401 Content and Marketing" },
-      { level: "601", href: "/601-elite-execution/", title: "601 Elite Execution" },
+      { level: "601", href: "/601-elite-execution/", title: "601 Execution System" },
       { level: "Coach", href: "/coach-guide/", title: "Coach Guide" },
       { level: "TL", href: "/team-leader-guide/", title: "Team Leader Guide" },
     ],
