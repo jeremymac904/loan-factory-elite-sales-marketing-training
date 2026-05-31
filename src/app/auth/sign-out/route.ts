@@ -13,7 +13,7 @@ async function signOut() {
     httpOnly: true,
     maxAge: 0,
     path: "/",
-    sameSite: "none",
+    sameSite: "lax",
     secure: true,
   });
   cookieStore.set(betaPreviewCookieName, "", {
