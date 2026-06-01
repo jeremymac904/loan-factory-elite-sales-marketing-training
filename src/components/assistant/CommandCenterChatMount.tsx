@@ -1,6 +1,7 @@
 import { getBetaUserSession } from "@/lib/supabase/session";
 import { getViewAsState } from "@/lib/viewAs";
 import { getRoleLabel } from "@/lib/supabase/auth";
+import { roleHasAssistant } from "@/lib/supabase/effectiveAccess";
 import CommandCenterChat from "@/components/assistant/CommandCenterChat";
 
 // Server wrapper that drops the role-aware Command Center chat onto a dashboard.
@@ -18,6 +19,13 @@ export default async function CommandCenterChatMount() {
 
   const effectiveRole = viewAs?.role || session.profile.role;
   if (!effectiveRole) return null;
+
+  // Hard rule: regular loan_officer gets NO AI assistant — and the Command
+  // Center chat reads as one. Gate it through the SAME roleHasAssistant() rule
+  // the assistant pill/drawer use (view-as aware via effectiveRole), so a Loan
+  // Officer (real or previewed) never sees a chat interface. A non-AI "Platform
+  // Help" card could be added for LOs later without reusing this chat.
+  if (!roleHasAssistant(effectiveRole)) return null;
 
   const firstName =
     session.profile.full_name?.trim().split(/\s+/)[0] ?? null;
