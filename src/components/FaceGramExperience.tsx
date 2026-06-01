@@ -69,11 +69,21 @@ type ComposerModal = {
 export default function FaceGramExperience({
   initialApprovedEmail,
   previewMode = false,
+  readOnly = false,
 }: {
   initialApprovedEmail?: string;
   previewMode?: boolean;
+  // Logged-out READ-ONLY mode: render the real FaceGram app shell + sample feed
+  // immediately (no welcome wall, no marketing page), but lock every interaction
+  // (post/comment/like/save/upload/profile) behind a sign-in prompt. This is the
+  // same product as the signed-in workspace — just locked. previewMode (the beta
+  // cookie path) still grants posting; readOnly never does.
+  readOnly?: boolean;
 }) {
-  const [entered, setEntered] = useState(false);
+  // In read-only mode the app shell is shown immediately (skip the "Enter
+  // FaceGram" welcome gate) so /facegram looks like the community feed, not a
+  // landing page.
+  const [entered, setEntered] = useState(readOnly);
   const [draftPost, setDraftPost] = useState("");
   const [composerKind, setComposerKind] = useState<ComposerKind>("Text");
   const [fileAccept, setFileAccept] = useState("image/*");
@@ -163,8 +173,22 @@ export default function FaceGramExperience({
     };
   }, [initialApprovedEmail, previewMode, supabaseConfigured]);
 
-  const canPost = previewMode || authState.status === "approved";
+  // readOnly always wins: a logged-out visitor can never post/like/comment,
+  // even though the full shell + sample feed render. Interaction attempts route
+  // to the sign-in prompt (see promptSignIn / the !canPost branches).
+  const canPost =
+    !readOnly && (previewMode || authState.status === "approved");
   const isPending = authState.status === "pending";
+
+  // Shared locked-interaction prompt for read-only visitors.
+  function promptSignIn() {
+    setDetailModal({
+      title: "Sign in to interact",
+      body: "Sign in with your approved Loan Factory Google account to post, comment, like, upload, and open your FaceGram profile.",
+      actionLabel: "Sign in",
+      href: "/login/",
+    });
+  }
   const activeEmail =
     authState.status === "approved" ? authState.email : "loan officer";
   const normalizedSearch = searchTerm.trim().toLowerCase();
@@ -328,6 +352,10 @@ export default function FaceGramExperience({
   }
 
   function toggleLike(id: string) {
+    if (!canPost) {
+      promptSignIn();
+      return;
+    }
     setPosts((current) =>
       current.map((post) =>
         post.id === id
@@ -342,6 +370,10 @@ export default function FaceGramExperience({
   }
 
   function toggleSave(id: string) {
+    if (!canPost) {
+      promptSignIn();
+      return;
+    }
     setPosts((current) =>
       current.map((post) =>
         post.id === id ? { ...post, saved: !post.saved } : post,
@@ -350,6 +382,10 @@ export default function FaceGramExperience({
   }
 
   function addComment(id: string) {
+    if (!canPost) {
+      promptSignIn();
+      return;
+    }
     const comment = commentDrafts[id]?.trim();
 
     if (!comment) return;

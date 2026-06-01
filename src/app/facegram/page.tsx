@@ -1,6 +1,5 @@
 import FaceGramExperience from "@/components/FaceGramExperience";
 import FaceGramAccessNotice from "@/components/FaceGramAccessNotice";
-import FaceGramOverview from "@/components/FaceGramOverview";
 import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { canAccessFaceGram, getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
@@ -21,11 +20,13 @@ export default async function FaceGramPage() {
     );
   }
 
-  // Signed-out / not-configured visitors get the PUBLIC overview (what FaceGram
-  // is + sign-in CTA), NOT a bare "sign in required" gate. No feed/posts/private
-  // data render here — the personalized workspace is below, after auth.
+  // Signed-out / not-configured visitors land INSIDE FaceGram — the real app
+  // shell + sample feed in READ-ONLY mode (Facebook-style), NOT a marketing
+  // landing page. Every interaction is locked behind a sign-in prompt. Sample
+  // content only; no real posts/comments/profiles/private data (readOnly forces
+  // canPost=false and the feed renders the bundled faceGramPosts sample set).
   if (session.status === "not-configured" || session.status === "signed-out") {
-    return <FaceGramOverview />;
+    return <FaceGramExperience readOnly />;
   }
 
   if (session.status === "pending") {
