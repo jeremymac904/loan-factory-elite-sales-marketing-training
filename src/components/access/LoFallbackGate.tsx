@@ -69,10 +69,20 @@ async function LoFallbackGateContent({
 }: Props) {
   const effective = await getEffectiveAccess();
 
-  // Only intercept a regular Loan Officer (or an admin viewing-as Loan Officer).
-  // Everything else — including pending/signed-out and every staff/coach role —
-  // is handed straight to RoleGate so its allow-list and AccessNotice decide.
-  if (effective.effectiveRole !== "loan_officer") {
+  // Show the friendly LO-facing informational fallback to:
+  //  - a regular Loan Officer (real, or an admin viewing-as Loan Officer), and
+  //  - any SIGNED-OUT / not-configured visitor.
+  // Per the platform access model (docs/ACCESS_MODEL.md), this surface must read
+  // as a public internal OVERVIEW for the general audience — not a bare "sign in
+  // required" wall — while the actual staff command center still requires the
+  // right role. Every OTHER signed-in role (staff/coach/pending) falls through to
+  // RoleGate so its allow-list + AccessNotice make the real decision. This NEVER
+  // grants access: the fallback only shows LINKS to surfaces anyone can reach.
+  const isLoanOfficer = effective.effectiveRole === "loan_officer";
+  const isSignedOut =
+    effective.status === "signed-out" || effective.status === "not-configured";
+
+  if (!isLoanOfficer && !isSignedOut) {
     return <RoleGate gate={gate}>{children}</RoleGate>;
   }
 
@@ -83,11 +93,11 @@ async function LoFallbackGateContent({
           {surfaceLabel}
         </span>
         <h1 className="h-display mt-1 text-3xl">
-          This is an internal staff dashboard
+          {surfaceLabel}
         </h1>
         <p className="prose-lf mt-3 text-base text-lf-slate">{explanation}</p>
         <p className="prose-lf mt-3 text-base text-lf-charcoal">
-          As a Loan Officer, your tools and training live here:
+          Loan officer tools and training live here:
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {destinations.map((destination) => (
