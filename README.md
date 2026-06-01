@@ -44,6 +44,30 @@ tools are execution layers only.
 Legacy paid-coaching alias routes are compatibility redirects only. Do not create new
 copy, docs, features, or links using deprecated paid-coaching naming.
 
+## Access Model (PERMANENT RULE — see docs/ACCESS_MODEL.md)
+
+This is an **internal Loan Factory platform on a Loan Factory subdomain**, not a public
+marketing website and not an app that forces login on every page. A normal Loan Factory
+loan officer is already inside the Loan Factory ecosystem and must be able to browse the
+informational/training-discovery layer **without an additional app login**.
+
+> **General internal platform pages must remain accessible without an additional app
+> login. Authentication is required only for private dashboards, role-specific tools,
+> saved user data, admin functions, coaching records, support submissions, AI workspaces,
+> and external connected actions.**
+
+- **Public (no extra login):** Home, LO Development overview, Training / Training Library,
+  Sales and Marketing (free 101-601), AI Advantage, Coaching, LO Mastery, Loan Factory
+  Alliance, Performance Alliance, Inner Circle, Corporate Coaching, Team Leader Coaching,
+  FaceGram overview, Support overview, Resources overview.
+- **Protected (login required):** Admin / user management / View as / platform status,
+  role dashboards, coach dashboards, paid-coaching member dashboards, private scorecards /
+  coaching notes / progress, submitted forms, AI assistants + AI Twin workspaces, the
+  FaceGram workspace, support submissions, private downloads, and any connected
+  email/Gmail/Chat/Calendar/workflow tool.
+
+**Do NOT re-gate the public overview pages.** Full rule + QA list: `docs/ACCESS_MODEL.md`.
+
 ## Compliance And Safety Rules
 
 - No unsupported production, income, approval, or business-result guarantees.

@@ -126,6 +126,44 @@ export default function CoachingPage() {
       </section>
 
       <section className="container-page py-14">
+        <SectionHeading
+          eyebrow="More coaching programs"
+          title="Other Loan Factory coaching tracks"
+          description="Beyond LO Mastery and Loan Factory Alliance, these coaching tracks support different stages and roles. Open any overview to learn more; enrollment and private workspaces are handled after sign-in."
+        />
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <Link href="/performance-alliance/" className="card hover:shadow-lift">
+            <h3 className="h-display text-lg">Performance Alliance</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              A higher-accountability track for producers who want a more
+              intensive weekly plan and closer coach review.
+            </p>
+          </Link>
+          <Link href="/inner-circle/" className="card hover:shadow-lift">
+            <h3 className="h-display text-lg">Inner Circle</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              The highest-touch coaching community — mastermind, advanced
+              strategy, and direct access for committed producers.
+            </p>
+          </Link>
+          <Link href="/corporate-coaching/" className="card hover:shadow-lift">
+            <h3 className="h-display text-lg">Corporate Coaching</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              Company-provided coaching that helps loan officers onboard, get
+              unblocked, and build a consistent weekly rhythm.
+            </p>
+          </Link>
+          <Link href="/team-leader-coaching/" className="card hover:shadow-lift">
+            <h3 className="h-display text-lg">Team Leader Coaching</h3>
+            <p className="prose-lf mt-2 text-sm text-lf-slate">
+              For loan officers building a team — lead, coach, and grow your
+              people with a repeatable weekly system.
+            </p>
+          </Link>
+        </div>
+      </section>
+
+      <section className="container-page py-14">
         <SectionHeading eyebrow="What is inside" title="What members can open" />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           <Link href="/member-area/" className="card hover:shadow-lift">
