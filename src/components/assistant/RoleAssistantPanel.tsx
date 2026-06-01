@@ -95,6 +95,19 @@ export default function RoleAssistantPanel({ role, roleLabel }: Props) {
     setOpen(true);
   }
 
+  // Open when the dashboard Command Center chat fires "Open full assistant",
+  // connecting the first-login chat to this same side-panel assistant. Declared
+  // after openPanel so it reuses the existing open path (recent drafts + open).
+  useEffect(() => {
+    function onOpen() {
+      openPanel();
+    }
+    window.addEventListener("lf:open-assistant", onOpen);
+    return () => window.removeEventListener("lf:open-assistant", onOpen);
+    // openPanel is stable (component-scoped); listener attaches once.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   function generate() {
     if (!action) return;
     setDraft(

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { RoleDashboard } from "@/data/roleDashboards";
+import CommandCenterChatMount from "@/components/assistant/CommandCenterChatMount";
 
 const statusClassName: Record<string, string> = {
   Live: "border-lf-orange/30 bg-lf-orangeSoft text-lf-orangeDark",
@@ -84,6 +85,9 @@ export default function RoleDashboardPage({
           </ul>
         </div>
       </section>
+
+      {/* First-login Command Center chat — role-aware guided help, draft-only. */}
+      <CommandCenterChatMount />
 
       <section className="container-page section-y-tight pb-10">
         <div className="grid gap-5">

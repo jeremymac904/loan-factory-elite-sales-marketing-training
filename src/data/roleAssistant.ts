@@ -440,3 +440,384 @@ export function buildRoleAssistantDraft(input: DraftInput): string {
       return `${header}\n\n[Draft content — edit before you use it.]`;
   }
 }
+
+// ---------------------------------------------------------------------------
+// First-login Command Center chat — role-aware GUIDED answers (honest mode)
+// ---------------------------------------------------------------------------
+// Powers the ChatGPT-style command box on dashboards + the "Ask" tab of the
+// right-side assistant. This is a GUIDED assistant, not a live LLM: answers are
+// structured local templates grounded in real platform routes. It never calls
+// an external/paid AI provider and never sends anything. The architecture is
+// provider-ready: answerPlatformQuestion() is the single seam a future server
+// action can replace, returning the same GuidedAnswer shape.
+
+export type GuidedAnswerLink = { label: string; href: string };
+
+export type GuidedAnswer = {
+  // The matched intent key (or "fallback").
+  intent: string;
+  // Short, friendly, role-aware answer body (plain text, may include newlines).
+  body: string;
+  // Concrete in-app destinations the user can click.
+  links: GuidedAnswerLink[];
+};
+
+export type StarterPrompt = {
+  id: string;
+  label: string;
+};
+
+// The ten suggested starter prompts (shown as clickable chips). Order is the
+// "where do I start" → deeper-help flow Jeremy specified.
+export const commandCenterStarterPrompts: StarterPrompt[] = [
+  { id: "start", label: "Where should I start?" },
+  { id: "next_action", label: "Show me my next action." },
+  { id: "coaching", label: "How do I use the coaching dashboard?" },
+  { id: "scorecard", label: "How do I submit my weekly scorecard?" },
+  { id: "sales_training", label: "Where are the Sales and Marketing trainings?" },
+  { id: "ai_advantage", label: "Where are the AI Advantage videos?" },
+  { id: "support", label: "How do I find LO Support resources?" },
+  { id: "facegram", label: "How do I use FaceGram?" },
+  { id: "walkthroughs", label: "How do I find video walkthroughs?" },
+  { id: "ask_help", label: "How do I ask for help?" },
+];
+
+// Common destinations reused across answers (keeps links consistent + real).
+const LINKS = {
+  coaching: { label: "Coaching overview", href: "/coaching/" },
+  coachCenter: { label: "Coach Command Center", href: "/coach-command-center/" },
+  loMastery: { label: "LO Mastery member area", href: "/member-area/lo-mastery/" },
+  alliance: { label: "Loan Factory Alliance member area", href: "/member-area/alliance/" },
+  scorecard: { label: "Submit weekly scorecard", href: "/member-area/scorecards/" },
+  coachScorecards: { label: "Review LO scorecards", href: "/coach-command-center/scorecards/" },
+  salesTraining: { label: "Sales and Marketing 101-601", href: "/sales-training/" },
+  trainingLibrary: { label: "Training Library", href: "/training-library/" },
+  aiAdvantage: { label: "AI Advantage", href: "/ai-training/" },
+  aiVideos: { label: "AI Advantage video library", href: "/ai-training/video-library/" },
+  loDevVideos: { label: "LO Development video library", href: "/training-library/lo-development-videos/" },
+  resources: { label: "Resource Library", href: "/resources/" },
+  support: { label: "Loan Officer Support", href: "/loan-officer-support/" },
+  supportRouting: { label: "Support routing", href: "/support-routing/" },
+  facegram: { label: "FaceGram", href: "/facegram/" },
+  admin: { label: "Admin Console", href: "/admin/" },
+  viewAs: { label: "View as role", href: "/admin/view-as/" },
+  platformStatus: { label: "Platform status", href: "/admin/platform-status/" },
+  loDev: { label: "LO Development", href: "/lo-development/" },
+  trainingAcademy: { label: "Training Academy", href: "/training-academy/" },
+  marketing: { label: "Marketing", href: "/marketing/" },
+  contentSkills: { label: "Content Skills", href: "/content-skills/" },
+  departmentRouting: { label: "Department routing", href: "/department-routing/" },
+  feedback: { label: "Send Feedback (bottom-right button)", href: "/resources/" },
+} as const;
+
+// Buckets group roles so each guided answer can be tailored without a 16-branch
+// switch per intent.
+type RoleBucket =
+  | "admin"
+  | "lo_development"
+  | "coach"
+  | "lo_mastery_member"
+  | "alliance_member"
+  | "training_academy"
+  | "support"
+  | "marketing"
+  | "loan_officer";
+
+function roleBucket(role: string | null | undefined): RoleBucket {
+  switch (role) {
+    case "master_admin":
+    case "admin":
+      return "admin";
+    case "lo_development_lead":
+    case "lo_development_member":
+    case "lo_development":
+      return "lo_development";
+    case "corporate_coach":
+    case "corporate_coach_supervisor":
+    case "lo_mastery_coach":
+    case "loan_factory_alliance_coach":
+    case "coaching_director":
+    case "team_leader":
+      return "coach";
+    case "coaching_member_level_1":
+      return "lo_mastery_member";
+    case "coaching_member_level_2":
+      return "alliance_member";
+    case "training_academy":
+      return "training_academy";
+    case "loan_officer_support":
+    case "support_staff":
+      return "support";
+    case "marketing":
+      return "marketing";
+    case "loan_officer":
+    default:
+      return "loan_officer";
+  }
+}
+
+// Per-bucket "where should I start" answer + the single highest-value link.
+function startAnswer(bucket: RoleBucket): GuidedAnswer {
+  const base = (body: string, links: GuidedAnswerLink[]): GuidedAnswer => ({
+    intent: "start",
+    body,
+    links,
+  });
+  switch (bucket) {
+    case "admin":
+      return base(
+        "Start in the Admin Console. From there you can manage users and access, open any role with View as role to record walkthroughs, and check Platform status. Use the dropdowns to reach People & Access, Coaching, Training & Content, and Ops & Review.",
+        [LINKS.admin, LINKS.viewAs, LINKS.platformStatus],
+      );
+    case "lo_development":
+      return base(
+        "Start on the LO Development dashboard. Your job is operations: routing, support coverage, training rollout, and coaching enablement. Use Department routing to see who owns what, and the Training Library to push resources.",
+        [LINKS.loDev, LINKS.departmentRouting, LINKS.trainingLibrary],
+      );
+    case "coach":
+      return base(
+        "Start in the Coach Command Center. Open My People to see your roster, review submitted scorecards, and check who needs a nudge. The right-side coach assistant drafts notes, agendas, and follow-ups for the LO you select.",
+        [LINKS.coachCenter, LINKS.coachScorecards, LINKS.coaching],
+      );
+    case "lo_mastery_member":
+      return base(
+        "Start in your LO Mastery member area ($249 tier). Your weekly rhythm is: join Power Hour, work the training, and submit your weekly scorecard so your coach can review it before your next session.",
+        [LINKS.loMastery, LINKS.scorecard, LINKS.coaching],
+      );
+    case "alliance_member":
+      return base(
+        "Start in your Loan Factory Alliance member area ($449 tier). You get the advanced coaching track, mastermind, and the same weekly accountability — submit your scorecard each week and bring it to coaching.",
+        [LINKS.alliance, LINKS.scorecard, LINKS.coaching],
+      );
+    case "training_academy":
+      return base(
+        "Start in Training Academy. You own curriculum and content production — the Sales and Marketing 101-601 path, the Training Library, and Content Skills are your core surfaces.",
+        [LINKS.trainingAcademy, LINKS.salesTraining, LINKS.contentSkills],
+      );
+    case "support":
+      return base(
+        "Start in Loan Officer Support. Use Support routing to triage requests to the right lane, and keep the Resource Library handy for the answers LOs ask for most.",
+        [LINKS.support, LINKS.supportRouting, LINKS.resources],
+      );
+    case "marketing":
+      return base(
+        "Start on the Marketing dashboard. Your core flow is content review and marketing enablement — Content Skills, the Resource Library, and the AI Advantage tools support your drafts.",
+        [LINKS.marketing, LINKS.contentSkills, LINKS.aiAdvantage],
+      );
+    case "loan_officer":
+    default:
+      return base(
+        "Start with Sales and Marketing 101-601 — that is your free internal training path. Then explore AI Advantage, keep the Resource Library handy, and use FaceGram to stay connected with the team. If you get stuck, reach Loan Officer Support.",
+        [LINKS.salesTraining, LINKS.aiAdvantage, LINKS.support],
+      );
+  }
+}
+
+// Intent matchers run in order; first hit wins. Keyword-based (honest guided
+// mode — no model inference). Each returns a role-aware GuidedAnswer.
+type IntentMatcher = {
+  intent: string;
+  test: (q: string) => boolean;
+  answer: (bucket: RoleBucket) => GuidedAnswer;
+};
+
+const matchers: IntentMatcher[] = [
+  {
+    intent: "start",
+    test: (q) => /where.*start|get start|begin|first|new here|onboard/.test(q),
+    answer: (b) => startAnswer(b),
+  },
+  {
+    intent: "next_action",
+    test: (q) => /next action|what.*do (now|next)|what should i do/.test(q),
+    answer: (b) => {
+      const start = startAnswer(b);
+      return {
+        intent: "next_action",
+        body:
+          "Your next action lives on your dashboard under “Next actions,” right under the hero. Open the first card there. If you want, I can point you to the most common next step for your role:",
+        links: start.links,
+      };
+    },
+  },
+  {
+    intent: "coaching",
+    test: (q) => /coach|coaching dashboard|command center/.test(q),
+    answer: (b) =>
+      b === "coach"
+        ? {
+            intent: "coaching",
+            body:
+              "The Coach Command Center is your hub: My People (roster), Activity, Scorecards (review what LOs submit), Member Progress, Coaching Notes, Training Plan, Messages, Email Center, and Calendar — all draft-only for comms. The right-side coach assistant drafts notes and agendas for a selected LO.",
+            links: [LINKS.coachCenter, LINKS.coachScorecards, LINKS.coaching],
+          }
+        : b === "lo_mastery_member"
+          ? {
+              intent: "coaching",
+              body:
+                "Your coaching lives in the LO Mastery member area ($249). Join Power Hour and biweekly group coaching, work your track, and submit your weekly scorecard so your coach can review it.",
+              links: [LINKS.loMastery, LINKS.scorecard, LINKS.coaching],
+            }
+          : b === "alliance_member"
+            ? {
+                intent: "coaching",
+                body:
+                  "Your coaching lives in the Loan Factory Alliance member area ($449): advanced coaching, mastermind, and weekly accountability. Submit your scorecard each week and bring it to your session.",
+                links: [LINKS.alliance, LINKS.scorecard, LINKS.coaching],
+              }
+            : {
+                intent: "coaching",
+                body:
+                  "Coaching at Loan Factory has two paid tiers: LO Mastery ($249) and Loan Factory Alliance ($449). The Coaching overview explains both. Note: paid coaching is separate from the free Sales and Marketing 101-601 training.",
+                links: [LINKS.coaching, LINKS.loMastery, LINKS.alliance],
+              },
+  },
+  {
+    intent: "scorecard",
+    test: (q) => /scorecard/.test(q),
+    answer: (b) =>
+      b === "coach"
+        ? {
+            intent: "scorecard",
+            body:
+              "Coaches review scorecards — they do not fill them out. Open Scorecards in the Coach Command Center to see submitted vs missing, trends, and follow-up actions. LOs submit their own each week.",
+            links: [LINKS.coachScorecards, LINKS.coachCenter],
+          }
+        : {
+            intent: "scorecard",
+            body:
+              "Submit your weekly scorecard from your member area — track real conversations, Realtor activity, past-client touches, pipeline and follow-up work, and your coaching commitments. Save a draft anytime; submit before your next coaching session.",
+            links: [LINKS.scorecard, b === "alliance_member" ? LINKS.alliance : LINKS.loMastery],
+          },
+  },
+  {
+    intent: "sales_training",
+    test: (q) => /sales|marketing train|101|201|301|401|501|601|curriculum|course/.test(q),
+    answer: () => ({
+      intent: "sales_training",
+      body:
+        "Sales and Marketing 101 through 601 is your free internal training path (it is not paid coaching). Start at 101 and work up. The Training Library holds the supporting handouts, clips, and the marketing asset guides.",
+      links: [LINKS.salesTraining, LINKS.trainingLibrary],
+    }),
+  },
+  {
+    intent: "ai_advantage",
+    test: (q) => /ai advantage|ai video|ai train|gemini|ai twin/.test(q),
+    answer: () => ({
+      intent: "ai_advantage",
+      body:
+        "AI Advantage is your AI playbook. The lessons live on the AI Advantage page, and the full set of micro-lessons is in the AI Advantage video library. Use it to speed up content, follow-up, and day-to-day work — internal use, no borrower claims.",
+      links: [LINKS.aiAdvantage, LINKS.aiVideos],
+    }),
+  },
+  {
+    intent: "walkthroughs",
+    test: (q) => /walkthrough|video|how-to|tutorial|clip|recording/.test(q),
+    answer: () => ({
+      intent: "walkthroughs",
+      body:
+        "Video walkthroughs live in two places: the AI Advantage video library (AI micro-lessons) and the LO Development video library (platform + process clips, grouped by category). The Training Library ties them together.",
+      links: [LINKS.loDevVideos, LINKS.aiVideos, LINKS.trainingLibrary],
+    }),
+  },
+  {
+    intent: "support",
+    test: (q) => /support|resource|help desk|ticket|escalat|stuck/.test(q),
+    answer: (b) =>
+      b === "support"
+        ? {
+            intent: "support",
+            body:
+              "You run support. Use Support routing to triage each request to the right lane and escalate when needed; the Resource Library has the answers LOs ask for most.",
+            links: [LINKS.supportRouting, LINKS.support, LINKS.resources],
+          }
+        : {
+            intent: "support",
+            body:
+              "For help, start with the Resource Library, then reach Loan Officer Support — they triage your request to the right lane and escalate lender issues when needed.",
+            links: [LINKS.support, LINKS.resources, LINKS.supportRouting],
+          },
+  },
+  {
+    intent: "facegram",
+    test: (q) => /facegram|social|community|feed|post/.test(q),
+    answer: () => ({
+      intent: "facegram",
+      body:
+        "FaceGram is the internal Loan Factory community — share wins, ask the group questions, and keep up with team activity. It is internal-audience only; the right-side assistant can draft a FaceGram post for you.",
+      links: [LINKS.facegram],
+    }),
+  },
+  {
+    intent: "resources",
+    test: (q) => /resource|library|handout|script|where.*find/.test(q),
+    answer: () => ({
+      intent: "resources",
+      body:
+        "The Resource Library is your hub for recommended channels, compliance notes, recordings, clips, and support contacts. The Training Library holds the structured training assets.",
+      links: [LINKS.resources, LINKS.trainingLibrary],
+    }),
+  },
+  {
+    intent: "admin",
+    test: (q) => /admin|manage user|platform control|view as|status/.test(q),
+    answer: (b) =>
+      b === "admin"
+        ? {
+            intent: "admin",
+            body:
+              "Admin controls live in the Admin Console: People & Access, Coaching, Training & Content, and Ops & Review. Use View as role to preview any role (the orange banner shows you are previewing), and Platform status for integration health.",
+            links: [LINKS.admin, LINKS.viewAs, LINKS.platformStatus],
+          }
+        : {
+            intent: "admin",
+            body:
+              "Admin tools are limited to Master Admin and Admin roles. If you need a permission or access change, reach Loan Officer Support or LO Development.",
+            links: [LINKS.support, LINKS.loDev],
+          },
+  },
+  {
+    intent: "ask_help",
+    test: (q) => /ask.*help|contact|reach|who do i|talk to|question/.test(q),
+    answer: () => ({
+      intent: "ask_help",
+      body:
+        "Two fast ways to get help: (1) the Send Feedback button at the bottom-right of any page, and (2) Loan Officer Support, which routes your request to the right lane. For anything urgent, Support routing shows the escalation path.",
+      links: [LINKS.support, LINKS.resources, LINKS.supportRouting],
+    }),
+  },
+];
+
+// The single seam a future AI provider can replace. Today it returns a grounded,
+// role-aware guided answer from local templates — NO external/paid AI call, NO
+// sending. Same return shape a server action would use later.
+export function answerPlatformQuestion(
+  question: string,
+  role: string | null | undefined,
+): GuidedAnswer {
+  const q = (question ?? "").toLowerCase().trim();
+  const bucket = roleBucket(role);
+
+  if (q) {
+    for (const m of matchers) {
+      if (m.test(q)) return m.answer(bucket);
+    }
+  }
+
+  // Fallback: friendly nudge toward the starter prompts + the role's best start.
+  const start = startAnswer(bucket);
+  return {
+    intent: "fallback",
+    body:
+      "I can help you find your way around the LO Development Platform. Try one of the suggested prompts below, or ask about coaching, training, scorecards, AI Advantage, resources, FaceGram, or support. Here is a good place to start for your role:",
+    links: start.links,
+  };
+}
+
+// Resolves a starter prompt id to its question text (so chips and free text use
+// the same answer path).
+export function starterPromptText(id: string): string {
+  return (
+    commandCenterStarterPrompts.find((p) => p.id === id)?.label ?? id
+  );
+}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getCoachingAccess } from "@/lib/coachingAccess";
 import LockedResourceCard from "@/components/LockedResourceCard";
+import CommandCenterChatMount from "@/components/assistant/CommandCenterChatMount";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Loan Factory Alliance · Member Area" };
@@ -102,6 +103,8 @@ export default async function AllianceMemberAreaPage() {
           )}
         </div>
       </section>
+
+      <CommandCenterChatMount />
 
       {!fullAccess && (
         <section className="container-page pt-8">

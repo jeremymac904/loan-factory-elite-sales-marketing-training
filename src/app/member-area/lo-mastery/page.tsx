@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getCoachingAccess } from "@/lib/coachingAccess";
 import LockedResourceCard from "@/components/LockedResourceCard";
+import CommandCenterChatMount from "@/components/assistant/CommandCenterChatMount";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "LO Mastery Coaching · Member Area" };
@@ -92,6 +93,8 @@ export default async function LoMasteryMemberAreaPage() {
           )}
         </div>
       </section>
+
+      <CommandCenterChatMount />
 
       {!open && (
         <section className="container-page pt-8">
