@@ -64,6 +64,12 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
           <Link
             key={item.href}
             href={item.href}
+            // Auth-sensitive route: never prefetch. A prefetch that runs during a
+            // transient auth-resolution miss would cache a signed-out RSC payload
+            // and client navigation would reuse it (header shows the user, page
+            // body shows "Sign in required"). prefetch={false} forces a fresh
+            // cookie-present fetch at click time.
+            prefetch={false}
             className={
               item.tone === "danger"
                 ? "rounded-lg border border-red-200 bg-white px-3 py-2 text-sm font-semibold text-red-600 hover:border-red-400 hover:text-red-700"
@@ -98,6 +104,12 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
           <Link
             key={item.href}
             href={item.href}
+            // Auth-sensitive route: never prefetch. A prefetch that runs during a
+            // transient auth-resolution miss would cache a signed-out RSC payload
+            // and client navigation would reuse it (header shows the user, page
+            // body shows "Sign in required"). prefetch={false} forces a fresh
+            // cookie-present fetch at click time.
+            prefetch={false}
             className={
               item.tone === "danger"
                 ? "block px-4 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-50"
