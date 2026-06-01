@@ -18,8 +18,22 @@ const RECOVERABLE_LOCAL_FALLBACK_CODES = new Set([
 
 type Props = {
   triggerLabel?: string;
+  // Trigger appearance + position. The global floating instance (in the root
+  // layout) passes its own fixed-position string; when no override is supplied,
+  // FLOATING_FEEDBACK_TRIGGER pins the pill to the bottom-right helper rail at
+  // the SAME right edge as the AI assistant pill (right-4 / sm:right-5) and at
+  // the lowest slot (bottom-4 / sm:bottom-5). The assistant pill sits a
+  // guaranteed gap ABOVE this one (bottom-[5.25rem] / sm:bottom-[6.5rem]), so
+  // the two never overlap and neither covers FaceGram controls. Both pills are
+  // z-40 with matching px-4 py-3 sizing for equal width. Position only —
+  // submit/save logic below is unchanged.
   triggerClassName?: string;
 };
+
+// Canonical floating position for the Send Feedback pill: bottom-right helper
+// rail, aligned with the AI assistant pill's right edge, sitting just below it.
+const FLOATING_FEEDBACK_TRIGGER =
+  "fixed bottom-4 right-4 z-40 rounded-full bg-lf-orange px-4 py-3 text-sm font-bold text-white shadow-2xl transition hover:-translate-y-0.5 hover:bg-lf-orangeDark focus:outline-none focus:ring-2 focus:ring-lf-orange/30 sm:bottom-5 sm:right-5";
 
 type SuggestionAuthState =
   | { status: "loading" }
@@ -29,7 +43,7 @@ type SuggestionAuthState =
 
 export default function SuggestionModal({
   triggerLabel = "Send Feedback",
-  triggerClassName = "rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange",
+  triggerClassName = FLOATING_FEEDBACK_TRIGGER,
 }: Props) {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);

@@ -166,15 +166,22 @@ export default function RoleAssistantPanel({ role, roleLabel }: Props) {
 
   return (
     <>
-      {/* Toggle button. Sits ABOVE the Send Feedback button (bottom-4 right-4)
-          so neither covers the other. */}
+      {/* Toggle button. Right-side floating helper rail: this AI assistant pill
+          sits a guaranteed gap ABOVE the Send Feedback pill so neither overlaps
+          the other or covers FaceGram controls. Right edge is matched to the
+          feedback pill (right-4 / sm:right-5) for clean vertical stacking, and
+          the bottom offset clears the feedback pill's height (feedback tops out
+          ~60px mobile / ~64px sm; this pill starts at 84px mobile / 104px sm).
+          Both pills are z-40, same px-4 py-3 sizing for equal width. Only the
+          positioning is tuned here — the open/close + draft-only behavior below
+          is unchanged. */}
       <button
         ref={toggleRef}
         type="button"
         onClick={openPanel}
         aria-expanded={open}
         aria-controls="role-assistant-panel"
-        className="fixed bottom-20 right-4 z-40 rounded-full bg-lf-charcoal px-4 py-3 text-sm font-semibold text-white shadow-lift transition hover:bg-lf-navy focus:outline-none focus:ring-2 focus:ring-lf-orange/30 sm:bottom-[5.5rem] sm:right-5"
+        className="fixed bottom-[5.25rem] right-4 z-40 rounded-full bg-lf-charcoal px-4 py-3 text-sm font-semibold text-white shadow-lift transition hover:bg-lf-navy focus:outline-none focus:ring-2 focus:ring-lf-orange/30 sm:bottom-[6.5rem] sm:right-5"
       >
         AI assistant
       </button>

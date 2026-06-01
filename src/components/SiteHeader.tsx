@@ -2,10 +2,20 @@ import Link from "next/link";
 import BrandImage from "./BrandImage";
 import HeaderAuthStatus from "./HeaderAuthStatus";
 import MobileMenu from "./header/MobileMenu";
-import { primaryNav } from "./nav/primaryNav";
+import { getNavForRole } from "./nav/primaryNav";
+import { getEffectiveAccess } from "@/lib/supabase/effectiveAccess";
 import { brandAssets } from "@/data/brandAssets";
 
-export default function SiteHeader() {
+export default async function SiteHeader() {
+  // Effective-role aware nav. When an admin is using "View as role", the
+  // previewed role is honored (it can only RESTRICT what is shown), so a Loan
+  // Officer — or an admin viewing-as Loan Officer — never sees staff links like
+  // "LO Dev" (/lo-development) or the Training Academy staff dashboard. Role/
+  // access logic lives entirely in getEffectiveAccess + getNavForRole; this
+  // component only renders the resolved list (same list for desktop + mobile).
+  const { effectiveRole } = await getEffectiveAccess();
+  const navItems = getNavForRole(effectiveRole);
+
   return (
     <header className="sticky top-0 z-30 border-b border-lf-line bg-white/95 backdrop-blur">
       <div className="mx-auto flex min-h-[4.5rem] w-full max-w-[1500px] items-center justify-between gap-4 px-5 py-2.5 sm:px-8 lg:grid lg:grid-cols-[220px_minmax(0,1fr)_240px]">
@@ -23,7 +33,7 @@ export default function SiteHeader() {
 
           <MobileMenu>
             <div className="grid gap-1.5">
-              {primaryNav.map((item) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -43,7 +53,7 @@ export default function SiteHeader() {
           className="hidden min-w-0 items-center justify-center gap-1 lg:flex"
           aria-label="Primary navigation"
         >
-          {primaryNav.map((item) => (
+          {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}

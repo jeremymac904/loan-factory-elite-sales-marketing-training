@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
-import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { GatedSurface } from "@/lib/roles";
-import { canAccessGate } from "@/lib/supabase/auth";
+import { canAccessGate, getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 import AccessNotice from "@/components/AccessNotice";
 import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
+import { getEffectiveAccess } from "@/lib/supabase/effectiveAccess";
 
 type Props = {
   gate: GatedSurface;
@@ -17,30 +17,50 @@ export default function RoleGate({ gate, children }: Props) {
 
 async function RoleGateContent({ gate, children }: Props) {
   const session = await getBetaUserSession();
-  const previewEnabled = await isBetaPreviewEnabled();
-  const allowed =
-    previewEnabled ||
-    (session.status === "approved" &&
-      canAccessGate(gate, session.profile, session.permissions));
+  const effective = await getEffectiveAccess();
+
+  // Gate on the EFFECTIVE role. When an admin is viewing-as another role, that
+  // previewed role (and ITS access lists) decides — the admin short-circuit is
+  // dropped so a master_admin previewing Loan Officer is correctly denied staff
+  // surfaces. Beta preview (no view-as) still opens surfaces for UI review.
+  // permissions are passed as null during a view-as so the previewed role is
+  // gated strictly by its role lists, not the real admin's permission row.
+  const allowed = effective.isViewingAs
+    ? canAccessGate(gate, effective.effectiveProfile, null)
+    : effective.previewEnabled ||
+      (session.status === "approved" &&
+        canAccessGate(gate, session.profile, session.permissions));
+
   const access = resolveProtectedAccess(session, allowed);
 
-  if (access.status === "approved" || previewEnabled) {
+  // A previewing admin who is allowed renders the content; a previewing admin
+  // who is NOT allowed (e.g. viewing as Loan Officer on a staff gate) must see
+  // the access notice, so the preview-bypass only applies when NOT viewing-as.
+  if (allowed) {
     return <>{children}</>;
   }
+
+  // When an admin is viewing-as a role that lacks this surface, the underlying
+  // session is still "approved", so present an explicit access-denied notice
+  // labeled with the EFFECTIVE (previewed) role rather than the admin's.
+  const noticeStatus = effective.isViewingAs ? "access-denied" : access.status;
+  const noticeRoleLabel = effective.isViewingAs
+    ? getRoleLabel(effective.effectiveRole)
+    : access.roleLabel;
 
   return (
     <AccessNotice
       surfaceLabel={gateToLabel(gate)}
-      status={access.status}
-      roleLabel={access.roleLabel}
+      status={noticeStatus}
+      roleLabel={noticeRoleLabel}
     >
-      {access.status === "not-configured" &&
+      {noticeStatus === "not-configured" &&
         "Sign-in setup is not ready in this environment yet."}
-      {access.status === "signed-out" &&
+      {noticeStatus === "signed-out" &&
         "Sign in with an approved Loan Factory Google account to continue."}
-      {access.status === "pending" &&
+      {noticeStatus === "pending" &&
         "Your account is signed in, but access has not been approved yet."}
-      {access.status === "access-denied" &&
+      {noticeStatus === "access-denied" &&
         "Your current role does not include this surface yet. Ask Jeremy or LO Development to review access."}
     </AccessNotice>
   );

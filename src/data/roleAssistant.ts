@@ -608,8 +608,8 @@ function startAnswer(bucket: RoleBucket): GuidedAnswer {
     case "loan_officer":
     default:
       return base(
-        "Start with Sales and Marketing 101-601 — that is your free internal training path. Then explore AI Advantage, keep the Resource Library handy, and use FaceGram to stay connected with the team. If you get stuck, reach Loan Officer Support.",
-        [LINKS.salesTraining, LINKS.aiAdvantage, LINKS.support],
+        "Start with Sales and Marketing 101-601 — that is your free internal training path. Then explore AI Advantage, keep the Resource Library handy, and use FaceGram to stay connected with the team. If you get stuck, use Support routing to reach help.",
+        [LINKS.salesTraining, LINKS.aiAdvantage, LINKS.supportRouting],
       );
   }
 }
@@ -666,12 +666,19 @@ const matchers: IntentMatcher[] = [
                   "Your coaching lives in the Loan Factory Alliance member area ($449): advanced coaching, mastermind, and weekly accountability. Submit your scorecard each week and bring it to your session.",
                 links: [LINKS.alliance, LINKS.scorecard, LINKS.coaching],
               }
-            : {
-                intent: "coaching",
-                body:
-                  "Coaching at Loan Factory has two paid tiers: LO Mastery ($249) and Loan Factory Alliance ($449). The Coaching overview explains both. Note: paid coaching is separate from the free Sales and Marketing 101-601 training.",
-                links: [LINKS.coaching, LINKS.loMastery, LINKS.alliance],
-              },
+            : b === "loan_officer"
+              ? {
+                  intent: "coaching",
+                  body:
+                    "Coaching at Loan Factory has two paid tiers: LO Mastery ($249) and Loan Factory Alliance ($449). The Coaching overview explains both and how to join — the member areas open once you are enrolled. Paid coaching is separate from your free Sales and Marketing 101-601 training, which you already have access to.",
+                  links: [LINKS.coaching, LINKS.salesTraining],
+                }
+              : {
+                  intent: "coaching",
+                  body:
+                    "Coaching at Loan Factory has two paid tiers: LO Mastery ($249) and Loan Factory Alliance ($449). The Coaching overview explains both. Note: paid coaching is separate from the free Sales and Marketing 101-601 training.",
+                  links: [LINKS.coaching, LINKS.loMastery, LINKS.alliance],
+                },
   },
   {
     intent: "scorecard",
@@ -684,12 +691,19 @@ const matchers: IntentMatcher[] = [
               "Coaches review scorecards — they do not fill them out. Open Scorecards in the Coach Command Center to see submitted vs missing, trends, and follow-up actions. LOs submit their own each week.",
             links: [LINKS.coachScorecards, LINKS.coachCenter],
           }
-        : {
-            intent: "scorecard",
-            body:
-              "Submit your weekly scorecard from your member area — track real conversations, Realtor activity, past-client touches, pipeline and follow-up work, and your coaching commitments. Save a draft anytime; submit before your next coaching session.",
-            links: [LINKS.scorecard, b === "alliance_member" ? LINKS.alliance : LINKS.loMastery],
-          },
+        : b === "loan_officer"
+          ? {
+              intent: "scorecard",
+              body:
+                "Weekly scorecards are part of paid coaching (LO Mastery $249 / Loan Factory Alliance $449) — your member area unlocks scorecard submission once you are enrolled. The Coaching overview explains how to join. Until then, your free Sales and Marketing 101-601 training is the place to build the habits a scorecard tracks.",
+              links: [LINKS.coaching, LINKS.salesTraining],
+            }
+          : {
+              intent: "scorecard",
+              body:
+                "Submit your weekly scorecard from your member area — track real conversations, Realtor activity, past-client touches, pipeline and follow-up work, and your coaching commitments. Save a draft anytime; submit before your next coaching session.",
+              links: [LINKS.scorecard, b === "alliance_member" ? LINKS.alliance : LINKS.loMastery],
+            },
   },
   {
     intent: "sales_training",
@@ -735,8 +749,8 @@ const matchers: IntentMatcher[] = [
         : {
             intent: "support",
             body:
-              "For help, start with the Resource Library, then reach Loan Officer Support — they triage your request to the right lane and escalate lender issues when needed.",
-            links: [LINKS.support, LINKS.resources, LINKS.supportRouting],
+              "For help, start with the Resource Library, then use Support routing — it sends your request to the right Loan Officer Support lane and escalates lender issues when needed.",
+            links: [LINKS.supportRouting, LINKS.resources],
           },
   },
   {
@@ -773,8 +787,8 @@ const matchers: IntentMatcher[] = [
         : {
             intent: "admin",
             body:
-              "Admin tools are limited to Master Admin and Admin roles. If you need a permission or access change, reach Loan Officer Support or LO Development.",
-            links: [LINKS.support, LINKS.loDev],
+              "Admin tools are limited to Master Admin and Admin roles. If you need a permission or access change, send it through Support routing and it will reach the right team (Loan Officer Support or LO Development).",
+            links: [LINKS.supportRouting, LINKS.resources],
           },
   },
   {
@@ -783,8 +797,8 @@ const matchers: IntentMatcher[] = [
     answer: () => ({
       intent: "ask_help",
       body:
-        "Two fast ways to get help: (1) the Send Feedback button at the bottom-right of any page, and (2) Loan Officer Support, which routes your request to the right lane. For anything urgent, Support routing shows the escalation path.",
-      links: [LINKS.support, LINKS.resources, LINKS.supportRouting],
+        "Two fast ways to get help: (1) the Send Feedback button at the bottom-right of any page, and (2) Support routing, which sends your request to the right Loan Officer Support lane and shows the escalation path for anything urgent.",
+      links: [LINKS.supportRouting, LINKS.resources],
     }),
   },
 ];

@@ -1,6 +1,8 @@
-import { getBetaUserSession } from "@/lib/supabase/session";
-import { getViewAsState } from "@/lib/viewAs";
 import { getRoleLabel } from "@/lib/supabase/auth";
+import {
+  getEffectiveAccess,
+  roleHasAssistant,
+} from "@/lib/supabase/effectiveAccess";
 import RoleAssistantPanel from "@/components/assistant/RoleAssistantPanel";
 
 // Server wrapper mounted ONCE in src/app/layout.tsx. It reuses the React
@@ -13,21 +15,25 @@ import RoleAssistantPanel from "@/components/assistant/RoleAssistantPanel";
 // Only rendered for approved users; signed-out / pending / not-configured render
 // nothing.
 export default async function RoleAssistantMount() {
-  const [session, viewAs] = await Promise.all([
-    getBetaUserSession(),
-    getViewAsState(),
-  ]);
+  const effective = await getEffectiveAccess();
 
-  // Only show the assistant to approved users.
-  if (session.status !== "approved") return null;
+  // Only approved users. (Beta preview without view-as is not an approved
+  // session here; the assistant is for real/previewed roles only.)
+  if (effective.status !== "approved") return null;
 
-  // View-as role wins when active; otherwise the user's real profile role.
-  const effectiveRole = viewAs?.role || session.profile.role;
+  const effectiveRole = effective.effectiveRole;
   if (!effectiveRole) return null;
 
-  const effectiveRoleLabel = getRoleLabel(effectiveRole);
+  // HARD RULE: regular loan_officer gets NO assistant — no pill, no drawer, no
+  // overlay. This is view-as aware: a master_admin previewing Loan Officer is
+  // treated as Loan Officer here and the assistant is hidden. Only the roles in
+  // ASSISTANT_ROLES (paid coaching members + operational/coach roles) see it.
+  if (!roleHasAssistant(effectiveRole)) return null;
 
   return (
-    <RoleAssistantPanel role={effectiveRole} roleLabel={effectiveRoleLabel} />
+    <RoleAssistantPanel
+      role={effectiveRole}
+      roleLabel={getRoleLabel(effectiveRole)}
+    />
   );
 }
