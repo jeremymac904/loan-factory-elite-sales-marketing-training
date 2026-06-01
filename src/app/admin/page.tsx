@@ -6,6 +6,7 @@ import { approvedUserSeeds } from "@/data/approvedUsers";
 import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
 import AccessNotice from "@/components/AccessNotice";
 import AdminAuthDiagnostics from "@/components/admin/AdminAuthDiagnostics";
+import AdminAiProviderDiagnostics from "@/components/admin/AdminAiProviderDiagnostics";
 import AdminConsole from "@/components/admin/AdminConsole";
 
 export const dynamic = "force-dynamic";
@@ -125,12 +126,15 @@ function AdminShell({
         ]}
       />
       {session?.profile.role === "master_admin" && !preview && (
-        <AdminAuthDiagnostics
-          serverAuthReadStatus={session.status}
-          serverUserEmail={session.profile.email}
-          serverResolvedRole={session.profile.role}
-          requiredRole="master_admin"
-        />
+        <>
+          <AdminAuthDiagnostics
+            serverAuthReadStatus={session.status}
+            serverUserEmail={session.profile.email}
+            serverResolvedRole={session.profile.role}
+            requiredRole="master_admin"
+          />
+          <AdminAiProviderDiagnostics requiredRole="master_admin" />
+        </>
       )}
     </>
   );

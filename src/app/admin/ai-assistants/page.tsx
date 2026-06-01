@@ -40,9 +40,9 @@ export default async function AdminAiAssistantsPage() {
   }
 
   const aiStatus = getPublicAiSandboxStatus();
-  const providerStatus = aiStatus.openRouterConfigured
-    ? `Connected · ${aiStatus.openRouterModel}`
-    : "Not connected";
+  const providerStatus = aiStatus.primaryProviderConfigured
+    ? `Connected · ${aiStatus.primaryProviderLabel} · ${aiStatus.assistantModel}`
+    : `${aiStatus.primaryProviderLabel} not configured`;
 
   const tierCounts = approvedUserSeeds.reduce<Record<string, number>>(
     (acc, user) => {
@@ -119,8 +119,8 @@ export default async function AdminAiAssistantsPage() {
             <h2 className="h-display text-2xl">Provider status</h2>
             <div className="mt-4 grid gap-2 sm:grid-cols-3">
               <StatusCard label="AI provider" value={providerStatus} />
-              <StatusCard label="Persona store" value="Supabase ai_twins" />
-              <StatusCard label="Knowledge index" value="Per-user (activates with Drive scope)" />
+              <StatusCard label="Assistant model" value={aiStatus.assistantModel} />
+              <StatusCard label="Safe mode" value={aiStatus.safeMode === "draft-only" ? "Draft-only" : aiStatus.safeMode} />
             </div>
             <p className="mt-4 text-xs text-lf-slate">
               AI Twin records save to the <code>ai_twins</code> Supabase table.

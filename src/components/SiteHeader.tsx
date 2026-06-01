@@ -2,7 +2,7 @@ import Link from "next/link";
 import BrandImage from "./BrandImage";
 import HeaderAuthStatus from "./HeaderAuthStatus";
 import MobileMenu from "./header/MobileMenu";
-import { getNavForRole } from "./nav/primaryNav";
+import { getNavForRole, getLoggedOutNav } from "./nav/primaryNav";
 import { getEffectiveAccess } from "@/lib/supabase/effectiveAccess";
 import { brandAssets } from "@/data/brandAssets";
 
@@ -13,8 +13,14 @@ export default async function SiteHeader() {
   // "LO Dev" (/lo-development) or the Training Academy staff dashboard. Role/
   // access logic lives entirely in getEffectiveAccess + getNavForRole; this
   // component only renders the resolved list (same list for desktop + mobile).
-  const { effectiveRole } = await getEffectiveAccess();
-  const navItems = getNavForRole(effectiveRole);
+  const { effectiveRole, status } = await getEffectiveAccess();
+  // Signed-out visitors get the PUBLIC informational nav (Coaching overview
+  // restored, no protected dashboard links). Approved/preview/pending sessions
+  // get the effective-role nav.
+  const navItems =
+    status === "approved" || status === "pending"
+      ? getNavForRole(effectiveRole)
+      : getLoggedOutNav();
 
   return (
     <header className="sticky top-0 z-30 border-b border-lf-line bg-white/95 backdrop-blur">

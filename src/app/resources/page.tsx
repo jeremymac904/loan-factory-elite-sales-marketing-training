@@ -1,9 +1,13 @@
 import Link from "next/link";
 import ClipLibraryRail from "@/components/ClipLibraryRail";
 import SectionHeading from "@/components/SectionHeading";
-import RoleGate from "@/components/RoleGate";
 import { marketingTrainingAssets } from "@/data/marketingTrainingAssets";
 
+// PUBLIC informational overview of resource areas (recommended channels,
+// compliance notes, recordings, support contacts, marketing setup guides). Holds
+// no private user data; the private destinations it links to (lender escalation,
+// signed-in clip library, Send Feedback submission) keep their own gates.
+export const dynamic = "force-dynamic";
 export const metadata = { title: "Resources" };
 
 const resources = [
@@ -67,7 +71,7 @@ const resources = [
 
 export default function ResourcesPage() {
   return (
-    <RoleGate gate="resources">
+    <>
       <section className="relative isolate overflow-hidden bg-lf-navy text-white">
         <div
           aria-hidden
@@ -190,6 +194,6 @@ export default function ResourcesPage() {
           </p>
         </div>
       </section>
-    </RoleGate>
+    </>
   );
 }

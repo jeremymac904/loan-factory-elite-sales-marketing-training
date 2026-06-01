@@ -27,14 +27,20 @@ type Props = {
   variant?: "dashboard" | "panel";
 };
 
+type AssistantResponse = {
+  text?: unknown;
+  model?: unknown;
+  message?: unknown;
+  error?: unknown;
+};
+
 /**
  * First-login Command Center chat — a premium, ChatGPT-style command box.
  *
- * HONEST GUIDED MODE: answers come from local, role-aware templates grounded in
- * real platform routes (answerPlatformQuestion). It does NOT call any external
- * or paid AI provider and never sends anything. The architecture is
- * provider-ready: swap answerPlatformQuestion() for a server action later and
- * the UI is unchanged.
+ * HONEST HYBRID MODE: the chat tries the shared assistant route first and
+ * falls back to local, role-aware templates grounded in real platform routes
+ * (answerPlatformQuestion). Nothing is sent outside the assistant sandbox and
+ * the local fallback keeps the page usable if the provider is missing.
  *
  * Not a modal, not a blocking popup, no autoplay video, no forced video popup.
  */
@@ -47,17 +53,57 @@ export default function CommandCenterChat({
   const [input, setInput] = useState("");
   const [turns, setTurns] = useState<ChatTurn[]>([]);
   const [helperOpen, setHelperOpen] = useState(true);
+  const [isSending, setIsSending] = useState(false);
   const counter = useRef(0);
 
-  function ask(question: string) {
+  async function ask(question: string) {
     const q = question.trim();
-    if (!q) return;
-    const answer = answerPlatformQuestion(q, role);
+    if (!q || isSending) return;
+    const localAnswer = answerPlatformQuestion(q, role);
     counter.current += 1;
-    setTurns((prev) =>
-      [...prev, { id: `t${counter.current}`, question: q, answer }].slice(-6),
-    );
-    setInput("");
+    setIsSending(true);
+
+    try {
+      const response = await fetch("/api/ai/assistant", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          assistantName: "Command Center Guide",
+          assistantDescription: `Role-aware platform help for ${roleLabel}.`,
+          messages: [{ role: "user", content: q }],
+        }),
+      });
+      const payload = (await response.json().catch(() => null)) as
+        | AssistantResponse
+        | null;
+      const providerText =
+        response.ok && typeof payload?.text === "string" && payload.text.trim()
+          ? payload.text.trim()
+          : "";
+
+      setTurns((prev) =>
+        [
+          ...prev,
+          {
+            id: `t${counter.current}`,
+            question: q,
+            answer: {
+              intent: providerText ? "provider" : localAnswer.intent,
+              body: providerText || localAnswer.body,
+              links: localAnswer.links,
+            },
+          },
+        ].slice(-6),
+      );
+      setInput("");
+    } catch {
+      setTurns((prev) =>
+        [...prev, { id: `t${counter.current}`, question: q, answer: localAnswer }].slice(-6),
+      );
+      setInput("");
+    } finally {
+      setIsSending(false);
+    }
   }
 
   function openFullAssistant() {
@@ -188,10 +234,10 @@ export default function CommandCenterChat({
           />
           <button
             type="submit"
-            disabled={!input.trim()}
+            disabled={!input.trim() || isSending}
             className="btn-primary shrink-0 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            Ask
+            {isSending ? "Thinking" : "Ask"}
           </button>
         </form>
 
@@ -214,8 +260,9 @@ export default function CommandCenterChat({
         {/* Footer: honest mode note + connect to the full side-panel assistant */}
         <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-lf-line pt-3">
           <p className="text-[11px] text-lf-slate">
-            Guided assistant — structured answers grounded in the platform. Live
-            AI provider wiring is planned; nothing is sent.
+            Guided assistant with DeepSeek-backed responses when available.
+            Fallbacks stay local and draft-only; nothing is sent outside the
+            assistant sandbox.
           </p>
           <button
             type="button"

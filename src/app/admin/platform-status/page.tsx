@@ -40,9 +40,9 @@ export default async function AdminPlatformStatusPage() {
   }
 
   const aiStatus = getPublicAiSandboxStatus();
-  const providerValue = aiStatus.openRouterConfigured
-    ? `Connected · ${aiStatus.openRouterModel}`
-    : "Not connected";
+  const providerValue = aiStatus.primaryProviderConfigured
+    ? `Connected · ${aiStatus.primaryProviderLabel} · ${aiStatus.assistantModel}`
+    : `${aiStatus.primaryProviderLabel} not configured`;
   const transcriptionValue = aiStatus.groqConfigured
     ? `Connected · ${aiStatus.groqWhisperModel}`
     : "Not connected";
@@ -102,9 +102,14 @@ export default async function AdminPlatformStatusPage() {
             <h2 className="h-display text-xl">Integrations</h2>
             <div className="mt-3 grid gap-2">
               <StatusRow
-                label="AI provider (OpenRouter)"
+                label="AI provider"
                 value={providerValue}
-                connected={aiStatus.openRouterConfigured}
+                connected={aiStatus.primaryProviderConfigured}
+              />
+              <StatusRow
+                label="AI assistant model"
+                value={aiStatus.assistantModel}
+                connected={aiStatus.primaryProviderConfigured}
               />
               <StatusRow
                 label="Voice transcription (Groq Whisper)"
@@ -125,6 +130,12 @@ export default async function AdminPlatformStatusPage() {
               <StatusRow
                 label="External sends / uploads"
                 value="Disabled (draft-only)"
+                connected={false}
+                neutral
+              />
+              <StatusRow
+                label="Safe mode"
+                value={aiStatus.safeMode === "draft-only" ? "Draft-only" : aiStatus.safeMode}
                 connected={false}
                 neutral
               />

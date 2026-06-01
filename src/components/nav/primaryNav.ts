@@ -71,6 +71,21 @@ const loanOfficerNav: PrimaryNavItem[] = [
   NAV.resources,
 ];
 
+// LOGGED-OUT informational nav. This is an internal Loan Factory subdomain that
+// must explain the platform to a first-time visitor BEFORE sign-in. It points
+// at the PUBLIC overview pages only (Coaching overview is restored here), and
+// "Dashboard" is replaced by a "Sign In" affordance rendered separately in the
+// header. No protected dashboard links.
+const loggedOutNav: PrimaryNavItem[] = [
+  NAV.trainingLibrary, // "Training" overview
+  NAV.salesMarketing, // free 101-601 overview
+  NAV.aiAdvantage, // AI Advantage overview
+  NAV.coachingOps, // "Coaching" overview — restored for logged-out visitors
+  NAV.faceGram, // FaceGram overview
+  NAV.loSupport, // Support overview
+  NAV.resources, // Resources overview
+];
+
 // Paid coaching members (LO Mastery / Loan Factory Alliance). LO-facing surfaces
 // PLUS a Coaching entry into their member experience. Still NOT staff — no LO Dev
 // or Training Academy staff dashboards.
@@ -199,4 +214,14 @@ export function getNavForRole(
 ): PrimaryNavItem[] {
   if (!role) return loanOfficerNav;
   return NAV_BY_ROLE[role] ?? loanOfficerNav;
+}
+
+/**
+ * Top-nav for a fully signed-OUT visitor: the public informational site nav
+ * (includes Coaching overview, omits protected dashboards). SiteHeader uses this
+ * when there is no approved session so a first-time visitor sees the marketing/
+ * informational layer instead of a Loan-Officer app nav pointing at gated pages.
+ */
+export function getLoggedOutNav(): PrimaryNavItem[] {
+  return loggedOutNav;
 }

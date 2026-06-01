@@ -1,11 +1,13 @@
 import Link from "next/link";
 import ClipLibraryRail from "@/components/ClipLibraryRail";
-import RoleGate from "@/components/RoleGate";
 import SectionHeading from "@/components/SectionHeading";
 import SupportTeamDirectory from "@/components/SupportTeamDirectory";
 
+// PUBLIC informational overview of the support lanes + contacts. Holds no
+// private user data; the private actions it points to (lender escalation, the
+// Send Feedback submission, the signed-in clip library) keep their own gates.
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Support Routing" };
+export const metadata = { title: "Support" };
 
 const supportSections = [
   {
@@ -68,7 +70,7 @@ const requestLanes = [
 
 export default function SupportRoutingPage() {
   return (
-    <RoleGate gate="support-routing">
+    <>
       <section className="relative isolate overflow-hidden bg-lf-navy text-white">
         <div
           aria-hidden
@@ -166,6 +168,6 @@ export default function SupportRoutingPage() {
       />
 
       <SupportTeamDirectory />
-    </RoleGate>
+    </>
   );
 }

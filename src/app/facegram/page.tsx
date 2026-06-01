@@ -1,5 +1,6 @@
 import FaceGramExperience from "@/components/FaceGramExperience";
 import FaceGramAccessNotice from "@/components/FaceGramAccessNotice";
+import FaceGramOverview from "@/components/FaceGramOverview";
 import { betaPreviewEmail, isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { canAccessFaceGram, getRoleLabel } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
@@ -20,12 +21,11 @@ export default async function FaceGramPage() {
     );
   }
 
-  if (session.status === "not-configured") {
-    return <FaceGramAccessNotice status="not-configured" />;
-  }
-
-  if (session.status === "signed-out") {
-    return <FaceGramAccessNotice status="signed-out" />;
+  // Signed-out / not-configured visitors get the PUBLIC overview (what FaceGram
+  // is + sign-in CTA), NOT a bare "sign in required" gate. No feed/posts/private
+  // data render here — the personalized workspace is below, after auth.
+  if (session.status === "not-configured" || session.status === "signed-out") {
+    return <FaceGramOverview />;
   }
 
   if (session.status === "pending") {

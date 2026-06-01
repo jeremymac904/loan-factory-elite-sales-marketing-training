@@ -5,6 +5,7 @@ import {
   buildAssistantSystemPrompt,
   ensureDraftReviewNotice,
 } from "@/lib/ai/guardrails";
+import { callDeepSeekChatCompletion } from "@/lib/ai/deepseek";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -65,7 +66,7 @@ function latestUserPrompt(messages: OpenRouterChatMessage[]) {
     ?.content;
 }
 
-function getProviderMessage(status: number) {
+function getOpenRouterProviderMessage(status: number) {
   if (status === 401 || status === 403) {
     return "OpenRouter rejected the server API key or account permissions.";
   }
@@ -75,6 +76,20 @@ function getProviderMessage(status: number) {
   }
 
   return "OpenRouter could not complete the sandbox request.";
+}
+
+function logProviderFailure(
+  provider: "deepseek" | "openrouter",
+  status: number,
+  code: string,
+  model: string,
+) {
+  console.error("[ai:assistant] provider request failed", {
+    provider,
+    status,
+    code,
+    model,
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -135,7 +150,7 @@ export async function POST(request: NextRequest) {
     .filter(Boolean)
     .join("\n");
 
-  const openRouterMessages: OpenRouterChatMessage[] = [
+  const assistantMessages: OpenRouterChatMessage[] = [
     {
       role: "system",
       content: buildAssistantSystemPrompt({
@@ -147,31 +162,98 @@ export async function POST(request: NextRequest) {
     ...messages,
   ];
 
-  const openRouterResponse = await fetch(
-    "https://openrouter.ai/api/v1/chat/completions",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${config.openRouterApiKey}`,
-        "Content-Type": "application/json",
-        "HTTP-Referer": config.openRouterSiteUrl,
-        "X-OpenRouter-Title": config.openRouterAppTitle,
+  const provider =
+    config.primaryProvider === "openrouter" ? "openrouter" : "deepseek";
+
+  if (provider === "deepseek") {
+    const completion = await callDeepSeekChatCompletion({
+      apiKey: config.deepseekApiKey,
+      baseUrl: config.deepseekBaseUrl,
+      model: config.assistantModel || config.deepseekModel,
+      messages: assistantMessages,
+      user: access.userId ?? access.email ?? "sandbox-beta-user",
+      timeoutMs: config.assistantTimeoutMs,
+    });
+
+    if (!completion.ok) {
+      logProviderFailure(
+        "deepseek",
+        completion.status,
+        completion.code,
+        config.assistantModel || config.deepseekModel || "not-configured",
+      );
+      return jsonError(
+        completion.status,
+        completion.code,
+        completion.message,
+      );
+    }
+
+    return NextResponse.json({
+      text: ensureDraftReviewNotice(completion.text),
+      model: completion.model,
+      provider: "deepseek",
+      sandbox: true,
+      accessStatus: access.status,
+      externalActionsEnabled: false,
+    });
+  }
+
+  if (!config.openRouterApiKey || !config.openRouterModel) {
+    return jsonError(
+      503,
+      "openrouter-not-configured",
+      "OpenRouter key and model must both be configured for the AI Assistant sandbox.",
+    );
+  }
+
+  let openRouterResponse: Response;
+
+  try {
+    openRouterResponse = await fetch(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${config.openRouterApiKey}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer": config.openRouterSiteUrl,
+          "X-OpenRouter-Title": config.openRouterAppTitle,
+        },
+        body: JSON.stringify({
+          model: config.openRouterModel,
+          messages: assistantMessages,
+          temperature: 0.4,
+          max_tokens: 900,
+          user: access.userId ?? access.email ?? "sandbox-beta-user",
+        }),
       },
-      body: JSON.stringify({
-        model: config.openRouterModel,
-        messages: openRouterMessages,
-        temperature: 0.4,
-        max_tokens: 900,
-        user: access.userId ?? access.email ?? "sandbox-beta-user",
-      }),
-    },
-  );
+    );
+  } catch {
+    logProviderFailure(
+      "openrouter",
+      502,
+      "openrouter-request-failed",
+      config.openRouterModel || "not-configured",
+    );
+    return jsonError(
+      502,
+      "openrouter-request-failed",
+      getOpenRouterProviderMessage(502),
+    );
+  }
 
   if (!openRouterResponse.ok) {
+    logProviderFailure(
+      "openrouter",
+      openRouterResponse.status,
+      "openrouter-request-failed",
+      config.openRouterModel,
+    );
     return jsonError(
       openRouterResponse.status === 429 ? 429 : 502,
       "openrouter-request-failed",
-      getProviderMessage(openRouterResponse.status),
+      getOpenRouterProviderMessage(openRouterResponse.status),
     );
   }
 
@@ -180,6 +262,12 @@ export async function POST(request: NextRequest) {
   try {
     providerPayload = (await openRouterResponse.json()) as OpenRouterResponse;
   } catch {
+    logProviderFailure(
+      "openrouter",
+      502,
+      "openrouter-invalid-response",
+      config.openRouterModel,
+    );
     return jsonError(
       502,
       "openrouter-invalid-response",
@@ -192,6 +280,12 @@ export async function POST(request: NextRequest) {
   );
 
   if (!providerText) {
+    logProviderFailure(
+      "openrouter",
+      502,
+      "openrouter-empty-response",
+      config.openRouterModel,
+    );
     return jsonError(
       502,
       "openrouter-empty-response",

@@ -19,6 +19,13 @@ type SavedDraft = {
 
 const SAVED_KEY = "loan-factory-role-assistant-drafts";
 
+type AssistantResponse = {
+  text?: unknown;
+  model?: unknown;
+  message?: unknown;
+  error?: unknown;
+};
+
 type Props = {
   // Effective (view-as aware) role key, e.g. "loan_officer", "corporate_coach".
   role: string;
@@ -31,7 +38,8 @@ type Props = {
 // close, w-[min(28rem,100vw)]. It does NOT lengthen pages and does NOT cover key
 // controls. Contextual to the effective role (view-as aware) + the current page
 // via usePathname(). DRAFT-ONLY: every action produces an editable text draft
-// with Copy + Save-as-local-draft. Nothing is ever sent.
+// with Copy + Save-as-local-draft. It tries the shared assistant route when
+// available and falls back to a local template if the provider is not ready.
 //
 // To avoid double panels, this suppresses itself on /coach-command-center routes,
 // where the richer roster-aware CoachAssistantPanel is already mounted.
@@ -108,15 +116,50 @@ export default function RoleAssistantPanel({ role, roleLabel }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function generate() {
+  async function generate() {
     if (!action) return;
-    setDraft(
-      buildRoleAssistantDraft({
-        actionId: action.id,
-        roleLabel: config.roleLabel,
-        pageContext: config.pageContext,
-      }),
-    );
+
+    const fallbackDraft = buildRoleAssistantDraft({
+      actionId: action.id,
+      roleLabel: config.roleLabel,
+      pageContext: config.pageContext,
+    });
+
+    try {
+      const response = await fetch("/api/ai/assistant", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          assistantName: "Role Assistant Draft Generator",
+          assistantDescription: `Create draft-only assistant output for ${action.label} in ${config.pageContext}.`,
+          messages: [
+            {
+              role: "user",
+              content: [
+                `Create a draft-only response for: ${action.label}.`,
+                `Role context: ${config.roleLabel}.`,
+                `Page context: ${config.pageContext}.`,
+                `Action description: ${action.description}.`,
+                "Return an editable draft with placeholders, practical next steps, and an explicit human review reminder.",
+                "Do not claim external sends or completed integrations.",
+              ].join("\n"),
+            },
+          ],
+        }),
+      });
+      const payload = (await response.json().catch(() => null)) as
+        | AssistantResponse
+        | null;
+      const providerDraft =
+        response.ok && typeof payload?.text === "string" && payload.text.trim()
+          ? payload.text.trim()
+          : "";
+
+      setDraft(providerDraft || fallbackDraft);
+    } catch {
+      setDraft(fallbackDraft);
+    }
+
     setCopied(false);
     setSaved(false);
   }

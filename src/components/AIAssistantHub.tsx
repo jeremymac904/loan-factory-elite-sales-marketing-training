@@ -22,11 +22,22 @@ type AssistantApiMessage = {
 
 type AssistantBackendStatus = {
   sandboxEnabled: boolean;
+  primaryProvider: string;
+  primaryProviderLabel: string;
+  assistantModel: string;
+  primaryProviderConfigured: boolean;
+  deepseekConfigured: boolean;
+  deepseekBaseUrlConfigured: boolean;
+  deepseekModel: string;
   openRouterConfigured: boolean;
   openRouterModel: string;
   groqConfigured: boolean;
   groqWhisperModel: string;
   maxInputChars: number;
+  assistantTimeoutMs: number;
+  safeMode: "draft-only";
+  lastTestStatus: string;
+  lastTestCheckedAt: string | null;
   externalActionsEnabled: false;
 };
 
@@ -159,6 +170,18 @@ function buildDemoResponse(assistant: Assistant, prompt: string) {
   ].join("\n");
 }
 
+function buildFallbackResponse(
+  assistant: Assistant,
+  prompt: string,
+  reason: string,
+) {
+  return [
+    buildDemoResponse(assistant, prompt),
+    "",
+    `Provider note: ${reason}`,
+  ].join("\n");
+}
+
 export default function AIAssistantHub({
   previewMode = false,
 }: {
@@ -182,8 +205,8 @@ export default function AIAssistantHub({
   );
   const demoResponseMode =
     previewMode ||
-    !backendStatus?.sandboxEnabled ||
-    !backendStatus?.openRouterConfigured;
+    backendStatus?.sandboxEnabled === false ||
+    backendStatus?.primaryProviderConfigured === false;
   const showSources =
     messages.some((message) => message.role === "user") &&
     messages.some((message) => message.role === "assistant");
@@ -271,9 +294,17 @@ export default function AIAssistantHub({
       } | null;
 
       const responseText =
-        response.ok && typeof payload?.text === "string"
+        response.ok && typeof payload?.text === "string" && payload.text.trim()
           ? payload.text
-          : apiErrorMessage(response.status, payload);
+          : buildFallbackResponse(
+              assistant,
+              trimmed,
+              response.ok
+                ? "Provider returned an empty draft."
+                : typeof payload?.message === "string" && payload.message.trim()
+                  ? payload.message
+                  : "Provider unavailable. Using guided local answers.",
+            );
       const modelLabel =
         response.ok && typeof payload?.model === "string"
           ? `\n\nModel: ${payload.model}`
@@ -489,6 +520,11 @@ export default function AIAssistantHub({
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-6 text-lf-slate">
                   {selectedAssistant.description}
+                </p>
+                <p className="mt-3 inline-flex rounded-full border border-lf-line bg-lf-mist px-3 py-1 text-xs font-semibold text-lf-slate">
+                  {backendStatus?.primaryProviderConfigured
+                    ? `${backendStatus.primaryProviderLabel} ready · ${backendStatus.assistantModel}`
+                    : "Provider not configured · guided local answers"}
                 </p>
                 <div className="mt-6 grid w-full gap-3 sm:grid-cols-3">
                   {selectedAssistant.starters.map((starter) => (
