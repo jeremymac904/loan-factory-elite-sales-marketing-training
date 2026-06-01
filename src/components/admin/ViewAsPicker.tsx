@@ -50,12 +50,12 @@ export default function ViewAsPicker({
       });
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
-        setError(body.error ?? "Could not start View-As.");
+        setError(body.error ?? "Could not start view as role.");
         return;
       }
       router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "View-As failed.");
+      setError(err instanceof Error ? err.message : "View as role failed.");
     } finally {
       setLoading(false);
     }
@@ -67,7 +67,7 @@ export default function ViewAsPicker({
     try {
       const response = await fetch("/api/view-as", { method: "DELETE" });
       if (!response.ok) {
-        setError("Could not exit View-As.");
+        setError("Could not exit view as role.");
         return;
       }
       router.refresh();
@@ -96,7 +96,7 @@ export default function ViewAsPicker({
         <div>
           <label className="block">
             <span className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-              Preview as role
+              View as role
             </span>
             <select
               value={role}
@@ -117,7 +117,7 @@ export default function ViewAsPicker({
             disabled={loading || !role}
             className="btn-primary mt-3 w-full text-sm disabled:opacity-50"
           >
-            Preview this role
+            View this role
           </button>
         </div>
 
@@ -125,7 +125,7 @@ export default function ViewAsPicker({
         <div>
           <label className="block">
             <span className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-              Preview as user
+              View as user
             </span>
             <select
               value={userEmail}
@@ -150,7 +150,7 @@ export default function ViewAsPicker({
             disabled={loading || !isMasterAdmin || !userEmail}
             className="btn-secondary mt-3 w-full text-sm disabled:opacity-50"
           >
-            Preview this user
+            View this user
           </button>
         </div>
       </div>
@@ -163,7 +163,7 @@ export default function ViewAsPicker({
             disabled={loading}
             className="rounded-lg border border-lf-orange bg-lf-orangeSoft px-4 py-2 text-sm font-semibold text-lf-orangeDark transition hover:bg-lf-orange hover:text-white disabled:opacity-50"
           >
-            Exit View-As
+            Exit view as role
           </button>
         </div>
       )}

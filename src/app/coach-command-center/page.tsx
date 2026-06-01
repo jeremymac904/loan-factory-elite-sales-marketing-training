@@ -123,7 +123,7 @@ export default async function CoachCommandCenterPage() {
           </p>
           {access.viewingAsLabel && (
             <p className="mt-4 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
-              View-As preview: {access.viewingAsLabel}
+              Viewing as: {access.viewingAsLabel}
             </p>
           )}
         </div>

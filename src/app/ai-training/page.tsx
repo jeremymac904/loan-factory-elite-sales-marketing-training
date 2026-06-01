@@ -9,6 +9,10 @@ import {
 } from "@/data/aiAdvantagePublishedVideos";
 import { aiTrainingPaths, aiTrainingStartHere } from "@/data/aiTrainingVideos";
 import { marketingTrainingAssets } from "@/data/marketingTrainingAssets";
+import {
+  aiAdvantageYoutubeEmbedModuleGroups,
+  aiAdvantageYoutubeEmbedValidation,
+} from "@/data/aiAdvantageYoutubeEmbeds";
 
 export const metadata = { title: "AI Advantage" };
 
@@ -47,7 +51,7 @@ export default function AITrainingPage() {
             href="/ai-training/video-library/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
-            Watch video lessons
+            Open video library
           </Link>
         </div>
       </PageHero>
@@ -105,6 +109,59 @@ export default function AITrainingPage() {
               <AiAdvantageVideoCard key={video.rowId} video={video} />
             )),
           )}
+        </div>
+      </section>
+
+      <section className="bg-lf-mist">
+        <div className="container-page py-14">
+          <SectionHeading
+            eyebrow="Uploaded clips"
+            title="Browse the 63 embeddable AI Advantage clips by module."
+            description="These clips are all uploaded, unlisted, and safe to embed. Open a module to jump straight into the video library or use the lesson route for the internal viewer."
+          />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {aiAdvantageYoutubeEmbedModuleGroups.map((group) => (
+              <Link
+                key={group.module}
+                href={`/ai-training/video-library/#${group.moduleSlug}`}
+                className="card group hover:shadow-lift"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+                      {group.module}
+                    </p>
+                    <h3 className="h-display mt-1 text-lg">
+                      {group.count} clip{group.count === 1 ? "" : "s"}
+                    </h3>
+                  </div>
+                  <span className="rounded-full bg-lf-orangeSoft px-3 py-1 text-xs font-semibold text-lf-orangeDark">
+                    Uploaded
+                  </span>
+                </div>
+                <p className="prose-lf mt-3 text-sm text-lf-slate">
+                  Open the module browser for this AI Advantage section.
+                </p>
+                <p className="mt-4 text-sm font-semibold text-lf-navy group-hover:text-lf-orange">
+                  Open module &rarr;
+                </p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <MiniStat
+              label="Uploaded clips"
+              value={aiAdvantageYoutubeEmbedValidation.embeddableRows}
+            />
+            <MiniStat
+              label="Source issues"
+              value={aiAdvantageYoutubeEmbedValidation.sourceIssueRows}
+            />
+            <MiniStat
+              label="Modules"
+              value={aiAdvantageYoutubeEmbedModuleGroups.length}
+            />
+          </div>
         </div>
       </section>
 
@@ -213,5 +270,16 @@ export default function AITrainingPage() {
         </div>
       </section>
     </>
+  );
+}
+
+function MiniStat({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="card">
+      <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+        {label}
+      </p>
+      <p className="mt-2 text-2xl font-bold text-lf-navy">{value}</p>
+    </div>
   );
 }

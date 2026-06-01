@@ -5,6 +5,10 @@ export type RoleId =
   | "lo-development-member"
   | "training-academy"
   | "corporate-coach"
+  | "corporate-coach-supervisor"
+  | "lo-mastery-coach"
+  | "loan-factory-alliance-coach"
+  | "coaching-director"
   | "team-leader"
   | "marketing"
   | "loan-officer-support"
@@ -108,6 +112,62 @@ export const roles: Role[] = [
     ],
   },
   {
+    id: "corporate-coach-supervisor",
+    name: "Corporate Coach Supervisor",
+    group: "Coach Leadership",
+    description:
+      "Leadership access for corporate coach oversight, coverage, and performance review.",
+    dashboardHref: "/coach-command-center/",
+    highlights: [
+      "Coach coverage",
+      "Performance review",
+      "Member progress",
+      "Scorecard trends",
+    ],
+  },
+  {
+    id: "lo-mastery-coach",
+    name: "LO Mastery Coach",
+    group: "Coach Leadership",
+    description:
+      "Coach access for the LO Mastery $249 tier, weekly accountability, and member progress.",
+    dashboardHref: "/coach-command-center/",
+    highlights: [
+      "LO Mastery coaching",
+      "Weekly accountability",
+      "Member progress",
+      "Scorecards and notes",
+    ],
+  },
+  {
+    id: "loan-factory-alliance-coach",
+    name: "Loan Factory Alliance Coach",
+    group: "Coach Leadership",
+    description:
+      "Coach access for the Loan Factory Alliance $449 tier, advanced accountability, and member progress.",
+    dashboardHref: "/coach-command-center/",
+    highlights: [
+      "Alliance coaching",
+      "Advanced accountability",
+      "Member progress",
+      "Scorecards and notes",
+    ],
+  },
+  {
+    id: "coaching-director",
+    name: "Coaching Director",
+    group: "Coach Leadership",
+    description:
+      "Leadership access for coaching coverage, coach performance, scorecard trends, and roster oversight.",
+    dashboardHref: "/coach-command-center/",
+    highlights: [
+      "Coach coverage",
+      "Performance trends",
+      "Roster oversight",
+      "Member progress",
+    ],
+  },
+  {
     id: "team-leader",
     name: "Team Leader",
     group: "Team Leader",
@@ -151,7 +211,7 @@ export const roles: Role[] = [
   },
   {
     id: "coaching-member-level-1",
-    name: "LO Mastery Coaching",
+    name: "LO Mastery Member",
     group: "Coaching Member",
     description:
       "LO Mastery Coaching member resources at the $249 access level.",
@@ -165,7 +225,7 @@ export const roles: Role[] = [
   },
   {
     id: "coaching-member-level-2",
-    name: "Loan Factory Alliance",
+    name: "Loan Factory Alliance Member",
     group: "Coaching Member",
     description:
       "Loan Factory Alliance member resources at the $449 access level.",
@@ -210,12 +270,20 @@ export const roles: Role[] = [
 const COACH_GUIDE_ACCESS: RoleId[] = [
   "admin",
   "corporate-coach",
+  "corporate-coach-supervisor",
+  "lo-mastery-coach",
+  "loan-factory-alliance-coach",
+  "coaching-director",
   "marketing",
 ];
 
 const TEAM_LEADER_GUIDE_ACCESS: RoleId[] = [
   "admin",
   "corporate-coach",
+  "corporate-coach-supervisor",
+  "lo-mastery-coach",
+  "loan-factory-alliance-coach",
+  "coaching-director",
   "team-leader",
   "marketing",
 ];
@@ -223,12 +291,86 @@ const TEAM_LEADER_GUIDE_ACCESS: RoleId[] = [
 const CLIP_LIBRARY_ACCESS: RoleId[] = roles.map((role) => role.id);
 
 export type GatedSurface =
+  | "admin"
   | "coach-guide"
+  | "coach-center"
+  | "dashboard"
+  | "lo-development"
+  | "loan-officer-support"
+  | "member-area"
+  | "normal-lo"
+  | "resources"
+  | "support"
+  | "training-academy"
   | "team-leader-guide"
   | "clip-library";
 
 const accessByGate: Record<GatedSurface, RoleId[]> = {
+  admin: ["admin", "master-admin", "lo-development-lead"],
   "coach-guide": COACH_GUIDE_ACCESS,
+  "coach-center": [
+    "admin",
+    "master-admin",
+    "lo-development-lead",
+    "lo-development-member",
+    "training-academy",
+    "corporate-coach",
+    "corporate-coach-supervisor",
+    "lo-mastery-coach",
+    "loan-factory-alliance-coach",
+    "coaching-director",
+    "team-leader",
+  ],
+  dashboard: roles.map((role) => role.id),
+  "lo-development": [
+    "admin",
+    "master-admin",
+    "lo-development-lead",
+    "lo-development-member",
+    "training-academy",
+    "loan-officer-support",
+  ],
+  "loan-officer-support": [
+    "admin",
+    "master-admin",
+    "lo-development-lead",
+    "lo-development-member",
+    "loan-officer-support",
+  ],
+  "member-area": [
+    "admin",
+    "master-admin",
+    "lo-development-lead",
+    "corporate-coach",
+    "corporate-coach-supervisor",
+    "lo-mastery-coach",
+    "loan-factory-alliance-coach",
+    "coaching-director",
+    "training-academy",
+    "coaching-member-level-1",
+    "coaching-member-level-2",
+  ],
+  "normal-lo": [
+    "admin",
+    "master-admin",
+    "lo-development-lead",
+    "loan-officer-support",
+    "loan-officer",
+  ],
+  resources: roles.map((role) => role.id),
+  support: [
+    "admin",
+    "master-admin",
+    "lo-development-lead",
+    "loan-officer-support",
+  ],
+  "training-academy": [
+    "admin",
+    "master-admin",
+    "lo-development-lead",
+    "lo-development-member",
+    "training-academy",
+  ],
   "team-leader-guide": TEAM_LEADER_GUIDE_ACCESS,
   "clip-library": CLIP_LIBRARY_ACCESS,
 };

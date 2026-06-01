@@ -34,7 +34,7 @@ const requestLanes = [
     id: "system-access",
     title: "System access issues",
     description:
-      "Sign-in, approved-user, role, View-As, profile, Google OAuth, or permission questions.",
+      "Sign-in, approved-user, role, view as role, profile, Google OAuth, or permission questions.",
     route: "Start with Loan Officer Support. Escalate to Admin only after the user, role, and environment are confirmed.",
     training: "/login/",
   },

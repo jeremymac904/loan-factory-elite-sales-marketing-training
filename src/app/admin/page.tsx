@@ -3,6 +3,9 @@ import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 import { approvedUserSeeds } from "@/data/approvedUsers";
+import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
+import AccessNotice from "@/components/AccessNotice";
+import AdminAuthDiagnostics from "@/components/admin/AdminAuthDiagnostics";
 import AdminConsole from "@/components/admin/AdminConsole";
 
 export const dynamic = "force-dynamic";
@@ -17,35 +20,46 @@ export default async function AdminPage() {
   }
 
   if (session.status === "not-configured") {
-    return <AdminNotice title="Admin sign-in setup needed" actionHref="/login/" actionLabel="Open sign in">
-      Google sign-in setup is not ready in this environment, so admin access
-      cannot be checked yet.
-    </AdminNotice>;
-  }
-
-  if (session.status === "signed-out") {
-    return <AdminNotice title="Sign in required" actionHref="/login/" actionLabel="Sign in">
-      Admin access requires an approved Loan Factory Google account.
-    </AdminNotice>;
-  }
-
-  if (session.status === "pending") {
-    return <AdminNotice title="Access pending" actionHref="/access-pending/" actionLabel="View pending status">
-      Your account is signed in, but it is not approved for admin access.
-    </AdminNotice>;
+    return (
+      <AccessNotice surfaceLabel="Admin" status="not-configured">
+        Google sign-in setup is not ready in this environment, so admin access
+        cannot be checked yet.
+      </AccessNotice>
+    );
   }
 
   const canAccessAdmin =
-    session.permissions?.can_access_admin || isAdminRole(session.profile.role);
+    session.status === "approved"
+      ? Boolean(
+          session.permissions?.can_access_admin ||
+            isAdminRole(session.profile.role),
+        )
+      : false;
+  const access = resolveProtectedAccess(session, canAccessAdmin);
 
-  if (!canAccessAdmin) {
-    return <AdminNotice title="Admin role required" actionHref="/" actionLabel="Back to home">
-      Your current role is {getRoleLabel(session.profile.role)}. Ask Jeremy or
-      LO Development to review admin access.
-    </AdminNotice>;
+  if (access.status !== "approved") {
+    return (
+      <AccessNotice
+        surfaceLabel="Admin"
+        status={access.status}
+        roleLabel={access.roleLabel}
+      >
+        {access.status === "signed-out" &&
+          "Admin access requires an approved Loan Factory Google account."}
+        {access.status === "pending" &&
+          "Your account is signed in, but it is not approved for admin access yet."}
+        {access.status === "access-denied" &&
+          "Your current role does not include admin access. Ask Jeremy or LO Development to review it."}
+      </AccessNotice>
+    );
   }
 
-  return <AdminShell session={session} />;
+  const approvedSession = session as Extract<
+    Awaited<ReturnType<typeof getBetaUserSession>>,
+    { status: "approved" }
+  >;
+
+  return <AdminShell session={approvedSession} />;
 }
 
 const roleGroupCount = new Set(approvedUserSeeds.map((u) => u.role)).size;
@@ -110,38 +124,14 @@ function AdminShell({
           { label: "Auth", value: "Google OAuth" },
         ]}
       />
+      {session?.profile.role === "master_admin" && !preview && (
+        <AdminAuthDiagnostics
+          serverAuthReadStatus={session.status}
+          serverUserEmail={session.profile.email}
+          serverResolvedRole={session.profile.role}
+          requiredRole="master_admin"
+        />
+      )}
     </>
-  );
-}
-
-function AdminNotice({
-  title,
-  children,
-  actionHref,
-  actionLabel,
-}: {
-  title: string;
-  children: React.ReactNode;
-  actionHref: string;
-  actionLabel: string;
-}) {
-  return (
-    <section className="container-page py-16">
-      <div className="card max-w-2xl">
-        <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-          Admin
-        </span>
-        <h1 className="h-display mt-1 text-3xl">{title}</h1>
-        <p className="prose-lf mt-3 text-base">{children}</p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link href={actionHref} className="btn-primary">
-            {actionLabel}
-          </Link>
-          <Link href="/" className="btn-secondary">
-            Back to home
-          </Link>
-        </div>
-      </div>
-    </section>
   );
 }

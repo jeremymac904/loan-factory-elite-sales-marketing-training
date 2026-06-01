@@ -9,6 +9,10 @@ export type BetaRole =
   | "training_academy"
   | "loan_officer_support"
   | "corporate_coach"
+  | "corporate_coach_supervisor"
+  | "lo_mastery_coach"
+  | "loan_factory_alliance_coach"
+  | "coaching_director"
   | "marketing"
   | "team_leader"
   | "coaching_member_level_1"
@@ -67,10 +71,14 @@ export const roleLabels: Record<string, string> = {
   training_academy: "Training Academy",
   loan_officer_support: "Loan Officer Support",
   corporate_coach: "Corporate Coach",
+  corporate_coach_supervisor: "Corporate Coach Supervisor",
+  lo_mastery_coach: "LO Mastery Coach",
+  loan_factory_alliance_coach: "Loan Factory Alliance Coach",
+  coaching_director: "Coaching Director",
   marketing: "Marketing",
   team_leader: "Team Leader",
-  coaching_member_level_1: "LO Mastery Coaching",
-  coaching_member_level_2: "Loan Factory Alliance",
+  coaching_member_level_1: "LO Mastery Member",
+  coaching_member_level_2: "Loan Factory Alliance Member",
   loan_officer: "Loan Officer",
   support_staff: "Support Staff",
   vendor_partner_future: "Vendor Partner (Future)",
@@ -85,6 +93,10 @@ export const roleDashboardHrefs: Record<string, string> = {
   training_academy: "/training-academy/",
   loan_officer_support: "/loan-officer-support/",
   corporate_coach: "/coach-command-center/",
+  corporate_coach_supervisor: "/coach-command-center/",
+  lo_mastery_coach: "/coach-command-center/",
+  loan_factory_alliance_coach: "/coach-command-center/",
+  coaching_director: "/coach-command-center/",
   marketing: "/marketing/",
   team_leader: "/team-leader-guide/",
   coaching_member_level_1: "/member-area/lo-mastery/",
@@ -111,6 +123,22 @@ export function isApprovedProfile(
 }
 
 const ADMIN_ROLES = ["master_admin", "admin", "lo_development_lead"];
+const COACH_ROLES = [
+  "corporate_coach",
+  "corporate_coach_supervisor",
+  "lo_mastery_coach",
+  "loan_factory_alliance_coach",
+  "coaching_director",
+  "team_leader",
+  "lo_development_member",
+  "training_academy",
+];
+const COACH_LEADERSHIP_ROLES = [
+  "corporate_coach_supervisor",
+  "lo_mastery_coach",
+  "loan_factory_alliance_coach",
+  "coaching_director",
+];
 
 export function isAdminRole(role: string | null | undefined): boolean {
   return Boolean(role && ADMIN_ROLES.includes(role));
@@ -128,17 +156,97 @@ export function canAccessGate(
   }
 
   if (gate === "coach-guide") {
-    return Boolean(permissions?.can_access_coaching);
+    return (
+      Boolean(permissions?.can_access_coaching) ||
+      COACH_ROLES.includes(profile.role ?? "") ||
+      COACH_LEADERSHIP_ROLES.includes(profile.role ?? "")
+    );
   }
 
   if (gate === "team-leader-guide") {
     return [
       "corporate_coach",
+      "corporate_coach_supervisor",
+      "coaching_director",
+      "lo_mastery_coach",
+      "loan_factory_alliance_coach",
       "lo_development",
       "lo_development_member",
       "lo_development_lead",
       "training_academy",
       "team_leader",
+    ].includes(profile.role ?? "");
+  }
+
+  if (gate === "admin") {
+    return Boolean(permissions?.can_access_admin || isAdminRole(profile.role));
+  }
+
+  if (gate === "dashboard" || gate === "resources") {
+    return true;
+  }
+
+  if (gate === "coach-center") {
+    return (
+      COACH_ROLES.includes(profile.role ?? "") ||
+      Boolean(permissions?.can_access_coaching)
+    );
+  }
+
+  if (gate === "member-area") {
+    return [
+      "coaching_member_level_1",
+      "coaching_member_level_2",
+      "lo_development_lead",
+      "lo_development_member",
+      "training_academy",
+      "corporate_coach",
+      "corporate_coach_supervisor",
+      "coaching_director",
+      "lo_mastery_coach",
+      "loan_factory_alliance_coach",
+    ].includes(profile.role ?? "");
+  }
+
+  if (gate === "lo-development") {
+    return [
+      "lo_development",
+      "lo_development_lead",
+      "lo_development_member",
+      "training_academy",
+      "loan_officer_support",
+      "master_admin",
+      "admin",
+    ].includes(profile.role ?? "");
+  }
+
+  if (gate === "training-academy") {
+    return [
+      "training_academy",
+      "lo_development_lead",
+      "lo_development_member",
+      "master_admin",
+      "admin",
+    ].includes(profile.role ?? "");
+  }
+
+  if (gate === "loan-officer-support" || gate === "support") {
+    return [
+      "loan_officer_support",
+      "lo_development_lead",
+      "lo_development_member",
+      "master_admin",
+      "admin",
+    ].includes(profile.role ?? "");
+  }
+
+  if (gate === "normal-lo") {
+    return [
+      "loan_officer",
+      "loan_officer_support",
+      "lo_development_lead",
+      "master_admin",
+      "admin",
     ].includes(profile.role ?? "");
   }
 

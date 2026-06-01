@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { adminViewAsRoles } from "@/data/adminViewAsRoles";
 
 export type AdminUserCard = {
   name: string;
@@ -17,13 +18,27 @@ export type AdminToolGroup = {
   tools: { label: string; href: string }[];
 };
 
-export type AdminViewAsRole = { value: string; label: string };
-
 const quickActions = [
-  { label: "Users & Access", href: "/admin/users" },
-  { label: "LO Development", href: "/lo-development/" },
-  { label: "QA Checklist", href: "/admin/qa-checklist/" },
-  { label: "Platform Status", href: "/admin/platform-status" },
+  {
+    label: "Users & Access",
+    href: "/admin/users",
+    description: "Review approved users and role assignments.",
+  },
+  {
+    label: "LO Development",
+    href: "/lo-development/",
+    description: "Open the LO Development dashboard.",
+  },
+  {
+    label: "QA Checklist",
+    href: "/admin/qa-checklist/",
+    description: "Run the launch checklist before approval.",
+  },
+  {
+    label: "Platform Status",
+    href: "/admin/platform-status",
+    description: "Check current platform wiring and readiness.",
+  },
 ];
 
 export const adminToolGroups: AdminToolGroup[] = [
@@ -32,7 +47,7 @@ export const adminToolGroups: AdminToolGroup[] = [
     tools: [
       { label: "Users & Access", href: "/admin/users" },
       { label: "Coach Assignments", href: "/admin/coach-assignments" },
-      { label: "View-As Mode", href: "/admin/view-as" },
+      { label: "View as role", href: "/admin/view-as" },
       { label: "Department Routing", href: "/department-routing/" },
       { label: "Settings", href: "/settings/" },
     ],
@@ -71,21 +86,6 @@ export const adminToolGroups: AdminToolGroup[] = [
   },
 ];
 
-export const adminViewAsRoles: AdminViewAsRole[] = [
-  { value: "master_admin", label: "Master Admin" },
-  { value: "admin", label: "Admin" },
-  { value: "lo_development_lead", label: "LO Development Lead" },
-  { value: "lo_development_member", label: "LO Development Member" },
-  { value: "training_academy", label: "Training Academy" },
-  { value: "loan_officer_support", label: "Loan Officer Support" },
-  { value: "corporate_coach", label: "Corporate Coach" },
-  { value: "marketing", label: "Marketing" },
-  { value: "team_leader", label: "Team Leader" },
-  { value: "coaching_member_level_1", label: "LO Mastery Member" },
-  { value: "coaching_member_level_2", label: "Loan Factory Alliance Member" },
-  { value: "loan_officer", label: "Loan Officer" },
-];
-
 export default function AdminConsole({
   user,
   stats,
@@ -103,16 +103,32 @@ export default function AdminConsole({
 
   return (
     <section className="container-page py-10">
-      {/* Quick actions above the fold */}
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="text-xs font-bold uppercase tracking-wide text-lf-slate">
-          Quick actions
-        </span>
-        {quickActions.map((a) => (
-          <Link key={a.href} href={a.href} className="btn-primary text-sm">
-            {a.label}
-          </Link>
-        ))}
+      <div className="card">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wide text-lf-slate">
+              Quick actions
+            </span>
+            <h2 className="h-display text-xl">Fast route cards</h2>
+          </div>
+        </div>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          {quickActions.map((action) => (
+            <Link
+              key={action.href}
+              href={action.href}
+              className="rounded-xl border border-lf-line bg-white p-4 transition hover:-translate-y-0.5 hover:border-lf-orange hover:shadow-lift"
+            >
+              <p className="text-sm font-semibold text-lf-charcoal">
+                {action.label}
+              </p>
+              <p className="mt-1 text-xs text-lf-slate">{action.description}</p>
+              <span className="mt-3 inline-flex text-sm font-semibold text-lf-orange">
+                Open &rarr;
+              </span>
+            </Link>
+          ))}
+        </div>
       </div>
 
       <div className="mt-6 grid gap-5 lg:grid-cols-3">
@@ -173,7 +189,7 @@ export default function AdminConsole({
           {/* View-As role dropdown */}
           <div className="mt-5 rounded-lg border border-lf-line bg-lf-mist p-4">
             <span className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-              View As role
+              View as role
             </span>
             <div className="mt-1 flex flex-wrap items-center gap-2">
               <select
@@ -185,7 +201,7 @@ export default function AdminConsole({
                 className="min-w-[14rem] flex-1 rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal focus:border-lf-orange focus:outline-none focus:ring-1 focus:ring-lf-orange"
               >
                 <option value="" disabled>
-                  Select a role to preview…
+                  Select a role to view as…
                 </option>
                 {adminViewAsRoles.map((r) => (
                   <option key={r.value} value={r.value}>
@@ -194,7 +210,7 @@ export default function AdminConsole({
                 ))}
               </select>
               <Link href="/admin/view-as" className="btn-secondary text-sm">
-                Open View-As
+                Open view as role
               </Link>
             </div>
           </div>

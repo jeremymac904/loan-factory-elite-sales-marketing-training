@@ -35,7 +35,7 @@ export default async function CoachMessagesPage() {
           </p>
           {access.viewingAsLabel && (
             <p className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
-              View-As preview: {access.viewingAsLabel}
+              Viewing as: {access.viewingAsLabel}
             </p>
           )}
         </div>

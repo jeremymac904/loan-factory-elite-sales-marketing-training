@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LoDevelopmentClip, loDevelopmentClipLibrary } from "@/data/loDevelopmentClipLibrary";
+import { platformVideoLibrary, type PlatformVideoRecord } from "@/data/platformVideoLibrary";
 
 type Props = {
   title: string;
@@ -18,12 +18,13 @@ export default function ClipLibraryRail({
   audience,
   limit = 4,
 }: Props) {
-  const clips = loDevelopmentClipLibrary
-    .filter((clip) => {
+  const clips = platformVideoLibrary
+    .filter((video) => {
       return (
-        (!section || clip.platformSection === section) &&
-        (!category || clip.category === category) &&
-        (!audience || clip.audience.includes(audience))
+        video.video_type === "clip" &&
+        (!section || video.platform_section === section) &&
+        (!category || video.category === category) &&
+        (!audience || video.audience.includes(audience))
       );
     })
     .slice(0, limit);
@@ -57,16 +58,16 @@ export default function ClipLibraryRail({
   );
 }
 
-function MiniClipCard({ clip }: { clip: LoDevelopmentClip }) {
+function MiniClipCard({ clip }: { clip: PlatformVideoRecord }) {
   return (
     <Link href="/training-library/clips/" className="card hover:shadow-lift">
       <span className="text-xs font-bold uppercase tracking-wide text-lf-orange">
-        {clip.status}
+        {clip.hosting_status === "google_drive_pending"
+          ? "Drive pending"
+          : "Ready"}
       </span>
       <h3 className="h-display mt-2 text-lg">{clip.title}</h3>
-      <p className="prose-lf mt-2 text-sm text-lf-slate">
-        {clip.topicSummary}
-      </p>
+      <p className="prose-lf mt-2 text-sm text-lf-slate">{clip.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         <span className="rounded-full bg-lf-mist px-2.5 py-1 text-xs font-semibold text-lf-slate">
           {clip.duration}
@@ -95,3 +96,4 @@ function buildClipHref({
   const query = params.toString();
   return `/training-library/clips/${query ? `?${query}` : ""}`;
 }
+

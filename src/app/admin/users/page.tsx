@@ -3,6 +3,8 @@ import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 import { approvedUserSeeds } from "@/data/approvedUsers";
+import AccessNotice from "@/components/AccessNotice";
+import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Users & Access" };
@@ -12,38 +14,29 @@ export default async function AdminUsersPage() {
   const previewEnabled = await isBetaPreviewEnabled();
 
   if (!previewEnabled) {
-    if (session.status !== "approved") {
-      return (
-        <section className="container-page py-16">
-          <div className="card max-w-2xl">
-            <h1 className="h-display text-3xl">Sign in required</h1>
-            <p className="prose-lf mt-3">
-              Admin access requires an approved Loan Factory Google account.
-            </p>
-            <Link href="/login/" className="btn-primary mt-6 inline-block">
-              Sign in
-            </Link>
-          </div>
-        </section>
-      );
-    }
-
     const canAccessAdmin =
-      session.permissions?.can_access_admin || isAdminRole(session.profile.role);
+      session.status === "approved"
+        ? Boolean(
+            session.permissions?.can_access_admin ||
+              isAdminRole(session.profile.role),
+          )
+        : false;
+    const access = resolveProtectedAccess(session, canAccessAdmin);
 
-    if (!canAccessAdmin) {
+    if (access.status !== "approved") {
       return (
-        <section className="container-page py-16">
-          <div className="card max-w-2xl">
-            <h1 className="h-display text-3xl">Admin role required</h1>
-            <p className="prose-lf mt-3">
-              Your current role is {getRoleLabel(session.profile.role)}.
-            </p>
-            <Link href="/" className="btn-primary mt-6 inline-block">
-              Back to home
-            </Link>
-          </div>
-        </section>
+        <AccessNotice
+          surfaceLabel="Users & Access"
+          status={access.status}
+          roleLabel={access.roleLabel}
+        >
+          {access.status === "signed-out" &&
+            "Admin access requires an approved Loan Factory Google account."}
+          {access.status === "pending" &&
+            "Your account is signed in, but it is not approved for admin access yet."}
+          {access.status === "access-denied" &&
+            "Your current role does not include admin access."}
+        </AccessNotice>
       );
     }
   }

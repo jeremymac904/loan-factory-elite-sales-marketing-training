@@ -12,9 +12,14 @@ export default async function AuthStatusPage() {
   const session = await getBetaUserSession();
   const previewEnabled = await isBetaPreviewEnabled();
   const canAccessAdmin =
-    previewEnabled ||
-    session.status === "approved" &&
-    (session.permissions?.can_access_admin || isAdminRole(session.profile.role));
+    previewEnabled
+      ? true
+      : session.status === "approved"
+        ? Boolean(
+            session.permissions?.can_access_admin ||
+              isAdminRole(session.profile.role),
+          )
+        : false;
   const serverSessionExists =
     session.status === "approved" || session.status === "pending";
   const serverProfile =

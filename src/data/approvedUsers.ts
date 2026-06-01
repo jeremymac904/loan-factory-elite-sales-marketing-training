@@ -139,10 +139,11 @@ export const approvedUserSeeds: ApprovedUserSeed[] = [
   },
   {
     email: "edward.arvizo@loanfactory.com",
-    role: "corporate_coach",
+    role: "coaching_director",
     full_name: "Edward Arvizo",
     department: "Corporate Coaching",
     title: null,
+    additionalRoles: ["corporate_coach"],
   },
   {
     email: "alessandra@loanfactory.com",

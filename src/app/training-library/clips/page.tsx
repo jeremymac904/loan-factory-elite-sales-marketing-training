@@ -3,18 +3,20 @@ import RoleGate from "@/components/RoleGate";
 import ClipLibraryExplorer from "@/components/ClipLibraryExplorer";
 import PageHero from "@/components/PageHero";
 
-export const metadata = { title: "LO Development Clip Library" };
+export const metadata = { title: "LO Development Video Library" };
 
 export default function TrainingLibraryClipsPage() {
   return (
     <RoleGate gate="clip-library">
       <PageHero
         eyebrow="Training Library"
-        title="LO Development Clip Library"
+        title="LO Development Video Library"
         body={
           <p>
-            Search 91 internal Loan Factory training clips by topic, section,
-            audience, priority, source training, and video status.
+            Search 7 long-form source trainings and 91 cutdown clips by topic,
+            section, audience, priority, hosting status, and manual review state.
+            Google Drive fallback stays pending until a real link exists, and
+            YouTube stays on hold until the batch scaffold is approved.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -32,6 +34,7 @@ export default function TrainingLibraryClipsPage() {
           </Link>
         </div>
       </PageHero>
+
       <ClipLibraryExplorer />
     </RoleGate>
   );

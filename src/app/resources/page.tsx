@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ClipLibraryRail from "@/components/ClipLibraryRail";
 import SectionHeading from "@/components/SectionHeading";
+import RoleGate from "@/components/RoleGate";
 import { marketingTrainingAssets } from "@/data/marketingTrainingAssets";
 
 export const metadata = { title: "Resources" };
@@ -26,6 +27,12 @@ const resources = [
     description:
       "Find short support and training clips staged for approved Loan Factory users.",
     href: "/training-library/clips/",
+  },
+  {
+    title: "LO Development Resources",
+    description:
+      "Open the staging hub for source videos, manual review, Drive fallback, and automation scaffolding.",
+    href: "/lo-development/resources/",
   },
   {
     title: "Marketing Setup Assets",
@@ -60,7 +67,7 @@ const resources = [
 
 export default function ResourcesPage() {
   return (
-    <>
+    <RoleGate gate="resources">
       <section className="relative isolate overflow-hidden bg-lf-navy text-white">
         <div
           aria-hidden
@@ -183,6 +190,6 @@ export default function ResourcesPage() {
           </p>
         </div>
       </section>
-    </>
+    </RoleGate>
   );
 }

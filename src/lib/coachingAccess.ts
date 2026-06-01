@@ -1,4 +1,5 @@
 import { isBetaPreviewEnabled } from "@/lib/betaPreview";
+import { getRoleLabel } from "@/lib/supabase/auth";
 import { isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 import { getViewAsState } from "@/lib/viewAs";
@@ -23,6 +24,7 @@ export type CoachingAccess = {
   // The role the page is rendering AS (View-As aware so admins can record each
   // tier). Equals the real role unless an admin has an active View-As.
   effectiveRole: string | null;
+  effectiveRoleLabel: string;
   // Display label when an admin is previewing another role (else null).
   viewingAsLabel: string | null;
   realIsAdmin: boolean;
@@ -112,6 +114,9 @@ export async function getCoachingAccess(): Promise<CoachingAccess> {
     status: session.status,
     previewEnabled,
     effectiveRole,
+    effectiveRoleLabel: previewEnabled && !honorViewAs
+      ? "Internal Review"
+      : getRoleLabel(effectiveRole),
     viewingAsLabel,
     realIsAdmin,
     tier,

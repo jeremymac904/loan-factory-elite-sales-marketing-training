@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
       : "no resolved role";
     return NextResponse.json(
       {
-        error: `View-As requires Master Admin or Admin access. Your current resolved role is: ${resolvedLabel}.`,
+        error: `View as role requires Master Admin or Admin access. Your current resolved role is: ${resolvedLabel}.`,
         reason: access.reason,
       },
       { status: 403 },

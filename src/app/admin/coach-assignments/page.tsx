@@ -3,6 +3,8 @@ import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
+import AccessNotice from "@/components/AccessNotice";
+import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
 import {
   assignedPeople,
   statusMeta,
@@ -60,15 +62,20 @@ export default async function AdminCoachAssignmentsPage() {
         isAdminRole(session.profile.role)));
 
   if (!isAdmin) {
+    const access = resolveProtectedAccess(session, isAdmin);
     return (
-      <section className="container-page py-16">
-        <div className="card max-w-2xl">
-          <h1 className="h-display text-3xl">Admin access required</h1>
-          <Link href="/" className="btn-primary mt-6 inline-block">
-            Back to home
-          </Link>
-        </div>
-      </section>
+      <AccessNotice
+        surfaceLabel="Coach Assignments"
+        status={access.status}
+        roleLabel={access.roleLabel}
+      >
+        {access.status === "signed-out" &&
+          "Admin access is required to review coach assignments."}
+        {access.status === "pending" &&
+          "Your account is signed in, but it is not approved for admin access yet."}
+        {access.status === "access-denied" &&
+          "Your current role does not include admin access."}
+      </AccessNotice>
     );
   }
 

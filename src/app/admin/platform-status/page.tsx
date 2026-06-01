@@ -5,6 +5,8 @@ import { getBetaUserSession } from "@/lib/supabase/session";
 import { getPublicAiSandboxStatus } from "@/lib/ai/config";
 import { hasSupabaseAdminConfig } from "@/lib/supabase/admin";
 import { approvedUserSeeds } from "@/data/approvedUsers";
+import AccessNotice from "@/components/AccessNotice";
+import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Admin · Platform Status" };
@@ -20,19 +22,20 @@ export default async function AdminPlatformStatusPage() {
         isAdminRole(session.profile.role)));
 
   if (!isAdmin) {
+    const access = resolveProtectedAccess(session, isAdmin);
     return (
-      <section className="container-page py-16">
-        <div className="card max-w-2xl">
-          <h1 className="h-display text-3xl">Admin access required</h1>
-          <p className="prose-lf mt-3">
-            The platform status dashboard is for approved Loan Factory admins.
-            Ask Jeremy or LO Development to review your access.
-          </p>
-          <Link href="/" className="btn-primary mt-6 inline-block">
-            Back to home
-          </Link>
-        </div>
-      </section>
+      <AccessNotice
+        surfaceLabel="Platform Status"
+        status={access.status}
+        roleLabel={access.roleLabel}
+      >
+        {access.status === "signed-out" &&
+          "The platform status dashboard is for approved Loan Factory admins."}
+        {access.status === "pending" &&
+          "Your account is signed in, but it is not approved for admin access yet."}
+        {access.status === "access-denied" &&
+          "Your current role does not include admin access."}
+      </AccessNotice>
     );
   }
 

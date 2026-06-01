@@ -66,7 +66,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "Users and roles",
             description:
-              "Review approved users, role labels, departments, and View-As walkthroughs.",
+              "Review approved users, role labels, departments, and view as role walkthroughs.",
             href: "/admin/users/",
             owner: "Jeremy / Thuan",
             status: "Live",
@@ -122,7 +122,7 @@ export const roleDashboards: RoleDashboard[] = [
     ],
     nextActions: [
       "Run local lint, typecheck, and build before handoff.",
-      "Use View-As to walk every role before approving a deploy.",
+      "Use view as role to walk every role before approving a deploy.",
       "Keep Supabase, Google, n8n, and outbound actions sandbox-first.",
     ],
   },
@@ -193,10 +193,10 @@ export const roleDashboards: RoleDashboard[] = [
             status: "Live",
           },
           {
-            title: "Asset readiness",
+            title: "Video readiness",
             description:
-              "Find uploads, replays, clips, and handouts still awaiting review.",
-            href: "/training-library/",
+              "Review long-form source videos, cutdowns, Drive fallback, and manual review flags before routing assets forward.",
+            href: "/lo-development/resources/",
             owner: "LO Development",
             status: "Needs review",
           },
@@ -204,7 +204,7 @@ export const roleDashboards: RoleDashboard[] = [
       },
     ],
     nextActions: [
-      "Walk every role with View-As before approving a deploy.",
+      "Walk every role with view as role before approving a deploy.",
       "Clear the Asset readiness queue: label missing clips and handouts.",
       "Confirm support and escalation owners are current in Department Routing.",
     ],
@@ -315,7 +315,7 @@ export const roleDashboards: RoleDashboard[] = [
           {
             title: "System access issues",
             description:
-              "Route sign-in, approved user, profile, View-As, and permission problems.",
+              "Route sign-in, approved user, profile, view as role, and permission problems.",
             href: "/support-routing/#system-access",
             owner: "LO Support",
             status: "Ready",

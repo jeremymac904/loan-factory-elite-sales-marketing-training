@@ -1,9 +1,10 @@
-import Link from "next/link";
 import { ReactNode } from "react";
 import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { GatedSurface } from "@/lib/roles";
-import { canAccessGate, getRoleLabel } from "@/lib/supabase/auth";
+import { canAccessGate } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
+import AccessNotice from "@/components/AccessNotice";
+import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
 
 type Props = {
   gate: GatedSurface;
@@ -19,47 +20,61 @@ async function RoleGateContent({ gate, children }: Props) {
   const previewEnabled = await isBetaPreviewEnabled();
   const allowed =
     previewEnabled ||
-    session.status === "approved" &&
-    canAccessGate(gate, session.profile, session.permissions);
+    (session.status === "approved" &&
+      canAccessGate(gate, session.profile, session.permissions));
+  const access = resolveProtectedAccess(session, allowed);
 
-  if (allowed) {
+  if (access.status === "approved" || previewEnabled) {
     return <>{children}</>;
   }
 
   return (
-    <section className="container-page py-16">
-      <div className="card max-w-2xl">
-        <span className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-          Restricted beta area
-        </span>
-        <h2 className="h-display mt-1 text-2xl">
-          This section is for team leaders, coaches, and approved internal users.
-        </h2>
-        <p className="prose-lf mt-3 text-base">
-          {session.status === "not-configured"
-            ? "Sign-in setup is not ready in this environment yet."
-            : session.status === "signed-out"
-              ? "Sign in with an approved Loan Factory Google account to continue."
-              : session.status === "pending"
-                ? "Your account is signed in, but access has not been approved yet."
-                : `Your current role is ${getRoleLabel(session.profile.role)}.`}
-        </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          {session.status === "signed-out" && (
-            <Link href="/login/" className="btn-primary">
-              Sign in
-            </Link>
-          )}
-          {session.status === "pending" && (
-            <Link href="/access-pending/" className="btn-primary">
-              Access pending
-            </Link>
-          )}
-          <Link href="/" className="btn-secondary">
-            Back to home
-          </Link>
-        </div>
-      </div>
-    </section>
+    <AccessNotice
+      surfaceLabel={gateToLabel(gate)}
+      status={access.status}
+      roleLabel={access.roleLabel}
+    >
+      {access.status === "not-configured" &&
+        "Sign-in setup is not ready in this environment yet."}
+      {access.status === "signed-out" &&
+        "Sign in with an approved Loan Factory Google account to continue."}
+      {access.status === "pending" &&
+        "Your account is signed in, but access has not been approved yet."}
+      {access.status === "access-denied" &&
+        "Your current role does not include this surface yet. Ask Jeremy or LO Development to review access."}
+    </AccessNotice>
   );
+}
+
+function gateToLabel(gate: GatedSurface): string {
+  switch (gate) {
+    case "admin":
+      return "Admin";
+    case "coach-center":
+      return "Coach Command Center";
+    case "dashboard":
+      return "Dashboard";
+    case "lo-development":
+      return "LO Development";
+    case "loan-officer-support":
+      return "Loan Officer Support";
+    case "member-area":
+      return "Member Area";
+    case "normal-lo":
+      return "Loan Officer";
+    case "resources":
+      return "Resources";
+    case "support":
+      return "Support";
+    case "training-academy":
+      return "Training Academy";
+    case "coach-guide":
+      return "Coach Guide";
+    case "team-leader-guide":
+      return "Team Leader Guide";
+    case "clip-library":
+      return "Clip Library";
+    default:
+      return "Restricted area";
+  }
 }

@@ -1,6 +1,11 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
+import AccessNotice from "@/components/AccessNotice";
+import { isBetaPreviewEnabled } from "@/lib/betaPreview";
+import { isAdminRole } from "@/lib/supabase/auth";
+import { getBetaUserSession } from "@/lib/supabase/session";
+import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
 
 export const metadata = { title: "Launch QA Checklist" };
 
@@ -17,7 +22,7 @@ const checklist = [
   {
     title: "Role walkthrough",
     items: [
-      "Master Admin opens /admin and View-As.",
+      "Master Admin opens /admin and View as role.",
       "LO Development opens /lo-development.",
       "Training Academy opens /training-academy.",
       "Loan Officer Support opens /loan-officer-support.",
@@ -47,7 +52,39 @@ const checklist = [
   },
 ];
 
-export default function AdminQaChecklistPage() {
+export default async function AdminQaChecklistPage() {
+  return AdminQaChecklistContent();
+}
+
+async function AdminQaChecklistContent() {
+  const session = await getBetaUserSession();
+  const previewEnabled = await isBetaPreviewEnabled();
+  const canAccessAdmin =
+    session.status === "approved"
+      ? Boolean(
+          session.permissions?.can_access_admin ||
+            isAdminRole(session.profile.role),
+        )
+      : false;
+  const access = resolveProtectedAccess(session, canAccessAdmin);
+
+  if (!previewEnabled && access.status !== "approved") {
+    return (
+      <AccessNotice
+        surfaceLabel="Launch QA Checklist"
+        status={access.status}
+        roleLabel={access.roleLabel}
+      >
+        {access.status === "signed-out" &&
+          "The launch QA checklist is for approved Loan Factory admins."}
+        {access.status === "pending" &&
+          "Your account is signed in, but it is not approved for admin access yet."}
+        {access.status === "access-denied" &&
+          "Your current role does not include admin access."}
+      </AccessNotice>
+    );
+  }
+
   return (
     <>
       <PageHero
@@ -69,7 +106,7 @@ export default function AdminQaChecklistPage() {
             href="/admin/view-as/"
             className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
           >
-            Start View-As
+            Start View as role
           </Link>
         </div>
       </PageHero>

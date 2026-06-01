@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type { User } from "@supabase/supabase-js";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { combineChunks, stringFromBase64URL } from "@supabase/ssr";
@@ -164,7 +165,12 @@ async function getAppCookieBackedUser() {
   return { user, supabase: admin };
 }
 
-export async function getBetaUserSession(): Promise<BetaUserSession> {
+// Wrapped in React cache() so every server component in a single request
+// (header account menu, page gate, role gates, layouts) shares ONE auth
+// resolution. Without this, each consumer ran its own network auth check and a
+// transient race could make the header read "approved" while the page gate read
+// "signed-out" — the exact split-auth bug. cache() makes the split impossible.
+async function resolveBetaUserSession(): Promise<BetaUserSession> {
   let supabase: SupabaseClient | null = await createServerSupabaseClient();
 
   if (!supabase) {
@@ -232,3 +238,5 @@ export async function getBetaUserSession(): Promise<BetaUserSession> {
     permissions,
   };
 }
+
+export const getBetaUserSession = cache(resolveBetaUserSession);

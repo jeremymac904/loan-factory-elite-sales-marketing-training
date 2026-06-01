@@ -55,7 +55,7 @@ const departments = [
     owner: "Jeremy / Thuan",
     href: "/admin/",
     owns:
-      "Supabase role control, View-As, platform status, user access, final QA, and deploy approval path.",
+      "Supabase role control, view as role, platform status, user access, final QA, and deploy approval path.",
     escalates:
       "Credentials, MFA, production data writes, GitHub push/merge, Netlify deploy, or n8n activation.",
   },

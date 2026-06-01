@@ -5,6 +5,8 @@ import { getBetaUserSession } from "@/lib/supabase/session";
 import { getPublicAiSandboxStatus } from "@/lib/ai/config";
 import { seedAiTwinPersonas } from "@/data/aiTwinPersonas";
 import { approvedUserSeeds } from "@/data/approvedUsers";
+import AccessNotice from "@/components/AccessNotice";
+import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Admin · AI Assistants" };
@@ -20,15 +22,20 @@ export default async function AdminAiAssistantsPage() {
         isAdminRole(session.profile.role)));
 
   if (!isAdmin) {
+    const access = resolveProtectedAccess(session, isAdmin);
     return (
-      <section className="container-page py-16">
-        <div className="card max-w-2xl">
-          <h1 className="h-display text-3xl">Admin access required</h1>
-          <Link href="/" className="btn-primary mt-6 inline-block">
-            Back to home
-          </Link>
-        </div>
-      </section>
+      <AccessNotice
+        surfaceLabel="AI Assistant Settings"
+        status={access.status}
+        roleLabel={access.roleLabel}
+      >
+        {access.status === "signed-out" &&
+          "AI assistant settings are for approved Loan Factory admins."}
+        {access.status === "pending" &&
+          "Your account is signed in, but it is not approved for admin access yet."}
+        {access.status === "access-denied" &&
+          "Your current role does not include admin access."}
+      </AccessNotice>
     );
   }
 
@@ -96,6 +103,11 @@ export default async function AdminAiAssistantsPage() {
               <AccessRow role="LO Development Lead" count={tierCounts.lo_development_lead ?? 0} access="LO Development AI Twin" />
               <AccessRow role="LO Development Member" count={tierCounts.lo_development_member ?? 0} access="LO Development Assistant" />
               <AccessRow role="Corporate Coach" count={tierCounts.corporate_coach ?? 0} access="Coaching AI Twin" />
+              <AccessRow role="Corporate Coach Supervisor" count={tierCounts.corporate_coach_supervisor ?? 0} access="Coaching coverage and oversight" />
+              <AccessRow role="LO Mastery Coach" count={tierCounts.lo_mastery_coach ?? 0} access="LO Mastery coaching support" />
+              <AccessRow role="Loan Factory Alliance Coach" count={tierCounts.loan_factory_alliance_coach ?? 0} access="Alliance coaching support" />
+              <AccessRow role="Coaching Director" count={tierCounts.coaching_director ?? 0} access="Coaching coverage and performance" />
+              <AccessRow role="Team Leader" count={tierCounts.team_leader ?? 0} access="Team accountability support" />
               <AccessRow role="Marketing" count={tierCounts.marketing ?? 0} access="Marketing AI Twin" />
               <AccessRow role="LO Support" count={tierCounts.loan_officer_support ?? 0} access="Support AI assistant" />
               <AccessRow role="Coaching Members $249" count={tierCounts.coaching_member_level_1 ?? 0} access="LO Mastery Assistant" />

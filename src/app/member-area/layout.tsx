@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { ReactNode } from "react";
 import { isBetaPreviewEnabled } from "@/lib/betaPreview";
-import { getBetaUserSession } from "@/lib/supabase/session";
+import { getCoachingAccess } from "@/lib/coachingAccess";
+import AccessNotice from "@/components/AccessNotice";
 
 // Gate the entire /member-area subtree (including /member-area/lo-mastery and
 // /member-area/alliance) in one place. Without this, the child pages render
@@ -12,31 +12,46 @@ export default async function MemberAreaLayout({
 }: {
   children: ReactNode;
 }) {
-  const session = await getBetaUserSession();
+  const access = await getCoachingAccess();
   const previewEnabled = await isBetaPreviewEnabled();
 
-  if (!previewEnabled && session.status !== "approved") {
-    const pending = session.status === "pending";
-    return (
-      <section className="container-page py-16">
-        <div className="card max-w-2xl">
-          <h1 className="h-display text-3xl">
-            {pending ? "Access pending" : "Sign in required"}
-          </h1>
-          <p className="prose-lf mt-3">
-            {pending
-              ? "Your account is signed in, but it is not approved for the coaching Member Area yet."
-              : "The Member Area is for approved Loan Factory coaching members."}
-          </p>
-          <Link
-            href={pending ? "/access-pending/" : "/login/"}
-            className="btn-primary mt-6 inline-block"
-          >
-            {pending ? "View pending status" : "Sign in"}
-          </Link>
-        </div>
-      </section>
-    );
+  if (!previewEnabled) {
+    if (access.status === "not-configured") {
+      return (
+        <AccessNotice surfaceLabel="Member Area" status="not-configured">
+          Sign-in setup is not ready in this environment yet.
+        </AccessNotice>
+      );
+    }
+
+    if (access.status === "signed-out") {
+      return (
+        <AccessNotice surfaceLabel="Member Area" status="signed-out">
+          The Member Area is for approved Loan Factory coaching members.
+        </AccessNotice>
+      );
+    }
+
+    if (access.status === "pending") {
+      return (
+        <AccessNotice surfaceLabel="Member Area" status="pending">
+          Your account is signed in, but it is not approved for the coaching
+          Member Area yet.
+        </AccessNotice>
+      );
+    }
+
+    if (!access.isMember && !access.isStaff) {
+      return (
+        <AccessNotice
+          surfaceLabel="Member Area"
+          status="access-denied"
+          roleLabel={access.effectiveRoleLabel}
+        >
+          Your current role does not include coaching member area access yet.
+        </AccessNotice>
+      );
+    }
   }
 
   return <>{children}</>;

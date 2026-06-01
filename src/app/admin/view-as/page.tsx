@@ -3,25 +3,13 @@ import { getRoleLabel } from "@/lib/supabase/auth";
 import { resolveAdminAccess } from "@/lib/supabase/adminAccess";
 import { getViewAsState } from "@/lib/viewAs";
 import { approvedUserSeeds } from "@/data/approvedUsers";
+import { adminViewAsRoles } from "@/data/adminViewAsRoles";
 import ViewAsPicker from "@/components/admin/ViewAsPicker";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "View-As Mode" };
+export const metadata = { title: "View as role" };
 
-const roleOptions = [
-  "master_admin",
-  "admin",
-  "lo_development_lead",
-  "lo_development_member",
-  "training_academy",
-  "loan_officer_support",
-  "corporate_coach",
-  "marketing",
-  "team_leader",
-  "coaching_member_level_1",
-  "coaching_member_level_2",
-  "loan_officer",
-];
+const roleOptions = adminViewAsRoles.map((role) => role.value);
 
 export default async function AdminViewAsPage({
   searchParams,
@@ -43,7 +31,7 @@ export default async function AdminViewAsPage({
         <div className="card max-w-2xl">
           <h1 className="h-display text-3xl">Admin access required</h1>
           <p className="prose-lf mt-3">
-            View-As requires Master Admin or Admin access. Your current
+            View as role requires Master Admin or Admin access. Your current
             resolved role is: <strong>{resolvedLabel}</strong>.
           </p>
           <Link href="/admin/" className="btn-primary mt-6 inline-block">
@@ -74,13 +62,13 @@ export default async function AdminViewAsPage({
               Admin
             </Link>
             <span className="text-white/40">/</span>
-            <span className="text-sm font-semibold text-white">View-As Mode</span>
+            <span className="text-sm font-semibold text-white">View as role</span>
           </div>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
-            View-As Mode
+            View as role
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Preview the platform as any seeded user or role. View as a role for
+            View the platform as any seeded user or role. Use View as role for
             recording training walkthroughs and validating access. You stay
             signed in as yourself — destructive actions remain disabled while
             previewing.
@@ -99,7 +87,7 @@ export default async function AdminViewAsPage({
               </span>
             </p>
             <p className="text-xs text-lf-slate">
-              The orange banner stays visible across the site while View-As is
+              The orange banner stays visible across the site while view as role is
               active.
             </p>
           </div>
@@ -118,10 +106,10 @@ export default async function AdminViewAsPage({
         />
 
         <div className="mt-8 rounded-xl border border-lf-line bg-lf-mist p-5 text-sm text-lf-slate">
-          <p className="font-semibold text-lf-charcoal">How View-As works</p>
+          <p className="font-semibold text-lf-charcoal">How view as role works</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>
-              View-As changes how the navigation, role badges, and gated
+              View as role changes how the navigation, role badges, and gated
               surfaces appear — for visual review only.
             </li>
             <li>
@@ -134,7 +122,7 @@ export default async function AdminViewAsPage({
             </li>
             <li>
               An orange banner stays visible at the top of every page until you
-              click <strong>Exit View-As</strong>.
+              click <strong>Exit view as role</strong>.
             </li>
           </ul>
         </div>

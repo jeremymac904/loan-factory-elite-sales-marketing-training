@@ -16,15 +16,29 @@ const library = [
   { title: "Roleplays", href: "/roleplays/", status: "Live" },
   { title: "Prompts", href: "/prompts/", status: "Live" },
   { title: "Recordings", href: "/recordings/", status: "Library" },
-  { title: "Video Library", href: "/ai-training/video-library/", status: "Library" },
+  {
+    title: "LO Development Video Library",
+    href: "/training-library/lo-development-videos/",
+    status: "Library",
+  },
+  {
+    title: "AI Advantage Video Library",
+    href: "/ai-training/video-library/",
+    status: "Library",
+  },
   {
     title: "Marketing Setup Assets",
     href: "/training-library/marketing-assets/",
     status: "Library",
   },
   {
-    title: "LO Development Clip Library",
+    title: "LO Development Video Library",
     href: "/training-library/clips/",
+    status: "Library",
+  },
+  {
+    title: "LO Development Source Videos",
+    href: "/lo-development/video-library/",
     status: "Library",
   },
   { title: "Content Skills", href: "/content-skills/", status: "Rules" },

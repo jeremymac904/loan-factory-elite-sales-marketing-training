@@ -40,12 +40,12 @@ export default function ViewAsControls({
       });
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
-        setError(body.error ?? "Could not start View-As.");
+        setError(body.error ?? "Could not start view as role.");
         return;
       }
       router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "View-As failed.");
+      setError(err instanceof Error ? err.message : "View as role failed.");
     } finally {
       setLoading(false);
     }

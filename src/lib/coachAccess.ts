@@ -11,11 +11,23 @@ const COACH_ROLES = [
   "lo_development_member",
   "training_academy",
   "corporate_coach",
+  "corporate_coach_supervisor",
+  "lo_mastery_coach",
+  "loan_factory_alliance_coach",
+  "coaching_director",
   "team_leader",
 ];
 
 // Roles that see ALL coaches, team leaders, assignments and members.
-const SEE_ALL_ROLES = ["master_admin", "admin", "lo_development_lead"];
+const SEE_ALL_ROLES = [
+  "master_admin",
+  "admin",
+  "lo_development_lead",
+  "corporate_coach_supervisor",
+  "lo_mastery_coach",
+  "loan_factory_alliance_coach",
+  "coaching_director",
+];
 
 // Pure check for navigation gating (real role; no View-As). Used to decide
 // whether to surface the Coach Command Center link in shared chrome.
@@ -73,6 +85,10 @@ export async function getCoachAccess(): Promise<CoachAccess> {
   let scope: CoachScope = "none";
   if (seesAll) scope = "all";
   else if (roleForGate === "corporate_coach") scope = "corporate_coach";
+  else if (roleForGate === "corporate_coach_supervisor") scope = "all";
+  else if (roleForGate === "lo_mastery_coach") scope = "all";
+  else if (roleForGate === "loan_factory_alliance_coach") scope = "all";
+  else if (roleForGate === "coaching_director") scope = "all";
   else if (roleForGate === "team_leader") scope = "team_leader";
   else if (
     roleForGate === "lo_development_member" ||

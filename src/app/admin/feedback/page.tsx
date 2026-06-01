@@ -3,6 +3,8 @@ import { isBetaPreviewEnabled } from "@/lib/betaPreview";
 import { isAdminRole } from "@/lib/supabase/auth";
 import { getBetaUserSession } from "@/lib/supabase/session";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
+import AccessNotice from "@/components/AccessNotice";
+import { resolveProtectedAccess } from "@/lib/supabase/protectedAccess";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Admin · Feedback & Suggestions" };
@@ -75,19 +77,20 @@ export default async function AdminFeedbackPage() {
         isAdminRole(session.profile.role)));
 
   if (!isAdmin) {
+    const access = resolveProtectedAccess(session, isAdmin);
     return (
-      <section className="container-page py-16">
-        <div className="card max-w-2xl">
-          <h1 className="h-display text-3xl">Admin access required</h1>
-          <p className="prose-lf mt-3">
-            Feedback review is for approved Loan Factory admins. Ask Jeremy or
-            LO Development to review your access.
-          </p>
-          <Link href="/" className="btn-primary mt-6 inline-block">
-            Back to home
-          </Link>
-        </div>
-      </section>
+      <AccessNotice
+        surfaceLabel="Feedback & Suggestions"
+        status={access.status}
+        roleLabel={access.roleLabel}
+      >
+        {access.status === "signed-out" &&
+          "Feedback review is for approved Loan Factory admins."}
+        {access.status === "pending" &&
+          "Your account is signed in, but it is not approved for admin access yet."}
+        {access.status === "access-denied" &&
+          "Your current role does not include admin access."}
+      </AccessNotice>
     );
   }
 
