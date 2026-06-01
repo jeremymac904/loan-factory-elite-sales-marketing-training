@@ -98,7 +98,23 @@ export default async function CoachMemberProgressPage() {
           </div>
         ) : (
           <>
-            <div className="card mt-8 overflow-x-auto p-0">
+            <div className="mt-8 flex flex-wrap items-center gap-2 rounded-lg border border-lf-line bg-lf-mist/60 px-4 py-3">
+              <span className="lf-chip bg-lf-orangeSoft text-lf-orangeDark">
+                Sample data
+              </span>
+              <p className="prose-lf text-xs">
+                The progress table below is sample data from{" "}
+                <span className="font-mono text-lf-charcoal">
+                  src/data/coachCommandCenter.ts
+                </span>
+                , not live member records. It becomes live once{" "}
+                <code className="font-mono text-lf-charcoal">
+                  coaching_member_progress
+                </code>{" "}
+                is connected.
+              </p>
+            </div>
+            <div className="card mt-4 overflow-x-auto p-0">
               <table className="w-full text-left text-sm">
                 <thead className="border-b border-lf-line bg-lf-mist/60 text-xs uppercase tracking-wide text-lf-slate">
                   <tr>
@@ -161,7 +177,8 @@ export default async function CoachMemberProgressPage() {
             </div>
 
             <p className="prose-lf mt-6 text-xs text-lf-slate">
-              Manual tracking for now. Automation can be connected later.
+              Sample data, shown for layout. Manual tracking for now; live reads
+              can be connected later.
             </p>
           </>
         )}

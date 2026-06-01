@@ -27,6 +27,7 @@ export default async function LoDevelopmentVideoDetailPage({
     hostingStatus: video.hostingStatus,
     youtubeEmbedUrl: video.youtubeEmbedUrl,
     googleDriveUrl: video.googleDriveUrl,
+    youtubeVideoId: video.youtubeVideoId,
   });
 
   const hasYouTube = Boolean(video.youtubeEmbedUrl || video.youtubeVideoId);
@@ -65,19 +66,20 @@ export default async function LoDevelopmentVideoDetailPage({
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
           {/* Player + body */}
           <div className="space-y-6">
-            {hasYouTube ? (
+            {hasYouTube && embedSrc ? (
               <YouTubeEmbed
                 src={embedSrc}
                 title={video.title}
               />
             ) : hasDrive ? (
               <div className="card flex flex-col items-start gap-3">
-                <span className="lf-chip">Google Drive fallback</span>
+                <span className="lf-chip">Google Drive</span>
                 <p className="text-sm text-lf-slate">
-                  This lesson is hosted on Google Drive while the YouTube upload is being prepared.
+                  This lesson opens in Google Drive while the YouTube upload is being prepared. It
+                  opens in a new tab; access follows your Google Drive permissions.
                 </p>
                 <a
-                  href={video.googleDriveUrl ?? "#"}
+                  href={video.googleDriveUrl ?? undefined}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
@@ -87,11 +89,14 @@ export default async function LoDevelopmentVideoDetailPage({
               </div>
             ) : (
               <div className="card flex flex-col items-start gap-2 border-dashed">
-                <span className="lf-chip">Recording needed</span>
-                <p className="text-sm font-semibold text-lf-navy">Video asset pending.</p>
+                <span className="lf-chip">{badge.label}</span>
+                <p className="text-sm font-semibold text-lf-navy">Video not available yet.</p>
                 <p className="text-sm text-lf-slate">
-                  This lesson has been catalogued from the source library, but the hosted video is not
-                  available yet. The recording will appear here once it is uploaded.
+                  {badge.label === "Manual review needed"
+                    ? "This lesson has been catalogued from the source library and is flagged for a manual review before it is staged. It will appear here once it has been reviewed and uploaded."
+                    : badge.label === "YouTube upload pending"
+                      ? "This lesson has been catalogued from the source library and is queued for YouTube upload. The player will appear here once the upload completes."
+                      : "This lesson has been catalogued from the source library, but it has not been staged to Google Drive or YouTube yet. The recording will appear here once it is uploaded."}
                 </p>
               </div>
             )}

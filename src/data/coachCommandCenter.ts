@@ -55,31 +55,43 @@ export const assignedPeople: AssignedPerson[] = [
 // Coverage visibility (Finding #12)
 // ---------------------------------------------------------------------------
 // Coverage / overview-of-all-coaches surfaces are restricted to master_admin,
-// LO Development lead, the Corporate Coach Supervisor role, and Edward Arvizo
-// (the Corporate Coach Supervisor). Normal corporate coaches and team leaders
-// only ever see THEIR own roster. The supervisor role itself resolves to a
-// `seesAll` / scope 'all' view in coachAccess.ts, so this name check is a
-// belt-and-suspenders allowance for the named supervisor persona.
+// LO Development lead, and the coaching-leadership roles (Corporate Coach
+// Supervisor, Coaching Director, LO Mastery / Loan Factory Alliance coaches).
+// Normal corporate coaches and team leaders only ever see THEIR own roster.
+// Access is ROLE-BASED: those roles resolve to `seesAll` / scope 'all' in
+// coachAccess.ts (SEE_ALL_ROLES). The secondary label check below is a
+// belt-and-suspenders allowance keyed on the Corporate Coach Supervisor ROLE
+// LABEL — never a person's name. Edward Arvizo is the Corporate Coach
+// Supervisor persona, but his access is granted by his seeded ROLE, not by
+// matching his name. See docs/role-model/role-aliases.md + role-matrix.md.
+export const CORPORATE_COACH_SUPERVISOR_LABEL = "Corporate Coach Supervisor";
+
+// Retained for backward compatibility / sample display labeling only. NOT used
+// for any access or permission decision (the name check was removed from
+// canSeeCoverage in favor of the role-label check below).
 export const COACH_COVERAGE_LEAD_NAME = "Edward Arvizo";
 
 export const coverageVisibilityRule =
   "Coaching coverage (the overview of ALL coaches and every roster) is visible " +
-  "only to master_admin, LO Development, the Corporate Coach Supervisor role, " +
-  "and Edward Arvizo as the Corporate Coach Supervisor. Corporate coaches and " +
-  "team leaders see only the people assigned to them.";
+  "only to master_admin, LO Development, and the coaching-leadership roles " +
+  "(Corporate Coach Supervisor, Coaching Director, LO Mastery / Loan Factory " +
+  "Alliance coaches). Corporate coaches and team leaders see only the people " +
+  "assigned to them. Access is role-based, not name-based.";
 
 /**
  * Whether the current view may see org-wide coaching coverage (Finding #12).
- * `seesAll` covers master_admin / admin / LO Development lead and the
- * Corporate Coach Supervisor role; Edward Arvizo is additionally allowed by
- * name as the Corporate Coach Supervisor persona even when previewing.
+ * Access is ROLE-BASED. `seesAll` already covers master_admin / admin / LO
+ * Development lead and every coaching-leadership role via SEE_ALL_ROLES in
+ * coachAccess.ts. The optional second argument is the effective ROLE LABEL
+ * (from getRoleLabel, e.g. "Corporate Coach Supervisor") — never a person's
+ * name — and is matched against the supervisor role label as belt-and-braces.
  */
 export function canSeeCoverage(
   seesAll: boolean,
   effectiveRoleLabel?: string | null,
 ): boolean {
   if (seesAll) return true;
-  return (effectiveRoleLabel ?? "").trim() === COACH_COVERAGE_LEAD_NAME;
+  return (effectiveRoleLabel ?? "").trim() === CORPORATE_COACH_SUPERVISOR_LABEL;
 }
 
 // ---------------------------------------------------------------------------

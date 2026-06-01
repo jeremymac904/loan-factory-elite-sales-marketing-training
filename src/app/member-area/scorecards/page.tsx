@@ -33,8 +33,9 @@ export default function MemberScorecardsPage() {
         <p className="prose-lf text-sm">
           <span className="font-semibold text-lf-charcoal">How this works:</span>{" "}
           fill the lines that apply, save a draft any time, then submit when your
-          week is complete. Submitting marks your scorecard ready for your coach
-          to review in the Coach Command Center.
+          week is complete. Everything is saved locally in this browser until the
+          database is connected — nothing is sent yet. Submitting marks your
+          scorecard ready for your coach to review in the Coach Command Center.
         </p>
       </div>
 

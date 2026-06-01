@@ -1,6 +1,7 @@
 import GoogleSignInButton from "@/components/GoogleSignInButton";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
 export const metadata = { title: "Sign In" };
 
 export default function LoginPage() {

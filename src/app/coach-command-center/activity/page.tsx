@@ -72,10 +72,28 @@ export default async function ActivitySnapshotPage() {
       ) : (
         <>
           <section className="container-page py-10">
-            <h2 className="h-display text-2xl">This week at a glance</h2>
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="h-display text-2xl">This week at a glance</h2>
+              <span className="lf-chip bg-lf-orangeSoft text-lf-orangeDark">
+                Sample roster
+              </span>
+            </div>
             <p className="prose-lf mt-1 text-sm">
-              Counts come straight from your roster and the scorecards your LOs
-              submitted.
+              These counts are computed live from your role-scoped roster — but
+              that roster is sample data (
+              <span className="font-mono text-lf-charcoal">
+                src/data/coachCommandCenter.ts
+              </span>
+              ) for now, so the numbers reflect sample members, not live
+              submissions. They become live once{" "}
+              <code className="font-mono text-lf-charcoal">
+                coach_assignments
+              </code>{" "}
+              and{" "}
+              <code className="font-mono text-lf-charcoal">
+                coaching_scorecards
+              </code>{" "}
+              are connected.
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {snapshot.map((metric) => (
@@ -138,7 +156,8 @@ export default async function ActivitySnapshotPage() {
             </div>
 
             <p className="prose-lf mt-4 text-xs text-lf-slate">
-              Live activity tracking is planned — see the integration plan.
+              Sample roster shown. Live activity tracking is planned — see the
+              integration plan.
             </p>
           </section>
         </>

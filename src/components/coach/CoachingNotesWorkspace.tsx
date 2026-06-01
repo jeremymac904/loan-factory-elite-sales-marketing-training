@@ -117,7 +117,7 @@ export default function CoachingNotesWorkspace({
             </h2>
           </div>
           <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-lf-charcoal">
-            Saved locally — DB wiring planned
+            Saved locally until the database is connected
           </span>
         </div>
 
@@ -216,9 +216,13 @@ export default function CoachingNotesWorkspace({
             </button>
             {justSaved && (
               <p className="text-sm font-semibold text-green-700">
-                Saved locally ✓
+                Saved locally in this browser ✓
               </p>
             )}
+            <p className="w-full text-xs text-lf-slate">
+              Notes are saved locally in this browser until the database is
+              connected — nothing is sent anywhere.
+            </p>
           </div>
         </form>
       </div>
@@ -236,8 +240,8 @@ export default function CoachingNotesWorkspace({
         </div>
         {notesForPerson.length === 0 ? (
           <p className="prose-lf mt-4 text-sm">
-            No saved notes yet for this member. Create one on the left — it saves
-            in this browser until DB wiring is connected.
+            No saved notes yet for this member. Create one on the left — it is
+            saved locally in this browser until the database is connected.
           </p>
         ) : (
           <ul className="mt-4 grid gap-3">

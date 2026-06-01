@@ -66,7 +66,11 @@ export const roleLabels: Record<string, string> = {
   master_admin: "Master Admin",
   admin: "Admin",
   lo_development_lead: "LO Development Lead",
-  lo_development_member: "LO Development",
+  lo_development_member: "LO Development Member",
+  // Legacy alias: a 20260527 migration seeds 'lo_development'. Keep this key so
+  // those rows resolve; treat it the same as lo_development_member. Canonical
+  // going forward is lo_development_lead + lo_development_member.
+  // See docs/role-model/role-aliases.md.
   lo_development: "LO Development",
   training_academy: "Training Academy",
   loan_officer_support: "Loan Officer Support",
@@ -238,6 +242,33 @@ export function canAccessGate(
       "master_admin",
       "admin",
     ].includes(profile.role ?? "");
+  }
+
+  if (gate === "support-routing") {
+    return [
+      "loan_officer",
+      "loan_officer_support",
+      "support_staff",
+      "lo_development",
+      "lo_development_lead",
+      "lo_development_member",
+      "master_admin",
+      "admin",
+    ].includes(profile.role ?? "");
+  }
+
+  if (gate === "marketing") {
+    return (
+      Boolean(permissions?.can_review_marketing) ||
+      [
+        "marketing",
+        "lo_development",
+        "lo_development_lead",
+        "lo_development_member",
+        "master_admin",
+        "admin",
+      ].includes(profile.role ?? "")
+    );
   }
 
   if (gate === "normal-lo") {

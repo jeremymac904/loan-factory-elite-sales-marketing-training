@@ -15,6 +15,7 @@ export type LoVideoCardModel = {
   sourceType: LoVideo["sourceType"];
   hostingStatus: LoVideo["hostingStatus"];
   youtubeEmbedUrl: string | null;
+  youtubeVideoId: string | null;
   googleDriveUrl: string | null;
   thumbnailPath: string | null;
   priority: LoVideo["priority"];
@@ -32,6 +33,7 @@ export default function LoVideoCard({ video }: { video: LoVideoCardModel }) {
     hostingStatus: video.hostingStatus,
     youtubeEmbedUrl: video.youtubeEmbedUrl,
     googleDriveUrl: video.googleDriveUrl,
+    youtubeVideoId: video.youtubeVideoId,
   });
 
   return (

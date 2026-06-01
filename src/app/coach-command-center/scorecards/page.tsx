@@ -105,11 +105,28 @@ export default async function ScorecardsPage() {
         </div>
       </section>
 
+      <section className="container-page pb-4">
+        <div className="flex flex-wrap items-center gap-2 rounded-lg border border-lf-line bg-lf-mist/60 px-4 py-3">
+          <span className="lf-chip bg-lf-orangeSoft text-lf-orangeDark">
+            Sample data
+          </span>
+          <p className="prose-lf text-xs">
+            The counts and the review queue below use a sample roster (
+            <span className="font-mono text-lf-charcoal">
+              src/data/coachCommandCenter.ts
+            </span>
+            ), not live submissions. They become live once{" "}
+            <code className="font-mono text-lf-charcoal">coaching_scorecards</code>{" "}
+            is connected.
+          </p>
+        </div>
+      </section>
+
       <section className="container-page pb-10">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="card">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-              Submitted
+              Submitted <span className="text-lf-orange">(sample)</span>
             </p>
             <p className="mt-2 text-3xl font-semibold text-lf-charcoal">
               {submitted.length}
@@ -117,7 +134,7 @@ export default async function ScorecardsPage() {
           </div>
           <div className="card">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-              Missing
+              Missing <span className="text-lf-orange">(sample)</span>
             </p>
             <p className="mt-2 text-3xl font-semibold text-lf-orange">
               {missing.length}
@@ -125,7 +142,7 @@ export default async function ScorecardsPage() {
           </div>
           <div className="card">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-              Up trends
+              Up trends <span className="text-lf-orange">(sample)</span>
             </p>
             <p className="mt-2 text-3xl font-semibold text-lf-charcoal">
               {scorecardReviews.filter((s) => s.trend === "up").length}
@@ -133,7 +150,7 @@ export default async function ScorecardsPage() {
           </div>
           <div className="card">
             <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-              Coach actions
+              Coach actions <span className="text-lf-orange">(sample)</span>
             </p>
             <p className="mt-2 text-3xl font-semibold text-lf-charcoal">
               {scorecardReviews.length}
@@ -145,10 +162,21 @@ export default async function ScorecardsPage() {
       <section className="container-page pb-10">
         <div className="card overflow-hidden p-0">
           <div className="border-b border-lf-line px-4 py-3">
-            <h2 className="h-display text-xl">Coach review queue</h2>
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="h-display text-xl">Coach review queue</h2>
+              <span className="lf-chip bg-lf-orangeSoft text-lf-orangeDark">
+                Sample data
+              </span>
+            </div>
             <p className="mt-1 text-xs text-lf-slate">
-              Submitted scorecards are ready for coaching review. Missing
-              scorecards need a draft reminder before the next call.
+              This is a sample queue that shows how submitted and missing
+              scorecards surface for review. Submitted scorecards are ready for
+              coaching review; missing scorecards need a draft reminder before
+              the next call. Live rows replace this once{" "}
+              <code className="font-mono text-lf-charcoal">
+                coaching_scorecards
+              </code>{" "}
+              is connected.
             </p>
           </div>
           <div className="overflow-x-auto">

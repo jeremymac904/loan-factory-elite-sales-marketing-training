@@ -24,6 +24,7 @@ export default function LoDevelopmentVideoLibraryPage() {
       sourceType: video.sourceType,
       hostingStatus: video.hostingStatus,
       youtubeEmbedUrl: video.youtubeEmbedUrl,
+      youtubeVideoId: video.youtubeVideoId,
       googleDriveUrl: video.googleDriveUrl,
       thumbnailPath: video.thumbnailPath,
       priority: video.priority,

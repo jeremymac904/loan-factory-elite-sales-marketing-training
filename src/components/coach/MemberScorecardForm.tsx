@@ -162,10 +162,10 @@ export default function MemberScorecardForm({
           }`}
         >
           {status === "saved"
-            ? "Saved locally ✓"
+            ? "Saved locally in this browser ✓"
             : status === "draft"
               ? "Draft — not yet saved"
-              : "Draft only"}
+              : "Saved locally until the database is connected"}
         </span>
       </div>
 
@@ -191,14 +191,17 @@ export default function MemberScorecardForm({
           Save draft
         </button>
         <p className="prose-lf text-xs text-lf-slate">
-          Submitting saves your scorecard locally and marks it ready for your
-          coach to review. Live submission to your coach is planned — see the
-          integration plan.
+          Saved locally in this browser until the database is connected.
+          Submitting marks your scorecard ready for your coach to review and
+          keeps it on this device — nothing is sent yet. Live submission to your
+          coach is planned.
         </p>
         {lastSaved && status === "saved" && (
           <p className="w-full text-sm font-semibold text-green-700">
-            Scorecard saved locally for week of {lastSaved.weekOf}. Your coach
-            reviews submitted scorecards in the Coach Command Center.
+            Scorecard saved locally in this browser for week of{" "}
+            {lastSaved.weekOf}. It stays on this device until the database is
+            connected; your coach reviews submitted scorecards in the Coach
+            Command Center.
           </p>
         )}
       </div>

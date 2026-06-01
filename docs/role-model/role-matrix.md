@@ -29,8 +29,8 @@ Definitions:
 | `master_admin` | Master Admin | `/admin/` | Yes (admin) | Yes | Full platform owner; all access, all coverage, View-as role. |
 | `admin` | Admin | `/admin/` | Yes (admin) | Yes | Platform administration and approvals; org-wide coaching visibility. |
 | `lo_development_lead` | LO Development Lead | `/lo-development/` | Yes (admin) | Yes | Runs LO Development; admin-level access and org-wide coverage. |
-| `lo_development_member` | LO Development | `/lo-development/` | Yes | No (LO Development scope) | LO Development staff; corporate onboarding + paid coaching members. |
-| `lo_development` | LO Development | `/lo-development/` | Yes (gates) | No | Legacy/alias LO Development access used by gate checks. |
+| `lo_development_member` | LO Development Member | `/lo-development/` | Yes | No (LO Development scope) | LO Development staff; corporate onboarding + paid coaching members. Canonical non-lead key. |
+| `lo_development` | LO Development | `/lo-development/` | Yes (gates) | No | Legacy alias of `lo_development_member` — see [`role-aliases.md`](./role-aliases.md). Kept for the 20260527 migration; do not delete. |
 | `training_academy` | Training Academy | `/training-academy/` | Yes | No (LO Development scope) | Owns Sales and Marketing 101-601 free internal training + academy content. |
 | `loan_officer_support` | Loan Officer Support | `/loan-officer-support/` | No | No | Supports loan officers; lender escalations and operational help. |
 | `corporate_coach` | Corporate Coach | `/coach-command-center/` | Yes | No (own roster) | Coaches new LOs through corporate onboarding; sees only assigned LOs. |
@@ -75,14 +75,28 @@ App-layer representation (no Supabase seed/migration changes were made):
 
 - Role key `corporate_coach_supervisor`, label **Corporate Coach Supervisor**
   (`roleLabels` in `src/lib/supabase/auth.ts`).
-- In `src/lib/coachAccess.ts` he is in `COACH_ROLES` and `SEE_ALL_ROLES`, so the
-  role resolves to `seesAll = true` and `scope = "all"` — org-wide coverage.
+- **Coverage access is ROLE-BASED, not name-based.** Both
+  `corporate_coach_supervisor` and `coaching_director` are in `SEE_ALL_ROLES`
+  in `src/lib/coachAccess.ts`, so either role resolves to `seesAll = true` and
+  `scope = "all"` — org-wide coverage.
+- Seed note: in `src/data/approvedUsers.ts` Edward Arvizo is seeded as
+  `coaching_director` with `additionalRoles: ["corporate_coach"]`, **not**
+  literally `corporate_coach_supervisor`. He still gets org-wide coverage
+  because `coaching_director` is also in `SEE_ALL_ROLES`. (Seed roles were not
+  changed by P2; flagged to the Lead for a decision on whether to retitle the
+  seed to `corporate_coach_supervisor`.)
 - In `src/data/coachCommandCenter.ts`:
   - `CORPORATE_COACH_SUPERVISOR_NAME = "Edward Arvizo"` and
-    `CORPORATE_COACH_SUPERVISOR_ROLE = "corporate_coach_supervisor"`.
-  - `COACH_COVERAGE_LEAD_NAME = "Edward Arvizo"` allows the named supervisor
-    persona to see coverage even while previewing (belt-and-suspenders alongside
-    the role-based `seesAll`).
+    `CORPORATE_COACH_SUPERVISOR_ROLE = "corporate_coach_supervisor"` are
+    **sample-display constants only** — not access control.
+  - `canSeeCoverage(seesAll, effectiveRoleLabel)` is role-based: it returns
+    true when `seesAll` is true, or as belt-and-braces when the effective ROLE
+    LABEL equals `CORPORATE_COACH_SUPERVISOR_LABEL` ("Corporate Coach
+    Supervisor"). The previous comparison against `COACH_COVERAGE_LEAD_NAME`
+    ("Edward Arvizo") was removed — `effectiveRoleLabel` is always a role label
+    from `getRoleLabel`, never a person's name, so the name check was unreachable
+    dead code. `COACH_COVERAGE_LEAD_NAME` is retained for sample-display labeling
+    only.
   - `coachCoverage` includes Edward Arvizo as an `lo_mastery_coach`-type
     coverage row (he directly carries the sample LO Mastery / Alliance members),
     plus Kevin Truong (corporate coach) and Jeremy McDonald (team leader).

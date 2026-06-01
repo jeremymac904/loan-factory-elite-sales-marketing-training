@@ -476,6 +476,7 @@ export const commandCenterStarterPrompts: StarterPrompt[] = [
   { id: "scorecard", label: "How do I submit my weekly scorecard?" },
   { id: "sales_training", label: "Where are the Sales and Marketing trainings?" },
   { id: "ai_advantage", label: "Where are the AI Advantage videos?" },
+  { id: "lo_dev_videos", label: "Where are the LO Development videos?" },
   { id: "support", label: "How do I find LO Support resources?" },
   { id: "facegram", label: "How do I use FaceGram?" },
   { id: "walkthroughs", label: "How do I find video walkthroughs?" },

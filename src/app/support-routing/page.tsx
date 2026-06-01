@@ -1,8 +1,10 @@
 import Link from "next/link";
 import ClipLibraryRail from "@/components/ClipLibraryRail";
+import RoleGate from "@/components/RoleGate";
 import SectionHeading from "@/components/SectionHeading";
 import SupportTeamDirectory from "@/components/SupportTeamDirectory";
 
+export const dynamic = "force-dynamic";
 export const metadata = { title: "Support Routing" };
 
 const supportSections = [
@@ -66,7 +68,7 @@ const requestLanes = [
 
 export default function SupportRoutingPage() {
   return (
-    <>
+    <RoleGate gate="support-routing">
       <section className="relative isolate overflow-hidden bg-lf-navy text-white">
         <div
           aria-hidden
@@ -164,6 +166,6 @@ export default function SupportRoutingPage() {
       />
 
       <SupportTeamDirectory />
-    </>
+    </RoleGate>
   );
 }

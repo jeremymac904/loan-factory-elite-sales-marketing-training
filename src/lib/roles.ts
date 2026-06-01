@@ -297,10 +297,12 @@ export type GatedSurface =
   | "dashboard"
   | "lo-development"
   | "loan-officer-support"
+  | "marketing"
   | "member-area"
   | "normal-lo"
   | "resources"
   | "support"
+  | "support-routing"
   | "training-academy"
   | "team-leader-guide"
   | "clip-library";
@@ -337,6 +339,13 @@ const accessByGate: Record<GatedSurface, RoleId[]> = {
     "lo-development-member",
     "loan-officer-support",
   ],
+  marketing: [
+    "admin",
+    "master-admin",
+    "lo-development-lead",
+    "lo-development-member",
+    "marketing",
+  ],
   "member-area": [
     "admin",
     "master-admin",
@@ -363,6 +372,15 @@ const accessByGate: Record<GatedSurface, RoleId[]> = {
     "master-admin",
     "lo-development-lead",
     "loan-officer-support",
+  ],
+  "support-routing": [
+    "admin",
+    "master-admin",
+    "lo-development-lead",
+    "lo-development-member",
+    "loan-officer-support",
+    "support-staff",
+    "loan-officer",
   ],
   "training-academy": [
     "admin",

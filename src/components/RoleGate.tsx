@@ -68,6 +68,10 @@ function gateToLabel(gate: GatedSurface): string {
       return "Support";
     case "training-academy":
       return "Training Academy";
+    case "marketing":
+      return "Marketing";
+    case "support-routing":
+      return "Support Routing";
     case "coach-guide":
       return "Coach Guide";
     case "team-leader-guide":
