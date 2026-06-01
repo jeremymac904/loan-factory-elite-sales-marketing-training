@@ -1,16 +1,16 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function ViewAsExitButton() {
-  const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   async function exitViewAs() {
     setLoading(true);
     await fetch("/api/view-as", { method: "DELETE" });
-    router.refresh();
+    // Full reload back to Master Admin for a clean return — a soft refresh can
+    // leave header/dropdown state stale. Matches the documented exit behavior.
+    window.location.assign("/admin/");
   }
 
   return (

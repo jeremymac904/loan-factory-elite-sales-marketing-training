@@ -1,8 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { getRoleLabel } from "@/lib/supabase/auth";
+import { getRoleDashboardHref, getRoleLabel } from "@/lib/supabase/auth";
 
 type UserOption = {
   email: string;
@@ -25,7 +24,6 @@ export default function ViewAsPicker({
   hasActiveViewAs,
   initialRole,
 }: Props) {
-  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [role, setRole] = useState(
@@ -51,12 +49,15 @@ export default function ViewAsPicker({
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
         setError(body.error ?? "Could not start view as role.");
+        setLoading(false);
         return;
       }
-      router.refresh();
+      // Full reload (matches ViewAsExitButton) so the whole shell re-resolves
+      // the new view-as role and any open account dropdown cannot persist.
+      // Land on the previewed role's dashboard.
+      window.location.assign(getRoleDashboardHref(payload.role));
     } catch (err) {
       setError(err instanceof Error ? err.message : "View as role failed.");
-    } finally {
       setLoading(false);
     }
   }
@@ -68,12 +69,13 @@ export default function ViewAsPicker({
       const response = await fetch("/api/view-as", { method: "DELETE" });
       if (!response.ok) {
         setError("Could not exit view as role.");
+        setLoading(false);
         return;
       }
-      router.refresh();
+      // Full reload back to Master Admin (matches ViewAsExitButton).
+      window.location.assign("/admin/");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Exit failed.");
-    } finally {
       setLoading(false);
     }
   }

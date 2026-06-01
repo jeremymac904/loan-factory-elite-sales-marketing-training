@@ -2,16 +2,13 @@ import Link from "next/link";
 import { getRoleDashboardHref, getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { roleCanCoach } from "@/lib/coachAccess";
 import { getBetaUserSession } from "@/lib/supabase/session";
+import AccountMenu, { type AccountMenuItem } from "./header/AccountMenu";
 
 type Props = {
   variant?: "desktop" | "mobile";
 };
 
-type MenuItem = {
-  href: string;
-  label: string;
-  tone?: "default" | "danger";
-};
+type MenuItem = AccountMenuItem;
 
 export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
   const session = await getBetaUserSession();
@@ -83,43 +80,9 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
     );
   }
 
-  return (
-    <details className="group relative">
-      <summary className="inline-flex cursor-pointer list-none items-center gap-2 whitespace-nowrap rounded-lg border border-lf-line bg-white px-3 py-2 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange [&::-webkit-details-marker]:hidden">
-        <span>{roleLabel}</span>
-        <span aria-hidden className="text-xs text-lf-slate transition group-open:rotate-180">
-          &#9662;
-        </span>
-      </summary>
-      <div className="absolute right-0 z-50 mt-2 w-60 overflow-hidden rounded-xl border border-lf-line bg-white py-2 shadow-lift">
-        <div className="border-b border-lf-line px-4 pb-2">
-          <p className="truncate text-sm font-semibold text-lf-charcoal">
-            {email}
-          </p>
-          <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-            {roleLabel}
-          </p>
-        </div>
-        {items.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            // Auth-sensitive route: never prefetch. A prefetch that runs during a
-            // transient auth-resolution miss would cache a signed-out RSC payload
-            // and client navigation would reuse it (header shows the user, page
-            // body shows "Sign in required"). prefetch={false} forces a fresh
-            // cookie-present fetch at click time.
-            prefetch={false}
-            className={
-              item.tone === "danger"
-                ? "block px-4 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-50"
-                : "block px-4 py-2 text-sm font-semibold text-lf-charcoal transition hover:bg-lf-mist hover:text-lf-orange"
-            }
-          >
-            {item.label}
-          </Link>
-        ))}
-      </div>
-    </details>
-  );
+  // Desktop: hand the resolved session + role-gated items to the client island,
+  // which closes the dropdown on role change, route change, outside click,
+  // Escape, and item click (the native <details> never did). prefetch={false}
+  // is preserved inside AccountMenu.
+  return <AccountMenu email={email} roleLabel={roleLabel} items={items} />;
 }

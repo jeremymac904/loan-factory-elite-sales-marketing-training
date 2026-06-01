@@ -55,20 +55,24 @@ export const assignedPeople: AssignedPerson[] = [
 // Coverage visibility (Finding #12)
 // ---------------------------------------------------------------------------
 // Coverage / overview-of-all-coaches surfaces are restricted to master_admin,
-// LO Development lead, and Edward Arvizo (corporate coach lead). Normal
-// corporate coaches and team leaders only ever see THEIR own roster.
+// LO Development lead, the Corporate Coach Supervisor role, and Edward Arvizo
+// (the Corporate Coach Supervisor). Normal corporate coaches and team leaders
+// only ever see THEIR own roster. The supervisor role itself resolves to a
+// `seesAll` / scope 'all' view in coachAccess.ts, so this name check is a
+// belt-and-suspenders allowance for the named supervisor persona.
 export const COACH_COVERAGE_LEAD_NAME = "Edward Arvizo";
 
 export const coverageVisibilityRule =
   "Coaching coverage (the overview of ALL coaches and every roster) is visible " +
-  "only to master_admin, LO Development, and Edward Arvizo as the corporate " +
-  "coach lead. Corporate coaches and team leaders see only the people assigned " +
-  "to them.";
+  "only to master_admin, LO Development, the Corporate Coach Supervisor role, " +
+  "and Edward Arvizo as the Corporate Coach Supervisor. Corporate coaches and " +
+  "team leaders see only the people assigned to them.";
 
 /**
  * Whether the current view may see org-wide coaching coverage (Finding #12).
- * `seesAll` covers master_admin / admin / LO Development lead; Edward Arvizo is
- * additionally allowed as the corporate coach lead even without a seesAll role.
+ * `seesAll` covers master_admin / admin / LO Development lead and the
+ * Corporate Coach Supervisor role; Edward Arvizo is additionally allowed by
+ * name as the Corporate Coach Supervisor persona even when previewing.
  */
 export function canSeeCoverage(
   seesAll: boolean,
@@ -76,6 +80,171 @@ export function canSeeCoverage(
 ): boolean {
   if (seesAll) return true;
   return (effectiveRoleLabel ?? "").trim() === COACH_COVERAGE_LEAD_NAME;
+}
+
+// ---------------------------------------------------------------------------
+// Corporate Coach Supervisor oversight (Mission 2)
+// ---------------------------------------------------------------------------
+// Edward Arvizo is the Corporate Coach Supervisor — the oversight role above
+// the corporate coaches, LO Mastery coaches, Loan Factory Alliance coaches, and
+// team leaders. The supervisor view surfaces coverage across every coach and
+// roster, plus scorecard trends, member progress, training completion, and
+// follow-up activity. Sample/placeholder values are clearly labeled — they are
+// NOT live metrics. When the coaching Supabase tables are populated these can
+// be replaced with live reads.
+export const CORPORATE_COACH_SUPERVISOR_NAME = "Edward Arvizo";
+export const CORPORATE_COACH_SUPERVISOR_ROLE = "corporate_coach_supervisor";
+
+export type CoverageCoachType =
+  | "corporate_coach"
+  | "lo_mastery_coach"
+  | "loan_factory_alliance_coach"
+  | "team_leader";
+
+export const coverageCoachTypeLabels: Record<CoverageCoachType, string> = {
+  corporate_coach: "Corporate Coach",
+  lo_mastery_coach: "LO Mastery Coach",
+  loan_factory_alliance_coach: "Loan Factory Alliance Coach",
+  team_leader: "Team Leader",
+};
+
+export type CoachCoverageRow = {
+  id: string;
+  coachName: string;
+  coachType: CoverageCoachType;
+  // Roster the coach owns (subset of assignedPeople by coach name).
+  assignedCount: number;
+  needsAttention: number;
+  scorecardsSubmitted: number;
+  scorecardsMissing: number;
+  // Coaching coverage / cadence signal (sample).
+  coverageStatus: "on_track" | "watch" | "at_risk";
+  // Scorecard trend across this coach's roster (sample).
+  scorecardTrend: "up" | "flat" | "down";
+  // Average accountability/training completion across roster (sample, labeled).
+  avgAccountability: string;
+  trainingCompletion: string;
+  followUpActivity: string;
+  lastReview: string;
+};
+
+// Derive each coach's roster counts from the shared sample roster so the
+// supervisor numbers stay consistent with the per-coach views.
+function rosterStatsForCoach(coachName: string): {
+  assignedCount: number;
+  needsAttention: number;
+  scorecardsSubmitted: number;
+  scorecardsMissing: number;
+} {
+  const roster = assignedPeople.filter((p) => p.coach === coachName);
+  return {
+    assignedCount: roster.length,
+    needsAttention: roster.filter((p) => p.status !== "active").length,
+    scorecardsSubmitted: roster.filter((p) => p.scorecardStatus === "submitted")
+      .length,
+    scorecardsMissing: roster.filter((p) => p.scorecardStatus === "missing")
+      .length,
+  };
+}
+
+// Sample supervisor coverage rows. Coach names match the roster sample data so
+// assigned/scorecard counts are real derivations; cadence, trend, training, and
+// follow-up signals are clearly-labeled sample placeholders.
+export const coachCoverage: CoachCoverageRow[] = [
+  {
+    id: "cov-edward-mastery",
+    coachName: "Edward Arvizo",
+    coachType: "lo_mastery_coach",
+    ...rosterStatsForCoach("Edward Arvizo"),
+    coverageStatus: "watch",
+    scorecardTrend: "up",
+    avgAccountability: "78 (sample)",
+    trainingCompletion: "64% of assigned (sample)",
+    followUpActivity: "5 follow-ups this week (sample)",
+    lastReview: "This week",
+  },
+  {
+    id: "cov-kevin-corporate",
+    coachName: "Kevin Truong",
+    coachType: "corporate_coach",
+    ...rosterStatsForCoach("Kevin Truong"),
+    coverageStatus: "at_risk",
+    scorecardTrend: "flat",
+    avgAccountability: "n/a — onboarding (sample)",
+    trainingCompletion: "50% of onboarding clips (sample)",
+    followUpActivity: "1 welcome call overdue (sample)",
+    lastReview: "Needs review",
+  },
+  {
+    id: "cov-jeremy-team",
+    coachName: "Jeremy McDonald",
+    coachType: "team_leader",
+    ...rosterStatsForCoach("Jeremy McDonald"),
+    coverageStatus: "on_track",
+    scorecardTrend: "up",
+    avgAccountability: "81 (sample)",
+    trainingCompletion: "72% of assigned (sample)",
+    followUpActivity: "3 pipeline follow-ups (sample)",
+    lastReview: "This week",
+  },
+];
+
+export const coverageStatusMeta: Record<
+  CoachCoverageRow["coverageStatus"],
+  { label: string; class: string }
+> = {
+  on_track: { label: "On track", class: "bg-green-100 text-green-800" },
+  watch: { label: "Watch", class: "bg-yellow-100 text-yellow-800" },
+  at_risk: { label: "At risk", class: "bg-lf-orangeSoft text-lf-orangeDark" },
+};
+
+export const trendMeta: Record<
+  CoachCoverageRow["scorecardTrend"],
+  { label: string; symbol: string }
+> = {
+  up: { label: "Up", symbol: "▲" },
+  flat: { label: "Flat", symbol: "▬" },
+  down: { label: "Down", symbol: "▼" },
+};
+
+export type SupervisorCoverageSummary = {
+  coaches: number;
+  corporateCoaches: number;
+  loMasteryCoaches: number;
+  allianceCoaches: number;
+  teamLeaders: number;
+  assignedLOs: number;
+  needsAttention: number;
+  scorecardsSubmitted: number;
+  scorecardsMissing: number;
+  coverageAtRisk: number;
+};
+
+/**
+ * Org-wide oversight rollup for the Corporate Coach Supervisor. Derived from
+ * the shared sample roster + coverage rows so the supervisor totals stay
+ * consistent with the per-coach views.
+ */
+export function buildSupervisorCoverageSummary(): SupervisorCoverageSummary {
+  const byType = (t: CoverageCoachType) =>
+    coachCoverage.filter((c) => c.coachType === t).length;
+  return {
+    coaches: coachCoverage.length,
+    corporateCoaches: byType("corporate_coach"),
+    loMasteryCoaches: byType("lo_mastery_coach"),
+    allianceCoaches: byType("loan_factory_alliance_coach"),
+    teamLeaders: byType("team_leader"),
+    assignedLOs: assignedPeople.length,
+    needsAttention: assignedPeople.filter((p) => p.status !== "active").length,
+    scorecardsSubmitted: assignedPeople.filter(
+      (p) => p.scorecardStatus === "submitted",
+    ).length,
+    scorecardsMissing: assignedPeople.filter(
+      (p) => p.scorecardStatus === "missing",
+    ).length,
+    coverageAtRisk: coachCoverage.filter((c) => c.coverageStatus === "at_risk")
+      .length,
+  };
 }
 
 export function peopleForScope(

@@ -6,6 +6,7 @@ import BetaPreviewBanner from "@/components/BetaPreviewBanner";
 import ViewAsBanner from "@/components/ViewAsBanner";
 import HeyGenVideoWidget from "@/components/HeyGenVideoWidget";
 import SuggestionModal from "@/components/SuggestionModal";
+import RoleAssistantMount from "@/components/assistant/RoleAssistantMount";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ export default function RootLayout({
         <BetaPreviewBanner />
         <main>{children}</main>
         <SiteFooter />
+        <RoleAssistantMount />
         <HeyGenVideoWidget />
         <SuggestionModal
           triggerLabel="Send Feedback"

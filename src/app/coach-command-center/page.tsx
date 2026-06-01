@@ -9,6 +9,11 @@ import {
   scorecardReviews,
   canSeeCoverage,
   coverageVisibilityRule,
+  coachCoverage,
+  coverageCoachTypeLabels,
+  coverageStatusMeta,
+  trendMeta,
+  buildSupervisorCoverageSummary,
 } from "@/data/coachCommandCenter";
 
 export const dynamic = "force-dynamic";
@@ -83,6 +88,15 @@ export default async function CoachCommandCenterPage() {
   // Finding #12: coverage / overview-of-all-coaches is restricted to
   // master_admin, LO Development, and Edward Arvizo (corporate coach lead).
   const showCoverage = canSeeCoverage(access.seesAll, access.effectiveRoleLabel);
+  // Supervisor oversight rollup (only used when the coverage section renders).
+  const coverageSummary = buildSupervisorCoverageSummary();
+  const supervisorSummaryCards = [
+    { label: "Coaches", value: coverageSummary.coaches.toString() },
+    { label: "Team leaders", value: coverageSummary.teamLeaders.toString() },
+    { label: "Assigned LOs", value: coverageSummary.assignedLOs.toString() },
+    { label: "Need attention", value: coverageSummary.needsAttention.toString() },
+    { label: "Coverage at risk", value: coverageSummary.coverageAtRisk.toString() },
+  ];
   const visiblePeople = people.slice(0, 6);
   const attentionPeople = people.filter(
     (p) => p.status === "needs_nudge" || p.status === "stuck" || p.status === "inactive",
@@ -353,19 +367,114 @@ export default async function CoachCommandCenterPage() {
 
       {showCoverage && (
         <section className="container-page pb-14">
-          <div className="card flex flex-wrap items-center justify-between gap-4 border-lf-line bg-lf-mist">
-            <div className="max-w-2xl">
-              <h2 className="h-display text-xl">Coaching coverage</h2>
-              <p className="prose-lf mt-1 text-sm">
-                Org-wide view of every coach, team leader, and assigned member —
-                manage which coaches and team leaders cover each member across
-                Loan Factory.
-              </p>
-              <p className="mt-2 text-xs text-lf-slate">{coverageVisibilityRule}</p>
+          <div className="card overflow-hidden p-0">
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-lf-line px-4 py-3">
+              <div className="max-w-2xl">
+                <p className="text-xs font-semibold uppercase tracking-wide text-lf-orangeDark">
+                  Corporate Coach Supervisor view
+                </p>
+                <h2 className="h-display text-xl">Coaching coverage (supervisor view)</h2>
+                <p className="prose-lf mt-1 text-sm">
+                  Org-wide oversight across corporate coaches, LO Mastery coaches,
+                  Loan Factory Alliance coaches, and team leaders — coverage,
+                  scorecard trends, member progress, training completion, and
+                  follow-up activity at a glance.
+                </p>
+              </div>
+              <Link href="/admin/coach-assignments/" className="btn-primary">
+                Manage assignments
+              </Link>
             </div>
-            <Link href="/admin/coach-assignments/" className="btn-primary">
-              Manage assignments
-            </Link>
+
+            {/* Org-wide oversight rollup. Sample/derived values only. */}
+            <div className="grid gap-3 border-b border-lf-line px-4 py-4 sm:grid-cols-2 lg:grid-cols-5">
+              {supervisorSummaryCards.map((card) => (
+                <div
+                  key={card.label}
+                  className="rounded-lg border border-lf-line bg-white px-3 py-2"
+                >
+                  <p className="text-lg font-bold text-lf-charcoal">{card.value}</p>
+                  <p className="mt-0.5 text-xs font-semibold text-lf-slate">
+                    {card.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Per-coach coverage table. Assigned/scorecard counts derive from
+                the shared roster; cadence, trend, training and follow-up are
+                clearly-labeled sample placeholders. */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead className="border-b border-lf-line bg-lf-mist/60 text-xs uppercase tracking-wide text-lf-slate">
+                  <tr>
+                    <th className="px-4 py-2 font-semibold">Coach</th>
+                    <th className="px-4 py-2 font-semibold">Type</th>
+                    <th className="px-4 py-2 font-semibold">Assigned</th>
+                    <th className="px-4 py-2 font-semibold">Needs attn</th>
+                    <th className="px-4 py-2 font-semibold">Scorecards</th>
+                    <th className="px-4 py-2 font-semibold">Trend</th>
+                    <th className="px-4 py-2 font-semibold">Training</th>
+                    <th className="px-4 py-2 font-semibold">Follow-up</th>
+                    <th className="px-4 py-2 font-semibold">Coverage</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-lf-line">
+                  {coachCoverage.map((row) => (
+                    <tr key={row.id} className="hover:bg-lf-mist/40">
+                      <td className="px-4 py-2">
+                        <p className="font-semibold text-lf-charcoal">
+                          {row.coachName}
+                        </p>
+                        <p className="text-xs text-lf-slate">
+                          Last review: {row.lastReview}
+                        </p>
+                      </td>
+                      <td className="px-4 py-2 text-xs text-lf-charcoal">
+                        {coverageCoachTypeLabels[row.coachType]}
+                      </td>
+                      <td className="px-4 py-2 text-xs text-lf-charcoal">
+                        {row.assignedCount}
+                      </td>
+                      <td className="px-4 py-2 text-xs text-lf-charcoal">
+                        {row.needsAttention}
+                      </td>
+                      <td className="px-4 py-2 text-xs text-lf-slate">
+                        {row.scorecardsSubmitted} in / {row.scorecardsMissing} out
+                      </td>
+                      <td className="px-4 py-2 text-xs text-lf-charcoal">
+                        <span aria-hidden className="mr-1 text-lf-orange">
+                          {trendMeta[row.scorecardTrend].symbol}
+                        </span>
+                        {trendMeta[row.scorecardTrend].label}
+                      </td>
+                      <td className="px-4 py-2 text-xs text-lf-slate">
+                        {row.trainingCompletion}
+                      </td>
+                      <td className="px-4 py-2 text-xs text-lf-slate">
+                        {row.followUpActivity}
+                      </td>
+                      <td className="px-4 py-2">
+                        <span
+                          className={`rounded-full px-2 py-0.5 text-xs font-semibold ${coverageStatusMeta[row.coverageStatus].class}`}
+                        >
+                          {coverageStatusMeta[row.coverageStatus].label}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="border-t border-lf-line px-4 py-3">
+              <p className="text-xs text-lf-slate">{coverageVisibilityRule}</p>
+              <p className="mt-1 text-xs text-lf-slate">
+                Coverage cadence, scorecard trend, training completion, and
+                follow-up activity shown here are sample/placeholder signals.
+                They become live once coaching activity tables are populated.
+              </p>
+            </div>
           </div>
         </section>
       )}
