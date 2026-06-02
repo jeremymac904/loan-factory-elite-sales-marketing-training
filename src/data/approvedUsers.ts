@@ -32,6 +32,14 @@ export const approvedUserSeeds: ApprovedUserSeed[] = [
     title: null,
   },
   {
+    // Approved test user for the Loan Factory Alliance member experience.
+    email: "seth.august@loanfactory.com",
+    role: "coaching_member_level_2",
+    full_name: "Seth August",
+    department: "Loan Factory Alliance",
+    title: null,
+  },
+  {
     email: "andre.king@loanfactory.com",
     role: "lo_development_lead",
     full_name: "Andre King",
@@ -242,6 +250,13 @@ export const approvedUserSeeds: ApprovedUserSeed[] = [
     full_name: "Leslie Do",
     department: "Marketing",
     title: null,
+  },
+  {
+    email: "seth.august@loanfactory.com",
+    role: "coaching_member_level_2",
+    full_name: "Seth August",
+    department: "Loan Factory Alliance",
+    title: "LO Alliance Loan Officer",
   },
   {
     email: "chilinh.nguyen@loanfactory.com",
