@@ -14,7 +14,7 @@ const leaderboardLanes = [
   {
     title: "Coaching resource completion",
     description:
-      "Assigned coaching resources, roleplays, resource reviews, and action-item completion. Free 101-601 course progress is tracked separately.",
+      "Assigned coaching resources, roleplays, resource reviews, and action-item completion.",
   },
   {
     title: "Coaching follow-through",
@@ -22,9 +22,9 @@ const leaderboardLanes = [
       "Completed coach action items, scorecard updates, and session prep submitted on time.",
   },
   {
-    title: "Community contribution",
+    title: "Peer support",
     description:
-      "Useful FaceGram examples, peer support, script improvements, and approved resource shares.",
+      "Helpful questions, wins, and approved resource shares inside the coaching community.",
   },
 ];
 
@@ -36,9 +36,9 @@ export default function MemberLeaderboardsPage() {
         title="Leaderboards that reward the controllable work."
         body={
           <p>
-            Recognition should focus on effort, consistency, training progress,
-            coaching follow-through, and useful contribution. Free training
-            completion stays separate from paid coaching leaderboards.
+            Recognition should focus on effort, consistency, coaching progress,
+            and useful contribution. Paid coaching leaderboards stay separate
+            from any free internal training.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"

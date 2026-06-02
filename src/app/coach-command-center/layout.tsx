@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 import { getCoachAccess } from "@/lib/coachAccess";
-import CoachAssistantPanel from "@/components/coach/CoachAssistantPanel";
-import { peopleForScope } from "@/data/coachCommandCenter";
 import AccessNotice from "@/components/AccessNotice";
 
 // Gate the whole /coach-command-center subtree to coaches, team leaders, and
@@ -39,15 +37,5 @@ export default async function CoachCommandCenterLayout({
     );
   }
 
-  const people = peopleForScope(access.scope);
-
-  return (
-    <>
-      {children}
-      <CoachAssistantPanel
-        people={people}
-        coachLabel={access.effectiveRoleLabel}
-      />
-    </>
-  );
+  return <>{children}</>;
 }

@@ -335,7 +335,7 @@ export function computeActivitySnapshot(
       label: "Resource assignments",
       value: people.filter((p) => p.resourceAssignment).length.toString(),
       note: "Manual coaching task tracking.",
-      href: "/coach-command-center/training-plan/",
+      href: "/coach-command-center/resources/",
     },
   ];
 }
@@ -344,9 +344,9 @@ export const todaysActions: { label: string; detail: string; href?: string }[] =
   { label: "Follow up with LOs needing a nudge", detail: "2 assigned LOs are at Needs nudge or Stuck.", href: "/coach-command-center/team/" },
   { label: "Review submitted scorecards", detail: "Check weekly execution + commitments.", href: "/coach-command-center/scorecards/" },
   { label: "Check missing activity", detail: "Spot LOs with no logged activity this week.", href: "/coach-command-center/activity/" },
-  { label: "Send a coaching nudge", detail: "Draft a check-in to a stuck LO.", href: "/coach-command-center/messages/" },
-  { label: "Schedule a training or Power Hour", detail: "Add a coaching or team session.", href: "/coach-command-center/calendar/" },
-  { label: "Recognize a win on FaceGram", detail: "Celebrate progress in the team group.", href: "/facegram/" },
+  { label: "Open coaching notes", detail: "Capture a win, blocker, or next action.", href: "/coach-command-center/coaching-notes/" },
+  { label: "Schedule a coaching call", detail: "Add a coaching or team session.", href: "/coach-command-center/calendar/" },
+  { label: "Open coaching resources", detail: "Jump to the hub for member tools.", href: "/coach-command-center/resources/" },
 ];
 
 export const activitySnapshot: { label: string; value: string; note?: string }[] = [
@@ -446,7 +446,7 @@ export const calendarEventTypes: {
 }[] = [
   { type: "one_on_one", title: "One-on-one coaching session", description: "Individual coaching with an assigned LO.", defaultDuration: "30 min", inviteDetail: "Loan Factory 1:1 Coaching — agenda: wins, blockers, next-week commitments." },
   { type: "group_call", title: "Group coaching call", description: "Live group coaching for your cohort.", defaultDuration: "60 min", inviteDetail: "Loan Factory Group Coaching — bring one win and one blocker." },
-  { type: "team_training", title: "Team training", description: "Skills training for your team.", defaultDuration: "45 min", inviteDetail: "Loan Factory Team Training — topic + practice reps." },
+  { type: "team_coaching", title: "Team coaching session", description: "Skills coaching for your team.", defaultDuration: "45 min", inviteDetail: "Loan Factory Team Coaching — topic + practice reps." },
   { type: "power_hour", title: "Power Hour", description: "Daily focus block for prospecting + follow-up.", defaultDuration: "60 min", inviteDetail: "Loan Factory Power Hour — prospecting, follow-up, coaching prep." },
   { type: "breakfast_club", title: "Breakfast Club (Alliance)", description: "Daily morning live for Alliance members.", defaultDuration: "30 min", inviteDetail: "Loan Factory Alliance Breakfast Club — wins, blockers, focus." },
   { type: "mastermind", title: "Mastermind meeting (Alliance)", description: "Biweekly mastermind for advanced producers.", defaultDuration: "90 min", inviteDetail: "Loan Factory Alliance Mastermind — personal wins, top blocker, ask for the room." },
@@ -463,7 +463,7 @@ export const loMasteryScorecardFields: string[] = [
   "Follow-ups completed",
   "Coaching resources completed",
   "Practice recordings reviewed",
-  "Approved AI prompts used",
+  "Coaching tools used",
   "Wins",
   "Stuck points",
   "Next week commitment",

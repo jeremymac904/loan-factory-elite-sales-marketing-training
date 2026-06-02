@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getCoachingAccess } from "@/lib/coachingAccess";
 import LockedResourceCard from "@/components/LockedResourceCard";
-import CommandCenterChatMount from "@/components/assistant/CommandCenterChatMount";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Loan Factory Alliance · Member Area" };
@@ -9,63 +8,33 @@ export const metadata = { title: "Loan Factory Alliance · Member Area" };
 const sections = [
   {
     title: "Daily Breakfast Club",
-    description: "Daily morning live with the Alliance — wins, blockers, focus.",
-    href: "/calendar/",
-    premium: true,
+    description: "Morning live for Alliance members: wins, blockers, and focus.",
+    href: "/coach-command-center/calendar/",
   },
   {
     title: "Weekly coaching",
-    description: "Weekly live coaching with the Alliance coach team.",
-    href: "/coaching/",
-    premium: true,
+    description: "Weekly coaching rhythm with stronger accountability.",
+    href: "/coach-command-center/",
   },
   {
-    title: "Biweekly Mastermind",
-    description: "Mastermind sessions for advanced producers and team leaders.",
+    title: "Biweekly mastermind",
+    description: "Strategy, leadership growth, and next-action clarity.",
     href: "/member-area/mastermind/",
-    premium: true,
   },
   {
     title: "Advanced certifications",
-    description: "Advanced certifications including leadership and team builder track.",
+    description: "Leadership and specialty-track progress for Alliance members.",
     href: "/member-area/certifications/",
-    premium: true,
   },
   {
-    title: "Priority coaching",
-    description: "Priority access to coaching support and reviews.",
-    href: "/coaching/",
-    premium: true,
+    title: "Scorecards",
+    description: "Alliance weekly scorecard review and follow-up.",
+    href: "/member-area/scorecards/",
   },
   {
-    title: "Leadership / team builder track",
-    description: "1+1+1=5 team growth content for team leaders inside the Alliance.",
-    href: "/one-plus-one-five/",
-    premium: true,
-  },
-  {
-    title: "Mastermind resources",
-    description: "Mastermind prep docs, scorecards, and recordings.",
-    href: "/member-area/mastermind/",
-    premium: true,
-  },
-  {
-    title: "Alliance AI Coaching Assistant",
-    description: "Strategy, mastermind prep, leadership coaching, and follow-up at the Alliance level.",
-    href: "/ai-assistants/my-ai-twin/",
-    premium: true,
-  },
-  {
-    title: "Market Mentor Studio (advanced)",
-    description: "Advanced Market Mentor tools — debt consolidation, Realtor market updates, roleplay, and the video studio.",
-    href: "/market-mentor/",
-    premium: true,
-  },
-  {
-    title: "Everything in LO Mastery",
-    description: "All LO Mastery Coaching content plus the upgrades above.",
-    href: "/member-area/lo-mastery/",
-    premium: false,
+    title: "Resources",
+    description: "Coaching resources, notes, and member support.",
+    href: "/resources/",
   },
 ];
 
@@ -94,7 +63,8 @@ export default async function AllianceMemberAreaPage() {
             Loan Factory Alliance · $449
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-white/90">
-            Advanced coaching, mastermind-level strategy, leadership growth.
+            Advanced coaching, mastermind-level strategy, and deeper
+            accountability for loan officers ready for more touchpoints.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -103,8 +73,6 @@ export default async function AllianceMemberAreaPage() {
           )}
         </div>
       </section>
-
-      <CommandCenterChatMount />
 
       {!fullAccess && (
         <section className="container-page pt-8">
@@ -119,15 +87,15 @@ export default async function AllianceMemberAreaPage() {
             </h2>
             <p className="prose-lf mt-2 text-sm">
               {upgrade
-                ? "Alliance adds weekly coaching, the daily Breakfast Club, biweekly Mastermind, advanced certifications, and the Alliance AI Coaching Assistant. The premium resources below unlock when you upgrade."
-                : "Alliance ($449/mo) builds on LO Mastery with weekly coaching, Mastermind, Breakfast Club, and leadership tracks. Preview what's included below, then talk to the coaching team to join."}
+                ? "Alliance adds weekly coaching, the daily Breakfast Club, biweekly mastermind, advanced certifications, and stronger accountability. The premium resources below unlock when you upgrade."
+                : "Alliance builds on LO Mastery with weekly coaching, mastermind, Breakfast Club, and leadership growth. Preview what&apos;s included below, then ask Jeremy to approve your access."}
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link href="/loan-factory-alliance/" className="btn-primary">
-                {upgrade ? "Upgrade to Alliance" : "See Alliance & join"}
+                See Alliance
               </Link>
-              <Link href="/support-routing/" className="btn-secondary">
-                Contact the coaching team
+              <Link href="/login/" className="btn-secondary">
+                Sign in
               </Link>
             </div>
           </div>
@@ -136,27 +104,10 @@ export default async function AllianceMemberAreaPage() {
 
       <section className="container-page py-10">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {sections.map((s) => {
-            const locked = !fullAccess && (s.premium || !upgrade);
-            if (locked) {
-              return (
-                <LockedResourceCard
-                  key={s.title}
-                  title={s.title}
-                  description={s.description}
-                  message={
-                    upgrade
-                      ? "Upgrade to Loan Factory Alliance for this resource."
-                      : "Join Loan Factory Alliance to unlock this resource."
-                  }
-                  ctaHref="/loan-factory-alliance/"
-                  ctaLabel={upgrade ? "Upgrade to Alliance" : "Join Alliance"}
-                />
-              );
-            }
-            return (
+          {sections.map((s) =>
+            fullAccess ? (
               <Link
-                key={s.title}
+                key={s.href}
                 href={s.href}
                 className="card flex flex-col gap-2 transition hover:-translate-y-0.5 hover:shadow-lift"
               >
@@ -168,8 +119,21 @@ export default async function AllianceMemberAreaPage() {
                   Open <span aria-hidden className="ml-2">&rarr;</span>
                 </span>
               </Link>
-            );
-          })}
+            ) : (
+              <LockedResourceCard
+                key={s.href}
+                title={s.title}
+                description={s.description}
+                message={
+                  upgrade
+                    ? "Upgrade to Loan Factory Alliance for this resource."
+                    : "Join Loan Factory Alliance to unlock this resource."
+                }
+                ctaHref="/loan-factory-alliance/"
+                ctaLabel={upgrade ? "Upgrade to Alliance" : "Join Alliance"}
+              />
+            ),
+          )}
         </div>
       </section>
     </>

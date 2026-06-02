@@ -7,6 +7,7 @@ export const runtime = "nodejs";
 
 const MAX_AUDIO_BYTES = 25 * 1024 * 1024;
 const AUDIO_EXTENSION_PATTERN = /\.(flac|mp3|mp4|mpeg|mpga|m4a|ogg|wav|webm)$/i;
+const DEFAULT_GROQ_BASE_URL = "https://api.groq.com/openai/v1";
 
 type GroqTranscriptionResponse = {
   text?: unknown;
@@ -32,6 +33,20 @@ function isSupportedAudioFile(file: File) {
   return file.type.startsWith("audio/") || AUDIO_EXTENSION_PATTERN.test(file.name);
 }
 
+function buildGroqTranscriptionUrl(baseUrl: string) {
+  const trimmed = baseUrl.trim().replace(/\/+$/, "");
+
+  if (!trimmed) {
+    return `${DEFAULT_GROQ_BASE_URL}/audio/transcriptions`;
+  }
+
+  if (trimmed.endsWith("/audio/transcriptions")) {
+    return trimmed;
+  }
+
+  return `${trimmed}/audio/transcriptions`;
+}
+
 export async function POST(request: NextRequest) {
   const config = getAiSandboxConfig();
 
@@ -49,11 +64,15 @@ export async function POST(request: NextRequest) {
     return jsonError(403, access.status, access.message);
   }
 
-  if (!config.groqApiKey || !config.groqWhisperModel) {
+  if (
+    !config.groqApiKey ||
+    !config.groqWhisperModel ||
+    !config.groqWhisperModel.toLowerCase().startsWith("whisper-")
+  ) {
     return jsonError(
       503,
       "groq-not-configured",
-      "Groq key and transcription model must both be configured for sandbox transcription.",
+      "Groq key and a supported whisper-* transcription model must both be configured for sandbox transcription.",
     );
   }
 
@@ -95,7 +114,7 @@ export async function POST(request: NextRequest) {
   groqFormData.append("temperature", "0");
 
   const groqResponse = await fetch(
-    "https://api.groq.com/openai/v1/audio/transcriptions",
+    buildGroqTranscriptionUrl(config.groqBaseUrl || DEFAULT_GROQ_BASE_URL),
     {
       method: "POST",
       headers: {

@@ -524,7 +524,7 @@ export default function AIAssistantHub({
                 <p className="mt-3 inline-flex rounded-full border border-lf-line bg-lf-mist px-3 py-1 text-xs font-semibold text-lf-slate">
                   {backendStatus?.primaryProviderConfigured
                     ? `${backendStatus.primaryProviderLabel} ready · ${backendStatus.assistantModel}`
-                    : "Provider not configured · guided local answers"}
+                    : "DeepSeek not configured · guided local answers"}
                 </p>
                 <div className="mt-6 grid w-full gap-3 sm:grid-cols-3">
                   {selectedAssistant.starters.map((starter) => (

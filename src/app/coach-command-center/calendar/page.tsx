@@ -6,7 +6,7 @@ import { calendarEventTypes } from "@/data/coachCommandCenter";
 import { WORKSPACE_CONNECTED, workspaceServiceMeta } from "@/data/coachComms";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Training Scheduler · Coach Command Center" };
+export const metadata = { title: "Coaching Calendar · Coach Command Center" };
 
 export default async function CoachCalendarPage() {
   const access = await getCoachAccess();
@@ -25,12 +25,12 @@ export default async function CoachCalendarPage() {
             Coach Command Center
           </p>
           <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-            Training Scheduler
+            Coaching Calendar
           </h1>
           <p className="mt-2 max-w-2xl text-base text-white/85">
-            Plan one-on-ones, group calls, team training, and Power Hours. Build
-            a Google Calendar event draft and a Google Meet training draft, then
-            create the event yourself — nothing is added to any calendar here.
+            Plan one-on-ones, group calls, team coaching, and Power Hours. Build
+            a Google Calendar event draft and a Google Meet draft, then create
+            the event yourself — nothing is added to any calendar here.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -58,8 +58,8 @@ export default async function CoachCalendarPage() {
           </div>
           <p className="prose-lf mt-2 text-sm">
             {workspaceServiceMeta.calendar.connectHint} Use the builder below to
-            assemble the event details and a Google Meet training draft, copy
-            them, and create the real event yourself in Google Calendar. When the
+            assemble the event details and a Google Meet draft, copy them, and
+            create the real event yourself in Google Calendar. When the
             integration is connected later, event creation must stay behind an
             approval step.
           </p>
@@ -73,7 +73,7 @@ export default async function CoachCalendarPage() {
       <section className="container-page pb-12">
         <details className="card">
           <summary className="cursor-pointer text-base font-semibold text-lf-charcoal">
-            Browse all training event types
+            Browse all coaching event types
           </summary>
           <p className="prose-lf mt-2 text-sm">
             The same event types power the builder above. Pick one there to fill

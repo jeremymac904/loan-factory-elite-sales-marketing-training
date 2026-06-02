@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getCoachingAccess } from "@/lib/coachingAccess";
 import LockedResourceCard from "@/components/LockedResourceCard";
-import CommandCenterChatMount from "@/components/assistant/CommandCenterChatMount";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "LO Mastery Coaching · Member Area" };
@@ -10,53 +9,27 @@ const sections = [
   {
     title: "Daily Power Hour",
     description: "Morning focus block with prompts, prospecting plan, and follow-up.",
-    href: "/calendar/",
+    href: "/coach-command-center/calendar/",
   },
   {
-    title: "Biweekly group coaching",
-    description: "Live group coaching with Edward and the LO Mastery team.",
-    href: "/coaching/",
+    title: "Weekly scorecards",
+    description: "Submit the week&apos;s activity and let your coach review it.",
+    href: "/member-area/scorecards/",
   },
   {
-    title: "Daily coaching email",
-    description: "Daily action prompt delivered to your inbox.",
-    href: "/ai-assistants/email-drafts/",
-  },
-  {
-    title: "Certified Mortgage Advisor track",
-    description: "Progress through the CMA certification path.",
-    href: "/member-area/certifications/",
-  },
-  {
-    title: "Scripts library",
-    description: "Internal scripts for calls, follow-up, and Realtor conversations.",
-    href: "/scripts/",
-  },
-  {
-    title: "Trackers",
-    description: "Daily and weekly trackers for activity, pipeline, and follow-up.",
-    href: "/trackers/",
-  },
-  {
-    title: "Resource library",
-    description:
-      "Paid coaching resources plus separate free Sales & Marketing 101-601 and AI Advantage references.",
+    title: "Resources",
+    description: "Scripts, guides, scorecard tools, and member references.",
     href: "/resources/",
   },
   {
-    title: "Leaderboard",
-    description: "Team and member leaderboard for coaching activity and wins.",
+    title: "Leaderboards",
+    description: "Recognition for controllable work, consistency, and follow-through.",
     href: "/member-area/leaderboards/",
   },
   {
-    title: "LO Mastery Coaching Assistant",
-    description: "Your daily AI coaching assistant — Power Hour prompts, follow-up drafts, accountability check-ins.",
-    href: "/ai-assistants/my-ai-twin/",
-  },
-  {
-    title: "Market Mentor Studio",
-    description: "Market updates, rate explainers, buy-vs-rent, and cost-of-waiting tools to use with borrowers and Realtors.",
-    href: "/market-mentor/",
+    title: "Member progress",
+    description: "Attendance, commitments, accountability, and next action.",
+    href: "/coach-command-center/member-progress/",
   },
 ];
 
@@ -84,7 +57,8 @@ export default async function LoMasteryMemberAreaPage() {
             LO Mastery Coaching · $249
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-white/85">
-            Daily rhythm, accountability, and coaching to grow your business.
+            Daily rhythm, accountability, and coaching tools for loan officers
+            who want a simpler weekly plan.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -93,8 +67,6 @@ export default async function LoMasteryMemberAreaPage() {
           )}
         </div>
       </section>
-
-      <CommandCenterChatMount />
 
       {!open && (
         <section className="container-page pt-8">
@@ -106,17 +78,17 @@ export default async function LoMasteryMemberAreaPage() {
               LO Mastery Coaching is a paid coaching membership.
             </h2>
             <p className="prose-lf mt-2 text-sm">
-              LO Mastery ($249/mo) gives you the daily Power Hour rhythm, biweekly
-              group coaching, the Certified Mortgage Advisor track, scripts,
-              trackers, and your coaching AI assistant. Preview what&apos;s
-              included below, then talk to the coaching team to join.
+              LO Mastery gives you the daily Power Hour rhythm, group coaching,
+              the Certified Mortgage Advisor track, scorecards, and member
+              resources. Preview what&apos;s included below, then ask Jeremy to
+              approve your access.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link href="/lo-mastery-coaching/" className="btn-primary">
-                See LO Mastery & join
+                See LO Mastery
               </Link>
-              <Link href="/support-routing/" className="btn-secondary">
-                Contact the coaching team
+              <Link href="/login/" className="btn-secondary">
+                Sign in
               </Link>
             </div>
           </div>
@@ -125,32 +97,32 @@ export default async function LoMasteryMemberAreaPage() {
 
       <section className="container-page py-10">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {sections.map((s) =>
-            open ? (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="card flex flex-col gap-2 transition hover:-translate-y-0.5 hover:shadow-lift"
-              >
-                <h2 className="text-base font-semibold text-lf-charcoal">
-                  {s.title}
-                </h2>
-                <p className="text-sm text-lf-slate">{s.description}</p>
-                <span className="mt-auto inline-flex items-center text-sm font-semibold text-lf-orange">
-                  Open <span aria-hidden className="ml-2">&rarr;</span>
-                </span>
-              </Link>
-            ) : (
-              <LockedResourceCard
-                key={s.href}
-                title={s.title}
-                description={s.description}
-                message="Join LO Mastery Coaching to unlock this resource."
-                ctaHref="/lo-mastery-coaching/"
-                ctaLabel="Join LO Mastery"
-              />
-            ),
-          )}
+          {open
+            ? sections.map((s) => (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  className="card flex flex-col gap-2 transition hover:-translate-y-0.5 hover:shadow-lift"
+                >
+                  <h2 className="text-base font-semibold text-lf-charcoal">
+                    {s.title}
+                  </h2>
+                  <p className="text-sm text-lf-slate">{s.description}</p>
+                  <span className="mt-auto inline-flex items-center text-sm font-semibold text-lf-orange">
+                    Open <span aria-hidden className="ml-2">&rarr;</span>
+                  </span>
+                </Link>
+              ))
+            : sections.map((s) => (
+                <LockedResourceCard
+                  key={s.href}
+                  title={s.title}
+                  description={s.description}
+                  message="Join LO Mastery Coaching to unlock this resource."
+                  ctaHref="/lo-mastery-coaching/"
+                  ctaLabel="Join LO Mastery"
+                />
+              ))}
         </div>
       </section>
     </>

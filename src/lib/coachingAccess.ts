@@ -12,6 +12,10 @@ const FULL_COACHING_STAFF_ROLES = [
   "lo_development",
   "training_academy",
   "corporate_coach",
+  "corporate_coach_supervisor",
+  "lo_mastery_coach",
+  "loan_factory_alliance_coach",
+  "coaching_director",
   "team_leader",
 ];
 

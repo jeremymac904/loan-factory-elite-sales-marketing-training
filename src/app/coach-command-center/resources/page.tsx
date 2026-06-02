@@ -1,35 +1,91 @@
-import RoleGate from "@/components/RoleGate";
+import Link from "next/link";
+import { getCoachAccess } from "@/lib/coachAccess";
+import CoachCommandNav from "@/components/coach/CoachCommandNav";
 import PageHero from "@/components/PageHero";
-import VideoResourceHub from "@/components/platform-videos/VideoResourceHub";
+import SectionHeading from "@/components/SectionHeading";
+
+const coachResources = [
+  {
+    title: "My People",
+    description: "Open the compact roster and action menu for each assigned member.",
+    href: "/coach-command-center/team/",
+  },
+  {
+    title: "Member progress",
+    description:
+      "See attendance, accountability, resource completion, and next action in one view.",
+    href: "/coach-command-center/member-progress/",
+  },
+  {
+    title: "Weekly scorecards",
+    description:
+      "Review submitted and missing scorecards, trends, and follow-up actions.",
+    href: "/coach-command-center/scorecards/",
+  },
+  {
+    title: "Coaching notes",
+    description:
+      "Capture wins, stuck points, note types, follow-up dates, and action items.",
+    href: "/coach-command-center/coaching-notes/",
+  },
+  {
+    title: "Coaching calendar",
+    description:
+      "Draft calls, Power Hours, group sessions, and next call reminders.",
+    href: "/coach-command-center/calendar/",
+  },
+  {
+    title: "Member area",
+    description:
+      "Jump into LO Mastery or Loan Factory Alliance to check the member experience.",
+    href: "/member-area/",
+  },
+];
 
 export const metadata = { title: "Coach Command Center Resources" };
 
-export default function CoachCommandCenterResourcesPage() {
+export default async function CoachCommandCenterResourcesPage() {
+  const access = await getCoachAccess();
+
   return (
-    <RoleGate gate="clip-library">
+    <>
       <PageHero
         eyebrow="Coach Command Center"
-        title="Coach Video Resources"
+        title="Coaching resources"
         body={
           <p>
-            A coach-facing resource hub for training clips, long-form source
-            videos, and staging status. Keep manual review and hosting state
-            visible before any coaching asset moves forward.
+            Use this hub for the tools that support your coaching day: members,
+            scorecards, notes, progress, and call planning.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
-        overlayOpacity={0.72}
-      />
+      >
+        {access.viewingAsLabel && (
+          <p className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">
+            Viewing as: {access.viewingAsLabel}
+          </p>
+        )}
+      </PageHero>
 
-      <section className="container-page py-14">
-        <VideoResourceHub
-          title="Coach-facing inventory"
-          description="This view keeps the coach-relevant sections of the video library close to the command center so leadership can stage reviews and route follow-up assets without guessing at host status."
-          focusSections={["Corporate Coach Resources", "Training Library", "Loan Officer Support"]}
-          initialVideoTypes={["long_form", "clip"]}
+      <CoachCommandNav current="/coach-command-center/resources/" showAdmin={access.seesAll} />
+
+      <section className="container-page py-12">
+        <SectionHeading
+          eyebrow="Open next"
+          title="Coach-first tools."
+          description="The live coaching platform keeps the resource set simple and focused."
         />
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {coachResources.map((resource) => (
+            <Link key={resource.href} href={resource.href} className="card hover:shadow-lift">
+              <h3 className="h-display text-lg">{resource.title}</h3>
+              <p className="prose-lf mt-2 text-sm text-lf-slate">
+                {resource.description}
+              </p>
+            </Link>
+          ))}
+        </div>
       </section>
-    </RoleGate>
+    </>
   );
 }
-

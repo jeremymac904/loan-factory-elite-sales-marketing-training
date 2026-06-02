@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Loan Factory LO Development",
-    short_name: "LO Development",
+    name: "Loan Factory Paid Coaching",
+    short_name: "Paid Coaching",
     description:
-      "Internal Loan Factory training, coaching, AI Advantage, FaceGram, and resources.",
+      "Loan Factory paid coaching for LO Mastery and Loan Factory Alliance.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

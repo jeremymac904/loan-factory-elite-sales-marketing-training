@@ -20,11 +20,11 @@ export const dynamic = "force-dynamic";
 export const metadata = { title: "Coach Command Center" };
 
 const scopeIntro: Record<CoachScope, string> = {
-  all: "You see every coach, team leader, and assigned member across Loan Factory — org-wide coaching at a glance.",
+  all: "You see every coach, team leader, and assigned member across the paid coaching programs.",
   corporate_coach:
-    "You coach new LOs through corporate onboarding — welcome calls, first-file survival, and foundation training.",
+    "You coach new LOs through onboarding, first-file survival, and weekly accountability.",
   lo_development:
-    "You run LO Development — corporate onboarding plus paid coaching members moving through the mastery path.",
+    "You support the paid coaching platform and the leadership that keeps it moving.",
   team_leader:
     "You lead your team — the LOs assigned to you for day-to-day coaching, accountability, and pipeline focus.",
   none: "You can open the Coach Command Center to review coaching tools and resources.",
@@ -32,24 +32,14 @@ const scopeIntro: Record<CoachScope, string> = {
 
 const quickTools: { title: string; description: string; href: string }[] = [
   {
-    title: "Messages",
-    description: "Draft coaching nudges and check-ins to copy and send.",
-    href: "/coach-command-center/messages/",
-  },
-  {
-    title: "Email center",
-    description: "Coaching email drafts — copy or create a Gmail draft.",
-    href: "/coach-command-center/email-center/",
-  },
-  {
     title: "Calendar",
-    description: "Coaching sessions, Power Hours, and training invites.",
+    description: "Coaching sessions, Power Hours, call blocks, and follow-up windows.",
     href: "/coach-command-center/calendar/",
   },
   {
-    title: "Training plan",
-    description: "Assign lessons, clips, scripts, and roleplays.",
-    href: "/coach-command-center/training-plan/",
+    title: "Resources",
+    description: "Coaching resources, guides, scorecard tools, and member references.",
+    href: "/coach-command-center/resources/",
   },
   {
     title: "Scorecards",
@@ -67,19 +57,15 @@ const quickTools: { title: string; description: string; href: string }[] = [
       "Coaching attendance, commitments, certifications, resources, and next action.",
     href: "/coach-command-center/member-progress/",
   },
-  {
-    title: "Market Mentor Studio",
-    description:
-      "Use Market Mentor with a coaching member — market updates, rate explainers, buy-vs-rent, and video scripts.",
-    href: "/market-mentor/",
-  },
 ];
 
 const dashboardTabs = [
-  { label: "Needs attention", href: "/coach-command-center/team/" },
+  { label: "My People", href: "/coach-command-center/team/" },
+  { label: "Progress", href: "/coach-command-center/member-progress/" },
   { label: "Scorecards", href: "/coach-command-center/scorecards/" },
   { label: "Notes", href: "/coach-command-center/coaching-notes/" },
-  { label: "Training", href: "/coach-command-center/training-plan/" },
+  { label: "Calendar", href: "/coach-command-center/calendar/" },
+  { label: "Resources", href: "/coach-command-center/resources/" },
 ];
 
 export default async function CoachCommandCenterPage() {
@@ -112,7 +98,7 @@ export default async function CoachCommandCenterPage() {
     { label: "Need attention", value: attentionPeople.length.toString(), href: "/coach-command-center/team/" },
     { label: "Scorecards submitted", value: submittedScorecards.length.toString(), href: "/coach-command-center/scorecards/" },
     { label: "Scorecards missing", value: missingScorecards.length.toString(), href: "/coach-command-center/scorecards/" },
-    { label: "Follow-ups due", value: "3", href: "/coach-command-center/messages/" },
+    { label: "Follow-ups due", value: "3", href: "/coach-command-center/coaching-notes/" },
     { label: "Next calls", value: people.filter((p) => !p.nextCall.toLowerCase().includes("needs") && p.nextCall !== "Not scheduled").length.toString(), href: "/coach-command-center/calendar/" },
   ];
 
@@ -132,8 +118,8 @@ export default async function CoachCommandCenterPage() {
             Your coaching dashboard
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            One place to coach your people, plan your day, and keep your team
-            moving forward.
+            One place to coach your people, plan your day, and keep the paid
+            coaching programs moving forward.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-4 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -180,7 +166,7 @@ export default async function CoachCommandCenterPage() {
               Draft calendar events only until Google Calendar integration is active.
             </p>
             <Link href="/coach-command-center/calendar/" className="mt-3 inline-flex text-sm font-semibold text-lf-orange hover:underline">
-              Open training schedule
+              Open coaching calendar
             </Link>
           </div>
         </div>

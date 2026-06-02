@@ -5,45 +5,51 @@ export const dynamic = "force-dynamic";
 export const metadata = { title: "Member Area" };
 
 const tierLabels: Record<CoachingTier, string> = {
-  staff: "Full coaching access (staff / admin)",
+  staff: "Coach / admin access",
   alliance: "Loan Factory Alliance ($449)",
   lo_mastery: "LO Mastery Coaching ($249)",
-  none: "Not enrolled in a coaching tier yet",
+  none: "No paid coaching tier yet",
 };
+
+const quickLinks = [
+  {
+    title: "Weekly scorecards",
+    description: "Submit the work you actually did this week.",
+    href: "/member-area/scorecards/",
+  },
+  {
+    title: "Member resources",
+    description: "Open the coaching resource hub and member tools.",
+    href: "/resources/",
+  },
+  {
+    title: "Coaching calendar",
+    description: "See the call schedule and coaching event drafts.",
+    href: "/coach-command-center/calendar/",
+  },
+  {
+    title: "Leaderboards",
+    description: "See accountability and coaching follow-through lanes.",
+    href: "/member-area/leaderboards/",
+  },
+];
 
 export default async function MemberAreaPage() {
   const access = await getCoachingAccess();
 
-  // LO Mastery card state
-  const loMastery = access.canLoMastery
-    ? { badge: access.tier === "lo_mastery" ? "Your tier" : "Included", cta: "Open LO Mastery" }
-    : { badge: "Members only", cta: "Preview & join" };
+  const loMasteryBadge = access.canLoMastery
+    ? access.tier === "lo_mastery"
+      ? "Your tier"
+      : "Included"
+    : "Members only";
 
-  // Alliance card state
-  const alliance = access.canAlliance
-    ? { badge: access.tier === "alliance" ? "Your tier" : "Included", cta: "Open Alliance" }
+  const allianceBadge = access.canAlliance
+    ? access.tier === "alliance"
+      ? "Your tier"
+      : "Included"
     : access.isUpgradePreview
-      ? { badge: "Upgrade", cta: "Preview & upgrade" }
-      : { badge: "Members only", cta: "Preview & join" };
-
-  const tiers = [
-    {
-      name: "LO Mastery Coaching",
-      price: "$249",
-      href: "/member-area/lo-mastery/",
-      description:
-        "Daily rhythm, Power Hour, biweekly group coaching, Certified Mortgage Advisor track, scripts, trackers, AI Mastery Coaching Assistant.",
-      ...loMastery,
-    },
-    {
-      name: "Loan Factory Alliance",
-      price: "$449",
-      href: "/member-area/alliance/",
-      description:
-        "Everything in LO Mastery plus weekly coaching, daily Breakfast Club, biweekly Mastermind, advanced certifications, leadership/team builder track, Alliance AI Assistant.",
-      ...alliance,
-    },
-  ];
+      ? "Upgrade"
+      : "Members only";
 
   return (
     <>
@@ -58,11 +64,11 @@ export default async function MemberAreaPage() {
             Coaching Member Area
           </p>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
-            Coaching membership
+            Your coaching dashboard
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Open coaching resources, recordings, trackers, scripts, and your
-            coaching AI assistant for your tier.
+            Open the tier that matches your paid coaching program, then keep up
+            with scorecards, resources, and your next coaching step.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -83,66 +89,74 @@ export default async function MemberAreaPage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {tiers.map((t) => (
-            <Link
-              key={t.name}
-              href={t.href}
-              className="card flex flex-col gap-4 transition hover:-translate-y-0.5 hover:shadow-lift"
-            >
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-baseline gap-2">
-                  <h2 className="font-display text-2xl font-semibold text-lf-charcoal">
-                    {t.name}
-                  </h2>
-                  <span className="text-sm font-bold text-lf-orange">
-                    {t.price}/mo
-                  </span>
-                </div>
-                <span className="rounded-full bg-lf-mist px-2.5 py-0.5 text-xs font-semibold text-lf-slate">
-                  {t.badge}
-                </span>
+          <Link
+            href="/member-area/lo-mastery/"
+            className="card flex flex-col gap-4 transition hover:-translate-y-0.5 hover:shadow-lift"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-baseline gap-2">
+                <h2 className="font-display text-2xl font-semibold text-lf-charcoal">
+                  LO Mastery Coaching
+                </h2>
+                <span className="text-sm font-bold text-lf-orange">$249/mo</span>
               </div>
-              <p className="prose-lf text-sm">{t.description}</p>
-              <span className="mt-auto inline-flex items-center text-sm font-semibold text-lf-orange">
-                {t.cta} <span aria-hidden className="ml-2">&rarr;</span>
+              <span className="rounded-full bg-lf-mist px-2.5 py-0.5 text-xs font-semibold text-lf-slate">
+                {loMasteryBadge}
               </span>
-            </Link>
-          ))}
-        </div>
-
-        {(access.isMember || access.isStaff) && (
-          <div className="mt-8 card max-w-2xl border-lf-orange/30 bg-lf-orangeSoft/30">
-            <h2 className="h-display text-xl">Market Mentor Studio</h2>
-            <p className="prose-lf mt-2 text-sm">
-              Market updates, rate explainers, buy-vs-rent, cost-of-waiting, and
-              video scripts to use with borrowers and Realtors. Core tools on LO
-              Mastery; advanced tools on Loan Factory Alliance.
-            </p>
-            <Link href="/market-mentor/" className="btn-primary mt-4 inline-block">
-              Open Market Mentor Studio
-            </Link>
-          </div>
-        )}
-
-        {!access.isMember && !access.isStaff && (
-          <div className="mt-8 card max-w-2xl">
-            <h2 className="h-display text-xl">New to Loan Factory coaching?</h2>
-            <p className="prose-lf mt-2 text-sm">
-              Coaching membership is optional and separate from your Sales &amp;
-              Marketing training. See how LO Mastery and the Loan Factory
-              Alliance work, then talk to the coaching team when you&apos;re
-              ready.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Link href="/coaching/" className="btn-primary">
-                See coaching overview
-              </Link>
-              <Link href="/support-routing/" className="btn-secondary">
-                Contact the coaching team
-              </Link>
             </div>
+            <p className="prose-lf text-sm">
+              Simple weekly coaching, scorecards, accountability, and member
+              resources for loan officers who want consistency.
+            </p>
+            <span className="mt-auto inline-flex items-center text-sm font-semibold text-lf-orange">
+              Open LO Mastery <span aria-hidden className="ml-2">&rarr;</span>
+            </span>
+          </Link>
+
+          <Link
+            href="/member-area/alliance/"
+            className="card flex flex-col gap-4 transition hover:-translate-y-0.5 hover:shadow-lift"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-baseline gap-2">
+                <h2 className="font-display text-2xl font-semibold text-lf-charcoal">
+                  Loan Factory Alliance
+                </h2>
+                <span className="text-sm font-bold text-lf-orange">$449/mo</span>
+              </div>
+              <span className="rounded-full bg-lf-mist px-2.5 py-0.5 text-xs font-semibold text-lf-slate">
+                {allianceBadge}
+              </span>
+            </div>
+            <p className="prose-lf text-sm">
+              More frequent coaching, deeper accountability, mastermind prep,
+              and advanced member support for Loan Factory Alliance.
+            </p>
+            <span className="mt-auto inline-flex items-center text-sm font-semibold text-lf-orange">
+              Open Alliance <span aria-hidden className="ml-2">&rarr;</span>
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      <section className="container-page py-6">
+        <div className="card">
+          <h2 className="h-display text-xl">What opens next</h2>
+          <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-xl border border-lf-line bg-lf-mist/40 p-4 transition hover:border-lf-orange hover:bg-white hover:shadow-lift"
+              >
+                <h3 className="text-base font-semibold text-lf-charcoal">
+                  {link.title}
+                </h3>
+                <p className="mt-1 text-sm text-lf-slate">{link.description}</p>
+              </Link>
+            ))}
           </div>
-        )}
+        </div>
       </section>
     </>
   );

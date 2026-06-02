@@ -23,7 +23,7 @@ export default function AnonymousFeedbackModal({
   const feedbackText = useMemo(
     () =>
       [
-        "Anonymous LO Development feedback",
+        "Anonymous paid coaching feedback",
         "",
         `Topic: ${form.topic}`,
         `Optional contact email: ${form.contactEmail}`,
@@ -72,11 +72,11 @@ export default function AnonymousFeedbackModal({
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 id="anonymous-feedback-title" className="h-display text-2xl">
-                  Anonymous complaints and suggestions
+                  Anonymous coaching feedback
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
                   Share feedback, complaints, missing resources, confusing pages,
-                  or ideas for improving LO Development programs.
+                  or ideas for improving the paid coaching platform.
                 </p>
               </div>
               <button

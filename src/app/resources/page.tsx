@@ -1,197 +1,77 @@
 import Link from "next/link";
-import ClipLibraryRail from "@/components/ClipLibraryRail";
+import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import { marketingTrainingAssets } from "@/data/marketingTrainingAssets";
 
-// PUBLIC informational overview of resource areas (recommended channels,
-// compliance notes, recordings, support contacts, marketing setup guides). Holds
-// no private user data; the private destinations it links to (lender escalation,
-// signed-in clip library, Send Feedback submission) keep their own gates.
-export const dynamic = "force-dynamic";
-export const metadata = { title: "Resources" };
-
-const resources = [
+const resourceCards = [
   {
-    title: "Recommended Channels",
-    description: "Find useful learning channels and trusted training references.",
-    href: "/recommended-channels/",
-  },
-  {
-    title: "Compliance Notes",
-    description: "Check language reminders before using anything with borrowers, Realtors, or the public.",
-    href: "/compliance/",
-  },
-  {
-    title: "Recordings",
-    description: "Watch class recordings, replays, and training video references.",
-    href: "/recordings/",
-  },
-  {
-    title: "LO Development Clip Library",
+    title: "LO Mastery dashboard",
     description:
-      "Find short support and training clips staged for approved Loan Factory users.",
-    href: "/training-library/clips/",
+      "Open the $249 member area for weekly scorecards, resources, and coaching tools.",
+    href: "/member-area/lo-mastery/",
   },
   {
-    title: "LO Development Resources",
+    title: "Loan Factory Alliance dashboard",
     description:
-      "Open the staging hub for source videos, manual review, Drive fallback, and automation scaffolding.",
-    href: "/lo-development/resources/",
+      "Open the $449 member area for advanced coaching, mastermind, and accountability tools.",
+    href: "/member-area/alliance/",
   },
   {
-    title: "Marketing Setup Assets",
+    title: "Weekly scorecards",
     description:
-      "Open Facebook Ads, Google Ads, visitor audiences, lead widgets, and QM Pricer guides.",
-    href: "/training-library/marketing-assets/",
+      "Use the coaching scorecard to track conversations, follow-up, and commitments.",
+    href: "/member-area/scorecards/",
   },
   {
-    title: "LO Development Support Team",
-    description: "Find LO Development, corporate coach, and marketing review contacts.",
-    href: "/support-routing/#lo-development-support-team",
-  },
-  {
-    title: "Anonymous Complaints & Suggestions",
+    title: "Member progress",
     description:
-      "Use Send Feedback for suggestions, broken links, complaints, and beta notes.",
-    href: "#feedback",
+      "Review coaching attendance, accountability, resource completion, and next action.",
+    href: "/coach-command-center/member-progress/",
   },
   {
-    title: "Lender Escalation",
+    title: "Coaching calendar",
     description:
-      "Request help with a lender issue and keep the details organized for review.",
-    href: "/lender-escalation/",
+      "See the call schedule and draft coaching calendar events when you need a next step.",
+    href: "/coach-command-center/calendar/",
   },
   {
-    title: "1+1+1=5 Team Growth",
+    title: "Sign in",
     description:
-      "Plan community, persona, campaign, Realtor, recruiting, and scorecard lanes for Team Leaders.",
-    href: "/one-plus-one-five/",
+      "Approved Loan Factory Google accounts can open the coaching platform immediately.",
+    href: "/login/",
   },
 ];
 
 export default function ResourcesPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-lf-navy text-white">
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/media/dark-hero-background.png)" }}
-        />
-        <div aria-hidden className="absolute inset-0 bg-black/72" />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(242,106,31,0.28),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.92),rgba(17,17,17,0.64),rgba(0,0,0,0.9))]"
-        />
-        <div className="relative container-page py-16 md:py-20">
-          <h1 className="metal-title-dark max-w-3xl text-4xl md:text-5xl">
-            Resources
-          </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-white/85">
-            Find training references, support contacts, compliance reminders,
-            recordings, feedback, and manual lender escalation.
+      <PageHero
+        eyebrow="Loan Factory Paid Coaching"
+        title="Coaching resources"
+        body={
+          <p>
+            Everything here supports the paid coaching platform. If you are
+            approved, open your member area. If not, sign in and ask Jeremy for
+            access.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/support-routing/#lo-development-support-team" className="btn-primary">
-              Find support team
-            </Link>
-            <Link
-              href="/sales-training/"
-              className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20"
-            >
-              Sales &amp; Marketing
-            </Link>
-          </div>
-        </div>
-      </section>
+        }
+        backgroundImage="/media/dark-hero-background.png"
+      />
 
-      <section className="container-page py-14">
+      <section className="container-page py-12">
         <SectionHeading
-          title="What do you need help with?"
-          description="Pick the resource area that matches your question right now."
+          eyebrow="What to open"
+          title="Coaching resources only."
+          description="The live build no longer surfaces the broader LO Development training library, AI tools, FaceGram, or support routing."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {resources.map((resource) => (
-            <Link key={resource.href} href={resource.href} className="card hover:shadow-lift">
-              <h3 className="h-display text-lg">{resource.title}</h3>
+          {resourceCards.map((card) => (
+            <Link key={card.href} href={card.href} className="card hover:shadow-lift">
+              <h3 className="h-display text-lg">{card.title}</h3>
               <p className="prose-lf mt-2 text-sm text-lf-slate">
-                {resource.description}
+                {card.description}
               </p>
             </Link>
           ))}
-        </div>
-      </section>
-
-      <section className="bg-lf-mist">
-        <div className="container-page py-14">
-          <SectionHeading
-            eyebrow="Marketing training cards"
-            title="Source-backed setup resources."
-            description="Use these internal resource cards to find the new marketing setup assets. They connect to free Sales and Marketing lessons and AI Advantage, not paid coaching progress."
-          />
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {marketingTrainingAssets.map((asset) => (
-              <article key={asset.id} className="card flex flex-col gap-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-                    {asset.track}
-                  </p>
-                  <h3 className="h-display mt-1 text-xl">{asset.title}</h3>
-                </div>
-                <p className="prose-lf text-sm text-lf-slate">
-                  {asset.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {asset.tags.slice(0, 4).map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-lf-orangeSoft px-2.5 py-1 text-xs font-semibold text-lf-orangeDark"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="grid gap-3 text-sm">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-                      Related lessons
-                    </p>
-                    <p className="mt-1 text-lf-charcoal">
-                      {asset.relatedLessons.join(", ")}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-                      What to do next
-                    </p>
-                    <p className="mt-1 text-lf-charcoal">{asset.nextAction}</p>
-                  </div>
-                </div>
-                <Link
-                  href={`/training-library/#${asset.id}`}
-                  className="mt-auto inline-flex text-sm font-semibold text-lf-orange"
-                >
-                  {asset.buttonText} &rarr;
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <ClipLibraryRail
-        title="Resource clips for common LO questions"
-        description="Internal training cutdowns that help approved Loan Factory users find practical answers faster."
-        section="Loan Officer Support"
-      />
-      <section id="feedback" className="container-page pb-14">
-        <div className="rounded-2xl border border-lf-orange/30 bg-lf-orangeSoft p-6 shadow-card">
-          <h2 className="h-display text-2xl">Send Feedback</h2>
-          <p className="prose-lf mt-2 max-w-3xl text-sm text-lf-slate">
-            Use the floating Send Feedback button on any page. Signed-in users
-            can submit feedback. If saving is unavailable, the note stays in
-            this browser so you can copy it to LO Development.
-          </p>
         </div>
       </section>
     </>

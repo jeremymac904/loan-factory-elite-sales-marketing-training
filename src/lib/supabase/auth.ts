@@ -91,23 +91,23 @@ export const roleLabels: Record<string, string> = {
 export const roleDashboardHrefs: Record<string, string> = {
   master_admin: "/admin/",
   admin: "/admin/",
-  lo_development_lead: "/lo-development/",
-  lo_development_member: "/lo-development/",
-  lo_development: "/lo-development/",
-  training_academy: "/training-academy/",
-  loan_officer_support: "/loan-officer-support/",
+  lo_development_lead: "/coach-command-center/",
+  lo_development_member: "/coach-command-center/",
+  lo_development: "/coach-command-center/",
+  training_academy: "/coach-command-center/",
+  loan_officer_support: "/resources/",
   corporate_coach: "/coach-command-center/",
   corporate_coach_supervisor: "/coach-command-center/",
   lo_mastery_coach: "/coach-command-center/",
   loan_factory_alliance_coach: "/coach-command-center/",
   coaching_director: "/coach-command-center/",
-  marketing: "/marketing/",
-  team_leader: "/team-leader-guide/",
+  marketing: "/resources/",
+  team_leader: "/coach-command-center/",
   coaching_member_level_1: "/member-area/lo-mastery/",
   coaching_member_level_2: "/member-area/alliance/",
-  loan_officer: "/normal-lo/",
-  support_staff: "/loan-officer-support/",
-  vendor_partner_future: "/access-pending/",
+  loan_officer: "/",
+  support_staff: "/resources/",
+  vendor_partner_future: "/",
 };
 
 export function getRoleLabel(role: string | null | undefined): string {
@@ -117,7 +117,7 @@ export function getRoleLabel(role: string | null | undefined): string {
 
 export function getRoleDashboardHref(role: string | null | undefined): string {
   if (!role) return "/profile/";
-  return roleDashboardHrefs[role] ?? "/profile/";
+  return roleDashboardHrefs[role] ?? "/";
 }
 
 export function isApprovedProfile(

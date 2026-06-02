@@ -3,14 +3,11 @@ import Link from "next/link";
 const items = [
   { href: "/coach-command-center/", label: "Overview" },
   { href: "/coach-command-center/team/", label: "My People" },
-  { href: "/coach-command-center/activity/", label: "Activity" },
-  { href: "/coach-command-center/scorecards/", label: "Scorecards" },
   { href: "/coach-command-center/member-progress/", label: "Progress" },
+  { href: "/coach-command-center/scorecards/", label: "Scorecards" },
   { href: "/coach-command-center/coaching-notes/", label: "Notes" },
-  { href: "/coach-command-center/training-plan/", label: "Training" },
-  { href: "/coach-command-center/messages/", label: "Messages" },
-  { href: "/coach-command-center/email-center/", label: "Email" },
   { href: "/coach-command-center/calendar/", label: "Calendar" },
+  { href: "/coach-command-center/resources/", label: "Resources" },
 ];
 
 type Props = {

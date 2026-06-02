@@ -4,18 +4,16 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import BetaPreviewBanner from "@/components/BetaPreviewBanner";
 import ViewAsBanner from "@/components/ViewAsBanner";
-import HeyGenVideoWidget from "@/components/HeyGenVideoWidget";
 import SuggestionModal from "@/components/SuggestionModal";
-import RoleAssistantMount from "@/components/assistant/RoleAssistantMount";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Loan Factory LO Development",
-    template: "%s | Loan Factory LO Development",
+    default: "Loan Factory Paid Coaching",
+    template: "%s | Loan Factory Paid Coaching",
   },
   description:
-    "Internal Loan Factory LO Development site for coaching, Sales & Marketing training, AI Advantage, FaceGram, resources, and support routing.",
+    "Loan Factory paid coaching platform for LO Mastery and Loan Factory Alliance.",
   manifest: "/manifest.webmanifest",
   robots: { index: false, follow: false },
   icons: {
@@ -43,8 +41,6 @@ export default function RootLayout({
         <BetaPreviewBanner />
         <main>{children}</main>
         <SiteFooter />
-        <RoleAssistantMount />
-        <HeyGenVideoWidget />
         <SuggestionModal
           triggerLabel="Send Feedback"
           triggerClassName="fixed bottom-4 right-4 z-40 rounded-full bg-lf-orange px-4 py-3 text-sm font-bold text-white shadow-2xl transition hover:-translate-y-0.5 hover:bg-lf-orangeDark focus:outline-none focus:ring-2 focus:ring-lf-orange/30 sm:bottom-5 sm:right-5"

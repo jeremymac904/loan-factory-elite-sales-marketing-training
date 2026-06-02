@@ -15,14 +15,14 @@ export default function LoginPage() {
         />
         <div className="relative container-page py-14">
           <p className="text-xs font-bold uppercase tracking-wide text-lf-orange">
-            LO Development Platform
+            Loan Factory Paid Coaching
           </p>
           <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight">
-            Sign in to LO Development
+            Sign in to paid coaching
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Use your Loan Factory Google account to open your training,
-            coaching, FaceGram, resources, and AI help.
+            Use your Loan Factory Google account to open LO Mastery, Loan
+            Factory Alliance, scorecards, resources, and coaching tools.
           </p>
         </div>
       </section>
@@ -41,8 +41,8 @@ export default function LoginPage() {
               <GoogleSignInButton />
             </div>
             <p className="prose-lf mt-4 text-sm text-lf-slate">
-              Need access? Ask Jeremy or the LO Development team to add your
-              Loan Factory email.
+              Need access? Ask Jeremy to add your Loan Factory email to the
+              approved coaching list.
             </p>
           </div>
 

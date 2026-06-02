@@ -174,13 +174,13 @@ export default async function AdminPlatformStatusPage() {
             Review queues
           </h2>
           <p className="prose-lf mt-1 text-xs text-lf-slate">
-            Reviewed manually by LO Development. Open a queue to see live rows
-            from Supabase.
+            Reviewed manually by admin and coaching ops. Open a queue to see
+            live rows from Supabase.
           </p>
           <div className="mt-3 grid gap-2 sm:grid-cols-3">
-            <QueueLink href="/admin/feedback" label="Feedback & Suggestions" />
-            <QueueLink href="/admin/lender-escalations" label="Lender Escalations" />
-            <QueueLink href="/admin/ai-assistants" label="AI Assistant Settings" />
+            <QueueLink href="/admin/users" label="Users & Access" />
+            <QueueLink href="/admin/coach-assignments" label="Coach Assignments" />
+            <QueueLink href="/admin/view-as" label="View as role" />
           </div>
         </div>
       </section>

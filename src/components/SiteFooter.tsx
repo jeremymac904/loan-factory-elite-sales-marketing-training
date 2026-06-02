@@ -3,22 +3,11 @@ import BrandImage from "./BrandImage";
 import { brandAssets } from "@/data/brandAssets";
 
 const footerLinks = [
-  { href: "/normal-lo/", label: "Loan Officer Dashboard" },
-  { href: "/lo-development/", label: "LO Development" },
-  { href: "/training-academy/", label: "Training Academy" },
-  { href: "/loan-officer-support/", label: "Loan Officer Support" },
-  { href: "/marketing/", label: "Marketing" },
-  { href: "/admin/", label: "Admin" },
   { href: "/coaching/", label: "Coaching" },
-  { href: "/sales-training/", label: "Sales & Marketing" },
-  { href: "/ai-training/", label: "AI Advantage" },
-  { href: "/facegram/", label: "FaceGram" },
-  { href: "/ai-assistants/", label: "AI Assistants" },
+  { href: "/lo-mastery-coaching/", label: "LO Mastery" },
+  { href: "/loan-factory-alliance/", label: "Loan Factory Alliance" },
   { href: "/resources/", label: "Resources" },
-  {
-    href: "/support-routing/#lo-development-support-team",
-    label: "Support Team",
-  },
+  { href: "/login/", label: "Sign In" },
 ];
 
 export default function SiteFooter() {
@@ -31,19 +20,18 @@ export default function SiteFooter() {
             heightClass="h-9"
           />
           <p className="max-w-xl text-sm leading-6 text-lf-slate">
-            Training, coaching, AI tools, and internal resources for Loan
-            Factory loan officers.
+            Paid coaching for LO Mastery and Loan Factory Alliance.
           </p>
         </div>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_2fr]">
           <div>
             <p className="text-sm font-semibold text-lf-navy">
-              Loan Factory LO Development
+              Loan Factory Paid Coaching
             </p>
             <p className="mt-2 text-sm leading-6 text-lf-slate">
-              Clear paths for coaching, Sales & Marketing training, AI
-              practice, internal community, and support resources.
+              Clear paths for LO Mastery, Loan Factory Alliance, coaching
+              resources, and member support.
             </p>
           </div>
           <div className="grid gap-x-6 gap-y-3 text-sm sm:grid-cols-2">

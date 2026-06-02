@@ -1,0 +1,787 @@
+{
+  "generated_at": "2026-05-31T19:30:46",
+  "source_counts": {
+    "long_form_videos": 7,
+    "support_research_notes": 1,
+    "clips": 91,
+    "manual_review_clips": 56,
+    "skipped_clips": 0
+  },
+  "source_category_map": {
+    "AI Support": {
+      "clip_count": 1,
+      "clip_titles": [
+        "Using the Loan Factory AI Assistant"
+      ],
+      "clip_slugs": [
+        "using-the-loan-factory-ai-assistant"
+      ],
+      "platform_section": "AI Advantage"
+    },
+    "First File Survival Guide": {
+      "clip_count": 3,
+      "clip_titles": [
+        "Why Loans Die: Appraised Value Mistake",
+        "Life of a Loan: Roles and Responsibilities",
+        "Fixing the 99 Percent Completion Error"
+      ],
+      "clip_slugs": [
+        "why-loans-die-appraised-value-mistake",
+        "life-of-a-loan-roles-and-responsibilities",
+        "fixing-the-99-percent-completion-error"
+      ],
+      "platform_section": "Onboarding / First File Survival"
+    },
+    "1003 and Application Setup": {
+      "clip_count": 5,
+      "clip_titles": [
+        "LO Responsibilities: Walking the 1003",
+        "Community Property States",
+        "Self Employed 1099 Income and Underwriting Help",
+        "Student Loan Payments",
+        "Fee Sheet Deep Dive"
+      ],
+      "clip_slugs": [
+        "lo-responsibilities-walking-the-1003",
+        "community-property-states",
+        "self-employed-1099-income-and-underwriting-help",
+        "student-loan-payments",
+        "fee-sheet-deep-dive"
+      ],
+      "platform_section": "1003 / Application Setup"
+    },
+    "Loan Submission": {
+      "clip_count": 6,
+      "clip_titles": [
+        "Converting the Loan",
+        "Convert to Loan Form: Setup and Address Check",
+        "Convert to Loan Form: Loan Story Requirement",
+        "Convert to Loan Form: Submission Details",
+        "Disclosure Selection",
+        "Post Conversion Email Review"
+      ],
+      "clip_slugs": [
+        "converting-the-loan",
+        "convert-to-loan-form-setup-and-address-check",
+        "convert-to-loan-form-loan-story-requirement",
+        "convert-to-loan-form-submission-details",
+        "disclosure-selection",
+        "post-conversion-email-review"
+      ],
+      "platform_section": "Onboarding / First File Survival"
+    },
+    "Compensation and Fees": {
+      "clip_count": 11,
+      "clip_titles": [
+        "Borrower Paid versus Lender Paid",
+        "How to Change Compensation Defaults",
+        "Initial Compensation Settings",
+        "Wholesale Compensation Breakdown",
+        "Correspondent Channel Overview: Flexibility",
+        "Correspondent Channel Overview: Processing and Fees",
+        "Loan Factory Fee Schedule",
+        "Admin Fee Rules",
+        "Changing Compensation Rules",
+        "Borrower Paid versus Lender Paid Optics: Explaining the Tradeoff",
+        "Borrower Paid versus Lender Paid Optics: Client Conversation"
+      ],
+      "clip_slugs": [
+        "borrower-paid-versus-lender-paid",
+        "how-to-change-compensation-defaults",
+        "initial-compensation-settings",
+        "wholesale-compensation-breakdown",
+        "correspondent-channel-overview-flexibility",
+        "correspondent-channel-overview-processing-and-fees",
+        "loan-factory-fee-schedule",
+        "admin-fee-rules",
+        "changing-compensation-rules",
+        "borrower-paid-versus-lender-paid-optics-explaining-the-tradeoff",
+        "borrower-paid-versus-lender-paid-optics-client-conversation"
+      ],
+      "platform_section": "Compensation and Fees"
+    },
+    "Compliance and Process Reminders": {
+      "clip_count": 6,
+      "clip_titles": [
+        "No Self Processing Requirement",
+        "EPO Risks",
+        "TRID and Address Entry",
+        "Tolerance Cures",
+        "High Cost and Seller Concessions",
+        "Fannie versus Freddie Rules"
+      ],
+      "clip_slugs": [
+        "no-self-processing-requirement",
+        "epo-risks",
+        "trid-and-address-entry",
+        "tolerance-cures",
+        "high-cost-and-seller-concessions",
+        "fannie-versus-freddie-rules"
+      ],
+      "platform_section": "Compliance and Process Reminders"
+    },
+    "Marketplace": {
+      "clip_count": 6,
+      "clip_titles": [
+        "Rocket Pro Training Portal",
+        "Lender Marketplace and Live Help Buttons",
+        "Mortgage One TPO Grant",
+        "Marketplace DPA Tab",
+        "Scenario Requests in Marketplace",
+        "Reverse Mortgage Basics"
+      ],
+      "clip_slugs": [
+        "rocket-pro-training-portal",
+        "lender-marketplace-and-live-help-buttons",
+        "mortgage-one-tpo-grant",
+        "marketplace-dpa-tab",
+        "scenario-requests-in-marketplace",
+        "reverse-mortgage-basics"
+      ],
+      "platform_section": "Loan Officer Support"
+    },
+    "Troubleshooting": {
+      "clip_count": 3,
+      "clip_titles": [
+        "Internal Support Channels",
+        "Ticket System",
+        "Adding New Lenders by Ticket"
+      ],
+      "clip_slugs": [
+        "internal-support-channels",
+        "ticket-system",
+        "adding-new-lenders-by-ticket"
+      ],
+      "platform_section": "Loan Officer Support"
+    },
+    "Pricing Loans": {
+      "clip_count": 17,
+      "clip_titles": [
+        "Pricing Engine Overview",
+        "Comp Minimum and Maximum Logic",
+        "Lender Paid Case Study",
+        "Borrower Paid Mechanics: Reducing Comp",
+        "Borrower Paid Mechanics: Winning Shopped Deals",
+        "Non Target Compensation Strategy: Built In Rates",
+        "Non Target Compensation Strategy: Manual Overage",
+        "Rate Alerts Intro",
+        "Setting Rate Alerts: Setup Flow",
+        "Setting Rate Alerts: Target Fields and Notifications",
+        "Locking the Rate",
+        "Pricing Engine Limitations",
+        "Manual Comp Overrides",
+        "Lender Selection Nuance",
+        "Payment Benefit versus Cash Benefit",
+        "Strategic Debt Payoff",
+        "Refi Escrow Trap"
+      ],
+      "clip_slugs": [
+        "pricing-engine-overview",
+        "comp-minimum-and-maximum-logic",
+        "lender-paid-case-study",
+        "borrower-paid-mechanics-reducing-comp",
+        "borrower-paid-mechanics-winning-shopped-deals",
+        "non-target-compensation-strategy-built-in-rates",
+        "non-target-compensation-strategy-manual-overage",
+        "rate-alerts-intro",
+        "setting-rate-alerts-setup-flow",
+        "setting-rate-alerts-target-fields-and-notifications",
+        "locking-the-rate",
+        "pricing-engine-limitations",
+        "manual-comp-overrides",
+        "lender-selection-nuance",
+        "payment-benefit-versus-cash-benefit",
+        "strategic-debt-payoff",
+        "refi-escrow-trap"
+      ],
+      "platform_section": "Pricing"
+    },
+    "TERA and System Navigation": {
+      "clip_count": 5,
+      "clip_titles": [
+        "Pipeline Definitions: Leads, Prospects, Loans",
+        "Google Chat Spaces",
+        "TERA Lead Pipeline",
+        "Email to Note Sync",
+        "Communication via Spaces"
+      ],
+      "clip_slugs": [
+        "pipeline-definitions-leads-prospects-loans",
+        "google-chat-spaces",
+        "tera-lead-pipeline",
+        "email-to-note-sync",
+        "communication-via-spaces"
+      ],
+      "platform_section": "TERA / System Navigation"
+    },
+    "Training Academy": {
+      "clip_count": 1,
+      "clip_titles": [
+        "Onboarding Series Overview"
+      ],
+      "clip_slugs": [
+        "onboarding-series-overview"
+      ],
+      "platform_section": "Training Library"
+    },
+    "Leads and Marketing": {
+      "clip_count": 16,
+      "clip_titles": [
+        "Loan Factory IQ",
+        "Google Business Profile Setup",
+        "Marketing Materials",
+        "Labels and Follow Ups",
+        "Loan Factory IQ: Client Retention Tool",
+        "Loan Factory IQ: Setup and Reports",
+        "Ally Marketing",
+        "Facebook Ad Templates",
+        "Google Reviews: Profile and Review Path",
+        "Google Reviews: Verification and Follow Up",
+        "Marketing Materials",
+        "Newsletters",
+        "Lead Funnels: Campaign Landing Pages",
+        "Lead Funnels: Form Flow and Follow Up",
+        "Lead Funnels: Practical Setup Wrap Up",
+        "Website Pricing Settings"
+      ],
+      "clip_slugs": [
+        "loan-factory-iq",
+        "google-business-profile-setup",
+        "marketing-materials",
+        "labels-and-follow-ups",
+        "loan-factory-iq-client-retention-tool",
+        "loan-factory-iq-setup-and-reports",
+        "ally-marketing",
+        "facebook-ad-templates",
+        "google-reviews-profile-and-review-path",
+        "google-reviews-verification-and-follow-up",
+        "marketing-materials-2",
+        "newsletters",
+        "lead-funnels-campaign-landing-pages",
+        "lead-funnels-form-flow-and-follow-up",
+        "lead-funnels-practical-setup-wrap-up",
+        "website-pricing-settings"
+      ],
+      "platform_section": "Sales & Marketing"
+    },
+    "Getting Started": {
+      "clip_count": 1,
+      "clip_titles": [
+        "User and Credential Settings"
+      ],
+      "clip_slugs": [
+        "user-and-credential-settings"
+      ],
+      "platform_section": "LO Development Resources"
+    },
+    "Corporate Coach": {
+      "clip_count": 1,
+      "clip_titles": [
+        "Corporate Coaches"
+      ],
+      "clip_slugs": [
+        "corporate-coaches"
+      ],
+      "platform_section": "Corporate Coach Resources"
+    },
+    "Commission Questions": {
+      "clip_count": 1,
+      "clip_titles": [
+        "Requesting Commission"
+      ],
+      "clip_slugs": [
+        "requesting-commission"
+      ],
+      "platform_section": "Compensation and Fees"
+    },
+    "DPA": {
+      "clip_count": 4,
+      "clip_titles": [
+        "Orion DPA Intro",
+        "Forgivable DPA Economics",
+        "FHA DPA Exit Strategies",
+        "DPA Rate Structures"
+      ],
+      "clip_slugs": [
+        "orion-dpa-intro",
+        "forgivable-dpa-economics",
+        "fha-dpa-exit-strategies",
+        "dpa-rate-structures"
+      ],
+      "platform_section": "DPA / Grants"
+    },
+    "Pylon": {
+      "clip_count": 4,
+      "clip_titles": [
+        "Pylon Beta Guidelines",
+        "Pylon Product Restrictions",
+        "Marketing versus Reality with Pylon",
+        "Pylon Program Limits"
+      ],
+      "clip_slugs": [
+        "pylon-beta-guidelines",
+        "pylon-product-restrictions",
+        "marketing-versus-reality-with-pylon",
+        "pylon-program-limits"
+      ],
+      "platform_section": "TERA / System Navigation"
+    }
+  },
+  "platform_section_map": {
+    "1003 / Application Setup": {
+      "clip_count": 5,
+      "source_categories": [
+        "1003 and Application Setup"
+      ],
+      "clip_ids": [
+        "lo-dev-003",
+        "lo-dev-007",
+        "lo-dev-008",
+        "lo-dev-009",
+        "lo-dev-088"
+      ],
+      "titles": [
+        "LO Responsibilities: Walking the 1003",
+        "Community Property States",
+        "Self Employed 1099 Income and Underwriting Help",
+        "Student Loan Payments",
+        "Fee Sheet Deep Dive"
+      ],
+      "routes": [
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/"
+      ]
+    },
+    "AI Advantage": {
+      "clip_count": 1,
+      "source_categories": [
+        "AI Support"
+      ],
+      "clip_ids": [
+        "lo-dev-001"
+      ],
+      "titles": [
+        "Using the Loan Factory AI Assistant"
+      ],
+      "routes": [
+        "/ai-training/"
+      ]
+    },
+    "Compensation and Fees": {
+      "clip_count": 12,
+      "source_categories": [
+        "Commission Questions",
+        "Compensation and Fees"
+      ],
+      "clip_ids": [
+        "lo-dev-005",
+        "lo-dev-010",
+        "lo-dev-025",
+        "lo-dev-027",
+        "lo-dev-031",
+        "lo-dev-032",
+        "lo-dev-035",
+        "lo-dev-036",
+        "lo-dev-059",
+        "lo-dev-064",
+        "lo-dev-090",
+        "lo-dev-091"
+      ],
+      "titles": [
+        "Borrower Paid versus Lender Paid",
+        "How to Change Compensation Defaults",
+        "Initial Compensation Settings",
+        "Wholesale Compensation Breakdown",
+        "Correspondent Channel Overview: Flexibility",
+        "Correspondent Channel Overview: Processing and Fees",
+        "Loan Factory Fee Schedule",
+        "Admin Fee Rules",
+        "Changing Compensation Rules",
+        "Requesting Commission",
+        "Borrower Paid versus Lender Paid Optics: Explaining the Tradeoff",
+        "Borrower Paid versus Lender Paid Optics: Client Conversation"
+      ],
+      "routes": [
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/"
+      ]
+    },
+    "Compliance and Process Reminders": {
+      "clip_count": 6,
+      "source_categories": [
+        "Compliance and Process Reminders"
+      ],
+      "clip_ids": [
+        "lo-dev-006",
+        "lo-dev-037",
+        "lo-dev-062",
+        "lo-dev-065",
+        "lo-dev-071",
+        "lo-dev-084"
+      ],
+      "titles": [
+        "No Self Processing Requirement",
+        "EPO Risks",
+        "TRID and Address Entry",
+        "Tolerance Cures",
+        "High Cost and Seller Concessions",
+        "Fannie versus Freddie Rules"
+      ],
+      "routes": [
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/"
+      ]
+    },
+    "Corporate Coach Resources": {
+      "clip_count": 1,
+      "source_categories": [
+        "Corporate Coach"
+      ],
+      "clip_ids": [
+        "lo-dev-024"
+      ],
+      "titles": [
+        "Corporate Coaches"
+      ],
+      "routes": [
+        "/coaching/"
+      ]
+    },
+    "DPA / Grants": {
+      "clip_count": 4,
+      "source_categories": [
+        "DPA"
+      ],
+      "clip_ids": [
+        "lo-dev-067",
+        "lo-dev-068",
+        "lo-dev-069",
+        "lo-dev-074"
+      ],
+      "titles": [
+        "Orion DPA Intro",
+        "Forgivable DPA Economics",
+        "FHA DPA Exit Strategies",
+        "DPA Rate Structures"
+      ],
+      "routes": [
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/"
+      ]
+    },
+    "LO Development Resources": {
+      "clip_count": 1,
+      "source_categories": [
+        "Getting Started"
+      ],
+      "clip_ids": [
+        "lo-dev-022"
+      ],
+      "titles": [
+        "User and Credential Settings"
+      ],
+      "routes": [
+        "/resources/"
+      ]
+    },
+    "Loan Officer Support": {
+      "clip_count": 9,
+      "source_categories": [
+        "Marketplace",
+        "Troubleshooting"
+      ],
+      "clip_ids": [
+        "lo-dev-011",
+        "lo-dev-012",
+        "lo-dev-013",
+        "lo-dev-018",
+        "lo-dev-070",
+        "lo-dev-073",
+        "lo-dev-078",
+        "lo-dev-079",
+        "lo-dev-080"
+      ],
+      "titles": [
+        "Rocket Pro Training Portal",
+        "Lender Marketplace and Live Help Buttons",
+        "Internal Support Channels",
+        "Ticket System",
+        "Mortgage One TPO Grant",
+        "Marketplace DPA Tab",
+        "Scenario Requests in Marketplace",
+        "Adding New Lenders by Ticket",
+        "Reverse Mortgage Basics"
+      ],
+      "routes": [
+        "/support-routing/",
+        "/support-routing/",
+        "/support-routing/",
+        "/support-routing/",
+        "/support-routing/",
+        "/support-routing/",
+        "/support-routing/",
+        "/support-routing/",
+        "/support-routing/"
+      ]
+    },
+    "Onboarding / First File Survival": {
+      "clip_count": 9,
+      "source_categories": [
+        "First File Survival Guide",
+        "Loan Submission"
+      ],
+      "clip_ids": [
+        "lo-dev-002",
+        "lo-dev-004",
+        "lo-dev-016",
+        "lo-dev-055",
+        "lo-dev-056",
+        "lo-dev-057",
+        "lo-dev-058",
+        "lo-dev-060",
+        "lo-dev-061"
+      ],
+      "titles": [
+        "Why Loans Die: Appraised Value Mistake",
+        "Converting the Loan",
+        "Life of a Loan: Roles and Responsibilities",
+        "Fixing the 99 Percent Completion Error",
+        "Convert to Loan Form: Setup and Address Check",
+        "Convert to Loan Form: Loan Story Requirement",
+        "Convert to Loan Form: Submission Details",
+        "Disclosure Selection",
+        "Post Conversion Email Review"
+      ],
+      "routes": [
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/"
+      ]
+    },
+    "Pricing": {
+      "clip_count": 17,
+      "source_categories": [
+        "Pricing Loans"
+      ],
+      "clip_ids": [
+        "lo-dev-014",
+        "lo-dev-026",
+        "lo-dev-028",
+        "lo-dev-029",
+        "lo-dev-030",
+        "lo-dev-033",
+        "lo-dev-034",
+        "lo-dev-041",
+        "lo-dev-042",
+        "lo-dev-043",
+        "lo-dev-066",
+        "lo-dev-077",
+        "lo-dev-082",
+        "lo-dev-083",
+        "lo-dev-085",
+        "lo-dev-086",
+        "lo-dev-089"
+      ],
+      "titles": [
+        "Pricing Engine Overview",
+        "Comp Minimum and Maximum Logic",
+        "Lender Paid Case Study",
+        "Borrower Paid Mechanics: Reducing Comp",
+        "Borrower Paid Mechanics: Winning Shopped Deals",
+        "Non Target Compensation Strategy: Built In Rates",
+        "Non Target Compensation Strategy: Manual Overage",
+        "Rate Alerts Intro",
+        "Setting Rate Alerts: Setup Flow",
+        "Setting Rate Alerts: Target Fields and Notifications",
+        "Locking the Rate",
+        "Pricing Engine Limitations",
+        "Manual Comp Overrides",
+        "Lender Selection Nuance",
+        "Payment Benefit versus Cash Benefit",
+        "Strategic Debt Payoff",
+        "Refi Escrow Trap"
+      ],
+      "routes": [
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/"
+      ]
+    },
+    "Sales & Marketing": {
+      "clip_count": 16,
+      "source_categories": [
+        "Leads and Marketing"
+      ],
+      "clip_ids": [
+        "lo-dev-019",
+        "lo-dev-020",
+        "lo-dev-021",
+        "lo-dev-039",
+        "lo-dev-044",
+        "lo-dev-045",
+        "lo-dev-046",
+        "lo-dev-047",
+        "lo-dev-048",
+        "lo-dev-049",
+        "lo-dev-050",
+        "lo-dev-051",
+        "lo-dev-052",
+        "lo-dev-053",
+        "lo-dev-054",
+        "lo-dev-076"
+      ],
+      "titles": [
+        "Loan Factory IQ",
+        "Google Business Profile Setup",
+        "Marketing Materials",
+        "Labels and Follow Ups",
+        "Loan Factory IQ: Client Retention Tool",
+        "Loan Factory IQ: Setup and Reports",
+        "Ally Marketing",
+        "Facebook Ad Templates",
+        "Google Reviews: Profile and Review Path",
+        "Google Reviews: Verification and Follow Up",
+        "Marketing Materials",
+        "Newsletters",
+        "Lead Funnels: Campaign Landing Pages",
+        "Lead Funnels: Form Flow and Follow Up",
+        "Lead Funnels: Practical Setup Wrap Up",
+        "Website Pricing Settings"
+      ],
+      "routes": [
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/",
+        "/sales-training/"
+      ]
+    },
+    "TERA / System Navigation": {
+      "clip_count": 9,
+      "source_categories": [
+        "Pylon",
+        "TERA and System Navigation"
+      ],
+      "clip_ids": [
+        "lo-dev-015",
+        "lo-dev-023",
+        "lo-dev-038",
+        "lo-dev-040",
+        "lo-dev-063",
+        "lo-dev-072",
+        "lo-dev-075",
+        "lo-dev-081",
+        "lo-dev-087"
+      ],
+      "titles": [
+        "Pipeline Definitions: Leads, Prospects, Loans",
+        "Google Chat Spaces",
+        "TERA Lead Pipeline",
+        "Email to Note Sync",
+        "Communication via Spaces",
+        "Pylon Beta Guidelines",
+        "Pylon Product Restrictions",
+        "Marketing versus Reality with Pylon",
+        "Pylon Program Limits"
+      ],
+      "routes": [
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/",
+        "/training-library/clips/"
+      ]
+    },
+    "Training Library": {
+      "clip_count": 1,
+      "source_categories": [
+        "Training Academy"
+      ],
+      "clip_ids": [
+        "lo-dev-017"
+      ],
+      "titles": [
+        "Onboarding Series Overview"
+      ],
+      "routes": [
+        "/training-library/"
+      ]
+    }
+  },
+  "long_form_section_map": {
+    "LO Development Resources": {
+      "item_count": 7,
+      "source_videos": [
+        "LO Development Series: 1003 Mistakes to Avoid",
+        "LO Kickoff Call",
+        "LO Onboarding Series: Compensation & Fees",
+        "LO Onboarding Series: Leads & Marketing",
+        "LO Onboarding Series: Loans (Highly Recommended)",
+        "Q&A (Post-Training): Loans (LOS)",
+        "Q&A (Post-Training): Pricing (LOS)"
+      ],
+      "support_notes": [
+        "LO Support Research Analysis"
+      ]
+    }
+  },
+  "notes": {
+    "long_form_source_videos": "Seven source recordings live under LO Development Resources.",
+    "support_research": "LO Support Research Analysis is tracked as research only, not a video.",
+    "clip_drive_links": "No clip-level Google Drive URLs were present in the source bundle."
+  }
+}

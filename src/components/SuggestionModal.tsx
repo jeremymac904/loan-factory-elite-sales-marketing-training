@@ -42,7 +42,7 @@ type SuggestionAuthState =
   | { status: "signed-in"; userId: string; email: string };
 
 export default function SuggestionModal({
-  triggerLabel = "Send Feedback",
+  triggerLabel = "Share Coaching Feedback",
   triggerClassName = FLOATING_FEEDBACK_TRIGGER,
 }: Props) {
   const [open, setOpen] = useState(false);
@@ -218,13 +218,14 @@ export default function SuggestionModal({
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 id="suggestion-title" className="h-display text-2xl">
-                  Send feedback
+                  Share coaching feedback
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-lf-slate">
                   Tell us what is confusing, broken, missing, or worth
-                  improving. If feedback cannot be submitted, it saves in this
-                  browser so you can copy it to LO Development. Do not include
-                  borrower names, loan details, or private file information.
+                  improving in the paid coaching platform. If feedback cannot
+                  be submitted, it saves in this browser so you can copy it
+                  later. Do not include borrower names, loan details, or
+                  private file information.
                 </p>
               </div>
               <button
