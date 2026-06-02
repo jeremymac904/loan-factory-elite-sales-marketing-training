@@ -13,6 +13,7 @@ import {
   type User,
 } from "@supabase/supabase-js";
 import { getRoleDashboardHref, getSafeNextPath } from "@/lib/supabase/auth";
+import { buildApprovedProfile } from "@/lib/supabase/approvedUserProfile";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import {
   appSessionCookieName,
@@ -411,33 +412,39 @@ export async function POST(request: NextRequest) {
   }
 
   const profileStatus = approvedUser ? "approved" : "pending";
+  const profilePayload = approvedUser
+    ? {
+        ...buildApprovedProfile(activeUser, approvedUser),
+        updated_at: new Date().toISOString(),
+      }
+    : {
+        id: activeUser.id,
+        email,
+        full_name: getMetadataValue(activeUser, ["full_name", "name"]),
+        role: null,
+        department: null,
+        title: null,
+        avatar_url: getMetadataValue(activeUser, ["avatar_url", "picture"]),
+        status: profileStatus,
+        updated_at: new Date().toISOString(),
+      };
 
   const { error: profileError } = await admin.from("profiles").upsert(
-    {
-      id: activeUser.id,
-      email,
-      full_name:
-        approvedUser?.full_name ??
-        getMetadataValue(activeUser, ["full_name", "name"]),
-      role: approvedUser?.role ?? null,
-      department: approvedUser?.department ?? null,
-      title: approvedUser?.title ?? null,
-      avatar_url: getMetadataValue(activeUser, ["avatar_url", "picture"]),
-      status: profileStatus,
-      updated_at: new Date().toISOString(),
-    },
+    profilePayload,
     { onConflict: "email" },
   );
 
   if (profileError) {
     logSupabaseSyncError("Supabase profile upsert failed", profileError);
-    return pending(request, "profile-sync", responseMode, 500, cookiesToSet, {
-      syncProfileReceivedSession: receivedSession,
-      profileEmail: email,
-      profileRole: approvedUser?.role ?? null,
-      profileStatus,
-      lastErrorMessage: "Profile upsert failed.",
-    });
+    if (!approvedUser) {
+      return pending(request, "profile-sync", responseMode, 500, cookiesToSet, {
+        syncProfileReceivedSession: receivedSession,
+        profileEmail: email,
+        profileRole: null,
+        profileStatus,
+        lastErrorMessage: "Profile upsert failed.",
+      });
+    }
   }
 
   if (!approvedUser) {

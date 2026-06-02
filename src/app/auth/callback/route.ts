@@ -11,6 +11,7 @@ import {
 import type { PostgrestError, Session, User } from "@supabase/supabase-js";
 import { NextResponse, type NextRequest } from "next/server";
 import { getRoleDashboardHref, getSafeNextPath } from "@/lib/supabase/auth";
+import { buildApprovedProfile } from "@/lib/supabase/approvedUserProfile";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import {
   getSiteUrl,
@@ -357,25 +358,33 @@ async function syncApprovedProfile(user: User) {
   }
 
   const profileStatus = approvedUser ? "approved" : "pending";
+  const profilePayload = approvedUser
+    ? {
+        ...buildApprovedProfile(user, approvedUser),
+        updated_at: new Date().toISOString(),
+      }
+    : {
+        id: user.id,
+        email,
+        full_name: getMetadataValue(user, ["full_name", "name"]),
+        role: null,
+        department: null,
+        title: null,
+        avatar_url: getMetadataValue(user, ["avatar_url", "picture"]),
+        status: profileStatus,
+        updated_at: new Date().toISOString(),
+      };
+
   const { error: profileError } = await admin.from("profiles").upsert(
-    {
-      id: user.id,
-      email,
-      full_name:
-        approvedUser?.full_name ?? getMetadataValue(user, ["full_name", "name"]),
-      role: approvedUser?.role ?? null,
-      department: approvedUser?.department ?? null,
-      title: approvedUser?.title ?? null,
-      avatar_url: getMetadataValue(user, ["avatar_url", "picture"]),
-      status: profileStatus,
-      updated_at: new Date().toISOString(),
-    },
+    profilePayload,
     { onConflict: "email" },
   );
 
   if (profileError) {
     logSupabaseSyncError("Supabase profile upsert failed", profileError);
-    return { status: "pending" as const, reason: "profile-sync" };
+    if (!approvedUser) {
+      return { status: "pending" as const, reason: "profile-sync" };
+    }
   }
 
   if (!approvedUser) {

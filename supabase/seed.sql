@@ -15,6 +15,7 @@ insert into public.approved_users (
   ('jay.nguyen@loanfactory.com', 'lo_development', 'Jay Nguyen', 'LO Development', null, true),
   ('duyen@loanfactory.com', 'marketing', 'Duyen', 'Marketing', null, true),
   ('leslie@loanfactory.com', 'marketing', 'Leslie', 'Marketing', null, true),
+  ('seth.august@loanfactory.com', 'coaching_member_level_2', 'Seth August', 'Loan Factory Alliance', 'LO Alliance Loan Officer', true),
   ('edward.arvizo@loanfactory.com', 'corporate_coach', 'Edward Arvizo', 'Corporate Coaching', null, true)
 on conflict (email) do update set
   role = excluded.role,

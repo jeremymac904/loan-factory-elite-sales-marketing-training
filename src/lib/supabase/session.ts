@@ -9,6 +9,10 @@ import {
   isApprovedProfile,
 } from "@/lib/supabase/auth";
 import {
+  buildApprovedProfile,
+  type ApprovedUserRow,
+} from "@/lib/supabase/approvedUserProfile";
+import {
   appSessionCookieName,
   parseAppSessionCookieValue,
 } from "@/lib/supabase/app-session";
@@ -165,6 +169,29 @@ async function getAppCookieBackedUser() {
   return { user, supabase: admin };
 }
 
+async function getApprovedUserByEmail(
+  email: string,
+): Promise<ApprovedUserRow | null> {
+  const admin = createSupabaseAdminClient();
+
+  if (!admin) {
+    return null;
+  }
+
+  const { data, error } = await admin
+    .from("approved_users")
+    .select("email,role,full_name,department,title,active")
+    .eq("email", email)
+    .eq("active", true)
+    .maybeSingle<ApprovedUserRow>();
+
+  if (error || !data) {
+    return null;
+  }
+
+  return data;
+}
+
 // Wrapped in React cache() so every server component in a single request
 // (header account menu, page gate, role gates, layouts) shares ONE auth
 // resolution. Without this, each consumer ran its own network auth check and a
@@ -210,6 +237,8 @@ async function resolveBetaUserSession(): Promise<BetaUserSession> {
     };
   }
 
+  const email = activeUser.email?.toLowerCase().trim() ?? null;
+
   const { data: profile } = await supabase
     .from("profiles")
     .select(profileSelect)
@@ -217,11 +246,29 @@ async function resolveBetaUserSession(): Promise<BetaUserSession> {
     .maybeSingle<ProfileRow>();
 
   if (!isApprovedProfile(profile)) {
+    const approvedUser = email ? await getApprovedUserByEmail(email) : null;
+
+    if (!approvedUser) {
+      return {
+        status: "pending",
+        user: activeUser,
+        profile,
+        permissions: null,
+      };
+    }
+
+    const approvedProfile = buildApprovedProfile(activeUser, approvedUser);
+    const { data: permissions } = await supabase
+      .from("role_permissions")
+      .select(permissionSelect)
+      .eq("role", approvedProfile.role)
+      .maybeSingle<RolePermissionsRow>();
+
     return {
-      status: "pending",
+      status: "approved",
       user: activeUser,
-      profile,
-      permissions: null,
+      profile: approvedProfile,
+      permissions,
     };
   }
 
