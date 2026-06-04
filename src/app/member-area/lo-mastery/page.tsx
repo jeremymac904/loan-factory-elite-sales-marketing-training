@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = { title: "LO Mastery Member View" };
 
 const cards = [
@@ -107,18 +109,18 @@ export default function LoMasteryMemberAreaPage() {
                   ))}
                 </div>
 
-                <a
+                <Link
                   href="/member-area/scorecards/"
                   className="btn-primary w-full justify-center"
                 >
                   Weekly scorecard
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/member-area/trackers/"
                   className="btn-secondary w-full justify-center"
                 >
                   Trackers
-                </a>
+                </Link>
               </div>
             </aside>
           </div>
@@ -161,24 +163,24 @@ export default function LoMasteryMemberAreaPage() {
                   Quick links
                 </p>
                 <div className="mt-3 grid gap-2">
-                  <a
+                  <Link
                     href="/member-area/scripts/"
                     className="rounded-xl border border-lf-line bg-white px-4 py-3 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
                   >
                     Script library
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/member-area/trackers/"
                     className="rounded-xl border border-lf-line bg-white px-4 py-3 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
                   >
                     Trackers and forms
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/resources/"
                     className="rounded-xl border border-lf-line bg-white px-4 py-3 text-sm font-semibold text-lf-charcoal transition hover:border-lf-orange hover:text-lf-orange"
                   >
                     Resource library
-                  </a>
+                  </Link>
                 </div>
               </div>
             </aside>
