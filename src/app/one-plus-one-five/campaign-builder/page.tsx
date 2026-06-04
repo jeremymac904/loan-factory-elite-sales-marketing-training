@@ -18,7 +18,7 @@ export const metadata = { title: "Campaign Builder" };
 type SearchParams = Record<string, string | string[] | undefined>;
 
 type Props = {
-  searchParams?: Promise<SearchParams> | SearchParams;
+  searchParams?: Promise<SearchParams>;
 };
 
 const audiences: PersonaAudience[] = ["buyer", "realtor", "recruiting"];

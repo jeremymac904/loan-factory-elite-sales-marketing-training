@@ -13,7 +13,7 @@ import {
 } from "@/data/aiAdvantageYoutubeEmbeds";
 
 type Props = {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {

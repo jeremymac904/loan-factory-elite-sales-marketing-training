@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 type SearchParams = Record<string, string | string[] | undefined>;
 
 type Props = {
-  searchParams?: Promise<SearchParams> | SearchParams;
+  searchParams?: Promise<SearchParams>;
 };
 
 function buildCallbackQuery(params: SearchParams) {

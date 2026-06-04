@@ -4,55 +4,57 @@ import { getCoachingAccess } from "@/lib/coachingAccess";
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Loan Factory Alliance Member View" };
 
-const dashboardCards = [
-  {
-    title: "Program overview",
-    description:
-      "Built for loan officers who want deeper accountability, more strategy, and a stronger business rhythm.",
-  },
-  {
-    title: "Current week",
-    description:
-      "Week 3 focus: tighten the weekly plan, protect the call blocks, and bring one market insight to coaching.",
-  },
-  {
-    title: "Daily time blocker",
-    description:
-      "Protect your focused block for conversations, partner outreach, and follow-up before the day gets busy.",
-  },
-  {
-    title: "Theme day reminder",
-    description:
-      "Pick one business theme for the day, then keep the work narrow and repeatable.",
-  },
-  {
-    title: "Weekly scorecard",
-    description:
-      "Record conversations, Realtor touches, past-client touches, pipeline follow-up, and commitments.",
-    href: "/member-area/scorecards/",
-  },
-  {
-    title: "Greatness tracker",
-    description:
-      "Track consistency, momentum, and the actions that move the business forward.",
-    href: "/member-area/trackers/",
-  },
-  {
-    title: "Script book",
-    description:
-      "Keep outreach scripts, partner language, and practice reps close before every call block.",
-    href: "/resources/",
-  },
-  {
-    title: "Coach notes",
-    description:
-      "Review the latest coaching notes and next-step commitments if your coach left one.",
-    href: "/coach-command-center/coaching-notes/",
-  },
-];
-
 export default async function AllianceMemberAreaPage() {
   const access = await getCoachingAccess();
+  const dashboardCards = [
+    {
+      title: "Program overview",
+      description:
+        "Built for loan officers who want deeper accountability, more strategy, and a stronger business rhythm.",
+    },
+    {
+      title: "Current week",
+      description:
+        "Tighten the weekly plan, protect the call blocks, and bring one market insight to coaching.",
+    },
+    {
+      title: "Daily time blocker",
+      description:
+        "Protect your focused block for conversations, partner outreach, and follow-up before the day gets busy.",
+      href: "/member-area/trackers/#daily-time-blocker",
+    },
+    {
+      title: "Theme days planner",
+      description:
+        "Pick one business theme for the day, then keep the work narrow and repeatable.",
+      href: "/member-area/trackers/#theme-days-planner",
+    },
+    {
+      title: "Weekly scorecard",
+      description:
+        "Record conversations, Realtor touches, past-client touches, pipeline follow-up, and commitments.",
+      href: "/member-area/scorecards/",
+    },
+    {
+      title: "Greatness tracker",
+      description:
+        "Track consistency, momentum, and the actions that move the business forward.",
+      href: "/member-area/trackers/#greatness-tracker",
+    },
+    {
+      title: "Business plan roadmap",
+      description:
+        "Plan the next 12 weeks of growth, focus, and accountability.",
+      href: "/member-area/trackers/#business-plan-roadmap",
+    },
+    {
+      title: access.isStaff ? "Coach notes" : "Coach follow-up",
+      description: access.isStaff
+        ? "Review the latest coaching notes and next-step commitments."
+        : "Your coach can leave follow-up notes during review. Bring the last commitment to your next call.",
+      href: access.isStaff ? "/coach-command-center/coaching-notes/" : undefined,
+    },
+  ];
 
   return (
     <>

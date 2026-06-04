@@ -4,55 +4,57 @@ import { getCoachingAccess } from "@/lib/coachingAccess";
 export const dynamic = "force-dynamic";
 export const metadata = { title: "LO Mastery Member View" };
 
-const dashboardCards = [
-  {
-    title: "Program overview",
-    description:
-      "Built for loan officers who want structure, consistency, and a simple weekly coaching rhythm.",
-  },
-  {
-    title: "Current week",
-    description:
-      "Week 3 focus: keep the daily rhythm tight, submit the scorecard, and bring one real win to your coach.",
-  },
-  {
-    title: "Daily time blocker",
-    description:
-      "Protect a focused block for conversations, follow-up, and the next action before the day gets busy.",
-  },
-  {
-    title: "Theme day reminder",
-    description:
-      "Pick one theme for the day, then keep the work narrow and repeatable.",
-  },
-  {
-    title: "Weekly scorecard",
-    description:
-      "Record the conversations, Realtor touches, past-client touches, pipeline follow-up, and commitments you completed.",
-    href: "/member-area/scorecards/",
-  },
-  {
-    title: "Greatness tracker",
-    description:
-      "Track consistency, wins, and the smallest actions that move the week forward.",
-    href: "/member-area/trackers/",
-  },
-  {
-    title: "Script book",
-    description:
-      "Keep your outreach language and practice reps close before each call block.",
-    href: "/resources/",
-  },
-  {
-    title: "Coach notes",
-    description:
-      "Review the latest coaching notes and next-step commitments if your coach left one.",
-    href: "/coach-command-center/coaching-notes/",
-  },
-];
-
 export default async function LoMasteryMemberAreaPage() {
   const access = await getCoachingAccess();
+  const dashboardCards = [
+    {
+      title: "Program overview",
+      description:
+        "Built for loan officers who want structure, consistency, and a simple weekly coaching rhythm.",
+    },
+    {
+      title: "Current week",
+      description:
+        "Keep the daily rhythm tight, submit the scorecard, and bring one real win to coaching.",
+    },
+    {
+      title: "Daily time blocker",
+      description:
+        "Protect a focused block for conversations, follow-up, and the next action before the day gets busy.",
+      href: "/member-area/trackers/#daily-time-blocker",
+    },
+    {
+      title: "Theme days planner",
+      description:
+        "Pick one focus for each day so the week stays narrow and repeatable.",
+      href: "/member-area/trackers/#theme-days-planner",
+    },
+    {
+      title: "Weekly scorecard",
+      description:
+        "Record the conversations, Realtor touches, past-client touches, pipeline follow-up, and commitments you completed.",
+      href: "/member-area/scorecards/",
+    },
+    {
+      title: "Greatness tracker",
+      description:
+        "Track consistency, wins, and the smallest actions that move the week forward.",
+      href: "/member-area/trackers/#greatness-tracker",
+    },
+    {
+      title: "Script library",
+      description:
+        "Keep your coaching scripts close so you can copy, personalize, and move quickly.",
+      href: "/member-area/scripts/",
+    },
+    {
+      title: access.isStaff ? "Coach notes" : "Coach follow-up",
+      description: access.isStaff
+        ? "Review the latest coaching notes and next-step commitments."
+        : "Your coach can leave follow-up notes during review. Bring the last commitment to your next call.",
+      href: access.isStaff ? "/coach-command-center/coaching-notes/" : undefined,
+    },
+  ];
 
   return (
     <>

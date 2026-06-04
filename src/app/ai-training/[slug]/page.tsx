@@ -7,7 +7,7 @@ import { getAiAdvantagePublishedVideosForPath } from "@/data/aiAdvantagePublishe
 import { aiTrainingPaths } from "@/data/aiTrainingVideos";
 
 type Props = {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 const weeklyActions: Record<string, string[]> = {

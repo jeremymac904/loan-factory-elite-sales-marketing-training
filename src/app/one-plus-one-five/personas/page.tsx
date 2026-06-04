@@ -16,7 +16,7 @@ export const metadata = { title: "Persona Library" };
 type SearchParams = Record<string, string | string[] | undefined>;
 
 type Props = {
-  searchParams?: Promise<SearchParams> | SearchParams;
+  searchParams?: Promise<SearchParams>;
 };
 
 function normalizeAudience(value: SearchParams[string]): PersonaAudience | undefined {

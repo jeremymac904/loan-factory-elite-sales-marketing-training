@@ -5,7 +5,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { aiTrainingVideos } from "@/data/aiTrainingVideos";
 
 type Props = {
-  params: Promise<{ id: string }> | { id: string };
+  params: Promise<{ id: string }>;
 };
 
 function cleanTitle(title: string) {

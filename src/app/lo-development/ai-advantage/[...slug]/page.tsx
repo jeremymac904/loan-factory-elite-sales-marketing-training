@@ -5,7 +5,7 @@ import {
 } from "@/data/aiAdvantageYoutubeEmbeds";
 
 type Props = {
-  params: Promise<{ slug: string[] }> | { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 };
 
 export default async function AiAdvantageLegacyLessonPathPage({ params }: Props) {

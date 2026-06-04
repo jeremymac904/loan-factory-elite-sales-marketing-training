@@ -16,7 +16,7 @@ const reasonMessages: Record<string, string> = {
 };
 
 type Props = {
-  searchParams?: Promise<{ reason?: string }> | { reason?: string };
+  searchParams?: Promise<{ reason?: string }>;
 };
 
 export default async function AccessPendingPage({ searchParams }: Props) {

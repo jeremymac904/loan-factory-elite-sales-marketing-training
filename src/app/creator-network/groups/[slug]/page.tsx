@@ -12,7 +12,7 @@ import { getBetaUserSession } from "@/lib/supabase/session";
 
 type Props = {
   params: Promise<{ slug: string }>;
-  searchParams?: Promise<{ tab?: string }> | { tab?: string };
+  searchParams?: Promise<{ tab?: string }>;
 };
 
 export function generateStaticParams() {

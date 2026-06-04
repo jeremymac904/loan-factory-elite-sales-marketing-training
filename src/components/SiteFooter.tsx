@@ -3,10 +3,8 @@ import BrandImage from "./BrandImage";
 import { brandAssets } from "@/data/brandAssets";
 
 const footerLinks = [
-  { href: "/coaching/", label: "Coaching" },
   { href: "/lo-mastery-coaching/", label: "LO Mastery" },
   { href: "/loan-factory-alliance/", label: "Loan Factory Alliance" },
-  { href: "/resources/", label: "Resources" },
   { href: "/login/", label: "Sign In" },
 ];
 
@@ -30,8 +28,8 @@ export default function SiteFooter() {
               Loan Factory Paid Coaching
             </p>
             <p className="mt-2 text-sm leading-6 text-lf-slate">
-              Clear paths for LO Mastery, Loan Factory Alliance, coaching
-              resources, and member support.
+              Clear paths for LO Mastery, Loan Factory Alliance, and the
+              coaching tools members actually use.
             </p>
           </div>
           <div className="grid gap-x-6 gap-y-3 text-sm sm:grid-cols-2">

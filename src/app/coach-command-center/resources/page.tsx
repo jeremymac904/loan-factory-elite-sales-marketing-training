@@ -1,46 +1,9 @@
-import Link from "next/link";
-import { getCoachAccess } from "@/lib/coachAccess";
-import CoachCommandNav from "@/components/coach/CoachCommandNav";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-
-const coachResources = [
-  {
-    title: "Members",
-    description: "Open the compact roster and action menu for each assigned member.",
-    href: "/coach-command-center/team/",
-  },
-  {
-    title: "Member progress",
-    description:
-      "See attendance, accountability, resource completion, and next action in one view.",
-    href: "/coach-command-center/member-progress/",
-  },
-  {
-    title: "Weekly scorecards",
-    description:
-      "Review submitted and missing scorecards, trends, and follow-up actions.",
-    href: "/coach-command-center/scorecards/",
-  },
-  {
-    title: "Coaching notes",
-    description:
-      "Capture wins, stuck points, note types, follow-up dates, and action items.",
-    href: "/coach-command-center/coaching-notes/",
-  },
-  {
-    title: "Coaching calendar",
-    description:
-      "Draft calls, Power Hours, group sessions, and next call reminders.",
-    href: "/coach-command-center/calendar/",
-  },
-  {
-    title: "Member area",
-    description:
-      "Jump into LO Mastery or Loan Factory Alliance to check the member experience.",
-    href: "/member-area/",
-  },
-];
+import CoachCommandNav from "@/components/coach/CoachCommandNav";
+import ResourceCatalog from "@/components/coaching/ResourceCatalog";
+import { coachingResourceCategories } from "@/data/coachingResources";
+import { getCoachAccess } from "@/lib/coachAccess";
 
 export const metadata = { title: "Coach Command Center Resources" };
 
@@ -51,11 +14,12 @@ export default async function CoachCommandCenterResourcesPage() {
     <>
       <PageHero
         eyebrow="Coach Command Center"
-        title="Coaching resources"
+        title="Coach resources"
         body={
           <p>
-            Use this hub for the tools that support your coaching day: members,
-            scorecards, notes, progress, and call planning.
+            Use this hub for coach documents, program docs, scripts, trackers,
+            review tools, and the presentation pack that keeps the paid
+            coaching platform aligned.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -67,25 +31,26 @@ export default async function CoachCommandCenterResourcesPage() {
         )}
       </PageHero>
 
-      <CoachCommandNav current="/coach-command-center/resources/" showAdmin={access.seesAll} />
+      <CoachCommandNav
+        current="/coach-command-center/resources/"
+        showAdmin={access.seesAll}
+      />
 
-      <section className="container-page py-12">
-        <SectionHeading
-          eyebrow="Open next"
-          title="Coach-first tools."
-          description="The live coaching platform keeps the resource set simple and focused."
-        />
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {coachResources.map((resource) => (
-            <Link key={resource.href} href={resource.href} className="card hover:shadow-lift">
-              <h3 className="h-display text-lg">{resource.title}</h3>
-              <p className="prose-lf mt-2 text-sm text-lf-slate">
-                {resource.description}
-              </p>
-            </Link>
-          ))}
+      <section className="container-page py-10">
+        <div className="card border-lf-orange/30 bg-lf-orangeSoft/20">
+          <SectionHeading
+            eyebrow="Coach-first"
+            title="Everything you need to coach the paid programs."
+            description="Open the program packs, scripts, trackers, and review tools from one clean coaching hub."
+          />
         </div>
       </section>
+
+      <ResourceCatalog
+        categories={coachingResourceCategories}
+        introTitle="All coaching packs."
+        introDescription="Coaches, coaching managers, and admin can see the full library, including the presentation materials and coaching-only tool packs."
+      />
     </>
   );
 }
