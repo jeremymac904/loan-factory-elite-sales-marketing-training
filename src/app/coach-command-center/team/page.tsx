@@ -5,7 +5,7 @@ import PersonActionDropdown from "@/components/coach/PersonActionDropdown";
 import { peopleForScope, statusMeta } from "@/data/coachCommandCenter";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "My People · Coach Command Center" };
+export const metadata = { title: "Members · Coach Command Center" };
 
 export default async function CoachTeamPage() {
   const access = await getCoachAccess();
@@ -24,11 +24,10 @@ export default async function CoachTeamPage() {
             Coach Command Center
           </p>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight">
-            My People
+            Members
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            The LOs, members, and team you coach — with their next coaching step
-            at a glance.
+            The members you coach — with their next coaching step at a glance.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-4 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -55,15 +54,15 @@ export default async function CoachTeamPage() {
             <p className="prose-lf mt-3 text-sm">
               When LOs, members, or team members are assigned to you, they show
               up here with their last activity, next coaching step, and quick
-              actions. If you should have people assigned, ask Jeremy or LO
-              Development to set up your assignments.
+              actions. If you should have people assigned, ask Jeremy or the
+              coaching admin team to set up your assignments.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/coach-command-center/" className="btn-primary">
                 Command Center overview
               </Link>
-              <Link href="/coaching/" className="btn-secondary">
-                Coaching overview
+              <Link href="/resources/" className="btn-secondary">
+                Coaching resources
               </Link>
             </div>
           </div>
@@ -75,7 +74,7 @@ export default async function CoachTeamPage() {
                   {people.length} {people.length === 1 ? "person" : "people"} you
                   coach
                 </h2>
-              <p className="prose-lf mt-1 text-sm">
+                <p className="prose-lf mt-1 text-sm">
                   Coaching status reflects engagement, not compliance. Use one
                   action menu per person to keep the page compact.
                 </p>

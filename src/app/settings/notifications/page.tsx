@@ -7,7 +7,6 @@ const STORAGE_KEY = "lf_notification_prefs";
 const CHANGE_EVENT = "lf-notification-prefs-changed";
 
 type PrefKey =
-  | "facegramMentions"
   | "directMessages"
   | "coachingReminders"
   | "platformAnnouncements";
@@ -15,7 +14,6 @@ type PrefKey =
 type Prefs = Record<PrefKey, boolean>;
 
 const defaultPrefs: Prefs = {
-  facegramMentions: true,
   directMessages: true,
   coachingReminders: true,
   platformAnnouncements: true,
@@ -26,12 +24,6 @@ const toggleConfig: {
   title: string;
   description: string;
 }[] = [
-  {
-    key: "facegramMentions",
-    title: "FaceGram mentions",
-    description:
-      "Get notified when someone mentions you or replies to your posts on FaceGram.",
-  },
   {
     key: "directMessages",
     title: "Direct messages",
@@ -58,10 +50,6 @@ function parsePrefs(raw: string): Prefs {
   try {
     const parsed = JSON.parse(raw) as Partial<Prefs>;
     return {
-      facegramMentions:
-        typeof parsed.facegramMentions === "boolean"
-          ? parsed.facegramMentions
-          : defaultPrefs.facegramMentions,
       directMessages:
         typeof parsed.directMessages === "boolean"
           ? parsed.directMessages
@@ -215,27 +203,9 @@ export default function NotificationSettingsPage() {
               <p className="prose-lf mt-3 text-sm">
                 Your preferences are stored on this device today. Server-pushed
                 notifications (email and in-app delivery) activate when
-                notification delivery is connected. Until then, check your
-                activity directly from the links below.
+                notification delivery is connected. Until then, your choices are
+                saved here on this device.
               </p>
-            </div>
-
-            <div className="card">
-              <h2 className="h-display text-2xl">Check activity</h2>
-              <div className="mt-4 grid gap-2">
-                <Link
-                  href="/facegram/notifications/"
-                  className="rounded-lg border border-lf-line px-4 py-3 text-sm font-semibold hover:border-lf-orange"
-                >
-                  FaceGram notifications
-                </Link>
-                <Link
-                  href="/facegram/messages/"
-                  className="rounded-lg border border-lf-line px-4 py-3 text-sm font-semibold hover:border-lf-orange"
-                >
-                  Direct messages
-                </Link>
-              </div>
             </div>
           </div>
         </div>

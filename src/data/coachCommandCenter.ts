@@ -44,18 +44,18 @@ export const assignedPeople: AssignedPerson[] = [
   { id: "p1", name: "Sample LO — Maria L.", email: "maria.l@loanfactory.com", role: "loan_officer", program: "LO Mastery ($249)", tier: "lo_mastery", coach: "Edward Arvizo", relationship: "paid_coaching", lastActivity: "Today", nextTask: "Review weekly scorecard", nextCall: "Tue 10:00 AM", recentActivity: "Submitted scorecard + 18 conversations", resourceAssignment: "High Trust Intake script", scorecardStatus: "submitted", noteCount: 4, status: "active" },
   { id: "p2", name: "Sample LO — Devin R.", email: "devin.r@loanfactory.com", role: "loan_officer", program: "LO Mastery ($249)", tier: "lo_mastery", coach: "Edward Arvizo", relationship: "paid_coaching", lastActivity: "2 days ago", nextTask: "Power Hour check-in", nextCall: "Thu 1:30 PM", recentActivity: "Missed weekly scorecard", resourceAssignment: "Follow-up tracker reset", scorecardStatus: "missing", noteCount: 2, status: "needs_nudge" },
   { id: "p3", name: "Sample LO — Priya S.", email: "priya.s@loanfactory.com", role: "coaching_member_level_2", program: "Loan Factory Alliance ($449)", tier: "alliance", coach: "Edward Arvizo", relationship: "paid_coaching", lastActivity: "Today", nextTask: "Mastermind prep", nextCall: "Wed 8:30 AM", recentActivity: "Submitted Alliance scorecard", resourceAssignment: "Market objection roleplay", scorecardStatus: "submitted", noteCount: 6, status: "active" },
-  { id: "p4", name: "Sample LO — Tomas G.", email: "tomas.g@loanfactory.com", role: "coaching_member_level_2", program: "Loan Factory Alliance ($449)", tier: "alliance", coach: "Edward Arvizo", relationship: "paid_coaching", lastActivity: "6 days ago", nextTask: "Re-engage — missed 2 sessions", nextCall: "Not scheduled", recentActivity: "No activity since last nudge", resourceAssignment: "Breakfast Club reset", scorecardStatus: "missing", noteCount: 3, status: "stuck" },
+  { id: "p4", name: "Sample LO — Tomas G.", email: "tomas.g@loanfactory.com", role: "coaching_member_level_2", program: "Loan Factory Alliance ($449)", tier: "alliance", coach: "Edward Arvizo", relationship: "paid_coaching", lastActivity: "6 days ago", nextTask: "Re-engage — missed 2 sessions", nextCall: "Not scheduled", recentActivity: "No activity since last nudge", resourceAssignment: "Morning call reset", scorecardStatus: "missing", noteCount: 3, status: "stuck" },
   { id: "p5", name: "Sample LO — Jordan M.", email: "jordan.m@loanfactory.com", role: "loan_officer", program: "New LO onboarding", tier: "none", coach: "Kevin Truong", relationship: "corporate_coach", lastActivity: "Yesterday", nextTask: "First File Survival clip", nextCall: "Fri 9:00 AM", recentActivity: "Completed onboarding clip", resourceAssignment: "First File Survival clip", scorecardStatus: "not_required", noteCount: 1, status: "active" },
-  { id: "p6", name: "Sample LO — Alyssa W.", email: "alyssa.w@loanfactory.com", role: "loan_officer", program: "New LO onboarding", tier: "none", coach: "Kevin Truong", relationship: "corporate_coach", lastActivity: "9 days ago", nextTask: "Welcome call + 101 Foundation", nextCall: "Needs scheduling", recentActivity: "No welcome call completed", resourceAssignment: "101 Foundation intro", scorecardStatus: "not_required", noteCount: 0, status: "inactive" },
-  { id: "p7", name: "Sample LO — Brian K.", email: "brian.k@loanfactory.com", role: "loan_officer", program: "Legends Team", tier: "none", coach: "Jeremy McDonald", relationship: "team_leader", lastActivity: "Today", nextTask: "Realtor outreach plan", nextCall: "Mon 3:00 PM", recentActivity: "Logged partner outreach", resourceAssignment: "301 partner playbook", scorecardStatus: "submitted", noteCount: 2, status: "active" },
-  { id: "p8", name: "Sample LO — Nina P.", email: "nina.p@loanfactory.com", role: "loan_officer", program: "Legends Team", tier: "none", coach: "Jeremy McDonald", relationship: "team_leader", lastActivity: "3 days ago", nextTask: "Confirm pipeline review", nextCall: "Needs scheduling", recentActivity: "Pipeline follow-up overdue", resourceAssignment: "501 weekly review", scorecardStatus: "missing", noteCount: 1, status: "needs_nudge" },
+  { id: "p6", name: "Sample LO — Alyssa W.", email: "alyssa.w@loanfactory.com", role: "loan_officer", program: "New LO onboarding", tier: "none", coach: "Kevin Truong", relationship: "corporate_coach", lastActivity: "9 days ago", nextTask: "Welcome call + coaching basics", nextCall: "Needs scheduling", recentActivity: "No welcome call completed", resourceAssignment: "LO Mastery intro", scorecardStatus: "not_required", noteCount: 0, status: "inactive" },
+  { id: "p7", name: "Sample LO — Brian K.", email: "brian.k@loanfactory.com", role: "loan_officer", program: "Legends Team", tier: "none", coach: "Jeremy McDonald", relationship: "team_leader", lastActivity: "Today", nextTask: "Realtor outreach plan", nextCall: "Mon 3:00 PM", recentActivity: "Logged partner outreach", resourceAssignment: "Realtor outreach playbook", scorecardStatus: "submitted", noteCount: 2, status: "active" },
+  { id: "p8", name: "Sample LO — Nina P.", email: "nina.p@loanfactory.com", role: "loan_officer", program: "Legends Team", tier: "none", coach: "Jeremy McDonald", relationship: "team_leader", lastActivity: "3 days ago", nextTask: "Confirm pipeline review", nextCall: "Needs scheduling", recentActivity: "Pipeline follow-up overdue", resourceAssignment: "Weekly review", scorecardStatus: "missing", noteCount: 1, status: "needs_nudge" },
 ];
 
 // ---------------------------------------------------------------------------
 // Coverage visibility (Finding #12)
 // ---------------------------------------------------------------------------
 // Coverage / overview-of-all-coaches surfaces are restricted to master_admin,
-// LO Development lead, and the coaching-leadership roles (Corporate Coach
+// Coaching manager and the coaching-leadership roles (Corporate Coach
 // Supervisor, Coaching Director, LO Mastery / Loan Factory Alliance coaches).
 // Normal corporate coaches and team leaders only ever see THEIR own roster.
 // Access is ROLE-BASED: those roles resolve to `seesAll` / scope 'all' in
@@ -73,7 +73,7 @@ export const COACH_COVERAGE_LEAD_NAME = "Edward Arvizo";
 
 export const coverageVisibilityRule =
   "Coaching coverage (the overview of ALL coaches and every roster) is visible " +
-  "only to master_admin, LO Development, and the coaching-leadership roles " +
+  "only to master_admin and the coaching-leadership roles " +
   "(Corporate Coach Supervisor, Coaching Director, LO Mastery / Loan Factory " +
   "Alliance coaches). Corporate coaches and team leaders see only the people " +
   "assigned to them. Access is role-based, not name-based.";
@@ -297,7 +297,7 @@ export function computeActivitySnapshot(
   return [
     {
       key: "assigned",
-      label: "Assigned LOs",
+      label: "Assigned members",
       value: people.length.toString(),
       note: "Current role-scoped roster.",
       href: "/coach-command-center/team/",
@@ -341,7 +341,7 @@ export function computeActivitySnapshot(
 }
 
 export const todaysActions: { label: string; detail: string; href?: string }[] = [
-  { label: "Follow up with LOs needing a nudge", detail: "2 assigned LOs are at Needs nudge or Stuck.", href: "/coach-command-center/team/" },
+  { label: "Follow up with members needing a nudge", detail: "2 assigned members are at Needs nudge or Stuck.", href: "/coach-command-center/team/" },
   { label: "Review submitted scorecards", detail: "Check weekly execution + commitments.", href: "/coach-command-center/scorecards/" },
   { label: "Check missing activity", detail: "Spot LOs with no logged activity this week.", href: "/coach-command-center/activity/" },
   { label: "Open coaching notes", detail: "Capture a win, blocker, or next action.", href: "/coach-command-center/coaching-notes/" },
@@ -350,7 +350,7 @@ export const todaysActions: { label: string; detail: string; href?: string }[] =
 ];
 
 export const activitySnapshot: { label: string; value: string; note?: string }[] = [
-  { label: "Assigned LOs", value: "8", note: "Current sample view" },
+  { label: "Assigned members", value: "8", note: "Current sample view" },
   { label: "Need attention", value: "4", note: "Needs nudge, stuck, or inactive" },
   { label: "Follow-ups due", value: "3", note: "Manual coaching tasks" },
   { label: "Submitted scorecards", value: "4", note: "LO submitted, coach reviews" },
@@ -364,7 +364,7 @@ export const messageTemplates: { title: string; body: string }[] = [
   { title: "Coach follow-up draft", body: "Hey [Name] — following up on your commitment from our last coaching call: [commitment]. What happened, what blocked you, and what is the next smallest action you can complete today?" },
   { title: "Member encouragement draft", body: "[Name], I saw [specific win]. That is the exact weekly rhythm we are building. Keep stacking the activity and bring one takeaway to the next call." },
   { title: "Missed scorecard reminder draft", body: "Hey [Name] — your weekly scorecard is still missing. Please submit the activity lines before [date] so our next coaching call can focus on decisions, not reconstruction." },
-  { title: "Training assignment draft", body: "[Name], before our next call, complete [resource]. Bring one takeaway, one question, and one place you applied it in the field." },
+  { title: "Resource assignment draft", body: "[Name], before our next call, complete [resource]. Bring one takeaway, one question, and one place you applied it in the field." },
   { title: "Meeting recap draft", body: "[Name], recap from today's call:\n- Win:\n- Blocker:\n- Commitment:\n- Resource assigned:\n- Next follow-up:\nReply with anything I missed." },
   { title: "Next action message draft", body: "[Name], your next action is [specific action] by [date]. Keep it narrow. I will follow up on this before our next session." },
 ];
@@ -383,7 +383,7 @@ export const communicationWorkflows: {
   { title: "Coach follow-up", useCase: "After a 1:1 or missed commitment.", templateTitle: "Coach follow-up draft" },
   { title: "Member encouragement", useCase: "Reinforce a real win without over-coaching.", templateTitle: "Member encouragement draft" },
   { title: "Missed scorecard reminder", useCase: "Ask the LO to submit before review.", templateTitle: "Missed scorecard reminder draft" },
-  { title: "Training assignment", useCase: "Assign one resource and one takeaway.", templateTitle: "Training assignment draft" },
+  { title: "Resource assignment", useCase: "Assign one resource and one takeaway.", templateTitle: "Resource assignment draft" },
   { title: "Meeting recap", useCase: "Summarize commitments after a call.", templateTitle: "Meeting recap draft" },
   { title: "Next action message", useCase: "Keep accountability specific and dated.", templateTitle: "Next action message draft" },
 ];
@@ -392,7 +392,7 @@ export const noteTypes = [
   "1:1 coaching",
   "Scorecard review",
   "Re-engagement",
-  "Training assignment",
+  "Resource assignment",
   "Meeting recap",
   "Private coach context",
 ];
@@ -418,8 +418,8 @@ export const noteTemplates: {
       "Re-engagement note:\n- Last activity:\n- Missed item:\n- Likely blocker:\n- Reset commitment:\n- Follow-up date:",
   },
   {
-    title: "Training assignment",
-    type: "Training assignment",
+    title: "Resource assignment",
+    type: "Resource assignment",
     tags: "resource, practice, accountability",
     body:
       "Assigned resource:\n- Resource:\n- Why this resource:\n- Required takeaway:\n- Field application:\n- Verification:",
@@ -445,10 +445,10 @@ export const calendarEventTypes: {
   inviteDetail: string;
 }[] = [
   { type: "one_on_one", title: "One-on-one coaching session", description: "Individual coaching with an assigned LO.", defaultDuration: "30 min", inviteDetail: "Loan Factory 1:1 Coaching — agenda: wins, blockers, next-week commitments." },
-  { type: "group_call", title: "Group coaching call", description: "Live group coaching for your cohort.", defaultDuration: "60 min", inviteDetail: "Loan Factory Group Coaching — bring one win and one blocker." },
+  { type: "group_call", title: "Group coaching call", description: "Live group coaching for your members.", defaultDuration: "60 min", inviteDetail: "Loan Factory Group Coaching — bring one win and one blocker." },
   { type: "team_coaching", title: "Team coaching session", description: "Skills coaching for your team.", defaultDuration: "45 min", inviteDetail: "Loan Factory Team Coaching — topic + practice reps." },
   { type: "power_hour", title: "Power Hour", description: "Daily focus block for prospecting + follow-up.", defaultDuration: "60 min", inviteDetail: "Loan Factory Power Hour — prospecting, follow-up, coaching prep." },
-  { type: "breakfast_club", title: "Breakfast Club (Alliance)", description: "Daily morning live for Alliance members.", defaultDuration: "30 min", inviteDetail: "Loan Factory Alliance Breakfast Club — wins, blockers, focus." },
+  { type: "alliance_morning_call", title: "Alliance morning call", description: "Daily morning live for Alliance members.", defaultDuration: "30 min", inviteDetail: "Loan Factory Alliance morning call — wins, blockers, focus." },
   { type: "mastermind", title: "Mastermind meeting (Alliance)", description: "Biweekly mastermind for advanced producers.", defaultDuration: "90 min", inviteDetail: "Loan Factory Alliance Mastermind — personal wins, top blocker, ask for the room." },
   { type: "follow_up", title: "Follow-up reminder", description: "Reminder to follow up with an LO.", defaultDuration: "15 min", inviteDetail: "Follow up with [Name] on their committed next step." },
 ];
@@ -475,7 +475,7 @@ export const allianceScorecardFields: string[] = [
   "Campaign activity",
   "Leadership activity",
   "Mastermind participation",
-  "Advanced certification progress",
+  "Advanced program progress",
 ];
 
 export type ScorecardField = {
@@ -532,7 +532,7 @@ const allianceOnlySection: ScorecardSection = {
     { key: "campaign_activity", label: "Campaign activity", type: "text" },
     { key: "leadership_activity", label: "Leadership activity", type: "text" },
     { key: "mastermind_participation", label: "Mastermind participation", type: "text" },
-    { key: "advanced_certification_progress", label: "Advanced certification progress", type: "text" },
+    { key: "advanced_program_progress", label: "Advanced program progress", type: "text" },
   ],
 };
 
@@ -551,7 +551,7 @@ export type MemberProgress = {
   coachingAttendance: string;
   weeklyCommitments: string;
   activityTracker: string;
-  certification: string;
+  progressSnapshot: string;
   accountabilityScore: string;
   coachNotes: string;
   resourceCompletion: string;
@@ -560,10 +560,10 @@ export type MemberProgress = {
 };
 
 export const memberProgress: MemberProgress[] = [
-  { id: "p1", name: "Sample LO — Maria L.", tier: "LO Mastery ($249)", coachingAttendance: "3 of 4 calls", weeklyCommitments: "4 of 5 complete", activityTracker: "Current", certification: "Core certification in progress", accountabilityScore: "82", coachNotes: "Needs tighter Realtor ask", resourceCompletion: "2 of 3 resources", nextAction: "Review submitted scorecard", status: "active" },
-  { id: "p2", name: "Sample LO — Devin R.", tier: "LO Mastery ($249)", coachingAttendance: "2 of 4 calls", weeklyCommitments: "2 of 5 complete", activityTracker: "Missing this week", certification: "Not started", accountabilityScore: "61", coachNotes: "Power Hour check-in due", resourceCompletion: "1 of 3 resources", nextAction: "Submit weekly scorecard", status: "needs_nudge" },
-  { id: "p3", name: "Sample LO — Priya S.", tier: "Loan Factory Alliance ($449)", coachingAttendance: "5 of 5 calls", weeklyCommitments: "5 of 5 complete", activityTracker: "Current", certification: "Advanced certification in progress", accountabilityScore: "91", coachNotes: "Bring market objection to Mastermind", resourceCompletion: "4 of 5 resources", nextAction: "Mastermind prep", status: "active" },
-  { id: "p4", name: "Sample LO — Tomas G.", tier: "Loan Factory Alliance ($449)", coachingAttendance: "1 of 5 calls", weeklyCommitments: "1 of 5 complete", activityTracker: "Stale", certification: "Advanced certification paused", accountabilityScore: "44", coachNotes: "Missed two sessions", resourceCompletion: "1 of 5 resources", nextAction: "Re-engagement call", status: "stuck" },
+  { id: "p1", name: "Sample LO — Maria L.", tier: "LO Mastery ($249)", coachingAttendance: "3 of 4 calls", weeklyCommitments: "4 of 5 complete", activityTracker: "Current", progressSnapshot: "LO Mastery progress on track", accountabilityScore: "82", coachNotes: "Needs tighter Realtor ask", resourceCompletion: "2 of 3 resources", nextAction: "Review submitted scorecard", status: "active" },
+  { id: "p2", name: "Sample LO — Devin R.", tier: "LO Mastery ($249)", coachingAttendance: "2 of 4 calls", weeklyCommitments: "2 of 5 complete", activityTracker: "Missing this week", progressSnapshot: "Track not started", accountabilityScore: "61", coachNotes: "Power Hour check-in due", resourceCompletion: "1 of 3 resources", nextAction: "Submit weekly scorecard", status: "needs_nudge" },
+  { id: "p3", name: "Sample LO — Priya S.", tier: "Loan Factory Alliance ($449)", coachingAttendance: "5 of 5 calls", weeklyCommitments: "5 of 5 complete", activityTracker: "Current", progressSnapshot: "Alliance growth track in progress", accountabilityScore: "91", coachNotes: "Bring market objection to Mastermind", resourceCompletion: "4 of 5 resources", nextAction: "Mastermind prep", status: "active" },
+  { id: "p4", name: "Sample LO — Tomas G.", tier: "Loan Factory Alliance ($449)", coachingAttendance: "1 of 5 calls", weeklyCommitments: "1 of 5 complete", activityTracker: "Stale", progressSnapshot: "Alliance growth track paused", accountabilityScore: "44", coachNotes: "Missed two sessions", resourceCompletion: "1 of 5 resources", nextAction: "Re-engagement call", status: "stuck" },
 ];
 
 export type ScorecardReview = {
@@ -587,7 +587,7 @@ export const scorecardReviews: ScorecardReview[] = [
   { id: "s1", memberId: "p1", memberName: "Sample LO — Maria L.", tier: "LO Mastery ($249)", status: "submitted", weekOf: "This week", trend: "up", conversations: 18, realtorActivity: 7, pastClientTouches: 12, pipelineFollowUp: "9 active follow-ups completed", commitments: "Book 2 Realtor coffee chats", coachFollowUp: "Review ask language", conversationActivity: "More conversations, stronger close ask" },
   { id: "s2", memberId: "p2", memberName: "Sample LO — Devin R.", tier: "LO Mastery ($249)", status: "missing", weekOf: "This week", trend: "unknown", conversations: null, realtorActivity: null, pastClientTouches: null, pipelineFollowUp: "Unknown until submitted", commitments: "Submit scorecard before Power Hour", coachFollowUp: "Send reminder draft", conversationActivity: "Missing activity detail" },
   { id: "s3", memberId: "p3", memberName: "Sample LO — Priya S.", tier: "Loan Factory Alliance ($449)", status: "submitted", weekOf: "This week", trend: "flat", conversations: 24, realtorActivity: 11, pastClientTouches: 16, pipelineFollowUp: "14 follow-ups completed", commitments: "Bring objection script to Mastermind", coachFollowUp: "Assign market objection roleplay", conversationActivity: "Consistent volume, needs sharper market framing" },
-  { id: "s4", memberId: "p4", memberName: "Sample LO — Tomas G.", tier: "Loan Factory Alliance ($449)", status: "missing", weekOf: "This week", trend: "down", conversations: null, realtorActivity: null, pastClientTouches: null, pipelineFollowUp: "No pipeline update", commitments: "Restart Breakfast Club attendance", coachFollowUp: "Create re-engagement follow-up", conversationActivity: "No current submission" },
+  { id: "s4", memberId: "p4", memberName: "Sample LO — Tomas G.", tier: "Loan Factory Alliance ($449)", status: "missing", weekOf: "This week", trend: "down", conversations: null, realtorActivity: null, pastClientTouches: null, pipelineFollowUp: "No pipeline update", commitments: "Restart morning call attendance", coachFollowUp: "Create re-engagement follow-up", conversationActivity: "No current submission" },
   { id: "s5", memberId: "p7", memberName: "Sample LO — Brian K.", tier: "Team leader coaching", status: "submitted", weekOf: "This week", trend: "up", conversations: 15, realtorActivity: 6, pastClientTouches: 9, pipelineFollowUp: "6 hot-lead follow-ups", commitments: "Complete 301 partner plan", coachFollowUp: "Review partner targeting", conversationActivity: "Good partner activity momentum" },
   { id: "s6", memberId: "p8", memberName: "Sample LO — Nina P.", tier: "Team leader coaching", status: "missing", weekOf: "This week", trend: "unknown", conversations: null, realtorActivity: null, pastClientTouches: null, pipelineFollowUp: "Missing pipeline review", commitments: "Confirm pipeline review time", coachFollowUp: "Draft next action message", conversationActivity: "Needs current activity detail" },
 ];
@@ -610,7 +610,7 @@ export const coachAssistantActions: {
   needsIntegration?: boolean;
 }[] = [
   { id: "create_coaching_note", label: "Create coaching note", description: "Draft a structured coaching note with note type, tags, action items, and follow-up date." },
-  { id: "summarize_member_progress", label: "Summarize member progress", description: "Summarize paid coaching progress without mixing in free 101-601 course completion." },
+  { id: "summarize_member_progress", label: "Summarize member progress", description: "Summarize paid coaching progress without mixing in other program completion." },
   { id: "draft_follow_up", label: "Draft follow up", description: "Write a concise coaching follow-up tied to a specific commitment." },
   { id: "create_action_items", label: "Create action items", description: "Turn the coaching conversation into owners, due dates, and verification steps." },
   { id: "draft_meeting_agenda", label: "Draft meeting agenda", description: "Prepare a focused agenda for the next coaching call." },
@@ -643,7 +643,7 @@ export function buildCoachAssistantDraft(
     case "create_coaching_note":
       return `${common}\n\nCoaching note draft:\nType: [1:1 coaching / scorecard review / re-engagement]\nTags: [tags]\nNote:\n- Win:\n- Blocker:\n- Coach observation:\nAction items:\n- [owner] [action] by [date]\nNext follow-up: [date]`;
     case "summarize_member_progress":
-      return `${common}\n\nPaid coaching progress summary:\n- Coaching attendance:\n- Weekly commitments:\n- Activity tracker:\n- Certification progress:\n- Accountability score:\n- Coach notes:\n- Resource completion:\n- Next action:\n\nDo not include Sales and Marketing 101 through 601 as paid coaching progress.`;
+      return `${common}\n\nPaid coaching progress summary:\n- Coaching attendance:\n- Weekly commitments:\n- Activity tracker:\n- Program growth:\n- Accountability score:\n- Coach notes:\n- Resource completion:\n- Next action:\n\nDo not mix other program completion into paid coaching progress.`;
     case "draft_follow_up":
       return `${name}, following up on your commitment: [commitment]. What happened, what blocked you, and what is the next smallest action you can complete by [date]?`;
     case "create_action_items":
@@ -667,19 +667,13 @@ export const trainingAssignables: {
   href: string;
   free?: boolean;
 }[] = [
-  { category: "Lesson", title: "101 Foundation", href: "/101-foundation/", free: true },
-  { category: "Lesson", title: "201 Borrower Conversion", href: "/201-borrower-conversion/", free: true },
-  { category: "Lesson", title: "301 Referral Partner Growth", href: "/301-referral-partner-growth/", free: true },
-  { category: "Lesson", title: "401 Content and Marketing", href: "/401-content-and-marketing/", free: true },
-  { category: "Lesson", title: "501 Pipeline and Follow-Up", href: "/501-pipeline-and-sales-systems/", free: true },
-  { category: "Lesson", title: "601 Execution System", href: "/601-elite-execution/", free: true },
-  { category: "AI Advantage", title: "AI Advantage video library", href: "/ai-training/video-library/" },
-  { category: "Clips", title: "LO Development clip library", href: "/training-library/clips/" },
-  { category: "Scripts", title: "Scripts library", href: "/scripts/" },
-  { category: "Prompts", title: "Prompt library", href: "/prompts/" },
-  { category: "Roleplay", title: "Roleplay scenarios", href: "/roleplays/" },
-  { category: "Scorecard", title: "Weekly execution scorecard", href: "/coach-command-center/scorecards/" },
-  { category: "Market Mentor", title: "Market Mentor Studio exercise", href: "/market-mentor/" },
+  { category: "Coaching", title: "LO Mastery resources", href: "/resources/", free: true },
+  { category: "Coaching", title: "Alliance resources", href: "/resources/", free: true },
+  { category: "Coaching", title: "Scripts library", href: "/resources/" },
+  { category: "Coaching", title: "Prompt library", href: "/resources/" },
+  { category: "Coaching", title: "Roleplay scenarios", href: "/resources/" },
+  { category: "Coaching", title: "Weekly execution scorecard", href: "/coach-command-center/scorecards/" },
+  { category: "Coaching", title: "Member tracker", href: "/member-area/trackers/" },
 ];
 
 export const coachAiPrompts: { title: string; prompt: string }[] = [
@@ -688,18 +682,18 @@ export const coachAiPrompts: { title: string; prompt: string }[] = [
   { title: "Weekly check-in email", prompt: "Draft a weekly check-in email to [Name] recapping last week and setting three focus items for next week. Tone: supportive coach. Drafts only — never auto-send." },
   { title: "Prepare for a one-on-one", prompt: "Build a 1:1 coaching agenda for [Name]: review wins, address the top blocker, set next-week commitments, and assign one training resource." },
   { title: "Summarize team activity", prompt: "Summarize my team's coaching activity this week, flag who needs a nudge or is stuck, and recommend where I should focus my coaching time." },
-  { title: "FaceGram recognition post", prompt: "Write an internal FaceGram recognition post celebrating [Name]'s win this week. Keep it specific and team-building. Internal audience only." },
-  { title: "Power Hour reminder", prompt: "Write a short Power Hour reminder for my cohort with one prospecting focus and one follow-up focus for today." },
+  { title: "Member recognition post", prompt: "Write an internal recognition post celebrating [Name]'s win this week. Keep it specific and team-building. Internal audience only." },
+  { title: "Power Hour reminder", prompt: "Write a short Power Hour reminder for my team with one prospecting focus and one follow-up focus for today." },
   { title: "Mastermind discussion prompt", prompt: "Create a mastermind discussion prompt for advanced Alliance producers on overcoming a current market objection." },
 ];
 
-export const faceGramQuickActions: {
+export const memberRecognitionQuickActions: {
   title: string;
   description: string;
   suggestedPost: string;
 }[] = [
   { title: "Recognize a win", description: "Celebrate an LO's win in the team or coaching group.", suggestedPost: "Big shoutout to [Name] for [win] this week — that's the rhythm we're building. 👏" },
   { title: "Ask a group question", description: "Spark discussion in your coaching group.", suggestedPost: "Coaches + LOs: what's one objection you heard this week and how did you handle it?" },
-  { title: "Post a training reminder", description: "Remind the group about a session or lesson.", suggestedPost: "Reminder: Power Hour today. Bring one prospecting goal and one follow-up you've been avoiding." },
-  { title: "Share a clip / resource", description: "Drop a training clip or script into the group.", suggestedPost: "New to the library: [resource]. Watch it before our next call and bring one takeaway." },
+  { title: "Post a coaching reminder", description: "Remind the group about a session or focus.", suggestedPost: "Reminder: Power Hour today. Bring one prospecting goal and one follow-up you've been avoiding." },
+  { title: "Share a clip / resource", description: "Drop a coaching clip or script into the group.", suggestedPost: "New to the library: [resource]. Watch it before our next call and bring one takeaway." },
 ];

@@ -6,7 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 
 const coachResources = [
   {
-    title: "My People",
+    title: "Members",
     description: "Open the compact roster and action menu for each assigned member.",
     href: "/coach-command-center/team/",
   },

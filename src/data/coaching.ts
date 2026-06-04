@@ -25,23 +25,22 @@ export const coachingTiers: CoachingTier[] = [
     tagline: "A simple coaching rhythm for loan officers who want consistency.",
     href: "/lo-mastery-coaching/",
     ctaLabel: "Join LO Mastery",
-    ctaHref: "/support-routing/#corporate-coaches",
+    ctaHref: "/login/",
     description:
-      "A paid coaching membership with group coaching, Power Hour, coaching email, member resources, recordings, scripts, handouts, trackers, scorecards, and leaderboard access.",
+      "A paid coaching membership with weekly calls, daily execution, scorecards, scripts, member resources, and coach follow-up.",
     bestFor:
       "Loan officers who want structure, coaching rhythm, accountability, and a clear member resource area.",
     includes: [
-      "Biweekly group coaching calls",
-      "Daily Power Hour Smile and Dial lunch-themed call",
-      "Daily motivational coaching email",
-      "Certified Mortgage Advisor designation",
-      "Member area access",
-      "Past training recordings",
-      "Scripts, documents, and PDF handouts",
-      "Greatness Tracker, Deal Flow Tracker, and Referral Partner Tracker",
-      "Advisor Scorecard",
-      "LO Mastery leaderboard",
-      "Favorite YouTube channel library",
+      "12 week path",
+      "Daily time blocker",
+      "Theme days",
+      "Script book",
+      "Greatness tracker",
+      "Weekly scorecard",
+      "Coach calls",
+      "Community",
+      "Accountability",
+      "Resources",
     ],
   },
   {
@@ -54,58 +53,55 @@ export const coachingTiers: CoachingTier[] = [
     tagline: "More coaching touchpoints for LOs who want deeper accountability.",
     href: "/loan-factory-alliance/",
     ctaLabel: "Join Loan Factory Alliance",
-    ctaHref: "/support-routing/#corporate-coaches",
+    ctaHref: "/login/",
     description:
-      "Everything in LO Mastery plus weekly coaching calls, Breakfast Club, more specific coaching emails, advanced certifications, priority accountability, the Alliance leaderboard, and advanced group coaching access.",
+      "Everything in LO Mastery plus advanced business planning, database reactivation, realtor partner growth, content rhythm, production systems, community, and deeper accountability.",
     bestFor:
-      "Loan officers who want a tighter coaching cadence, stronger accountability, and advanced specialty-track development.",
+      "Loan officers who want a tighter coaching cadence, stronger accountability, and advanced business growth support.",
     includes: [
       "Everything in LO Mastery",
       "Weekly coaching calls",
-      "Daily Breakfast Club call",
-      "More specific daily coaching email",
-      "Advanced certifications",
-      "Military Housing Specialist",
-      "Investor Specialist",
-      "Approved specialty tracks",
+      "Advanced business planning",
+      "Database reactivation",
+      "Realtor partner growth",
+      "Content rhythm",
+      "Production systems",
+      "Advanced coaching reviews",
       "Priority accountability",
-      "Loan Factory Alliance leaderboard",
-      "Advanced group coaching access",
+      "Community",
       "Deeper coaching rhythm",
     ],
   },
 ];
 
-export const coachingCertifications = [
+export const coachingTracks = [
   {
     id: "aclo",
-    name: "Certified Mortgage Advisor",
-    requirement: "Complete the LO Mastery certification requirements.",
+    name: "LO Mastery progress track",
+    requirement: "Complete the LO Mastery track requirements.",
     summary:
-      "The core LO Mastery designation for members who complete the required training and assessment work.",
+      "The core LO Mastery track for members who complete the required weekly coaching work.",
     eligibleTiers: ["LO Mastery", "Loan Factory Alliance"],
   },
   {
     id: "military-housing-specialist",
-    name: "Military Housing Specialist",
-    requirement:
-      "Complete the approved Military Housing Specialist requirements.",
+    name: "Military housing track",
+    requirement: "Complete the approved Military housing track requirements.",
     summary:
-      "Advanced Alliance specialty track for serving military housing scenarios after the track is approved.",
+      "Advanced Alliance track for serving military housing scenarios after the track is approved.",
     eligibleTiers: ["Loan Factory Alliance"],
   },
   {
     id: "investor-specialist",
-    name: "Investor Specialist",
-    requirement:
-      "Complete the approved Investor Specialist requirements.",
+    name: "Investor track",
+    requirement: "Complete the approved Investor track requirements.",
     summary:
-      "Advanced Alliance specialty track for investor-focused scenarios after the track is approved.",
+      "Advanced Alliance track for investor-focused scenarios after the track is approved.",
     eligibleTiers: ["Loan Factory Alliance"],
   },
   {
     id: "future-specialty-tracks",
-    name: "Approved Specialty Tracks",
+    name: "Approved specialty tracks",
     requirement: "Jeremy approval required before a specialty track is added.",
     summary:
       "Alliance specialty tracks are added only after content, review process, and approval language are confirmed.",
@@ -113,5 +109,5 @@ export const coachingCertifications = [
   },
 ];
 
-export const coachingCertificationCompliance =
-  "Certifications recognize completion of training and assessments. They are not a guarantee of production, income, or business results.";
+export const coachingTrackCompliance =
+  "Coaching tracks recognize completion of weekly work and assessments. They are not a guarantee of production, income, or business results.";

@@ -2,11 +2,9 @@ import Link from "next/link";
 
 const items = [
   { href: "/coach-command-center/", label: "Overview" },
-  { href: "/coach-command-center/team/", label: "My People" },
-  { href: "/coach-command-center/member-progress/", label: "Progress" },
+  { href: "/coach-command-center/team/", label: "Members" },
   { href: "/coach-command-center/scorecards/", label: "Scorecards" },
   { href: "/coach-command-center/coaching-notes/", label: "Notes" },
-  { href: "/coach-command-center/calendar/", label: "Calendar" },
   { href: "/coach-command-center/resources/", label: "Resources" },
 ];
 

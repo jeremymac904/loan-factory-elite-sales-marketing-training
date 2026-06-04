@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getRoleDashboardHref, getRoleLabel, isAdminRole } from "@/lib/supabase/auth";
 import { roleCanCoach } from "@/lib/coachAccess";
+import { getEffectiveAccess } from "@/lib/supabase/effectiveAccess";
 import { getBetaUserSession } from "@/lib/supabase/session";
 import AccountMenu, { type AccountMenuItem } from "./header/AccountMenu";
 
@@ -12,6 +13,7 @@ type MenuItem = AccountMenuItem;
 
 export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
   const session = await getBetaUserSession();
+  const effectiveAccess = await getEffectiveAccess();
 
   if (session.status !== "approved" && session.status !== "pending") {
     return (
@@ -29,21 +31,31 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
   }
 
   const approved = session.status === "approved";
-  const role = approved ? session.profile.role : undefined;
+  const role = approved ? effectiveAccess.effectiveRole : undefined;
   const roleLabel = approved ? getRoleLabel(role) : "Pending approval";
   const email =
     (approved ? session.profile.email : session.user.email) ?? "Signed in";
   const dashboardHref = approved ? getRoleDashboardHref(role) : "/profile/";
+  const dashboardLabel =
+    dashboardHref === "/admin/"
+      ? "Admin"
+      : dashboardHref === "/dashboard/"
+        ? "Manager Dashboard"
+        : dashboardHref === "/coach-command-center/"
+          ? "Coach Command Center"
+          : "My dashboard";
   const canCoach = approved && roleCanCoach(role);
   const canAdmin = approved && isAdminRole(role);
 
   const items: MenuItem[] = [
-    { href: dashboardHref, label: "My dashboard" },
+    { href: dashboardHref, label: dashboardLabel },
   ];
-  if (canCoach) items.push({ href: "/coach-command-center/", label: "Coach Center" });
-  if (canAdmin) items.push({ href: "/admin/", label: "Admin tools" });
-  items.push({ href: "/profile/", label: "Profile" });
-  items.push({ href: "/settings/", label: "Settings" });
+  if (canCoach && dashboardHref !== "/coach-command-center/") {
+    items.push({ href: "/coach-command-center/", label: "Coach Command Center" });
+  }
+  if (canAdmin && dashboardHref !== "/admin/") {
+    items.push({ href: "/admin/", label: "Admin" });
+  }
   items.push({ href: "/auth/sign-out/", label: "Sign out", tone: "danger" });
 
   if (variant === "mobile") {

@@ -28,11 +28,11 @@ export default async function CoachCommandCenterLayout({
         {status === "not-configured" &&
           "Sign-in setup is not ready in this environment yet."}
         {status === "signed-out" &&
-          "The Coach Command Center is for approved Loan Factory coaches, team leaders, and LO Development."}
+          "The Coach Command Center is for approved Loan Factory coaches, team leaders, and coaching managers."}
         {status === "pending" &&
           "Your account is signed in, but it is not approved for coach access yet."}
         {status === "access-denied" &&
-          "Your current role does not include coach center access. Ask Jeremy or LO Development to review it."}
+          "Your current role does not include coach center access. Ask Jeremy or your coaching manager to review it."}
       </AccessNotice>
     );
   }

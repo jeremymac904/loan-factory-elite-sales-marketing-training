@@ -52,7 +52,7 @@ export default async function ProfileEditPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
             Update your contact info, team brand, and Loan Factory details.
-            These show up across the platform and in FaceGram.
+            These show up across the platform.
           </p>
         </div>
       </section>

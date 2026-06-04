@@ -57,13 +57,13 @@ export default async function ActivitySnapshotPage() {
             <h2 className="h-display text-2xl">Nothing to show yet</h2>
             <p className="prose-lf mt-2 text-sm">
               You have no one assigned in this view, so there&apos;s no activity
-              to summarize. Once LOs are assigned to you and start submitting
-              scorecards, real counts appear here. Check{" "}
+              to summarize. Once members are assigned to you and start
+              submitting scorecards, real counts appear here. Check{" "}
               <Link
                 href="/coach-command-center/team/"
                 className="font-semibold text-lf-orange hover:underline"
               >
-                My People
+                Members
               </Link>
               .
             </p>
@@ -122,7 +122,7 @@ export default async function ActivitySnapshotPage() {
                   href="/coach-command-center/team/"
                   className="text-sm font-semibold text-lf-orange hover:underline"
                 >
-                  Open My People <span aria-hidden>&rarr;</span>
+                  Open Members <span aria-hidden>&rarr;</span>
                 </Link>
               </div>
               {needAttention.length === 0 ? (

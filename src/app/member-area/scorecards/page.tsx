@@ -3,7 +3,7 @@ import { getCoachingAccess } from "@/lib/coachingAccess";
 import MemberScorecardForm from "@/components/coach/MemberScorecardForm";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Weekly Scorecard · Member Area" };
+export const metadata = { title: "My Scorecard · Member Area" };
 
 export default async function MemberScorecardsPage() {
   const access = await getCoachingAccess();
@@ -14,7 +14,7 @@ export default async function MemberScorecardsPage() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-            My weekly scorecard
+            My Scorecard
           </p>
           <h1 className="h-display mt-1 text-3xl">Submit this week&apos;s activity</h1>
           <p className="prose-lf mt-2 max-w-2xl text-sm">

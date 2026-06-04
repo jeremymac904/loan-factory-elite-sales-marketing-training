@@ -61,7 +61,7 @@ async function RoleGateContent({ gate, children }: Props) {
       {noticeStatus === "pending" &&
         "Your account is signed in, but access has not been approved yet."}
       {noticeStatus === "access-denied" &&
-        "Your current role does not include this surface yet. Ask Jeremy or LO Development to review access."}
+        "Your current role does not include this surface yet. Ask Jeremy or the coaching admin team to review access."}
     </AccessNotice>
   );
 }
@@ -75,7 +75,7 @@ function gateToLabel(gate: GatedSurface): string {
     case "dashboard":
       return "Dashboard";
     case "lo-development":
-      return "LO Development";
+      return "Coaching Manager";
     case "loan-officer-support":
       return "Loan Officer Support";
     case "member-area":
@@ -87,7 +87,7 @@ function gateToLabel(gate: GatedSurface): string {
     case "support":
       return "Support";
     case "training-academy":
-      return "Training Academy";
+      return "Coach Support";
     case "marketing":
       return "Marketing";
     case "support-routing":

@@ -57,18 +57,18 @@ const noteSections: { key: string; label: string; hint: string }[] = [
   },
   {
     key: "assigned_training",
-    label: "Assigned training",
-    hint: "Coaching resources assigned from the Training Plan, clip library, scripts, or roleplays.",
+    label: "Assigned resources",
+    hint: "Coaching resources assigned from the resource hub, scripts, or practice reps.",
   },
   {
     key: "assigned_clips",
-    label: "Assigned clips",
-    hint: "Clips from the LO Development clip library to watch before next call.",
+    label: "Practice clips",
+    hint: "Clips to watch before the next coaching call.",
   },
   {
     key: "assigned_scripts",
-    label: "Assigned scripts / prompts",
-    hint: "Scripts and AI prompts assigned for practice and reps.",
+    label: "Practice scripts / prompts",
+    hint: "Scripts and prompts assigned for practice and reps.",
   },
   {
     key: "scorecard_history",
@@ -131,16 +131,16 @@ function NoteCard({ person }: { person: AssignedPerson }) {
           View scorecards
         </Link>
         <Link
-          href={`/coach-command-center/training-plan/?person=${person.id}`}
+          href="/resources/"
           className="btn-secondary text-sm"
         >
-          Assign training
+          Assign resource
         </Link>
         <Link
-          href={`/coach-command-center/messages/?person=${person.id}`}
+          href="/coach-command-center/calendar/"
           className="btn-secondary text-sm"
         >
-          Send a nudge
+          Schedule call draft
         </Link>
       </div>
     </article>
@@ -151,7 +151,7 @@ export default async function CoachingNotesPage() {
   const access = await getCoachAccess();
   const people = peopleForScope(access.scope);
   // Show a sample subset when many people are assigned; the rest follow the
-  // same template and are reachable from My People.
+  // same template and are reachable from Members.
   const visiblePeople = people.slice(0, 6);
   const remaining = people.length - visiblePeople.length;
 
@@ -216,7 +216,7 @@ export default async function CoachingNotesPage() {
             </p>
           </div>
           <Link href="/coach-command-center/team/" className="btn-secondary text-sm">
-            View all my people
+            View all members
           </Link>
         </div>
 
@@ -229,7 +229,7 @@ export default async function CoachingNotesPage() {
                 href="/coach-command-center/team/"
                 className="font-semibold text-lf-orange hover:underline"
               >
-                My People
+                Members
               </Link>
               .
             </p>
@@ -251,7 +251,7 @@ export default async function CoachingNotesPage() {
               href="/coach-command-center/team/"
               className="font-semibold text-lf-orange hover:underline"
             >
-              My People
+              Members
             </Link>
             .
           </p>

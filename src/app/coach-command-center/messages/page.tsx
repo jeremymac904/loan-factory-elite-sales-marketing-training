@@ -30,7 +30,7 @@ export default async function CoachMessagesPage() {
           </h1>
           <p className="mt-2 max-w-2xl text-base text-white/85">
             Plan and draft coach follow-ups, encouragement, scorecard
-            reminders, training assignments, meeting recaps, and next-action
+            reminders, resource assignments, meeting recaps, and next-action
             messages. Drafts are local and nothing is auto-sent.
           </p>
           {access.viewingAsLabel && (
@@ -98,16 +98,15 @@ export default async function CoachMessagesPage() {
         <div className="card flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-base font-semibold text-lf-charcoal">
-              Posting to a whole group?
+              Posting to a whole team?
             </h2>
             <p className="prose-lf mt-1 text-sm">
-              For a team or cohort message, review the draft first, then choose
-              the approved destination. This page does not post to Google Chat
-              or send email.
+              Review the draft first, then choose the approved destination.
+              This page does not post to Google Chat or send email.
             </p>
           </div>
-          <Link href="/facegram/" className="btn-secondary shrink-0">
-            Open FaceGram
+          <Link href="/coach-command-center/resources/" className="btn-secondary shrink-0">
+            Open coaching resources
           </Link>
         </div>
       </section>

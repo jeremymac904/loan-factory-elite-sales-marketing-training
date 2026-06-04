@@ -14,15 +14,9 @@ const settingsSurfaces = [
     href: "/profile/edit/",
   },
   {
-    title: "Google connections",
-    description:
-      "Review your Google Workspace sign-in and the scopes connected to your account.",
-    href: "/settings/google/",
-  },
-  {
     title: "Notifications",
     description:
-      "Choose what you want to hear about — FaceGram activity, messages, coaching, and announcements.",
+      "Choose what you want to hear about — messages, coaching, and announcements.",
     href: "/settings/notifications/",
   },
   {
@@ -30,12 +24,6 @@ const settingsSurfaces = [
     description:
       "See your sign-in method, account status, and how identity is managed in Google.",
     href: "/settings/security/",
-  },
-  {
-    title: "AI Twin",
-    description:
-      "Tune your personal AI Twin persona, voice, and connected knowledge sources.",
-    href: "/ai-assistants/my-ai-twin/",
   },
 ];
 
@@ -84,7 +72,7 @@ export default async function SettingsPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
             Manage how you sign in, what you get notified about, and how your
-            profile and AI Twin show up across the Loan Factory platform.
+            profile shows up across the Loan Factory platform.
           </p>
         </div>
       </section>
@@ -108,8 +96,8 @@ export default async function SettingsPage() {
           </dl>
           <p className="prose-lf mt-5 text-sm">
             These settings are for approved Loan Factory users. Each surface
-            below opens a real, working area — profile editing, Google
-            connections, notification preferences, security, and your AI Twin.
+            below opens a real, working area — profile editing, notification
+            preferences, and security.
           </p>
         </div>
 

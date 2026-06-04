@@ -50,7 +50,7 @@ export default async function AdminPage() {
         {access.status === "pending" &&
           "Your account is signed in, but it is not approved for admin access yet."}
         {access.status === "access-denied" &&
-          "Your current role does not include admin access. Ask Jeremy or LO Development to review it."}
+          "Your current role does not include admin access. Ask Jeremy or the admin team to review it."}
       </AccessNotice>
     );
   }

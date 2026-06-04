@@ -108,7 +108,7 @@ export default function GoogleSignInButton() {
       {!configured && (
         <p className="rounded-lg border border-lf-orange/30 bg-lf-orangeSoft px-3 py-2 text-sm font-semibold text-lf-orangeDark">
           Google sign-in is not ready in this environment yet. Please try again
-          later or contact the LO Development team.
+          later or contact the coaching admin team.
         </p>
       )}
       {error && (

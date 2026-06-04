@@ -20,13 +20,8 @@ const memberBenefits = [
       "Measure conversations, follow-up, pipeline activity, and commitments you actually completed.",
   },
   {
-    title: "Leaderboards",
-    description:
-      "Recognize consistent work, coaching follow-through, and visible progress.",
-  },
-  {
     title: "Resources",
-    description:
+      description:
       "Scripts, recordings, trackers, and member resources organized for the paid coaching experience.",
   },
   {
@@ -41,12 +36,11 @@ export default function PaidCoachingLanding() {
     <>
       <PageHero
         eyebrow="Loan Factory Paid Coaching"
-        title="LO Mastery and Loan Factory Alliance"
+        title="Loan Factory Paid Coaching Platform"
         body={
           <p>
-            Paid coaching for Loan Factory loan officers who want a clear weekly
-            plan, real accountability, scorecards, leaderboards, resources, and
-            direct coach support.
+            Structure, accountability, coaching, and community for Loan Factory
+            loan officers who want to grow.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -91,6 +85,34 @@ export default function PaidCoachingLanding() {
               </p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="container-page py-14">
+          <SectionHeading
+            eyebrow="What coaches use"
+            title="The tools coaches lean on every week."
+            description="Simple workflows for the people running the programs."
+          />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Coach playbook",
+              "Member tracker",
+              "Scorecards",
+              "Notes",
+              "Weekly call structure",
+              "Progress review",
+              "Shared standards",
+            ].map((item) => (
+              <article key={item} className="card">
+                <h3 className="h-display text-lg">{item}</h3>
+                <p className="prose-lf mt-2 text-sm text-lf-slate">
+                  Coaching-focused support for the weekly rhythm.
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -22,7 +22,7 @@ export const metadata = { title: "Coach Command Center" };
 const scopeIntro: Record<CoachScope, string> = {
   all: "You see every coach, team leader, and assigned member across the paid coaching programs.",
   corporate_coach:
-    "You coach new LOs through onboarding, first-file survival, and weekly accountability.",
+    "You coach members through onboarding, first-file survival, and weekly accountability.",
   lo_development:
     "You support the paid coaching platform and the leadership that keeps it moving.",
   team_leader:
@@ -32,9 +32,19 @@ const scopeIntro: Record<CoachScope, string> = {
 
 const quickTools: { title: string; description: string; href: string }[] = [
   {
-    title: "Calendar",
-    description: "Coaching sessions, Power Hours, call blocks, and follow-up windows.",
-    href: "/coach-command-center/calendar/",
+    title: "Members",
+    description: "Assigned members, role filter, and quick actions.",
+    href: "/coach-command-center/team/",
+  },
+  {
+    title: "Scorecards",
+    description: "Review submitted and missing scorecards.",
+    href: "/coach-command-center/scorecards/",
+  },
+  {
+    title: "Notes",
+    description: "Capture wins, blockers, action items, and follow-up dates.",
+    href: "/coach-command-center/coaching-notes/",
   },
   {
     title: "Resources",
@@ -42,44 +52,31 @@ const quickTools: { title: string; description: string; href: string }[] = [
     href: "/coach-command-center/resources/",
   },
   {
-    title: "Scorecards",
-    description: "Review weekly execution and next-week commitments.",
-    href: "/coach-command-center/scorecards/",
-  },
-  {
-    title: "Coaching notes",
-    description: "Capture wins, blockers, and follow-ups per LO.",
-    href: "/coach-command-center/coaching-notes/",
-  },
-  {
-    title: "Member progress",
-    description:
-      "Coaching attendance, commitments, certifications, resources, and next action.",
-    href: "/coach-command-center/member-progress/",
+    title: "Call schedule",
+    description: "Draft coaching calls, Power Hours, and follow-up windows.",
+    href: "/coach-command-center/calendar/",
   },
 ];
 
 const dashboardTabs = [
-  { label: "My People", href: "/coach-command-center/team/" },
-  { label: "Progress", href: "/coach-command-center/member-progress/" },
+  { label: "Members", href: "/coach-command-center/team/" },
   { label: "Scorecards", href: "/coach-command-center/scorecards/" },
   { label: "Notes", href: "/coach-command-center/coaching-notes/" },
-  { label: "Calendar", href: "/coach-command-center/calendar/" },
   { label: "Resources", href: "/coach-command-center/resources/" },
 ];
 
 export default async function CoachCommandCenterPage() {
   const access = await getCoachAccess();
   const people = peopleForScope(access.scope);
-  // Finding #12: coverage / overview-of-all-coaches is restricted to
-  // master_admin, LO Development, and Edward Arvizo (corporate coach lead).
+  // Finding #12: coverage / overview-of-all-coaches is restricted to the
+  // manager / admin roles that oversee the paid coaching programs.
   const showCoverage = canSeeCoverage(access.seesAll, access.effectiveRoleLabel);
   // Supervisor oversight rollup (only used when the coverage section renders).
   const coverageSummary = buildSupervisorCoverageSummary();
   const supervisorSummaryCards = [
     { label: "Coaches", value: coverageSummary.coaches.toString() },
     { label: "Team leaders", value: coverageSummary.teamLeaders.toString() },
-    { label: "Assigned LOs", value: coverageSummary.assignedLOs.toString() },
+    { label: "Assigned members", value: coverageSummary.assignedLOs.toString() },
     { label: "Need attention", value: coverageSummary.needsAttention.toString() },
     { label: "Coverage at risk", value: coverageSummary.coverageAtRisk.toString() },
   ];
@@ -94,7 +91,7 @@ export default async function CoachCommandCenterPage() {
     (s) => s.status === "missing" && people.some((p) => p.id === s.memberId),
   );
   const dashboardStats = [
-    { label: "Assigned LOs", value: people.length.toString(), href: "/coach-command-center/team/" },
+    { label: "Assigned members", value: people.length.toString(), href: "/coach-command-center/team/" },
     { label: "Need attention", value: attentionPeople.length.toString(), href: "/coach-command-center/team/" },
     { label: "Scorecards submitted", value: submittedScorecards.length.toString(), href: "/coach-command-center/scorecards/" },
     { label: "Scorecards missing", value: missingScorecards.length.toString(), href: "/coach-command-center/scorecards/" },
@@ -195,7 +192,7 @@ export default async function CoachCommandCenterPage() {
         <div className="grid gap-4 xl:grid-cols-[1.6fr,1fr]">
           <div className="card overflow-hidden p-0">
             <div className="flex items-center justify-between gap-4 border-b border-lf-line px-4 py-3">
-              <h2 className="h-display text-xl">Assigned LOs</h2>
+              <h2 className="h-display text-xl">Assigned members</h2>
               <Link
                 href="/coach-command-center/team/"
                 className="text-sm font-semibold text-lf-orange hover:underline"
@@ -251,7 +248,7 @@ export default async function CoachCommandCenterPage() {
 
           <div className="card overflow-hidden p-0">
             <div className="border-b border-lf-line px-4 py-3">
-              <h2 className="h-display text-xl">Needs attention</h2>
+              <h2 className="h-display text-xl">Members needing attention</h2>
               <p className="mt-1 text-xs text-lf-slate">
                 Follow-ups, missing scorecards, stuck points, and overdue calls.
               </p>

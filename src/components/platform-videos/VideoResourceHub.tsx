@@ -47,8 +47,8 @@ export default function VideoResourceHub({
           <Link href="/lo-development/video-library/" className="btn-secondary">
             Open long-form source videos
           </Link>
-          <Link href="/lo-development/resources/" className="btn-secondary">
-            Open LO Development resources
+          <Link href="/resources/" className="btn-secondary">
+            Open coaching resources
           </Link>
         </div>
       </section>

@@ -6,11 +6,11 @@ const reasonMessages: Record<string, string> = {
   domain:
     "This beta is limited to Google accounts using the loanfactory.com domain.",
   setup:
-    "The sign-in approval check is not ready yet. Ask Jeremy or LO Development to review setup.",
+    "The sign-in approval check is not ready yet. Ask Jeremy or the coaching admin team to review setup.",
   "approval-sync":
-    "Your Google login worked, but the approved user list could not be checked. Ask Jeremy or LO Development to review your access.",
+    "Your Google login worked, but the approved user list could not be checked. Ask Jeremy or the coaching admin team to review your access.",
   "profile-sync":
-    "Your Google login worked, but your profile could not be saved. Ask Jeremy or LO Development to review your access.",
+    "Your Google login worked, but your profile could not be saved. Ask Jeremy or the coaching admin team to review your access.",
   pending:
     "Your Loan Factory Google account is signed in, but your email is not on the approved coaching access list yet.",
 };

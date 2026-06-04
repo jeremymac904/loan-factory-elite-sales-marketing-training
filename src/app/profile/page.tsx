@@ -13,21 +13,6 @@ const connectedServices = [
     description: "Sign-in and email identity",
     status: "connected" as const,
   },
-  {
-    name: "Gmail Review",
-    description: "Email review for AI Twin training",
-    status: "future" as const,
-  },
-  {
-    name: "Drive Sources",
-    description: "Document sources for AI Twin context",
-    status: "future" as const,
-  },
-  {
-    name: "AI Twin",
-    description: "Personal AI assistant trained on your style",
-    status: "future" as const,
-  },
 ];
 
 export default async function ProfilePage() {
@@ -171,9 +156,6 @@ export default async function ProfilePage() {
               Admin
             </Link>
           )}
-          <Link href="/settings/google/" className="btn-secondary">
-            Google connections
-          </Link>
           <Link href="/" className="btn-secondary">
             Home
           </Link>

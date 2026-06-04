@@ -33,8 +33,7 @@ export default async function CoachMemberProgressPage() {
             Member Progress
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Paid coaching progress for LO Mastery and Loan Factory Alliance,
-            separate from free internal Sales and Marketing 101 through 601.
+            Paid coaching progress for LO Mastery and Loan Factory Alliance.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-4 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -55,10 +54,8 @@ export default async function CoachMemberProgressPage() {
           <p className="prose-lf mt-2 text-sm">
             LO Mastery is the $249 tier. Loan Factory Alliance is the $449 tier.
             This view tracks coaching attendance, weekly commitments, activity
-            tracker status, certification progress, accountability score, coach
-            notes, resource completion, and next action. It intentionally does
-            not mix Sales and Marketing 101 through 601 completion into paid
-            coaching progress.
+            tracker status, program progress, accountability score, coach
+            notes, resource completion, and next action.
           </p>
           <div className="mt-4 flex flex-wrap gap-3 text-xs">
             {(["active", "needs_nudge", "stuck", "inactive"] as const).map(
@@ -92,7 +89,7 @@ export default async function CoachMemberProgressPage() {
                 Command Center overview
               </Link>
               <Link href="/coach-command-center/team/" className="btn-secondary">
-                My People
+                Members
               </Link>
             </div>
           </div>
@@ -123,7 +120,7 @@ export default async function CoachMemberProgressPage() {
                     <th className="px-4 py-2 font-semibold">Attendance</th>
                     <th className="px-4 py-2 font-semibold">Commitments</th>
                     <th className="px-4 py-2 font-semibold">Activity tracker</th>
-                    <th className="px-4 py-2 font-semibold">Certification</th>
+                    <th className="px-4 py-2 font-semibold">Program progress</th>
                     <th className="px-4 py-2 font-semibold">Accountability</th>
                     <th className="px-4 py-2 font-semibold">Resources</th>
                     <th className="px-4 py-2 font-semibold">Coach notes</th>
@@ -151,7 +148,7 @@ export default async function CoachMemberProgressPage() {
                         {m.activityTracker}
                       </td>
                       <td className="px-4 py-2 text-lf-slate">
-                        {m.certification}
+                        {m.progressSnapshot}
                       </td>
                       <td className="px-4 py-2 font-semibold text-lf-charcoal">
                         {m.accountabilityScore}

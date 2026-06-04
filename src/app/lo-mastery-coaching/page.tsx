@@ -38,7 +38,7 @@ export default function LoMasteryCoachingPage() {
       <section className="container-page py-14">
         <SectionHeading
           title="What members get"
-          description="Use LO Mastery when you need coaching structure, not another training catalog."
+          description="Use LO Mastery when you need coaching structure, not another self-study program."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {loMastery.includes.slice(0, 6).map((item) => (

@@ -88,14 +88,12 @@ export default async function ScorecardsPage() {
           <p className="prose-lf mt-2 text-sm">
             The coach view shows what was submitted, what is missing, where the
             activity trend is moving, and which follow-up action the coach owns.
-            Sales and Marketing 101 through 601 remains free internal training
-            and is not counted as paid coaching progress here. Activity detail
-            feeds the{" "}
+            Activity detail feeds the{" "}
             <Link
-              href="/coach-command-center/activity/"
+              href="/coach-command-center/"
               className="font-semibold text-lf-orange hover:underline"
             >
-              Activity Snapshot
+              Coach Command Center
             </Link>
             . This is coaching, not compliance.
           </p>

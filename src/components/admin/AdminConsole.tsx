@@ -39,6 +39,21 @@ const quickActions = [
     href: "/admin/platform-status",
     description: "Check current platform wiring and readiness.",
   },
+  {
+    label: "Manager Dashboard",
+    href: "/dashboard/",
+    description: "Open Edward's coaching manager view.",
+  },
+  {
+    label: "Coach Command Center",
+    href: "/coach-command-center/",
+    description: "Open the coaching command center.",
+  },
+  {
+    label: "Resources",
+    href: "/resources/",
+    description: "Open the coaching resource hub.",
+  },
 ];
 
 export const adminToolGroups: AdminToolGroup[] = [
@@ -53,11 +68,11 @@ export const adminToolGroups: AdminToolGroup[] = [
   {
     label: "Coaching programs",
     tools: [
+      { label: "Manager Dashboard", href: "/dashboard/" },
       { label: "Coach Command Center", href: "/coach-command-center" },
-      { label: "Coaching Members", href: "/coaching/" },
+      { label: "Members", href: "/member-area/" },
       { label: "LO Mastery", href: "/lo-mastery-coaching/" },
       { label: "Loan Factory Alliance", href: "/loan-factory-alliance/" },
-      { label: "Member Area", href: "/member-area/" },
       { label: "Resources", href: "/resources/" },
     ],
   },
@@ -65,7 +80,6 @@ export const adminToolGroups: AdminToolGroup[] = [
     label: "Platform controls",
     tools: [
       { label: "Platform Status", href: "/admin/platform-status" },
-      { label: "Launch QA Checklist", href: "/admin/qa-checklist/" },
     ],
   },
 ];

@@ -49,9 +49,8 @@ export default function ResourcesPage() {
         title="Coaching resources"
         body={
           <p>
-            Everything here supports the paid coaching platform. If you are
-            approved, open your member area. If not, sign in and ask Jeremy for
-            access.
+            Everything here supports the paid coaching platform. Use LO Mastery,
+            Loan Factory Alliance, scorecards, tracker tools, and call planning.
           </p>
         }
         backgroundImage="/media/dark-hero-background.png"
@@ -61,7 +60,7 @@ export default function ResourcesPage() {
         <SectionHeading
           eyebrow="What to open"
           title="Coaching resources only."
-          description="The live build no longer surfaces the broader LO Development training library, AI tools, FaceGram, or support routing."
+          description="Open the member dashboards, scorecards, tracker tools, and coaching call planning that support the paid programs."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {resourceCards.map((card) => (

@@ -4,12 +4,10 @@ import CoachCommandNav from "@/components/coach/CoachCommandNav";
 import { trainingAssignables } from "@/data/coachCommandCenter";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Training Assignment · Coach Command Center" };
+export const metadata = { title: "Resource Assignment · Coach Command Center" };
 
-// Finding #7: 101-601 is FREE Sales & Marketing training. It is offered as an
-// assignable resource but is clearly labeled free and is NEVER counted as
-// paid-coaching progress. Paid coaching resources (AI Advantage, clips,
-// scripts, etc.) are grouped separately.
+// Resource assignment route for the paid coaching platform. This page stays
+// draft-only and is focused on coaching resources, scripts, and practice reps.
 export default async function CoachTrainingPlanPage() {
   const access = await getCoachAccess();
 
@@ -36,10 +34,10 @@ export default async function CoachTrainingPlanPage() {
             Coach Command Center
           </p>
           <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight">
-            Training Assignment
+            Resource Assignment
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-white/85">
-            Assign lessons, clips, scripts, and reps as coaching tasks — open any
+            Assign coaching resources, scripts, and practice reps — open any
             resource to review it first.
           </p>
           {access.viewingAsLabel && (
@@ -58,20 +56,12 @@ export default async function CoachTrainingPlanPage() {
       <section className="container-page py-8">
         <div className="card border-lf-orange/40 bg-lf-orangeSoft/30">
           <p className="prose-lf text-sm">
-            <span className="font-semibold text-lf-charcoal">
-              Free vs paid is kept separate.
-            </span>{" "}
-            Sales &amp; Marketing 101-601 is free internal training you can
-            assign — but completing it is never counted as paid-coaching
-            progress. Record assignments in your coaching notes and follow up on
-            the next check-in. Assignments are tracked manually until task
-            automation is connected.
+            Record assignments in your coaching notes and follow up on the next
+            check-in. Assignments are tracked manually until task automation is
+            connected.
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
-            <Link
-              href="/coach-command-center/coaching-notes/"
-              className="btn-primary"
-            >
+            <Link href="/coach-command-center/coaching-notes/" className="btn-primary">
               Record in coaching notes
             </Link>
             <Link href="/coach-command-center/team/" className="btn-secondary">
@@ -90,7 +80,7 @@ export default async function CoachTrainingPlanPage() {
                   <h2 className="h-display text-xl">{category}</h2>
                   {isFree && (
                     <span className="rounded-full bg-lf-mist px-2.5 py-0.5 text-xs font-semibold text-lf-slate">
-                      Free · not paid-coaching progress
+                      Coaching resource
                     </span>
                   )}
                 </div>

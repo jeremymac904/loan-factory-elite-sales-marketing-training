@@ -7,8 +7,8 @@
  * getNavForRole(effectiveRole) for the list to render.
  *
  * Keep these lists short and clean. Every entry must point at a real route.
- * The live build is now coaching-first, so legacy LO Development / training /
- * AI / support surfaces stay out of the visible nav.
+ * The live build is now paid coaching-first, so legacy LO Development /
+ * training / AI / support surfaces stay out of the visible nav.
  *
  * Role keys mirror @/lib/supabase/auth roleLabels. This module does NOT redefine
  * role/access logic — it only maps an already-resolved role string to a link
@@ -28,8 +28,16 @@ const NAV = {
   home: { label: "Home", href: "/" },
   loMastery: { label: "LO Mastery", href: "/lo-mastery-coaching/" },
   alliance: { label: "Loan Factory Alliance", href: "/loan-factory-alliance/" },
+  myProgram: { label: "My Program", href: "/member-area/" },
+  myScorecard: { label: "My Scorecard", href: "/member-area/scorecards/" },
+  myTracker: { label: "My Tracker", href: "/member-area/trackers/" },
   coaching: { label: "Coach Command Center", href: "/coach-command-center/" },
-  memberArea: { label: "Member Area", href: "/member-area/" },
+  members: { label: "Members", href: "/coach-command-center/team/" },
+  scorecards: { label: "Scorecards", href: "/coach-command-center/scorecards/" },
+  notes: { label: "Notes", href: "/coach-command-center/coaching-notes/" },
+  managerDashboard: { label: "Manager Dashboard", href: "/dashboard/" },
+  coaches: { label: "Coaches", href: "/dashboard/#coaches" },
+  programStatus: { label: "Program Status", href: "/dashboard/#program-status" },
   resources: { label: "Resources", href: "/resources/" },
   admin: { label: "Admin", href: "/admin/" },
 } satisfies Record<string, PrimaryNavItem>;
@@ -38,27 +46,43 @@ const loggedOutNav: PrimaryNavItem[] = [
   NAV.home,
   NAV.loMastery,
   NAV.alliance,
-  NAV.resources,
 ];
 
 const memberNav: PrimaryNavItem[] = [
   NAV.home,
-  NAV.loMastery,
-  NAV.alliance,
-  NAV.memberArea,
+  NAV.myProgram,
   NAV.resources,
+  NAV.myScorecard,
+  NAV.myTracker,
 ];
 
 const coachNav: PrimaryNavItem[] = [
   NAV.home,
   NAV.coaching,
+  NAV.members,
+  NAV.scorecards,
+  NAV.notes,
+  NAV.resources,
+];
+
+const managerNav: PrimaryNavItem[] = [
+  NAV.home,
+  NAV.managerDashboard,
+  NAV.coaching,
+  NAV.members,
+  NAV.coaches,
+  NAV.programStatus,
   NAV.resources,
 ];
 
 const adminNav: PrimaryNavItem[] = [
   NAV.home,
-  NAV.coaching,
   NAV.admin,
+  NAV.managerDashboard,
+  NAV.coaching,
+  NAV.members,
+  NAV.coaches,
+  NAV.programStatus,
   NAV.resources,
 ];
 
@@ -67,7 +91,7 @@ export const primaryNav: PrimaryNavItem[] = memberNav;
 const NAV_BY_ROLE: Record<string, PrimaryNavItem[]> = {
   master_admin: adminNav,
   admin: adminNav,
-  lo_development_lead: coachNav,
+  lo_development_lead: managerNav,
   lo_development_member: coachNav,
   lo_development: coachNav,
   training_academy: coachNav,
@@ -77,7 +101,7 @@ const NAV_BY_ROLE: Record<string, PrimaryNavItem[]> = {
   corporate_coach_supervisor: coachNav,
   lo_mastery_coach: coachNav,
   loan_factory_alliance_coach: coachNav,
-  coaching_director: coachNav,
+  coaching_director: managerNav,
   team_leader: coachNav,
   coaching_member_level_1: memberNav,
   coaching_member_level_2: memberNav,
