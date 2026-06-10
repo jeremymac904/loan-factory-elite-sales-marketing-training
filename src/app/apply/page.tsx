@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { coachingTiers } from "@/data/coaching";
 
+const APPLICATION_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdnCdhiGDaz3W0i33aGiiPk4UlkeStesQCrj1ryzYKG9DRZQA/viewform";
+
 export const metadata = { title: "Apply" };
 
 export default function ApplyPage() {
@@ -35,8 +38,16 @@ export default function ApplyPage() {
               </p>
               <h2 className="h-display mt-2 text-2xl">{tier.shortName}</h2>
               <p className="prose-lf mt-3 text-lf-slate">{tier.bestFor}</p>
-              <div className="mt-auto pt-6">
-                <Link href={tier.href} className="btn-primary">
+              <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                <a
+                  href={APPLICATION_FORM_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary"
+                >
+                  Apply now
+                </a>
+                <Link href={tier.href} className="btn-secondary">
                   View {tier.shortName}
                 </Link>
               </div>
@@ -46,17 +57,29 @@ export default function ApplyPage() {
         <div className="mt-10 rounded-2xl border border-lf-line bg-lf-mist p-7">
           <h2 className="h-display text-2xl">How to apply</h2>
           <p className="prose-lf mt-3 max-w-3xl text-lf-charcoal">
-            Email{" "}
-            <a
-              className="font-semibold text-lf-orange hover:underline"
-              href="mailto:jeremy.mcdonald@loanfactory.com?subject=Paid%20Coaching%20Application"
-            >
-              jeremy.mcdonald@loanfactory.com
-            </a>{" "}
-            with your name, branch, current monthly volume, and which program
-            you want. We reply with approval and your start date. Already
-            approved? Use the Sign In button in the top right.
+            Complete the application form and we follow up with approval and
+            your start date. Already approved? Use the Sign In button in the
+            top right.
           </p>
+          <div className="mt-5 flex flex-wrap items-center gap-4">
+            <a
+              href={APPLICATION_FORM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
+              Open the application form
+            </a>
+            <p className="text-sm text-lf-slate">
+              Questions?{" "}
+              <a
+                className="font-semibold text-lf-orange hover:underline"
+                href="mailto:jeremy.mcdonald@loanfactory.com?subject=Paid%20Coaching%20Application"
+              >
+                jeremy.mcdonald@loanfactory.com
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </>
