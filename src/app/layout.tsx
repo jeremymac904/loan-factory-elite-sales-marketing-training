@@ -4,7 +4,6 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import BetaPreviewBanner from "@/components/BetaPreviewBanner";
 import ViewAsBanner from "@/components/ViewAsBanner";
-import SuggestionModal from "@/components/SuggestionModal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -41,10 +40,6 @@ export default function RootLayout({
         <BetaPreviewBanner />
         <main>{children}</main>
         <SiteFooter />
-        <SuggestionModal
-          triggerLabel="Send Feedback"
-          triggerClassName="fixed bottom-4 right-4 z-40 rounded-full bg-lf-orange px-4 py-3 text-sm font-bold text-white shadow-2xl transition hover:-translate-y-0.5 hover:bg-lf-orangeDark focus:outline-none focus:ring-2 focus:ring-lf-orange/30 sm:bottom-5 sm:right-5"
-        />
       </body>
     </html>
   );

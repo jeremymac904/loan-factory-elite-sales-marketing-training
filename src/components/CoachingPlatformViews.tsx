@@ -4,7 +4,6 @@ import {
   allianceWeeks,
   adminPages,
   adminUserRows,
-  calendarItems,
   coachCommandPages,
   coachNotes,
   communityPosts,
@@ -39,6 +38,8 @@ import {
 import CommunityFeed from "./CommunityFeed";
 import ClassroomClient from "./ClassroomClient";
 import TodayWorkspace from "./TodayWorkspace";
+import CalendarMonth from "./CalendarMonth";
+import ProfileWorkspace from "./ProfileWorkspace";
 
 function PageHero({
   eyebrow,
@@ -126,8 +127,12 @@ function programWeeks(program: ProgramKey) {
 }
 
 function programScripts(program: ProgramKey) {
-  return scriptLibrary.filter((script) =>
-    (script.programs ?? ["mastery", "alliance"]).includes(program),
+  // Member script libraries are for loan officers only — leadership and
+  // coach-facing scripts stay out of member views.
+  return scriptLibrary.filter(
+    (script) =>
+      script.category !== "Leadership" &&
+      (script.programs ?? ["mastery", "alliance"]).includes(program),
   );
 }
 
@@ -157,9 +162,6 @@ function programCommunityPosts(program: ProgramKey) {
   return communityPosts.filter((p) => p.role === filter || p.role === "Coach" || p.role === "Member");
 }
 
-function programLeaderboard(program: ProgramKey) {
-  return leaderboardRows;
-}
 
 const memberRoutes: Record<string, { mastery: string; alliance: string }> = {
   Feed: { mastery: "/member-area/", alliance: "/member-area/alliance/" },
@@ -189,14 +191,12 @@ const memberNavItems = [
 
 function MemberSidebar({ program, active }: { program: ProgramKey; active: string }) {
   return (
-    <aside className="border-r border-lf-line bg-white xl:sticky xl:top-28 xl:self-start">
-      <div className="border-b border-lf-line p-5">
-        <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-          {programName(program)} member
-        </p>
-        <p className="mt-1 text-sm text-lf-slate">Program workspace</p>
-      </div>
-      <nav className="grid gap-1 p-3">
+    <>
+      {/* Mobile: compact horizontal nav strip */}
+      <nav
+        aria-label="Member navigation"
+        className="sticky top-20 z-20 flex gap-1 overflow-x-auto border-b border-lf-line bg-white px-3 py-2 lg:hidden"
+      >
         {memberNavItems.map((item) => {
           const href = memberRoutes[item][program];
           const isActive = item === active;
@@ -204,7 +204,7 @@ function MemberSidebar({ program, active }: { program: ProgramKey; active: strin
             <Link
               key={item}
               href={href}
-              className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${
+              className={`shrink-0 rounded-lg px-3 py-2 text-sm font-semibold transition ${
                 isActive
                   ? "bg-lf-orange text-white"
                   : "text-lf-charcoal hover:bg-lf-orangeSoft hover:text-lf-orange"
@@ -215,7 +215,36 @@ function MemberSidebar({ program, active }: { program: ProgramKey; active: strin
           );
         })}
       </nav>
-    </aside>
+
+      {/* Desktop: fixed full-height app sidebar; only main content scrolls */}
+      <aside className="hidden border-r border-lf-line bg-white lg:sticky lg:top-20 lg:flex lg:h-[calc(100vh-5rem)] lg:flex-col lg:overflow-y-auto">
+        <div className="border-b border-lf-line p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
+            {programName(program)}
+          </p>
+          <p className="mt-1 text-sm text-lf-slate">Member workspace</p>
+        </div>
+        <nav className="grid gap-1 p-3">
+          {memberNavItems.map((item) => {
+            const href = memberRoutes[item][program];
+            const isActive = item === active;
+            return (
+              <Link
+                key={item}
+                href={href}
+                className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${
+                  isActive
+                    ? "bg-lf-orange text-white"
+                    : "text-lf-charcoal hover:bg-lf-orangeSoft hover:text-lf-orange"
+                }`}
+              >
+                {item}
+              </Link>
+            );
+          })}
+        </nav>
+      </aside>
+    </>
   );
 }
 
@@ -250,9 +279,9 @@ function MemberLayout({
 }) {
   return (
     <div className="w-full bg-lf-mist">
-      <div className="grid w-full grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)]">
+      <div className="grid w-full grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)]">
         <MemberSidebar program={program} active={active} />
-        <div className="min-w-0 p-5 md:p-8">{children}</div>
+        <div className="min-h-[calc(100vh-5rem)] min-w-0 p-4 md:p-6 xl:p-8">{children}</div>
       </div>
     </div>
   );
@@ -281,18 +310,9 @@ export function ScorecardWorkspace({ program }: { program: ProgramKey }) {
 }
 
 export function TodayView({ program }: { program: ProgramKey }) {
-  const note = coachNotes[0];
   return (
     <MemberLayout program={program} active="Today">
-      <MemberHead
-        program={program}
-        title="Today"
-        description="Open the page, see what today is, do the work, and log it before the day ends."
-      />
-      <TodayWorkspace
-        program={program}
-        coachNote={`${note.note} Next action: ${note.nextAction}`}
-      />
+      <TodayWorkspace program={program} />
     </MemberLayout>
   );
 }
@@ -305,7 +325,7 @@ export function TrackerWorkspaceView({ program }: { program: ProgramKey }) {
         title="Trackers"
         description="Real editable trackers with local save, summary, and coach review readiness."
       />
-      <TrackerWorkspace trackers={programTrackerSet(program)} />
+      <TrackerWorkspace trackers={programTrackerSet(program)} storageKey={`lf-trackers-${program}`} />
     </MemberLayout>
   );
 }
@@ -357,7 +377,7 @@ export function CalendarView({ program }: { program: ProgramKey }) {
         title="Calendar"
         description="Calls, planning windows, review sessions, and the daily theme-day rhythm."
       />
-      <CalendarBoard program={program} />
+      <CalendarMonth program={program} />
     </MemberLayout>
   );
 }
@@ -396,41 +416,14 @@ export function ResourcesLibrary({ program }: { program: ProgramKey }) {
 }
 
 export function ProfileView({ program }: { program: ProgramKey }) {
-  const isMastery = program === "mastery";
   return (
     <MemberLayout program={program} active="Profile">
       <MemberHead
         program={program}
         title="Profile"
-        description="Member goals, current focus, coaching alignment, and account access."
+        description="Your details, current focus, weekly goal, saved progress, and recent submissions."
       />
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_330px]">
-          <section className="rounded-2xl border border-lf-line bg-white p-6 shadow-card">
-            <SectionTitle label="Member plan" title="Current 12-week goal" />
-            <dl className="grid gap-4 md:grid-cols-2">
-              {[
-                ["Program", programName(program)],
-                ["Current week", isMastery ? "Week 7: Realtor Partner Outreach" : "Week 3: The Numbers That Run the Business"],
-                ["Daily number", isMastery ? "New agent contacts made" : "Conversion ratios mapped"],
-                ["Coach focus", isMastery ? "Book meetings without pitching too early" : "Find the weakest handoff and document the fix"],
-              ].map(([label, value]) => (
-                <div key={label} className="border-l-2 border-lf-orange bg-lf-mist p-4">
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-lf-orange">{label}</dt>
-                  <dd className="mt-2 text-lg font-black text-lf-navy">{value}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-          <aside className="rounded-2xl border border-lf-line bg-white p-6 shadow-card">
-            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">Account access</p>
-            <p className="prose-lf mt-3 text-sm text-lf-slate">
-              Production sign-in uses the single Google authorization flow. Local review keeps pages visible without blocking review.
-            </p>
-            <Link href="/auth/google/?next=/member-area/" className="btn-secondary mt-5">
-              Sign in with Google
-            </Link>
-          </aside>
-        </div>
+      <ProfileWorkspace program={program} programLabel={programName(program)} />
     </MemberLayout>
   );
 }
@@ -463,38 +456,9 @@ function ResourceRow({ resource }: { resource: DownloadResource }) {
   );
 }
 
-function CalendarBoard({ program }: { program: ProgramKey }) {
-  return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-      <section className="grid gap-4">
-        {calendarItems.map((item) => (
-          <article key={item.day} className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
-            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              {item.day} · {item.time}
-            </p>
-            <h2 className="h-display mt-2 text-2xl">{item.title}</h2>
-            <p className="prose-lf mt-3 text-lf-slate">{item.focus}</p>
-          </article>
-        ))}
-      </section>
-      <aside className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
-        <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">Theme days</p>
-        <div className="mt-4 grid gap-3 text-sm leading-6 text-lf-charcoal">
-          {themeDays.map((day) => (
-            <div key={day.day} className="border-l-2 border-lf-orange pl-3">
-              <p className="font-black text-lf-navy">{day.day}</p>
-              <p>{program === "mastery" ? day.mastery : day.alliance}</p>
-            </div>
-          ))}
-        </div>
-      </aside>
-    </div>
-  );
-}
 
 export function CommunityFeedView({ program }: { program: ProgramKey }) {
   const posts = programCommunityPosts(program);
-  const leaderboard = programLeaderboard(program);
   return (
     <MemberLayout program={program} active="Feed">
       <MemberHead
@@ -502,7 +466,7 @@ export function CommunityFeedView({ program }: { program: ProgramKey }) {
         title="Member feed"
         description="Posts, comments, pinned coach notes, scripts, and wins. This is home."
       />
-      <CommunityFeed posts={posts} leaderboard={leaderboard} storageKey={`lf-feed-${program}`} program={program} />
+      <CommunityFeed posts={posts} storageKey={`lf-feed-${program}`} />
     </MemberLayout>
   );
 }
@@ -668,7 +632,7 @@ export function CoachCommandSection({ section }: { section: string }) {
           </div>
         )}
         {section === "scorecards" && <WeeklyScorecardForm metrics={scorecardMetrics} title="Coach Scorecard Review" />}
-        {section === "trackers" && <TrackerWorkspace trackers={trackerDefinitions} />}
+        {section === "trackers" && <TrackerWorkspace trackers={trackerDefinitions} storageKey="lf-trackers-coach" />}
         {section === "notes" && <CoachNotesWorkspace notes={coachNotes} members={memberProgressRows.map((row) => row.member)} />}
         {section === "community" && <CommunityExperience posts={communityPosts} leaderboard={leaderboardRows.map((row) => [row.name, row.metric, row.detail])} />}
       </PortalLayout>

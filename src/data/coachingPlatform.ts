@@ -567,21 +567,6 @@ export const allianceScorecardMetrics: ScorecardMetric[] = [
 
 export const trackerDefinitions: TrackerDefinition[] = [
   {
-    slug: "daily-execution",
-    title: "Daily Execution Tracker",
-    description:
-      "The working daily list for calls, follow-up, appointments, script reps, and the one priority that must not slip.",
-    columns: ["Day", "Theme", "Power block", "Call list", "Follow-up", "Script reps", "Done"],
-    programs: ['mastery', 'alliance'],
-    rows: [
-      ["Monday", "Database", "8:30-10:30", "Top 25 SOI", "Past clients", "Database check-in", "yes"],
-      ["Tuesday", "Pipeline", "8:30-10:30", "Active files", "Tuesday updates", "Status call", "yes"],
-      ["Wednesday", "Realtors", "8:30-10:30", "Agent targets", "Coffee invites", "First call", "no"],
-      ["Thursday", "Follow-up", "8:30-10:30", "Warm leads", "Quiet leads", "Objections", "no"],
-      ["Friday", "Plan", "8:30-10:00", "Reviews", "Referrals", "Review ask", "yes"],
-    ],
-  },
-  {
     slug: "realtor-relationships",
     title: "Realtor Relationship Tracker",
     description:
@@ -621,36 +606,6 @@ export const trackerDefinitions: TrackerDefinition[] = [
       ["M. Rivera", "Realtor partner", "Coffee meeting", "Send buyer seminar outline", "Tomorrow", "Jeremy", "active"],
       ["D. Chen", "Past client", "Quarterly call", "Ask for introduction", "Friday", "Jeremy", "needs touch"],
       ["Quiet lead list", "Warm leads", "No response", "Value-first re-engagement", "Thursday", "Jeremy", "batch"],
-    ],
-  },
-  {
-    slug: "theme-day-planner",
-    title: "Theme Day Planner",
-    description:
-      "Plan each weekday around one revenue theme and one concrete action list.",
-    columns: ["Day", "Theme", "Primary list", "Prepared night before", "Number to track", "Recovery plan", "Done"],
-    programs: ['mastery'],
-    rows: [
-      ["Monday", "Database", "Top 25 plus past clients", "yes", "Calls completed", "Move leftover calls to Thursday", "yes"],
-      ["Tuesday", "Pipeline", "All active files", "yes", "Status calls", "Finish before lunch", "yes"],
-      ["Wednesday", "Realtors", "A/B agent targets", "no", "New contacts", "Book from CRM list", "no"],
-      ["Thursday", "Follow-up", "Warm leads and quiet leads", "yes", "Touches", "Use 45-minute second block", "no"],
-      ["Friday", "Plan", "Reviews and next week", "no", "Scorecard complete", "Complete after coaching", "yes"],
-    ],
-  },
-  {
-    slug: "daily-time-blocker",
-    title: "Daily Time Blocker",
-    description:
-      "Protect the Power Block first, then put appointments, admin, and review work where they belong.",
-    columns: ["Block", "Time", "Purpose", "Rules", "Current focus", "Status"],
-    programs: ['mastery'],
-    rows: [
-      ["Win the morning", "8:00-8:30", "Plan and prep", "No inbox first", "Build call list", "done"],
-      ["Power block", "8:30-10:30", "Income-producing activity", "Phone on, email off", "Calls and meetings", "active"],
-      ["Appointment block", "10:30-12:00", "Consults and partners", "Discovery first", "Buyer consults", "queued"],
-      ["Admin block", "1:00-3:00", "Files and follow-up", "Batch reactive work", "Docs and updates", "queued"],
-      ["Review block", "4:30-5:00", "Scorecard and tomorrow", "Log the number", "Tomorrow prep", "queued"],
     ],
   },
   {
@@ -920,35 +875,6 @@ export const scriptLibrary: ScriptResource[] = [
 
 export const playbookLibrary: PlaybookResource[] = [
   {
-    title: "Daily Time Blocking Playbook",
-    category: "Execution",
-    programs: ['mastery', 'alliance'],
-    purpose: "Protect income-producing work before reactive work takes over the day.",
-    steps: [
-      "Plan tomorrow before the day ends.",
-      "Block the Power Block first.",
-      "Batch admin and file work outside the call block.",
-      "Review what slipped before leaving the office.",
-    ],
-    practicePrompt: "Build tomorrow's calendar and name the one block that cannot move.",
-    resourceTitle: "Daily Time Blockers",
-  },
-  {
-    title: "Theme Days Playbook",
-    category: "Execution",
-    programs: ['mastery', 'alliance'],
-    purpose: "Give every weekday a clear job so the member is not deciding from scratch every morning.",
-    steps: [
-      "Monday: database and past clients.",
-      "Tuesday: pipeline and client care.",
-      "Wednesday: Realtor partner development.",
-      "Thursday: lead conversion and follow-up.",
-      "Friday: reviews, referrals, scorecard, and next week.",
-    ],
-    practicePrompt: "Write the list you will work on each theme day this week.",
-    resourceTitle: "Theme Days Playbook",
-  },
-  {
     title: "Realtor Growth Playbook",
     category: "Partners",
     programs: ['mastery', 'alliance'],
@@ -1112,15 +1038,6 @@ export const downloadResources: DownloadResource[] = [
     programs: ['mastery', 'alliance'],
     pdf: "https://drive.google.com/file/d/1r4w7CMj99uh6tnD8Zl7kp-yzSfqvjbFD/view?usp=drivesdk",
     docx: "https://docs.google.com/document/d/16it2AjTKgxtnL0gnzuJMR1IHYC5uqsKZ/edit?usp=drivesdk&ouid=110305764628203153224&rtpof=true&sd=true",
-  },
-  {
-    title: "Theme Days Playbook",
-    description: "The weekday operating rhythm for database, pipeline, partners, follow-up, and planning.",
-    category: "Playbooks",
-    audience: "All",
-    programs: ['mastery', 'alliance'],
-    pdf: "https://drive.google.com/file/d/1RnHBUW58Q83jyvOFYhnRC-gbsVY2_6Um/view?usp=drivesdk",
-    docx: "https://docs.google.com/document/d/1DTQcRuNnEVLivNDeZyGfbvEXB6SVHlf9/edit?usp=drivesdk&ouid=110305764628203153224&rtpof=true&sd=true",
   },
   {
     title: "Follow Up System",

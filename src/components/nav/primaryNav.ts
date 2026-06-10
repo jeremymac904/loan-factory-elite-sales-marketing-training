@@ -50,12 +50,11 @@ const loggedOutNav: PrimaryNavItem[] = [
   NAV.apply,
 ];
 
+// Members navigate with the left sidebar inside the member area — the header
+// stays minimal to avoid duplicate navigation.
 const memberNav: PrimaryNavItem[] = [
   NAV.home,
   NAV.myProgram,
-  { label: "Resources", href: "/member-area/resources/" },
-  NAV.myScorecard,
-  NAV.myTracker,
 ];
 
 const coachNav: PrimaryNavItem[] = [

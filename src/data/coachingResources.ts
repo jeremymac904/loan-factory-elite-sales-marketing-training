@@ -77,9 +77,9 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         id: "daily-time-blocker",
         title: "Daily time blocker",
         description:
-          "Protect a focused block for conversations, follow-up, and the work that drives the week.",
+          "Protect a focused block for conversations, follow-up, and the work that drives the week. Lives in the Today page.",
         whoFor: "LO Mastery members and coaches.",
-        openHref: "/member-area/trackers/#daily-time-blocker",
+        openHref: "/member-area/today/",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["tracker", "planning"],
       },

@@ -4,8 +4,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { CommunityPost } from "@/data/coachingPlatform";
 
-type LeaderRow = { name: string; detail: string; metric: string };
-
 const CATEGORIES = ["Pinned", "Wins", "Questions", "Scripts"] as const;
 type Category = (typeof CATEGORIES)[number] | "All";
 
@@ -16,13 +14,12 @@ type LocalPost = CommunityPost & {
   images?: string[];
   videoUrl?: string;
   videoFileName?: string;
+  youtubeUrl?: string;
 };
 
 type Props = {
   posts: CommunityPost[];
-  leaderboard: LeaderRow[];
   storageKey?: string;
-  program?: "mastery" | "alliance";
 };
 
 type FeedStore = {
@@ -73,9 +70,7 @@ function makePostKey(post: LocalPost, index: number) {
 
 export default function CommunityFeed({
   posts,
-  leaderboard,
   storageKey = "lf-feed-mastery",
-  program = "mastery",
 }: Props) {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [localPosts, setLocalPosts] = useState<LocalPost[]>(posts);
@@ -120,10 +115,6 @@ export default function CommunityFeed({
     }
   }, [hydrated, localPosts, storageKey, voteState]);
 
-  const memberLinks =
-    program === "alliance"
-      ? { scorecard: "/member-area/alliance-scorecard/", calendar: "/member-area/alliance-calendar/", today: "/member-area/alliance-today/" }
-      : { scorecard: "/member-area/scorecards/", calendar: "/member-area/calendar/", today: "/member-area/today/" };
 
   const visiblePosts = useMemo(() => {
     return localPosts.filter((post) => {
@@ -146,6 +137,7 @@ export default function CommunityFeed({
       title,
       body,
       comments: [],
+      youtubeUrl: youtubeUrl.trim() || undefined,
       images: imagePreviews.length > 0 ? imagePreviews : undefined,
       videoUrl: videoPreview ?? undefined,
       videoFileName: videoFileName ?? undefined,
@@ -244,8 +236,7 @@ export default function CommunityFeed({
   const pinnedCount = localPosts.filter((p) => p.pinned).length;
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
-      <div className="grid gap-5">
+    <div className="grid gap-5">
         <div className="rounded-2xl border border-lf-line bg-white shadow-card">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-lf-line p-5">
             <div>
@@ -495,7 +486,10 @@ export default function CommunityFeed({
             }
             return null;
           })();
-          const ytId = post.videoUrl ? youtubeIdFromUrl(post.videoUrl) : bodyYoutubeId;
+          const ytId =
+            (post.youtubeUrl ? youtubeIdFromUrl(post.youtubeUrl) : null) ??
+            (post.videoUrl ? youtubeIdFromUrl(post.videoUrl) : null) ??
+            bodyYoutubeId;
           return (
             <article
               key={key}
@@ -616,7 +610,7 @@ export default function CommunityFeed({
                         {post.comments.map((comment) => {
                           const replyKey = `${key}|${comment}`;
                           return (
-                            <div key={comment} className="rounded-xl bg-lf-mist p-3">
+                            <div key={comment} className="border-l-2 border-lf-line pl-3">
                               <p className="text-sm text-lf-charcoal">{comment}</p>
                               <div className="mt-2">
                                 <button
@@ -691,42 +685,6 @@ export default function CommunityFeed({
             </article>
           );
         })}
-      </div>
-
-      <aside className="grid gap-5 self-start">
-        <div className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
-          <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">This week</p>
-          <div className="mt-4 grid gap-3">
-            <Link href={memberLinks.today} className="btn-primary">
-              Open Today
-            </Link>
-            <Link href={memberLinks.scorecard} className="btn-secondary">
-              Scorecard due Friday
-            </Link>
-            <Link href={memberLinks.calendar} className="btn-secondary">
-              Upcoming coaching call
-            </Link>
-          </div>
-          <p className="mt-4 text-sm text-lf-slate">
-            {pinnedCount} pinned · {totalMembers} members posting
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
-          <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">Leaderboard preview</p>
-          <ol className="mt-4 grid gap-3 text-sm text-lf-slate">
-            {leaderboard.map((row, index) => (
-              <li key={row.name} className="rounded-xl border border-lf-line p-3">
-                <p className="text-sm font-black text-lf-navy">
-                  {index + 1}. {row.name}
-                </p>
-                <p className="mt-1 text-xs text-lf-slate">{row.metric}</p>
-                <p className="mt-1 text-xs text-lf-charcoal">{row.detail}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </aside>
     </div>
   );
 }

@@ -38,12 +38,12 @@ function readScorecardStore(storageKey: string) {
   }
 }
 
-function readTrackerStore() {
+function readTrackerStore(storageKey: string) {
   if (typeof window === "undefined") {
     return null;
   }
 
-  const saved = window.localStorage.getItem("lf-tracker-workspace");
+  const saved = window.localStorage.getItem(storageKey);
   if (!saved) {
     return null;
   }
@@ -51,7 +51,7 @@ function readTrackerStore() {
   try {
     return JSON.parse(saved) as Record<string, string[][]>;
   } catch {
-    window.localStorage.removeItem("lf-tracker-workspace");
+    window.localStorage.removeItem(storageKey);
     return null;
   }
 }
@@ -68,10 +68,10 @@ export function WeeklyScorecardForm({
   const storageKey = `lf-scorecard-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
   const defaultScorecardState = useMemo(
     () => ({
-      values: Object.fromEntries(metrics.map((metric) => [metric.metric, metric.values])) as Record<string, number[]>,
-      worked: "Booked two Realtor conversations from the Wednesday list.",
-      stuck: "Follow-up slipped when appointments ran long.",
-      focus: "Finish every follow-up before opening reactive work.",
+      values: Object.fromEntries(metrics.map((metric) => [metric.metric, [0, 0, 0, 0, 0]])) as Record<string, number[]>,
+      worked: "",
+      stuck: "",
+      focus: "",
       status: "Draft not saved",
       history: [] as string[],
       hydrated: false,
@@ -292,7 +292,13 @@ export function WeeklyScorecardForm({
   );
 }
 
-export function TrackerWorkspace({ trackers }: { trackers: TrackerDefinition[] }) {
+export function TrackerWorkspace({
+  trackers,
+  storageKey = "lf-tracker-workspace",
+}: {
+  trackers: TrackerDefinition[];
+  storageKey?: string;
+}) {
   const [activeSlug, setActiveSlug] = useState(trackers[0]?.slug ?? "");
   const defaultRowsByTracker = useMemo(
     () => Object.fromEntries(trackers.map((tracker) => [tracker.slug, tracker.rows])) as Record<string, string[][]>,
@@ -314,18 +320,18 @@ export function TrackerWorkspace({ trackers }: { trackers: TrackerDefinition[] }
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- restore browser-only saved state after hydration to avoid SSR/client mismatches.
     setTrackerState({
-      rowsByTracker: readTrackerStore() ?? defaultRowsByTracker,
+      rowsByTracker: readTrackerStore(storageKey) ?? defaultRowsByTracker,
       hydrated: true,
     });
-  }, [defaultRowsByTracker]);
+  }, [defaultRowsByTracker, storageKey]);
 
   useEffect(() => {
     if (!hydrated) {
       return;
     }
 
-    window.localStorage.setItem("lf-tracker-workspace", JSON.stringify(rowsByTracker));
-  }, [hydrated, rowsByTracker]);
+    window.localStorage.setItem(storageKey, JSON.stringify(rowsByTracker));
+  }, [hydrated, rowsByTracker, storageKey]);
 
   function updateCell(rowIndex: number, columnIndex: number, value: string) {
     setSaveState("Unsaved changes");
@@ -355,7 +361,7 @@ export function TrackerWorkspace({ trackers }: { trackers: TrackerDefinition[] }
 
   function saveTracker() {
     const stamp = new Date().toLocaleString();
-    window.localStorage.setItem("lf-tracker-workspace", JSON.stringify(rowsByTracker));
+    window.localStorage.setItem(storageKey, JSON.stringify(rowsByTracker));
     setSaveState(`Saved ${stamp}`);
   }
 
@@ -767,7 +773,7 @@ export function CommunityExperience({
                       {post.comments.map((comment) => (
                         <p
                           key={`${postKey}-${comment}`}
-                          className="rounded-xl bg-lf-mist px-3 py-2 text-sm text-lf-slate"
+                          className="border-l-2 border-lf-line pl-3 text-sm text-lf-slate"
                         >
                           {comment}
                         </p>
@@ -959,7 +965,7 @@ export function ScriptLibraryWorkspace({
                     onClick={() => setOpenScript(isOpen ? null : script.title)}
                     className="btn-secondary shrink-0"
                   >
-                    {isOpen ? "Hide script" : "Open script"}
+                    {isOpen ? "Collapse script" : "Expand script"}
                   </button>
                 </div>
               </div>
@@ -1214,7 +1220,7 @@ export function CoachNotesWorkspace({
             </p>
             <h3 className="h-display mt-2 text-xl">{item.member}</h3>
             <p className="prose-lf mt-3 text-lf-charcoal">{item.note}</p>
-            <p className="mt-4 rounded-xl bg-lf-orangeSoft p-3 text-sm font-semibold text-lf-orange">
+            <p className="mt-4 border-l-2 border-lf-orange pl-3 text-sm font-semibold text-lf-charcoal">
               Next action: {item.nextAction}
             </p>
           </article>

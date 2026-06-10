@@ -2,8 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { currentDayKey, dailyNotesFields, todayDays, type TodayDay } from "@/data/todaySystem";
+import {
+  currentDayKey,
+  dailyNotesFields,
+  todayDays,
+  type TodayDay,
+} from "@/data/todaySystem";
 import type { ProgramKey } from "@/data/coachingPlatform";
+import { scorecardHref, syncTodayToScorecard } from "@/lib/scorecardSync";
 
 type DayEntries = Record<string, string>;
 type TodayStore = {
@@ -23,30 +29,18 @@ function readTodayStore(storageKey: string): TodayStore | null {
   }
 }
 
-const memberBase: Record<ProgramKey, Record<string, string>> = {
+const memberBase: Record<ProgramKey, { scripts: string; trackers: string }> = {
   mastery: {
     scripts: "/member-area/scripts/",
     trackers: "/member-area/trackers/",
-    scorecard: "/member-area/scorecards/",
-    feed: "/member-area/",
-    resources: "/member-area/resources/",
   },
   alliance: {
     scripts: "/member-area/alliance-scripts/",
     trackers: "/member-area/alliance-trackers/",
-    scorecard: "/member-area/alliance-scorecard/",
-    feed: "/member-area/alliance/",
-    resources: "/member-area/alliance-resources/",
   },
 };
 
-export default function TodayWorkspace({
-  program,
-  coachNote,
-}: {
-  program: ProgramKey;
-  coachNote: string;
-}) {
+export default function TodayWorkspace({ program }: { program: ProgramKey }) {
   const storageKey = `lf-today-${program}`;
   const links = memberBase[program];
   const [activeKey, setActiveKey] = useState("monday");
@@ -68,9 +62,13 @@ export default function TodayWorkspace({
   const day: TodayDay = todayDays.find((d) => d.key === activeKey) ?? todayDays[0];
   const dayLabels = new Set(day.fields.map((f) => f.label.toLowerCase()));
   const notesFields = dailyNotesFields.filter(
-    (f) => !day.fields.some((d) => d.label.toLowerCase().includes("stuck") && f.label === "Stuck point"),
+    (f) =>
+      !(
+        f.label === "Stuck point" &&
+        day.fields.some((d) => d.label.toLowerCase().includes("stuck"))
+      ) && !dayLabels.has(f.label.toLowerCase()),
   );
-  const allFields = [...day.fields, ...notesFields.filter((f) => !dayLabels.has(f.label.toLowerCase()))];
+  const allFields = [...day.fields, ...notesFields];
   const entries = store.entries[day.key] ?? {};
   const status = store.status[day.key] ?? "Not started";
   const filled = allFields.filter((f) => (entries[f.label] ?? "").trim().length > 0).length;
@@ -86,132 +84,107 @@ export default function TodayWorkspace({
     }));
   }
 
-  function setStatus(next: string) {
+  function finishDay(kind: "Saved" | "Submitted") {
+    // Today feeds the weekly scorecard: any field that maps to a scorecard
+    // metric is written into that day's column so numbers are entered once.
+    const synced = syncTodayToScorecard(program, day.key, entries);
+    const stamp = new Date().toLocaleString();
+    const note =
+      synced.length > 0 ? `${kind} ${stamp} · scorecard updated` : `${kind} ${stamp}`;
     setStore((current) => ({
       ...current,
-      status: { ...current.status, [day.key]: next },
+      status: { ...current.status, [day.key]: note },
     }));
   }
 
   return (
-    <div className="grid gap-6">
-      <div className="flex flex-wrap gap-2">
-        {todayDays.map((d) => {
-          const isActive = d.key === day.key;
-          return (
-            <button
-              key={d.key}
-              type="button"
-              onClick={() => setActiveKey(d.key)}
-              className={`inline-flex items-center rounded-lg border px-3 py-2 text-sm font-semibold transition ${
-                isActive
-                  ? "border-lf-orange bg-lf-orange text-white"
-                  : "border-lf-line bg-white text-lf-navy hover:border-lf-navy hover:bg-lf-mist"
-              }`}
-            >
-              {d.day}
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
-        <section className="rounded-2xl border border-lf-line bg-white shadow-card">
-          <div className="border-b border-lf-line p-5">
-            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              {day.day} · {day.theme}
-            </p>
-            <h2 className="h-display mt-2 text-3xl">{day.theme}</h2>
-            <p className="prose-lf mt-3 text-lf-charcoal">{day.instruction}</p>
-          </div>
-
-          <div className="grid gap-4 p-5 md:grid-cols-2">
-            {allFields.map((field) => (
-              <label
-                key={field.label}
-                className={`grid gap-2 text-sm font-semibold text-lf-navy ${
-                  field.kind === "long" ? "md:col-span-2" : ""
+    <div className="grid gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap gap-1.5">
+          {todayDays.map((d) => {
+            const isActive = d.key === day.key;
+            return (
+              <button
+                key={d.key}
+                type="button"
+                onClick={() => setActiveKey(d.key)}
+                className={`inline-flex items-center rounded-lg border px-3 py-1.5 text-sm font-semibold transition ${
+                  isActive
+                    ? "border-lf-orange bg-lf-orange text-white"
+                    : "border-lf-line bg-white text-lf-navy hover:border-lf-navy hover:bg-lf-mist"
                 }`}
               >
-                {field.label}
-                {field.kind === "long" ? (
-                  <textarea
-                    aria-label={field.label}
-                    value={entries[field.label] ?? ""}
-                    onChange={(event) => updateField(field.label, event.target.value)}
-                    className="min-h-24 rounded-xl border border-lf-line p-3 text-sm font-normal text-lf-charcoal outline-none focus:border-lf-orange"
-                  />
-                ) : (
-                  <input
-                    aria-label={field.label}
-                    type={field.kind === "number" ? "number" : "text"}
-                    min={field.kind === "number" ? 0 : undefined}
-                    value={entries[field.label] ?? ""}
-                    onChange={(event) => updateField(field.label, event.target.value)}
-                    className="h-11 rounded-lg border border-lf-line px-3 text-sm font-normal text-lf-charcoal outline-none focus:border-lf-orange"
-                  />
-                )}
-              </label>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-3 border-t border-lf-line p-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm font-semibold text-lf-slate">
-              {status} · {filled} of {allFields.length} fields filled
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <button
-                type="button"
-                onClick={() => setStatus(`Saved ${new Date().toLocaleString()}`)}
-                className="btn-secondary"
-              >
-                Save today
+                {d.day}
               </button>
-              <button
-                type="button"
-                onClick={() => setStatus(`Submitted ${new Date().toLocaleString()}`)}
-                className="btn-primary"
-              >
-                Submit to coach
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <aside className="grid gap-5 self-start">
-          <div className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
-            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Today&apos;s tools
-            </p>
-            <div className="mt-4 grid gap-3">
-              <Link href={links.scripts} className="btn-secondary">
-                Script: {day.script}
-              </Link>
-              <Link href={links.trackers} className="btn-secondary">
-                Tracker: {day.tracker}
-              </Link>
-              <Link href={links.scorecard} className="btn-secondary">
-                Open scorecard
-              </Link>
-            </div>
-          </div>
-          <div className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
-            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Community prompt
-            </p>
-            <p className="prose-lf mt-3 text-sm text-lf-charcoal">{day.communityPrompt}</p>
-            <Link href={links.feed} className="btn-primary mt-4">
-              Post in the feed
-            </Link>
-          </div>
-          <div className="rounded-2xl border border-lf-line bg-white p-5 shadow-card">
-            <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-              Coach note
-            </p>
-            <p className="prose-lf mt-3 text-sm text-lf-charcoal">{coachNote}</p>
-          </div>
-        </aside>
+            );
+          })}
+        </div>
+        <div className="flex flex-wrap gap-3 text-sm font-semibold">
+          <Link href={links.scripts} className="text-lf-orange hover:underline">
+            Script: {day.script}
+          </Link>
+          <Link href={scorecardHref(program)} className="text-lf-orange hover:underline">
+            Scorecard
+          </Link>
+          <Link href={links.trackers} className="text-lf-orange hover:underline">
+            Trackers
+          </Link>
+        </div>
       </div>
+
+      <section className="rounded-2xl border border-lf-line bg-white shadow-card">
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-lf-line px-4 py-3">
+          <h2 className="h-display text-xl">
+            {day.day}: {day.theme}
+          </h2>
+          <p className="text-sm text-lf-slate">{day.instruction}</p>
+        </div>
+
+        <div className="grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-3">
+          {allFields.map((field) => (
+            <label
+              key={field.label}
+              className={`grid content-start gap-1 text-xs font-semibold uppercase tracking-wide text-lf-slate ${
+                field.kind === "long" ? "sm:col-span-2 lg:col-span-3" : ""
+              }`}
+            >
+              {field.label}
+              {field.kind === "long" ? (
+                <textarea
+                  aria-label={field.label}
+                  value={entries[field.label] ?? ""}
+                  onChange={(event) => updateField(field.label, event.target.value)}
+                  rows={2}
+                  className="rounded-lg border border-lf-line p-2 text-sm font-normal normal-case tracking-normal text-lf-charcoal outline-none focus:border-lf-orange"
+                />
+              ) : (
+                <input
+                  aria-label={field.label}
+                  type={field.kind === "number" ? "number" : "text"}
+                  min={field.kind === "number" ? 0 : undefined}
+                  value={entries[field.label] ?? ""}
+                  onChange={(event) => updateField(field.label, event.target.value)}
+                  className="h-9 rounded-lg border border-lf-line px-2 text-sm font-normal normal-case tracking-normal text-lf-charcoal outline-none focus:border-lf-orange"
+                />
+              )}
+            </label>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-2 border-t border-lf-line px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-lf-slate">
+            {status} · {filled}/{allFields.length} filled
+          </p>
+          <div className="flex gap-2">
+            <button type="button" onClick={() => finishDay("Saved")} className="btn-secondary">
+              Save today
+            </button>
+            <button type="button" onClick={() => finishDay("Submitted")} className="btn-primary">
+              Submit to coach
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
