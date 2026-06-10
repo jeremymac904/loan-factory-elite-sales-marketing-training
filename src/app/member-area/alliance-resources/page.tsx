@@ -1,7 +1,7 @@
 import { ResourcesLibrary } from "@/components/CoachingPlatformViews";
 
-export const metadata = { title: "Resources" };
+export const metadata = { title: "Alliance Resources" };
 
 export default function Page() {
-  return <ResourcesLibrary program="mastery" />;
+  return <ResourcesLibrary program="alliance" />;
 }

@@ -1,7 +1,7 @@
 import { ScriptsLibrary } from "@/components/CoachingPlatformViews";
 
-export const metadata = { title: "Scripts" };
+export const metadata = { title: "Alliance Scripts" };
 
 export default function Page() {
-  return <ScriptsLibrary program="mastery" />;
+  return <ScriptsLibrary program="alliance" />;
 }

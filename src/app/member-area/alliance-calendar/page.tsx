@@ -1,7 +1,7 @@
 import { CalendarView } from "@/components/CoachingPlatformViews";
 
-export const metadata = { title: "Calendar" };
+export const metadata = { title: "Alliance Calendar" };
 
 export default function Page() {
-  return <CalendarView program="mastery" />;
+  return <CalendarView program="alliance" />;
 }

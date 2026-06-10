@@ -1,7 +1,7 @@
 import { ScorecardWorkspace } from "@/components/CoachingPlatformViews";
 
-export const metadata = { title: "LO Mastery Scorecard" };
+export const metadata = { title: "Alliance Scorecard" };
 
 export default function Page() {
-  return <ScorecardWorkspace program="mastery" />;
+  return <ScorecardWorkspace program="alliance" />;
 }
