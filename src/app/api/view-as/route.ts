@@ -6,6 +6,7 @@ import {
   encodeViewAsValue,
   type ViewAsState,
 } from "@/lib/viewAs";
+import { allowedViewAsRoleValues } from "@/data/adminViewAsRoles";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -48,6 +49,15 @@ export async function POST(request: NextRequest) {
   if (body.clear || !body.role) {
     response.cookies.set(VIEW_AS_COOKIE, "", { maxAge: 0, path: "/" });
     return response;
+  }
+
+  // View As only simulates the four business experiences. Reject internal /
+  // database role variants so no orphaned preview permissions exist.
+  if (!allowedViewAsRoleValues.has(body.role)) {
+    return NextResponse.json(
+      { error: "View as role supports Master Admin, Coach, LO Mastery Member, and Loan Factory Alliance Member only." },
+      { status: 400 },
+    );
   }
 
   const state: ViewAsState = {

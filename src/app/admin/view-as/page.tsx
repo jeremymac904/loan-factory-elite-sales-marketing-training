@@ -3,7 +3,7 @@ import { getRoleLabel } from "@/lib/supabase/auth";
 import { resolveAdminAccess } from "@/lib/supabase/adminAccess";
 import { getViewAsState } from "@/lib/viewAs";
 import { approvedUserSeeds } from "@/data/approvedUsers";
-import { adminViewAsRoles } from "@/data/adminViewAsRoles";
+import { adminViewAsRoles, normalizeViewAsRole } from "@/data/adminViewAsRoles";
 import ViewAsPicker from "@/components/admin/ViewAsPicker";
 
 export const dynamic = "force-dynamic";
@@ -95,11 +95,13 @@ export default async function AdminViewAsPage({
 
         <ViewAsPicker
           roleOptions={roleOptions}
-          userOptions={approvedUserSeeds.map((u) => ({
-            email: u.email,
-            name: u.full_name,
-            role: u.role,
-          }))}
+          userOptions={approvedUserSeeds.flatMap((u) => {
+            // Only seeded users that map onto one of the four business
+            // experiences appear; their role collapses to that experience.
+            const businessRole = normalizeViewAsRole(u.role);
+            if (!businessRole) return [];
+            return [{ email: u.email, name: u.full_name, role: businessRole }];
+          })}
           isMasterAdmin={isMasterAdmin}
           hasActiveViewAs={Boolean(currentViewAs)}
           initialRole={initialRole}
