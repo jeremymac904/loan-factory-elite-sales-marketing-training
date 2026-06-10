@@ -1,7 +1,5 @@
-import { ScriptsLibrary } from "@/components/CoachingPlatformViews";
-
-export const metadata = { title: "Scripts" };
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <ScriptsLibrary program="mastery" />;
+  redirect("/member-area/resources/?tab=scripts");
 }

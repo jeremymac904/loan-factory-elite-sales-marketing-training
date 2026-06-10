@@ -1,7 +1,5 @@
-import { TrackerWorkspaceView } from "@/components/CoachingPlatformViews";
-
-export const metadata = { title: "Alliance Trackers" };
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <TrackerWorkspaceView program="alliance" />;
+  redirect("/member-area/alliance-resources/?tab=tools");
 }

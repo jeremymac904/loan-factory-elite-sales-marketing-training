@@ -4,10 +4,12 @@ import { useEffect, useMemo, useState } from "react";
 import type {
   CommunityPost,
   PlaybookResource,
+  ProgramKey,
   ScorecardMetric,
   ScriptResource,
   TrackerDefinition,
 } from "@/data/coachingPlatform";
+import { appendSubmission } from "@/lib/scorecardSync";
 
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
@@ -60,10 +62,12 @@ export function WeeklyScorecardForm({
   metrics,
   title = "Weekly Scorecard",
   programLabel = "LO Mastery",
+  program,
 }: {
   metrics: ScorecardMetric[];
   title?: string;
   programLabel?: string;
+  program?: ProgramKey;
 }) {
   const storageKey = `lf-scorecard-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
   const defaultScorecardState = useMemo(
@@ -160,6 +164,18 @@ export function WeeklyScorecardForm({
 
   function submitToCoach() {
     const stamp = new Date().toLocaleString();
+    if (program) {
+      // The weekly submit creates the record the coach review queue,
+      // progress views, and submission history all read from.
+      appendSubmission(program, {
+        weekOf: new Date().toLocaleDateString(),
+        submittedAt: stamp,
+        totals: Object.fromEntries(totals.map((m) => [m.metric, m.total])),
+        worked,
+        stuck,
+        focus,
+      });
+    }
     setScorecardState((current) => ({
       ...current,
       status: `Submitted to coach ${stamp}`,
@@ -176,7 +192,8 @@ export function WeeklyScorecardForm({
           </p>
           <h2 className="h-display mt-2 text-2xl">{title}</h2>
           <p className="prose-lf mt-2 text-sm text-lf-slate">
-            Fill daily, save the draft, and submit the weekly review to the coach.
+            Auto-filled from Today. Review the week, correct anything, and
+            submit to your coach.
           </p>
         </div>
         <div className="bg-lf-navy p-4 text-white">

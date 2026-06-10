@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { CommunityPost } from "@/data/coachingPlatform";
+import { currentDayKey, dailyCountFields, todayDays } from "@/data/todaySystem";
 
 const CATEGORIES = ["Pinned", "Wins", "Questions", "Scripts"] as const;
 type Category = (typeof CATEGORIES)[number] | "All";
@@ -20,6 +21,7 @@ type LocalPost = CommunityPost & {
 type Props = {
   posts: CommunityPost[];
   storageKey?: string;
+  program?: "mastery" | "alliance";
 };
 
 type FeedStore = {
@@ -71,10 +73,13 @@ function makePostKey(post: LocalPost, index: number) {
 export default function CommunityFeed({
   posts,
   storageKey = "lf-feed-mastery",
+  program = "mastery",
 }: Props) {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [localPosts, setLocalPosts] = useState<LocalPost[]>(posts);
   const [hydrated, setHydrated] = useState(false);
+  const [composerOpen, setComposerOpen] = useState(false);
+  const [nextAction, setNextAction] = useState<{ day: string; theme: string; entered: number } | null>(null);
   const [composerTitle, setComposerTitle] = useState("");
   const [composerCategory, setComposerCategory] = useState<Exclude<Category, "All">>("Questions");
   const [composerBody, setComposerBody] = useState("");
@@ -100,8 +105,26 @@ export default function CommunityFeed({
       setLocalPosts(saved.posts);
       setVoteState(saved.votes);
     }
+    // Next-action strip: what should I do right now?
+    try {
+      const todayStore = JSON.parse(
+        window.localStorage.getItem(`lf-today-${program}`) ?? "{}",
+      ) as { entries?: Record<string, Record<string, string>> };
+      const key = currentDayKey();
+      const day = todayDays.find((d) => d.key === key);
+      if (day) {
+        const entries = todayStore.entries?.[key] ?? {};
+        const entered =
+          key === "weekend"
+            ? 0
+            : dailyCountFields.filter((f) => (entries[f] ?? "").trim() !== "").length;
+        setNextAction({ day: day.day, theme: day.theme, entered });
+      }
+    } catch {
+      // strip is optional
+    }
     setHydrated(true);
-  }, [storageKey]);
+  }, [storageKey, program]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -117,11 +140,13 @@ export default function CommunityFeed({
 
 
   const visiblePosts = useMemo(() => {
-    return localPosts.filter((post) => {
+    const filtered = localPosts.filter((post) => {
       if (activeCategory === "All") return true;
       if (activeCategory === "Pinned") return Boolean(post.pinned);
       return post.category === activeCategory;
     });
+    // Pinned coach content always appears before member content.
+    return [...filtered.sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)))];
   }, [localPosts, activeCategory]);
 
   function addPost() {
@@ -159,6 +184,7 @@ export default function CommunityFeed({
     setPollQuestion("");
     setPollOptions(["", ""]);
     setDraftState("Posted locally");
+    setComposerOpen(false);
   }
 
   function addComment(postKey: string) {
@@ -235,8 +261,42 @@ export default function CommunityFeed({
   const totalMembers = new Set(localPosts.map((p) => p.author)).size;
   const pinnedCount = localPosts.filter((p) => p.pinned).length;
 
+  const memberBase = program === "alliance" ? "/member-area/alliance-" : "/member-area/";
+  const todayHref = program === "alliance" ? "/member-area/alliance-today/" : "/member-area/today/";
+  const scorecardHref = `${memberBase}scorecard${program === "alliance" ? "" : "s"}/`;
+
   return (
-    <div className="grid gap-5">
+    <div className="grid gap-4">
+      {nextAction && (
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-lf-orange/40 bg-lf-orangeSoft/40 px-4 py-3">
+          <p className="text-sm font-semibold text-lf-navy">
+            {nextAction.day}: {nextAction.theme}
+            {nextAction.day !== "Weekend" &&
+              ` · ${nextAction.entered}/${dailyCountFields.length} numbers entered`}
+            {" · "}
+            <span className="font-normal text-lf-slate">Scorecard due Friday</span>
+          </p>
+          <div className="flex gap-2">
+            <Link href={todayHref} className="btn-primary">
+              Open Today
+            </Link>
+            <Link href={scorecardHref} className="btn-secondary">
+              Scorecard
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {!composerOpen && (
+        <div className="flex items-center justify-between rounded-2xl border border-lf-line bg-white px-4 py-3 shadow-card">
+          <p className="text-sm text-lf-slate">Share a win, question, or update with the community.</p>
+          <button type="button" onClick={() => setComposerOpen(true)} className="btn-primary">
+            New post
+          </button>
+        </div>
+      )}
+
+      {composerOpen && (
         <div className="rounded-2xl border border-lf-line bg-white shadow-card">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-lf-line p-5">
             <div>
@@ -245,7 +305,16 @@ export default function CommunityFeed({
               </p>
               <h2 className="h-display mt-1 text-2xl">Start a new post</h2>
             </div>
-            <p className="text-sm font-semibold text-lf-slate">{draftState}</p>
+            <div className="flex items-center gap-3">
+              <p className="text-sm font-semibold text-lf-slate">{draftState}</p>
+              <button
+                type="button"
+                onClick={() => setComposerOpen(false)}
+                className="inline-flex items-center rounded-lg border border-lf-line bg-white px-3 py-1.5 text-xs font-semibold text-lf-navy transition hover:border-lf-navy hover:bg-lf-mist"
+              >
+                Close
+              </button>
+            </div>
           </div>
           <div className="grid gap-4 p-5">
             <div className="grid gap-4 md:grid-cols-2">
@@ -442,6 +511,7 @@ export default function CommunityFeed({
             </div>
           </div>
         </div>
+      )}
 
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-lf-line bg-white p-4 shadow-card">
           <p className="text-sm font-semibold text-lf-slate">

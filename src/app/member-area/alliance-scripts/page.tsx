@@ -1,7 +1,5 @@
-import { ScriptsLibrary } from "@/components/CoachingPlatformViews";
-
-export const metadata = { title: "Alliance Scripts" };
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <ScriptsLibrary program="alliance" />;
+  redirect("/member-area/alliance-resources/?tab=scripts");
 }

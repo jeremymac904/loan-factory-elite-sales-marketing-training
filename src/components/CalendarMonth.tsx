@@ -10,11 +10,12 @@ type CalendarEvent = {
 
 const WEEKDAY_HEADERS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
+// Plain text with a colored edge — events are informational, not buttons.
 const TONE_STYLES: Record<CalendarEvent["tone"], string> = {
-  call: "bg-lf-orange text-white",
-  office: "bg-lf-navy text-white",
-  due: "border border-lf-orange bg-lf-orangeSoft text-lf-orangeDark",
-  theme: "bg-lf-mist text-lf-charcoal",
+  call: "border-lf-orange font-bold text-lf-orangeDark",
+  office: "border-lf-navy font-bold text-lf-navy",
+  due: "border-lf-orange text-lf-orangeDark",
+  theme: "border-lf-line text-lf-slate",
 };
 
 function monthLabel(date: Date) {
@@ -141,7 +142,7 @@ export default function CalendarMonth({ program }: { program: ProgramKey }) {
                     {events.map((event) => (
                       <p
                         key={event.label}
-                        className={`truncate rounded px-1 py-0.5 text-[11px] font-semibold leading-4 ${TONE_STYLES[event.tone]}`}
+                        className={`truncate border-l-2 pl-1 text-[11px] leading-4 ${TONE_STYLES[event.tone]}`}
                         title={event.label}
                       >
                         {event.label}

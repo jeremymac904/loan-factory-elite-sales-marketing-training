@@ -3,18 +3,27 @@ import {
   scorecardMetrics,
   type ProgramKey,
 } from "@/data/coachingPlatform";
+import {
+  FOCUS_FIELD,
+  STUCK_FIELD,
+  WIN_FIELD,
+  dailyCountFields,
+} from "@/data/todaySystem";
 
 /**
- * Today is the single place a member enters daily numbers. When a Today day is
- * saved or submitted, any field that maps to a weekly scorecard metric is
- * written into that day's scorecard column so the scorecard never asks for the
- * same number twice.
- *
- * The storage key mirrors WeeklyScorecardForm's derivation from its title.
+ * One source of truth: activity is entered in Today only. Saving a weekday
+ * writes every count field straight into that day's scorecard column (labels
+ * are the metric names), and Friday's reflections fill the scorecard text
+ * boxes. The scorecard page reads the same store and only reviews/submits.
  */
-const SCORECARD_KEY: Record<ProgramKey, string> = {
+export const SCORECARD_KEY: Record<ProgramKey, string> = {
   mastery: "lf-scorecard-lo-mastery-weekly-scorecard",
   alliance: "lf-scorecard-loan-factory-alliance-weekly-scorecard",
+};
+
+export const SUBMISSIONS_KEY: Record<ProgramKey, string> = {
+  mastery: "lf-submissions-mastery",
+  alliance: "lf-submissions-alliance",
 };
 
 const DAY_INDEX: Record<string, number> = {
@@ -25,34 +34,7 @@ const DAY_INDEX: Record<string, number> = {
   friday: 4,
 };
 
-// Today field label -> scorecard metric name (numeric daily values).
-const FIELD_TO_METRIC: Record<string, Record<string, string>> = {
-  tuesday: {
-    "Realtors followed up": "Realtor conversations",
-    "Past clients touched": "Past client touches",
-  },
-  wednesday: {
-    "Realtors contacted": "Realtor conversations",
-  },
-  friday: {
-    "Total real conversations": "Real conversations",
-    "Realtor conversations": "Realtor conversations",
-    "Past client touches": "Past client touches",
-    "Referrals requested": "Referrals requested",
-    "Applications taken": "Applications taken",
-    "Pre approvals issued": "Pre approvals issued",
-    "Contracts received": "Contracts received",
-  },
-};
-
-// Friday reflection fields -> scorecard text boxes.
-const FIELD_TO_TEXT: Record<string, "worked" | "stuck" | "focus"> = {
-  "Biggest win": "worked",
-  "Biggest stuck point": "stuck",
-  "Next week focus": "focus",
-};
-
-type ScorecardStore = {
+export type ScorecardStore = {
   values?: Record<string, number[]>;
   worked?: string;
   stuck?: string;
@@ -61,16 +43,54 @@ type ScorecardStore = {
   history?: string[];
 };
 
+export type SubmissionRecord = {
+  weekOf: string;
+  submittedAt: string;
+  totals: Record<string, number>;
+  worked: string;
+  stuck: string;
+  focus: string;
+};
+
 export function scorecardHref(program: ProgramKey) {
   return program === "alliance"
     ? "/member-area/alliance-scorecard/"
     : "/member-area/scorecards/";
 }
 
-/**
- * Write mapped Today entries into the program's weekly scorecard store.
- * Returns the metric names that were synced (empty when nothing mapped).
- */
+export function readScorecard(program: ProgramKey): ScorecardStore {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(
+      window.localStorage.getItem(SCORECARD_KEY[program]) ?? "{}",
+    ) as ScorecardStore;
+  } catch {
+    return {};
+  }
+}
+
+export function readSubmissions(program: ProgramKey): SubmissionRecord[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const parsed = JSON.parse(
+      window.localStorage.getItem(SUBMISSIONS_KEY[program]) ?? "[]",
+    );
+    return Array.isArray(parsed) ? (parsed as SubmissionRecord[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+export function appendSubmission(program: ProgramKey, record: SubmissionRecord) {
+  if (typeof window === "undefined") return;
+  const next = [record, ...readSubmissions(program)].slice(0, 12);
+  try {
+    window.localStorage.setItem(SUBMISSIONS_KEY[program], JSON.stringify(next));
+  } catch {
+    // quota — keep working in memory
+  }
+}
+
 export function syncTodayToScorecard(
   program: ProgramKey,
   dayKey: string,
@@ -78,9 +98,7 @@ export function syncTodayToScorecard(
 ): string[] {
   if (typeof window === "undefined") return [];
   const dayIndex = DAY_INDEX[dayKey];
-  const fieldMap = FIELD_TO_METRIC[dayKey];
-  const isFriday = dayKey === "friday";
-  if (dayIndex === undefined || (!fieldMap && !isFriday)) return [];
+  if (dayIndex === undefined) return [];
 
   const validMetrics = new Set(
     (program === "alliance" ? allianceScorecardMetrics : scorecardMetrics).map(
@@ -88,19 +106,13 @@ export function syncTodayToScorecard(
     ),
   );
 
-  const key = SCORECARD_KEY[program];
-  let store: ScorecardStore = {};
-  try {
-    store = JSON.parse(window.localStorage.getItem(key) ?? "{}") as ScorecardStore;
-  } catch {
-    store = {};
-  }
+  const store = readScorecard(program);
   const values: Record<string, number[]> = { ...(store.values ?? {}) };
   const synced: string[] = [];
 
-  Object.entries(fieldMap ?? {}).forEach(([fieldLabel, metricName]) => {
+  dailyCountFields.forEach((metricName) => {
     if (!validMetrics.has(metricName)) return;
-    const raw = (entries[fieldLabel] ?? "").trim();
+    const raw = (entries[metricName] ?? "").trim();
     if (!raw) return;
     const parsed = Number(raw);
     if (!Number.isFinite(parsed)) return;
@@ -112,20 +124,27 @@ export function syncTodayToScorecard(
 
   const next: ScorecardStore = { ...store, values };
 
-  if (isFriday) {
-    Object.entries(FIELD_TO_TEXT).forEach(([fieldLabel, textKey]) => {
-      const raw = (entries[fieldLabel] ?? "").trim();
-      if (raw) {
-        next[textKey] = raw;
-        synced.push(textKey);
-      }
-    });
+  if (dayKey === "friday") {
+    const win = (entries[WIN_FIELD] ?? "").trim();
+    const stuck = (entries[STUCK_FIELD] ?? "").trim();
+    const focus = (entries[FOCUS_FIELD] ?? "").trim();
+    if (win) {
+      next.worked = win;
+      synced.push("worked");
+    }
+    if (stuck) {
+      next.stuck = stuck;
+      synced.push("stuck");
+    }
+    if (focus) {
+      next.focus = focus;
+      synced.push("focus");
+    }
   }
 
   if (synced.length === 0) return [];
-
   try {
-    window.localStorage.setItem(key, JSON.stringify(next));
+    window.localStorage.setItem(SCORECARD_KEY[program], JSON.stringify(next));
   } catch {
     return [];
   }

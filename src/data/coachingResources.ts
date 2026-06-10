@@ -89,7 +89,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A simple native tracker for consistency, wins, and the smallest actions that move the week forward.",
         whoFor: "LO Mastery members and coaches.",
-        openHref: "/member-area/trackers/#greatness-tracker",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["tracker", "accountability"],
       },
@@ -131,7 +131,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A simple roadmap for the next 12 weeks of growth, focus, and accountability.",
         whoFor: "Alliance members and coaching managers.",
-        openHref: "/member-area/trackers/#business-plan-roadmap",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["planning", "roadmap"],
       },
@@ -141,7 +141,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "Native planning for partner growth, outreach cadence, follow-up, and next meetings.",
         whoFor: "Alliance members and coaching managers.",
-        openHref: "/member-area/trackers/#realtor-growth-system",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["growth", "partners"],
       },
@@ -151,7 +151,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A native tracker for conversations, pipeline movement, and the actions that feed production.",
         whoFor: "Alliance members and coaches.",
-        openHref: "/member-area/trackers/#production-tracker",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["tracker", "production"],
       },
@@ -195,7 +195,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A structured review sheet for member progress, scorecard trends, blockers, and next actions.",
         whoFor: "Coaches, coaching managers, and admin.",
-        openHref: "/member-area/trackers/#coach-review-worksheet",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["review", "worksheet"],
       },
@@ -205,7 +205,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "Track commitments, due dates, follow-ups, and who owns the next step for each member.",
         whoFor: "Coaches and coaching managers.",
-        openHref: "/member-area/trackers/#member-accountability-tracker",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["accountability", "tracker"],
       },
@@ -227,7 +227,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
     description:
       "Coaching-first scripts for member accountability, follow-up, and the weekly rhythm.",
     whoFor: "Members, coaches, coaching managers, and admin.",
-    openHref: "/member-area/scripts/",
+    openHref: "/member-area/resources/?tab=scripts",
     accessTier: "lo_mastery",
     sourceFolder: "02_Complete_Coaching_Program",
     items: [
@@ -237,7 +237,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A coaching-only script library for weekly rhythm, accountability, and next-step conversations.",
         whoFor: "Members and coaches.",
-        openHref: "/member-area/scripts/",
+        openHref: "/member-area/resources/?tab=scripts",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["scripts", "library"],
       },
@@ -247,7 +247,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A clean reminder to submit the weekly scorecard before the next coaching review.",
         whoFor: "LO Mastery and Alliance members.",
-        openHref: "/member-area/scripts/#scorecard-reminder",
+        openHref: "/member-area/resources/?tab=scripts",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["scorecard", "follow-up"],
       },
@@ -257,7 +257,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A short follow-up prompt for coaching calls, action items, and the next check-in.",
         whoFor: "Coaches and coaching managers.",
-        openHref: "/member-area/scripts/#coach-follow-up",
+        openHref: "/member-area/resources/?tab=scripts",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["follow-up", "coach"],
       },
@@ -267,7 +267,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A simple prompt for keeping the week narrow, honest, and focused on one next action.",
         whoFor: "Members and coaches.",
-        openHref: "/member-area/scripts/#accountability-check-in",
+        openHref: "/member-area/resources/?tab=scripts",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["accountability", "check-in"],
       },
@@ -279,7 +279,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
     description:
       "Native tracker and form tools for planning, weekly rhythm, scorecards, and accountability.",
     whoFor: "Members, coaches, coaching managers, and admin.",
-    openHref: "/member-area/trackers/",
+    openHref: "/member-area/resources/?tab=tools",
     accessTier: "lo_mastery",
     sourceFolder: "02_Complete_Coaching_Program",
     items: [
@@ -289,7 +289,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "The native draft-only workspace for the coaching forms and trackers.",
         whoFor: "Members and coaches.",
-        openHref: "/member-area/trackers/",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["forms", "tracker"],
       },
@@ -299,7 +299,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "Plan the focus for each day so the week stays narrow, repeatable, and easy to execute.",
         whoFor: "Members and coaches.",
-        openHref: "/member-area/trackers/#theme-days-planner",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["planner", "focus"],
       },
@@ -309,7 +309,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "Three priorities, daily actions, and the follow-through that keeps the week moving.",
         whoFor: "Members and coaches.",
-        openHref: "/member-area/trackers/#weekly-action-plan",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["plan", "weekly"],
       },
@@ -319,7 +319,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A simple worksheet for 90-day goals, weekly commitments, and support needed.",
         whoFor: "Members and coaches.",
-        openHref: "/member-area/trackers/#goal-setting-worksheet",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["goal", "worksheet"],
       },
@@ -329,7 +329,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "The week-by-week roadmap for the current program focus and expected outcomes.",
         whoFor: "Members, coaches, and coaching managers.",
-        openHref: "/member-area/trackers/#program-roadmap",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["roadmap", "program"],
       },
@@ -341,7 +341,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
     description:
       "Program planning, quarterly review, and the business rhythm behind the paid coaching work.",
     whoFor: "Alliance members, coaches, coaching managers, and admin.",
-    openHref: "/member-area/trackers/#business-plan-roadmap",
+    openHref: "/member-area/resources/?tab=tools",
     accessTier: "alliance",
     sourceFolder: "02_Complete_Coaching_Program",
     items: [
@@ -351,7 +351,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "The 12-week roadmap for the business goals, weekly focus, and supporting actions.",
         whoFor: "Alliance members and coaches.",
-        openHref: "/member-area/trackers/#business-plan-roadmap",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["roadmap", "business"],
       },
@@ -361,7 +361,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A structured look at progress, patterns, and what to adjust next.",
         whoFor: "Alliance members, coaches, and coaching managers.",
-        openHref: "/member-area/trackers/#goal-setting-worksheet",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["review", "quarterly"],
       },
@@ -371,7 +371,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A clean summary of the current program week, focus, and next checkpoint.",
         whoFor: "Alliance members and coaches.",
-        openHref: "/member-area/trackers/#program-roadmap",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["program", "plan"],
       },
@@ -383,7 +383,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
     description:
       "Scripts, planning, and follow-up tools for growing Realtor relationships the coaching way.",
     whoFor: "Alliance members, coaches, coaching managers, and admin.",
-    openHref: "/member-area/trackers/#realtor-growth-system",
+    openHref: "/member-area/resources/?tab=tools",
     accessTier: "alliance",
     sourceFolder: "02_Complete_Coaching_Program",
     items: [
@@ -393,7 +393,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "Plan the outreach cadence, follow-up rhythm, and meeting goals that drive partner growth.",
         whoFor: "Alliance members and coaches.",
-        openHref: "/member-area/trackers/#realtor-growth-system",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["realtor", "growth"],
       },
@@ -403,7 +403,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "Simple outreach language for starting conversations and setting the next meeting.",
         whoFor: "Alliance members and coaches.",
-        openHref: "/member-area/scripts/#realtor-growth",
+        openHref: "/member-area/resources/?tab=scripts",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["scripts", "realtor"],
       },
@@ -413,7 +413,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "Keep partner conversations moving with a clean follow-up plan and a next action.",
         whoFor: "Alliance members, coaches, and coaching managers.",
-        openHref: "/member-area/trackers/#realtor-growth-system",
+        openHref: "/member-area/resources/?tab=tools",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["follow-up", "partners"],
       },

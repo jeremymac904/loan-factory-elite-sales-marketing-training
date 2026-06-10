@@ -58,33 +58,20 @@ const memberNav: PrimaryNavItem[] = [
 ];
 
 const coachNav: PrimaryNavItem[] = [
-  NAV.home,
-  NAV.coaching,
+  { label: "Review Queue", href: "/coach-command-center/" },
   NAV.members,
-  NAV.scorecards,
-  NAV.notes,
+  { label: "Community", href: "/coach-command-center/community/" },
   NAV.resources,
 ];
 
-const managerNav: PrimaryNavItem[] = [
-  NAV.home,
-  NAV.managerDashboard,
-  NAV.coaching,
-  NAV.members,
-  NAV.coaches,
-  NAV.programStatus,
-  NAV.resources,
-];
+// The separate manager experience is retired — oversight roles get the coach
+// nav; program health lives in the Admin overview.
 
 const adminNav: PrimaryNavItem[] = [
-  NAV.home,
-  NAV.admin,
-  NAV.managerDashboard,
-  NAV.coaching,
-  NAV.members,
-  NAV.coaches,
-  NAV.programStatus,
+  { label: "Overview", href: "/dashboard/" },
+  { label: "Users & Roles", href: "/admin/" },
   NAV.resources,
+  { label: "Settings", href: "/admin/settings/" },
 ];
 
 export const primaryNav: PrimaryNavItem[] = memberNav;
@@ -92,7 +79,7 @@ export const primaryNav: PrimaryNavItem[] = memberNav;
 const NAV_BY_ROLE: Record<string, PrimaryNavItem[]> = {
   master_admin: adminNav,
   admin: adminNav,
-  lo_development_lead: managerNav,
+  lo_development_lead: coachNav,
   lo_development_member: coachNav,
   lo_development: coachNav,
   training_academy: coachNav,
@@ -102,7 +89,7 @@ const NAV_BY_ROLE: Record<string, PrimaryNavItem[]> = {
   corporate_coach_supervisor: coachNav,
   lo_mastery_coach: coachNav,
   loan_factory_alliance_coach: coachNav,
-  coaching_director: managerNav,
+  coaching_director: coachNav,
   team_leader: coachNav,
   coaching_member_level_1: memberNav,
   coaching_member_level_2: memberNav,

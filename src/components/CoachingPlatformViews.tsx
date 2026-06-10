@@ -40,6 +40,7 @@ import ClassroomClient from "./ClassroomClient";
 import TodayWorkspace from "./TodayWorkspace";
 import CalendarMonth from "./CalendarMonth";
 import ProfileWorkspace from "./ProfileWorkspace";
+import ResourceTabs from "./ResourceTabs";
 
 function PageHero({
   eyebrow,
@@ -167,27 +168,12 @@ const memberRoutes: Record<string, { mastery: string; alliance: string }> = {
   Feed: { mastery: "/member-area/", alliance: "/member-area/alliance/" },
   Today: { mastery: "/member-area/today/", alliance: "/member-area/alliance-today/" },
   Scorecard: { mastery: "/member-area/scorecards/", alliance: "/member-area/alliance-scorecard/" },
-  Trackers: { mastery: "/member-area/trackers/", alliance: "/member-area/alliance-trackers/" },
-  Scripts: { mastery: "/member-area/scripts/", alliance: "/member-area/alliance-scripts/" },
-  Playbooks: { mastery: "/member-area/playbooks/", alliance: "/member-area/alliance-playbooks/" },
-  Classroom: { mastery: "/member-area/classroom/", alliance: "/member-area/alliance-classroom/" },
-  Calendar: { mastery: "/member-area/calendar/", alliance: "/member-area/alliance-calendar/" },
   Resources: { mastery: "/member-area/resources/", alliance: "/member-area/alliance-resources/" },
-  Profile: { mastery: "/member-area/profile/", alliance: "/member-area/alliance-profile/" },
 };
 
-const memberNavItems = [
-  "Feed",
-  "Today",
-  "Scorecard",
-  "Trackers",
-  "Scripts",
-  "Playbooks",
-  "Classroom",
-  "Calendar",
-  "Resources",
-  "Profile",
-] as const;
+// Four decisions, no more. Calendar hangs off Today; Profile lives in the
+// header avatar menu. Scripts, tools, and training live inside Resources.
+const memberNavItems = ["Feed", "Today", "Scorecard", "Resources"] as const;
 
 function MemberSidebar({ program, active }: { program: ProgramKey; active: string }) {
   return (
@@ -304,6 +290,7 @@ export function ScorecardWorkspace({ program }: { program: ProgramKey }) {
         metrics={metrics}
         title={`${programName(program)} Weekly Scorecard`}
         programLabel={programName(program)}
+        program={program}
       />
     </MemberLayout>
   );
@@ -317,57 +304,9 @@ export function TodayView({ program }: { program: ProgramKey }) {
   );
 }
 
-export function TrackerWorkspaceView({ program }: { program: ProgramKey }) {
-  return (
-    <MemberLayout program={program} active="Trackers">
-      <MemberHead
-        program={program}
-        title="Trackers"
-        description="Real editable trackers with local save, summary, and coach review readiness."
-      />
-      <TrackerWorkspace trackers={programTrackerSet(program)} storageKey={`lf-trackers-${program}`} />
-    </MemberLayout>
-  );
-}
 
-export function ScriptsLibrary({ program }: { program: ProgramKey }) {
-  return (
-    <MemberLayout program={program} active="Scripts">
-      <MemberHead
-        program={program}
-        title="Scripts"
-        description="Search, filter, and copy scripts. Each script includes a use-when note, a goal, and a practice prompt."
-      />
-      <ScriptLibraryWorkspace scripts={programScripts(program)} />
-    </MemberLayout>
-  );
-}
 
-export function PlaybooksLibrary({ program }: { program: ProgramKey }) {
-  return (
-    <MemberLayout program={program} active="Playbooks">
-      <MemberHead
-        program={program}
-        title="Playbooks"
-        description="Step-by-step execution playbooks. Open one, work it, and mark steps complete as you go."
-      />
-      <PlaybookWorkspace playbooks={programPlaybooks(program)} />
-    </MemberLayout>
-  );
-}
 
-export function ClassroomView({ program }: { program: ProgramKey }) {
-  return (
-    <MemberLayout program={program} active="Classroom">
-      <MemberHead
-        program={program}
-        title="Classroom"
-        description="Twelve weekly modules with lessons, assignments, tracked numbers, and win conditions."
-      />
-      <ClassroomClient weeks={programWeeks(program)} program={program} storageKey={`lf-classroom-${program}-progress`} />
-    </MemberLayout>
-  );
-}
 
 export function CalendarView({ program }: { program: ProgramKey }) {
   return (
@@ -384,33 +323,76 @@ export function CalendarView({ program }: { program: ProgramKey }) {
 
 export function ResourcesLibrary({ program }: { program: ProgramKey }) {
   const resources = programResources(program);
-  const categories = Array.from(new Set(resources.map((r) => r.category)));
+  const downloadRows = (categories: string[], invert = false) => {
+    const rows = resources.filter((r) =>
+      invert ? !categories.includes(r.category) : categories.includes(r.category),
+    );
+    if (rows.length === 0) return null;
+    return (
+      <div className="overflow-hidden rounded-2xl border border-lf-line bg-white shadow-card">
+        {rows.map((r) => (
+          <ResourceRow key={r.title} resource={r} />
+        ))}
+      </div>
+    );
+  };
   return (
     <MemberLayout program={program} active="Resources">
       <MemberHead
         program={program}
-        title="Resources"
-        description="Drive-linked files organized by category. Open or download what today needs."
+        title="Resource Library"
+        description="Scripts, tools, and training in one place. Search inside each tab."
       />
-      <div className="mb-6">
-        <a href={driveFolderUrl} target="_blank" rel="noreferrer" className="btn-secondary">
-          Open source Drive folder
-        </a>
-      </div>
-      <div className="grid gap-8">
-        {categories.map((category) => (
-          <section key={category}>
-            <h2 className="h-display text-xl">{category}</h2>
-            <div className="mt-3 overflow-hidden rounded-2xl border border-lf-line bg-white shadow-card">
-              {resources
-                .filter((r) => r.category === category)
-                .map((r) => (
-                  <ResourceRow key={r.title} resource={r} />
-                ))}
-            </div>
-          </section>
-        ))}
-      </div>
+      <ResourceTabs
+        scripts={
+          <>
+            <ScriptLibraryWorkspace scripts={programScripts(program)} />
+            {downloadRows(["Scripts"]) && (
+              <section>
+                <h2 className="h-display text-xl">Script downloads</h2>
+                <div className="mt-3">{downloadRows(["Scripts"])}</div>
+              </section>
+            )}
+          </>
+        }
+        tools={
+          <>
+            <TrackerWorkspace
+              trackers={programTrackerSet(program)}
+              storageKey={`lf-trackers-${program}`}
+            />
+            {downloadRows(["Trackers", "Templates", "Worksheets"]) && (
+              <section>
+                <h2 className="h-display text-xl">Tracker and template downloads</h2>
+                <div className="mt-3">{downloadRows(["Trackers", "Templates", "Worksheets"])}</div>
+              </section>
+            )}
+          </>
+        }
+        training={
+          <>
+            <ClassroomClient
+              weeks={programWeeks(program)}
+              program={program}
+              storageKey={`lf-classroom-${program}-progress`}
+            />
+            <section>
+              <h2 className="h-display text-xl">Playbooks</h2>
+              <div className="mt-3">
+                <PlaybookWorkspace playbooks={programPlaybooks(program)} />
+              </div>
+            </section>
+            {downloadRows(["Scripts", "Trackers", "Templates", "Worksheets"], true) && (
+              <section>
+                <h2 className="h-display text-xl">Curriculum and guides</h2>
+                <div className="mt-3">
+                  {downloadRows(["Scripts", "Trackers", "Templates", "Worksheets"], true)}
+                </div>
+              </section>
+            )}
+          </>
+        }
+      />
     </MemberLayout>
   );
 }
@@ -466,43 +448,12 @@ export function CommunityFeedView({ program }: { program: ProgramKey }) {
         title="Member feed"
         description="Posts, comments, pinned coach notes, scripts, and wins. This is home."
       />
-      <CommunityFeed posts={posts} storageKey={`lf-feed-${program}`} />
+      <CommunityFeed posts={posts} storageKey={`lf-feed-${program}`} program={program} />
     </MemberLayout>
   );
 }
 
-export function MemberHome() {
-  return <CommunityFeedView program="mastery" />;
-}
 
-export function MemberSection({ section }: { section: string }) {
-  const map: Record<string, () => React.ReactElement> = {
-    "lo-mastery": () => <CommunityFeedView program="mastery" />,
-    alliance: () => <CommunityFeedView program="alliance" />,
-    community: () => <CommunityFeedView program="mastery" />,
-    today: () => <TodayView program="mastery" />,
-    "alliance-today": () => <TodayView program="alliance" />,
-    scorecards: () => <ScorecardWorkspace program="mastery" />,
-    "alliance-scorecard": () => <ScorecardWorkspace program="alliance" />,
-    trackers: () => <TrackerWorkspaceView program="mastery" />,
-    "alliance-trackers": () => <TrackerWorkspaceView program="alliance" />,
-    scripts: () => <ScriptsLibrary program="mastery" />,
-    "alliance-scripts": () => <ScriptsLibrary program="alliance" />,
-    playbooks: () => <PlaybooksLibrary program="mastery" />,
-    "alliance-playbooks": () => <PlaybooksLibrary program="alliance" />,
-    classroom: () => <ClassroomView program="mastery" />,
-    "alliance-classroom": () => <ClassroomView program="alliance" />,
-    calendar: () => <CalendarView program="mastery" />,
-    "alliance-calendar": () => <CalendarView program="alliance" />,
-    resources: () => <ResourcesLibrary program="mastery" />,
-    "alliance-resources": () => <ResourcesLibrary program="alliance" />,
-    profile: () => <ProfileView program="mastery" />,
-    "alliance-profile": () => <ProfileView program="alliance" />,
-  };
-  const Component = map[section];
-  if (!Component) return null;
-  return <Component />;
-}
 
 function PortalLayout({
   kind,

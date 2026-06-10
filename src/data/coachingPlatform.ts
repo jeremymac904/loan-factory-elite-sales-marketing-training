@@ -595,34 +595,6 @@ export const trackerDefinitions: TrackerDefinition[] = [
     ],
   },
   {
-    slug: "follow-up",
-    title: "Follow Up Tracker",
-    description:
-      "A working queue for quiet leads, pre-approved buyers, past clients, and partner promises that need a next action.",
-    columns: ["Contact", "Type", "Last touch", "Next message", "Due", "Owner", "Status"],
-    programs: ['mastery', 'alliance'],
-    rows: [
-      ["A. Johnson", "Pre-approved buyer", "Home search check-in", "Offer support note", "Today", "Jeremy", "queued"],
-      ["M. Rivera", "Realtor partner", "Coffee meeting", "Send buyer seminar outline", "Tomorrow", "Jeremy", "active"],
-      ["D. Chen", "Past client", "Quarterly call", "Ask for introduction", "Friday", "Jeremy", "needs touch"],
-      ["Quiet lead list", "Warm leads", "No response", "Value-first re-engagement", "Thursday", "Jeremy", "batch"],
-    ],
-  },
-  {
-    slug: "greatness-tracker",
-    title: "Greatness Tracker",
-    description:
-      "A simple accountability view for commitment, mindset, action, and follow-through.",
-    columns: ["Area", "Question", "Today", "Evidence", "Next step"],
-    programs: ['mastery', 'alliance'],
-    rows: [
-      ["Commitment", "Did I protect the work I said mattered?", "yes", "Power block completed", "Repeat tomorrow"],
-      ["Mindset", "Did I stay curious when I hit resistance?", "yes", "Used question before advice", "Write the best line"],
-      ["Action", "Did I make the important calls?", "partial", "18 touches", "Finish 7 more before 5"],
-      ["Follow-through", "Did every open item get a next step?", "no", "Two files missing date", "Assign dates now"],
-    ],
-  },
-  {
     slug: "conversion-ratio",
     title: "Conversion Ratio Tracker",
     description:

@@ -3,8 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
+  FOCUS_FIELD,
+  NOTE_FIELD,
+  PLAN_FIELD,
+  STUCK_FIELD,
+  WIN_FIELD,
   currentDayKey,
-  dailyNotesFields,
+  dailyCountFields,
   todayDays,
   type TodayDay,
 } from "@/data/todaySystem";
@@ -29,20 +34,13 @@ function readTodayStore(storageKey: string): TodayStore | null {
   }
 }
 
-const memberBase: Record<ProgramKey, { scripts: string; trackers: string }> = {
-  mastery: {
-    scripts: "/member-area/scripts/",
-    trackers: "/member-area/trackers/",
-  },
-  alliance: {
-    scripts: "/member-area/alliance-scripts/",
-    trackers: "/member-area/alliance-trackers/",
-  },
+const calendarRoute: Record<ProgramKey, string> = {
+  mastery: "/member-area/calendar/",
+  alliance: "/member-area/alliance-calendar/",
 };
 
 export default function TodayWorkspace({ program }: { program: ProgramKey }) {
   const storageKey = `lf-today-${program}`;
-  const links = memberBase[program];
   const [activeKey, setActiveKey] = useState("monday");
   const [store, setStore] = useState<TodayStore>({ entries: {}, status: {} });
   const [hydrated, setHydrated] = useState(false);
@@ -60,18 +58,18 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
   }, [hydrated, storageKey, store]);
 
   const day: TodayDay = todayDays.find((d) => d.key === activeKey) ?? todayDays[0];
-  const dayLabels = new Set(day.fields.map((f) => f.label.toLowerCase()));
-  const notesFields = dailyNotesFields.filter(
-    (f) =>
-      !(
-        f.label === "Stuck point" &&
-        day.fields.some((d) => d.label.toLowerCase().includes("stuck"))
-      ) && !dayLabels.has(f.label.toLowerCase()),
-  );
-  const allFields = [...day.fields, ...notesFields];
+  const isWeekend = day.key === "weekend";
+  const isFriday = day.key === "friday";
+  const textFields = isWeekend
+    ? [PLAN_FIELD, STUCK_FIELD]
+    : isFriday
+      ? [NOTE_FIELD, STUCK_FIELD, WIN_FIELD, FOCUS_FIELD]
+      : [NOTE_FIELD, STUCK_FIELD];
   const entries = store.entries[day.key] ?? {};
   const status = store.status[day.key] ?? "Not started";
-  const filled = allFields.filter((f) => (entries[f.label] ?? "").trim().length > 0).length;
+  const countFilled = isWeekend
+    ? 0
+    : dailyCountFields.filter((f) => (entries[f] ?? "").trim() !== "").length;
 
   function updateField(label: string, value: string) {
     setStore((current) => ({
@@ -85,8 +83,7 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
   }
 
   function finishDay(kind: "Saved" | "Submitted") {
-    // Today feeds the weekly scorecard: any field that maps to a scorecard
-    // metric is written into that day's column so numbers are entered once.
+    // One source of truth: Today writes straight into the weekly scorecard.
     const synced = syncTodayToScorecard(program, day.key, entries);
     const stamp = new Date().toLocaleString();
     const note =
@@ -98,8 +95,8 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
   }
 
   return (
-    <div className="grid gap-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+    <div className="grid gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap gap-1.5">
           {todayDays.map((d) => {
             const isActive = d.key === day.key;
@@ -108,7 +105,7 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
                 key={d.key}
                 type="button"
                 onClick={() => setActiveKey(d.key)}
-                className={`inline-flex items-center rounded-lg border px-3 py-1.5 text-sm font-semibold transition ${
+                className={`inline-flex items-center rounded-lg border px-2.5 py-1.5 text-sm font-semibold transition ${
                   isActive
                     ? "border-lf-orange bg-lf-orange text-white"
                     : "border-lf-line bg-white text-lf-navy hover:border-lf-navy hover:bg-lf-mist"
@@ -120,60 +117,78 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
           })}
         </div>
         <div className="flex flex-wrap gap-3 text-sm font-semibold">
-          <Link href={links.scripts} className="text-lf-orange hover:underline">
-            Script: {day.script}
-          </Link>
           <Link href={scorecardHref(program)} className="text-lf-orange hover:underline">
             Scorecard
           </Link>
-          <Link href={links.trackers} className="text-lf-orange hover:underline">
-            Trackers
+          <Link href={calendarRoute[program]} className="text-lf-orange hover:underline">
+            Calendar
           </Link>
         </div>
       </div>
 
       <section className="rounded-2xl border border-lf-line bg-white shadow-card">
-        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-lf-line px-4 py-3">
-          <h2 className="h-display text-xl">
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-lf-line px-4 py-2.5">
+          <h2 className="h-display text-lg">
             {day.day}: {day.theme}
           </h2>
           <p className="text-sm text-lf-slate">{day.instruction}</p>
+          <p className="text-sm text-lf-slate">
+            Script:{" "}
+            <Link
+              href={`${
+                program === "alliance"
+                  ? "/member-area/alliance-resources/"
+                  : "/member-area/resources/"
+              }?tab=scripts`}
+              className="font-semibold text-lf-orange hover:underline"
+            >
+              {day.script}
+            </Link>
+          </p>
         </div>
 
-        <div className="grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-3">
-          {allFields.map((field) => (
-            <label
-              key={field.label}
-              className={`grid content-start gap-1 text-xs font-semibold uppercase tracking-wide text-lf-slate ${
-                field.kind === "long" ? "sm:col-span-2 lg:col-span-3" : ""
-              }`}
-            >
-              {field.label}
-              {field.kind === "long" ? (
-                <textarea
-                  aria-label={field.label}
-                  value={entries[field.label] ?? ""}
-                  onChange={(event) => updateField(field.label, event.target.value)}
-                  rows={2}
-                  className="rounded-lg border border-lf-line p-2 text-sm font-normal normal-case tracking-normal text-lf-charcoal outline-none focus:border-lf-orange"
-                />
-              ) : (
+        {!isWeekend && (
+          <div className="grid grid-cols-2 gap-2 border-b border-lf-line p-3 sm:grid-cols-4">
+            {dailyCountFields.map((label) => (
+              <label
+                key={label}
+                className="grid content-start gap-1 text-[11px] font-semibold uppercase tracking-wide text-lf-slate"
+              >
+                {label}
                 <input
-                  aria-label={field.label}
-                  type={field.kind === "number" ? "number" : "text"}
-                  min={field.kind === "number" ? 0 : undefined}
-                  value={entries[field.label] ?? ""}
-                  onChange={(event) => updateField(field.label, event.target.value)}
-                  className="h-9 rounded-lg border border-lf-line px-2 text-sm font-normal normal-case tracking-normal text-lf-charcoal outline-none focus:border-lf-orange"
+                  aria-label={label}
+                  type="number"
+                  min={0}
+                  value={entries[label] ?? ""}
+                  onChange={(event) => updateField(label, event.target.value)}
+                  className="h-9 rounded-lg border border-lf-line px-2 text-sm font-semibold normal-case tracking-normal text-lf-navy outline-none focus:border-lf-orange"
                 />
-              )}
+              </label>
+            ))}
+          </div>
+        )}
+
+        <div className="grid gap-2 p-3 sm:grid-cols-2">
+          {textFields.map((label) => (
+            <label
+              key={label}
+              className="grid content-start gap-1 text-[11px] font-semibold uppercase tracking-wide text-lf-slate"
+            >
+              {label}
+              <input
+                aria-label={label}
+                value={entries[label] ?? ""}
+                onChange={(event) => updateField(label, event.target.value)}
+                className="h-9 rounded-lg border border-lf-line px-2 text-sm font-normal normal-case tracking-normal text-lf-charcoal outline-none focus:border-lf-orange"
+              />
             </label>
           ))}
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-lf-line px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-2 border-t border-lf-line px-4 py-2.5 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-lf-slate">
-            {status} · {filled}/{allFields.length} filled
+            {status}
+            {!isWeekend && ` · ${countFilled}/${dailyCountFields.length} numbers`}
           </p>
           <div className="flex gap-2">
             <button type="button" onClick={() => finishDay("Saved")} className="btn-secondary">

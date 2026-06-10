@@ -1,7 +1,5 @@
-import { ClassroomView } from "@/components/CoachingPlatformViews";
-
-export const metadata = { title: "Alliance Classroom" };
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <ClassroomView program="alliance" />;
+  redirect("/member-area/alliance-resources/?tab=training");
 }

@@ -1,7 +1,5 @@
-import { PlaybooksLibrary } from "@/components/CoachingPlatformViews";
-
-export const metadata = { title: "Playbooks" };
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <PlaybooksLibrary program="mastery" />;
+  redirect("/member-area/resources/?tab=training");
 }

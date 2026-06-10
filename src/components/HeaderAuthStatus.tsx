@@ -48,8 +48,13 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
   const canCoach = approved && roleCanCoach(role);
   const canAdmin = approved && isAdminRole(role);
 
+  const profileHref =
+    role === "coaching_member_level_2"
+      ? "/member-area/alliance-profile/"
+      : "/member-area/profile/";
   const items: MenuItem[] = [
     { href: dashboardHref, label: dashboardLabel },
+    { href: profileHref, label: "Profile" },
   ];
   if (canCoach && dashboardHref !== "/coach-command-center/") {
     items.push({ href: "/coach-command-center/", label: "Coach Command Center" });

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getCoachAccess, type CoachScope } from "@/lib/coachAccess";
 import CoachCommandNav from "@/components/coach/CoachCommandNav";
+import SubmissionQueue from "@/components/coach/SubmissionQueue";
 import PersonActionDropdown from "@/components/coach/PersonActionDropdown";
 import {
   statusMeta,
@@ -125,6 +126,10 @@ export default async function CoachCommandCenterPage() {
           )}
         </div>
       </section>
+
+      <div className="container-page pt-8">
+        <SubmissionQueue />
+      </div>
 
       <CoachCommandNav
         current="/coach-command-center/"

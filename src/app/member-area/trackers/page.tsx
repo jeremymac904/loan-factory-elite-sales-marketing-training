@@ -1,7 +1,5 @@
-import { TrackerWorkspaceView } from "@/components/CoachingPlatformViews";
-
-export const metadata = { title: "Trackers" };
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <TrackerWorkspaceView program="mastery" />;
+  redirect("/member-area/resources/?tab=tools");
 }

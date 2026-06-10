@@ -1,0 +1,66 @@
+"use client";
+
+import { useEffect, useState, type ReactNode } from "react";
+
+const TABS = [
+  { key: "scripts", label: "Scripts" },
+  { key: "tools", label: "Tools" },
+  { key: "training", label: "Training" },
+] as const;
+
+type TabKey = (typeof TABS)[number]["key"];
+
+/**
+ * The Resource Library shell: one place for scripts, tools, and training.
+ * Slots render server-side; this component only switches which is visible.
+ * Deep links work via ?tab=scripts|tools|training.
+ */
+export default function ResourceTabs({
+  scripts,
+  tools,
+  training,
+}: {
+  scripts: ReactNode;
+  tools: ReactNode;
+  training: ReactNode;
+}) {
+  const [active, setActive] = useState<TabKey>("scripts");
+
+  useEffect(() => {
+    const tab = new URLSearchParams(window.location.search).get("tab");
+    if (tab === "tools" || tab === "training" || tab === "scripts") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- read the deep-link tab once after hydration.
+      setActive(tab);
+    }
+  }, []);
+
+  return (
+    <div className="grid gap-4">
+      <div className="flex flex-wrap gap-1.5">
+        {TABS.map((tab) => {
+          const isActive = tab.key === active;
+          return (
+            <button
+              key={tab.key}
+              type="button"
+              onClick={() => {
+                setActive(tab.key);
+                window.history.replaceState(null, "", `?tab=${tab.key}`);
+              }}
+              className={`inline-flex items-center rounded-lg border px-4 py-2 text-sm font-semibold transition ${
+                isActive
+                  ? "border-lf-orange bg-lf-orange text-white"
+                  : "border-lf-line bg-white text-lf-navy hover:border-lf-navy hover:bg-lf-mist"
+              }`}
+            >
+              {tab.label}
+            </button>
+          );
+        })}
+      </div>
+      <div className={active === "scripts" ? "grid gap-6" : "hidden"}>{scripts}</div>
+      <div className={active === "tools" ? "grid gap-6" : "hidden"}>{tools}</div>
+      <div className={active === "training" ? "grid gap-6" : "hidden"}>{training}</div>
+    </div>
+  );
+}
