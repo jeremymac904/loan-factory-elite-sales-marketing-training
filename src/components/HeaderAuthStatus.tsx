@@ -18,7 +18,8 @@ export default async function HeaderAuthStatus({ variant = "desktop" }: Props) {
   if (session.status !== "approved" && session.status !== "pending") {
     return (
       <Link
-        href="/login/"
+        href="/auth/google/?next=/member-area/"
+        prefetch={false}
         className={
           variant === "mobile"
             ? "rounded-lg bg-lf-navy px-3 py-3 text-center text-base font-semibold text-white hover:bg-lf-orange"

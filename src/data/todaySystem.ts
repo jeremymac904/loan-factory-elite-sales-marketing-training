@@ -25,7 +25,6 @@ export const todayDays: TodayDay[] = [
       { label: "End time", kind: "text" },
       { label: "Top three calls", kind: "long" },
       { label: "Top three follow ups", kind: "long" },
-      { label: "One stuck point", kind: "text" },
       { label: "One win", kind: "text" },
     ],
     script: "Past Client Check In",
@@ -121,6 +120,13 @@ export const todayDays: TodayDay[] = [
     tracker: "Daily Execution Tracker",
     communityPrompt: "Share your top goal for next week so your coach sees it early.",
   },
+];
+
+export const dailyNotesFields: TodayField[] = [
+  { label: "Follow up notes", kind: "long" },
+  { label: "Realtor activity", kind: "long" },
+  { label: "Pipeline notes", kind: "long" },
+  { label: "Stuck point", kind: "text" },
 ];
 
 export function currentDayKey(date: Date = new Date()) {

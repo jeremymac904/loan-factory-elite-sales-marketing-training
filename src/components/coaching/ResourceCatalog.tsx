@@ -34,7 +34,7 @@ export default function ResourceCatalog({
                 </span>
                 <h3 className="h-display mt-1 text-lg">{category.title}</h3>
               </div>
-              <span className="rounded-full bg-lf-mist px-2.5 py-0.5 text-xs font-semibold text-lf-slate">
+              <span className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
                 {category.items.length} items
               </span>
             </div>

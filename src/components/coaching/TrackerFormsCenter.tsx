@@ -55,7 +55,7 @@ function DraftFormCard({ form }: { form: CoachingFormTemplate }) {
           </span>
           <h3 className="h-display mt-1 text-lg">{form.title}</h3>
         </div>
-        <span className="rounded-full bg-lf-mist px-2.5 py-0.5 text-xs font-semibold text-lf-slate">
+        <span className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
           {status === "saved" ? "Saved locally" : "Draft only"}
         </span>
       </div>
@@ -189,7 +189,7 @@ export default function TrackerFormsCenter({ access }: Props) {
             </p>
             <h2 className="h-display text-2xl">Open the live tools first.</h2>
           </div>
-          <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-lf-charcoal">
+          <span className="text-xs font-semibold uppercase tracking-wide text-lf-charcoal">
             Native pages
           </span>
         </div>

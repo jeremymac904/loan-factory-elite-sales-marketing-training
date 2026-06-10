@@ -40,18 +40,20 @@ const NAV = {
   programStatus: { label: "Program Status", href: "/dashboard/#program-status" },
   resources: { label: "Resources", href: "/resources/" },
   admin: { label: "Admin", href: "/admin/" },
+  apply: { label: "Apply", href: "/apply/" },
 } satisfies Record<string, PrimaryNavItem>;
 
 const loggedOutNav: PrimaryNavItem[] = [
   NAV.home,
   NAV.loMastery,
   NAV.alliance,
+  NAV.apply,
 ];
 
 const memberNav: PrimaryNavItem[] = [
   NAV.home,
   NAV.myProgram,
-  NAV.resources,
+  { label: "Resources", href: "/member-area/resources/" },
   NAV.myScorecard,
   NAV.myTracker,
 ];

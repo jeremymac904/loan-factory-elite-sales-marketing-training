@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { currentDayKey, todayDays, type TodayDay } from "@/data/todaySystem";
+import { currentDayKey, dailyNotesFields, todayDays, type TodayDay } from "@/data/todaySystem";
 import type { ProgramKey } from "@/data/coachingPlatform";
 
 type DayEntries = Record<string, string>;
@@ -66,9 +66,14 @@ export default function TodayWorkspace({
   }, [hydrated, storageKey, store]);
 
   const day: TodayDay = todayDays.find((d) => d.key === activeKey) ?? todayDays[0];
+  const dayLabels = new Set(day.fields.map((f) => f.label.toLowerCase()));
+  const notesFields = dailyNotesFields.filter(
+    (f) => !day.fields.some((d) => d.label.toLowerCase().includes("stuck") && f.label === "Stuck point"),
+  );
+  const allFields = [...day.fields, ...notesFields.filter((f) => !dayLabels.has(f.label.toLowerCase()))];
   const entries = store.entries[day.key] ?? {};
   const status = store.status[day.key] ?? "Not started";
-  const filled = day.fields.filter((f) => (entries[f.label] ?? "").trim().length > 0).length;
+  const filled = allFields.filter((f) => (entries[f.label] ?? "").trim().length > 0).length;
 
   function updateField(label: string, value: string) {
     setStore((current) => ({
@@ -121,7 +126,7 @@ export default function TodayWorkspace({
           </div>
 
           <div className="grid gap-4 p-5 md:grid-cols-2">
-            {day.fields.map((field) => (
+            {allFields.map((field) => (
               <label
                 key={field.label}
                 className={`grid gap-2 text-sm font-semibold text-lf-navy ${
@@ -152,7 +157,7 @@ export default function TodayWorkspace({
 
           <div className="flex flex-col gap-3 border-t border-lf-line p-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm font-semibold text-lf-slate">
-              {status} · {filled} of {day.fields.length} fields filled
+              {status} · {filled} of {allFields.length} fields filled
             </p>
             <div className="flex flex-wrap gap-3">
               <button
