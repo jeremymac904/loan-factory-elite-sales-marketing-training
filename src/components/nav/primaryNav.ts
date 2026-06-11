@@ -40,7 +40,7 @@ const NAV = {
   programStatus: { label: "Program Status", href: "/dashboard/#program-status" },
   resources: { label: "Resources", href: "/resources/" },
   admin: { label: "Admin", href: "/admin/" },
-  apply: { label: "Apply", href: "/apply/" },
+  apply: { label: "Apply", href: "https://forms.gle/LiJmtVoJ8wKW7wEJ8" },
 } satisfies Record<string, PrimaryNavItem>;
 
 const loggedOutNav: PrimaryNavItem[] = [

@@ -1,7 +1,5 @@
-import { CalendarView } from "@/components/CoachingPlatformViews";
-
-export const metadata = { title: "Alliance Calendar" };
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <CalendarView program="alliance" />;
+  redirect("/member-area/alliance-resources/?tab=calendar");
 }

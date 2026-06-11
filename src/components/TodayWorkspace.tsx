@@ -36,8 +36,8 @@ function readTodayStore(storageKey: string): TodayStore | null {
 }
 
 const calendarRoute: Record<ProgramKey, string> = {
-  mastery: "/member-area/calendar/",
-  alliance: "/member-area/alliance-calendar/",
+  mastery: "/member-area/resources/?tab=calendar",
+  alliance: "/member-area/alliance-resources/?tab=calendar",
 };
 
 export default function TodayWorkspace({ program }: { program: ProgramKey }) {

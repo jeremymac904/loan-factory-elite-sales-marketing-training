@@ -1,7 +1,5 @@
-import { CalendarView } from "@/components/CoachingPlatformViews";
-
-export const metadata = { title: "Calendar" };
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <CalendarView program="mastery" />;
+  redirect("/member-area/resources/?tab=calendar");
 }

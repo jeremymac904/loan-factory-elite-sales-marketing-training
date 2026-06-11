@@ -369,6 +369,7 @@ export function ResourcesLibrary({ program }: { program: ProgramKey }) {
             )}
           </>
         }
+        calendar={<CalendarMonth program={program} />}
         training={
           <>
             <ClassroomClient

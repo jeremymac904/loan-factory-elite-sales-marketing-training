@@ -229,19 +229,30 @@ export async function markSubmissionReviewed(id: string): Promise<boolean> {
   return !error;
 }
 
-export async function loadMemberProfileCloud(): Promise<{
-  program: string | null;
+export type MemberProfileFields = {
   displayName: string;
   currentFocus: string;
   weeklyGoal: string;
-} | null> {
+  phone: string;
+  nmls: string;
+  licensedStates: string;
+  bio: string;
+  referralNotes: string;
+  photoUrl: string;
+};
+
+export async function loadMemberProfileCloud(): Promise<
+  (MemberProfileFields & { program: string | null }) | null
+> {
   const supabase = client();
   if (!supabase) return null;
   const user = await getCloudUser();
   if (!user) return null;
   const { data, error } = await supabase
     .from("member_profiles")
-    .select("program, display_name, current_focus, weekly_goal")
+    .select(
+      "program, display_name, current_focus, weekly_goal, phone, nmls, licensed_states, bio, referral_notes, photo_url",
+    )
     .eq("user_id", user.id)
     .maybeSingle();
   if (error) return null;
@@ -250,15 +261,18 @@ export async function loadMemberProfileCloud(): Promise<{
     displayName: (data?.display_name as string) ?? "",
     currentFocus: (data?.current_focus as string) ?? "",
     weeklyGoal: (data?.weekly_goal as string) ?? "",
+    phone: (data?.phone as string) ?? "",
+    nmls: (data?.nmls as string) ?? "",
+    licensedStates: (data?.licensed_states as string) ?? "",
+    bio: (data?.bio as string) ?? "",
+    referralNotes: (data?.referral_notes as string) ?? "",
+    photoUrl: (data?.photo_url as string) ?? "",
   };
 }
 
-export async function saveMemberProfileCloud(fields: {
-  program: ProgramKey;
-  displayName: string;
-  currentFocus: string;
-  weeklyGoal: string;
-}): Promise<boolean> {
+export async function saveMemberProfileCloud(
+  fields: MemberProfileFields & { program: ProgramKey },
+): Promise<boolean> {
   const supabase = client();
   if (!supabase) return false;
   const user = await getCloudUser();
@@ -269,6 +283,12 @@ export async function saveMemberProfileCloud(fields: {
     display_name: fields.displayName,
     current_focus: fields.currentFocus,
     weekly_goal: fields.weeklyGoal,
+    phone: fields.phone,
+    nmls: fields.nmls,
+    licensed_states: fields.licensedStates,
+    bio: fields.bio,
+    referral_notes: fields.referralNotes,
+    photo_url: fields.photoUrl,
     updated_at: new Date().toISOString(),
   });
   return !error;

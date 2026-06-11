@@ -45,9 +45,14 @@ export default function PaidCoachingLanding() {
             approved Loan Factory loan officers.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Link href="/apply/" className="btn-primary w-full sm:w-auto">
+            <a
+              href="https://forms.gle/LiJmtVoJ8wKW7wEJ8"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary w-full sm:w-auto"
+            >
               Apply
-            </Link>
+            </a>
             <Link
               href="/lo-mastery-coaching/"
               className="btn-secondary w-full border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/20 sm:w-auto"
@@ -184,9 +189,14 @@ export default function PaidCoachingLanding() {
             coached weekly rhythm.
           </p>
           <div className="mt-8 flex justify-center">
-            <Link href="/apply/" className="btn-primary">
+            <a
+              href="https://forms.gle/LiJmtVoJ8wKW7wEJ8"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
               Apply
-            </Link>
+            </a>
           </div>
           <p className="mt-5 text-sm text-white/70">
             Already approved? Use the Sign In button in the top right.
