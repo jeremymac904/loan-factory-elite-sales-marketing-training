@@ -15,6 +15,7 @@ import {
 } from "@/data/todaySystem";
 import type { ProgramKey } from "@/data/coachingPlatform";
 import { scorecardHref, syncTodayToScorecard } from "@/lib/scorecardSync";
+import { loadTodayCloud, saveTodayCloud } from "@/lib/coachingCloud";
 
 type DayEntries = Record<string, string>;
 type TodayStore = {
@@ -50,7 +51,16 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
     setStore(readTodayStore(storageKey) ?? { entries: {}, status: {} });
     setActiveKey(currentDayKey());
     setHydrated(true);
-  }, [storageKey]);
+    // Supabase is the primary store when configured and signed in; cloud
+    // entries for the current week win over the local copy.
+    loadTodayCloud(program).then((cloud) => {
+      if (!cloud) return;
+      setStore((current) => ({
+        ...current,
+        entries: { ...current.entries, ...cloud },
+      }));
+    });
+  }, [storageKey, program]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -92,6 +102,13 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
       ...current,
       status: { ...current.status, [day.key]: note },
     }));
+    saveTodayCloud(program, day.key, entries, kind.toLowerCase()).then((ok) => {
+      if (!ok) return;
+      setStore((current) => ({
+        ...current,
+        status: { ...current.status, [day.key]: `${note} · synced` },
+      }));
+    });
   }
 
   return (

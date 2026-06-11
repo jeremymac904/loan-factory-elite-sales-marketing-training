@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { todayDays } from "@/data/todaySystem";
 import type { ProgramKey } from "@/data/coachingPlatform";
+import {
+  fetchCoachFeedbackCloud,
+  getCloudUser,
+  loadMemberProfileCloud,
+  saveMemberProfileCloud,
+} from "@/lib/coachingCloud";
 
 type ProfileStore = {
   name: string;
@@ -54,6 +60,10 @@ export default function ProfileWorkspace({
   });
   const [hydrated, setHydrated] = useState(false);
   const [saveState, setSaveState] = useState("Saved locally");
+  const [cloudIdentity, setCloudIdentity] = useState<{ name: string; email: string } | null>(null);
+  const [coachFeedback, setCoachFeedback] = useState<
+    { feedback: string; nextAction: string; createdAt: string }[]
+  >([]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- restore browser-only saved state after hydration to avoid SSR/client mismatches.
@@ -90,6 +100,30 @@ export default function ProfileWorkspace({
         .filter(Boolean).length,
     });
     setHydrated(true);
+    // Supabase first: identity from the Google session, profile fields and
+    // coach feedback from member_profiles / coach_feedback.
+    getCloudUser().then((user) => {
+      if (!user) return;
+      setCloudIdentity({ name: user.name, email: user.email });
+      setProfile((current) => ({
+        ...current,
+        name: current.name || user.name,
+        email: user.email || current.email,
+      }));
+    });
+    loadMemberProfileCloud().then((cloud) => {
+      if (!cloud) return;
+      setProfile((current) => ({
+        ...current,
+        name: cloud.displayName || current.name,
+        focus: cloud.currentFocus || current.focus,
+        weeklyGoal: cloud.weeklyGoal || current.weeklyGoal,
+      }));
+      setSaveState("Synced with your account");
+    });
+    fetchCoachFeedbackCloud().then((feedback) => {
+      if (feedback) setCoachFeedback(feedback);
+    });
   }, [profileKey, program]);
 
   useEffect(() => {
@@ -98,7 +132,16 @@ export default function ProfileWorkspace({
   }, [hydrated, profile, profileKey]);
 
   function update(field: keyof ProfileStore, value: string) {
-    setProfile((current) => ({ ...current, [field]: value }));
+    setProfile((current) => {
+      const next = { ...current, [field]: value };
+      saveMemberProfileCloud({
+        program,
+        displayName: next.name,
+        currentFocus: next.focus,
+        weeklyGoal: next.weeklyGoal,
+      }).then((ok) => setSaveState(ok ? "Synced with your account" : "Saved locally"));
+      return next;
+    });
     setSaveState("Saved locally");
   }
 
@@ -130,8 +173,11 @@ export default function ProfileWorkspace({
             <input
               type="email"
               value={profile.email}
+              readOnly={Boolean(cloudIdentity)}
               onChange={(event) => update("email", event.target.value)}
-              className="h-10 rounded-lg border border-lf-line px-3 text-sm font-normal normal-case tracking-normal text-lf-charcoal outline-none focus:border-lf-orange"
+              className={`h-10 rounded-lg border border-lf-line px-3 text-sm font-normal normal-case tracking-normal text-lf-charcoal outline-none focus:border-lf-orange ${
+                cloudIdentity ? "bg-lf-mist" : ""
+              }`}
             />
           </label>
           <label className="grid gap-1 text-xs font-semibold uppercase tracking-wide text-lf-slate sm:col-span-2">
@@ -205,6 +251,25 @@ export default function ProfileWorkspace({
             ))}
           </div>
         </section>
+
+        {coachFeedback.length > 0 && (
+          <section className="rounded-2xl border border-lf-line bg-white shadow-card">
+            <div className="border-b border-lf-line px-5 py-4">
+              <h2 className="h-display text-xl">Coach feedback</h2>
+            </div>
+            <div className="grid gap-3 p-5 text-sm">
+              {coachFeedback.map((item) => (
+                <div key={`${item.createdAt}-${item.feedback.slice(0, 20)}`} className="border-l-2 border-lf-orange pl-3">
+                  <p className="text-lf-charcoal">{item.feedback}</p>
+                  {item.nextAction && (
+                    <p className="font-semibold text-lf-navy">Next action: {item.nextAction}</p>
+                  )}
+                  <p className="text-xs text-lf-slate">{item.createdAt}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="rounded-2xl border border-lf-line bg-white shadow-card">
           <div className="border-b border-lf-line px-5 py-4">

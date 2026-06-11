@@ -4,6 +4,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { CommunityPost } from "@/data/coachingPlatform";
 import { currentDayKey, dailyCountFields, todayDays } from "@/data/todaySystem";
+import {
+  createCommentCloud,
+  createPostCloud,
+  fetchFeedCloud,
+} from "@/lib/coachingCloud";
 
 const CATEGORIES = ["Pinned", "Wins", "Questions", "Scripts"] as const;
 type Category = (typeof CATEGORIES)[number] | "All";
@@ -16,6 +21,7 @@ type LocalPost = CommunityPost & {
   videoUrl?: string;
   videoFileName?: string;
   youtubeUrl?: string;
+  cloudId?: string;
 };
 
 type Props = {
@@ -105,6 +111,25 @@ export default function CommunityFeed({
       setLocalPosts(saved.posts);
       setVoteState(saved.votes);
     }
+    // Supabase is the primary feed when configured and signed in.
+    fetchFeedCloud(program).then((cloud) => {
+      if (!cloud) return;
+      const cloudPosts: LocalPost[] = cloud.map((post) => ({
+        author: post.author,
+        role: post.role,
+        category: post.category,
+        title: post.title,
+        body: post.body,
+        comments: post.comments,
+        pinned: post.pinned,
+        youtubeUrl: post.youtubeUrl,
+        cloudId: post.id,
+      }));
+      setLocalPosts((current) => [
+        ...cloudPosts,
+        ...current.filter((p) => p.pinned && !p.cloudId),
+      ]);
+    });
     // Next-action strip: what should I do right now?
     try {
       const todayStore = JSON.parse(
@@ -175,6 +200,18 @@ export default function CommunityFeed({
           : undefined,
     };
     setLocalPosts((current) => [newPost, ...current]);
+    createPostCloud(program, {
+      category: newPost.category,
+      title: newPost.title,
+      body: newPost.body,
+      youtubeUrl: newPost.youtubeUrl,
+    }).then((cloudId) => {
+      if (!cloudId) return;
+      setDraftState("Posted · synced");
+      setLocalPosts((current) =>
+        current.map((p) => (p === newPost ? { ...p, cloudId } : p)),
+      );
+    });
     setComposerTitle("");
     setComposerBody("");
     setYoutubeUrl("");
@@ -193,6 +230,7 @@ export default function CommunityFeed({
     setLocalPosts((current) =>
       current.map((post, index) => {
         if (makePostKey(post, index) !== postKey) return post;
+        if (post.cloudId) createCommentCloud(post.cloudId, draft);
         return { ...post, comments: [...post.comments, `You: ${draft}`] };
       }),
     );
@@ -205,6 +243,7 @@ export default function CommunityFeed({
     setLocalPosts((current) =>
       current.map((post, index) => {
         if (makePostKey(post, index) !== postKey) return post;
+        if (post.cloudId) createCommentCloud(post.cloudId, `↳ ${parentComment}: ${draft}`);
         return {
           ...post,
           comments: [...post.comments, `You ↳ ${parentComment}: ${draft}`],

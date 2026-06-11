@@ -10,6 +10,11 @@ import type {
   TrackerDefinition,
 } from "@/data/coachingPlatform";
 import { appendSubmission } from "@/lib/scorecardSync";
+import {
+  loadScorecardCloud,
+  saveScorecardCloud,
+  submitWeekCloud,
+} from "@/lib/coachingCloud";
 
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
@@ -99,7 +104,21 @@ export function WeeklyScorecardForm({
       history: saved?.history ?? defaultScorecardState.history,
       hydrated: true,
     });
-  }, [defaultScorecardState, storageKey]);
+    // Supabase is primary when configured and signed in: this week's cloud
+    // scorecard (fed by Today on any device) wins over the local copy.
+    if (program) {
+      loadScorecardCloud(program).then((cloud) => {
+        if (!cloud) return;
+        setScorecardState((current) => ({
+          ...current,
+          values: { ...current.values, ...cloud.values },
+          worked: cloud.worked || current.worked,
+          stuck: cloud.stuck || current.stuck,
+          focus: cloud.focus || current.focus,
+        }));
+      });
+    }
+  }, [defaultScorecardState, storageKey, program]);
 
   useEffect(() => {
     if (!hydrated) {
@@ -160,21 +179,36 @@ export function WeeklyScorecardForm({
       status: `Draft saved ${stamp}`,
       history: [`Draft saved ${stamp}`, ...current.history].slice(0, 5),
     }));
+    if (program) {
+      saveScorecardCloud(program, values, worked, stuck, focus, "draft").then((ok) => {
+        if (!ok) return;
+        setScorecardState((current) => ({ ...current, status: `Draft saved ${stamp} · synced` }));
+      });
+    }
   }
 
   function submitToCoach() {
     const stamp = new Date().toLocaleString();
     if (program) {
-      // The weekly submit creates the record the coach review queue,
-      // progress views, and submission history all read from.
-      appendSubmission(program, {
+      const record = {
         weekOf: new Date().toLocaleDateString(),
         submittedAt: stamp,
         totals: Object.fromEntries(totals.map((m) => [m.metric, m.total])),
         worked,
         stuck,
         focus,
+      };
+      // Supabase first: the submissions table is what the coach review queue
+      // reads. The local record stays as the offline fallback/history.
+      submitWeekCloud(program, record).then((ok) => {
+        if (!ok) return;
+        setScorecardState((current) => ({
+          ...current,
+          status: `Submitted to coach ${stamp} · synced`,
+        }));
       });
+      saveScorecardCloud(program, values, worked, stuck, focus, "submitted");
+      appendSubmission(program, record);
     }
     setScorecardState((current) => ({
       ...current,
