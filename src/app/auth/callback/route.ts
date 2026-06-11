@@ -335,10 +335,6 @@ async function syncApprovedProfile(user: User) {
     return { status: "pending" as const, reason: "missing-user" };
   }
 
-  if (!isLoanFactoryEmail(email)) {
-    return { status: "pending" as const, reason: "domain" };
-  }
-
   const admin = createSupabaseAdminClient();
 
   if (!admin) {
@@ -355,6 +351,12 @@ async function syncApprovedProfile(user: User) {
   if (approvalError) {
     logSupabaseSyncError("Supabase approved user lookup failed", approvalError);
     return { status: "pending" as const, reason: "approval-sync" };
+  }
+
+  // Loan Factory domain is the default gate, but an explicit approved_users
+  // row admits external coaching members (paid students on personal emails).
+  if (!approvedUser && !isLoanFactoryEmail(email)) {
+    return { status: "pending" as const, reason: "domain" };
   }
 
   const profileStatus = approvedUser ? "approved" : "pending";

@@ -411,6 +411,17 @@ export async function POST(request: NextRequest) {
     });
   }
 
+  // Loan Factory domain is the default gate, but an explicit approved_users
+  // row admits external coaching members (paid students on personal emails).
+  if (!approvedUser && !isLoanFactoryEmail(email)) {
+    await supabase.auth.signOut();
+    return pending(request, "domain", responseMode, 403, cookiesToSet, {
+      syncProfileReceivedSession: receivedSession,
+      profileEmail: email,
+      lastErrorMessage: "This email is not approved for the coaching platform.",
+    });
+  }
+
   const profileStatus = approvedUser ? "approved" : "pending";
   const profilePayload = approvedUser
     ? {
