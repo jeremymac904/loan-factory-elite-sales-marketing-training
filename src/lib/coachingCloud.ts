@@ -23,6 +23,8 @@ export type CloudFeedPost = {
   youtubeUrl?: string;
   pinned?: boolean;
   comments: string[];
+  kind?: string;
+  refKey?: string;
 };
 
 export type CloudSubmission = SubmissionRecord & {
@@ -119,6 +121,7 @@ export async function saveScorecardCloud(
   stuck: string,
   focus: string,
   status: string,
+  timeBlocks: Record<string, string> = {},
 ): Promise<boolean> {
   const supabase = client();
   if (!supabase) return false;
@@ -134,6 +137,7 @@ export async function saveScorecardCloud(
       stuck,
       focus,
       status,
+      time_blocks: timeBlocks,
       updated_at: new Date().toISOString(),
     },
     { onConflict: "user_id,program,week_of" },
@@ -187,6 +191,7 @@ export async function submitWeekCloud(
     worked: record.worked,
     stuck: record.stuck,
     focus: record.focus,
+    time_blocks: record.timeBlocks ?? {},
   });
   return !error;
 }
@@ -198,7 +203,7 @@ export async function fetchSubmissionsCloud(): Promise<CloudSubmission[] | null>
   if (!user) return null;
   const { data, error } = await supabase
     .from("submissions")
-    .select("id, program, member_name, member_email, week_of, totals, worked, stuck, focus, submitted_at, reviewed")
+    .select("id, program, member_name, member_email, week_of, totals, worked, stuck, focus, time_blocks, submitted_at, reviewed")
     .order("submitted_at", { ascending: false })
     .limit(50);
   if (error || !data) return null;
@@ -213,6 +218,7 @@ export async function fetchSubmissionsCloud(): Promise<CloudSubmission[] | null>
     worked: (row.worked as string) ?? "",
     stuck: (row.stuck as string) ?? "",
     focus: (row.focus as string) ?? "",
+    timeBlocks: (row.time_blocks ?? {}) as Record<string, string>,
     reviewed: Boolean(row.reviewed),
   }));
 }
@@ -322,7 +328,7 @@ export async function fetchFeedCloud(program: ProgramKey): Promise<CloudFeedPost
   if (!user) return null;
   const { data: posts, error } = await supabase
     .from("feed_posts")
-    .select("id, author_name, author_role, category, title, body, youtube_url, pinned, created_at")
+    .select("id, author_name, author_role, category, title, body, youtube_url, pinned, kind, ref_key, created_at")
     .eq("program", program)
     .order("pinned", { ascending: false })
     .order("created_at", { ascending: false })
@@ -354,6 +360,8 @@ export async function fetchFeedCloud(program: ProgramKey): Promise<CloudFeedPost
     youtubeUrl: (p.youtube_url as string | null) ?? undefined,
     pinned: Boolean(p.pinned),
     comments: commentsByPost[p.id as string] ?? [],
+    kind: (p.kind as string) ?? "member",
+    refKey: (p.ref_key as string) ?? "",
   }));
 }
 

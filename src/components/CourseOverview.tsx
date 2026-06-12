@@ -48,7 +48,12 @@ export default function CourseOverview({ program }: { program: ProgramKey }) {
   return (
     <section className="rounded-2xl border border-lf-line bg-white shadow-card">
       <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-lf-line px-4 py-2.5">
-        <h2 className="h-display text-xl">12-week course overview</h2>
+        <div>
+          <h2 className="h-display text-xl">Course Overview</h2>
+          <p className="text-sm text-lf-slate">
+            What each week is about — watch this before starting the week.
+          </p>
+        </div>
         <p className="text-xs text-lf-slate">
           {videos.filter((v) => v.status === "completed").length} coach videos ready
         </p>

@@ -84,6 +84,11 @@ export default function SubmissionQueue() {
                   .map(([metric, total]) => `${metric}: ${total}`)
                   .join(" · ") || "No activity recorded"}
               </p>
+              {row.timeBlocks && Object.keys(row.timeBlocks).length > 0 && (
+                <p className="text-sm text-lf-slate">
+                  Time blocks: {Object.entries(row.timeBlocks).map(([d, v]) => `${d}: ${v}`).join(" · ")}
+                </p>
+              )}
               {(row.stuck || row.focus) && (
                 <p className="text-sm text-lf-slate">
                   {row.stuck && `Stuck: ${row.stuck}`}

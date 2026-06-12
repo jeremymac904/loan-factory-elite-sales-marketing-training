@@ -83,6 +83,10 @@ export type CommunityPost = {
   body: string;
   comments: string[];
   pinned?: boolean;
+  youtubeUrl?: string;
+  images?: string[];
+  pollQuestion?: string;
+  pollOptions?: { id: string; label: string; votes: number }[];
 };
 
 export const driveFolderUrl =
@@ -843,6 +847,114 @@ export const scriptLibrary: ScriptResource[] = [
       "Build a one-line template you can reuse for every Tuesday call and stick it next to your desk.",
     coachNote: "Predictable communication beats fancy communication. The Tuesday call is a habit, not an event.",
   },
+  {
+    title: "Realtor Follow Up",
+    category: "Realtor",
+    programs: ['mastery', 'alliance'],
+    useWhen: "Within 24 hours of any agent meeting or call, and again 7 days later if no response.",
+    goal: "Stay on the agent's short list by delivering value without asking for anything.",
+    script: [
+      "Hi [name], great talking yesterday.",
+      "You mentioned [their problem] — here's the one-pager on exactly how we handle that.",
+      "No response needed. It's yours either way.",
+      "P.S. If a file ever gets tight on timing, I answer my phone on weekends too.",
+    ],
+    practicePrompt: "Write the follow up for your last agent conversation right now — what problem did they mention?",
+    coachNote: "Value first, ask never. The agent should owe you two favors before you ask for one referral.",
+  },
+  {
+    title: "Past Client Check-In",
+    category: "Client Care",
+    programs: ['mastery', 'alliance'],
+    useWhen: "Three past clients a day, every day. No event needed — the call IS the event.",
+    goal: "Stay the family's loan officer for life and surface the next deal or referral naturally.",
+    script: [
+      "Hi [name], it's [you] — your loan officer from [street name].",
+      "No agenda at all, just checking in. How's the house treating you? How's the family?",
+      "(Listen. Take one note about their life.)",
+      "Anything changing this year — projects, moves, college, anybody renting who shouldn't be?",
+    ],
+    practicePrompt: "Pull three past clients and make the calls today. Log one personal detail per call.",
+    coachNote: "The note you take matters more than the call. Next quarter you open with their detail, not yours.",
+  },
+  {
+    title: "Buyer Consultation Opener",
+    category: "Buyer",
+    programs: ['mastery', 'alliance'],
+    useWhen: "First 90 seconds of every buyer consultation, phone or in person.",
+    goal: "Set the frame: you are the guide, the consultation has a structure, and the buyer can relax.",
+    script: [
+      "Before we talk numbers, here's how I run this so you leave with total clarity:",
+      "First, what you want — the home, the timeline, the why.",
+      "Second, what's possible — payment first, price second.",
+      "Third, the plan — exact next steps, in writing.",
+      "Sound good? Tell me about the home you're trying to get.",
+    ],
+    practicePrompt: "Record yourself doing the 90-second open. It should feel calm, not salesy.",
+    coachNote: "Buyers don't remember rates from a consult. They remember whether they felt led or sold.",
+  },
+  {
+    title: "Payment Conversation",
+    category: "Buyer",
+    programs: ['mastery', 'alliance'],
+    useWhen: "Any time a borrower fixates on rate before the full picture exists.",
+    goal: "Move the conversation from an abstract rate to the monthly payment and total plan.",
+    script: [
+      "Totally fair question — and the honest answer is the rate doesn't mean much by itself.",
+      "Let me ask it this way: what monthly payment would make this house an easy yes?",
+      "(Get the number.)",
+      "Now let me show you two or three ways to get there — rate is one lever, but it's not the only one.",
+    ],
+    practicePrompt: "Practice the pivot sentence until it sounds like your own words, not a script.",
+    coachNote: "Never dodge the rate question — answer it, then immediately widen the frame to payment.",
+  },
+  {
+    title: "Agent Objection: \"I Already Have a Lender\"",
+    category: "Objection",
+    programs: ['mastery', 'alliance'],
+    useWhen: "An agent shuts the door with their current lender relationship.",
+    goal: "Win the backup spot — never compete head-on with a relationship you can't see.",
+    script: [
+      "That's exactly what I'd hope you'd say — good agents have a lender.",
+      "I'm not asking to replace them. I'm asking to be your second call.",
+      "When a file gets tight — credit, timeline, weird income — that's where we live.",
+      "Next time one wobbles, send it my way. If I can't save it, you've lost nothing.",
+    ],
+    practicePrompt: "Role-play this with another LO. The tone is relaxed and confident — never pleading.",
+    coachNote: "Backup becomes primary the first time you save a deal their lender dropped. Play the long game.",
+  },
+  {
+    title: "Agent Objection: \"Your Rates Are Too High\"",
+    category: "Objection",
+    programs: ['mastery', 'alliance'],
+    useWhen: "An agent compares you to a rate sheet or an online quote.",
+    goal: "Reframe from rate to execution — agents lose commissions to missed closings, not eighths of a point.",
+    script: [
+      "Could be — rates move daily and I don't win every pricing battle.",
+      "Quick question though: what did the last blown closing cost you?",
+      "(Let them answer.)",
+      "That's what I actually sell. On-time closings, weekly updates, no surprises at the table.",
+      "Send me one tough file and judge me on that.",
+    ],
+    practicePrompt: "Say the 'blown closing' question out loud until the pause after it feels natural.",
+    coachNote: "Agents don't refer the cheapest lender. They refer the one who never embarrasses them.",
+  },
+  {
+    title: "Friday Status Update",
+    category: "Client Care",
+    programs: ['mastery', 'alliance'],
+    useWhen: "Every Friday, every active file — borrower AND agent, even when nothing changed.",
+    goal: "Kill inbound 'any update?' calls and make your communication the story agents tell about you.",
+    script: [
+      "Hi [name], Friday update on [property/file]:",
+      "Where we are: [stage].",
+      "What happened this week: [one line].",
+      "What happens next: [one line + date].",
+      "Nothing needed from you — call me if anything changes on your end. Have a great weekend.",
+    ],
+    practicePrompt: "Build the Friday list from your Deal Flow Tracker and send every update before noon.",
+    coachNote: "The no-news update is the most important one. Silence is where deals and referrals die.",
+  }
 ];
 
 export const playbookLibrary: PlaybookResource[] = [
@@ -1060,60 +1172,85 @@ export const downloadResources: DownloadResource[] = [
 
 export const communityPosts: CommunityPost[] = [
   {
-    author: "Jeremy McDonald",
+    author: "Coach Edward",
     role: "Coach",
     category: "Pinned",
-    title: "This week's focus: protect the Power Block",
-    body:
-      "Before coaching, complete the weekly scorecard and bring one place where your schedule broke. We are not guessing this week. We are looking at the calendar, the calls, and the next action.",
-    comments: ["Bring the number and the obstacle.", "Post one adjustment that protects tomorrow morning."],
     pinned: true,
+    title: "Where to start",
+    body: "Welcome to the coaching platform. Three steps: 1) Open Today and enter your numbers every day. 2) Watch this week's Course Overview video in Resources. 3) Submit your scorecard Friday. That's the whole rhythm — keep it simple and stay consistent.\n\n[Video placeholder — the official platform walkthrough video will be embedded here once recorded.]",
+    comments: ["Maria R.: Day one done. The Today page makes it obvious.", "Coach Edward: That's the point — numbers in, coaching out."],
   },
   {
-    author: "Jeremy McDonald",
+    author: "Coach Edward",
     role: "Coach",
     category: "Pinned",
-    title: "Realtor first call: open with curiosity, not pitch",
-    body:
-      "The first call is about trust. Ask three discovery questions before mentioning Loan Factory, agents, or rates. Bring the value plan to the meeting, not the call.\n\nYouTube link: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    comments: ["I used this opener and booked two coffees.", "Open with the question, then stay quiet long enough to hear the answer."],
     pinned: true,
+    title: "Week 1 live training scheduled",
+    body: "Week 1 live training is on the calendar. A Google Calendar invite with the exact time and link is coming to your inbox shortly. Before the call: watch the Week 1 Course Overview video and bring one number — how many real conversations you had this week.",
+    comments: [],
   },
   {
     author: "Maria R.",
-    role: "LO Mastery",
+    role: "Member",
     category: "Wins",
-    title: "Booked two agent coffees using the softer first call",
-    body:
-      "The discovery version felt better. I asked what agents were seeing instead of pitching, and the conversation opened up.",
-    comments: ["Drop the line that worked best.", "Good example of earning the meeting first."],
+    title: "Two Realtor meetings booked with the soft first call",
+    body: "Used the Realtor First Call script word for word — no pitch, just discovery questions. Two agents booked coffee this week. The 'no pressure' open completely changed the tone.",
+    comments: ["Coach Edward: That's exactly how it should feel. Bring the recordings Friday.", "Andre L.: Stealing this for tomorrow's block."],
   },
   {
     author: "Andre L.",
-    role: "Alliance",
-    category: "Questions",
-    title: "How are you tiering agents this week?",
-    body:
-      "I have ten active Realtor relationships but only three feel like A-tier. What criteria are you using besides production?",
-    comments: ["Fit, response speed, buyer quality, and willingness to co-build.", "Bring this into the Wednesday partner thread."],
-  },
-  {
-    author: "Leslie P.",
-    role: "Coach",
-    category: "Scripts",
-    title: "Buyer consultation reminder",
-    body:
-      "Payment, cash-to-close, timeline, and ownership goal must come before advice. If you skip discovery, the call becomes rate shopping.",
-    comments: ["Use the consultation planner before the call.", "Record one practice rep this week."],
+    role: "Member",
+    category: "Wins",
+    title: "Follow up block produced three borrower responses",
+    body: "Ran the Tuesday follow up block from Today — 45 minutes, nothing fancy. Three borrowers responded, one is sending docs tonight. The win wasn't the script, it was actually protecting the time. (Screenshot below — placeholder image until real screenshots are shared.)",
+    images: ["/media/team-marketing-system.png"],
+    comments: ["Coach Edward: Time block first, everything else second. Well done."],
   },
   {
     author: "Sam T.",
-    role: "LO Mastery",
-    category: "Wins",
-    title: "Cleared the Tuesday backlog before lunch",
-    body:
-      "I batched every active file into one sitting, called each one, and wrote the next action on the tracker. The week got lighter after that.",
-    comments: ["Tuesday rhythm is the difference. Glad it clicked."],
+    role: "Member",
+    category: "Questions",
+    title: "How many Realtors should I contact in week one?",
+    body: "Starting the program Monday. Is there a target number of new Realtor contacts for week one, or do I focus on my existing relationships first?",
+    comments: ["Coach Edward: Week one is about rhythm, not volume. Five real conversations with agents you already know beats twenty cold ones. The number ramps in week three."],
+  },
+  {
+    author: "Nina K.",
+    role: "Member",
+    category: "Questions",
+    title: "What do I say when an agent says they already have a lender?",
+    body: "Hit this twice today. I don't want to bad-mouth their lender, but the conversation just ends there. What's the move?",
+    comments: ["Coach Edward: Never compete with the lender — compete for the backup spot. Script is in Resources: 'I already have a lender'. Position as the second call when a file gets tight.", "Maria R.: The backup-lender angle got me my best agent this year."],
+  },
+  {
+    author: "Coach Edward",
+    role: "Coach",
+    category: "Scripts",
+    title: "Realtor first call opener",
+    body: "\"Hi [name], this is [you] with Loan Factory. I'm not calling to pitch you — I'm building my short list of agents who actually answer their phone. Can I ask you two quick questions about how lenders make your life harder?\" Then be quiet and take notes. Full script with discovery questions is in Resources > Scripts.",
+    comments: ["Sam T.: Used it twice — both agents laughed and kept talking."],
+  },
+  {
+    author: "Coach Edward",
+    role: "Coach",
+    category: "Scripts",
+    title: "Past client check in",
+    body: "\"Hi [name], it's [you] — your loan officer from [street name]. No agenda, just checking in on the house and the family. How's the payment treating you?\" Three touches like this a day rebuilds a database faster than any mailer. Full version in Resources > Scripts.",
+    comments: [],
+  },
+  {
+    author: "Coach Edward",
+    role: "Coach",
+    category: "Scripts",
+    title: "Agent value follow up",
+    body: "After any agent meeting, send this within 24 hours: \"Great talking today. You mentioned [their problem] — here's the one-pager on how we handle that. No response needed, it's just yours.\" Value first, ask later. The follow up sequence is in Resources > Scripts.",
+    comments: ["Nina K.: This plus the 24-hour rule is the whole game."],
+    pollQuestion: "Which follow up do you struggle with most?",
+    pollOptions: [
+      { id: "poll-agents", label: "Realtor follow up", votes: 4 },
+      { id: "poll-borrowers", label: "Borrower follow up", votes: 2 },
+      { id: "poll-past", label: "Past client touches", votes: 5 },
+    ],
   },
 ];
 

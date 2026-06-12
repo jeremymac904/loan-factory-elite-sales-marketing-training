@@ -116,6 +116,21 @@ function entryFrom(detail, base) {
   };
 }
 
+// Feed coaching videos — the "First Six Daily coaching videos" HeyGen folder.
+// One coach per day + Jeremy's welcome (Start Here). NOTE the known title
+// corrections: Craig's video is titled "Thusday" in HeyGen but IS the Tuesday
+// video; Jeremy's "Saturday" video is the weekend video.
+const FEED_FOLDER_PROBE_TITLE = "welcome - jeremy";
+const FEED_COACH_TO_DAY = [
+  { match: /welcome/i, slot: "start_here", coach: "Jeremy" },
+  { match: /edward/i, slot: "monday", coach: "Edward" },
+  { match: /craig/i, slot: "tuesday", coach: "Craig" },
+  { match: /john/i, slot: "wednesday", coach: "John" },
+  { match: /andre/i, slot: "thursday", coach: "Andre" },
+  { match: /thuan/i, slot: "friday", coach: "Thuan" },
+  { match: /saturday|weekend/i, slot: "weekend", coach: "Jeremy" },
+];
+
 const renamesNeeded = [];
 const warnings = [];
 
@@ -147,6 +162,38 @@ for (const program of PROGRAMS) {
     }
     dailyEntries.push(entryFrom(detail, { program, day }));
     process.stdout.write(`✓ daily ${program}/${day}: ${detail.title} (${detail.status})\n`);
+  }
+}
+
+// ── Feed coaching videos (Start Here + one coach per day) ─────
+const feedProbe = allVideos.find((v) =>
+  (v.title ?? "").toLowerCase().startsWith(FEED_FOLDER_PROBE_TITLE),
+);
+const feedEntries = [];
+if (!feedProbe?.folder_id) {
+  warnings.push('feed: could not locate the "First Six Daily coaching videos" folder (no "Welcome - Jeremy" video found)');
+} else {
+  const folderVideos = allVideos.filter((v) => v.folder_id === feedProbe.folder_id);
+  for (const rule of FEED_COACH_TO_DAY) {
+    const candidates = folderVideos.filter((v) => {
+      const title = v.title ?? "";
+      if (rule.slot === "start_here") return /welcome/i.test(title);
+      if (rule.coach === "Jeremy") return rule.match.test(title) && !/welcome/i.test(title);
+      return rule.match.test(title);
+    });
+    const best = candidates
+      .filter((v) => v.status === "completed")
+      .sort((a, b) => (b.created_at ?? 0) - (a.created_at ?? 0))[0];
+    if (!best) {
+      warnings.push(`feed ${rule.slot}: no completed video for ${rule.coach} in the feed folder`);
+      continue;
+    }
+    if (candidates.length > 1) {
+      warnings.push(`feed ${rule.slot}: ${candidates.length} candidates for ${rule.coach} — using newest completed`);
+    }
+    const detail = await videoDetail(best.id);
+    feedEntries.push({ slot: rule.slot, coach: rule.coach, ...entryFrom(detail, {}) });
+    process.stdout.write(`✓ feed ${rule.slot}: ${rule.coach} — ${detail.title} (${detail.status})\n`);
   }
 }
 
@@ -231,6 +278,10 @@ writeFileSync(
   JSON.stringify({ syncedAt: new Date().toISOString(), videos: dailyEntries }, null, 2) + "\n",
 );
 writeFileSync(
+  join(root, "src", "data", "feedCoachingVideos.generated.json"),
+  JSON.stringify({ syncedAt: new Date().toISOString(), videos: feedEntries }, null, 2) + "\n",
+);
+writeFileSync(
   join(root, "src", "data", "weeklyCurriculumVideos.generated.json"),
   JSON.stringify(
     { syncedAt: new Date().toISOString(), sharedAcrossPrograms: legacyUsed, videos: weeklyEntries },
@@ -238,6 +289,20 @@ writeFileSync(
     2,
   ) + "\n",
 );
+
+console.log("\n══ FINAL MAPPING ══");
+console.log("Start Here / Feed daily (both programs):");
+for (const e of feedEntries) {
+  console.log(`  ${e.slot.padEnd(11)} | ${e.coach.padEnd(7)} | ${e.heygenVideoId} | ${e.embedUrl}`);
+}
+console.log("Today page Daily Theme videos:");
+for (const e of dailyEntries) {
+  console.log(`  ${e.program.padEnd(8)} | ${e.day.padEnd(9)} | ${e.heygenVideoId} | ${e.embedUrl}`);
+}
+console.log("Weekly curriculum:");
+for (const e of weeklyEntries) {
+  console.log(`  ${e.program.padEnd(8)} | W${String(e.week).padEnd(2)} | ${(e.coach ?? "").padEnd(7)} | ${e.heygenVideoId ?? "MISSING"} | ${e.embedUrl ?? ""}`);
+}
 
 const pendingCount = weeklyEntries.filter((e) => e.status !== "completed").length;
 console.log(`\nWrote ${dailyEntries.length} daily + ${weeklyEntries.length} weekly entries.`);

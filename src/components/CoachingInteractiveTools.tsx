@@ -25,6 +25,7 @@ type ScorecardStore = {
   focus?: string;
   status?: string;
   history?: string[];
+  timeBlocks?: Record<string, string>;
 };
 
 function readScorecardStore(storageKey: string) {
@@ -83,13 +84,14 @@ export function WeeklyScorecardForm({
       focus: "",
       status: "Draft not saved",
       history: [] as string[],
+      timeBlocks: {} as Record<string, string>,
       hydrated: false,
     }),
     [metrics],
   );
   const [scorecardState, setScorecardState] = useState(defaultScorecardState);
   const [copyState, setCopyState] = useState("Copy review summary");
-  const { values, worked, stuck, focus, status, history, hydrated } = scorecardState;
+  const { values, worked, stuck, focus, status, history, timeBlocks, hydrated } = scorecardState;
 
   useEffect(() => {
     const saved = readScorecardStore(storageKey);
@@ -102,6 +104,7 @@ export function WeeklyScorecardForm({
       focus: saved?.focus ?? defaultScorecardState.focus,
       status: saved?.status ?? defaultScorecardState.status,
       history: saved?.history ?? defaultScorecardState.history,
+      timeBlocks: saved?.timeBlocks ?? {},
       hydrated: true,
     });
     // Supabase is primary when configured and signed in: this week's cloud
@@ -127,9 +130,9 @@ export function WeeklyScorecardForm({
 
     window.localStorage.setItem(
       storageKey,
-      JSON.stringify({ values, worked, stuck, focus, status, history }),
+      JSON.stringify({ values, worked, stuck, focus, status, history, timeBlocks }),
     );
-  }, [focus, history, hydrated, status, storageKey, stuck, values, worked]);
+  }, [focus, history, hydrated, status, storageKey, stuck, timeBlocks, values, worked]);
 
   const totals = useMemo(
     () =>
@@ -180,7 +183,7 @@ export function WeeklyScorecardForm({
       history: [`Draft saved ${stamp}`, ...current.history].slice(0, 5),
     }));
     if (program) {
-      saveScorecardCloud(program, values, worked, stuck, focus, "draft").then((ok) => {
+      saveScorecardCloud(program, values, worked, stuck, focus, "draft", timeBlocks).then((ok) => {
         if (!ok) return;
         setScorecardState((current) => ({ ...current, status: `Draft saved ${stamp} · synced` }));
       });
@@ -197,6 +200,7 @@ export function WeeklyScorecardForm({
         worked,
         stuck,
         focus,
+        timeBlocks,
       };
       // Supabase first: the submissions table is what the coach review queue
       // reads. The local record stays as the offline fallback/history.
@@ -207,7 +211,7 @@ export function WeeklyScorecardForm({
           status: `Submitted to coach ${stamp} · synced`,
         }));
       });
-      saveScorecardCloud(program, values, worked, stuck, focus, "submitted");
+      saveScorecardCloud(program, values, worked, stuck, focus, "submitted", timeBlocks);
       appendSubmission(program, record);
     }
     setScorecardState((current) => ({
@@ -280,6 +284,23 @@ export function WeeklyScorecardForm({
           </tbody>
         </table>
       </div>
+
+      {Object.keys(timeBlocks ?? {}).length > 0 && (
+        <div className="border-t border-lf-line px-5 py-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+            Time blocks this week (from Today)
+          </p>
+          <div className="mt-1 grid gap-1">
+            {["monday", "tuesday", "wednesday", "thursday", "friday", "weekend"]
+              .filter((d) => timeBlocks?.[d])
+              .map((d) => (
+                <p key={d} className="border-l-2 border-lf-line pl-3 text-sm text-lf-charcoal">
+                  <strong className="capitalize text-lf-navy">{d}:</strong> {timeBlocks?.[d]}
+                </p>
+              ))}
+          </div>
+        </div>
+      )}
 
       <div className="grid gap-4 border-t border-lf-line p-5 lg:grid-cols-3">
         <label className="grid gap-2 text-sm font-semibold text-lf-navy">

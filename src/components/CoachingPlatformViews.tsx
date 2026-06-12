@@ -40,6 +40,9 @@ import ClassroomClient from "./ClassroomClient";
 import TodayWorkspace from "./TodayWorkspace";
 import CalendarMonth from "./CalendarMonth";
 import CourseOverview from "./CourseOverview";
+import MemberTools from "./MemberTools";
+import MemberShell from "./MemberShell";
+import TrainingWeeks from "./TrainingWeeks";
 import ProfileWorkspace from "./ProfileWorkspace";
 import ResourceTabs from "./ResourceTabs";
 
@@ -203,8 +206,8 @@ function MemberSidebar({ program, active }: { program: ProgramKey; active: strin
         })}
       </nav>
 
-      {/* Desktop: fixed full-height app sidebar; only main content scrolls */}
-      <aside className="hidden border-r border-lf-line bg-white lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100vh-5rem)] lg:flex-col lg:self-stretch lg:overflow-y-auto">
+      {/* Desktop: stationary app sidebar inside the viewport-pinned shell */}
+      <aside className="hidden border-r border-lf-line bg-white lg:flex lg:h-full lg:min-h-0 lg:flex-col lg:overflow-y-auto">
         <div className="border-b border-lf-line p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
             {programName(program)}
@@ -266,10 +269,9 @@ function MemberLayout({
 }) {
   return (
     <div className="w-full flex-1 bg-lf-mist">
-      <div className="grid w-full grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)]">
-        <MemberSidebar program={program} active={active} />
-        <div className="min-w-0 p-4 md:p-6 xl:p-8">{children}</div>
-      </div>
+      <MemberShell sidebar={<MemberSidebar program={program} active={active} />}>
+        {children}
+      </MemberShell>
     </div>
   );
 }
@@ -324,76 +326,45 @@ export function CalendarView({ program }: { program: ProgramKey }) {
 
 export function ResourcesLibrary({ program }: { program: ProgramKey }) {
   const resources = programResources(program);
-  const downloadRows = (categories: string[], invert = false) => {
-    const rows = resources.filter((r) =>
-      invert ? !categories.includes(r.category) : categories.includes(r.category),
-    );
-    if (rows.length === 0) return null;
-    return (
-      <div className="overflow-hidden rounded-2xl border border-lf-line bg-white shadow-card">
-        {rows.map((r) => (
-          <ResourceRow key={r.title} resource={r} />
-        ))}
-      </div>
-    );
-  };
+  const categories = Array.from(new Set(resources.map((r) => r.category)));
   return (
     <MemberLayout program={program} active="Resources">
       <MemberHead
         program={program}
         title="Resource Library"
-        description="Scripts, tools, and training in one place. Search inside each tab."
+        description="Scripts, live tools, training, calendar, course overview, and downloads — one place."
       />
       <ResourceTabs
-        scripts={
-          <>
-            <ScriptLibraryWorkspace scripts={programScripts(program)} />
-            {downloadRows(["Scripts"]) && (
-              <section>
-                <h2 className="h-display text-xl">Script downloads</h2>
-                <div className="mt-3">{downloadRows(["Scripts"])}</div>
-              </section>
-            )}
-          </>
-        }
-        tools={
-          <>
-            <TrackerWorkspace
-              trackers={programTrackerSet(program)}
-              storageKey={`lf-trackers-${program}`}
-            />
-            {downloadRows(["Trackers", "Templates", "Worksheets"]) && (
-              <section>
-                <h2 className="h-display text-xl">Tracker and template downloads</h2>
-                <div className="mt-3">{downloadRows(["Trackers", "Templates", "Worksheets"])}</div>
-              </section>
-            )}
-          </>
-        }
+        scripts={<ScriptLibraryWorkspace scripts={programScripts(program)} />}
+        tools={<MemberTools program={program} />}
         calendar={<CalendarMonth program={program} />}
         course={<CourseOverview program={program} />}
         training={
           <>
-            <ClassroomClient
-              weeks={programWeeks(program)}
-              program={program}
-              storageKey={`lf-classroom-${program}-progress`}
-            />
+            <TrainingWeeks program={program} weeks={programWeeks(program)} />
             <section>
               <h2 className="h-display text-xl">Playbooks</h2>
               <div className="mt-3">
                 <PlaybookWorkspace playbooks={programPlaybooks(program)} />
               </div>
             </section>
-            {downloadRows(["Scripts", "Trackers", "Templates", "Worksheets"], true) && (
-              <section>
-                <h2 className="h-display text-xl">Curriculum and guides</h2>
-                <div className="mt-3">
-                  {downloadRows(["Scripts", "Trackers", "Templates", "Worksheets"], true)}
+          </>
+        }
+        downloads={
+          <div className="grid gap-6">
+            {categories.map((category) => (
+              <section key={category}>
+                <h2 className="h-display text-xl">{category}</h2>
+                <div className="mt-3 overflow-hidden rounded-2xl border border-lf-line bg-white shadow-card">
+                  {resources
+                    .filter((r) => r.category === category)
+                    .map((r) => (
+                      <ResourceRow key={r.title} resource={r} />
+                    ))}
                 </div>
               </section>
-            )}
-          </>
+            ))}
+          </div>
         }
       />
     </MemberLayout>

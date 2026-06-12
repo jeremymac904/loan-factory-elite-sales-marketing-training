@@ -9,8 +9,9 @@ import {
   createPostCloud,
   fetchFeedCloud,
 } from "@/lib/coachingCloud";
+import { buildSystemPosts, isCurrentWeekly, isTodaysDaily } from "@/lib/systemPosts";
 
-const CATEGORIES = ["Pinned", "Wins", "Questions", "Scripts"] as const;
+const CATEGORIES = ["Pinned", "Daily", "Weekly", "Wins", "Questions", "Scripts"] as const;
 type Category = (typeof CATEGORIES)[number] | "All";
 
 type PollOption = { id: string; label: string; votes: number };
@@ -22,6 +23,8 @@ type LocalPost = CommunityPost & {
   videoFileName?: string;
   youtubeUrl?: string;
   cloudId?: string;
+  kind?: string;
+  refKey?: string;
 };
 
 type Props = {
@@ -108,8 +111,13 @@ export default function CommunityFeed({
     const saved = readFeedStore(storageKey);
     if (saved) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- restore browser-only saved state after hydration to avoid SSR/client mismatches.
-      setLocalPosts(saved.posts);
+      setLocalPosts([
+        ...buildSystemPosts(program),
+        ...saved.posts.filter((p) => !(p as LocalPost).kind || (p as LocalPost).kind === "member"),
+      ]);
       setVoteState(saved.votes);
+    } else {
+      setLocalPosts((current) => [...buildSystemPosts(program), ...current]);
     }
     // Supabase is the primary feed when configured and signed in.
     fetchFeedCloud(program).then((cloud) => {
@@ -124,10 +132,12 @@ export default function CommunityFeed({
         pinned: post.pinned,
         youtubeUrl: post.youtubeUrl,
         cloudId: post.id,
+        kind: post.kind,
+        refKey: post.refKey,
       }));
       setLocalPosts((current) => [
         ...cloudPosts,
-        ...current.filter((p) => p.pinned && !p.cloudId),
+        ...current.filter((p) => p.pinned && !p.cloudId && !p.kind),
       ]);
     });
     // Next-action strip: what should I do right now?
@@ -165,13 +175,42 @@ export default function CommunityFeed({
 
 
   const visiblePosts = useMemo(() => {
-    const filtered = localPosts.filter((post) => {
-      if (activeCategory === "All") return true;
-      if (activeCategory === "Pinned") return Boolean(post.pinned);
-      return post.category === activeCategory;
-    });
-    // Pinned coach content always appears before member content.
-    return [...filtered.sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)))];
+    const isSystem = (p: LocalPost) => p.kind === "start" || p.kind === "daily" || p.kind === "weekly";
+    if (activeCategory === "Daily") {
+      const order = ["monday", "tuesday", "wednesday", "thursday", "friday", "weekend"];
+      return localPosts
+        .filter((p) => p.kind === "daily")
+        .sort((a, b) => order.indexOf(a.refKey ?? "") - order.indexOf(b.refKey ?? ""));
+    }
+    if (activeCategory === "Weekly") {
+      return localPosts
+        .filter((p) => p.kind === "weekly")
+        .sort((a, b) => Number((a.refKey ?? "w0").slice(1)) - Number((b.refKey ?? "w0").slice(1)));
+    }
+    if (activeCategory === "Pinned") {
+      return localPosts.filter(
+        (p) =>
+          p.kind === "start" ||
+          (p.pinned && !isSystem(p)) ||
+          (p.kind === "daily" && isTodaysDaily(p.refKey ?? "")) ||
+          (p.kind === "weekly" && isCurrentWeekly(p.refKey ?? "")),
+      );
+    }
+    if (activeCategory === "All") {
+      // Coaching hub order: Start Here, today's coach video, this week's
+      // coaching post, pinned coach posts, then member posts.
+      const startHere = localPosts.filter((p) => p.kind === "start");
+      const todaysDaily = localPosts.filter(
+        (p) => p.kind === "daily" && isTodaysDaily(p.refKey ?? ""),
+      );
+      const currentWeekly = localPosts.filter(
+        (p) => p.kind === "weekly" && isCurrentWeekly(p.refKey ?? ""),
+      );
+      const pinnedMember = localPosts.filter((p) => p.pinned && !isSystem(p));
+      const members = localPosts.filter((p) => !p.pinned && !isSystem(p));
+      return [...startHere, ...todaysDaily, ...currentWeekly, ...pinnedMember, ...members];
+    }
+    return localPosts.filter((post) => post.category === activeCategory && !isSystem(post));
   }, [localPosts, activeCategory]);
 
   function addPost() {
@@ -595,10 +634,15 @@ export default function CommunityFeed({
             }
             return null;
           })();
-          const ytId =
-            (post.youtubeUrl ? youtubeIdFromUrl(post.youtubeUrl) : null) ??
-            (post.videoUrl ? youtubeIdFromUrl(post.videoUrl) : null) ??
-            bodyYoutubeId;
+          const heygenUrl =
+            post.youtubeUrl && post.youtubeUrl.includes("app.heygen.com/embeds/")
+              ? post.youtubeUrl
+              : null;
+          const ytId = heygenUrl
+            ? null
+            : ((post.youtubeUrl ? youtubeIdFromUrl(post.youtubeUrl) : null) ??
+              (post.videoUrl ? youtubeIdFromUrl(post.videoUrl) : null) ??
+              bodyYoutubeId);
           return (
             <article
               key={key}
@@ -640,6 +684,21 @@ export default function CommunityFeed({
                   {post.images.map((src, i) => (
                     <img key={i} src={src} alt={`post image ${i + 1}`} className="max-h-80 w-full rounded-xl object-cover" />
                   ))}
+                </div>
+              )}
+
+              {heygenUrl && (
+                <div className="border-b border-lf-line bg-black">
+                  <div className="aspect-video w-full">
+                    <iframe
+                      className="h-full w-full"
+                      src={heygenUrl}
+                      title={post.title}
+                      loading="lazy"
+                      allow="encrypted-media; fullscreen;"
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
               )}
 

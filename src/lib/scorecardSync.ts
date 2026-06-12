@@ -41,6 +41,7 @@ export type ScorecardStore = {
   focus?: string;
   status?: string;
   history?: string[];
+  timeBlocks?: Record<string, string>;
 };
 
 export type SubmissionRecord = {
@@ -50,6 +51,7 @@ export type SubmissionRecord = {
   worked: string;
   stuck: string;
   focus: string;
+  timeBlocks?: Record<string, string>;
 };
 
 export function scorecardHref(program: ProgramKey) {
@@ -149,4 +151,33 @@ export function syncTodayToScorecard(
     return [];
   }
   return synced;
+}
+
+/**
+ * Today's saved time block also lands on the weekly scorecard, so the coach
+ * sees the planned blocks next to the numbers. One line per day.
+ */
+export function syncTimeBlockToScorecard(
+  program: ProgramKey,
+  dayKey: string,
+  summary: string,
+): boolean {
+  if (typeof window === "undefined") return false;
+  const key = SCORECARD_KEY[program];
+  let store: ScorecardStore = {};
+  try {
+    store = JSON.parse(window.localStorage.getItem(key) ?? "{}") as ScorecardStore;
+  } catch {
+    store = {};
+  }
+  const next: ScorecardStore = {
+    ...store,
+    timeBlocks: { ...(store.timeBlocks ?? {}), [dayKey]: summary },
+  };
+  try {
+    window.localStorage.setItem(key, JSON.stringify(next));
+    return true;
+  } catch {
+    return false;
+  }
 }

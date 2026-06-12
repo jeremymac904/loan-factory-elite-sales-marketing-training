@@ -16,7 +16,7 @@ import {
   type TodayDay,
 } from "@/data/todaySystem";
 import type { ProgramKey } from "@/data/coachingPlatform";
-import { scorecardHref, syncTodayToScorecard } from "@/lib/scorecardSync";
+import { scorecardHref, syncTimeBlockToScorecard, syncTodayToScorecard } from "@/lib/scorecardSync";
 import { loadTodayCloud, saveTodayCloud } from "@/lib/coachingCloud";
 
 type DayEntries = Record<string, string>;
@@ -158,11 +158,22 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
   }
 
   function saveBlock() {
-    setBlocks((current) => ({
-      ...current,
+    const current = blocks[day.key] ?? EMPTY_BLOCK;
+    const summary = [
+      current.start && current.end ? `${current.start}–${current.end}` : current.start || "",
+      current.focus,
+      current.contacts && `Contact: ${current.contacts}`,
+      current.mustComplete && `Complete: ${current.mustComplete}`,
+    ]
+      .filter(Boolean)
+      .join(" · ");
+    // The plan goes to the weekly scorecard too, so the coach sees it.
+    if (summary) syncTimeBlockToScorecard(program, day.key, summary);
+    setBlocks((state) => ({
+      ...state,
       [day.key]: {
-        ...(current[day.key] ?? EMPTY_BLOCK),
-        savedAt: new Date().toLocaleString(),
+        ...(state[day.key] ?? EMPTY_BLOCK),
+        savedAt: `${new Date().toLocaleString()} · added to scorecard`,
       },
     }));
   }
@@ -297,7 +308,7 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
       <div className="grid gap-2 lg:min-h-0 lg:flex-1 lg:grid-cols-2">
         <section className="flex flex-col overflow-hidden rounded-2xl border border-lf-line bg-white shadow-card lg:min-h-0">
           <p className="shrink-0 border-b border-lf-line px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-lf-slate">
-            {day.day} coach video
+            Daily Theme · {day.day}
           </p>
           <div className="relative aspect-video w-full bg-black lg:aspect-auto lg:min-h-0 lg:flex-1">
             {video ? (
