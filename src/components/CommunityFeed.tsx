@@ -10,9 +10,13 @@ import {
   fetchFeedCloud,
 } from "@/lib/coachingCloud";
 import { buildSystemPosts, isCurrentWeekly, isTodaysDaily } from "@/lib/systemPosts";
+import { getCoachPicks } from "@/data/coachPicks";
 
+// Categories members can post under (composer dropdown).
 const CATEGORIES = ["Pinned", "Daily", "Weekly", "Wins", "Questions", "Scripts"] as const;
-type Category = (typeof CATEGORIES)[number] | "All";
+// Filter pills include the coach-curated lane, which members can't post to.
+const FILTER_CATEGORIES = ["Pinned", "Daily", "Weekly", "Coach Picks", "Wins", "Questions", "Scripts"] as const;
+type Category = (typeof FILTER_CATEGORIES)[number] | "All";
 
 type PollOption = { id: string; label: string; votes: number };
 type LocalPost = CommunityPost & {
@@ -113,11 +117,12 @@ export default function CommunityFeed({
       // eslint-disable-next-line react-hooks/set-state-in-effect -- restore browser-only saved state after hydration to avoid SSR/client mismatches.
       setLocalPosts([
         ...buildSystemPosts(program),
+        ...getCoachPicks(program),
         ...saved.posts.filter((p) => !(p as LocalPost).kind || (p as LocalPost).kind === "member"),
       ]);
       setVoteState(saved.votes);
     } else {
-      setLocalPosts((current) => [...buildSystemPosts(program), ...current]);
+      setLocalPosts((current) => [...buildSystemPosts(program), ...getCoachPicks(program), ...current]);
     }
     // Supabase is the primary feed when configured and signed in.
     fetchFeedCloud(program).then((cloud) => {
@@ -137,7 +142,8 @@ export default function CommunityFeed({
       }));
       setLocalPosts((current) => [
         ...cloudPosts,
-        ...current.filter((p) => p.pinned && !p.cloudId && !p.kind),
+        // Coach Picks are curated client-side data, not cloud rows — keep them.
+        ...current.filter((p) => p.kind === "pick" || (p.pinned && !p.cloudId && !p.kind)),
       ]);
     });
     // Next-action strip: what should I do right now?
@@ -175,7 +181,11 @@ export default function CommunityFeed({
 
 
   const visiblePosts = useMemo(() => {
-    const isSystem = (p: LocalPost) => p.kind === "start" || p.kind === "daily" || p.kind === "weekly";
+    const isSystem = (p: LocalPost) =>
+      p.kind === "start" || p.kind === "daily" || p.kind === "weekly" || p.kind === "pick";
+    if (activeCategory === "Coach Picks") {
+      return localPosts.filter((p) => p.kind === "pick");
+    }
     if (activeCategory === "Daily") {
       const order = ["monday", "tuesday", "wednesday", "thursday", "friday", "weekend"];
       return localPosts
@@ -198,7 +208,7 @@ export default function CommunityFeed({
     }
     if (activeCategory === "All") {
       // Coaching hub order: Start Here, today's coach video, this week's
-      // coaching post, pinned coach posts, then member posts.
+      // coaching post, pinned coach posts, Coach Picks, then member posts.
       const startHere = localPosts.filter((p) => p.kind === "start");
       const todaysDaily = localPosts.filter(
         (p) => p.kind === "daily" && isTodaysDaily(p.refKey ?? ""),
@@ -207,8 +217,9 @@ export default function CommunityFeed({
         (p) => p.kind === "weekly" && isCurrentWeekly(p.refKey ?? ""),
       );
       const pinnedMember = localPosts.filter((p) => p.pinned && !isSystem(p));
+      const picks = localPosts.filter((p) => p.kind === "pick");
       const members = localPosts.filter((p) => !p.pinned && !isSystem(p));
-      return [...startHere, ...todaysDaily, ...currentWeekly, ...pinnedMember, ...members];
+      return [...startHere, ...todaysDaily, ...currentWeekly, ...pinnedMember, ...picks, ...members];
     }
     return localPosts.filter((post) => post.category === activeCategory && !isSystem(post));
   }, [localPosts, activeCategory]);
@@ -596,7 +607,7 @@ export default function CommunityFeed({
             {visiblePosts.length} posts · {pinnedCount} pinned · {totalMembers} members posting
           </p>
           <div className="flex flex-wrap gap-2">
-            {(["All", ...CATEGORIES] as Category[]).map((category) => {
+            {(["All", ...FILTER_CATEGORIES] as Category[]).map((category) => {
               const isActive = activeCategory === category;
               return (
                 <button
