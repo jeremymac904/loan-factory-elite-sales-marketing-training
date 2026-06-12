@@ -32,8 +32,49 @@ export type CloudSubmission = SubmissionRecord & {
   program: string;
   memberName: string;
   memberEmail: string;
+  memberId: string;
   reviewed: boolean;
 };
+
+/** Coach-side: latest feedback rows across all members (staff RLS). */
+export async function fetchAllFeedbackCloud(): Promise<
+  { memberId: string; feedback: string; nextAction: string; createdAt: string }[] | null
+> {
+  const supabase = client();
+  if (!supabase) return null;
+  const user = await getCloudUser();
+  if (!user) return null;
+  const { data, error } = await supabase
+    .from("coach_feedback")
+    .select("member_id, feedback, next_action, created_at")
+    .order("created_at", { ascending: false })
+    .limit(100);
+  if (error || !data) return null;
+  return data.map((row) => ({
+    memberId: row.member_id as string,
+    feedback: row.feedback as string,
+    nextAction: (row.next_action as string) ?? "",
+    createdAt: new Date(row.created_at as string).toLocaleDateString(),
+  }));
+}
+
+export async function addCoachFeedbackCloud(
+  memberId: string,
+  feedback: string,
+  submissionId?: string,
+): Promise<boolean> {
+  const supabase = client();
+  if (!supabase) return false;
+  const user = await getCloudUser();
+  if (!user) return false;
+  const { error } = await supabase.from("coach_feedback").insert({
+    member_id: memberId,
+    coach_id: user.id,
+    submission_id: submissionId ?? null,
+    feedback,
+  });
+  return !error;
+}
 
 function client() {
   return createBrowserSupabaseClient();
@@ -122,6 +163,7 @@ export async function saveScorecardCloud(
   focus: string,
   status: string,
   timeBlocks: Record<string, string> = {},
+  didntWork = "",
 ): Promise<boolean> {
   const supabase = client();
   if (!supabase) return false;
@@ -138,6 +180,7 @@ export async function saveScorecardCloud(
       focus,
       status,
       time_blocks: timeBlocks,
+      didnt_work: didntWork,
       updated_at: new Date().toISOString(),
     },
     { onConflict: "user_id,program,week_of" },
@@ -151,6 +194,7 @@ export async function loadScorecardCloud(program: ProgramKey): Promise<{
   stuck: string;
   focus: string;
   status: string;
+  didntWork: string;
 } | null> {
   const supabase = client();
   if (!supabase) return null;
@@ -158,7 +202,7 @@ export async function loadScorecardCloud(program: ProgramKey): Promise<{
   if (!user) return null;
   const { data, error } = await supabase
     .from("scorecard_entries")
-    .select("values, worked, stuck, focus, status")
+    .select("values, worked, stuck, focus, status, didnt_work")
     .eq("user_id", user.id)
     .eq("program", program)
     .eq("week_of", weekOfMonday())
@@ -170,6 +214,7 @@ export async function loadScorecardCloud(program: ProgramKey): Promise<{
     stuck: data.stuck ?? "",
     focus: data.focus ?? "",
     status: data.status ?? "draft",
+    didntWork: data.didnt_work ?? "",
   };
 }
 
@@ -192,6 +237,7 @@ export async function submitWeekCloud(
     stuck: record.stuck,
     focus: record.focus,
     time_blocks: record.timeBlocks ?? {},
+    didnt_work: record.didntWork ?? "",
   });
   return !error;
 }
@@ -203,7 +249,7 @@ export async function fetchSubmissionsCloud(): Promise<CloudSubmission[] | null>
   if (!user) return null;
   const { data, error } = await supabase
     .from("submissions")
-    .select("id, program, member_name, member_email, week_of, totals, worked, stuck, focus, time_blocks, submitted_at, reviewed")
+    .select("id, user_id, program, member_name, member_email, week_of, totals, worked, stuck, focus, didnt_work, time_blocks, submitted_at, reviewed")
     .order("submitted_at", { ascending: false })
     .limit(50);
   if (error || !data) return null;
@@ -219,6 +265,8 @@ export async function fetchSubmissionsCloud(): Promise<CloudSubmission[] | null>
     stuck: (row.stuck as string) ?? "",
     focus: (row.focus as string) ?? "",
     timeBlocks: (row.time_blocks ?? {}) as Record<string, string>,
+    didntWork: (row.didnt_work as string) ?? "",
+    memberId: row.user_id as string,
     reviewed: Boolean(row.reviewed),
   }));
 }

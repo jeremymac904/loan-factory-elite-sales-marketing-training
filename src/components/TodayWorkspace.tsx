@@ -3,11 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
-  FOCUS_FIELD,
   NOTE_FIELD,
   PLAN_FIELD,
   STUCK_FIELD,
-  WIN_FIELD,
   currentDayKey,
   dailyCountFields,
   getDailyVideo,
@@ -125,12 +123,7 @@ export default function TodayWorkspace({ program }: { program: ProgramKey }) {
 
   const day: TodayDay = todayDays.find((d) => d.key === activeKey) ?? todayDays[0];
   const isWeekend = day.key === "weekend";
-  const isFriday = day.key === "friday";
-  const textFields = isWeekend
-    ? [PLAN_FIELD, STUCK_FIELD]
-    : isFriday
-      ? [NOTE_FIELD, STUCK_FIELD, WIN_FIELD, FOCUS_FIELD]
-      : [NOTE_FIELD, STUCK_FIELD];
+  const textFields = isWeekend ? [PLAN_FIELD, STUCK_FIELD] : [NOTE_FIELD, STUCK_FIELD];
   const entries = store.entries[day.key] ?? {};
   const status = store.status[day.key] ?? "Not started";
   const block = blocks[day.key] ?? EMPTY_BLOCK;

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type {
   CommunityPost,
@@ -26,6 +27,7 @@ type ScorecardStore = {
   status?: string;
   history?: string[];
   timeBlocks?: Record<string, string>;
+  didntWork?: string;
 };
 
 function readScorecardStore(storageKey: string) {
@@ -80,6 +82,7 @@ export function WeeklyScorecardForm({
     () => ({
       values: Object.fromEntries(metrics.map((metric) => [metric.metric, [0, 0, 0, 0, 0]])) as Record<string, number[]>,
       worked: "",
+      didntWork: "",
       stuck: "",
       focus: "",
       status: "Draft not saved",
@@ -91,7 +94,8 @@ export function WeeklyScorecardForm({
   );
   const [scorecardState, setScorecardState] = useState(defaultScorecardState);
   const [copyState, setCopyState] = useState("Copy review summary");
-  const { values, worked, stuck, focus, status, history, timeBlocks, hydrated } = scorecardState;
+  const { values, worked, didntWork, stuck, focus, status, history, timeBlocks, hydrated } = scorecardState;
+  const [todayStatuses, setTodayStatuses] = useState<Record<string, string>>({});
 
   useEffect(() => {
     const saved = readScorecardStore(storageKey);
@@ -100,6 +104,7 @@ export function WeeklyScorecardForm({
       ...defaultScorecardState,
       values: saved?.values ?? defaultScorecardState.values,
       worked: saved?.worked ?? defaultScorecardState.worked,
+      didntWork: saved?.didntWork ?? defaultScorecardState.didntWork,
       stuck: saved?.stuck ?? defaultScorecardState.stuck,
       focus: saved?.focus ?? defaultScorecardState.focus,
       status: saved?.status ?? defaultScorecardState.status,
@@ -107,6 +112,16 @@ export function WeeklyScorecardForm({
       timeBlocks: saved?.timeBlocks ?? {},
       hydrated: true,
     });
+    if (program) {
+      try {
+        const today = JSON.parse(
+          window.localStorage.getItem(`lf-today-${program}`) ?? "{}",
+        ) as { status?: Record<string, string> };
+        setTodayStatuses(today.status ?? {});
+      } catch {
+        setTodayStatuses({});
+      }
+    }
     // Supabase is primary when configured and signed in: this week's cloud
     // scorecard (fed by Today on any device) wins over the local copy.
     if (program) {
@@ -116,6 +131,7 @@ export function WeeklyScorecardForm({
           ...current,
           values: { ...current.values, ...cloud.values },
           worked: cloud.worked || current.worked,
+          didntWork: cloud.didntWork || current.didntWork,
           stuck: cloud.stuck || current.stuck,
           focus: cloud.focus || current.focus,
         }));
@@ -130,9 +146,9 @@ export function WeeklyScorecardForm({
 
     window.localStorage.setItem(
       storageKey,
-      JSON.stringify({ values, worked, stuck, focus, status, history, timeBlocks }),
+      JSON.stringify({ values, worked, didntWork, stuck, focus, status, history, timeBlocks }),
     );
-  }, [focus, history, hydrated, status, storageKey, stuck, timeBlocks, values, worked]);
+  }, [didntWork, focus, history, hydrated, status, storageKey, stuck, timeBlocks, values, worked]);
 
   const totals = useMemo(
     () =>
@@ -149,14 +165,6 @@ export function WeeklyScorecardForm({
     return Math.round(totalPercent / totals.length);
   }, [totals]);
 
-  function updateMetric(metric: string, dayIndex: number, nextValue: string) {
-    const parsed = Number(nextValue);
-    setScorecardState((current) => {
-      const row = [...(current.values[metric] ?? [0, 0, 0, 0, 0])];
-      row[dayIndex] = Number.isFinite(parsed) ? parsed : 0;
-      return { ...current, values: { ...current.values, [metric]: row } };
-    });
-  }
 
   async function copySummary() {
     const lines = [
@@ -183,7 +191,7 @@ export function WeeklyScorecardForm({
       history: [`Draft saved ${stamp}`, ...current.history].slice(0, 5),
     }));
     if (program) {
-      saveScorecardCloud(program, values, worked, stuck, focus, "draft", timeBlocks).then((ok) => {
+      saveScorecardCloud(program, values, worked, stuck, focus, "draft", timeBlocks, didntWork).then((ok) => {
         if (!ok) return;
         setScorecardState((current) => ({ ...current, status: `Draft saved ${stamp} · synced` }));
       });
@@ -198,6 +206,7 @@ export function WeeklyScorecardForm({
         submittedAt: stamp,
         totals: Object.fromEntries(totals.map((m) => [m.metric, m.total])),
         worked,
+        didntWork,
         stuck,
         focus,
         timeBlocks,
@@ -211,7 +220,7 @@ export function WeeklyScorecardForm({
           status: `Submitted to coach ${stamp} · synced`,
         }));
       });
-      saveScorecardCloud(program, values, worked, stuck, focus, "submitted", timeBlocks);
+      saveScorecardCloud(program, values, worked, stuck, focus, "submitted", timeBlocks, didntWork);
       appendSubmission(program, record);
     }
     setScorecardState((current) => ({
@@ -221,62 +230,120 @@ export function WeeklyScorecardForm({
     }));
   }
 
+  const dayKeys = ["monday", "tuesday", "wednesday", "thursday", "friday", "weekend"];
+  const todayHref = program === "alliance" ? "/member-area/alliance-today/" : "/member-area/today/";
+  const weekdayNum = new Date().getDay(); // 0 Sun .. 6 Sat
+  const daysElapsed = weekdayNum === 0 || weekdayNum === 6 ? 5 : Math.min(weekdayNum, 5);
+  const expectedPct = Math.round((daysElapsed / 5) * 100);
+  const onTrack = overall >= expectedPct;
+  const keyTotal = (name: string) => totals.find((m) => m.metric === name)?.total ?? 0;
+
   return (
     <section className="rounded-2xl border border-lf-line bg-white shadow-card">
-      <div className="grid gap-4 border-b border-lf-line p-5 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center">
+      {/* Weekly summary — the coach-facing headline */}
+      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-lf-line px-4 py-2.5">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-            Native tool
-          </p>
-          <h2 className="h-display mt-2 text-2xl">{title}</h2>
-          <p className="prose-lf mt-2 text-sm text-lf-slate">
-            Auto-filled from Today. Review the week, correct anything, and
-            submit to your coach.
+          <h2 className="h-display text-lg">{title}</h2>
+          <p className="text-xs text-lf-slate">
+            Auto-filled from Daily Theme — this is a review screen, not data entry.
           </p>
         </div>
-        <div className="bg-lf-navy p-4 text-white">
-          <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
-            Week pace
-          </p>
-          <p className="mt-2 text-4xl font-black">{overall}%</p>
-          <p className="mt-1 text-xs text-white/65">Average capped at goal</p>
+        <div className="flex items-center gap-2">
+          <span
+            className={`inline-flex items-center rounded-lg px-2 py-0.5 text-xs font-bold uppercase tracking-wide ${
+              onTrack ? "bg-green-600 text-white" : "bg-lf-orange text-white"
+            }`}
+          >
+            {onTrack ? "On track" : "Behind pace"}
+          </span>
+          <div className="h-2 w-28 overflow-hidden rounded-full bg-lf-mist">
+            <div
+              className={onTrack ? "h-full bg-green-600" : "h-full bg-lf-orange"}
+              style={{ width: `${Math.min(overall, 100)}%` }}
+            />
+          </div>
+          <p className="text-sm font-black text-lf-navy">{overall}%</p>
+          <p className="text-xs text-lf-slate">goal · pace target {expectedPct}%</p>
+        </div>
+        <div className="ml-auto flex gap-4 text-center">
+          {[
+            ["Apps", keyTotal("Applications taken")],
+            ["Pre-approvals", keyTotal("Pre approvals issued")],
+            ["Contracts", keyTotal("Contracts received")],
+            ["Closings", keyTotal("Closings")],
+          ].map(([label, value]) => (
+            <div key={label}>
+              <p className="text-lg font-black leading-5 text-lf-navy">{value}</p>
+              <p className="text-[10px] font-semibold uppercase tracking-wide text-lf-slate">{label}</p>
+            </div>
+          ))}
         </div>
       </div>
 
+      {/* Time blocks first: planned vs logged is what coaching reviews */}
+      <div className="border-b border-lf-line px-4 py-2">
+        <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+          Time blocks · planned vs logged
+        </p>
+        <div className="mt-1 grid gap-x-6 gap-y-0.5 sm:grid-cols-2">
+          {dayKeys.map((d) => {
+            const planned = timeBlocks?.[d];
+            const logged = (todayStatuses[d] ?? "").startsWith("Saved") || (todayStatuses[d] ?? "").startsWith("Submitted");
+            if (!planned && !logged) return null;
+            return (
+              <p key={d} className="text-sm leading-6 text-lf-charcoal">
+                <strong className="capitalize text-lf-navy">{d.slice(0, 3)}:</strong>{" "}
+                {planned ?? <span className="text-lf-slate">no block planned</span>}{" "}
+                <span className={logged ? "font-semibold text-green-700" : "font-semibold text-lf-orange"}>
+                  {logged ? "· logged" : "· not logged"}
+                </span>
+              </p>
+            );
+          })}
+          {dayKeys.every((d) => !timeBlocks?.[d] && !(todayStatuses[d] ?? "").match(/^(Saved|Submitted)/)) && (
+            <p className="text-sm text-lf-slate">
+              Nothing yet — plan your block and log your day in{" "}
+              <Link href={todayHref} className="font-semibold text-lf-orange hover:underline">
+                Daily Theme
+              </Link>
+              .
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* Numbers: read-only, fed by Daily Theme */}
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[790px] border-collapse text-left text-sm">
-          <thead className="bg-lf-mist text-xs uppercase tracking-wide text-lf-slate">
+        <table className="w-full min-w-[700px] border-collapse text-left text-sm">
+          <thead className="bg-lf-mist text-[11px] uppercase tracking-wide text-lf-slate">
             <tr>
-              <th className="px-3 py-3">Metric</th>
-              <th className="px-3 py-3">Goal</th>
+              <th className="px-3 py-1.5">Metric</th>
+              <th className="px-2 py-1.5">Goal</th>
               {days.map((day) => (
-                <th key={day} className="px-3 py-3">
+                <th key={day} className="px-2 py-1.5 text-center">
                   {day}
                 </th>
               ))}
-              <th className="px-3 py-3">Total</th>
-              <th className="px-3 py-3">Pace</th>
+              <th className="px-2 py-1.5 text-right">Total</th>
+              <th className="px-2 py-1.5 text-right">Pace</th>
             </tr>
           </thead>
           <tbody>
             {totals.map((metric) => (
               <tr key={metric.metric} className="border-t border-lf-line">
-                <td className="px-3 py-3 font-semibold text-lf-navy">{metric.metric}</td>
-                <td className="px-3 py-3 text-lf-slate">{metric.goal}</td>
+                <td className="px-3 py-1.5 font-semibold text-lf-navy">{metric.metric}</td>
+                <td className="px-2 py-1.5 text-lf-slate">{metric.goal}</td>
                 {days.map((day, dayIndex) => (
-                  <td key={`${metric.metric}-${day}`} className="px-3 py-3">
-                    <input
-                      aria-label={`${metric.metric} ${day}`}
-                      type="number"
-                      min="0"
-                      value={values[metric.metric]?.[dayIndex] ?? 0}
-                      onChange={(event) => updateMetric(metric.metric, dayIndex, event.target.value)}
-                      className="h-10 w-14 rounded-lg border border-lf-line bg-white px-2 text-sm font-semibold text-lf-navy outline-none focus:border-lf-orange"
-                    />
+                  <td key={`${metric.metric}-${day}`} className="px-2 py-1.5 text-center text-lf-charcoal">
+                    {values[metric.metric]?.[dayIndex] || "·"}
                   </td>
                 ))}
-                <td className="px-3 py-3 font-bold text-lf-navy">{metric.total}</td>
-                <td className="px-3 py-3 text-xs font-bold uppercase tracking-wide text-lf-orange">
+                <td className="px-2 py-1.5 text-right font-bold text-lf-navy">{metric.total}</td>
+                <td
+                  className={`px-2 py-1.5 text-right text-xs font-bold ${
+                    metric.percent >= expectedPct ? "text-green-700" : "text-lf-orange"
+                  }`}
+                >
                   {metric.percent}%
                 </td>
               </tr>
@@ -284,79 +351,57 @@ export function WeeklyScorecardForm({
           </tbody>
         </table>
       </div>
+      <p className="border-t border-lf-line px-4 py-1.5 text-xs text-lf-slate">
+        Numbers come from Daily Theme.{" "}
+        <Link href={todayHref} className="font-semibold text-lf-orange hover:underline">
+          Enter today&apos;s numbers
+        </Link>
+      </p>
 
-      {Object.keys(timeBlocks ?? {}).length > 0 && (
-        <div className="border-t border-lf-line px-5 py-3">
-          <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
-            Time blocks this week (from Today)
-          </p>
-          <div className="mt-1 grid gap-1">
-            {["monday", "tuesday", "wednesday", "thursday", "friday", "weekend"]
-              .filter((d) => timeBlocks?.[d])
-              .map((d) => (
-                <p key={d} className="border-l-2 border-lf-line pl-3 text-sm text-lf-charcoal">
-                  <strong className="capitalize text-lf-navy">{d}:</strong> {timeBlocks?.[d]}
-                </p>
-              ))}
-          </div>
+      {/* Weekly Reflection — travels to coach review */}
+      <div className="border-t border-lf-line px-4 py-2.5">
+        <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
+          Weekly Reflection (goes to your coach)
+        </p>
+        <div className="mt-1.5 grid gap-2 sm:grid-cols-2">
+          {([
+            ["What worked this week?", worked, "worked"],
+            ["What did not work?", didntWork, "didntWork"],
+            ["Biggest obstacle?", stuck, "stuck"],
+            ["What will you improve next week?", focus, "focus"],
+          ] as const).map(([label, value, field]) => (
+            <label key={field} className="grid gap-1 text-xs font-semibold text-lf-navy">
+              {label}
+              <textarea
+                aria-label={label}
+                value={value}
+                rows={2}
+                onChange={(event) =>
+                  setScorecardState((current) => ({ ...current, [field]: event.target.value }))
+                }
+                className="rounded-lg border border-lf-line p-2 text-sm font-normal text-lf-charcoal outline-none focus:border-lf-orange"
+              />
+            </label>
+          ))}
         </div>
-      )}
-
-      <div className="grid gap-4 border-t border-lf-line p-5 lg:grid-cols-3">
-        <label className="grid gap-2 text-sm font-semibold text-lf-navy">
-          Biggest win
-          <textarea
-            aria-label="Biggest win"
-            value={worked}
-            onChange={(event) => setScorecardState((current) => ({ ...current, worked: event.target.value }))}
-            className="min-h-28 rounded-xl border border-lf-line p-3 text-sm font-normal text-lf-charcoal outline-none focus:border-lf-orange"
-          />
-        </label>
-        <label className="grid gap-2 text-sm font-semibold text-lf-navy">
-          Biggest stuck point
-          <textarea
-            aria-label="Biggest stuck point"
-            value={stuck}
-            onChange={(event) => setScorecardState((current) => ({ ...current, stuck: event.target.value }))}
-            className="min-h-28 rounded-xl border border-lf-line p-3 text-sm font-normal text-lf-charcoal outline-none focus:border-lf-orange"
-          />
-        </label>
-        <label className="grid gap-2 text-sm font-semibold text-lf-navy">
-          Next week commitment
-          <textarea
-            aria-label="Next week commitment"
-            value={focus}
-            onChange={(event) => setScorecardState((current) => ({ ...current, focus: event.target.value }))}
-            className="min-h-28 rounded-xl border border-lf-line p-3 text-sm font-normal text-lf-charcoal outline-none focus:border-lf-orange"
-          />
-        </label>
       </div>
 
-      <div className="grid gap-5 border-t border-lf-line p-5 lg:grid-cols-[minmax(0,1fr)_340px]">
-        <div>
-          <p className="text-sm font-semibold text-lf-navy">{programLabel} submission status</p>
-          <p className="mt-2 text-sm text-lf-slate">{status}</p>
-          <p className="mt-2 text-sm text-lf-slate">Coach review status: waiting for coach review after submission.</p>
+      <div className="flex flex-col gap-2 border-t border-lf-line px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0">
+          <p className="truncate text-sm text-lf-slate">{status}</p>
           {history.length > 0 && (
-            <div className="mt-4 border-l-2 border-lf-orange pl-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">Prior submissions</p>
-              <ul className="mt-2 grid gap-1 text-sm text-lf-slate">
-                {history.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
+            <p className="truncate text-xs text-lf-slate">Last: {history[0]}</p>
           )}
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex shrink-0 gap-2">
+          <button type="button" onClick={copySummary} className="btn-secondary">
+            {copyState}
+          </button>
           <button type="button" onClick={saveDraft} className="btn-secondary">
             Save draft
           </button>
           <button type="button" onClick={submitToCoach} className="btn-primary">
             Submit to coach
-          </button>
-          <button type="button" onClick={copySummary} className="btn-secondary">
-            {copyState}
           </button>
         </div>
       </div>

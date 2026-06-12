@@ -4,9 +4,6 @@ import {
   type ProgramKey,
 } from "@/data/coachingPlatform";
 import {
-  FOCUS_FIELD,
-  STUCK_FIELD,
-  WIN_FIELD,
   dailyCountFields,
 } from "@/data/todaySystem";
 
@@ -45,6 +42,7 @@ export type ScorecardStore = {
 };
 
 export type SubmissionRecord = {
+  didntWork?: string;
   weekOf: string;
   submittedAt: string;
   totals: Record<string, number>;
@@ -126,23 +124,6 @@ export function syncTodayToScorecard(
 
   const next: ScorecardStore = { ...store, values };
 
-  if (dayKey === "friday") {
-    const win = (entries[WIN_FIELD] ?? "").trim();
-    const stuck = (entries[STUCK_FIELD] ?? "").trim();
-    const focus = (entries[FOCUS_FIELD] ?? "").trim();
-    if (win) {
-      next.worked = win;
-      synced.push("worked");
-    }
-    if (stuck) {
-      next.stuck = stuck;
-      synced.push("stuck");
-    }
-    if (focus) {
-      next.focus = focus;
-      synced.push("focus");
-    }
-  }
 
   if (synced.length === 0) return [];
   try {
