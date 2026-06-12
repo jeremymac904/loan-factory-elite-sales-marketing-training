@@ -377,15 +377,8 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  if (!isLoanFactoryEmail(email)) {
-    await supabase.auth.signOut();
-    return pending(request, "domain", responseMode, 403, cookiesToSet, {
-      syncProfileReceivedSession: receivedSession,
-      profileEmail: email,
-      lastErrorMessage: "Signed-in email is not a Loan Factory email.",
-    });
-  }
-
+  // No domain short-circuit here: external coaching members sign in on
+  // personal emails. The gate below runs after the approved_users lookup.
   const admin = createSupabaseAdminClient();
 
   if (!admin) {
