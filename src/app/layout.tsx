@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CanonicalHostGuard from "@/components/CanonicalHostGuard";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ConditionalFooter from "@/components/ConditionalFooter";
 import BetaPreviewBanner from "@/components/BetaPreviewBanner";
 import ViewAsBanner from "@/components/ViewAsBanner";
 import "./globals.css";
@@ -39,7 +40,9 @@ export default function RootLayout({
         <ViewAsBanner />
         <BetaPreviewBanner />
         <main>{children}</main>
-        <SiteFooter />
+        <ConditionalFooter>
+          <SiteFooter />
+        </ConditionalFooter>
       </body>
     </html>
   );

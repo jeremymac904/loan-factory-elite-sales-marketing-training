@@ -1,3 +1,5 @@
+import generatedVideos from "./dailyVideos.generated.json";
+
 export type TodayDay = {
   key: string;
   day: string;
@@ -77,3 +79,41 @@ export function currentDayKey(date: Date = new Date()) {
   const index = date.getDay();
   return ["weekend", "monday", "tuesday", "wednesday", "thursday", "friday", "weekend"][index];
 }
+
+
+export type DailyVideo = {
+  program: string;
+  day: string;
+  title: string;
+  heygenVideoId: string;
+  embedUrl: string;
+  playbackUrl: string;
+  fallbackDownloadUrl: string | null;
+  thumbnailUrl: string | null;
+  durationSeconds: number | null;
+  status: string;
+};
+
+/**
+ * Daily HeyGen coaching videos, generated from the HeyGen API by
+ * scripts/sync-heygen-videos.mjs — do not hand-edit the JSON. Strictly
+ * separated by program; keys are todayDays day keys.
+ */
+export function getDailyVideo(
+  program: "mastery" | "alliance",
+  day: string,
+): DailyVideo | undefined {
+  return (generatedVideos.videos as DailyVideo[]).find(
+    (video) => video.program === program && video.day === day,
+  );
+}
+
+/** Time block planner heading per day. */
+export const timeBlockLabels: Record<string, string> = {
+  monday: "Power Block",
+  tuesday: "Pipeline Review",
+  wednesday: "Realtor Growth",
+  thursday: "Follow Up and Conversion",
+  friday: "Scorecard Review",
+  weekend: "Plan and Reset",
+};

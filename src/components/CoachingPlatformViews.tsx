@@ -39,6 +39,7 @@ import CommunityFeed from "./CommunityFeed";
 import ClassroomClient from "./ClassroomClient";
 import TodayWorkspace from "./TodayWorkspace";
 import CalendarMonth from "./CalendarMonth";
+import WeeklyCurriculumVideos from "./WeeklyCurriculumVideos";
 import ProfileWorkspace from "./ProfileWorkspace";
 import ResourceTabs from "./ResourceTabs";
 
@@ -203,7 +204,7 @@ function MemberSidebar({ program, active }: { program: ProgramKey; active: strin
       </nav>
 
       {/* Desktop: fixed full-height app sidebar; only main content scrolls */}
-      <aside className="hidden border-r border-lf-line bg-white lg:sticky lg:top-20 lg:flex lg:h-[calc(100vh-5rem)] lg:flex-col lg:overflow-y-auto">
+      <aside className="hidden border-r border-lf-line bg-white lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100vh-5rem)] lg:flex-col lg:self-stretch lg:overflow-y-auto">
         <div className="border-b border-lf-line p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-lf-orange">
             {programName(program)}
@@ -264,10 +265,10 @@ function MemberLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full bg-lf-mist">
+    <div className="w-full flex-1 bg-lf-mist">
       <div className="grid w-full grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)]">
         <MemberSidebar program={program} active={active} />
-        <div className="min-h-[calc(100vh-5rem)] min-w-0 p-4 md:p-6 xl:p-8">{children}</div>
+        <div className="min-w-0 p-4 md:p-6 xl:p-8">{children}</div>
       </div>
     </div>
   );
@@ -372,6 +373,7 @@ export function ResourcesLibrary({ program }: { program: ProgramKey }) {
         calendar={<CalendarMonth program={program} />}
         training={
           <>
+            <WeeklyCurriculumVideos program={program} />
             <ClassroomClient
               weeks={programWeeks(program)}
               program={program}
