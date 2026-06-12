@@ -77,7 +77,9 @@ done
 1. Local lip-sync fails → HeyGen.
 2. HeyGen fails / out of credits → waveform fallback (publishes on time, looks branded).
 3. Transcription fails → `--placeholder` keeps the waveform path alive; avatar paths
-   wait for a real transcript (turn boundaries would be wrong).
+   are HARD-BLOCKED on placeholder/empty/heuristic-only transcripts (guard in both
+   renderers), and HeyGen generate additionally requires confirming a dry-run cost
+   summary — cron can never silently spend credits.
 4. Every script exits non-zero with exact fix instructions — safe to wire into cron
    with simple alerting on exit code.
 

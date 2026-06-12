@@ -17,6 +17,16 @@
  *   node scripts/podcast/render-avatar-video-heygen.mjs generate <slug>   # extract audio, upload, generate clips
  *   node scripts/podcast/render-avatar-video-heygen.mjs status <slug>     # poll pending videos, download done ones
  *
+ * generate options:
+ *   --test                       watermarked preview, consumes no credits
+ *   --dry-run                    print the cost/clip summary and exit (no key needed)
+ *   --yes                        skip the interactive confirmation (for scripted runs)
+ *   --allow-heuristic-speakers   override the speaker-label guard after manual review
+ *
+ * SAFETY: generation is blocked when the transcript is a placeholder, empty, or
+ * labeled only by the alternation heuristic, and NOTHING is uploaded or submitted
+ * until the dry-run summary is explicitly confirmed.
+ *
  * Requires: HEYGEN_API_KEY in the environment or repo-root .env/.env.local.
  * No key on this machine? The same calls are available through the Zapier MCP
  * HeyGen actions (heygen_upload_an_asset / heygen_create_an_avatar_video_*).
@@ -24,9 +34,11 @@
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { createInterface } from "node:readline/promises";
 import {
   REPO_ROOT, PATHS, loadManifest, updateManifest, loadJSON, saveJSON, fail,
   relPath, loadEnv, loadAvatars, requireFfmpeg, runFfmpeg,
+  assertTranscriptReadyForAvatars,
 } from "./lib.mjs";
 
 const API = "https://api.heygen.com";
@@ -115,17 +127,68 @@ const jobsPath = join(PATHS.processed, manifest.id, "heygen_jobs.json");
 // ── generate ────────────────────────────────────────────────────
 
 if (command === "generate") {
-  requireKey();
-  requireFfmpeg();
-  const { byId } = loadAvatars();
+  // ── HARD GUARD: never render avatars from an untrustworthy transcript ──
+  const transcriptAbs = manifest.transcriptPath ? join(REPO_ROOT, manifest.transcriptPath) : null;
+  const transcript = transcriptAbs && existsSync(transcriptAbs) ? loadJSON(transcriptAbs) : null;
+  assertTranscriptReadyForAvatars(manifest, transcript, {
+    allowHeuristic: process.argv.includes("--allow-heuristic-speakers"),
+  });
 
-  const missing = [...new Set(plan.turns.map((t) => t.avatarId))].filter((id) => !byId[id]?.heygenAvatarId);
+  const { byId } = loadAvatars();
+  const usedAvatarIds = [...new Set(plan.turns.map((t) => t.avatarId))];
+  const missing = usedAvatarIds.filter((id) => !byId[id]?.heygenAvatarId);
   if (missing.length) {
     fail(`These avatars have no heygenAvatarId yet: ${missing.join(", ")}`, [
       "Run `node scripts/podcast/render-avatar-video-heygen.mjs check` to list account avatars,",
       "then fill heygenAvatarId in podcast/avatar_sources/avatars.json.",
     ]);
   }
+
+  // ── DRY-RUN SUMMARY (always shown before anything is uploaded) ──
+  const totalTurnSeconds = plan.turns.reduce((s, t) => s + t.durationSeconds, 0);
+  const estMinutes = Math.ceil((totalTurnSeconds / 60) * 10) / 10;
+  const fmt = (s) => `${Math.floor(s / 60)}m${String(Math.round(s % 60)).padStart(2, "0")}s`;
+  console.log("\n══ HeyGen dry-run summary ═══════════════════════════════");
+  console.log(`  episode title:      ${manifest.title}`);
+  console.log(`  episode duration:   ${fmt(manifest.durationSeconds ?? totalTurnSeconds)}`);
+  console.log(`  speaker count:      ${plan.speakerCount}`);
+  console.log(`  clip count:         ${plan.turns.length} (one HeyGen video per speaker turn)`);
+  console.log(`  est. HeyGen minutes: ~${estMinutes} avatar-minutes (${fmt(totalTurnSeconds)} of clips)`);
+  console.log(`  avatar IDs:`);
+  for (const id of usedAvatarIds) {
+    console.log(`    ${byId[id].name} (${id}) → ${byId[id].heygenAvatarId}`);
+  }
+  console.log(`  test mode:          ${isTest ? "ON — watermarked preview, consumes NO credits" : "OFF — this WILL consume HeyGen credits"}`);
+  console.log(`  transcript:         ${transcript.method} / ${transcript.speakerDetection}`);
+  console.log("══════════════════════════════════════════════════════════\n");
+
+  if (process.argv.includes("--dry-run")) {
+    console.log("Dry run only — nothing uploaded, nothing submitted, no credits spent.");
+    process.exit(0);
+  }
+
+  // ── EXPLICIT CONFIRMATION before any upload/credit spend ──
+  if (!process.argv.includes("--yes")) {
+    if (!process.stdin.isTTY) {
+      fail("Confirmation required before contacting HeyGen", [
+        "Non-interactive shell detected. Review the summary above, then re-run with:",
+        `  node scripts/podcast/render-avatar-video-heygen.mjs generate ${manifest.id}${isTest ? " --test" : ""} --yes`,
+        "No upload or generation call was made; no credits were spent.",
+      ]);
+    }
+    const rl = createInterface({ input: process.stdin, output: process.stdout });
+    const answer = (await rl.question(
+      `Type RENDER to submit ${plan.turns.length} jobs${isTest ? " (test mode)" : " and spend credits"}, anything else to abort: `,
+    )).trim();
+    rl.close();
+    if (answer !== "RENDER") {
+      console.log("Aborted. Nothing was uploaded or submitted; no credits were spent.");
+      process.exit(0);
+    }
+  }
+
+  requireKey();
+  requireFfmpeg();
 
   // 1. extract per-turn audio
   const audio = join(REPO_ROOT, manifest.filePath);

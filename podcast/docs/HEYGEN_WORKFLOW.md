@@ -56,15 +56,34 @@ come back as a single concatenated MP4.
 node scripts/podcast/render-avatar-video-heygen.mjs check
 #    → paste IDs into podcast/avatar_sources/avatars.json (heygenAvatarId / heygenVoiceId)
 
-# 2. submit jobs (use --test for a watermarked dry run)
+# 2. dry run — prints the cost summary, contacts nothing, needs no key
+node scripts/podcast/render-avatar-video-heygen.mjs generate <slug> --dry-run
+
+# 3. submit jobs (use --test for a watermarked render that consumes no credits)
 node scripts/podcast/render-avatar-video-heygen.mjs generate <slug> --test
 
-# 3. poll + download clips (repeat until all downloaded)
+# 4. poll + download clips (repeat until all downloaded)
 node scripts/podcast/render-avatar-video-heygen.mjs status <slug>
 
-# 4. assemble the podcast layout locally
+# 5. assemble the podcast layout locally
 node scripts/podcast/assemble-roundtable-video.mjs <slug>
 ```
+
+## Safety gates (built into `generate`)
+
+Nothing is uploaded and no credits are spent until BOTH gates pass:
+
+1. **Transcript guard** — generation is hard-blocked when the transcript is a
+   placeholder, empty, or speaker-labeled only by the pause-gap alternation
+   heuristic. Trusted sources: a real Whisper run is required at minimum; exact
+   speaker labels (Open Notebook script / pyannote) pass cleanly. After manually
+   reviewing a heuristic transcript you can override with
+   `--allow-heuristic-speakers`. The same guard protects the local lip-sync path.
+2. **Dry-run summary + explicit confirmation** — every generate prints episode
+   title, duration, speaker count, clip count, estimated avatar-minutes, the
+   exact avatar IDs, and test-mode status, then requires typing `RENDER` at the
+   prompt (or `--yes` in scripts). Non-interactive shells abort with instructions
+   instead of submitting. `--dry-run` prints the summary and exits.
 
 Job state lives in `podcast/processed/<slug>/heygen_jobs.json`, so polling is resumable.
 

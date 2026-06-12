@@ -25,7 +25,7 @@ import { spawnSync } from "node:child_process";
 import { homedir } from "node:os";
 import {
   REPO_ROOT, PATHS, loadManifest, loadJSON, fail, relPath, loadEnv,
-  requireFfmpeg, runFfmpeg, updateManifest,
+  requireFfmpeg, runFfmpeg, updateManifest, assertTranscriptReadyForAvatars,
 } from "./lib.mjs";
 
 const env = loadEnv();
@@ -136,6 +136,16 @@ if (!manifest.videoPlanPath) {
   fail(`No video plan for "${manifest.id}"`, [`Run: node scripts/podcast/create-video-plan.mjs ${manifest.id}`]);
 }
 const plan = loadJSON(join(REPO_ROOT, manifest.videoPlanPath));
+
+// Hard guard: same rule as the HeyGen path — no avatar rendering from a
+// placeholder/empty/heuristic-only transcript (--allow-heuristic-speakers overrides).
+const transcriptAbs = manifest.transcriptPath ? join(REPO_ROOT, manifest.transcriptPath) : null;
+assertTranscriptReadyForAvatars(
+  manifest,
+  transcriptAbs && existsSync(transcriptAbs) ? loadJSON(transcriptAbs) : null,
+  { allowHeuristic: args.includes("--allow-heuristic-speakers") },
+);
+
 const tools = await detectTools();
 const tool = tools.find((t) => t.available && ["blackframe", "sadtalker", "wav2lip", "musetalk"].includes(t.id));
 if (!tool) {

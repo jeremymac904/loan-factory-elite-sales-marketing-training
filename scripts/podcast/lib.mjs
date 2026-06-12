@@ -209,6 +209,59 @@ export function assignAvatars(speakerCount, manifestAssigned, avatarsConfig) {
 
 export const SPEAKER_LABELS = ["Speaker A", "Speaker B", "Speaker C", "Speaker D"];
 
+/**
+ * Hard guard before any avatar rendering (HeyGen or local lip-sync).
+ * Blocks when the transcript is a placeholder, empty, or its speaker labels
+ * come only from the pause-gap alternation heuristic — those turn boundaries
+ * and speaker assignments are not trustworthy enough to spend render time or
+ * HeyGen credits on. Trusted sources: Open Notebook speaker scripts and real
+ * diarization (pyannote). Single-speaker episodes are exempt (nothing to
+ * alternate). `allowHeuristic` (--allow-heuristic-speakers) overrides the
+ * heuristic case only — never placeholder/empty.
+ */
+export function assertTranscriptReadyForAvatars(manifest, transcript, { allowHeuristic = false } = {}) {
+  const block = (reason, extra = []) =>
+    fail(`Avatar rendering blocked: ${reason}`, [
+      ...extra,
+      "",
+      "Get a trustworthy transcript first:",
+      `  real Whisper run:      node scripts/podcast/transcribe-podcast.mjs ${manifest.id}`,
+      "  better speaker labels: use the Open Notebook speaker script",
+      "                         (podcast/docs/OPEN_NOTEBOOK_WORKFLOW.md → method \"open-notebook-script\")",
+      "                         or pyannote diarization (podcast/docs/README.md)",
+      "Avatar-free alternative that always works:",
+      `  node scripts/podcast/render-waveform-fallback.mjs ${manifest.id}`,
+    ]);
+
+  if (!transcript) block("no transcript found for this episode");
+
+  const method = transcript.method ?? "";
+  if (method.startsWith("placeholder")) {
+    block("the transcript is a PLACEHOLDER (no real transcription was run)", [
+      "Placeholder turn boundaries are invented 30-second blocks — avatar clips",
+      "would cut speech mid-sentence and assign the wrong coach to the audio.",
+    ]);
+  }
+
+  const turns = transcript.turns ?? [];
+  const hasRealText = turns.some((t) => t.text && !/^\[placeholder/i.test(t.text.trim()));
+  if (turns.length === 0 || !hasRealText) {
+    block("the transcript is empty (no usable speaker turns)");
+  }
+
+  const speakerCount = transcript.speakerCount ?? manifest.speakerCount ?? 2;
+  const heuristicOnly = /alternation-heuristic/i.test(transcript.speakerDetection ?? "");
+  if (speakerCount > 1 && heuristicOnly && !allowHeuristic) {
+    block("speaker labels come only from the pause-gap ALTERNATION HEURISTIC", [
+      "With 2+ speakers the heuristic can swap who is \"talking\" mid-episode,",
+      "which looks broken in split-screen and wastes HeyGen credits.",
+      "",
+      "If you have reviewed the transcript and the speaker labels look right,",
+      "override with:  --allow-heuristic-speakers",
+    ]);
+  }
+}
+
 export function layoutForSpeakerCount(n) {
   if (n <= 1) return "single";
   if (n === 2) return "split_2";

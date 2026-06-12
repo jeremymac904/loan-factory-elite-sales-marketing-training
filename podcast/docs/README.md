@@ -51,10 +51,16 @@ node scripts/podcast/render-waveform-fallback.mjs my_episode
 
 # 3b. avatar render via HeyGen (needs HEYGEN_API_KEY + avatar IDs filled in):
 node scripts/podcast/render-avatar-video-heygen.mjs check
-node scripts/podcast/render-avatar-video-heygen.mjs generate my_episode
+node scripts/podcast/render-avatar-video-heygen.mjs generate my_episode --dry-run   # cost summary only
+node scripts/podcast/render-avatar-video-heygen.mjs generate my_episode --test      # asks for confirmation
 node scripts/podcast/render-avatar-video-heygen.mjs status my_episode   # repeat until downloaded
 node scripts/podcast/assemble-roundtable-video.mjs my_episode
 ```
+
+Avatar rendering is hard-blocked on placeholder/empty/heuristic-only transcripts,
+and HeyGen `generate` never uploads or spends credits until you confirm a dry-run
+summary (title, duration, clip count, estimated avatar-minutes, avatar IDs, test
+mode). Details: `HEYGEN_WORKFLOW.md` → "Safety gates".
 
 Every script fails loudly with exact instructions when a tool or key is missing.
 
