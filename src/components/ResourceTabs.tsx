@@ -7,6 +7,7 @@ const TABS = [
   { key: "tools", label: "Tools" },
   { key: "training", label: "Training" },
   { key: "calendar", label: "Calendar" },
+  { key: "course", label: "Course Overview" },
 ] as const;
 
 type TabKey = (typeof TABS)[number]["key"];
@@ -21,17 +22,19 @@ export default function ResourceTabs({
   tools,
   training,
   calendar,
+  course,
 }: {
   scripts: ReactNode;
   tools: ReactNode;
   training: ReactNode;
   calendar: ReactNode;
+  course: ReactNode;
 }) {
   const [active, setActive] = useState<TabKey>("scripts");
 
   useEffect(() => {
     const tab = new URLSearchParams(window.location.search).get("tab");
-    if (tab === "tools" || tab === "training" || tab === "scripts" || tab === "calendar") {
+    if (tab === "tools" || tab === "training" || tab === "scripts" || tab === "calendar" || tab === "course") {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- read the deep-link tab once after hydration.
       setActive(tab);
     }
@@ -65,6 +68,7 @@ export default function ResourceTabs({
       <div className={active === "tools" ? "grid gap-6" : "hidden"}>{tools}</div>
       <div className={active === "training" ? "grid gap-6" : "hidden"}>{training}</div>
       <div className={active === "calendar" ? "grid gap-6" : "hidden"}>{calendar}</div>
+      <div className={active === "course" ? "grid gap-6" : "hidden"}>{course}</div>
     </div>
   );
 }

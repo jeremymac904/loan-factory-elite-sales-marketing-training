@@ -39,7 +39,7 @@ import CommunityFeed from "./CommunityFeed";
 import ClassroomClient from "./ClassroomClient";
 import TodayWorkspace from "./TodayWorkspace";
 import CalendarMonth from "./CalendarMonth";
-import WeeklyCurriculumVideos from "./WeeklyCurriculumVideos";
+import CourseOverview from "./CourseOverview";
 import ProfileWorkspace from "./ProfileWorkspace";
 import ResourceTabs from "./ResourceTabs";
 
@@ -371,9 +371,9 @@ export function ResourcesLibrary({ program }: { program: ProgramKey }) {
           </>
         }
         calendar={<CalendarMonth program={program} />}
+        course={<CourseOverview program={program} />}
         training={
           <>
-            <WeeklyCurriculumVideos program={program} />
             <ClassroomClient
               weeks={programWeeks(program)}
               program={program}
