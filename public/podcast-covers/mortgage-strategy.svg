@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#101820"/>
+  <rect x="0" y="0" width="400" height="8" fill="#F26A1F"/>
+  <circle cx="320" cy="86" r="120" fill="#F26A1F" opacity="0.12"/>
+  <circle cx="320" cy="86" r="74" fill="#F26A1F" opacity="0.18"/>
+  <g transform="translate(36,52)">
+    <rect x="0" y="22" width="9" height="22" rx="4.5" fill="#F26A1F"/>
+    <rect x="16" y="10" width="9" height="46" rx="4.5" fill="#F26A1F"/>
+    <rect x="32" y="0" width="9" height="66" rx="4.5" fill="#FFFFFF"/>
+    <rect x="48" y="14" width="9" height="38" rx="4.5" fill="#F26A1F"/>
+    <rect x="64" y="24" width="9" height="18" rx="4.5" fill="#F26A1F"/>
+  </g>
+  <text x="36" y="240" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#FFFFFF">Mortgage</text>
+  <text x="36" y="290" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#F26A1F">Strategy</text>
+  <text x="36" y="346" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#9AA4AE">LOAN FACTORY COACHING</text>
+  <text x="36" y="370" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#5C666F">PODCAST</text>
+</svg>

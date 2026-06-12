@@ -1,0 +1,2756 @@
+1
+00:00:00,000 --> 00:00:02,960
+<|startoftranscript|><|0.00|> You know, usually when we talk about like a medical diagnosis,<|2.96|>
+
+2
+00:00:02,960 --> 00:00:05,920
+<|2.96|> there is this fundamental expectation of precision.<|5.92|>
+
+3
+00:00:05,920 --> 00:00:06,279
+<|5.92|> Right.<|6.28|>
+
+4
+00:00:06,279 --> 00:00:07,960
+<|6.28|> It's basically like engineering.<|7.96|>
+
+5
+00:00:07,960 --> 00:00:10,960
+<|7.96|> You fall off a ladder, you break your arm, you go to the hospital.<|10.96|>
+
+6
+00:00:11,920 --> 00:00:14,039
+<|11.92|> And the doctor puts you in front of the X-ray machine.<|14.04|>
+
+7
+00:00:14,039 --> 00:00:17,760
+<|14.04|> The film comes up and you just see that jagged, glowing,<|17.76|>
+
+8
+00:00:17,760 --> 00:00:19,920
+<|17.76|> white line right across the bone.<|19.92|>
+
+9
+00:00:20,000 --> 00:00:20,279
+<|20.00|> Yeah.<|20.28|>
+
+10
+00:00:20,359 --> 00:00:21,840
+<|20.36|> And the doctor's points at it and says,<|21.84|>
+
+11
+00:00:22,100 --> 00:00:27,700
+<|startoftranscript|><|0.00|> You know, there it is. That's the problem. Exactly. It's clean and frankly it's really comforting.<|5.60|>
+
+12
+00:00:28,060 --> 00:00:34,900
+<|5.96|> We like things to be visible like that. We like our problems to be perfectly categorized, so we know exactly what the treatment plan is.<|12.80|>
+
+13
+00:00:34,900 --> 00:00:38,700
+<|12.80|> But then you step into the world of mortgage origination and<|16.60|>
+
+14
+00:00:38,700 --> 00:00:40,700
+<|startoftranscript|><|0.00|> And, uh...<|2.00|><|endoftext|>
+
+15
+00:00:39,900 --> 00:00:47,720
+<|startoftranscript|><|0.00|> pipeline management and suddenly that extra machine is completely broken. Oh totally shattered. We are looking at a daily professional landscape<|7.82|>
+
+16
+00:00:47,720 --> 00:00:54,620
+<|7.82|> Yeah, that is well honestly, it's completely murky. It is the absolute definition of diagnostic muddy waters<|14.72|>
+
+17
+00:00:54,620 --> 00:01:01,580
+<|14.72|> I mean think about it. You are sitting at your desk and you are juggling five new pre-approvals three active applications<|21.68|>
+
+18
+00:01:01,400 --> 00:01:20,300
+<|startoftranscript|><|nocaptions|><|endoftext|>
+
+19
+00:01:20,300 --> 00:01:22,460
+<|startoftranscript|><|0.00|> is exactly why we are here today.<|2.16|>
+
+20
+00:01:22,460 --> 00:01:23,740
+<|2.16|> Welcome to this deep dive.<|3.44|>
+
+21
+00:01:23,740 --> 00:01:24,580
+<|3.44|> - Yes, welcome.<|4.28|>
+
+22
+00:01:24,580 --> 00:01:27,460
+<|4.28|> - Today we are bringing an incredible stack of sources<|7.16|>
+
+23
+00:01:27,460 --> 00:01:28,460
+<|7.16|> to the table.<|8.16|>
+
+24
+00:01:28,460 --> 00:01:31,940
+<|8.16|> We are going to be dissecting the entire 501 module<|11.64|>
+
+25
+00:01:31,940 --> 00:01:34,500
+<|11.64|> of the Elite Sales and Marketing Training series.<|14.20|>
+
+26
+00:01:34,500 --> 00:01:35,940
+<|14.20|> - Which is just a gold mine.<|15.64|>
+
+27
+00:01:35,940 --> 00:01:36,700
+<|15.64|> - It really is.<|16.40|>
+
+28
+00:01:36,700 --> 00:01:37,540
+<|16.40|> - Yeah.<|17.24|>
+
+29
+00:01:37,540 --> 00:01:39,220
+<|17.24|> - But we aren't just looking at the manual.<|18.92|>
+
+30
+00:01:39,220 --> 00:01:41,500
+<|18.92|> We have integrated Dale's internal,<|21.20|>
+
+31
+00:01:41,500 --> 00:01:43,260
+<|21.20|> highly guarded coaching notes.<|22.96|>
+
+32
+00:01:43,099 --> 00:01:47,099
+<|startoftranscript|><|0.00|> along with raw, unfiltered industry conversion data.<|4.00|>
+
+33
+00:01:47,099 --> 00:01:48,099
+<|4.00|> Wow.<|5.00|>
+
+34
+00:01:48,099 --> 00:01:50,220
+<|5.00|> Yeah, data that shows exactly where most<|7.12|>
+
+35
+00:01:50,220 --> 00:01:51,699
+<|7.12|> originators lose their deals.<|8.60|>
+
+36
+00:01:51,699 --> 00:01:54,979
+<|8.60|> And this deep dive is specifically engineered for you,<|11.88|>
+
+37
+00:01:54,979 --> 00:01:56,779
+<|11.88|> the loan officer listening to us right now.<|13.68|>
+
+38
+00:01:56,779 --> 00:01:58,899
+<|13.68|> You are past the rookie stage.<|15.80|>
+
+39
+00:01:58,899 --> 00:02:00,580
+<|15.80|> You know how to structure a file.<|17.48|>
+
+40
+00:02:00,580 --> 00:02:03,180
+<|17.48|> You have multiple files in flight at any given moment.<|20.08|>
+
+41
+00:02:03,180 --> 00:02:04,180
+<|20.08|> Right.<|21.08|>
+
+42
+00:02:04,180 --> 00:02:07,220
+<|21.08|> But you are actively looking for a sane, sustainable way<|24.12|>
+
+43
+00:02:07,220 --> 00:02:09,899
+<|24.12|> to manage this incredibly complex business.<|26.80|>
+
+44
+00:02:09,899 --> 00:02:17,099
+<|startoftranscript|><|0.00|> without dropping balls, missing crucial deadlines, or you know, completely burning yourself out by Friday afternoon.<|7.20|>
+
+45
+00:02:17,099 --> 00:02:24,699
+<|7.20|> That is the mission today. Yeah. We are going to take you from a scattered, highly reactive routine where you feel like you are just<|14.80|>
+
+46
+00:02:25,099 --> 00:02:27,579
+<|15.20|> running around with a fire extinguisher all day. Such a<|17.68|>
+
+47
+00:02:27,699 --> 00:02:28,699
+<|startoftranscript|><|0.00|> It is.<|1.00|>
+
+48
+00:02:28,699 --> 00:02:35,459
+<|1.00|> And we are going to transition you into a highly structured, proactive, weekly operating system.<|7.76|>
+
+49
+00:02:35,459 --> 00:02:39,099
+<|7.76|> Because look, mastering this business isn't about working more hours.<|11.40|>
+
+50
+00:02:39,099 --> 00:02:40,860
+<|11.40|> We just have to kill that myth right now.<|13.16|>
+
+51
+00:02:40,860 --> 00:02:42,059
+<|13.16|> Let's absolutely kill it.<|14.36|>
+
+52
+00:02:42,059 --> 00:02:46,860
+<|14.36|> Because the default assumption in this industry is that if your pipeline is chaotic, you<|19.16|>
+
+53
+00:02:46,860 --> 00:02:48,179
+<|19.16|> just need to grind harder.<|20.48|>
+
+54
+00:02:48,179 --> 00:02:49,539
+<|20.48|> You know, you need to work through the weekend.<|21.84|>
+
+55
+00:02:49,539 --> 00:02:52,019
+<|21.84|> Which is a mathematical impossibility in the long term.<|24.32|>
+
+56
+00:02:52,019 --> 00:02:53,019
+<|24.32|> You will burn out.<|25.32|>
+
+57
+00:02:53,019 --> 00:02:55,019
+<|startoftranscript|><|0.00|> your pipeline is about building a rhythm.<|2.00|><|endoftext|>
+
+58
+00:02:54,899 --> 00:02:58,819
+<|startoftranscript|><|0.00|> a professional unshakable rhythm that eventually does the heavy lifting for you.<|3.92|>
+
+59
+00:02:58,819 --> 00:03:03,059
+<|3.92|> Yeah. We're talking about running the engine like a pro rather than letting the engine run you over.<|8.16|>
+
+60
+00:03:03,059 --> 00:03:06,979
+<|8.16|> So let's start by addressing the foundation of this entire concept.<|12.08|>
+
+61
+00:03:06,979 --> 00:03:11,379
+<|12.08|> We need to redefine what a pipeline actually is here at Lone Factory.<|16.48|>
+
+62
+00:03:11,379 --> 00:03:15,859
+<|16.48|> Because I think a lot of alone officers look at their pipeline and honestly they just see a list.<|20.96|>
+
+63
+00:03:15,859 --> 00:03:16,500
+<|20.96|> Yes.<|21.60|>
+
+64
+00:03:16,600 --> 00:03:17,600
+<|startoftranscript|><|0.00|> Just a static list.<|1.00|>
+
+65
+00:03:17,600 --> 00:03:18,600
+<|1.00|> All right.<|2.00|>
+
+66
+00:03:18,600 --> 00:03:21,000
+<|2.00|> It's a spreadsheet on their second monitor.<|4.40|>
+
+67
+00:03:21,000 --> 00:03:26,080
+<|4.40|> It's a digital dusty, real edex of names they talk to once at an open house or like a<|9.48|>
+
+68
+00:03:26,080 --> 00:03:29,680
+<|9.48|> lead that clicked a button online three weeks ago.<|13.08|>
+
+69
+00:03:29,680 --> 00:03:33,639
+<|13.08|> And defining your pipeline as a static list is incredibly dangerous.<|17.04|>
+
+70
+00:03:33,699 --> 00:03:40,199
+<|startoftranscript|><|0.00|> The moment you view your pipeline as a spreadsheet, you psychologically become a passive observer in your own business.<|6.50|>
+
+71
+00:03:40,199 --> 00:03:44,699
+<|6.50|> A passive observer. Walk me through the psychology of that. What does that actually look like in practice?<|11.00|>
+
+72
+00:03:44,699 --> 00:03:49,699
+<|11.00|> Well, it looks like waiting. When you have a static list, your internal monologue becomes really passive.<|16.00|>
+
+73
+00:03:49,699 --> 00:03:52,699
+<|16.00|> You look at your screen and you think, "Oh, I hope John calls me back today."<|19.00|>
+
+74
+00:03:52,699 --> 00:03:53,699
+<|19.00|> Oh, wow. Yeah.<|20.00|>
+
+75
+00:03:53,699 --> 00:03:56,699
+<|20.00|> Or, "I wonder if Sarah and Mark found a house this weekend."<|23.00|>
+
+76
+00:03:57,100 --> 00:04:03,100
+<|startoftranscript|><|0.00|> You are waiting for the market or the borrower or the realtor to dictate your next action.<|6.00|>
+
+77
+00:04:03,100 --> 00:04:04,100
+<|6.00|> Just react.<|7.00|>
+
+78
+00:04:04,100 --> 00:04:05,100
+<|7.00|> Exactly.<|8.00|>
+
+79
+00:04:05,100 --> 00:04:08,100
+<|8.00|> You are entirely at the mercy external momentum.<|11.00|>
+
+80
+00:04:08,100 --> 00:04:13,900
+<|11.00|> A real pipeline, the way top producers at loan factory run it, is not a list.<|16.80|>
+
+81
+00:04:13,900 --> 00:04:16,100
+<|16.80|> It is a living, breathing ecosystem.<|19.00|>
+
+82
+00:04:16,100 --> 00:04:17,100
+<|19.00|> A living ecosystem.<|20.00|>
+
+83
+00:04:17,100 --> 00:04:18,100
+<|20.00|> Yes.<|21.00|>
+
+84
+00:04:17,899 --> 00:04:23,619
+<|startoftranscript|><|0.00|> It consists of active conversations, submitted applications in process vials, and scheduled<|5.72|>
+
+85
+00:04:23,619 --> 00:04:24,619
+<|5.72|> closings.<|6.72|>
+
+86
+00:04:24,619 --> 00:04:25,619
+<|6.72|> It has a pulse.<|7.72|>
+
+87
+00:04:25,619 --> 00:04:27,100
+<|7.72|> Okay, I love that.<|9.20|>
+
+88
+00:04:27,100 --> 00:04:31,660
+<|9.20|> When you shift your mindset to view it as a living system, you, the loan officer, take on<|13.76|>
+
+89
+00:04:31,660 --> 00:04:34,220
+<|13.76|> the role of actively managing the momentum.<|16.32|>
+
+90
+00:04:34,299 --> 00:04:39,179
+<|startoftranscript|><|0.00|> You are no longer waiting. You are injecting energy into the system and more importantly<|4.88|>
+
+91
+00:04:39,179 --> 00:04:42,619
+<|4.88|> You are managing the borrowers experience of uncertainty. Okay<|8.32|>
+
+92
+00:04:42,619 --> 00:04:45,079
+<|8.32|> I want to stick with this for a second because that makes a lot of sense<|10.78|>
+
+93
+00:04:45,079 --> 00:04:50,659
+<|10.78|> It's the difference between a dusty roll of decks and let's say an air traffic control screen<|16.36|>
+
+94
+00:04:50,600 --> 00:04:51,600
+<|startoftranscript|><|0.00|> Right.<|1.00|>
+
+95
+00:04:51,600 --> 00:04:52,600
+<|1.00|> That's a great way to put it.<|2.00|>
+
+96
+00:04:52,600 --> 00:04:56,160
+<|2.00|> Because on a roll of decks, a name is just a piece of ink on paper.<|5.56|>
+
+97
+00:04:56,160 --> 00:05:01,360
+<|5.56|> But if you walk into an air traffic control tower, every single green dot on that radar screen<|10.76|>
+
+98
+00:05:01,360 --> 00:05:05,399
+<|10.76|> represents a multi-million dollar plane with hundreds of passengers in the air.<|14.80|>
+
+99
+00:05:05,399 --> 00:05:06,399
+<|14.80|> Exactly.<|15.80|>
+
+100
+00:05:06,399 --> 00:05:08,739
+<|15.80|> And the controller doesn't just look at the screen and say, "Gee, I hope that plane<|18.14|>
+
+101
+00:05:08,739 --> 00:05:09,739
+<|18.14|> finds an airport."<|19.14|>
+
+102
+00:05:09,739 --> 00:05:10,739
+<|19.14|> Right.<|20.14|>
+
+103
+00:05:10,739 --> 00:05:15,800
+<|20.14|> Every single dot needs a specific flight path and a signed altitude, a destination, and<|25.20|>
+
+104
+00:05:15,800 --> 00:05:18,760
+<|25.20|> a constant updated read on its fuel levels.<|28.16|>
+
+105
+00:05:18,899 --> 00:05:24,100
+<|startoftranscript|><|0.00|> If you just leave a dot hovering there without giving it a vector in a direction, it is going to crash.<|5.20|>
+
+106
+00:05:24,100 --> 00:05:25,139
+<|5.20|> It absolutely will.<|6.24|>
+
+107
+00:05:25,139 --> 00:05:27,299
+<|6.24|> Or, you know, in our world, the deal dies.<|8.40|>
+
+108
+00:05:27,299 --> 00:05:28,979
+<|8.40|> That is a phenomenal analogy.<|10.08|>
+
+109
+00:05:28,979 --> 00:05:34,699
+<|10.08|> Let's connect this air traffic control concept to the bigger picture of the borrower experience.<|15.80|>
+
+110
+00:05:34,799 --> 00:05:42,399
+<|startoftranscript|><|0.00|> Think about what happens when a dot a borrower is just left hovering in your system because you're treating them like a name on a list.<|7.60|>
+
+111
+00:05:42,399 --> 00:05:43,199
+<|7.60|> It feels it.<|8.40|>
+
+112
+00:05:43,199 --> 00:05:44,399
+<|8.40|> They absolutely feel it.<|9.60|>
+
+113
+00:05:44,399 --> 00:05:47,399
+<|9.60|> The borrower feels that lack of direction.<|12.60|>
+
+114
+00:05:47,399 --> 00:05:51,399
+<|12.60|> A massive part of your job as a loan officer is hospitality.<|16.60|>
+
+115
+00:05:51,500 --> 00:05:57,299
+<|startoftranscript|><|0.00|> And in the context of mortgage banking, hospitality doesn't mean offering them a coffee and a lobby.<|5.80|>
+
+116
+00:05:57,299 --> 00:05:58,899
+<|5.80|> Right, so way deeper than that.<|7.40|>
+
+117
+00:05:58,899 --> 00:05:59,700
+<|7.40|> It is.<|8.20|>
+
+118
+00:05:59,700 --> 00:06:02,899
+<|8.20|> Hospitality means holding the uncertainty for the borrower.<|11.40|>
+
+119
+00:06:02,899 --> 00:06:06,700
+<|11.40|> Buying a home is one of the most terrifying, financially significant events of their lives.<|15.20|>
+
+120
+00:06:06,700 --> 00:06:09,500
+<|15.20|> You cannot hold their uncertainty, you cannot give them peace of mind.<|18.00|>
+
+121
+00:06:09,500 --> 00:06:12,700
+<|18.00|> If you don't even know where their dot is on your own radar screen.<|21.20|>
+
+122
+00:06:12,700 --> 00:06:16,700
+<|21.20|> Which brings us directly to the technology, the radar screen itself.<|25.20|>
+
+123
+00:06:16,799 --> 00:06:22,319
+<|startoftranscript|><|0.00|> Because to keep an air traffic control screen accurate to ensure those dots represent reality,<|5.52|>
+
+124
+00:06:22,319 --> 00:06:26,159
+<|5.52|> you can't just check the radar once a month when you're feeling a little stressed about your production.<|9.36|>
+
+125
+00:06:26,159 --> 00:06:27,159
+<|9.36|> No, definitely not.<|10.36|>
+
+126
+00:06:27,159 --> 00:06:30,879
+<|10.36|> We need a daily rhythm, you need absolute daily discipline.<|14.08|>
+
+127
+00:06:30,879 --> 00:06:31,879
+<|14.08|> Precisely.<|15.08|>
+
+128
+00:06:31,879 --> 00:06:35,519
+<|15.08|> And at loan factory, that means daily terror discipline.<|18.72|>
+
+129
+00:06:35,519 --> 00:06:36,159
+<|18.72|> Terra.<|19.36|>
+
+130
+00:06:36,159 --> 00:06:38,759
+<|19.36|> Terra is your unified ecosystem.<|21.96|>
+
+131
+00:06:38,759 --> 00:06:40,839
+<|21.96|> Yeah, that is the air traffic control screen.<|24.04|>
+
+132
+00:06:40,899 --> 00:06:46,339
+<|startoftranscript|><|0.00|> But it only works, it only gives you actionable intelligence if the data feeding into it is fresh.<|5.44|>
+
+133
+00:06:46,339 --> 00:06:47,339
+<|5.44|> Right.<|6.44|>
+
+134
+00:06:47,339 --> 00:06:50,139
+<|6.44|> Terra is not a magic wand that you wave over your desk.<|9.24|>
+
+135
+00:06:50,139 --> 00:06:51,979
+<|9.24|> It is a high-performance engine.<|11.08|>
+
+136
+00:06:51,979 --> 00:06:55,339
+<|11.08|> And an engine requires daily fuel and daily maintenance.<|14.44|>
+
+137
+00:06:55,339 --> 00:07:00,380
+<|14.44|> Okay, so for you, the loan officer utilizing Terra, let's break down this daily rhythm.<|19.48|>
+
+138
+00:07:00,380 --> 00:07:03,019
+<|19.48|> What does it actually look like when you sit down at your desk?<|22.12|>
+
+139
+00:07:03,019 --> 00:07:07,059
+<|22.12|> Because the training module breaks us down into morning tasks, end of day tasks, and end<|26.16|>
+
+140
+00:07:07,059 --> 00:07:07,619
+<|26.16|> of week tasks.<|26.72|>
+
+141
+00:07:07,700 --> 00:07:09,300
+<|startoftranscript|><|0.00|> Let's start with the morning.<|1.60|>
+
+142
+00:07:09,300 --> 00:07:11,779
+<|1.60|> The morning in terror is all about momentum and offense.<|4.08|>
+
+143
+00:07:11,779 --> 00:07:12,779
+<|4.08|> - Defense, okay.<|5.08|>
+
+144
+00:07:12,779 --> 00:07:14,740
+<|5.08|> - When you log in with your coffee,<|7.04|>
+
+145
+00:07:14,740 --> 00:07:19,220
+<|7.04|> your primary focuses are speed to lead and new applications.<|11.52|>
+
+146
+00:07:19,220 --> 00:07:22,220
+<|11.52|> This is the neurobiology of setting the day.<|14.52|>
+
+147
+00:07:22,220 --> 00:07:23,740
+<|14.52|> If a new lead came in overnight,<|16.04|>
+
+148
+00:07:23,740 --> 00:07:26,860
+<|16.04|> or if someone submitted an inquiry at 6.0 AM,<|19.16|>
+
+149
+00:07:26,860 --> 00:07:29,620
+<|19.16|> that is your immediate overriding priority.<|21.92|>
+
+150
+00:07:29,500 --> 00:07:34,420
+<|startoftranscript|><|0.00|> Speed to lead. We hear that phrase a lot, but what does the industry conversion data actually say about it?<|4.92|>
+
+151
+00:07:34,420 --> 00:07:40,260
+<|4.92|> The data is staggering. The difference in convertive and right between calling a new lead within five minutes<|10.76|>
+
+152
+00:07:40,260 --> 00:07:48,700
+<|10.76|> versus calling them in five hours isn't a slight dip. It's a cliff. A cliff. Wow. Your chance of establishing a consultative relationship basically plunice.<|19.20|>
+
+153
+00:07:49,000 --> 00:07:54,880
+<|startoftranscript|><|0.00|> So your morning in Terra is spent updating those statuses, reviewing any new full applications<|5.88|>
+
+154
+00:07:54,880 --> 00:07:57,720
+<|5.88|> that dropped in and setting the trajectory for the day.<|8.72|>
+
+155
+00:07:57,720 --> 00:08:02,519
+<|8.72|> You're actively telling the system and you're psychologically telling yourself what matters<|13.52|>
+
+156
+00:08:02,519 --> 00:08:04,600
+<|13.52|> most before the noise of the day takes over.<|15.60|>
+
+157
+00:08:04,600 --> 00:08:07,399
+<|15.60|> You are going on the offensive before the defense is required.<|18.40|>
+
+158
+00:08:07,399 --> 00:08:08,399
+<|18.40|> Exactly.<|19.40|>
+
+159
+00:08:08,399 --> 00:08:10,200
+<|19.40|> But eventually the day happens.<|21.20|>
+
+160
+00:08:10,200 --> 00:08:14,279
+<|21.20|> Emails fly, fire, start, phones ring, and that is why the end of the day is entirely<|25.28|>
+
+161
+00:08:14,279 --> 00:08:15,679
+<|25.28|> about defense and containment.<|26.68|>
+
+162
+00:08:15,700 --> 00:08:18,580
+<|startoftranscript|><|0.00|> Walk me through the end of day, tear it to fence.<|2.88|>
+
+163
+00:08:18,580 --> 00:08:20,100
+<|2.88|> What am I doing before I go home?<|4.40|>
+
+164
+00:08:20,100 --> 00:08:22,180
+<|4.40|> Before you close your laptop,<|6.48|>
+
+165
+00:08:22,180 --> 00:08:25,140
+<|6.48|> before you even think about walking away from your desk,<|9.44|>
+
+166
+00:08:25,140 --> 00:08:27,940
+<|9.44|> you must log the outcomes of your daily activities.<|12.24|>
+
+167
+00:08:27,940 --> 00:08:28,460
+<|12.24|> Yeah.<|12.76|>
+
+168
+00:08:28,460 --> 00:08:30,900
+<|12.76|> Did you call a lead and leave a voicemail?<|15.20|>
+
+169
+00:08:30,900 --> 00:08:31,940
+<|15.20|> Log it immediately?<|16.24|>
+
+170
+00:08:31,940 --> 00:08:33,220
+<|16.24|> Just put it right in terror.<|17.52|>
+
+171
+00:08:33,220 --> 00:08:34,059
+<|17.52|> Exactly.<|18.36|>
+
+172
+00:08:34,059 --> 00:08:36,979
+<|18.36|> Did you have great conversation where they asked for a new scenario?<|21.28|>
+
+173
+00:08:36,979 --> 00:08:38,100
+<|21.28|> Log the notes.<|22.40|>
+
+174
+00:08:38,099 --> 00:08:42,299
+<|startoftranscript|><|0.00|> Then, and this is crucial, you must clear your tasks.<|4.20|>
+
+175
+00:08:42,299 --> 00:08:43,299
+<|4.20|> Right, clear them out.<|5.20|>
+
+176
+00:08:43,299 --> 00:08:48,419
+<|5.20|> If a follow up task was scheduled in Terra for Tuesday, it either gets completed on Tuesday,<|10.32|>
+
+177
+00:08:48,419 --> 00:08:53,500
+<|10.32|> or it gets deliberately, strategically rescheduled for a specific future date.<|15.40|>
+
+178
+00:08:53,500 --> 00:08:55,979
+<|15.40|> It does not just sit there turning red and past due.<|17.88|>
+
+179
+00:08:55,979 --> 00:08:59,899
+<|17.88|> Okay, let me push back here or at least clarify the psychological weight of this.<|21.80|>
+
+180
+00:08:59,900 --> 00:09:05,380
+<|startoftranscript|><|0.00|> Is this daily tera discipline essentially the professional equivalent of making your bed every morning?<|5.48|>
+
+181
+00:09:05,380 --> 00:09:06,380
+<|5.48|> Cady mean.<|6.48|>
+
+182
+00:09:06,380 --> 00:09:12,300
+<|6.48|> Like is it just a small non-negotiable act that sets the psychological tone or is there a deeper mechanism at play here?<|12.40|>
+
+183
+00:09:12,300 --> 00:09:17,500
+<|12.40|> It is absolutely an act of professional hygiene like making your bed, but the mechanism is much deeper.<|17.60|>
+
+184
+00:09:17,500 --> 00:09:20,800
+<|17.60|> It is about burnout prevention and cognitive offload.<|20.90|>
+
+185
+00:09:20,800 --> 00:09:22,300
+<|20.90|> Cognitive offload.<|22.40|>
+
+186
+00:09:22,300 --> 00:09:23,300
+<|22.40|> Yeah.<|23.40|>
+
+187
+00:09:23,300 --> 00:09:25,300
+<|23.40|> We have to ask a very important question.<|25.40|>
+
+188
+00:09:25,599 --> 00:09:33,199
+<|startoftranscript|><|0.00|> Why do so many top producing loan officers feel like they can never truly log off?<|7.60|>
+
+189
+00:09:33,199 --> 00:09:37,199
+<|7.60|> Why are they sitting at the dinner table with their family physically present but mentally<|11.60|>
+
+190
+00:09:37,199 --> 00:09:38,719
+<|11.60|> a million miles away?<|13.12|>
+
+191
+00:09:38,719 --> 00:09:40,519
+<|13.12|> Because they carry the pipeline in their head.<|14.92|>
+
+192
+00:09:40,519 --> 00:09:42,000
+<|14.92|> I mean I've been there.<|16.40|>
+
+193
+00:09:42,200 --> 00:09:45,480
+<|startoftranscript|><|0.00|> In psychology, it's related to the zygarnic effect.<|3.28|>
+
+194
+00:09:45,480 --> 00:09:46,480
+<|3.28|> Wait, what effect?<|4.28|>
+
+195
+00:09:46,480 --> 00:09:48,000
+<|4.28|> The zygarnic effect.<|5.80|>
+
+196
+00:09:48,000 --> 00:09:52,799
+<|5.80|> It means human beings remember uncompleted tasks much better than completed one.<|10.60|>
+
+197
+00:09:52,799 --> 00:09:54,359
+<|10.60|> Oh, that makes so much sense.<|12.16|>
+
+198
+00:09:54,359 --> 00:09:59,720
+<|12.16|> Your brain will constantly loop those unfinished items, causing a low-level chronic spike<|17.52|>
+
+199
+00:09:59,720 --> 00:10:00,479
+<|17.52|> in cortisol.<|18.28|>
+
+200
+00:10:00,700 --> 00:10:05,940
+<|startoftranscript|><|0.00|> When you carry your unorganized, messy pipeline in your head, you are constantly stressed.<|5.24|>
+
+201
+00:10:05,940 --> 00:10:09,700
+<|5.24|> When you clear your terror dashboard at the end of the day, you perform a complete cognitive<|9.00|>
+
+202
+00:10:09,700 --> 00:10:10,700
+<|9.00|> offload.<|10.00|>
+
+203
+00:10:10,700 --> 00:10:14,140
+<|10.00|> You are transferring the anxiety from your brain into the software.<|13.44|>
+
+204
+00:10:14,140 --> 00:10:15,140
+<|13.44|> Exactly.<|14.44|>
+
+205
+00:10:15,140 --> 00:10:18,460
+<|14.44|> The system is now holding the information, which means you don't have to.<|17.76|>
+
+206
+00:10:18,460 --> 00:10:23,059
+<|17.76|> You can actually go have dinner, watch a movie, sleep soundly, knowing exactly where you<|22.36|>
+
+207
+00:10:23,059 --> 00:10:24,299
+<|22.36|> are starting the next day.<|23.60|>
+
+208
+00:10:24,299 --> 00:10:25,700
+<|23.60|> That is so freeing.<|25.00|>
+
+209
+00:10:25,700 --> 00:10:29,140
+<|25.00|> Without this daily discipline, two things happen simultaneously.<|28.44|>
+
+210
+00:10:29,299 --> 00:10:37,500
+<|startoftranscript|><|0.00|> You start leaking business through week forgotten follow-up and you leak personal energy through constant low-level anxiety<|8.20|>
+
+211
+00:10:37,880 --> 00:10:46,339
+<|8.58|> The mental bandwidth we waste trying to remember if we called Sarah back on a Tuesday is just staggering it drains your ability to actually be consultative<|17.04|>
+
+212
+00:10:46,599 --> 00:10:52,599
+<|startoftranscript|><|0.00|> And then beyond the daily rhythm, the 501 modules specifies an end-of-week cleanup process, right?<|6.00|>
+
+213
+00:10:52,599 --> 00:10:53,599
+<|6.00|> Correct.<|7.00|>
+
+214
+00:10:53,599 --> 00:10:59,599
+<|7.00|> The end-of-week cleanup is a slightly deeper dive to ensure that data purity is absolute going into the weekend.<|13.00|>
+
+215
+00:10:59,599 --> 00:11:00,599
+<|13.00|> Right.<|14.00|>
+
+216
+00:11:00,599 --> 00:11:03,599
+<|14.00|> You ensure no file is stuck in a weird, ambiguous status.<|17.00|>
+
+217
+00:11:03,599 --> 00:11:06,599
+<|17.00|> You make sure no task is left orphaned without a next step.<|20.00|>
+
+218
+00:11:06,599 --> 00:11:09,599
+<|20.00|> The foundation must be solid before you walk away on Friday.<|23.00|>
+
+219
+00:11:09,599 --> 00:11:13,599
+<|23.00|> Okay, so the daily updates and the Friday cleanup keep the engine running smoothly.<|27.00|>
+
+220
+00:11:13,599 --> 00:11:15,599
+<|27.00|> But here is where it gets really interesting.<|29.00|>
+
+221
+00:11:15,299 --> 00:11:17,299
+<|startoftranscript|><|0.00|> Keeping the engine running is one thing,<|2.00|>
+
+222
+00:11:17,299 --> 00:11:20,299
+<|2.00|> steering the ship requires a completely different perspective.<|5.00|>
+
+223
+00:11:20,299 --> 00:11:24,299
+<|5.00|> Which brings us to the absolute core assignment of the 501 training module.<|9.00|>
+
+224
+00:11:24,299 --> 00:11:27,299
+<|9.00|> We are talking about the weekly pipeline review.<|12.00|>
+
+225
+00:11:27,299 --> 00:11:31,299
+<|12.00|> The lone factory, weekly pipeline review template.<|16.00|>
+
+226
+00:11:31,500 --> 00:11:35,419
+<|startoftranscript|><|0.00|> This is the anchor of your entire business architecture.<|3.92|>
+
+227
+00:11:35,419 --> 00:11:40,419
+<|3.92|> It is a 30 minute block scheduled every single week with absolutely no exception.<|8.92|>
+
+228
+00:11:40,419 --> 00:11:41,419
+<|8.92|> >> Oh, exceptions.<|9.92|>
+
+229
+00:11:41,419 --> 00:11:45,419
+<|9.92|> Okay, I need to wrestle with this because I know exactly what every loan officer listening<|13.92|>
+
+230
+00:11:45,419 --> 00:11:47,460
+<|13.92|> to this is screaming at their dashboard right now.<|15.96|>
+
+231
+00:11:47,500 --> 00:11:49,500
+<|startoftranscript|><|0.00|> I am going to play devil's advocate.<|2.00|>
+
+232
+00:11:49,500 --> 00:11:50,500
+<|2.00|> Bring it on, let's hear it.<|3.00|>
+
+233
+00:11:50,500 --> 00:11:53,500
+<|3.00|> Look, I am way too busy.<|6.00|>
+
+234
+00:11:53,500 --> 00:11:55,500
+<|6.00|> I am actively originating.<|8.00|>
+
+235
+00:11:55,500 --> 00:12:00,500
+<|8.00|> I have three different realtors texting me right now about an appraisal that just came in.<|13.00|>
+
+236
+00:12:00,500 --> 00:12:05,500
+<|13.00|> I have a borrower panicking because they need to provide another letter of explanation for an underwrite.<|18.00|>
+
+237
+00:12:05,299 --> 00:12:11,700
+<|startoftranscript|><|0.00|> If I just go dark for 30 uninterrupted minutes to sit and stare at my pipeline like a monk<|6.40|>
+
+238
+00:12:11,700 --> 00:12:15,500
+<|6.40|> in meditation, I'm going to lose a deal or I am going to lose a referral partner.<|10.20|>
+
+239
+00:12:15,500 --> 00:12:17,700
+<|10.20|> I simply cannot afford 30 minutes of silence.<|12.40|>
+
+240
+00:12:17,700 --> 00:12:21,700
+<|12.40|> That is the most common and frankly the most destructive pushback we hear in the industry.<|16.40|>
+
+241
+00:12:21,700 --> 00:12:22,700
+<|16.40|> Ouch.<|17.40|>
+
+242
+00:12:22,700 --> 00:12:23,700
+<|17.40|> Okay.<|18.40|>
+
+243
+00:12:23,700 --> 00:12:27,019
+<|18.40|> But let me calmly point out the mathematical and biological reality of that mindset.<|21.72|>
+
+244
+00:12:27,400 --> 00:12:30,360
+<|startoftranscript|><|0.00|> You are operating purely on adrenaline.<|2.96|>
+
+245
+00:12:30,360 --> 00:12:33,680
+<|2.96|> Adrenaline feels like productivity though. It really does.<|6.28|>
+
+246
+00:12:33,680 --> 00:12:36,360
+<|6.28|> It does, but it's an illusion.<|8.96|>
+
+247
+00:12:36,360 --> 00:12:41,080
+<|8.96|> If you skip this 30 minute review because you are too busy putting out fires,<|13.68|>
+
+248
+00:12:41,080 --> 00:12:46,119
+<|13.68|> I guarantee that you will inevitably spend three hours on a Friday afternoon<|18.72|>
+
+249
+00:12:46,119 --> 00:12:48,680
+<|18.72|> putting out a massive inferno that you could have prevented.<|21.28|>
+
+250
+00:12:48,680 --> 00:12:49,480
+<|21.28|> Wow.<|22.08|>
+
+251
+00:12:49,500 --> 00:12:53,260
+<|startoftranscript|><|0.00|> Okay. The psychology of this 30 minute block is profound.<|3.76|>
+
+252
+00:12:53,260 --> 00:12:58,299
+<|3.76|> It forces you to pull your head out of the microscopic weeds and look at the macroscopic view.<|8.80|>
+
+253
+00:12:58,299 --> 00:13:03,979
+<|8.80|> Okay. Explain that transition from microscopic to macroscopic. How does that save me from the Friday<|14.48|>
+
+254
+00:13:03,979 --> 00:13:09,099
+<|14.48|> afternoon in Ferno? When you're in the daily grind, answering those real-sertests,<|19.60|>
+
+255
+00:13:09,099 --> 00:13:14,619
+<|19.60|> you are only seeing the file that is screaming the loudest. Your attention is entirely hijacked by<|25.12|>
+
+256
+00:13:14,619 --> 00:13:15,900
+<|25.12|> whoever's most panicked.<|26.40|>
+
+257
+00:13:16,000 --> 00:13:17,719
+<|startoftranscript|><|0.00|> But what about the quiet files?<|1.72|>
+
+258
+00:13:17,719 --> 00:13:19,039
+<|1.72|> The ones that aren't texting me.<|3.04|>
+
+259
+00:13:19,039 --> 00:13:20,039
+<|3.04|> The ones I forget about.<|4.04|>
+
+260
+00:13:20,039 --> 00:13:24,919
+<|4.04|> Right, the borrower who submitted an application two weeks ago got their initial options<|8.92|>
+
+261
+00:13:24,919 --> 00:13:26,760
+<|8.92|> and has been completely silent ever since.<|10.76|>
+
+262
+00:13:26,760 --> 00:13:27,440
+<|10.76|> Yeah.<|11.44|>
+
+263
+00:13:27,440 --> 00:13:30,719
+<|11.44|> In the daily grind, you forget about them because they aren't on fire.<|14.72|>
+
+264
+00:13:30,719 --> 00:13:34,919
+<|14.72|> But during your 30-minute pipeline review, you are looking at the entire board.<|18.92|>
+
+265
+00:13:34,919 --> 00:13:35,919
+<|18.92|> You spot that file.<|19.92|>
+
+266
+00:13:35,919 --> 00:13:38,479
+<|19.92|> You realize, wait, this has been stalled for 14 days.<|22.48|>
+
+267
+00:13:38,479 --> 00:13:39,679
+<|22.48|> You catch it early.<|23.68|>
+
+268
+00:13:39,679 --> 00:13:40,679
+<|23.68|> Yes.<|24.68|>
+
+269
+00:13:40,679 --> 00:13:44,000
+<|24.68|> You identify the stuck files before they blow up into major crises.<|28.00|>
+
+270
+00:13:44,000 --> 00:13:47,000
+<|startoftranscript|><|0.00|> or before the bar where it quietly goes to a competitor.<|3.00|>
+
+271
+00:13:47,000 --> 00:13:49,000
+<|3.00|> So it's proactive crisis management.<|5.00|>
+
+272
+00:13:49,000 --> 00:13:53,000
+<|5.00|> Exactly. You plan the week's outreach strategically rather than reactively.<|9.00|>
+
+273
+00:13:53,000 --> 00:13:57,000
+<|9.00|> If you claim you are too busy to plan your business, your business is running you.<|13.00|>
+
+274
+00:13:57,000 --> 00:13:59,000
+<|13.00|> You are not running it.<|15.00|>
+
+275
+00:13:59,000 --> 00:14:01,000
+<|15.00|> Structure creates freedom.<|17.00|>
+
+276
+00:14:01,000 --> 00:14:03,000
+<|17.00|> Structure creates freedom. I love that.<|19.00|>
+
+277
+00:14:03,000 --> 00:14:08,000
+<|19.00|> It's like taking a drone up above the forest canopy so you can actually see where the fire line is moving.<|24.00|>
+
+278
+00:14:08,000 --> 00:14:12,000
+<|24.00|> Instead of just standing on the ground swinging an axe at the closest burning tree.<|28.00|>
+
+279
+00:14:12,000 --> 00:14:13,000
+<|28.00|> Precisely.<|29.00|>
+
+280
+00:14:13,200 --> 00:14:18,200
+<|startoftranscript|><|0.00|> And to address your fear of going dark for 30 minutes, you manage expectations.<|5.00|>
+
+281
+00:14:18,200 --> 00:14:24,700
+<|5.00|> You set an auto responder. You tell your key partners every Tuesday morning from 9-0-0-0-0-0 to 9-30,<|11.50|>
+
+282
+00:14:24,700 --> 00:14:29,200
+<|11.50|> I am doing a comprehensive review of all my files to ensure we hit every deadline.<|16.00|>
+
+283
+00:14:29,200 --> 00:14:32,200
+<|16.00|> I will return all calls at 9.31.<|19.00|>
+
+284
+00:14:32,200 --> 00:14:33,200
+<|19.00|> That's brilliant.<|20.00|>
+
+285
+00:14:33,200 --> 00:14:35,200
+<|20.00|> Realtors don't hate that you are busy.<|22.00|>
+
+286
+00:14:35,200 --> 00:14:38,200
+<|22.00|> They actually respect a professional who has structured systems.<|25.00|>
+
+287
+00:14:38,700 --> 00:14:42,780
+<|startoftranscript|><|0.00|> A 30 minute delay with clear expectations will never kill a deal.<|4.08|>
+
+288
+00:14:42,780 --> 00:14:48,179
+<|4.08|> But dropping a ball will exactly a mistrate lock expiration because you are too busy answering<|9.48|>
+
+289
+00:14:48,179 --> 00:14:50,859
+<|9.48|> text to review your pipeline.<|12.16|>
+
+290
+00:14:50,859 --> 00:14:53,299
+<|12.16|> That will absolutely kill a deal.<|14.60|>
+
+291
+00:14:53,299 --> 00:14:55,220
+<|14.60|> That is a massive paradigm shift.<|16.52|>
+
+292
+00:14:55,220 --> 00:14:58,540
+<|16.52|> You are training your partners to respect your operational rhythm.<|19.84|>
+
+293
+00:14:58,599 --> 00:15:02,199
+<|startoftranscript|><|0.00|> And because you are reviewing the entire system weekly,<|3.60|>
+
+294
+00:15:02,199 --> 00:15:04,399
+<|3.60|> you stop reacting to what happened yesterday,<|5.80|>
+
+295
+00:15:04,399 --> 00:15:06,599
+<|5.80|> and you start predicting what will happen tomorrow.<|8.00|>
+
+296
+00:15:06,599 --> 00:15:10,000
+<|8.00|> Which is the perfect segue into the next massive concept<|11.40|>
+
+297
+00:15:10,000 --> 00:15:11,399
+<|11.40|> in the 501 module.<|12.80|>
+
+298
+00:15:11,399 --> 00:15:13,899
+<|12.80|> How do we actually predict future success?<|15.30|>
+
+299
+00:15:13,899 --> 00:15:15,799
+<|15.30|> Because when you look at that macro view<|17.20|>
+
+300
+00:15:15,799 --> 00:15:18,799
+<|17.20|> during your 30 minute drone flight over the forest,<|20.20|>
+
+301
+00:15:18,799 --> 00:15:21,299
+<|20.20|> you have to know what numbers to actually look at.<|22.70|>
+
+302
+00:15:21,299 --> 00:15:23,199
+<|22.70|> Right, because not all data is created equal.<|24.60|>
+
+303
+00:15:23,199 --> 00:15:26,899
+<|24.60|> Exactly, and most loan officers are obsessively watching the wrong numbers.<|28.30|>
+
+304
+00:15:26,899 --> 00:15:27,899
+<|28.30|> Yes.<|29.30|>
+
+305
+00:15:27,500 --> 00:15:31,179
+<|startoftranscript|><|0.00|> Let's get into the three leading indicators, because in the training sources, the coaching<|3.68|>
+
+306
+00:15:31,179 --> 00:15:34,979
+<|3.68|> notes from Dale on this specific topic are just phenomenal.<|7.48|>
+
+307
+00:15:34,979 --> 00:15:38,940
+<|7.48|> Dale's advice here hits at the core of a massive industry fallacy.<|11.44|>
+
+308
+00:15:38,940 --> 00:15:41,900
+<|11.44|> It is a trap almost everyone falls into.<|14.40|>
+
+309
+00:15:41,900 --> 00:15:43,979
+<|14.40|> Dale's rule is simple, but brutal.<|16.48|>
+
+310
+00:15:44,299 --> 00:15:49,899
+<|startoftranscript|><|0.00|> Quit focusing on your monthly results and start focusing entirely on your daily activities and your attitude.<|5.60|>
+
+311
+00:15:49,899 --> 00:15:53,179
+<|5.60|> That sounds almost counterintuitive for a sales professional.<|8.88|>
+
+312
+00:15:53,179 --> 00:15:55,179
+<|8.88|> I mean, we are conditioned to look at the scoreboard.<|10.88|>
+
+313
+00:15:55,179 --> 00:15:59,820
+<|10.88|> We are, but monthly closed volume is a lagging indicator.<|15.52|>
+
+314
+00:15:59,900 --> 00:16:03,059
+<|startoftranscript|><|0.00|> Think about the life cycle of alone.<|3.16|>
+
+315
+00:16:03,059 --> 00:16:07,760
+<|3.16|> If you close a massive amount of volume in October, does that mean you worked really hard<|7.86|>
+
+316
+00:16:07,760 --> 00:16:08,760
+<|7.86|> in October?<|8.86|>
+
+317
+00:16:08,760 --> 00:16:10,320
+<|8.86|> No, it means I worked really hard in August.<|10.42|>
+
+318
+00:16:10,320 --> 00:16:11,320
+<|10.42|> Exactly.<|11.42|>
+
+319
+00:16:11,320 --> 00:16:14,020
+<|11.42|> It tells you what you did 60 to 90 days ago.<|14.12|>
+
+320
+00:16:14,020 --> 00:16:15,660
+<|14.12|> It is a lagging metric.<|15.76|>
+
+321
+00:16:15,660 --> 00:16:20,260
+<|15.76|> It feels incredibly good to look at a high closed volume on a spreadsheet.<|20.36|>
+
+322
+00:16:20,299 --> 00:16:26,500
+<|startoftranscript|><|0.00|> because you're a huge ego boost, but it has absolutely zero predictive power for what your next quarter will look like.<|6.20|>
+
+323
+00:16:26,500 --> 00:16:27,599
+<|6.20|> So it's misleading.<|7.30|>
+
+324
+00:16:27,599 --> 00:16:35,899
+<|7.30|> Highly misleading. If you stare at your October closings, you might get complacent, stop prospecting, and suddenly December is a complete disaster.<|15.60|>
+
+325
+00:16:35,899 --> 00:16:41,299
+<|15.60|> Staring at your clothes loans is literally like driving a car while staring fixed Lee into the rearview mirror.<|21.00|>
+
+326
+00:16:41,700 --> 00:16:45,700
+<|startoftranscript|><|0.00|> It feels great to see how far you have come and you can admire the road behind you,<|4.00|>
+
+327
+00:16:45,700 --> 00:16:49,700
+<|4.00|> but it will not help you navigate the hairpin turn that is coming up in 50 feet.<|8.00|>
+
+328
+00:16:49,700 --> 00:16:50,700
+<|8.00|> You will crash.<|9.00|>
+
+329
+00:16:50,700 --> 00:16:53,700
+<|9.00|> Lagging indicators are the rear view mirror.<|12.00|>
+
+330
+00:16:53,700 --> 00:16:55,700
+<|12.00|> Leading indicators are your headlights.<|14.00|>
+
+331
+00:16:55,700 --> 00:16:58,700
+<|14.00|> That is beautifully put, but let's take it further.<|17.00|>
+
+332
+00:16:58,700 --> 00:17:02,700
+<|17.00|> If the leading indicators are the headlights, we need to know exactly how bright they are<|21.00|>
+
+333
+00:17:02,700 --> 00:17:04,699
+<|21.00|> and what they are illuminating.<|23.00|>
+
+334
+00:17:04,500 --> 00:17:07,739
+<|startoftranscript|><|0.00|> So, what are the specific headlights we track?<|3.24|>
+
+335
+00:17:07,739 --> 00:17:09,420
+<|3.24|> Right, the module gives us three.<|4.92|>
+
+336
+00:17:09,420 --> 00:17:14,280
+<|4.92|> According to the training, there are three specific leading indicators that will mathematically<|9.78|>
+
+337
+00:17:14,280 --> 00:17:17,140
+<|9.78|> predict your next quarter's success.<|12.64|>
+
+338
+00:17:17,140 --> 00:17:18,140
+<|12.64|> Let's unpack them.<|13.64|>
+
+339
+00:17:18,140 --> 00:17:19,140
+<|13.64|> Number one.<|14.64|>
+
+340
+00:17:19,140 --> 00:17:21,579
+<|14.64|> Daily activities.<|17.08|>
+
+341
+00:17:21,579 --> 00:17:22,699
+<|17.08|> These are the raw inputs.<|18.20|>
+
+342
+00:17:22,699 --> 00:17:26,699
+<|startoftranscript|><|0.00|> The outbound dials, the email sent, the text messages initiated.<|4.00|>
+
+343
+00:17:26,699 --> 00:17:28,699
+<|4.00|> This is the pure engine block of your business.<|6.00|>
+
+344
+00:17:28,699 --> 00:17:30,699
+<|6.00|> How much fuel are you putting in?<|8.00|>
+
+345
+00:17:30,699 --> 00:17:32,699
+<|8.00|> But just dialing the phone isn't enough, right?<|10.00|>
+
+346
+00:17:32,699 --> 00:17:36,699
+<|10.00|> I could call 100 people and just breathe heavily into the receiver.<|14.00|>
+
+347
+00:17:36,699 --> 00:17:38,699
+<|14.00|> That's an activity, but it won't yield anything.<|16.00|>
+
+348
+00:17:38,699 --> 00:17:40,699
+<|16.00|> Which brings us to number two.<|18.00|>
+
+349
+00:17:40,699 --> 00:17:43,699
+<|18.00|> Correct. Activity without quality is just noise.<|21.00|>
+
+350
+00:17:43,699 --> 00:17:47,699
+<|21.00|> Leading indicator number two is consultative conversations.<|25.00|>
+
+351
+00:17:47,699 --> 00:17:50,219
+<|startoftranscript|><|0.00|> Okay, we need to define this carefully.<|2.52|>
+
+352
+00:17:50,219 --> 00:17:53,299
+<|2.52|> What elevates a basic chat into a consultative conversation?<|5.60|>
+
+353
+00:17:53,299 --> 00:17:57,419
+<|5.60|> It's the difference between being an order taker and being an advisor.<|9.72|>
+
+354
+00:17:57,419 --> 00:18:00,500
+<|9.72|> An order taker asks, "Hey, what kind of rate are you looking for?"<|12.80|>
+
+355
+00:18:00,500 --> 00:18:03,019
+<|12.80|> or "How much do you want to put down?"<|15.32|>
+
+356
+00:18:03,019 --> 00:18:05,260
+<|15.32|> That is not a consultative conversation.<|17.56|>
+
+357
+00:18:05,260 --> 00:18:07,019
+<|17.56|> That's just clerking.<|19.32|>
+
+358
+00:18:07,000 --> 00:18:13,239
+<|startoftranscript|><|0.00|> A consultative conversation is a structured, meaningful discovery process where you are actively<|6.24|>
+
+359
+00:18:13,239 --> 00:18:16,760
+<|6.24|> uncovering a borrower's deep financial goals.<|9.76|>
+
+360
+00:18:16,760 --> 00:18:18,439
+<|9.76|> Give me an example of what that sounds like.<|11.44|>
+
+361
+00:18:18,439 --> 00:18:19,439
+<|11.44|> What am I saying on the phone?<|12.44|>
+
+362
+00:18:19,439 --> 00:18:21,800
+<|12.44|> A consultative conversation sounds like.<|14.80|>
+
+363
+00:18:21,800 --> 00:18:26,599
+<|14.80|> John, before we look at specific loan structures, talk to me about your wealth building goals<|19.60|>
+
+364
+00:18:26,599 --> 00:18:27,800
+<|19.60|> for the next five years.<|20.80|>
+
+365
+00:18:27,800 --> 00:18:30,920
+<|20.80|> Are you planning to keep this property as a rental when you outgrow it?<|23.92|>
+
+366
+00:18:30,920 --> 00:18:35,239
+<|23.92|> Or is the goal to build maximum equity to roll into a larger primary home?<|28.24|>
+
+367
+00:18:35,239 --> 00:18:36,239
+<|28.24|> Oh, wow.<|29.24|>
+
+368
+00:18:36,099 --> 00:18:42,099
+<|startoftranscript|><|0.00|> That completely changes the dynamic. You aren't just quoting numbers, you are diagnosing their financial future.<|6.00|>
+
+369
+00:18:42,099 --> 00:18:51,099
+<|6.00|> Exactly. When you track how many of those specific conversations you have a week, you are tracking a true leading indicator of future applications.<|15.00|>
+
+370
+00:18:51,099 --> 00:18:52,099
+<|15.00|> Makes total sense.<|16.00|>
+
+371
+00:18:52,099 --> 00:18:53,099
+<|16.00|> And finally number three.<|17.00|>
+
+372
+00:18:53,000 --> 00:18:54,719
+<|startoftranscript|><|0.00|> follow up velocity.<|1.72|>
+
+373
+00:18:54,719 --> 00:18:57,959
+<|1.72|> Follow up velocity, meaning how fast are you moving?<|4.96|>
+
+374
+00:18:57,959 --> 00:19:00,640
+<|4.96|> How fast are you responding to new inquiries?<|7.64|>
+
+375
+00:19:00,640 --> 00:19:04,400
+<|7.64|> Yes, but also how consistently and rapidly<|11.40|>
+
+376
+00:19:04,400 --> 00:19:06,319
+<|11.40|> are you executing your touch points<|13.32|>
+
+377
+00:19:06,319 --> 00:19:08,280
+<|13.32|> across your entire pipeline?<|15.28|>
+
+378
+00:19:08,280 --> 00:19:10,199
+<|15.28|> Are you letting leads languish for a week<|17.20|>
+
+379
+00:19:10,199 --> 00:19:11,800
+<|17.20|> or is your velocity high?<|18.80|>
+
+380
+00:19:11,800 --> 00:19:13,479
+<|18.80|> So look at those three things.<|20.48|>
+
+381
+00:19:13,500 --> 00:19:18,500
+<|startoftranscript|><|0.00|> Daily activities, consultative conversations, and follow-up velocity.<|5.00|>
+
+382
+00:19:18,500 --> 00:19:22,859
+<|5.00|> What stands out to me is that all three of those are actions entirely, 100% within the<|9.36|>
+
+383
+00:19:22,859 --> 00:19:24,459
+<|9.36|> loan officer's control.<|10.96|>
+
+384
+00:19:24,459 --> 00:19:25,540
+<|10.96|> That is the secret.<|12.04|>
+
+385
+00:19:25,540 --> 00:19:27,900
+<|12.04|> You cannot control the macroeconomy.<|14.40|>
+
+386
+00:19:27,900 --> 00:19:33,020
+<|14.40|> You cannot control if an underwriter suddenly asks for a seemingly ridiculous third letter<|19.52|>
+
+387
+00:19:33,020 --> 00:19:33,939
+<|19.52|> of explanation.<|20.44|>
+
+388
+00:19:34,000 --> 00:19:40,719
+<|startoftranscript|><|0.00|> You cannot control of a house under appraises, but you have absolute control over your daily activities,<|6.72|>
+
+389
+00:19:40,719 --> 00:19:44,000
+<|6.72|> the depth of your conversations, and the speed of your follow-up.<|10.00|>
+
+390
+00:19:44,000 --> 00:19:49,599
+<|10.00|> If your leading indicators are running high this month, your lagging indicators will be high in 60-90 days.<|15.60|>
+
+391
+00:19:49,599 --> 00:19:52,640
+<|15.60|> It is a mathematical certainty. It removes the mystery from the business,<|18.64|>
+
+392
+00:19:52,640 --> 00:19:56,640
+<|18.64|> focused entirely on the inputs, and the outputs will inherently take care of themselves.<|22.64|>
+
+393
+00:19:56,699 --> 00:19:59,539
+<|startoftranscript|><|0.00|> But hold on, let's look at the reality on the ground.<|2.84|>
+
+394
+00:19:59,539 --> 00:20:04,179
+<|2.84|> Because even if you have blazing bright headlights, even if you're daily activities or<|7.48|>
+
+395
+00:20:04,179 --> 00:20:09,519
+<|7.48|> off the charts and you are having incredible, consultative conversations, you are eventually<|12.82|>
+
+396
+00:20:09,519 --> 00:20:11,419
+<|12.82|> going to hit a roadblock.<|14.72|>
+
+397
+00:20:11,419 --> 00:20:12,419
+<|14.72|> You always will.<|15.72|>
+
+398
+00:20:12,419 --> 00:20:13,419
+<|15.72|> It's inevitable.<|16.72|>
+
+399
+00:20:13,419 --> 00:20:19,099
+<|16.72|> Every single loan officer has files that just, while they suddenly inexplicably stop moving,<|22.40|>
+
+400
+00:20:19,099 --> 00:20:20,939
+<|22.40|> the borrower goes totally dark.<|24.24|>
+
+401
+00:20:20,939 --> 00:20:21,939
+<|24.24|> Ah, yes.<|25.24|>
+
+402
+00:20:22,099 --> 00:20:28,099
+<|startoftranscript|><|0.00|> The "stuck" file. This is where true professionals separate themselves from the amateurs in this industry.<|6.00|>
+
+403
+00:20:28,099 --> 00:20:36,099
+<|6.00|> How you handle a file that is stalled out determines your long-term success, and it requires a very specific, highly empathetic touch.<|14.00|>
+
+404
+00:20:36,099 --> 00:20:41,099
+<|14.00|> Let's unpack the psychology of the "stuck" file, because I think a lot of originators take it very personally.<|19.00|>
+
+405
+00:20:41,099 --> 00:20:47,099
+<|19.00|> You put all this work in, you took the application, you did the discovery, you found a great structural option for them, you send it over.<|25.00|>
+
+406
+00:20:47,099 --> 00:20:48,099
+<|25.00|> And then crickets!<|26.00|>
+
+407
+00:20:48,199 --> 00:20:51,319
+<|startoftranscript|><|0.00|> Nothing. No return texts, no answered calls.<|3.12|>
+
+408
+00:20:51,319 --> 00:20:54,919
+<|3.12|> And the immediate internal reaction for the loan officer is a spike in anxiety.<|6.72|>
+
+409
+00:20:54,919 --> 00:20:57,479
+<|6.72|> They think, "Oh no, they found a better deal with the competitor."<|9.28|>
+
+410
+00:20:57,479 --> 00:21:01,319
+<|9.28|> Or they get frustrated and think, "These people are completely wasting my time."<|13.12|>
+
+411
+00:21:01,319 --> 00:21:03,959
+<|13.12|> Right, it feels like a personal rejection.<|15.76|>
+
+412
+00:21:03,959 --> 00:21:09,159
+<|15.76|> So the loan officer either gets desperate and starts bombarding them with pushy texts,<|20.96|>
+
+413
+00:21:09,159 --> 00:21:12,760
+<|20.96|> or they get offended and just abandon the file completely.<|24.56|>
+
+414
+00:21:12,760 --> 00:21:16,760
+<|24.56|> But according to the sources, it is almost never personal.<|28.56|>
+
+415
+00:21:16,900 --> 00:21:18,500
+<|startoftranscript|><|0.00|> It is rarely personal.<|1.60|>
+
+416
+00:21:18,500 --> 00:21:22,580
+<|1.60|> Most of the time what you are interpreting as rejection is actually just a borrower suffering<|5.68|>
+
+417
+00:21:22,580 --> 00:21:25,219
+<|5.68|> from massive cognitive overload.<|8.32|>
+
+418
+00:21:25,219 --> 00:21:26,219
+<|8.32|> Cognitive overload.<|9.32|>
+
+419
+00:21:26,219 --> 00:21:30,260
+<|9.32|> Explain what is happening in the borrower's brain in that moment.<|13.36|>
+
+420
+00:21:30,260 --> 00:21:32,660
+<|13.36|> Think about the pre-approval to ratify phase.<|15.76|>
+
+421
+00:21:32,800 --> 00:21:36,600
+<|startoftranscript|><|0.00|> The borrower is dealing with an avalanche of stress.<|3.80|>
+
+422
+00:21:36,600 --> 00:21:39,400
+<|3.80|> They have realtors sending them dozens of listings.<|6.60|>
+
+423
+00:21:39,400 --> 00:21:43,800
+<|6.60|> They have family members giving them unsolicited, terrible financial advice.<|11.00|>
+
+424
+00:21:43,800 --> 00:21:46,400
+<|11.00|> Oh, always the uncle who bought a house 30 years ago.<|13.60|>
+
+425
+00:21:46,400 --> 00:21:51,600
+<|13.60|> Exactly. Plus, they are reading terrifying macroeconomic headlines in the news,<|18.80|>
+
+426
+00:21:51,600 --> 00:21:57,000
+<|18.80|> and they are facing the sheer crushing financial weight of committing to a massive amount of debt.<|24.20|>
+
+427
+00:21:57,099 --> 00:22:00,099
+<|startoftranscript|><|0.00|> The human brain cannot process all that simultaneously.<|3.00|>
+
+428
+00:22:00,099 --> 00:22:02,099
+<|3.00|> It's an amygdala hijack, they just freeze.<|5.00|>
+
+429
+00:22:02,099 --> 00:22:06,099
+<|5.00|> Exactly. They stall out due to unexpressed uncertainty.<|9.00|>
+
+430
+00:22:06,099 --> 00:22:07,099
+<|9.00|> Yeah.<|10.00|>
+
+431
+00:22:07,099 --> 00:22:11,099
+<|10.00|> They don't know how to articulate what they are afraid of, so they just stop communicating.<|14.00|>
+
+432
+00:22:11,099 --> 00:22:15,099
+<|14.00|> If you push them in that moment, if you apply sales pressure to try and close them.<|18.00|>
+
+433
+00:22:15,400 --> 00:22:19,400
+<|startoftranscript|><|0.00|> their fighter flight response kicks in and they will run away from you permanently.<|4.00|>
+
+434
+00:22:19,400 --> 00:22:23,400
+<|4.00|> So how do we unstick them without triggering that flight response?<|8.00|>
+
+435
+00:22:23,400 --> 00:22:27,400
+<|8.00|> You have to lead calmly, deliberately, and with immense empathy.<|12.00|>
+
+436
+00:22:27,400 --> 00:22:32,400
+<|12.00|> The training points directly to the CSER sales framework, specifically the clarify stage.<|17.00|>
+
+437
+00:22:32,400 --> 00:22:36,400
+<|17.00|> The clarify stage, what is the tactical execution of the team?<|21.00|>
+
+438
+00:22:35,900 --> 00:22:40,099
+<|startoftranscript|><|0.00|> that when a file stalls, you do not call and say, Hey, John, just checking in.<|4.20|>
+
+439
+00:22:40,099 --> 00:22:41,180
+<|4.20|> Are you ready to move forward?<|5.28|>
+
+440
+00:22:41,739 --> 00:22:42,700
+<|5.84|> That is pressure.<|6.80|>
+
+441
+00:22:42,979 --> 00:22:45,260
+<|7.08|> That demands a commitment they aren't ready to give, right.<|9.36|>
+
+442
+00:22:45,260 --> 00:22:46,660
+<|9.36|> That pushes them further away.<|10.76|>
+
+443
+00:22:46,859 --> 00:22:50,099
+<|10.96|> Instead you call and you ask a clarifying question,<|14.20|>
+
+444
+00:22:50,339 --> 00:22:54,300
+<|14.44|> designed to uncover the hidden fear, you lower your tone, you speak calmly.<|18.40|>
+
+445
+00:22:54,660 --> 00:22:57,380
+<|18.76|> You see, John, it seems like we might have hit a pause here.<|21.48|>
+
+446
+00:22:57,460 --> 00:22:58,619
+<|21.56|> What else is holding you back?<|22.72|>
+
+447
+00:22:58,599 --> 00:23:00,679
+<|startoftranscript|><|0.00|> What else is holding your back?<|2.08|>
+
+448
+00:23:00,679 --> 00:23:04,880
+<|2.08|> It is such a simple sentence, but the framing is incredibly disarming.<|6.28|>
+
+449
+00:23:04,880 --> 00:23:06,599
+<|6.28|> It is disarming.<|8.00|>
+
+450
+00:23:06,599 --> 00:23:12,160
+<|8.00|> Because it assumes there's a highly valid, logical reason for the pause.<|13.56|>
+
+451
+00:23:12,160 --> 00:23:16,380
+<|13.56|> It validates their hesitation without forcing them to justify it defensively.<|17.78|>
+
+452
+00:23:16,400 --> 00:23:21,400
+<|startoftranscript|><|0.00|> It gives them permission to speak the fear out loud without feeling judged by an aggressive sales person.<|5.00|>
+
+453
+00:23:21,400 --> 00:23:24,400
+<|5.00|> "You are creating a safe space for their anxiety."<|8.00|>
+
+454
+00:23:24,400 --> 00:23:25,400
+<|8.00|> Exactly.<|9.00|>
+
+455
+00:23:25,400 --> 00:23:31,400
+<|9.00|> Hospitality and mortgage banking, as we discussed earlier, means holding that uncertainty for them without creating additional pressure.<|15.00|>
+
+456
+00:23:31,400 --> 00:23:40,400
+<|15.00|> By asking what is holding them back, you are implicitly saying, "I am here, I am steady, I am the expert, and we can solve whatever this road block is to get."<|24.00|>
+
+457
+00:23:40,500 --> 00:23:49,500
+<|startoftranscript|><|0.00|> You transition entirely from being a salesperson trying to force a transaction to being a trusted advisor helping them navigate a complex emotional life decision.<|9.00|>
+
+458
+00:23:49,500 --> 00:23:51,500
+<|9.00|> That mindset shift is crucial.<|11.00|>
+
+459
+00:23:51,500 --> 00:24:00,500
+<|11.00|> But while knowing how to unstick a file is vital, sometimes preventing a file from getting stuck in the first place just comes down to the architecture of your communication.<|20.00|>
+
+460
+00:24:00,199 --> 00:24:02,199
+<|startoftranscript|><|0.00|> which leads us to the rhythm of follow-up.<|2.00|>
+
+461
+00:24:02,199 --> 00:24:04,199
+<|2.00|> This is a huge part of the 501 module.<|4.00|>
+
+462
+00:24:04,199 --> 00:24:06,199
+<|4.00|> The Ironclad follow-up cadence.<|6.00|>
+
+463
+00:24:06,199 --> 00:24:08,199
+<|6.00|> This is how you prevent the cognitive overload<|8.00|>
+
+464
+00:24:08,199 --> 00:24:10,199
+<|8.00|> from setting in and files from going cold.<|10.00|>
+
+465
+00:24:10,199 --> 00:24:12,199
+<|10.00|> The industry data we reviewed<|12.00|>
+
+466
+00:24:12,199 --> 00:24:14,199
+<|12.00|> is unequivocally clear on this point.<|14.00|>
+
+467
+00:24:14,199 --> 00:24:16,199
+<|14.00|> Persistence wins the quarter.<|16.00|>
+
+468
+00:24:16,199 --> 00:24:19,199
+<|16.00|> But there is a fine line between persistence<|19.00|>
+
+469
+00:24:19,199 --> 00:24:21,199
+<|19.00|> and being a complete pest.<|21.00|>
+
+470
+00:24:21,400 --> 00:24:25,800
+<|startoftranscript|><|0.00|> The module outlines a very specific cadence to walk that line.<|4.40|>
+
+471
+00:24:25,800 --> 00:24:30,000
+<|4.40|> Same day, day 3, day 7, week 2, and day 30.<|8.60|>
+
+472
+00:24:30,000 --> 00:24:33,000
+<|8.60|> Let's break down the psychology behind these specific intervals.<|11.60|>
+
+473
+00:24:33,000 --> 00:24:34,000
+<|11.60|> Gladly.<|12.60|>
+
+474
+00:24:34,000 --> 00:24:36,800
+<|12.60|> The same day touches all about speed to lead, which we covered.<|15.40|>
+
+475
+00:24:37,000 --> 00:24:41,000
+<|startoftranscript|><|0.00|> The modern consumer expects immediate frictionless acknowledgement.<|4.00|>
+
+476
+00:24:41,000 --> 00:24:45,000
+<|4.00|> If they submit an inquiry, they expect to know you received it instantly.<|8.00|>
+
+477
+00:24:45,000 --> 00:24:49,000
+<|8.00|> But it is the subsequent touches that actually build the consultative relationship.<|12.00|>
+
+478
+00:24:49,000 --> 00:24:50,000
+<|12.00|> Let's look at day three.<|13.00|>
+
+479
+00:24:50,000 --> 00:24:51,000
+<|13.00|> Why day three?<|14.00|>
+
+480
+00:24:51,000 --> 00:24:55,000
+<|14.00|> What is happening in the borrower's mind 72 hours after the initial contest?<|18.00|>
+
+481
+00:24:55,300 --> 00:24:58,300
+<|startoftranscript|><|0.00|> Think about the typical weekend house hunting high.<|3.00|>
+
+482
+00:24:58,300 --> 00:25:00,300
+<|3.00|> A borrower gets pre-approved on a Friday.<|5.00|>
+
+483
+00:25:00,300 --> 00:25:03,300
+<|5.00|> They look at houses on Saturday. They're incredibly excited.<|8.00|>
+
+484
+00:25:03,300 --> 00:25:06,300
+<|8.00|> By Tuesday day three, the adrenaline is worn off.<|11.00|>
+
+485
+00:25:06,300 --> 00:25:10,300
+<|11.00|> The reality of the market, the lack of inventory or the high prices has set in.<|15.00|>
+
+486
+00:25:10,300 --> 00:25:12,300
+<|15.00|> They might be feeling slightly defeated.<|17.00|>
+
+487
+00:25:11,400 --> 00:25:15,640
+<|startoftranscript|><|0.00|> So, adjust checking in text on day three is going to annoy them.<|4.24|>
+
+488
+00:25:15,640 --> 00:25:17,320
+<|4.24|> It will infuriate them.<|5.92|>
+
+489
+00:25:17,320 --> 00:25:20,359
+<|5.92|> Your day three touch must provide specific value.<|8.96|>
+
+490
+00:25:20,359 --> 00:25:24,920
+<|8.96|> It might be a quick personalized video explaining a local market trend that normalizes<|13.52|>
+
+491
+00:25:24,920 --> 00:25:29,719
+<|13.52|> their frustration or a strategy for dealing with low inventory.<|18.32|>
+
+492
+00:25:29,719 --> 00:25:31,160
+<|18.32|> You are depositing value.<|19.76|>
+
+493
+00:25:31,160 --> 00:25:32,520
+<|19.76|> Okay, what about day seven?<|21.12|>
+
+494
+00:25:32,800 --> 00:25:34,239
+<|startoftranscript|><|0.00|> A full week later.<|1.44|>
+
+495
+00:25:34,239 --> 00:25:38,440
+<|1.44|> By day seven, if they haven't moved forward, the anxiety is usually peaking.<|5.64|>
+
+496
+00:25:38,440 --> 00:25:41,119
+<|5.64|> They feel like they are failing at the process.<|8.32|>
+
+497
+00:25:41,119 --> 00:25:46,040
+<|8.32|> Your day seven touch might be a highly structured, helpful checklist for first-time buyers<|13.24|>
+
+498
+00:25:46,040 --> 00:25:49,239
+<|13.24|> or a breakdown of hidden costs to watch out for.<|16.44|>
+
+499
+00:25:49,239 --> 00:25:50,840
+<|16.44|> It is an educational anchor.<|18.04|>
+
+500
+00:25:50,840 --> 00:25:51,840
+<|18.04|> It's like tending a garden.<|19.04|>
+
+501
+00:25:51,840 --> 00:25:53,080
+<|19.04|> I love this analogy.<|20.28|>
+
+502
+00:25:53,080 --> 00:25:56,920
+<|20.28|> You can't just dump a massive bucket of water on a seat on day one and then walk away<|24.12|>
+
+503
+00:25:56,920 --> 00:25:59,400
+<|24.12|> for a month expecting a giant tomato plant when you get back.<|26.60|>
+
+504
+00:25:59,400 --> 00:26:01,400
+<|startoftranscript|><|0.00|> one watering isn't enough.<|2.00|>
+
+505
+00:26:01,400 --> 00:26:03,400
+<|2.00|> No, it will dry out and die.<|4.00|>
+
+506
+00:26:03,400 --> 00:26:05,400
+<|4.00|> But, on the exact opposite side,<|6.00|>
+
+507
+00:26:05,400 --> 00:26:08,400
+<|6.00|> over watering will literally drown the roots.<|9.00|>
+
+508
+00:26:08,400 --> 00:26:11,400
+<|9.00|> If you call a nervous prospect three times a day,<|12.00|>
+
+509
+00:26:11,400 --> 00:26:13,400
+<|12.00|> every single day, you will drown them.<|14.00|>
+
+510
+00:26:13,400 --> 00:26:14,400
+<|14.00|> They will block your number.<|15.00|>
+
+511
+00:26:14,400 --> 00:26:16,400
+<|15.00|> The 501 cadence, same day,<|17.00|>
+
+512
+00:26:16,400 --> 00:26:18,400
+<|17.00|> 3, 7, 14, 30,<|19.00|>
+
+513
+00:26:18,400 --> 00:26:20,400
+<|19.00|> provides the exact right amount of hydration<|21.00|>
+
+514
+00:26:20,400 --> 00:26:23,400
+<|21.00|> to keep the relationship growing without suffocating the roots.<|24.00|>
+
+515
+00:26:23,300 --> 00:26:29,239
+<|startoftranscript|><|0.00|> That is a perfect visualization and at week two and day 30 the touches become more about long term vision<|5.94|>
+
+516
+00:26:29,239 --> 00:26:34,420
+<|5.94|> Re-clareifying their big picture goals. Yeah, every single time you reach out across this 30-day spectrum<|11.12|>
+
+517
+00:26:34,420 --> 00:26:40,080
+<|11.12|> You're depositing value into the relationship bank account. Okay, but let's look at the logistical reality of what you're suggesting<|16.78|>
+
+518
+00:26:40,099 --> 00:27:09,099
+<|startoftranscript|><|nocaptions|><|endoftext|>
+
+519
+00:27:09,099 --> 00:27:11,099
+<|startoftranscript|><|0.00|> I mean, I am going to fail.<|2.00|>
+
+520
+00:27:11,099 --> 00:27:17,099
+<|2.00|> Human beings are simply not built to track that much manual asynchronous data without dropping plates.<|8.00|>
+
+521
+00:27:17,099 --> 00:27:24,099
+<|8.00|> You are absolutely right. If you attempt to do this manually using sticky notes or a complex web of calendar reminders,<|15.00|>
+
+522
+00:27:24,099 --> 00:27:26,099
+<|15.00|> you will break under the administrative weight.<|17.00|>
+
+523
+00:27:26,099 --> 00:27:32,099
+<|17.00|> And this is exactly why the elite, top producing originators rely on technology to do the heavy lifting.<|23.00|>
+
+524
+00:27:32,400 --> 00:27:36,239
+<|startoftranscript|><|0.00|> This brings us to a revolutionary capability within the Terra platform.<|3.84|>
+
+525
+00:27:36,239 --> 00:27:39,680
+<|3.84|> Let's get into this because this is where the entire industry is heading.<|7.28|>
+
+526
+00:27:39,680 --> 00:27:43,520
+<|7.28|> And it is a massive unfair advantage for loan factory originators.<|11.12|>
+
+527
+00:27:43,520 --> 00:27:47,359
+<|11.12|> We are talking about Terra's AI-assisted summarization and outreach drafts.<|14.96|>
+
+528
+00:27:47,359 --> 00:27:53,160
+<|14.96|> Executing that intense 30-day rhythm is only sustainable if you remove the friction from the daily workflow.<|20.76|>
+
+529
+00:27:53,199 --> 00:27:57,000
+<|startoftranscript|><|0.00|> And the biggest point of friction and follow up is what we call the blank screen syndrome.<|3.80|>
+
+530
+00:27:57,000 --> 00:27:58,599
+<|3.80|> Oh, I know this well.<|5.40|>
+
+531
+00:27:58,599 --> 00:28:04,479
+<|5.40|> You know you need to email a borrower for your day seven touch, but you sit there staring<|11.28|>
+
+532
+00:28:04,479 --> 00:28:08,760
+<|11.28|> at a blinking cursor on a blank white screen wondering how to phrase it so you don't<|15.56|>
+
+533
+00:28:08,760 --> 00:28:09,760
+<|15.56|> sound desperate.<|16.56|>
+
+534
+00:28:09,760 --> 00:28:10,760
+<|16.56|> Exactly.<|17.56|>
+
+535
+00:28:10,760 --> 00:28:14,559
+<|17.56|> It ends up taking 20 minutes to write a three sentence email because you are completely<|21.36|>
+
+536
+00:28:14,559 --> 00:28:15,839
+<|21.36|> overthinking the tone.<|22.64|>
+
+537
+00:28:16,099 --> 00:28:20,900
+<|startoftranscript|><|0.00|> Terra's integrated AI eliminates the blank screen syndrome entirely.<|4.80|>
+
+538
+00:28:20,900 --> 00:28:22,619
+<|4.80|> It looks at the specific file.<|6.52|>
+
+539
+00:28:22,619 --> 00:28:24,780
+<|6.52|> It instantly understands the context,<|8.68|>
+
+540
+00:28:24,780 --> 00:28:26,500
+<|8.68|> what loan structure they're looking at,<|10.40|>
+
+541
+00:28:26,500 --> 00:28:28,459
+<|10.40|> what stage of the pipeline they're in,<|12.36|>
+
+542
+00:28:28,459 --> 00:28:30,419
+<|12.36|> what your previous communications have been,<|14.32|>
+
+543
+00:28:30,419 --> 00:28:32,979
+<|14.32|> and it generates a custom follow-up draft.<|16.88|>
+
+544
+00:28:32,979 --> 00:28:34,979
+<|16.88|> - It also does file summarization, right?<|18.88|>
+
+545
+00:28:34,979 --> 00:28:35,819
+<|18.88|> - Yes.<|19.72|>
+
+546
+00:28:35,400 --> 00:28:43,400
+<|startoftranscript|><|0.00|> If a file has been sitting for 14 days, the AI can summarize the current status in history in an instant, so you know exactly where things stand before you pick up the phone.<|8.00|>
+
+547
+00:28:43,400 --> 00:28:49,400
+<|8.00|> It allows you to maintain a massive volume of communication without losing a single ounce of personalization.<|14.00|>
+
+548
+00:28:49,400 --> 00:28:58,400
+<|14.00|> But, and this is a massive flashing neon beauty, we have to establish a critical, non-negotiable constraint right here.<|23.00|>
+
+549
+00:28:58,400 --> 00:29:03,400
+<|23.00|> We absolutely do. This is a hard rule. These AI generations are always drafts.<|28.00|>
+
+550
+00:29:03,199 --> 00:29:12,000
+<|startoftranscript|><|0.00|> You must never, under any circumstances, send live AI-generated communications directly to a bar or without a human review.<|8.80|>
+
+551
+00:29:12,000 --> 00:29:16,199
+<|8.80|> Never? Never. You, the licensed loan officer, are the final backstop.<|13.00|>
+
+552
+00:29:16,199 --> 00:29:19,599
+<|13.00|> You are the professional with the legal and fiduciary duty to the consumer.<|16.40|>
+
+553
+00:29:19,699 --> 00:29:23,899
+<|startoftranscript|><|0.00|> The AI is brilliant at structure, but it does not have a license.<|4.20|>
+
+554
+00:29:23,899 --> 00:29:28,299
+<|4.20|> You must read the draft, verify the empathetic tone, check the absolute accuracy of the<|8.60|>
+
+555
+00:29:28,299 --> 00:29:32,659
+<|8.60|> information, and it's your full compliance of every single message before you hit send.<|12.96|>
+
+556
+00:29:32,659 --> 00:29:34,979
+<|12.96|> Okay, let me play devil's advocate on the AI piece.<|15.28|>
+
+557
+00:29:35,000 --> 00:29:36,000
+<|startoftranscript|><|0.00|> Okay.<|1.00|>
+
+558
+00:29:36,000 --> 00:29:39,280
+<|1.00|> If I'm letting an algorithm draft my emails, aren't I losing the very thing that makes me<|4.28|>
+
+559
+00:29:39,280 --> 00:29:40,280
+<|4.28|> valuable?<|5.28|>
+
+560
+00:29:40,280 --> 00:29:42,239
+<|5.28|> Are I losing my personal connection to the borrower?<|7.24|>
+
+561
+00:29:42,239 --> 00:29:43,760
+<|7.24|> That is the psychological trap.<|8.76|>
+
+562
+00:29:43,760 --> 00:29:44,760
+<|8.76|> Yeah.<|9.76|>
+
+563
+00:29:44,760 --> 00:29:45,760
+<|9.76|> You're assuming the rough draft is the connection.<|10.76|>
+
+564
+00:29:45,760 --> 00:29:46,760
+<|10.76|> Yeah.<|11.76|>
+
+565
+00:29:46,760 --> 00:29:48,000
+<|11.76|> The rough draft is just the scaffolding.<|13.00|>
+
+566
+00:29:48,000 --> 00:29:52,920
+<|13.00|> The AI is a tool to give you a head start to get you from 0 to 80% effortlessly.<|17.92|>
+
+567
+00:29:53,000 --> 00:29:55,319
+<|startoftranscript|><|0.00|> But you have to take it to the final 20%.<|2.32|>
+
+568
+00:29:55,319 --> 00:29:59,520
+<|2.32|> The connection happens in that final 20% when you tweak a sentence at a personal note about<|6.52|>
+
+569
+00:29:59,520 --> 00:30:02,760
+<|6.52|> their kids and ensure the tone matches your voice.<|9.76|>
+
+570
+00:30:02,760 --> 00:30:05,040
+<|9.76|> So AI is my highly efficient assistant.<|12.04|>
+
+571
+00:30:05,040 --> 00:30:06,479
+<|12.04|> It is not my replacement.<|13.48|>
+
+572
+00:30:06,479 --> 00:30:07,479
+<|13.48|> Exactly.<|14.48|>
+
+573
+00:30:07,479 --> 00:30:12,640
+<|14.48|> The AI handles the busy work, the drafting, the organizing, the contextual recall, but the<|19.64|>
+
+574
+00:30:12,640 --> 00:30:17,400
+<|19.64|> loan officer provides the trust, the empathy, and the ultimate authority.<|24.40|>
+
+575
+00:30:17,400 --> 00:30:18,800
+<|24.40|> Remember what we said earlier.<|25.80|>
+
+576
+00:30:18,800 --> 00:30:21,280
+<|startoftranscript|><|0.00|> A machine cannot hold a borrower's uncertainty.<|2.48|><|endoftext|>
+
+577
+00:30:21,300 --> 00:30:23,860
+<|startoftranscript|><|0.00|> Only a human being can do that.<|2.56|>
+
+578
+00:30:23,860 --> 00:30:28,420
+<|2.56|> When you blend the sheer efficiency of Terra's AI with the deep empathy of a skilled loan<|7.12|>
+
+579
+00:30:28,420 --> 00:30:32,300
+<|7.12|> officer, you get an unbeatable combination in the market.<|11.00|>
+
+580
+00:30:32,300 --> 00:30:33,619
+<|11.00|> That is incredibly empowering.<|12.32|>
+
+581
+00:30:33,619 --> 00:30:38,100
+<|12.32|> It completely removes the dread out of the follow-up block on my calendar.<|16.80|>
+
+582
+00:30:38,100 --> 00:30:40,140
+<|16.80|> I am not writing 50 emails from scratch.<|18.84|>
+
+583
+00:30:40,140 --> 00:30:43,540
+<|18.84|> I am reviewing, editing, and personalizing 50 highly relevant drafts.<|22.24|>
+
+584
+00:30:43,599 --> 00:30:45,599
+<|startoftranscript|><|0.00|> It scales my empathy.<|2.00|>
+
+585
+00:30:45,599 --> 00:30:50,160
+<|2.00|> But speaking of busy work, if we are adding these new highly efficient habits like the daily<|6.56|>
+
+586
+00:30:50,160 --> 00:30:55,599
+<|6.56|> tarot discipline, the protected weekly review, the intense follow-up cadence, it means we have to make room.<|12.00|>
+
+587
+00:30:55,599 --> 00:30:57,599
+<|12.00|> We only have 24 hours in a day.<|14.00|>
+
+588
+00:30:57,599 --> 00:30:58,599
+<|14.00|> Exactly.<|15.00|>
+
+589
+00:30:58,599 --> 00:31:01,599
+<|15.00|> Which means to run the engine like a pro, we have to actively stop doing certain things.<|18.00|>
+
+590
+00:31:01,599 --> 00:31:03,599
+<|18.00|> We have to cut the fat.<|20.00|>
+
+591
+00:31:03,599 --> 00:31:05,599
+<|20.00|> This is often the most painful part of the 501 module.<|22.00|>
+
+592
+00:31:05,900 --> 00:31:07,940
+<|startoftranscript|><|0.00|> for experienced originators.<|2.04|>
+
+593
+00:31:07,940 --> 00:31:10,140
+<|2.04|> Identifying what to stop doing.<|4.24|>
+
+594
+00:31:10,140 --> 00:31:11,700
+<|4.24|> Because, historically,<|5.80|>
+
+595
+00:31:11,700 --> 00:31:15,140
+<|5.80|> loan officers are notorious for hiding behind busy work,<|9.24|>
+
+596
+00:31:15,140 --> 00:31:17,580
+<|9.24|> instead of actually doing the hard work of producing.<|11.68|>
+
+597
+00:31:17,580 --> 00:31:20,180
+<|11.68|> Oh, this hits very close to home for a lot of people.<|14.28|>
+
+598
+00:31:20,180 --> 00:31:22,180
+<|14.28|> What kind of busy work are we talking about?<|16.28|>
+
+599
+00:31:22,180 --> 00:31:23,780
+<|16.28|> What are the specific traps?<|17.88|>
+
+600
+00:31:23,780 --> 00:31:26,020
+<|17.88|> It usually takes three primary forms.<|20.12|>
+
+601
+00:31:26,020 --> 00:31:28,859
+<|20.12|> First, manually tracking documents.<|22.96|>
+
+602
+00:31:28,900 --> 00:31:35,900
+<|startoftranscript|><|0.00|> We see loan officers keeping a separate, massive Excel spreadsheet of what conditions are outstanding for every file,<|7.00|>
+
+603
+00:31:35,900 --> 00:31:39,900
+<|7.00|> meticulously updating it by hand, rather than trusting the system to track it.<|11.00|>
+
+604
+00:31:39,900 --> 00:31:41,900
+<|11.00|> Wait, I can hear a loan officer arguing right now?<|13.00|>
+
+605
+00:31:41,900 --> 00:31:47,900
+<|13.00|> It's easy to call my spreadsheet busywork, but if I don't know where my conditions are, my file blows up at the closing table.<|19.00|>
+
+606
+00:31:47,900 --> 00:31:49,900
+<|19.00|> So how is tracking my conditions busywork?<|21.00|>
+
+607
+00:31:49,900 --> 00:31:56,900
+<|21.00|> It is busywork because you are duplicating effort out of a need for emotional control, not operational efficiency.<|28.00|>
+
+608
+00:31:56,500 --> 00:32:01,640
+<|startoftranscript|><|0.00|> "Tiri tracks it. The AI flags missing documents. You manually tracking it in a<|5.14|>
+
+609
+00:32:01,640 --> 00:32:05,439
+<|5.14|> severed Excel sheet with 10 different highlight colors is an emotional soothing<|8.94|>
+
+610
+00:32:05,439 --> 00:32:07,520
+<|8.94|> mechanism. It is not a productive task."<|11.02|>
+
+611
+00:32:07,520 --> 00:32:12,219
+<|11.02|> Wow, an emotional soothing mechanism. That is a direct hit.<|15.72|>
+
+612
+00:32:12,400 --> 00:32:14,960
+<|startoftranscript|><|0.00|> What is the second form of busy work?<|2.56|>
+
+613
+00:32:14,960 --> 00:32:18,479
+<|2.56|> Constantly checking and refreshing emails throughout the day to feel productive.<|6.08|>
+
+614
+00:32:18,479 --> 00:32:23,479
+<|6.08|> You hit refresh, you answer a minor question, and your brain gives you a little hit of dopamine.<|11.08|>
+
+615
+00:32:23,479 --> 00:32:26,880
+<|11.08|> You feel like you are working, but you aren't moving the needle.<|14.48|>
+
+616
+00:32:26,880 --> 00:32:29,940
+<|14.48|> And the third form is writing overly long, complex,<|17.54|>
+
+617
+00:32:30,000 --> 00:32:32,839
+<|startoftranscript|><|0.00|> multi-paragraph emails to borrowers<|2.84|>
+
+618
+00:32:32,839 --> 00:32:35,359
+<|2.84|> explaining intricate underwriting guidelines.<|5.36|>
+
+619
+00:32:35,359 --> 00:32:38,239
+<|5.36|> - Ah, violating the talk less, sell more, principle.<|8.24|>
+
+620
+00:32:38,239 --> 00:32:40,040
+<|8.24|> - Exactly, writing a novel about<|10.04|>
+
+621
+00:32:40,040 --> 00:32:41,839
+<|10.04|> debt to income calculation nuances<|11.84|>
+
+622
+00:32:41,839 --> 00:32:43,000
+<|11.84|> instead of just picking up the phone<|13.00|>
+
+623
+00:32:43,000 --> 00:32:45,520
+<|13.00|> and having a two minute clarifying conversation.<|15.52|>
+
+624
+00:32:45,520 --> 00:32:47,880
+<|15.52|> - I will completely admit, tweaking a spreadsheet<|17.88|>
+
+625
+00:32:47,880 --> 00:32:49,640
+<|17.88|> so the columns are perfectly color coded,<|19.64|>
+
+626
+00:32:49,640 --> 00:32:50,959
+<|19.64|> feels incredibly safe.<|20.96|>
+
+627
+00:32:50,800 --> 00:32:54,720
+<|startoftranscript|><|0.00|> Constantly hitting refresh on my inbox feels like I am indispensable,<|3.92|>
+
+628
+00:32:54,720 --> 00:32:58,400
+<|3.92|> whereas picking up the phone to make a day three follow-up call to a lead<|7.60|>
+
+629
+00:32:58,400 --> 00:33:02,880
+<|7.60|> who might reject me. Wait, I mean that feels risky. It spikes my cortisol, it feels<|12.08|>
+
+630
+00:33:02,880 --> 00:33:06,080
+<|12.08|> deeply uncomfortable. You have just diagnosed the exact<|15.28|>
+
+631
+00:33:06,080 --> 00:33:10,960
+<|15.28|> neurobiology of busy work. It is a psychological shield against rejection.<|20.16|>
+
+632
+00:33:10,960 --> 00:33:15,680
+<|20.16|> But let me be as clear as possible. Hiding behind administrative tasks because they feel<|24.88|>
+
+633
+00:33:15,680 --> 00:33:19,360
+<|24.88|> safe is a fast track to a shrinking dying pipeline.<|28.56|>
+
+634
+00:33:19,400 --> 00:33:22,400
+<|startoftranscript|><|0.00|> You have to let Tara handle the administrative tracking.<|3.00|>
+
+635
+00:33:22,400 --> 00:33:31,400
+<|3.00|> Your time, your highly valuable time as a licensed professional, must be spent almost exclusively in revenue generating consultative conversations.<|12.00|>
+
+636
+00:33:31,400 --> 00:33:35,400
+<|12.00|> It is the fundamental difference between working in your business and working on your business.<|16.00|>
+
+637
+00:33:35,400 --> 00:33:41,400
+<|16.00|> If you are acting like a highly anxious overpaid processor, you are not acting like an elite sales and marketing professional.<|22.00|>
+
+638
+00:33:41,400 --> 00:33:48,400
+<|22.00|> Stop writing novels in your emails. Pick up the phone. Stop color coding spreadsheets. Open Tara and trust the ecosystem.<|29.00|>
+
+639
+00:33:48,599 --> 00:33:52,599
+<|startoftranscript|><|0.00|> Stop waiting for the inbox to dictate your daily priorities.<|4.00|>
+
+640
+00:33:52,599 --> 00:33:54,599
+<|4.00|> You have to take control of the engine.<|6.00|>
+
+641
+00:33:54,599 --> 00:33:57,599
+<|6.00|> Okay, this has been an incredibly deep and phenomenal dive.<|9.00|>
+
+642
+00:33:57,599 --> 00:34:05,599
+<|9.00|> We have covered a massive amount of ground today, unpacking the transition from a highly reactive state to a completely proactive, unshakable system.<|17.00|>
+
+643
+00:34:05,099 --> 00:34:10,100
+<|startoftranscript|><|0.00|> Let's do a comprehensive recap of the journey we just took through the 501 module.<|5.00|>
+
+644
+00:34:10,100 --> 00:34:13,100
+<|5.00|> We started by fundamentally redefining the pipeline.<|8.00|>
+
+645
+00:34:13,100 --> 00:34:25,100
+<|8.00|> We threw out the static dusty spreadsheet list and embraced the pipeline as a living breathing ecosystem that requires your active management to keep borrowers out of the terrifying woods of uncertainty.<|20.00|>
+
+646
+00:34:25,100 --> 00:34:28,100
+<|20.00|> Then we broke down the daily Terra discipline.<|23.00|>
+
+647
+00:34:27,500 --> 00:34:33,260
+<|startoftranscript|><|0.00|> The morning offensive speed to lead capturing momentum before the day begins, and the vital end-of-day<|5.76|>
+
+648
+00:34:33,260 --> 00:34:36,179
+<|5.76|> defensive logging outcomes and clearing tasks.<|8.68|>
+
+649
+00:34:36,179 --> 00:34:40,459
+<|8.68|> We explored how that daily hygiene acts as a cognitive offload to prevent burnout and let<|12.96|>
+
+650
+00:34:40,459 --> 00:34:42,540
+<|12.96|> you actually be present with your family.<|15.04|>
+
+651
+00:34:42,540 --> 00:34:46,100
+<|15.04|> We aggressively defended the 30-minute weekly review.<|18.60|>
+
+652
+00:34:46,100 --> 00:34:49,739
+<|18.60|> We established that pulling your head out of the weeds to look at the macro view is the<|22.24|>
+
+653
+00:34:49,739 --> 00:34:52,379
+<|22.24|> only way to prevent Friday afternoon fires.<|24.88|>
+
+654
+00:34:52,379 --> 00:34:55,620
+<|24.88|> We discussed Dale's brilliant advice on tracking the three leading indicators.<|28.12|>
+
+655
+00:34:55,600 --> 00:34:59,600
+<|startoftranscript|><|0.00|> your daily activities, your consultative conversations, and your follow-up<|4.00|>
+
+656
+00:34:59,600 --> 00:35:03,840
+<|4.00|> velocity. We learned to stop staring in the rear-view mirror at lagging closed<|8.24|>
+
+657
+00:35:03,840 --> 00:35:07,840
+<|8.24|> loans and start looking at the headlights. We talked about the psychology of<|12.24|>
+
+658
+00:35:07,840 --> 00:35:13,120
+<|12.24|> unsticking stalled files by using the clarify stage of the CSER framework. We<|17.52|>
+
+659
+00:35:13,120 --> 00:35:17,360
+<|17.52|> learned to ask, "What else is holding you back?"<|21.76|>
+
+660
+00:35:15,800 --> 00:35:19,800
+<|startoftranscript|><|0.00|> to disarm borrower fears without triggering their flight response.<|4.00|>
+
+661
+00:35:19,800 --> 00:35:23,800
+<|4.00|> We outlined the ironclad follow-up cadence same day,<|8.00|>
+
+662
+00:35:23,800 --> 00:35:25,800
+<|8.00|> 3-7, 14, and 30,<|10.00|>
+
+663
+00:35:25,800 --> 00:35:30,800
+<|10.00|> and used the garden analogy to understand how to hydrate the relationship without drowning it.<|15.00|>
+
+664
+00:35:30,800 --> 00:35:34,800
+<|15.00|> And we covered how Tera's AI drafts completely remove the friction of the blank screen,<|19.00|>
+
+665
+00:35:34,800 --> 00:35:36,800
+<|19.00|> making that intense rhythm sustainable.<|21.00|>
+
+666
+00:35:37,100 --> 00:35:42,060
+<|startoftranscript|><|0.00|> Provided, of course, you remember that the loan officers always the final licensed empathetic<|4.96|>
+
+667
+00:35:42,060 --> 00:35:43,060
+<|4.96|> backstop.<|5.96|>
+
+668
+00:35:43,060 --> 00:35:47,020
+<|5.96|> Finally, we challenged you to confront and cut out the busy work, the spreadsheets, the<|9.92|>
+
+669
+00:35:47,020 --> 00:35:49,260
+<|9.92|> inbox refreshing the long emails.<|12.16|>
+
+670
+00:35:49,260 --> 00:35:51,820
+<|12.16|> That feels emotionally safe, but ultimately destroys your production.<|14.72|>
+
+671
+00:35:51,820 --> 00:35:54,420
+<|14.72|> It is a complete operational overhaul.<|17.32|>
+
+672
+00:35:54,420 --> 00:35:58,540
+<|17.32|> So to bring it all home, right back to where we started with that murky diagnostic landscape<|21.44|>
+
+673
+00:35:58,540 --> 00:35:59,500
+<|21.44|> and the broken X-Ray machine.<|22.40|>
+
+674
+00:35:59,500 --> 00:36:03,939
+<|startoftranscript|><|0.00|> machine. We want to give you the loan office for listening one highly specific<|4.44|>
+
+675
+00:36:03,939 --> 00:36:08,620
+<|4.44|> concrete pipeline habit to take away from this entire deep dive. One single thing<|9.12|>
+
+676
+00:36:08,620 --> 00:36:11,899
+<|9.12|> you must start tomorrow morning to be in clearing up those muddy waters. Here is<|12.40|>
+
+677
+00:36:11,899 --> 00:36:17,979
+<|12.40|> your absolute mission for tomorrow morning. When you sit down at your desk<|18.48|>
+
+678
+00:36:16,399 --> 00:36:21,279
+<|startoftranscript|><|0.00|> Before you open your email inbox, before you check a single text message from a realtor,<|4.88|>
+
+679
+00:36:21,279 --> 00:36:27,039
+<|4.88|> open Terra. Make the daily morning update your anchor, let your living system tell you what<|10.64|>
+
+680
+00:36:27,039 --> 00:36:33,199
+<|10.64|> actually matters today. Rather than letting someone else's unorganized emergency in an email,<|16.80|>
+
+681
+00:36:33,199 --> 00:36:34,639
+<|16.80|> dictate your priorities.<|18.24|>
+
+682
+00:36:34,699 --> 00:36:37,699
+<|startoftranscript|><|0.00|> If you own your system, you own your success.<|3.00|>
+
+683
+00:36:37,699 --> 00:36:41,699
+<|3.00|> And think about what happens outside of the office when you actually own that system.<|7.00|>
+
+684
+00:36:41,699 --> 00:36:47,699
+<|7.00|> I mean, the piece of mind you carry into your personal life when your professional life isn't held together by duct tape and anxiety.<|13.00|>
+
+685
+00:36:47,699 --> 00:36:49,699
+<|13.00|> It changes who you are at the dinner table.<|15.00|>
+
+686
+00:36:49,699 --> 00:36:50,699
+<|15.00|> It really does. It changes everything.<|16.00|>
+
+687
+00:36:50,699 --> 00:36:53,699
+<|16.00|> Run the engine like a pro, don't let it run you.<|19.00|>
+
+688
+00:36:53,699 --> 00:36:55,699
+<|19.00|> Thank you for joining us on this Deep Dive.<|21.00|>
+
+689
+00:36:55,699 --> 00:36:58,699
+<|21.00|> Now go up in Tara, and we will see you next time.<|24.00|>
+

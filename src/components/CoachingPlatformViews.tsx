@@ -45,6 +45,7 @@ import MemberShell from "./MemberShell";
 import TrainingWeeks from "./TrainingWeeks";
 import ProfileWorkspace from "./ProfileWorkspace";
 import ResourceTabs from "./ResourceTabs";
+import PodcastLibrary from "./PodcastLibrary";
 
 function PageHero({
   eyebrow,
@@ -337,6 +338,7 @@ export function ResourcesLibrary({ program }: { program: ProgramKey }) {
       <ResourceTabs
         scripts={<ScriptLibraryWorkspace scripts={programScripts(program)} />}
         tools={<MemberTools program={program} />}
+        podcast={<PodcastLibrary />}
         calendar={<CalendarMonth program={program} />}
         course={<CourseOverview program={program} />}
         training={

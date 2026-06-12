@@ -1,0 +1,1100 @@
+1
+00:00:00,000 --> 00:00:05,599
+<|startoftranscript|><|0.00|> So picture this, this is a Friday night and you have this young couple sitting at their kitchen table.<|5.60|>
+
+2
+00:00:05,599 --> 00:00:07,759
+<|5.60|> Yeah, probably completely exhausted.<|7.76|>
+
+3
+00:00:07,759 --> 00:00:08,399
+<|7.76|> Oh, totally.<|8.40|>
+
+4
+00:00:08,399 --> 00:00:15,199
+<|8.40|> Like six months of just brutal house hunting, dozens of rejected offers and listen<|15.20|>
+
+5
+00:00:15,199 --> 00:00:16,799
+<|15.20|> inspections, all that stress.<|16.80|>
+
+6
+00:00:16,799 --> 00:00:21,439
+<|16.80|> And right in front of them are two different loan estimates from two different lenders.<|21.44|>
+
+7
+00:00:21,439 --> 00:00:22,559
+<|21.44|> Okay, setting the scene.<|22.56|>
+
+8
+00:00:22,559 --> 00:00:23,039
+<|22.56|> Right.<|23.04|>
+
+9
+00:00:23,039 --> 00:00:27,279
+<|23.04|> Now, the first option saves them about 80 bucks a month.<|27.28|>
+
+10
+00:00:27,399 --> 00:00:29,739
+<|startoftranscript|><|0.00|> But the second option is actually more expensive.<|2.34|>
+
+11
+00:00:29,739 --> 00:00:32,439
+<|2.34|> You know, slightly higher rate, maybe the closing costs are a bit higher.<|5.04|>
+
+12
+00:00:32,439 --> 00:00:32,939
+<|5.04|> Right.<|5.54|>
+
+13
+00:00:32,939 --> 00:00:35,739
+<|5.54|> But the loan officer who provided that second option,<|8.34|>
+
+14
+00:00:35,739 --> 00:00:41,079
+<|8.34|> they spent 40 minutes the night before explaining every single line<|13.68|>
+
+15
+00:00:41,079 --> 00:00:45,220
+<|13.68|> of the closing disclosure to the couple's grandmother in completely fluent Russian.<|17.82|>
+
+16
+00:00:45,220 --> 00:00:46,419
+<|17.82|> Oh, wow.<|19.02|>
+
+17
+00:00:46,419 --> 00:00:46,619
+<|19.02|> Yeah.<|19.22|>
+
+18
+00:00:46,619 --> 00:00:50,659
+<|19.22|> And, uh, statistically speaking, the overwhelming majority of the time,<|23.26|>
+
+19
+00:00:50,659 --> 00:00:52,860
+<|23.26|> that family is going to choose more expensive loan.<|25.46|>
+
+20
+00:00:52,860 --> 00:00:54,059
+<|25.46|> They absolutely will.<|26.66|>
+
+21
+00:00:54,059 --> 00:00:54,860
+<|26.66|> Every time.<|27.46|>
+
+22
+00:00:54,799 --> 00:00:59,799
+<|startoftranscript|><|0.00|> And today, we're really unpacking the hard data on exactly why that happens.<|5.00|>
+
+23
+00:00:59,799 --> 00:01:02,000
+<|5.00|> So, welcome to the deep dive.<|7.20|>
+
+24
+00:01:02,000 --> 00:01:04,199
+<|7.20|> Today, we're talking directly to you.<|9.40|>
+
+25
+00:01:04,199 --> 00:01:08,800
+<|9.40|> Yes, you, the Russian-speaking mortgage professional, operating here in the United States.<|14.00|>
+
+26
+00:01:08,800 --> 00:01:09,800
+<|14.00|> Exactly.<|15.00|>
+
+27
+00:01:09,800 --> 00:01:14,800
+<|15.00|> We want to figure out how you can systematically beat out these massive corporate banks that have like,<|20.00|>
+
+28
+00:01:14,800 --> 00:01:20,800
+<|20.00|> billion dollar ad budgets just by leaning into your specific linguistic niche.<|26.00|>
+
+29
+00:01:20,800 --> 00:01:21,800
+<|26.00|> So let's unpack this.<|27.00|>
+
+30
+00:01:21,800 --> 00:01:23,800
+<|27.00|> We're going to break down the neurobiology of trust.<|29.00|>
+
+31
+00:01:24,300 --> 00:01:29,300
+<|startoftranscript|><|0.00|> how to navigate family decision making and the digital tools you need to scale this.<|5.00|>
+
+32
+00:01:29,300 --> 00:01:33,420
+<|5.00|> And you know the answer to beating those banks isn't about undercutting rates or just running<|9.12|>
+
+33
+00:01:33,420 --> 00:01:35,380
+<|9.12|> more aggressive ad campaigns.<|11.08|>
+
+34
+00:01:35,380 --> 00:01:40,060
+<|11.08|> If you actually analyze the decision making landscape in immigrant communities, you see<|15.76|>
+
+35
+00:01:40,060 --> 00:01:43,139
+<|15.76|> that traditional metrics just give way to a completely different<|18.84|>
+
+36
+00:01:43,199 --> 00:01:48,399
+<|startoftranscript|><|0.00|> architecture of choice. Right. And we have a massive stack of research today to prove it.<|5.20|>
+
+37
+00:01:48,399 --> 00:01:52,439
+<|5.20|> We do. We're pulling from Fannie Mae's mortgage journey's ethnographic study,<|9.24|>
+
+38
+00:01:52,439 --> 00:01:59,399
+<|9.24|> behavioral intelligence reports, and even adoption analytics for next-gen AICRMs, like rings AI.<|16.20|>
+
+39
+00:01:59,900 --> 00:02:03,900
+<|startoftranscript|><|0.00|> In niche community marketing, trust isn't just a buzzword.<|4.00|>
+
+40
+00:02:03,900 --> 00:02:06,500
+<|4.00|> It's a measurable, strategic asset.<|6.60|>
+
+41
+00:02:06,500 --> 00:02:09,020
+<|6.60|> So let's start with that kitchen table scenario.<|9.12|>
+
+42
+00:02:09,020 --> 00:02:13,779
+<|9.12|> Why does an $80 savings lose to a conversation with grandma?<|13.88|>
+
+43
+00:02:13,779 --> 00:02:16,300
+<|13.88|> The research talks about this concept called, um,<|16.40|>
+
+44
+00:02:16,399 --> 00:02:18,399
+<|startoftranscript|><|0.00|> seamless polylingal maneuvering.<|2.00|>
+
+45
+00:02:18,399 --> 00:02:20,399
+<|2.00|> Yes, seamless polylingal maneuvering.<|4.00|>
+
+46
+00:02:20,399 --> 00:02:21,399
+<|4.00|> Break that down for me.<|5.00|>
+
+47
+00:02:21,399 --> 00:02:28,399
+<|5.00|> Like what is actually happening in a client's brain when you, as their loan officer, just suddenly switch from English to Russian?<|12.00|>
+
+48
+00:02:28,399 --> 00:02:31,399
+<|12.00|> What's truly fascinating here is the physiological side of it.<|15.00|>
+
+49
+00:02:31,699 --> 00:02:36,399
+<|startoftranscript|><|0.00|> When we talk about polylangle maneuvering, we don't just mean you have the ability to translate the word<|4.70|>
+
+50
+00:02:36,399 --> 00:02:38,199
+<|4.70|> "S-Grow" or, you know, "underwriting."<|6.50|>
+
+51
+00:02:38,199 --> 00:02:39,899
+<|6.50|> Right, it's not just a vocabulary test.<|8.20|>
+
+52
+00:02:39,899 --> 00:02:42,199
+<|8.20|> Exactly, it's about cognitive load.<|10.50|>
+
+53
+00:02:42,199 --> 00:02:47,199
+<|10.50|> When someone who isn't a native English speaker is trying to process a complex financial transaction,<|15.50|>
+
+54
+00:02:47,199 --> 00:02:51,699
+<|15.50|> I mean, probably the biggest purchase of their life, their prefrontal cortex is just maxed out.<|20.00|>
+
+55
+00:02:51,699 --> 00:02:52,500
+<|20.00|> A lot better.<|20.80|>
+
+56
+00:02:52,500 --> 00:02:58,699
+<|20.80|> They have to understand the terminology, assess the risks, read the hidden context, and monitor your body language<|27.00|>
+
+57
+00:02:58,899 --> 00:03:03,220
+<|startoftranscript|><|0.00|> at the same time. So their brain is literally overloaded. Yeah. Like it just doesn't have the<|4.32|>
+
+58
+00:03:03,220 --> 00:03:08,819
+<|4.32|> resources left to feel safe. That's exactly it. And the second you switch to Russian phonetics<|9.92|>
+
+59
+00:03:08,819 --> 00:03:14,579
+<|9.92|> and you use familiar cultural idioms, you instantly remove that massive cognitive burden. Wow.<|15.68|>
+
+60
+00:03:14,579 --> 00:03:19,779
+<|15.68|> From a neurobiological standpoint, the amygdala, which is the part of the brain that handles<|20.88|>
+
+61
+00:03:19,779 --> 00:03:20,500
+<|20.88|> threat detection.<|21.60|>
+
+62
+00:03:20,500 --> 00:03:22,500
+<|startoftranscript|><|0.00|> It just powers down.<|2.00|>
+
+63
+00:03:22,500 --> 00:03:27,500
+<|2.00|> Your clients' neural pathways instantly flag you as part of their in-group.<|7.00|>
+
+64
+00:03:27,500 --> 00:03:30,500
+<|7.00|> They're in-group, so the social friction basically just disappears.<|10.00|>
+
+65
+00:03:30,500 --> 00:03:31,500
+<|10.00|> Completely.<|11.00|>
+
+66
+00:03:31,500 --> 00:03:36,500
+<|11.00|> They stop seeing you as a representative of some faceless American financial machine,<|16.00|>
+
+67
+00:03:36,500 --> 00:03:40,500
+<|16.00|> and you become an understandable safe element of their own ecosystem.<|20.00|>
+
+68
+00:03:40,000 --> 00:03:47,759
+<|startoftranscript|><|0.00|> And that is so critical to understand because we look at that Fannie Mae mortgage journey study that faceless financial machine is<|7.76|>
+
+69
+00:03:48,320 --> 00:03:57,000
+<|8.32|> Genuinely terrifying to them. Oh absolutely terrifying like the researchers literally put cameras in the homes of 14 low and moderate income<|17.00|>
+
+70
+00:03:57,160 --> 00:04:00,660
+<|17.16|> First-time buyers many of whom were from minority backgrounds<|20.66|>
+
+71
+00:04:01,000 --> 00:04:07,000
+<|startoftranscript|><|0.00|> and the level of paranoia about handing over data to corporate networks was just off the charts.<|6.00|>
+
+72
+00:04:07,000 --> 00:04:09,000
+<|6.00|> It's a fundamental barrier.<|8.00|>
+
+73
+00:04:09,000 --> 00:04:14,000
+<|8.00|> For a lot of recent immigrants or people with strong cultural ties to their home countries,<|13.00|>
+
+74
+00:04:14,000 --> 00:04:18,000
+<|13.00|> the banking system does not equal automatic safety.<|17.00|>
+
+75
+00:04:18,200 --> 00:04:24,200
+<|startoftranscript|><|0.00|> Yeah, the researchers watched them react to being told to upload like two months of bank statements,<|6.00|>
+
+76
+00:04:24,200 --> 00:04:29,800
+<|6.00|> their W2s and their Social Security numbers to some abstract portal.<|11.60|>
+
+77
+00:04:29,800 --> 00:04:36,600
+<|11.60|> And to them, that feels like a massive uncontrollable invasion of privacy. They just do not trust algorithms with that information.<|18.40|>
+
+78
+00:04:36,600 --> 00:04:37,800
+<|18.40|> They need a real person.<|19.60|>
+
+79
+00:04:37,800 --> 00:04:41,000
+<|19.60|> Right. They need someone that can look in the eyes, someone who will tell them,<|22.80|>
+
+80
+00:04:41,000 --> 00:04:41,000
+<|22.80|> "I can't<|endoftext|>
+
+81
+00:04:41,200 --> 00:04:44,920
+<|startoftranscript|><|0.00|> check your documents, everything is fine, your data isn't going to leak anywhere.<|3.72|>
+
+82
+00:04:44,920 --> 00:04:47,200
+<|3.72|> Okay, but wait, let me push back gently on this first.<|6.00|>
+
+83
+00:04:47,200 --> 00:04:48,200
+<|6.00|> Yes, go ahead.<|7.00|>
+
+84
+00:04:48,200 --> 00:04:52,800
+<|7.00|> I mean, we are in a hyper competitive market is just speaking Russian.<|11.60|>
+
+85
+00:04:52,800 --> 00:04:55,080
+<|11.60|> Really enough to win the business.<|13.88|>
+
+86
+00:04:55,080 --> 00:04:57,960
+<|13.88|> Aren't rates and products, ultimately what people care about?<|16.76|>
+
+87
+00:04:57,960 --> 00:05:02,080
+<|16.76|> I just have a hard time believing that people who are working two jobs to save for a down<|20.88|>
+
+88
+00:05:02,080 --> 00:05:06,200
+<|20.88|> payment are going to completely ignore the math just because of empathy.<|25.00|>
+
+89
+00:05:06,200 --> 00:05:08,960
+<|startoftranscript|><|0.00|> Well, this raises an important question, right?<|2.76|>
+
+90
+00:05:08,960 --> 00:05:10,840
+<|2.76|> And we need to make a distinction here.<|4.64|>
+
+91
+00:05:10,840 --> 00:05:12,920
+<|4.64|> Speaking the language just gets you in the door.<|6.72|>
+
+92
+00:05:12,920 --> 00:05:14,480
+<|6.72|> It gives you the right to be heard.<|8.28|>
+
+93
+00:05:14,480 --> 00:05:15,480
+<|8.28|> Okay.<|9.28|>
+
+94
+00:05:15,480 --> 00:05:20,440
+<|9.28|> But the Fannie Mae data highlights something very counterintuitive about the math itself.<|14.24|>
+
+95
+00:05:20,440 --> 00:05:25,559
+<|14.24|> Buyers in these demographics don't focus heavily on the abstract interest rate, the APR.<|19.36|>
+
+96
+00:05:25,559 --> 00:05:29,960
+<|19.36|> They focus on the specific monthly payment and the type of lender who makes them feel emotionally<|23.76|>
+
+97
+00:05:29,960 --> 00:05:30,279
+<|23.76|> reassured.<|24.08|>
+
+98
+00:05:30,299 --> 00:05:34,179
+<|startoftranscript|><|0.00|> - Wait really, so they're thinking purely in terms of cash flow, not long-term<|3.88|>
+
+99
+00:05:34,179 --> 00:05:35,019
+<|3.88|> amortization.<|4.72|>
+
+100
+00:05:35,019 --> 00:05:39,139
+<|4.72|> - Exactly, they're asking themselves, "Can I handle this payment if someone in the<|8.84|>
+
+101
+00:05:39,139 --> 00:05:41,139
+<|8.84|> family loses their job?"<|10.84|>
+
+102
+00:05:41,139 --> 00:05:44,819
+<|10.84|> And if your client believes that you aren't going to sneak in hidden fees that you've<|14.52|>
+
+103
+00:05:44,819 --> 00:05:49,699
+<|14.52|> transparently explained how PMI works and that you genuinely care about their financial<|19.40|>
+
+104
+00:05:49,699 --> 00:05:52,220
+<|19.40|> survival, they just stop looking for other options.<|21.92|>
+
+105
+00:05:52,220 --> 00:05:52,659
+<|21.92|> - Yes.<|22.36|>
+
+106
+00:05:53,000 --> 00:05:56,920
+<|startoftranscript|><|0.00|> Trust trumps the lowest rate if the buyer feels understood.<|3.92|>
+
+107
+00:05:56,920 --> 00:06:01,720
+<|3.92|> At that level of stress, emotional comfort is valued way higher than a microscopic difference<|8.72|>
+
+108
+00:06:01,720 --> 00:06:03,720
+<|8.72|> in a rate from an online broker.<|10.72|>
+
+109
+00:06:03,720 --> 00:06:06,160
+<|10.72|> That really refrains the whole first consultation.<|13.16|>
+
+110
+00:06:06,160 --> 00:06:09,959
+<|13.16|> So, okay, if overcoming that neurobiological barrier with language.<|16.96|>
+
+111
+00:06:10,000 --> 00:06:12,000
+<|startoftranscript|><|0.00|> is how you get in the door.<|2.00|>
+
+112
+00:06:12,000 --> 00:06:14,000
+<|2.00|> How do you navigate the cultural expectations<|4.00|>
+
+113
+00:06:14,000 --> 00:06:16,000
+<|4.00|> once you actually have their attention?<|6.00|>
+
+114
+00:06:16,000 --> 00:06:18,000
+<|6.00|> Right, because you have to know who you're really talking to.<|8.00|>
+
+115
+00:06:18,000 --> 00:06:19,000
+<|8.00|> Exactly. Yeah.<|9.00|>
+
+116
+00:06:19,000 --> 00:06:21,000
+<|9.00|> Because in the Russian-speaking community,<|11.00|>
+
+117
+00:06:21,000 --> 00:06:23,000
+<|11.00|> the person whose name is on the application<|13.00|>
+
+118
+00:06:23,000 --> 00:06:26,000
+<|13.00|> is very rarely the only one making the decision.<|16.00|>
+
+119
+00:06:26,000 --> 00:06:29,000
+<|16.00|> And here we have to look at behavioral intelligence and sociology,<|19.00|>
+
+120
+00:06:29,000 --> 00:06:32,000
+<|19.00|> specifically the concept of high-powered distance.<|22.00|>
+
+121
+00:06:32,600 --> 00:06:34,480
+<|startoftranscript|><|0.00|> Okay, what does that mean in this context?<|1.88|>
+
+122
+00:06:34,480 --> 00:06:39,760
+<|1.88|> In cultures with high-power distance, which historically includes a lot of post-Soviet countries,<|7.16|>
+
+123
+00:06:39,760 --> 00:06:44,119
+<|7.16|> there is a very strong reliance on hierarchy and respecting authority.<|11.52|>
+
+124
+00:06:44,119 --> 00:06:48,640
+<|11.52|> Because institutional structures like banks and courts were often unstable back home, these<|16.04|>
+
+125
+00:06:48,640 --> 00:06:53,880
+<|16.04|> communities evolved to rely almost exclusively on their internal family structure for survival.<|21.28|>
+
+126
+00:06:53,899 --> 00:06:59,100
+<|startoftranscript|><|0.00|> And they bring that exact same survival mechanism right to the closing table in the US.<|5.20|>
+
+127
+00:06:59,100 --> 00:07:04,019
+<|5.20|> Precisely, they transfer it directly to buying a house in Miami or Chicago.<|10.12|>
+
+128
+00:07:04,019 --> 00:07:10,500
+<|10.12|> And it parallels the data from the NIH rep report on minority homeownership perfectly.<|16.60|>
+
+129
+00:07:10,500 --> 00:07:16,539
+<|16.60|> Yeah, the NHRUT report noted that roughly one in three Hispanic households is multigenerational.<|22.64|>
+
+130
+00:07:16,700 --> 00:07:23,100
+<|startoftranscript|><|0.00|> And sociologists say that trend is heavily mirrored in tight knit immigrant groups like the Russian diaspora.<|6.40|>
+
+131
+00:07:23,100 --> 00:07:24,100
+<|6.40|> Exactly.<|7.40|>
+
+132
+00:07:24,100 --> 00:07:27,300
+<|7.40|> And the key detail there is that they pool their resources.<|10.60|>
+
+133
+00:07:27,300 --> 00:07:30,900
+<|10.60|> That means your marketing isn't just convincing one 25 year old buyer.<|14.20|>
+
+134
+00:07:30,900 --> 00:07:33,500
+<|14.20|> You are convincing a whole co-barrier network.<|16.80|>
+
+135
+00:07:33,500 --> 00:07:34,900
+<|16.80|> The pitching aboard a director's.<|18.20|>
+
+136
+00:07:34,900 --> 00:07:35,400
+<|18.20|> Yes.<|18.70|>
+
+137
+00:07:35,399 --> 00:07:38,000
+<|startoftranscript|><|0.00|> The parents might be helping with the down payment.<|2.60|>
+
+138
+00:07:38,000 --> 00:07:42,699
+<|2.60|> The grandmother might be providing free childcare so they can afford the monthly mortgage payment.<|7.30|>
+
+139
+00:07:42,699 --> 00:07:48,500
+<|7.30|> So if you don't correctly respect those cultural codes like addressing the older generation properly,<|13.10|>
+
+140
+00:07:48,500 --> 00:07:50,000
+<|13.10|> the deal will fall apart.<|14.60|>
+
+141
+00:07:50,000 --> 00:07:54,600
+<|14.60|> But when the older generation flags you as trustworthy, the rest of the family just follows.<|19.20|>
+
+142
+00:07:54,600 --> 00:07:57,199
+<|19.20|> It's almost like being recommended by the village elder.<|21.80|>
+
+143
+00:07:57,199 --> 00:07:58,799
+<|21.80|> That's a perfect way to put it.<|23.40|>
+
+144
+00:07:58,799 --> 00:08:02,299
+<|23.40|> And once you have that specific stamp of approval,<|26.90|>
+
+145
+00:08:02,399 --> 00:08:07,559
+<|startoftranscript|><|0.00|> The shopping around stops completely because the emotional requirement has been met,<|5.16|>
+
+146
+00:08:07,559 --> 00:08:12,359
+<|5.16|> which I think perfectly explains what the Fannie Mae report called "the sticky decision."<|9.96|>
+
+147
+00:08:12,359 --> 00:08:14,199
+<|9.96|> Right, the sticky decision.<|11.80|>
+
+148
+00:08:14,199 --> 00:08:19,839
+<|11.80|> The real estate industry operates on this assumption that buyers are perfectly rational actors<|17.44|>
+
+149
+00:08:19,839 --> 00:08:25,399
+<|17.44|> who will aggressively shop for multiple quotes right up until the highest stress purchase phase.<|23.00|>
+
+150
+00:08:25,200 --> 00:08:26,200
+<|startoftranscript|><|0.00|> But they don't.<|1.00|>
+
+151
+00:08:26,200 --> 00:08:27,200
+<|1.00|> They don't.<|2.00|>
+
+152
+00:08:27,200 --> 00:08:32,020
+<|2.00|> The researchers found that home buyers in these communities suffer from intense decision<|6.82|>
+
+153
+00:08:32,020 --> 00:08:33,260
+<|6.82|> fatigue.<|8.06|>
+
+154
+00:08:33,260 --> 00:08:38,299
+<|8.06|> The process of buying a home in an unfamiliar market in a second language completely exhaust<|13.10|>
+
+155
+00:08:38,299 --> 00:08:39,299
+<|13.10|> them.<|14.10|>
+
+156
+00:08:39,299 --> 00:08:41,900
+<|14.10|> So they just don't have the energy left to fight over base's points.<|16.70|>
+
+157
+00:08:41,900 --> 00:08:42,900
+<|16.70|> Exactly.<|17.70|>
+
+158
+00:08:42,900 --> 00:08:47,220
+<|17.70|> If the family or their trusted realtor recommends you early on, they will likely stay with<|22.02|>
+
+159
+00:08:47,220 --> 00:08:50,260
+<|22.02|> you through closing without shopping around at all.<|25.06|>
+
+160
+00:08:50,260 --> 00:08:53,419
+<|25.06|> The risk of leaving a trusted advisor is perceived as way too high.<|28.22|>
+
+161
+00:08:53,500 --> 00:08:58,219
+<|startoftranscript|><|0.00|> So, if referrals from the community and the family are basically the golden ticket, how do<|4.72|>
+
+162
+00:08:58,219 --> 00:09:01,900
+<|4.72|> you actively position yourself as that trusted community leader?<|8.40|>
+
+163
+00:09:01,900 --> 00:09:05,500
+<|8.40|> Because you can't just sit in your office hoping a village elder randomly walks in.<|12.00|>
+
+164
+00:09:05,500 --> 00:09:07,020
+<|12.00|> No, you can't.<|13.52|>
+
+165
+00:09:07,020 --> 00:09:09,979
+<|13.52|> And this is where we look at the strategies from the FinLocker playbook.<|16.48|>
+
+166
+00:09:10,099 --> 00:09:13,099
+<|startoftranscript|><|0.00|> It requires a total shift in mindset.<|3.00|>
+
+167
+00:09:13,099 --> 00:09:16,099
+<|3.00|> You have to move from being a transactional loan officer<|6.00|>
+
+168
+00:09:16,099 --> 00:09:20,099
+<|6.00|> to becoming a trusted financial advisor through long-term education.<|10.00|>
+
+169
+00:09:20,099 --> 00:09:22,099
+<|10.00|> So we're talking about education over advertising.<|12.00|>
+
+170
+00:09:22,099 --> 00:09:23,099
+<|12.00|> Exactly.<|13.00|>
+
+171
+00:09:23,099 --> 00:09:27,099
+<|13.00|> Culturally competent education is a massive void right now.<|17.00|>
+
+172
+00:09:26,599 --> 00:09:30,599
+<|startoftranscript|><|0.00|> Now, because like we mentioned, the concept of credit is totally different in their home<|4.00|>
+
+173
+00:09:30,599 --> 00:09:31,599
+<|4.00|> countries.<|5.00|>
+
+174
+00:09:31,599 --> 00:09:34,279
+<|5.00|> Back home, debt is often a trap.<|7.68|>
+
+175
+00:09:34,279 --> 00:09:36,440
+<|7.68|> Here, it's a tool for building wealth.<|9.84|>
+
+176
+00:09:36,440 --> 00:09:39,359
+<|9.84|> And you need to be the one to bridge that gap.<|12.76|>
+
+177
+00:09:39,359 --> 00:09:44,279
+<|12.76|> Hosting first-time home buyer classes, both virtually and in person, tailored specifically<|17.68|>
+
+178
+00:09:44,279 --> 00:09:47,399
+<|17.68|> to the Russian speaking market, is a huge differentiator.<|20.80|>
+
+179
+00:09:47,400 --> 00:09:53,400
+<|startoftranscript|><|0.00|> But there's a specific tactic highlighted in the materials that is incredibly powerful for generational impact.<|6.00|>
+
+180
+00:09:53,400 --> 00:09:55,400
+<|6.00|> Oh, I love this one. The high school strategy, right?<|8.00|>
+
+181
+00:09:55,400 --> 00:10:01,400
+<|8.00|> Yes. Partnering with a credit expert and doing speaking engagements at local high schools or community colleges.<|14.00|>
+
+182
+00:10:01,400 --> 00:10:03,400
+<|14.00|> Let's trace how brilliant this is.<|16.00|>
+
+183
+00:10:03,500 --> 00:10:10,500
+<|startoftranscript|><|0.00|> You teach a class of high school seniors about credit scores, how credit cards work, the cost of renting versus owning, and what happens.<|7.00|>
+
+184
+00:10:10,500 --> 00:10:15,500
+<|7.00|> Those kids go home, sit down for dinner, and tell their parents everything they just learned.<|12.00|>
+
+185
+00:10:15,500 --> 00:10:18,500
+<|12.00|> Parents who might be renting right now and are terrified of banks.<|15.00|>
+
+186
+00:10:18,500 --> 00:10:19,500
+<|15.00|> Exactly.<|16.00|>
+
+187
+00:10:20,000 --> 00:10:25,200
+<|startoftranscript|><|0.00|> You just became the de facto advisor for the whole family without ever making a cold call.<|5.20|>
+
+188
+00:10:25,200 --> 00:10:29,200
+<|5.20|> You bypassed all their defensive barriers by investing in their children.<|9.20|>
+
+189
+00:10:29,200 --> 00:10:31,200
+<|9.20|> That is just incredible.<|11.20|>
+
+190
+00:10:31,200 --> 00:10:36,599
+<|11.20|> And you could apply a similar logic to hyper local strategic partnerships, right?<|16.60|>
+
+191
+00:10:36,700 --> 00:10:42,059
+<|startoftranscript|><|0.00|> The geeks for growth tactics. Yes building a network around the places these families already trust<|5.36|>
+
+192
+00:10:42,580 --> 00:10:48,239
+<|5.88|> Renders who are preparing to buy leave a footprint. They go to specific furniture stores. They use local CPAs<|11.54|>
+
+193
+00:10:48,239 --> 00:10:52,919
+<|11.54|> They use local moving companies so you partner with those businesses for collaborative events exactly<|16.22|>
+
+194
+00:10:53,099 --> 00:10:59,179
+<|startoftranscript|><|0.00|> or you sponsor local community events, health fair, sports teams, you ensure your brand is seen in<|6.08|>
+
+195
+00:10:59,179 --> 00:11:03,819
+<|6.08|> non-sales environments. It builds an immense amount of goodwill. And here's where it gets really<|10.72|>
+
+196
+00:11:03,819 --> 00:11:09,179
+<|10.72|> interesting. The referral data backs us up perfectly. Clients who are referred through these types of<|16.08|>
+
+197
+00:11:09,179 --> 00:11:14,940
+<|16.08|> community connections are 18% more likely to stay with an organization long-term. Because the<|21.84|>
+
+198
+00:11:14,940 --> 00:11:18,299
+<|21.84|> relationship is rooted in community identity, not a transaction.<|25.20|>
+
+199
+00:11:18,400 --> 00:11:22,200
+<|startoftranscript|><|0.00|> building this community leadership just creates incredibly durable business.<|3.80|>
+
+200
+00:11:22,200 --> 00:11:25,200
+<|3.80|> But let's be realistic for a minute.<|6.80|>
+
+201
+00:11:25,200 --> 00:11:26,200
+<|6.80|> Okay.<|7.80|>
+
+202
+00:11:26,200 --> 00:11:28,600
+<|7.80|> Face to Face community building is amazing.<|10.20|>
+
+203
+00:11:28,600 --> 00:11:32,200
+<|10.20|> But a single loan officer only has so many hours in a day.<|13.80|>
+
+204
+00:11:32,200 --> 00:11:36,600
+<|13.80|> You can't be at every soccer game and every high school while also writing loans.<|18.20|>
+
+205
+00:11:36,600 --> 00:11:37,600
+<|18.20|> That's the bottleneck.<|19.20|>
+
+206
+00:11:37,599 --> 00:11:44,719
+<|startoftranscript|><|0.00|> Yes. So how can you leverage digital marketing and AI to actually scale this highly personalized<|7.12|>
+
+207
+00:11:44,719 --> 00:11:46,679
+<|7.12|> relationship based approach?<|9.08|>
+
+208
+00:11:46,679 --> 00:11:51,440
+<|9.08|> Well let's start with the digital presence, pulling from the Russian market USA strategies.<|13.84|>
+
+209
+00:11:51,440 --> 00:11:54,440
+<|13.84|> You need a presence that is actually tailored to the culture.<|16.84|>
+
+210
+00:11:54,440 --> 00:11:58,239
+<|16.84|> Meaning you can't just take your English Facebook ads and run them through Google Translate.<|20.64|>
+
+211
+00:11:58,239 --> 00:11:59,959
+<|20.64|> Exactly. That doesn't work.<|22.36|>
+
+212
+00:11:59,959 --> 00:12:04,759
+<|22.36|> You need dedicated SEO for Russian search terms, culturally relevant social media profiles<|27.16|>
+
+213
+00:12:04,759 --> 00:12:06,440
+<|27.16|> and targeted Russian email marketing.<|28.84|>
+
+214
+00:12:06,500 --> 00:12:10,299
+<|startoftranscript|><|0.00|> It's not about translating words. It's about making sure your online presence<|3.80|>
+
+215
+00:12:10,299 --> 00:12:14,580
+<|3.80|> resonates with the community's specific values and anxieties. Like addressing their<|8.08|>
+
+216
+00:12:14,580 --> 00:12:18,739
+<|8.08|> fears about gift funds from overseas rather than just shouting about the lowest<|12.24|>
+
+217
+00:12:18,739 --> 00:12:24,859
+<|12.24|> APR. Precisely, but the real game changer for scaling the human touch is how we<|18.36|>
+
+218
+00:12:24,859 --> 00:12:30,659
+<|18.36|> leverage AICRM's for relationship intelligence.<|24.16|>
+
+219
+00:12:28,700 --> 00:12:30,700
+<|startoftranscript|><|0.00|> Okay, let's get into the AI stuff.<|2.00|>
+
+220
+00:12:30,700 --> 00:12:33,700
+<|2.00|> Looking at the evolution of CRM is for 2026,<|5.00|>
+
+221
+00:12:33,700 --> 00:12:36,700
+<|5.00|> using data from platforms like Rinse AI and HubSpot,<|8.00|>
+
+222
+00:12:36,700 --> 00:12:41,700
+<|8.00|> we see that AI CRMs can actually increase revenue by 5 to 8%.<|13.00|>
+
+223
+00:12:41,700 --> 00:12:45,700
+<|13.00|> Just by proactively delivering the right interactions at the rate.<|17.00|>
+
+224
+00:12:45,599 --> 00:12:50,159
+<|startoftranscript|><|0.00|> time. They use predictive scoring and automated data capture, right? Yes. And features like<|4.56|>
+
+225
+00:12:50,159 --> 00:12:55,119
+<|4.56|> relationship mapping. It allows you to find warm introduction paths across your entire network.<|9.52|>
+
+226
+00:12:55,119 --> 00:12:59,679
+<|9.52|> It tracks local news alerts, automates follow-ups, and crafts personalized emails.<|14.08|>
+
+227
+00:12:59,679 --> 00:13:03,759
+<|14.08|> Wait, wait, hold on. What is it? I feel like there's a massive contradiction here. Okay, let's hear it.<|18.16|>
+
+228
+00:13:03,759 --> 00:13:07,759
+<|18.16|> We just spent this entire deep dive talking about the neurobiology of<|22.16|>
+
+229
+00:13:08,000 --> 00:13:14,719
+<|startoftranscript|><|0.00|> trust human connection, village elders, and how terrified these buyers are of corporate surveillance.<|6.72|>
+
+230
+00:13:14,719 --> 00:13:15,719
+<|6.72|> Right.<|7.72|>
+
+231
+00:13:15,719 --> 00:13:19,719
+<|7.72|> And now we're talking about deploying AI bots to track their data and map their relationships.<|11.72|>
+
+232
+00:13:19,719 --> 00:13:23,239
+<|11.72|> Isn't that exactly the kind of big brother stuff that scares them away?<|15.24|>
+
+233
+00:13:23,239 --> 00:13:27,479
+<|15.24|> What's fascinating here is that the technology doesn't replace the human connection at all.<|19.48|>
+
+234
+00:13:27,479 --> 00:13:30,719
+<|19.48|> It resolves the tension by acting behind the scenes.<|22.72|>
+
+235
+00:13:30,719 --> 00:13:31,719
+<|22.72|> How so?<|23.72|>
+
+236
+00:13:31,719 --> 00:13:34,000
+<|23.72|> Think of the AI as an air traffic control.<|26.00|>
+
+237
+00:13:34,000 --> 00:13:39,599
+<|startoftranscript|><|0.00|> It doesn't fly the plane and it doesn't talk to the passengers. It just tells the pilot which runway is clear<|5.60|>
+
+238
+00:13:39,919 --> 00:13:44,900
+<|5.92|> The AI doesn't send creepy automated messages to your clients. It alerts you. Oh<|10.90|>
+
+239
+00:13:45,299 --> 00:13:50,859
+<|11.30|> As the Finnlocker source noted delivering the right information at the right time historically required manual<|16.86|>
+
+240
+00:13:51,299 --> 00:13:53,299
+<|17.30|> exhausting communication<|19.30|>
+
+241
+00:13:52,500 --> 00:13:54,640
+<|startoftranscript|><|0.00|> you had to remember every detail,<|2.14|>
+
+242
+00:13:54,640 --> 00:13:56,820
+<|2.14|> the tech just automates the timing.<|4.32|>
+
+243
+00:13:56,820 --> 00:13:58,460
+<|4.32|> - So the AI looks at the network and says,<|5.96|>
+
+244
+00:13:58,460 --> 00:14:02,780
+<|5.96|> hey, past client A works at the same place as Prospect B,<|10.28|>
+
+245
+00:14:02,780 --> 00:14:04,539
+<|10.28|> you should ask client A for an intro.<|12.04|>
+
+246
+00:14:04,539 --> 00:14:05,440
+<|12.04|> - Exactly.<|12.94|>
+
+247
+00:14:05,440 --> 00:14:08,580
+<|12.94|> The information delivered must still be genuinely yours.<|16.08|>
+
+248
+00:14:08,580 --> 00:14:11,080
+<|16.08|> The AI just scales your ability to know exactly<|18.58|>
+
+249
+00:14:11,080 --> 00:14:12,820
+<|18.58|> when to reach out and who to ask.<|20.32|>
+
+250
+00:14:12,820 --> 00:14:14,580
+<|20.32|> - So you still get to be the trusted advisor,<|22.08|>
+
+251
+00:14:14,580 --> 00:14:16,140
+<|22.08|> you just have a super computer telling<|23.64|>
+
+252
+00:14:16,140 --> 00:14:17,380
+<|23.64|> where to focus your energy today.<|24.88|>
+
+253
+00:14:17,380 --> 00:14:18,380
+<|24.88|> - That's exactly it.<|25.88|>
+
+254
+00:14:18,380 --> 00:14:19,739
+<|25.88|> - Okay, so what does this all mean?<|27.24|>
+
+255
+00:14:19,739 --> 00:14:21,140
+<|27.24|> Let's recap this journey.<|28.64|>
+
+256
+00:14:21,099 --> 00:14:26,299
+<|startoftranscript|><|0.00|> You build neurobiological trust through native language, which lowers their defensive barriers.<|5.20|>
+
+257
+00:14:26,299 --> 00:14:27,299
+<|5.20|> Right.<|6.20|>
+
+258
+00:14:27,299 --> 00:14:32,279
+<|6.20|> You respect the multi-generational family dynamics, knowing you're pitching a whole network of<|11.18|>
+
+259
+00:14:32,279 --> 00:14:38,099
+<|11.18|> co-barawers, you establish true community leadership through education, not just advertising.<|17.00|>
+
+260
+00:14:38,099 --> 00:14:39,099
+<|17.00|> Yes.<|18.00|>
+
+261
+00:14:39,099 --> 00:14:44,940
+<|18.00|> And finally, you scale all of those efforts with advanced AI and localized digital marketing.<|23.84|>
+
+262
+00:14:45,200 --> 00:14:52,480
+<|startoftranscript|><|0.00|> It really means that for you, the Russian speaking mortgage professional, your language and cultural background<|7.28|>
+
+263
+00:14:52,480 --> 00:14:57,040
+<|7.28|> are your absolute biggest competitive mode if you use them strategically.<|11.84|>
+
+264
+00:14:57,040 --> 00:15:03,040
+<|11.84|> It's a massive advantage and I actually want to leave the listener with a final lingering thought to really mull over.<|17.84|>
+
+265
+00:15:03,040 --> 00:15:03,840
+<|17.84|> Let's hear it.<|18.64|>
+
+266
+00:15:03,840 --> 00:15:05,840
+<|18.64|> Think about your current marketing spend.<|20.64|>
+
+267
+00:15:05,799 --> 00:15:09,799
+<|startoftranscript|><|0.00|> Think about the thousands of dollars going toward internet leads that don't even convert.<|4.00|>
+
+268
+00:15:09,799 --> 00:15:17,799
+<|4.00|> Now imagine reallocating just a fraction of that, maybe just buying pizza and coffee to teach a single financial literacy class at a local community center.<|12.00|>
+
+269
+00:15:17,799 --> 00:15:22,799
+<|12.00|> Wow. If you change the financial trajectory of just one teenager in your community today,<|17.00|>
+
+270
+00:15:22,799 --> 00:15:28,799
+<|17.00|> how many mortgages will their extended family and eventually their own future family bring you over the next decade?<|23.00|>
+
+271
+00:15:29,000 --> 00:15:31,640
+<|startoftranscript|><|0.00|> That is such a powerful way to look at it.<|2.64|>
+
+272
+00:15:31,640 --> 00:15:34,719
+<|2.64|> The ROI on Genuine Trust is just astronomical.<|5.72|>
+
+273
+00:15:34,719 --> 00:15:37,359
+<|5.72|> Well, thank you so much for joining us on this deep dive.<|8.36|>
+
+274
+00:15:37,359 --> 00:15:41,440
+<|8.36|> Now it's time to get out into your community and start building those lasting connections.<|12.44|>
+
+275
+00:15:41,440 --> 00:15:42,119
+<|12.44|> See you next time.<|13.12|>
+

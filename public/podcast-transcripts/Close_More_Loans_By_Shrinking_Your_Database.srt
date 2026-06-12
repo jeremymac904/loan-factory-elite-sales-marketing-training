@@ -1,0 +1,3212 @@
+1
+00:00:00,000 --> 00:00:02,720
+<|startoftranscript|><|0.00|> You know, usually when we talk about medical diagnosis,<|2.72|>
+
+2
+00:00:02,720 --> 00:00:06,559
+<|2.72|> there is this underlying expectation of like total precision.<|6.56|>
+
+3
+00:00:06,559 --> 00:00:07,399
+<|6.56|> - Right, yeah.<|7.40|>
+
+4
+00:00:07,399 --> 00:00:08,960
+<|7.40|> - Almost like engineering.<|8.96|>
+
+5
+00:00:08,960 --> 00:00:10,239
+<|8.96|> - Yeah. - You break your arm,<|10.24|>
+
+6
+00:00:10,239 --> 00:00:11,359
+<|10.24|> you go into the clinic.<|11.36|>
+
+7
+00:00:11,359 --> 00:00:14,399
+<|11.36|> The X-ray shows that jagged white line on the bone,<|14.40|>
+
+8
+00:00:14,399 --> 00:00:16,199
+<|14.40|> and the doctor just points at the screen and says,<|16.20|>
+
+9
+00:00:16,199 --> 00:00:17,840
+<|16.20|> "Well, there it is, there is the problem."<|17.84|>
+
+10
+00:00:17,840 --> 00:00:18,680
+<|17.84|> - It is binary.<|18.68|>
+
+11
+00:00:18,680 --> 00:00:20,079
+<|18.68|> I mean, broken or not broken.<|20.08|>
+
+12
+00:00:20,079 --> 00:00:20,920
+<|20.08|> - Exactly.<|20.92|>
+
+13
+00:00:20,920 --> 00:00:23,359
+<|20.92|> - You put a cast on it, you wait, you know, six weeks,<|23.36|>
+
+14
+00:00:23,359 --> 00:00:26,159
+<|23.36|> it heals, the mechanics are totally visible,<|26.16|>
+
+15
+00:00:26,159 --> 00:00:28,639
+<|26.16|> and the treatment plan is just completely linear.<|28.64|>
+
+16
+00:00:28,639 --> 00:00:29,479
+<|28.64|> - Right.<|29.48|>
+
+17
+00:00:29,299 --> 00:00:36,180
+<|startoftranscript|><|0.00|> It is comforting because the symptom matches the visual evidence perfectly, but then you step into the world of mortgage sales and<|6.88|>
+
+18
+00:00:37,020 --> 00:00:42,419
+<|7.72|> Specifically when you hit that senior level, you know the level where you were supposed to have it all figured out. Oh, yeah<|13.12|>
+
+19
+00:00:42,739 --> 00:00:45,339
+<|13.44|> Suddenly that x-ray machine is just completely useless<|16.04|>
+
+20
+00:00:45,799 --> 00:00:52,799
+<|startoftranscript|><|0.00|> We are looking at a diagnostic landscape of a loan officer's career that is incredibly murky.<|7.00|>
+
+21
+00:00:52,799 --> 00:00:57,599
+<|7.00|> It is the absolute definition of diagnostic muddy waters.<|11.80|>
+
+22
+00:00:57,599 --> 00:01:01,199
+<|11.80|> And the reason for that is it is fascinating from a behavioral standpoint.<|15.40|>
+
+23
+00:01:01,200 --> 00:01:06,480
+<|startoftranscript|><|0.00|> point. Well, the symptoms of failure and the symptoms of wild success often look<|5.28|>
+
+24
+00:01:06,480 --> 00:01:10,959
+<|5.28|> identical from the outside. Oh, that is a scary thought. Right. I mean, you could walk into a<|9.76|>
+
+25
+00:01:10,959 --> 00:01:16,080
+<|9.76|> brokerage and look at two different loan officers. Both are making 80 calls a day. Both have<|14.88|>
+
+26
+00:01:16,080 --> 00:01:21,199
+<|14.88|> three monitors glowing with terra pipelines. Yeah. Both are eating lunch at their desks.<|20.00|>
+
+27
+00:01:21,300 --> 00:01:31,300
+<|startoftranscript|><|0.00|> But one is building a generational wealth engine and the other is literally six weeks away from total clinical burnout and just leaving the industry entirely.<|10.00|>
+
+28
+00:01:31,300 --> 00:01:34,300
+<|10.00|> And that is the exact paradox we are tackling today.<|13.00|>
+
+29
+00:01:34,300 --> 00:01:35,300
+<|13.00|> Right.<|14.00|>
+
+30
+00:01:35,300 --> 00:01:38,300
+<|14.00|> If you are listening to this deep dive, you are a senior loan factory loan officer.<|17.00|>
+
+31
+00:01:38,300 --> 00:01:39,300
+<|17.00|> Yeah.<|18.00|>
+
+32
+00:01:39,300 --> 00:01:41,300
+<|18.00|> You know, you are not a rookie trying to figure out how to spell mortgage.<|20.00|>
+
+33
+00:01:41,300 --> 00:01:42,300
+<|20.00|> Definitely not.<|21.00|>
+
+34
+00:01:42,300 --> 00:01:46,300
+<|21.00|> You aren't stumbling through the basics of taking an application you are an established professional.<|25.00|>
+
+35
+00:01:46,599 --> 00:01:53,099
+<|startoftranscript|><|0.00|> Our entire mission today is to unpack the final master level module of the Elite Sales and Marketing Training Series.<|6.50|>
+
+36
+00:01:53,099 --> 00:01:54,599
+<|6.50|> Which is Elite 601.<|8.00|>
+
+37
+00:01:54,599 --> 00:01:55,599
+<|8.00|> Right.<|9.00|>
+
+38
+00:01:55,599 --> 00:01:57,599
+<|9.00|> 601 Elite Execution.<|11.00|>
+
+39
+00:01:57,599 --> 00:01:58,599
+<|11.00|> Build your niche.<|12.00|>
+
+40
+00:01:58,599 --> 00:01:59,599
+<|12.00|> Own your system.<|13.00|>
+
+41
+00:01:59,599 --> 00:02:07,599
+<|13.00|> And that is vital because at this senior stage in your career, the baseline advice you'd get from the industry at large actually becomes toxic.<|21.00|>
+
+42
+00:02:07,199 --> 00:02:12,479
+<|startoftranscript|><|0.00|> It really does. The constant background noise of the mortgage industry is this relentless drumbeat of<|5.28|>
+
+43
+00:02:12,839 --> 00:02:18,879
+<|5.64|> Grind harder make more calls. By more leads. Yeah, by more internet leads work the weekend.<|11.68|>
+
+44
+00:02:18,879 --> 00:02:25,000
+<|11.68|> Answer your phone at 9 on a Sunday night. Just hustle until you physically drop. But if you look at the actual data<|17.80|>
+
+45
+00:02:25,399 --> 00:02:29,079
+<|startoftranscript|><|0.00|> you know, if you look at the performance metrics of the top 1% of producers,<|3.68|>
+
+46
+00:02:29,079 --> 00:02:33,239
+<|3.68|> that volume-based approach is a guaranteed recipe for a plateau,<|7.84|>
+
+47
+00:02:33,239 --> 00:02:35,559
+<|7.84|> which is then usually followed by a crash.<|10.16|>
+
+48
+00:02:35,559 --> 00:02:41,559
+<|10.16|> It is a massive misconception. True elite performance is almost never about the sheer volume of chaotic activity.<|16.16|>
+
+49
+00:02:41,699 --> 00:02:47,580
+<|startoftranscript|><|0.00|> We are officially moving past the 101, the 201 and the 301 material here.<|5.88|>
+
+50
+00:02:47,580 --> 00:02:50,019
+<|5.88|> You already know how to convert a standard borrower.<|8.32|>
+
+51
+00:02:50,019 --> 00:02:51,940
+<|8.32|> You know how to shake hands with a real estate agent.<|10.24|>
+
+52
+00:02:51,940 --> 00:02:53,419
+<|10.24|> Yeah, you have the raw skills.<|11.72|>
+
+53
+00:02:53,419 --> 00:02:54,419
+<|11.72|> Exactly.<|12.72|>
+
+54
+00:02:54,419 --> 00:02:59,580
+<|12.72|> What we're talking about today is pulling all of those raw skills together into a highly<|17.88|>
+
+55
+00:02:59,580 --> 00:03:03,660
+<|17.88|> calibrated, sustainable and scalable weekly operating system.<|21.96|>
+
+56
+00:03:03,899 --> 00:03:08,979
+<|startoftranscript|><|0.00|> A framework that allows you to specialize, to step into a mentorship role without losing<|5.08|>
+
+57
+00:03:08,979 --> 00:03:13,779
+<|5.08|> your mind or your pipeline, and most importantly, to fiercely protect your time.<|9.88|>
+
+58
+00:03:13,779 --> 00:03:17,979
+<|9.88|> We are really talking about operating at a PhD level of mortgage sales.<|14.08|>
+
+59
+00:03:17,979 --> 00:03:21,799
+<|14.08|> And the core thesis here is that elite execution is not about adding<|17.90|>
+
+60
+00:03:21,800 --> 00:03:23,800
+<|startoftranscript|><|0.00|> more hours to your week.<|2.00|>
+
+61
+00:03:23,800 --> 00:03:28,800
+<|2.00|> It is about extracting exponentially more value from the hours you are already working.<|7.00|>
+
+62
+00:03:28,800 --> 00:03:30,800
+<|7.00|> Through systematic discipline.<|9.00|>
+
+63
+00:03:30,800 --> 00:03:36,800
+<|9.00|> When you dive into the sources for this module, particularly drawing on the insights of industry legends like Todd Duncan,<|15.00|>
+
+64
+00:03:37,300 --> 00:03:41,540
+<|startoftranscript|><|0.00|> They point to a framework that is much quieter, much more deliberate.<|4.24|>
+
+65
+00:03:41,540 --> 00:03:42,540
+<|4.24|> I noticed that.<|5.24|>
+
+66
+00:03:42,540 --> 00:03:45,260
+<|5.24|> They talk about this concept called the Law of the Scale.<|7.96|>
+
+67
+00:03:45,260 --> 00:03:46,260
+<|7.96|> The Law of the Scale.<|8.96|>
+
+68
+00:03:46,260 --> 00:03:50,580
+<|8.96|> I was reading through these notes and this concept completely flips the traditional sales<|13.28|>
+
+69
+00:03:50,580 --> 00:03:52,100
+<|13.28|> funnel on its head.<|14.80|>
+
+70
+00:03:52,100 --> 00:03:56,779
+<|14.80|> For a senior L.O. who feels like they are currently drowning in a database of thousands of<|19.48|>
+
+71
+00:03:56,779 --> 00:03:57,900
+<|19.48|> past clients and<|20.60|>
+
+72
+00:03:57,899 --> 00:03:59,659
+<|startoftranscript|><|0.00|> You know, dead leads.<|1.76|>
+
+73
+00:03:59,659 --> 00:04:01,059
+<|1.76|> This is basically a lifeline.<|3.16|>
+
+74
+00:04:01,059 --> 00:04:02,059
+<|3.16|> Yeah.<|4.16|>
+
+75
+00:04:02,059 --> 00:04:03,059
+<|4.16|> Walk us through the mechanics of this.<|5.16|>
+
+76
+00:04:03,059 --> 00:04:06,179
+<|5.16|> So the lot of the scale dictates that you can actually achieve a massive increase in your<|8.28|>
+
+77
+00:04:06,179 --> 00:04:10,139
+<|8.28|> production volume by drastically reducing the size of your database.<|12.24|>
+
+78
+00:04:10,139 --> 00:04:11,139
+<|12.24|> Wait, really?<|13.24|>
+
+79
+00:04:11,139 --> 00:04:12,139
+<|13.24|> By reducing it.<|14.24|>
+
+80
+00:04:12,139 --> 00:04:13,139
+<|14.24|> Yes.<|15.24|>
+
+81
+00:04:13,139 --> 00:04:18,100
+<|15.24|> Reducing it and focusing your energy deeply on a very specific subset of the right clients<|20.20|>
+
+82
+00:04:18,100 --> 00:04:18,739
+<|20.20|> and partners.<|20.84|>
+
+83
+00:04:18,899 --> 00:04:25,100
+<|startoftranscript|><|0.00|> It is the counterintuitive reality that having fewer clients, but connecting and converting<|6.20|>
+
+84
+00:04:25,100 --> 00:04:30,899
+<|6.20|> with them at a much deeper, more systematic level, radically increases the velocity of your<|12.00|>
+
+85
+00:04:30,899 --> 00:04:31,899
+<|12.00|> referrals.<|13.00|>
+
+86
+00:04:31,899 --> 00:04:36,899
+<|13.00|> So you're moving away from a transactional volume mindset and moving into a deep yield mindset.<|18.00|>
+
+87
+00:04:36,899 --> 00:04:37,899
+<|18.00|> Exactly.<|19.00|>
+
+88
+00:04:37,899 --> 00:04:38,779
+<|19.00|> But hold on, I have to stop you there.<|19.88|>
+
+89
+00:04:38,899 --> 00:04:45,540
+<|startoftranscript|><|0.00|> Because in an industry that constantly screams, more leads, more calls build a bigger list,<|6.64|>
+
+90
+00:04:45,540 --> 00:04:49,500
+<|6.64|> aren't we basically telling a senior a low to actively commit career sabotage?<|10.60|>
+
+91
+00:04:49,500 --> 00:04:50,820
+<|10.60|> I know what sounds like it.<|11.92|>
+
+92
+00:04:50,820 --> 00:04:54,059
+<|11.92|> I mean, if I spent five years building a database of 3,000 people,<|15.16|>
+
+93
+00:04:54,100 --> 00:04:58,820
+<|startoftranscript|><|0.00|> the idea of shrinking my focus feels terrifying. It feels like we're telling a commercial fisherman<|4.72|>
+
+94
+00:04:58,820 --> 00:05:03,059
+<|4.72|> to throw away his massive mile wide net and jump into the ocean with a single spear.<|8.96|>
+
+95
+00:05:03,059 --> 00:05:07,700
+<|8.96|> It absolutely feels terrifying at first and that fear is rooted in biology really. We are<|13.60|>
+
+96
+00:05:07,700 --> 00:05:13,860
+<|13.60|> wired to hoard resources for survival and in sales, a lead feels like a resource, even a completely<|19.76|>
+
+97
+00:05:13,860 --> 00:05:18,179
+<|19.76|> cold one. But we have to look at the cognitive load of that massive net.<|24.08|>
+
+98
+00:05:18,299 --> 00:05:23,019
+<|startoftranscript|><|0.00|> Business is very often a sophisticated mask for a lack of a system.<|4.72|>
+
+99
+00:05:23,019 --> 00:05:24,819
+<|4.72|> Oh, that is a great way to put it.<|6.52|>
+
+100
+00:05:24,819 --> 00:05:29,419
+<|6.52|> If you're constantly busy reacting to every single ring of the phone,<|11.12|>
+
+101
+00:05:29,419 --> 00:05:37,459
+<|11.12|> dropping whatever you are doing, because some B-Partner texted you a question about a program you don't even like doing,<|19.16|>
+
+102
+00:05:37,459 --> 00:05:39,859
+<|19.16|> you aren't running a system, the system is running you.<|21.56|>
+
+103
+00:05:39,859 --> 00:05:42,940
+<|21.56|> You are basically just an order taker reacting to chaos at that point.<|24.64|>
+
+104
+00:05:42,940 --> 00:05:43,779
+<|24.64|> Exactly.<|25.48|>
+
+105
+00:05:43,779 --> 00:05:47,379
+<|25.48|> So if the guy with the massive net catching everything is the order taker,<|29.08|>
+
+106
+00:05:47,399 --> 00:05:51,399
+<|startoftranscript|><|0.00|> What is the alternative? Like who is the person with the spear?<|4.00|>
+
+107
+00:05:51,399 --> 00:05:56,399
+<|4.00|> The alternative is operating like a financial surgeon. Think back to the medical analogy from earlier.<|9.00|>
+
+108
+00:05:56,399 --> 00:05:57,399
+<|9.00|> Okay.<|10.00|>
+
+109
+00:05:57,399 --> 00:06:02,399
+<|10.00|> You don't walk into an orthopedic surgeon's operating room, hand them a scalpel you bought on the internet,<|15.00|>
+
+110
+00:06:02,399 --> 00:06:07,399
+<|15.00|> and demand they operate immediately while they are simultaneously taking five other phone calls.<|20.00|>
+
+111
+00:06:07,399 --> 00:06:08,399
+<|20.00|> That would be insane.<|21.00|>
+
+112
+00:06:08,399 --> 00:06:13,399
+<|21.00|> Right. The surgeon dictates the entire process. They have a pristine, controlled environment.<|26.00|>
+
+113
+00:06:13,399 --> 00:06:16,880
+<|startoftranscript|><|0.00|> They operate with absolute command, consistency, and focus.<|3.48|><|endoftext|>
+
+114
+00:06:16,899 --> 00:06:19,940
+<|startoftranscript|><|0.00|> That is true elite status in this industry.<|3.04|>
+
+115
+00:06:19,940 --> 00:06:25,859
+<|3.04|> I want to ground this in a real-world application, because the source material includes this incredibly<|8.96|>
+
+116
+00:06:25,859 --> 00:06:30,739
+<|8.96|> vivid case study of a loan officer who actually executed this transition.<|13.84|>
+
+117
+00:06:30,739 --> 00:06:31,739
+<|13.84|> Yeah.<|14.84|>
+
+118
+00:06:31,739 --> 00:06:35,339
+<|14.84|> It is one thing to talk about being a surgeon, but it is another to see the actual math behind<|18.44|>
+
+119
+00:06:35,339 --> 00:06:36,339
+<|18.44|> it.<|19.44|>
+
+120
+00:06:36,339 --> 00:06:39,500
+<|19.44|> It is a brilliant case study of the law of the scale in action.<|22.60|>
+
+121
+00:06:39,500 --> 00:06:43,380
+<|22.60|> We are looking at a loan officer who is doing relatively well by average standards.<|26.48|>
+
+122
+00:06:43,399 --> 00:06:49,000
+<|startoftranscript|><|0.00|> But he scaled up to a massive jump in volume over a three-year period by implementing<|5.60|>
+
+123
+00:06:49,000 --> 00:06:50,359
+<|5.60|> these elite level systems.<|6.96|>
+
+124
+00:06:50,359 --> 00:06:51,799
+<|6.96|> It is top tier production.<|8.40|>
+
+125
+00:06:51,799 --> 00:06:52,799
+<|8.40|> It is.<|9.40|>
+
+126
+00:06:52,799 --> 00:06:55,479
+<|9.40|> But here is the critical pivot in the story.<|12.08|>
+
+127
+00:06:55,479 --> 00:06:59,279
+<|12.08|> Even at that high volume, he realized he was completely exhausted.<|15.88|>
+
+128
+00:06:59,299 --> 00:07:04,179
+<|startoftranscript|><|0.00|> His overhead was too high, his stress was through the roof, and he basically had no personal life.<|4.88|>
+
+129
+00:07:04,179 --> 00:07:05,299
+<|4.88|> He built a monster.<|6.00|>
+
+130
+00:07:05,299 --> 00:07:08,099
+<|6.00|> Yes, a monster that he had to feed every single day.<|8.80|>
+
+131
+00:07:08,099 --> 00:07:12,579
+<|8.80|> So, he decided to realign his entire business model using the principles we are discussing.<|13.28|>
+
+132
+00:07:12,579 --> 00:07:15,779
+<|13.28|> So, what was the first actual mechanical step he took?<|16.48|>
+
+133
+00:07:15,799 --> 00:07:20,519
+<|startoftranscript|><|0.00|> Because saying I am going to work less is easy doing it as the hard part.<|4.72|>
+
+134
+00:07:20,519 --> 00:07:22,279
+<|4.72|> He audited his database.<|6.48|>
+
+135
+00:07:22,279 --> 00:07:27,919
+<|6.48|> At the time he had 2800 people in his CRM, past clients, leads, partners.<|12.12|>
+
+136
+00:07:27,919 --> 00:07:31,319
+<|12.12|> He went through that list and ruthlessly categorized them.<|15.52|>
+
+137
+00:07:31,319 --> 00:07:34,839
+<|15.52|> And then he actively cut it down to just 110 people.<|19.04|>
+
+138
+00:07:35,299 --> 00:07:38,299
+<|startoftranscript|><|0.00|> He threw out over 2,600 contacts.<|3.00|>
+
+139
+00:07:38,299 --> 00:07:39,299
+<|3.00|> Yeah.<|4.00|>
+
+140
+00:07:39,299 --> 00:07:40,299
+<|4.00|> He just let them go.<|5.00|>
+
+141
+00:07:40,299 --> 00:07:42,299
+<|5.00|> What does that even look like in practice?<|7.00|>
+
+142
+00:07:42,299 --> 00:07:43,299
+<|7.00|> Did he just hit delete?<|8.00|>
+
+143
+00:07:43,299 --> 00:07:44,299
+<|8.00|> Essentially, yes.<|9.00|>
+
+144
+00:07:44,299 --> 00:07:47,299
+<|9.00|> He paired it down to the absolute vital few.<|12.00|>
+
+145
+00:07:47,299 --> 00:07:49,299
+<|12.00|> He looked for the true advocates.<|14.00|>
+
+146
+00:07:49,299 --> 00:07:52,299
+<|14.00|> You know, the partners who actually referred high quality business,<|17.00|>
+
+147
+00:07:52,299 --> 00:07:56,299
+<|17.00|> the past clients who were deeply connected to his advisory approach.<|21.00|>
+
+148
+00:07:56,299 --> 00:07:57,299
+<|21.00|> Okay.<|22.00|>
+
+149
+00:07:57,299 --> 00:07:59,299
+<|22.00|> He removed the tire kickers, the rate shoppers,<|24.00|>
+
+150
+00:07:59,299 --> 00:08:01,299
+<|24.00|> and the demanding partners who drained his time,<|26.00|>
+
+151
+00:08:01,299 --> 00:08:03,299
+<|26.00|> but rarely actually closed deals.<|28.00|>
+
+152
+00:08:02,799 --> 00:08:05,799
+<|startoftranscript|><|0.00|> I can only imagine the psychological barrier of doing that.<|3.00|>
+
+153
+00:08:05,799 --> 00:08:11,799
+<|3.00|> Sitting at your computer, looking at a list of thousands of names that represent potential money and hitting the delete key.<|9.00|>
+
+154
+00:08:11,799 --> 00:08:19,799
+<|9.00|> The anxiety is super real, but look at the mathematical outcome by focusing entirely on those 110 high-value relationships.<|17.00|>
+
+155
+00:08:19,799 --> 00:08:22,799
+<|17.00|> He actually switched to a three-day work week.<|20.00|>
+
+156
+00:08:22,799 --> 00:08:23,799
+<|20.00|> A three-day work week.<|21.00|>
+
+157
+00:08:23,799 --> 00:08:26,799
+<|21.00|> Like that? Yeah, he doesn't work Thursdays or Fridays anymore.<|24.00|>
+
+158
+00:08:27,399 --> 00:08:32,679
+<|startoftranscript|><|0.00|> He still closes massive volume, but his conversion rate skyrocketed because his attention just wasn't<|5.28|>
+
+159
+00:08:32,679 --> 00:08:39,080
+<|5.28|> diluted anymore. His profitability went up because he didn't eat a massive team to chase dead leads.<|11.68|>
+
+160
+00:08:39,080 --> 00:08:45,559
+<|11.68|> He commands the relationships, and those 110 people consistently bring him the exact right kind of<|18.16|>
+
+161
+00:08:45,559 --> 00:08:45,960
+<|18.16|> business.<|18.56|>
+
+162
+00:08:46,000 --> 00:08:52,159
+<|startoftranscript|><|0.00|> That is the ultimate proof of concept for the spear versus the net when you drag a massive net behind your boat<|6.16|>
+
+163
+00:08:52,400 --> 00:08:55,159
+<|6.40|> You pull up old boots tires<|9.16|>
+
+164
+00:08:55,640 --> 00:08:56,520
+<|9.64|> seaweed<|10.52|>
+
+165
+00:08:56,520 --> 00:09:02,559
+<|10.52|> Maybe a few decent fish and you spend 80% of your energy just sorting through the garbage on the deck<|16.56|>
+
+166
+00:09:02,559 --> 00:09:07,840
+<|16.56|> Right when you have spear you know exactly what you are hunting and you don't expend a single calorie on anything else<|21.84|>
+
+167
+00:09:08,000 --> 00:09:14,400
+<|startoftranscript|><|0.00|> But to use that spear effectively, you know, to know what you are hunting, you have to be incredibly deliberate about your target.<|6.40|>
+
+168
+00:09:14,400 --> 00:09:22,500
+<|6.40|> Which brings us to the absolute necessity of planting your flag. You cannot be a financial surgeon if you are willing to operate on anything that walks through the door.<|14.50|>
+
+169
+00:09:22,500 --> 00:09:23,700
+<|14.50|> You have to pick a niche.<|15.70|>
+
+170
+00:09:23,700 --> 00:09:28,299
+<|15.70|> And this is where we really start building the Elite 601 Framework, right?<|20.30|>
+
+171
+00:09:28,299 --> 00:09:31,200
+<|20.30|> Picking a lone factory niche you can actually own.<|23.20|>
+
+172
+00:09:31,200 --> 00:09:36,000
+<|23.20|> Because the brutal truth of this industry is that generalist compete on price.<|28.00|>
+
+173
+00:09:36,099 --> 00:09:38,380
+<|startoftranscript|><|0.00|> But specialist compete on value.<|2.28|>
+
+174
+00:09:38,380 --> 00:09:41,979
+<|2.28|> That is the economic reality of the modern mortgage market.<|5.88|>
+
+175
+00:09:41,979 --> 00:09:46,099
+<|5.88|> If you present yourself as just a generic mortgage person, someone who can do a little bit<|10.00|>
+
+176
+00:09:46,099 --> 00:09:51,459
+<|10.00|> of everything for everyone, the only metric the consumer has to evaluate you on is the number<|15.36|>
+
+177
+00:09:51,459 --> 00:09:51,899
+<|15.36|> on the page.<|15.80|>
+
+178
+00:09:51,900 --> 00:09:58,900
+<|startoftranscript|><|0.00|> If the borrower perceives your product as a commodity and someone else is offering a marginally lower rate, you lose the deal.<|7.00|>
+
+179
+00:09:58,900 --> 00:10:05,900
+<|7.00|> Even if the other lender has terrible service, misses closing dates and stresses the borrower out.<|14.00|>
+
+180
+00:10:05,900 --> 00:10:10,900
+<|14.00|> Right, because to the borrower, a conventional 30-year fixed is a conventional 30-year fixed.<|19.00|>
+
+181
+00:10:10,900 --> 00:10:11,900
+<|19.00|> Exactly.<|20.00|>
+
+182
+00:10:11,900 --> 00:10:17,900
+<|20.00|> But when you look at the loan factory ecosystem specifically the power of the Terra platform, the opportunity to specialize.<|26.00|>
+
+183
+00:10:17,599 --> 00:10:23,440
+<|startoftranscript|><|0.00|> is staggering. As a senior low, you have access to so many wholesale lenders through<|5.84|>
+
+184
+00:10:23,440 --> 00:10:28,399
+<|5.84|> Terra. You aren't restricted to a narrow captive retail product line. No, not at all.<|10.80|>
+
+185
+00:10:28,399 --> 00:10:35,359
+<|10.80|> You can genuinely master purchase Refi VA, FHA, Jumbo DSCR for real estate<|17.76|>
+
+186
+00:10:35,359 --> 00:10:39,959
+<|17.76|> investors, recapture strategies, partner-led workflows, language-specific<|22.36|>
+
+187
+00:10:39,959 --> 00:10:42,759
+<|22.36|> communities, or state-specific regulatory needs.<|25.16|>
+
+188
+00:10:42,799 --> 00:10:47,799
+<|startoftranscript|><|0.00|> The options are vast, but that vastness is actually a trap if you aren't disciplined.<|5.00|>
+
+189
+00:10:47,799 --> 00:10:52,799
+<|5.00|> The mistake is looking at all those lenders in Terra and trying to be all things to all people.<|10.00|>
+
+190
+00:10:52,799 --> 00:10:54,799
+<|10.00|> You must choose a new shon purpose.<|12.00|>
+
+191
+00:10:54,799 --> 00:10:57,799
+<|12.00|> You have to plan a flag and say this is the ground I defend.<|15.00|>
+
+192
+00:10:57,799 --> 00:10:58,799
+<|15.00|> Yes.<|16.00|>
+
+193
+00:10:58,299 --> 00:11:02,140
+<|startoftranscript|><|0.00|> and the elite training outlines three critical filters to help a senior<|3.84|>
+
+194
+00:11:02,140 --> 00:11:06,059
+<|3.84|> yellow choose that niche intelligently. Let's break those down. I am a senior<|7.76|>
+
+195
+00:11:06,059 --> 00:11:09,739
+<|7.76|> low. I am ready to stop dragging the net. I want to specialize. I'm looking at the<|11.44|>
+
+196
+00:11:09,739 --> 00:11:13,859
+<|11.44|> terra platform. How do I actually filter my options? Filter number one is this. Is<|15.56|>
+
+197
+00:11:13,859 --> 00:11:18,059
+<|15.56|> there a clear, solvable pain point?<|19.76|>
+
+198
+00:11:16,099 --> 00:11:20,500
+<|startoftranscript|><|0.00|> You cannot pick a niche just because the loan amounts are high or because it sounds prestigious.<|4.40|>
+
+199
+00:11:20,500 --> 00:11:23,459
+<|4.40|> It has to solve a deeply felt problem for the borrower.<|7.36|>
+
+200
+00:11:23,459 --> 00:11:26,099
+<|7.36|> Give me an example of a good pain point versus a bad one.<|10.00|>
+
+201
+00:11:26,099 --> 00:11:31,539
+<|10.00|> A bad pain point is saying, "My niche is people who want to buy houses."<|15.44|>
+
+202
+00:11:31,539 --> 00:11:32,979
+<|15.44|> Right, that is just everyone.<|16.88|>
+
+203
+00:11:32,979 --> 00:11:36,019
+<|16.88|> Yeah, that is not a pain point. That is just a general desire.<|19.92|>
+
+204
+00:11:36,819 --> 00:11:40,739
+<|20.72|> A clear, solvable pain point is looking at self-employed business owners.<|24.64|>
+
+205
+00:11:40,700 --> 00:11:45,660
+<|startoftranscript|><|0.00|> They run successful companies, they write off a massive amount of expenses to lower their<|4.96|>
+
+206
+00:11:45,660 --> 00:11:48,220
+<|4.96|> tax burden, which is smart business.<|7.52|>
+
+207
+00:11:48,220 --> 00:11:52,220
+<|7.52|> But then they go to a generic retail bank for a mortgage, and the bank looks at their<|11.52|>
+
+208
+00:11:52,220 --> 00:11:55,660
+<|11.52|> net income on their tax returns and just denies them.<|14.96|>
+
+209
+00:11:55,660 --> 00:11:57,540
+<|14.96|> That is a massive pain point.<|16.84|>
+
+210
+00:11:57,540 --> 00:12:01,780
+<|16.84|> They have cash, they have success, but the traditional system rejects them.<|21.08|>
+
+211
+00:12:01,799 --> 00:12:05,159
+<|startoftranscript|><|0.00|> So specializing in bank statement loans for self-employed borrowers<|3.36|>
+
+212
+00:12:05,159 --> 00:12:09,000
+<|3.36|> solves that specific agony. They finally feel seen.<|7.20|>
+
+213
+00:12:09,000 --> 00:12:12,320
+<|7.20|> Exactly. Another perfect example is real estate investors.<|10.52|>
+
+214
+00:12:12,320 --> 00:12:17,839
+<|10.52|> An investor who already owns five properties has likely maxed out their personal debt to income ratios<|16.04|>
+
+215
+00:12:17,839 --> 00:12:19,719
+<|16.04|> on traditional conventional guidelines.<|17.92|>
+
+216
+00:12:19,799 --> 00:12:23,320
+<|startoftranscript|><|0.00|> They want to buy property number six, but the generic lender says no.<|3.52|>
+
+217
+00:12:23,320 --> 00:12:24,320
+<|3.52|> Right.<|4.52|>
+
+218
+00:12:24,320 --> 00:12:29,799
+<|4.52|> If you specialize in DSCR, debt service coverage ratio loans, where the property's potential<|10.00|>
+
+219
+00:12:29,799 --> 00:12:34,080
+<|10.00|> rental income is used to qualify for the loan instead of the borrower's personal income,<|14.28|>
+
+220
+00:12:34,080 --> 00:12:37,559
+<|14.28|> you are solving a massive bottleneck for their wealth creation.<|17.76|>
+
+221
+00:12:37,559 --> 00:12:43,279
+<|17.76|> Okay, so I find a clear pain point that has real emotional and financial stakes for the<|23.48|>
+
+222
+00:12:43,279 --> 00:12:44,440
+<|23.48|> borrower.<|24.64|>
+
+223
+00:12:44,440 --> 00:12:46,119
+<|24.64|> What is the second filter?<|26.32|>
+
+224
+00:12:46,119 --> 00:12:46,799
+<|26.32|> Filter number two.<|27.00|>
+
+225
+00:12:47,099 --> 00:12:50,099
+<|startoftranscript|><|0.00|> Can you systematize the education around it?<|3.00|>
+
+226
+00:12:50,099 --> 00:12:54,099
+<|3.00|> An elite yellow is not a salesperson, they are an educator first.<|7.00|>
+
+227
+00:12:54,099 --> 00:13:01,099
+<|7.00|> If you choose a niche, you have to be able to build a reliable, repeatable educational presentation around it.<|14.00|>
+
+228
+00:13:01,099 --> 00:13:03,099
+<|14.00|> You can't be winging it every time the phone rings.<|16.00|>
+
+229
+00:13:03,099 --> 00:13:04,099
+<|16.00|> Make sense.<|17.00|>
+
+230
+00:13:03,599 --> 00:13:08,319
+<|startoftranscript|><|0.00|> The ultimate goal of this education is to become what the training calls the three option<|4.72|>
+
+231
+00:13:08,319 --> 00:13:09,319
+<|4.72|> advisor.<|5.72|>
+
+232
+00:13:09,319 --> 00:13:11,119
+<|5.72|> The three option advisor.<|7.52|>
+
+233
+00:13:11,119 --> 00:13:14,799
+<|7.52|> Let's dig into the psychology of that because consumers are obsessed with shopping<|11.20|>
+
+234
+00:13:14,799 --> 00:13:15,799
+<|11.20|> around right now.<|12.20|>
+
+235
+00:13:15,799 --> 00:13:19,399
+<|12.20|> And they should be given the amount of information available to them online.<|15.80|>
+
+236
+00:13:19,399 --> 00:13:23,599
+<|15.80|> The psychology of the modern consumer dictates that they need to feel they have explored<|20.00|>
+
+237
+00:13:23,599 --> 00:13:24,839
+<|20.00|> their options to make a safety.<|21.24|>
+
+238
+00:13:24,900 --> 00:13:51,100
+<|startoftranscript|><|nocaptions|><|endoftext|>
+
+239
+00:13:51,099 --> 00:13:55,099
+<|startoftranscript|><|0.00|> And you present three different ways to structure their investor loan.<|4.00|>
+
+240
+00:13:55,099 --> 00:14:00,099
+<|4.00|> You carefully explain the pros, the cons, the prepaid penalty variations,<|9.00|>
+
+241
+00:14:00,099 --> 00:14:02,099
+<|9.00|> the cash flow implications of each.<|11.00|>
+
+242
+00:14:02,099 --> 00:14:03,099
+<|11.00|> You're doing the shopping for them.<|12.00|>
+
+243
+00:14:03,099 --> 00:14:06,099
+<|12.00|> You fulfill their psychological need to shop,<|15.00|>
+
+244
+00:14:06,099 --> 00:14:09,099
+<|15.00|> you eliminate their need to call the competition<|18.00|>
+
+245
+00:14:09,099 --> 00:14:12,099
+<|18.00|> because you provided the comparative options in terms of the company.<|21.00|>
+
+246
+00:14:11,599 --> 00:14:14,359
+<|startoftranscript|><|0.00|> you essentially come the entire marketplace.<|2.76|>
+
+247
+00:14:14,359 --> 00:14:16,959
+<|2.76|> - You systematize the education so deeply<|5.36|>
+
+248
+00:14:16,959 --> 00:14:19,759
+<|5.36|> that they feel completely empowered and informed,<|8.16|>
+
+249
+00:14:19,759 --> 00:14:22,679
+<|8.16|> making you the only expert they ever need to speak with.<|11.08|>
+
+250
+00:14:22,679 --> 00:14:23,519
+<|11.08|> That is brilliant.<|11.92|>
+
+251
+00:14:23,519 --> 00:14:24,359
+<|11.92|> - Yeah.<|12.76|>
+
+252
+00:14:24,359 --> 00:14:25,880
+<|12.76|> - So what is the third filter for choosing the niche?<|14.28|>
+
+253
+00:14:25,880 --> 00:14:26,799
+<|14.28|> - Filter number three,<|15.20|>
+
+254
+00:14:26,799 --> 00:14:30,279
+<|15.20|> does it leverage loan factory specific advantages?<|18.68|>
+
+255
+00:14:30,200 --> 00:14:35,960
+<|startoftranscript|><|0.00|> You need to pick a niche where your platform, specifically Terra, gives you an unfair advantage<|5.76|>
+
+256
+00:14:35,960 --> 00:14:37,960
+<|5.76|> over the generic lender down the street.<|7.76|>
+
+257
+00:14:37,960 --> 00:14:41,840
+<|7.76|> How does Terra Act is an unfair advantage in a niche context, though?<|11.64|>
+
+258
+00:14:41,840 --> 00:14:44,559
+<|11.64|> Let's look at Terra's transparent pricing model.<|14.36|>
+
+259
+00:14:44,559 --> 00:14:49,160
+<|14.36|> Suppose you decide to specialize in highly analytical borrowers, you know, engineers, accountants,<|18.96|>
+
+260
+00:14:49,160 --> 00:14:50,160
+<|18.96|> data scientists.<|19.96|>
+
+261
+00:14:50,160 --> 00:14:51,160
+<|19.96|> The spreadsheet people.<|20.96|>
+
+262
+00:14:51,160 --> 00:14:51,679
+<|20.96|> Yes.<|21.48|>
+
+263
+00:14:51,799 --> 00:14:55,279
+<|startoftranscript|><|0.00|> This demographic notoriously hates feeling sold to.<|3.48|>
+
+264
+00:14:55,279 --> 00:14:59,359
+<|3.48|> They hate high pressure tactics and they are highly skeptical of hidden margins.<|7.56|>
+
+265
+00:14:59,359 --> 00:15:03,839
+<|7.56|> If you use Terra, you can literally show them side-by-side pricing comparisons<|12.04|>
+
+266
+00:15:03,839 --> 00:15:08,119
+<|12.04|> from dozens of wholesale lenders in real time without any hidden markups.<|16.32|>
+
+267
+00:15:08,119 --> 00:15:12,760
+<|16.32|> You are using the technology to build instant verifiable trust.<|20.96|>
+
+268
+00:15:12,760 --> 00:15:18,279
+<|20.96|> That specific platform advantage aligns perfectly with the psychological profile of your chosen niche.<|26.48|>
+
+269
+00:15:18,279 --> 00:15:21,079
+<|26.48|> I love that. But I have to play devil's advocate here for<|29.28|>
+
+270
+00:15:21,099 --> 00:15:27,819
+<|startoftranscript|><|0.00|> second. Let's say I go all in, I'm playing my flag. I am the DSCR investor guy in my market.<|6.72|>
+
+271
+00:15:27,819 --> 00:15:32,299
+<|6.72|> I build my whole weekly system, my social media, my partner outreach around real estate<|11.20|>
+
+272
+00:15:32,299 --> 00:15:36,940
+<|11.20|> investors. Aren't I essentially putting up a giant go away sign for standard conventional<|15.84|>
+
+273
+00:15:36,940 --> 00:15:37,500
+<|15.84|> buyers?<|16.40|>
+
+274
+00:15:37,599 --> 00:15:43,099
+<|startoftranscript|><|0.00|> If a nice family wanting a standard four bedroom in the suburbs is referred to me, am I leaving money on the table?<|5.50|>
+
+275
+00:15:43,099 --> 00:15:46,099
+<|5.50|> Do I turn them away because they don't fit my specialized beer?<|8.50|>
+
+276
+00:15:46,099 --> 00:15:50,099
+<|8.50|> It is the most common fear senior Elos have when transitioning to a niche,<|12.50|>
+
+277
+00:15:50,099 --> 00:15:54,599
+<|12.50|> but it represents a fundamental misunderstanding of what a niche actually is.<|17.00|>
+
+278
+00:15:55,099 --> 00:15:58,459
+<|startoftranscript|><|0.00|> Having a niche doesn't mean you build a wall and reject all other business.<|3.36|>
+
+279
+00:15:58,459 --> 00:15:59,459
+<|3.36|> It doesn't.<|4.36|>
+
+280
+00:15:59,459 --> 00:16:00,459
+<|4.36|> No.<|5.36|>
+
+281
+00:16:00,459 --> 00:16:04,859
+<|5.36|> It means you target your proactive energy, your marketing dollars, your outbound calls,<|9.76|>
+
+282
+00:16:04,859 --> 00:16:07,299
+<|9.76|> your content creation, towards your niche.<|12.20|>
+
+283
+00:16:07,299 --> 00:16:09,899
+<|12.20|> So the net still exists, I'm just not dragging it.<|14.80|>
+
+284
+00:16:09,899 --> 00:16:10,899
+<|14.80|> Precisely.<|15.80|>
+
+285
+00:16:10,899 --> 00:16:13,500
+<|15.80|> The conventional purchase will still come to you organically.<|18.40|>
+
+286
+00:16:13,500 --> 00:16:18,260
+<|startoftranscript|><|0.00|> Your past clients will still refer their sister who is buying a primary residence.<|4.76|>
+
+287
+00:16:18,260 --> 00:16:22,539
+<|4.76|> You will still process those loans flawlessly using your terrorist system, but you aren't<|9.04|>
+
+288
+00:16:22,539 --> 00:16:25,619
+<|9.04|> waking up on Tuesday morning wondering how to mark it to everyone.<|12.12|>
+
+289
+00:16:25,619 --> 00:16:28,859
+<|12.12|> Your proactive needle moving energy is hyper-focused.<|15.36|>
+
+290
+00:16:28,859 --> 00:16:29,619
+<|15.36|> Exactly.<|16.12|>
+
+291
+00:16:29,700 --> 00:16:40,200
+<|startoftranscript|><|0.00|> Furthermore, when you truly own a niche, you don't just process a transaction, you utilize advanced consultative frameworks like the CSER framework highlighted in the elite module.<|10.50|>
+
+292
+00:16:40,200 --> 00:16:45,900
+<|10.50|> The CSER framework, let's break down this acronym because this is the actual conversational mechanics of being a specialist.<|16.20|>
+
+293
+00:16:45,900 --> 00:16:50,700
+<|16.20|> Clarify, sell the vacation, explain concerns, reinforce.<|21.00|>
+
+294
+00:16:50,700 --> 00:16:52,400
+<|21.00|> Let's roleplay this a bit.<|22.70|>
+
+295
+00:16:52,400 --> 00:16:55,700
+<|22.70|> Walk me through CSER using a specific niche.<|26.00|>
+
+296
+00:16:55,900 --> 00:16:59,100
+<|startoftranscript|><|0.00|> Let's use the VA loan each.<|3.20|>
+
+297
+00:16:59,100 --> 00:17:03,820
+<|3.20|> This is a highly specialized product that requires deep knowledge and honestly profound<|7.92|>
+
+298
+00:17:03,820 --> 00:17:05,940
+<|7.92|> respect for the borrower.<|10.04|>
+
+299
+00:17:05,940 --> 00:17:07,780
+<|10.04|> Step 1 is Clarify.<|11.88|>
+
+300
+00:17:07,780 --> 00:17:10,500
+<|11.88|> You don't just ask about their credit score and income.<|14.60|>
+
+301
+00:17:10,500 --> 00:17:15,020
+<|14.60|> You ask deep clarifying questions to isolate their true pain point.<|19.12|>
+
+302
+00:17:15,020 --> 00:17:15,219
+<|19.12|> Like with.<|19.32|>
+
+303
+00:17:15,599 --> 00:17:17,919
+<|startoftranscript|><|0.00|> Like, how long did you serve?<|2.32|>
+
+304
+00:17:17,919 --> 00:17:22,079
+<|2.32|> What is your ultimate goal for your family stability after moving around so much?<|6.48|>
+
+305
+00:17:22,079 --> 00:17:24,839
+<|6.48|> You are drawing out the emotional core of the transaction.<|9.24|>
+
+306
+00:17:24,839 --> 00:17:27,119
+<|9.24|> Okay, I have clarified their true need.<|11.52|>
+
+307
+00:17:27,119 --> 00:17:29,959
+<|11.52|> Step two is cell vacation.<|14.36|>
+
+308
+00:17:29,959 --> 00:17:32,439
+<|14.36|> Now I assume we aren't talking about actual timeshears here.<|16.84|>
+
+309
+00:17:32,439 --> 00:17:37,199
+<|16.84|> It is a metaphor for focusing on the emotional outcome rather than the mechanical features.<|21.60|>
+
+310
+00:17:37,199 --> 00:17:41,199
+<|startoftranscript|><|0.00|> When a travel agent sells you a trip to Hawaii, they don't sell the bowling aircraft,<|4.00|>
+
+311
+00:17:41,199 --> 00:17:43,199
+<|4.00|> the baggage fees, and the jet lag.<|6.00|>
+
+312
+00:17:43,199 --> 00:17:46,199
+<|6.00|> They sell the feeling of sitting on the beach with a drink in your hand.<|9.00|>
+
+313
+00:17:46,199 --> 00:17:49,199
+<|9.00|> In mortgage sales, generalists sell the airplane.<|12.00|>
+
+314
+00:17:49,199 --> 00:17:54,199
+<|12.00|> They talk about debt to income ratios and underwriting turn times, a specialist sells the vacation.<|17.00|>
+
+315
+00:17:54,199 --> 00:17:57,199
+<|17.00|> So for our VA borrower, what is the vacation?<|20.00|>
+
+316
+00:17:57,199 --> 00:18:00,199
+<|20.00|> You aren't just selling the mathematical fact that there is no monthly money.<|23.00|>
+
+317
+00:17:59,800 --> 00:18:04,420
+<|startoftranscript|><|0.00|> mortgage insurance, you are selling the deep security, the honor, and the<|4.62|>
+
+318
+00:18:04,420 --> 00:18:08,260
+<|4.62|> generational stability of owning a piece of the country they serve to protect.<|8.46|>
+
+319
+00:18:08,739 --> 00:18:12,380
+<|8.94|> You are selling the reality that they can keep their savings in the bank<|12.58|>
+
+320
+00:18:12,380 --> 00:18:17,140
+<|12.58|> for their children's future. That is the vacation. That is incredibly powerful.<|17.34|>
+
+321
+00:18:17,180 --> 00:18:21,980
+<|17.38|> So then step three is explain concerns. This is where the elite specialist<|22.18|>
+
+322
+00:18:21,980 --> 00:18:23,500
+<|22.18|> really separates from the pack.<|23.70|>
+
+323
+00:18:23,500 --> 00:18:28,500
+<|startoftranscript|><|0.00|> You preemptively handle the borrower's anxieties before they even articulate them.<|5.00|>
+
+324
+00:18:28,500 --> 00:18:29,500
+<|5.00|> Oh wow.<|6.00|>
+
+325
+00:18:29,500 --> 00:18:33,819
+<|6.00|> Yeah, a VA borrower might have heard rumors that sellers hate VA loans because of strict<|10.32|>
+
+326
+00:18:33,819 --> 00:18:34,819
+<|10.32|> appraisals.<|11.32|>
+
+327
+00:18:34,819 --> 00:18:39,099
+<|11.32|> Instead of waiting for them to panic about it later, the specialist brings it up immediately.<|15.60|>
+
+328
+00:18:39,099 --> 00:18:41,339
+<|15.60|> They say, "You might hear that VA appraisals are tough."<|17.84|>
+
+329
+00:18:41,400 --> 00:18:46,800
+<|startoftranscript|><|0.00|> Here is exactly how my team and I handle the process and Terra to protect your contract.<|5.40|>
+
+330
+00:18:46,800 --> 00:18:49,640
+<|5.40|> You defuse the bomb before they even know it is in the room.<|8.24|>
+
+331
+00:18:49,640 --> 00:18:53,400
+<|8.24|> You take away the anxiety by showing you already have the map through the minefield.<|12.00|>
+
+332
+00:18:53,400 --> 00:18:55,200
+<|12.00|> And finally, reinforce.<|13.80|>
+
+333
+00:18:55,200 --> 00:19:00,080
+<|13.80|> You reinforce their decision to move forward with you by summarizing exactly how your specific<|18.68|>
+
+334
+00:19:00,080 --> 00:19:05,359
+<|18.68|> three options solve their clarified pain point, deliver their desired vacation, and mitigate<|23.96|>
+
+335
+00:19:05,359 --> 00:19:06,359
+<|23.96|> their concerns.<|24.96|>
+
+336
+00:19:06,400 --> 00:19:15,400
+<|startoftranscript|><|0.00|> A generalist cannot execute the CSCR framework effectively because they don't know the specific vacations and concerns of every single loan type.<|9.00|>
+
+337
+00:19:15,400 --> 00:19:17,400
+<|9.00|> A specialist does it flawlessly.<|11.00|>
+
+338
+00:19:17,400 --> 00:19:23,400
+<|11.00|> Okay, I am tracking. I have redefined what it means to be a lead. I am focusing on depth, not volume.<|17.00|>
+
+339
+00:19:23,500 --> 00:19:26,339
+<|startoftranscript|><|0.00|> I have planted my flag in a specific niche.<|2.84|>
+
+340
+00:19:26,339 --> 00:19:27,540
+<|2.84|> I know they're pain points.<|4.04|>
+
+341
+00:19:27,540 --> 00:19:30,060
+<|4.04|> I have built my three option educational models,<|6.56|>
+
+342
+00:19:30,060 --> 00:19:32,619
+<|6.56|> and I am leveraging Tera's transparent pricing<|9.12|>
+
+343
+00:19:32,619 --> 00:19:33,619
+<|9.12|> to build trust.<|10.12|>
+
+344
+00:19:33,619 --> 00:19:34,540
+<|10.12|> Perfect.<|11.04|>
+
+345
+00:19:34,540 --> 00:19:36,459
+<|11.04|> But let's be brutally honest for a second.<|12.96|>
+
+346
+00:19:36,459 --> 00:19:38,780
+<|12.96|> Building and maintaining this level of specialized focus<|15.28|>
+
+347
+00:19:38,780 --> 00:19:40,339
+<|15.28|> takes intense organization.<|16.84|>
+
+348
+00:19:40,339 --> 00:19:42,060
+<|16.84|> If I am diving this deep with my clients,<|18.56|>
+
+349
+00:19:42,060 --> 00:19:43,699
+<|18.56|> my calendar is going to explode.<|20.20|>
+
+350
+00:19:43,699 --> 00:19:46,260
+<|20.20|> How do I actually process the specialized business<|22.76|>
+
+351
+00:19:46,260 --> 00:19:48,739
+<|22.76|> without working weekends and burning out completely?<|25.24|>
+
+352
+00:19:48,739 --> 00:19:52,060
+<|25.24|> Which is the perfect bridge to the core operational engine<|28.56|>
+
+353
+00:19:52,060 --> 00:19:53,060
+<|startoftranscript|><|0.00|> of Elite 601.<|1.00|><|endoftext|>
+
+354
+00:19:53,099 --> 00:19:55,500
+<|startoftranscript|><|0.00|> the personal weekly operating system.<|2.40|>
+
+355
+00:19:55,500 --> 00:19:57,979
+<|2.40|> Because choosing a niche is just philosophy<|4.88|>
+
+356
+00:19:57,979 --> 00:20:01,900
+<|4.88|> until you have an ironclad container to process that business<|8.80|>
+
+357
+00:20:01,900 --> 00:20:03,900
+<|8.80|> without it bleeding into your personal life.<|10.80|>
+
+358
+00:20:03,900 --> 00:20:06,859
+<|10.80|> The sources refer to this container as the 60 to 90-minute shield.<|13.76|>
+
+359
+00:20:07,660 --> 00:20:10,059
+<|14.56|> I love the visceral imagery of that.<|16.96|>
+
+360
+00:20:09,800 --> 00:20:12,200
+<|startoftranscript|><|0.00|> It is a defensive mechanism.<|2.40|>
+
+361
+00:20:12,200 --> 00:20:17,320
+<|2.40|> It has to be defensive because as a senior loan officer, you are a high value target.<|7.52|>
+
+362
+00:20:17,320 --> 00:20:18,520
+<|7.52|> You really are.<|8.72|>
+
+363
+00:20:18,520 --> 00:20:20,160
+<|8.72|> Everybody wants a piece of your time.<|10.36|>
+
+364
+00:20:20,160 --> 00:20:25,080
+<|10.36|> Barrowers won't update real estate agents, want you to save their dying deals, underwriters,<|15.28|>
+
+365
+00:20:25,080 --> 00:20:28,040
+<|15.28|> need conditions, your junior yellows have questions.<|18.24|>
+
+366
+00:20:28,040 --> 00:20:32,480
+<|18.24|> If you do not actively dictate your schedule, the chaotic gravity of the mortgage industry<|22.68|>
+
+367
+00:20:32,480 --> 00:20:33,440
+<|22.68|> will dictate it for you.<|23.64|>
+
+368
+00:20:33,500 --> 00:20:38,219
+<|startoftranscript|><|0.00|> you. So what exactly is this shield like practically speaking? It is a dedicated<|4.72|>
+
+369
+00:20:38,219 --> 00:20:42,219
+<|4.72|> unbreakable block of time, usually 60 to 90 minutes executed early in the<|8.72|>
+
+370
+00:20:42,219 --> 00:20:45,739
+<|8.72|> week, ideally Monday morning. It dictates, organizes and protects the<|12.24|>
+
+371
+00:20:45,739 --> 00:20:49,900
+<|12.24|> entire rest of your week. Think of it like the Miseon Place and Emissulan Star<|16.40|>
+
+372
+00:20:49,900 --> 00:20:52,140
+<|16.40|> Kitchen.<|18.64|>
+
+373
+00:20:50,199 --> 00:20:53,039
+<|startoftranscript|><|0.00|> The preparation before the actual service starts.<|2.84|>
+
+374
+00:20:53,039 --> 00:20:54,039
+<|2.84|> Exactly.<|3.84|>
+
+375
+00:20:54,039 --> 00:20:57,000
+<|3.84|> Before the restaurant opens, the chefs aren't cooking.<|6.80|>
+
+376
+00:20:57,000 --> 00:21:01,679
+<|6.80|> They are chopping the onions, portioning the proteins, organizing their stations.<|11.48|>
+
+377
+00:21:01,679 --> 00:21:05,000
+<|11.48|> Because if a chef is running around looking for a sharp knife while a steak is burning<|14.80|>
+
+378
+00:21:05,000 --> 00:21:07,399
+<|14.80|> during the dinner rush, the system has failed.<|17.20|>
+
+379
+00:21:07,599 --> 00:21:11,099
+<|startoftranscript|><|0.00|> The 90-minute shield is the Elos Miseon place.<|3.50|>
+
+380
+00:21:11,099 --> 00:21:13,099
+<|3.50|> Let's get granular with this.<|5.50|>
+
+381
+00:21:13,099 --> 00:21:16,900
+<|5.50|> What specific rhythms are happening inside this 90-minute block?<|9.30|>
+
+382
+00:21:16,900 --> 00:21:20,900
+<|9.30|> Because if an Elo just blocks out an hour and stares at their inbox,<|13.30|>
+
+383
+00:21:20,900 --> 00:21:22,500
+<|13.30|> that is not a system.<|14.90|>
+
+384
+00:21:22,500 --> 00:21:26,099
+<|14.90|> The sources break this down into five specific weekly rhythms.<|18.50|>
+
+385
+00:21:26,099 --> 00:21:28,500
+<|startoftranscript|><|0.00|> Step 1 is the pipeline review.<|2.40|>
+
+386
+00:21:28,500 --> 00:21:32,619
+<|2.40|> Right, and the pipeline review is not passively scrolling through your Terra Dashboard to see<|6.52|>
+
+387
+00:21:32,619 --> 00:21:33,619
+<|6.52|> what closed.<|7.52|>
+
+388
+00:21:33,619 --> 00:21:36,140
+<|7.52|> It is an active, aggressive audit.<|10.04|>
+
+389
+00:21:36,140 --> 00:21:38,619
+<|10.04|> You are opening every single active file.<|12.52|>
+
+390
+00:21:38,619 --> 00:21:40,979
+<|12.52|> You are checking for document accuracy.<|14.88|>
+
+391
+00:21:40,979 --> 00:21:45,699
+<|14.88|> Did the borrower upload the W2 or did they upload a picture of their dog by mistake?<|19.60|>
+
+392
+00:21:45,699 --> 00:21:47,260
+<|19.60|> That happens more than you'd think.<|21.16|>
+
+393
+00:21:47,260 --> 00:21:48,260
+<|21.16|> It really does.<|22.16|>
+
+394
+00:21:48,260 --> 00:21:49,619
+<|22.16|> Are there missing items that are going to cause it's a good idea?<|23.52|>
+
+395
+00:21:49,599 --> 00:21:53,839
+<|startoftranscript|><|0.00|> delay. You are looking for friction points before they become fires. You are proactively<|4.24|>
+
+396
+00:21:53,839 --> 00:21:57,239
+<|4.24|> looking at a file and saying, "Where is this going to get stuck three days from now and<|7.64|>
+
+397
+00:21:57,239 --> 00:22:02,199
+<|7.64|> you are solving that problem today?" If an appraisal is due on Thursday, you are checking<|12.60|>
+
+398
+00:22:02,199 --> 00:22:07,199
+<|12.60|> the status on Monday. You move the files efficiently from one stage to the next in the<|17.60|>
+
+399
+00:22:07,199 --> 00:22:07,479
+<|17.60|> system.<|17.88|>
+
+400
+00:22:07,500 --> 00:22:14,500
+<|startoftranscript|><|0.00|> When you do this correctly, you eliminate 90% of the panicked phone calls you usually get on a Friday afternoon.<|7.00|>
+
+401
+00:22:14,500 --> 00:22:20,500
+<|7.00|> Okay, the pipeline is audited. The station is prepped. Step 2 and the shield is the partner review.<|13.00|>
+
+402
+00:22:20,500 --> 00:22:27,500
+<|13.00|> This is the engine of your referral business, specifically building what the module calls the realtor value loop.<|20.00|>
+
+403
+00:22:27,500 --> 00:22:34,500
+<|20.00|> During this time, you identify which real estate agents, CPAs, or financial planners you're going to contact this week.<|27.00|>
+
+404
+00:22:34,500 --> 00:22:36,500
+<|startoftranscript|><|0.00|> But here is the critical distinction.<|2.00|><|endoftext|>
+
+405
+00:22:36,199 --> 00:22:39,599
+<|startoftranscript|><|0.00|> You are not calling them to beg for business.<|3.40|>
+
+406
+00:22:39,599 --> 00:22:42,599
+<|3.40|> You are not calling to say, "Hey, just check it in, got any leads."<|6.40|>
+
+407
+00:22:42,599 --> 00:22:47,559
+<|6.40|> No, because every other average loan officer is making that exact same annoying call.<|11.36|>
+
+408
+00:22:47,559 --> 00:22:51,279
+<|11.36|> Instead, you are providing curated value based on your niche.<|15.08|>
+
+409
+00:22:51,279 --> 00:22:53,479
+<|15.08|> If your niche is DSCR investors,<|17.28|>
+
+410
+00:22:53,500 --> 00:22:57,500
+<|startoftranscript|><|0.00|> You use this time to pull local multi-family MLS data.<|4.00|>
+
+411
+00:22:57,500 --> 00:23:00,500
+<|4.00|> You pull specific investor trends from the Terra,<|7.00|>
+
+412
+00:23:00,500 --> 00:23:04,500
+<|7.00|> and you send a targeted, highly valuable update<|11.00|>
+
+413
+00:23:04,500 --> 00:23:08,500
+<|11.00|> to your real estate partners that helps them sound smarter to their clients.<|15.00|>
+
+414
+00:23:08,500 --> 00:23:12,500
+<|15.00|> You become their specialized consultant, not their vendor.<|19.00|>
+
+415
+00:23:12,500 --> 00:23:14,500
+<|19.00|> That is a massive shift in positioning.<|21.00|>
+
+416
+00:23:14,500 --> 00:23:16,500
+<|21.00|> I mean, they start looking forward to your emails.<|23.00|>
+
+417
+00:23:16,500 --> 00:23:18,500
+<|23.00|> So, step three is the content review.<|25.00|>
+
+418
+00:23:18,500 --> 00:23:22,500
+<|25.00|> If you are going to own your niche, you have to be visible as the authority.<|29.00|>
+
+419
+00:23:22,300 --> 00:23:26,300
+<|startoftranscript|><|0.00|> The content review is where you plan your educational output for the week.<|4.00|>
+
+420
+00:23:26,300 --> 00:23:30,300
+<|4.00|> What social media posts are going out, what short form video are you going to record?<|8.00|>
+
+421
+00:23:30,300 --> 00:23:33,300
+<|8.00|> Are you sending an email newsletter to your database?<|11.00|>
+
+422
+00:23:33,300 --> 00:23:39,300
+<|11.00|> You batch the planning and writing during the shield so you aren't waking up on Thursday morning in a cold sweat wondering what to post on LinkedIn.<|17.00|>
+
+423
+00:23:39,300 --> 00:23:43,300
+<|17.00|> We have pipeline, partners, and content. Those are all output activities.<|21.00|>
+
+424
+00:23:43,300 --> 00:23:45,300
+<|21.00|> What are the final two components of the shield?<|23.00|>
+
+425
+00:23:45,300 --> 00:23:50,300
+<|23.00|> The last two are arguably the most critical for a senior aloe's long term survival.<|28.00|>
+
+426
+00:23:49,900 --> 00:23:52,500
+<|startoftranscript|><|0.00|> the learning hour and the recovery hour.<|2.60|>
+
+427
+00:23:52,500 --> 00:23:54,200
+<|2.60|> During your 90-minute shield,<|4.30|>
+
+428
+00:23:54,200 --> 00:23:56,099
+<|4.30|> you must physically open your calendar<|6.20|>
+
+429
+00:23:56,099 --> 00:23:58,599
+<|6.20|> and block out time later in the week to learn<|8.70|>
+
+430
+00:23:58,599 --> 00:24:01,099
+<|8.70|> and time to completely unplug.<|11.20|>
+
+431
+00:24:01,099 --> 00:24:02,599
+<|11.20|> Explain the learning hour.<|12.70|>
+
+432
+00:24:02,599 --> 00:24:04,500
+<|12.70|> What is a senior ELO studying<|14.60|>
+
+433
+00:24:04,500 --> 00:24:06,099
+<|14.60|> if they already know the business?<|16.20|>
+
+434
+00:24:06,099 --> 00:24:08,599
+<|16.20|> An elite professional is never a finished product.<|18.70|>
+
+435
+00:24:08,599 --> 00:24:14,299
+<|startoftranscript|><|0.00|> You block an hour to review your own call recordings to see where you missed buying signals.<|5.70|>
+
+436
+00:24:14,299 --> 00:24:17,520
+<|5.70|> You read up on minor guideline changes in your niche.<|8.92|>
+
+437
+00:24:17,520 --> 00:24:22,239
+<|8.92|> You study the Terra platform updates to find a new workflow efficiency, and equally important<|13.64|>
+
+438
+00:24:22,239 --> 00:24:24,160
+<|13.64|> you schedule the recovery hour.<|15.56|>
+
+439
+00:24:24,160 --> 00:24:28,059
+<|15.56|> A specific block of time where the phone is off, the Terra pipeline is closed, and you are<|19.46|>
+
+440
+00:24:28,059 --> 00:24:29,239
+<|19.46|> completely unreachable.<|20.64|>
+
+441
+00:24:29,300 --> 00:24:34,100
+<|startoftranscript|><|0.00|> This whole structure reminds me of the win-by-noon philosophy that gets heavily referenced in<|4.80|>
+
+442
+00:24:34,100 --> 00:24:35,300
+<|4.80|> elite sales circles.<|6.00|>
+
+443
+00:24:35,300 --> 00:24:36,300
+<|6.00|> Oh, absolutely.<|7.00|>
+
+444
+00:24:36,300 --> 00:24:40,520
+<|7.00|> The psychological premise is that if you knock out these high-value proactive needle-moving<|11.22|>
+
+445
+00:24:40,520 --> 00:24:45,340
+<|11.22|> tasks inside this 90-minute shield on Monday morning, the entire rest of the week can<|16.04|>
+
+446
+00:24:45,340 --> 00:24:49,940
+<|16.04|> theoretically fall apart into absolute chaos, and you still have a successful business-building<|20.64|>
+
+447
+00:24:49,940 --> 00:24:50,940
+<|20.64|> week.<|21.64|>
+
+448
+00:24:50,940 --> 00:24:53,619
+<|21.64|> It is the ultimate insurance policy for your career.<|24.32|>
+
+449
+00:24:53,619 --> 00:24:54,980
+<|24.32|> Because the chaos will happen.<|25.68|>
+
+450
+00:24:54,980 --> 00:24:56,460
+<|25.68|> A title company will make a mistake.<|27.16|>
+
+451
+00:24:56,460 --> 00:24:58,380
+<|27.16|> A borrower will panic about funds.<|29.08|>
+
+452
+00:24:58,500 --> 00:25:04,099
+<|startoftranscript|><|0.00|> But if you haven't built this shield, other people's emergencies become your standard operating system.<|5.60|>
+
+453
+00:25:04,099 --> 00:25:05,099
+<|5.60|> You just react all week.<|6.60|>
+
+454
+00:25:05,099 --> 00:25:10,099
+<|6.60|> You spend your entire week reacting, putting out fires, and you arrive at Friday exhausted,<|11.60|>
+
+455
+00:25:10,099 --> 00:25:14,300
+<|11.60|> realizing you did absolutely nothing to generate new business for next month.<|15.80|>
+
+456
+00:25:14,300 --> 00:25:20,300
+<|15.80|> So a well-oiled personal system, this 90-minute shield, it frees up cognitive load and actual hours on the clock.<|21.80|>
+
+457
+00:25:20,300 --> 00:25:21,900
+<|21.80|> It gives you command over your week.<|23.40|>
+
+458
+00:25:21,900 --> 00:25:27,400
+<|startoftranscript|><|0.00|> And for a senior aloe, that reclaimed time isn't just spent, you know, playing golf.<|5.50|>
+
+459
+00:25:27,400 --> 00:25:29,400
+<|5.50|> It is often reinvested into leadership.<|7.50|>
+
+460
+00:25:29,400 --> 00:25:30,400
+<|7.50|> Yes.<|8.50|>
+
+461
+00:25:30,400 --> 00:25:34,479
+<|8.50|> Which brings us to a really complex phase of a senior aloe's career, mentoring junior<|12.58|>
+
+462
+00:25:34,479 --> 00:25:36,839
+<|12.58|> aloe without owning their pipeline.<|14.94|>
+
+463
+00:25:36,839 --> 00:25:38,160
+<|14.94|> This is a profound transition point.<|16.26|>
+
+464
+00:25:38,199 --> 00:25:43,359
+<|startoftranscript|><|0.00|> As you master your own systems in Elite 601, the natural evolution is to start guiding<|5.16|>
+
+465
+00:25:43,359 --> 00:25:48,760
+<|5.16|> newer or struggling alone officers on your team, but there is a massive, seductive trap<|10.56|>
+
+466
+00:25:48,760 --> 00:25:51,599
+<|10.56|> here that derailleur a lot of top producers.<|13.40|>
+
+467
+00:25:51,599 --> 00:25:55,000
+<|13.40|> The trap of being the hero, the trap of doing the work for them.<|16.80|>
+
+468
+00:25:55,000 --> 00:25:56,000
+<|16.80|> Exactly.<|17.80|>
+
+469
+00:25:56,000 --> 00:25:58,959
+<|17.80|> You have to establish a brutal, unwavering boundary.<|20.76|>
+
+470
+00:25:59,000 --> 00:26:01,959
+<|startoftranscript|><|0.00|> As a mentor, you cannot own their pipeline.<|2.96|>
+
+471
+00:26:01,959 --> 00:26:04,040
+<|2.96|> You cannot adopt their stress.<|5.04|>
+
+472
+00:26:04,040 --> 00:26:09,079
+<|5.04|> Your mandate is to transfer the mechanics of your system to them, not to become their<|10.08|>
+
+473
+00:26:09,079 --> 00:26:11,479
+<|10.08|> personal underwriter and closer.<|12.48|>
+
+474
+00:26:11,479 --> 00:26:15,239
+<|12.48|> Let's talk about the actual psychology and language of this mentorship, because it is<|16.24|>
+
+475
+00:26:15,239 --> 00:26:16,239
+<|16.24|> incredibly delicate.<|17.24|>
+
+476
+00:26:16,239 --> 00:26:18,800
+<|17.24|> You have a junior aloe who is struggling.<|19.80|>
+
+477
+00:26:18,800 --> 00:26:20,439
+<|19.80|> Their confidence is shot.<|21.44|>
+
+478
+00:26:20,439 --> 00:26:22,479
+<|21.44|> How do you give them constructive feedback?<|23.48|>
+
+479
+00:26:22,500 --> 00:26:30,199
+<|startoftranscript|><|0.00|> that actually alters their behavior without breaking their trust or making them feel like they are inherently bad at the job.<|7.70|>
+
+480
+00:26:30,199 --> 00:26:32,599
+<|7.70|> The vocabulary you use is everything here.<|10.10|>
+
+481
+00:26:32,599 --> 00:26:35,099
+<|10.10|> The training emphasizes a vital concept.<|12.60|>
+
+482
+00:26:35,099 --> 00:26:39,800
+<|12.60|> It must be explicitly clear that you, the senior, aloe, are not better as a human being.<|17.30|>
+
+483
+00:26:39,800 --> 00:26:40,199
+<|17.30|> Right.<|17.70|>
+
+484
+00:26:40,199 --> 00:26:45,400
+<|17.70|> You are not naturally smarter, you don't have a magical silver tongue, and you aren't inherently more charismatic.<|22.90|>
+
+485
+00:26:45,500 --> 00:26:49,819
+<|startoftranscript|><|0.00|> you simply operate a better system. You have to demystify your own success for them.<|4.32|>
+
+486
+00:26:49,819 --> 00:26:54,380
+<|4.32|> You have to make your success clinical and reproducible. If a junior<|8.88|>
+
+487
+00:26:54,380 --> 00:26:58,699
+<|8.88|> L.O. looks at you and thinks well, she is just a natural salesperson. I could never do that.<|13.20|>
+
+488
+00:26:58,699 --> 00:27:03,260
+<|13.20|> They are paralyzed. But if they understand that you succeed because you strictly<|17.76|>
+
+489
+00:27:03,260 --> 00:27:08,459
+<|17.76|> execute the C.S.E.R. framework or because you never miss your 90-minute shield, then they realize<|22.96|>
+
+490
+00:27:08,459 --> 00:27:10,380
+<|22.96|> success is just a series of executed.<|24.88|>
+
+491
+00:27:10,400 --> 00:27:15,599
+<|startoftranscript|><|0.00|> steps. So it is shifting the feedback from a personal attack, like your<|5.20|>
+
+492
+00:27:15,599 --> 00:27:20,280
+<|5.20|> terrible handling objections to a systematic observation like the system<|9.88|>
+
+493
+00:27:20,280 --> 00:27:24,080
+<|9.88|> wasn't applied correctly in that conversation. Exactly. And the most effective<|13.68|>
+
+494
+00:27:24,080 --> 00:27:27,160
+<|13.68|> vehicle for this transfer is role play. You don't just lecture them in a<|16.76|>
+
+495
+00:27:27,160 --> 00:27:30,880
+<|16.76|> conference room, you put them in the simulator.<|20.48|>
+
+496
+00:27:29,099 --> 00:27:31,099
+<|startoftranscript|><|0.00|> You practice the opening script.<|2.00|>
+
+497
+00:27:31,099 --> 00:27:33,099
+<|2.00|> You practice how to present the three options.<|4.00|>
+
+498
+00:27:33,099 --> 00:27:36,959
+<|4.00|> And most importantly, you practice handling the objections that cause junior<|7.86|>
+
+499
+00:27:36,959 --> 00:27:37,959
+<|7.86|> allows to panic.<|8.86|>
+
+500
+00:27:37,959 --> 00:27:39,439
+<|8.86|> Let's role play the panic for a second.<|10.34|>
+
+501
+00:27:39,439 --> 00:27:41,099
+<|10.34|> The absolute classic.<|12.00|>
+
+502
+00:27:41,099 --> 00:27:42,500
+<|12.00|> I want a lower rate.<|13.40|>
+
+503
+00:27:42,500 --> 00:27:45,780
+<|13.40|> The borrower says those words and the junior allows immediately goes into a<|16.68|>
+
+504
+00:27:45,780 --> 00:27:46,380
+<|16.68|> tailspin.<|17.28|>
+
+505
+00:27:46,599 --> 00:27:50,319
+<|startoftranscript|><|0.00|> How does the mentor coach that specific moment?<|3.72|>
+
+506
+00:27:50,319 --> 00:27:56,260
+<|3.72|> When a borrower says I want a lower rate, the untrained instinct of a junior L.O. is to immediately<|9.66|>
+
+507
+00:27:56,260 --> 00:28:01,299
+<|9.66|> drop their own compensation or start over promising things they can't deliver just to save<|14.70|>
+
+508
+00:28:01,299 --> 00:28:02,739
+<|14.70|> the feeling of being liked.<|16.14|>
+
+509
+00:28:02,900 --> 00:28:07,400
+<|startoftranscript|><|0.00|> The mentor intervenes in practice, not on the live call.<|4.50|>
+
+510
+00:28:07,400 --> 00:28:13,400
+<|4.50|> The mentor teaches them how to absorb that statement and reframe the conversation using authority.<|10.50|>
+
+511
+00:28:13,400 --> 00:28:14,900
+<|10.50|> How do you actually reframe it though?<|12.00|>
+
+512
+00:28:14,900 --> 00:28:18,900
+<|12.00|> By teaching them to ask penetrating questions instead of making defensive statements.<|16.00|>
+
+513
+00:28:18,900 --> 00:28:20,900
+<|16.00|> The mentor teaches the script.<|18.00|>
+
+514
+00:28:20,900 --> 00:28:23,900
+<|18.00|> I completely understand wanting the best financial outcome.<|21.00|>
+
+515
+00:28:23,900 --> 00:28:27,400
+<|21.00|> Are you solely focused on the lowest possible interest rate today?<|24.50|>
+
+516
+00:28:27,400 --> 00:28:31,900
+<|24.50|> Or are you more focused on the overall safest and most profitable financing strategy<|29.00|>
+
+517
+00:28:32,099 --> 00:28:37,219
+<|startoftranscript|><|0.00|> property. Oh, that is good. It forces the borrower to pause and think. And then the follow up.<|5.12|>
+
+518
+00:28:37,219 --> 00:28:41,539
+<|5.12|> If a lender offers you a slightly lower rate, but they have a reputation for missing closing<|9.44|>
+
+519
+00:28:41,539 --> 00:28:46,419
+<|9.44|> dates and jeopardizing your earnest money to pause it, is that still the best option for your family?<|14.32|>
+
+520
+00:28:46,419 --> 00:28:50,979
+<|14.32|> You were teaching the junior L.O. how to stop being an order taker and start being a financial<|18.88|>
+
+521
+00:28:50,979 --> 00:28:55,299
+<|18.88|> surgeon. But let's do a reality check here. You are the senior L.O.<|23.20|>
+
+522
+00:28:55,599 --> 00:28:57,599
+<|startoftranscript|><|0.00|> You're sitting near your mentee.<|2.00|>
+
+523
+00:28:57,599 --> 00:29:00,599
+<|2.00|> You hear them on a live call, fumbling a massive deal.<|5.00|>
+
+524
+00:29:00,599 --> 00:29:04,599
+<|5.00|> You can literally hear a commission dying on the vine because they forgot the script.<|9.00|>
+
+525
+00:29:04,599 --> 00:29:12,599
+<|9.00|> It's so deeply tempting to just mute their headset, grab the phone, step in and save the deal because you know exactly what to say to fix it.<|17.00|>
+
+526
+00:29:12,699 --> 00:29:14,699
+<|startoftranscript|><|0.00|> How do you resist that urge?<|2.00|>
+
+527
+00:29:14,699 --> 00:29:17,199
+<|2.00|> It is the hardest thing a mentor has to do.<|4.50|>
+
+528
+00:29:17,199 --> 00:29:19,699
+<|4.50|> But you have to accept a fundamental truth.<|7.00|>
+
+529
+00:29:19,699 --> 00:29:24,699
+<|7.00|> Sometimes a lost deal is simply the tuition they have to pay to learn the lesson permanently.<|12.00|>
+
+530
+00:29:24,699 --> 00:29:25,699
+<|12.00|> Oh, wow.<|13.00|>
+
+531
+00:29:25,699 --> 00:29:29,199
+<|13.00|> If you swoop in and save them every time it gets hard, you become their crutch.<|16.50|>
+
+532
+00:29:29,199 --> 00:29:32,199
+<|16.50|> You are teaching them that if they fail, mommy or daddy will fix it.<|19.50|>
+
+533
+00:29:32,199 --> 00:29:36,199
+<|19.50|> They will never learn the emotional resilience required to run the system themselves.<|23.50|>
+
+534
+00:29:36,000 --> 00:29:38,760
+<|startoftranscript|><|0.00|> A lost deal is the tuition they pay.<|2.76|>
+
+535
+00:29:38,760 --> 00:29:40,800
+<|2.76|> That hurts, but I mean it is true.<|4.80|>
+
+536
+00:29:40,800 --> 00:29:45,319
+<|4.80|> Yeah, what you do instead is debrief the loss immediately after the call.<|9.32|>
+
+537
+00:29:45,319 --> 00:29:48,619
+<|9.32|> You sit down, pull up the terrify and make it clinical.<|12.62|>
+
+538
+00:29:48,619 --> 00:29:51,119
+<|12.62|> You ask, where did the system break down?<|15.12|>
+
+539
+00:29:51,119 --> 00:29:54,359
+<|15.12|> Did we fail to clarify their pain point in the first five minutes?<|18.36|>
+
+540
+00:29:54,359 --> 00:29:56,079
+<|18.36|> Did we rush past the three options?<|20.08|>
+
+541
+00:29:56,099 --> 00:30:00,599
+<|startoftranscript|><|0.00|> you analyze the failure of the mechanics, not the failure of the person.<|4.50|>
+
+542
+00:30:00,599 --> 00:30:05,299
+<|4.50|> But to effectively debrief a failure, or even a success,<|9.20|>
+
+543
+00:30:05,299 --> 00:30:08,699
+<|9.20|> and to ensure the mentee is actually running the system,<|12.60|>
+
+544
+00:30:08,699 --> 00:30:11,199
+<|12.60|> you have to be measuring the right things,<|15.10|>
+
+545
+00:30:11,199 --> 00:30:14,099
+<|15.10|> which is a perfect pivot into the accountability rhythm.<|18.00|>
+
+546
+00:30:13,900 --> 00:30:16,460
+<|startoftranscript|><|0.00|> Because what gets measured gets managed.<|2.56|>
+
+547
+00:30:16,460 --> 00:30:20,339
+<|2.56|> But in the mortgage industry, we have a terrible habit of measuring the completely wrong<|6.44|>
+
+548
+00:30:20,339 --> 00:30:21,339
+<|6.44|> data.<|7.44|>
+
+549
+00:30:21,339 --> 00:30:22,339
+<|7.44|> We really do.<|8.44|>
+
+550
+00:30:22,339 --> 00:30:25,920
+<|8.44|> The default behavior of a sales manager is to look at the whiteboard, look at the closed<|12.02|>
+
+551
+00:30:25,920 --> 00:30:29,979
+<|12.02|> loan volume for the month, and assume that number tells the whole story of the businesses.<|16.08|>
+
+552
+00:30:30,000 --> 00:30:34,439
+<|startoftranscript|><|0.00|> health. Right. And the training sources emphasize a massive paradigm shift here regarding<|4.44|>
+
+553
+00:30:34,439 --> 00:30:39,040
+<|4.44|> what we measure. The differentiate between lagging indicators and leading indicators.<|9.04|>
+
+554
+00:30:39,040 --> 00:30:44,000
+<|9.04|> Break that down for us. Close loans, funded volume, commission checks, those are all lagging<|14.00|>
+
+555
+00:30:44,000 --> 00:30:49,920
+<|14.00|> indicators. By the time alone officially closes in funds, the actual behaviors, calls and<|19.92|>
+
+556
+00:30:49,920 --> 00:30:56,400
+<|19.92|> consultations that created that success happen 30, 60 or 90 days ago. You cannot manage<|26.40|>
+
+557
+00:30:57,400 --> 00:31:00,700
+<|startoftranscript|><|0.00|> You can only stare at it in the rear view mirror and hope it happens again.<|3.30|>
+
+558
+00:31:00,700 --> 00:31:03,000
+<|3.30|> It is like stepping on a scale to lose weight.<|5.60|>
+
+559
+00:31:03,000 --> 00:31:06,839
+<|5.60|> The number on the scale is a lagging indicator of what you ate last month.<|9.44|>
+
+560
+00:31:06,839 --> 00:31:08,880
+<|9.44|> You can't change the number right then and there.<|11.48|>
+
+561
+00:31:08,880 --> 00:31:10,160
+<|11.48|> Perfect analogy.<|12.76|>
+
+562
+00:31:10,160 --> 00:31:14,000
+<|12.76|> If we want to control the outcome, we have to obsess over the leading indicator.<|16.60|>
+
+563
+00:31:14,000 --> 00:31:16,640
+<|startoftranscript|><|0.00|> This is what the accountability rhythm is all about.<|2.64|>
+
+564
+00:31:16,640 --> 00:31:21,119
+<|2.64|> What is the senior aloe measuring and reporting to themselves or their mastermind group every<|7.12|>
+
+565
+00:31:21,119 --> 00:31:22,160
+<|7.12|> single week?<|8.16|>
+
+566
+00:31:22,160 --> 00:31:27,000
+<|8.16|> You must focus on the daily activities, the execution of systems, and the attitudes that<|13.00|>
+
+567
+00:31:27,000 --> 00:31:29,560
+<|13.00|> mathematically predict the lagging results.<|15.56|>
+
+568
+00:31:29,560 --> 00:31:33,520
+<|15.56|> So what are the specific leading indicators and elite aloe tracks?<|19.52|>
+
+569
+00:31:33,520 --> 00:31:34,839
+<|19.52|> They track inputs.<|20.84|>
+
+570
+00:31:34,839 --> 00:31:39,400
+<|20.84|> How many structured deep dive borrower consultations did I complete this week using the<|25.40|>
+
+571
+00:31:39,400 --> 00:31:40,560
+<|25.40|> CSER framework?<|26.56|>
+
+572
+00:31:40,599 --> 00:31:46,299
+<|startoftranscript|><|0.00|> How many proactive, value-driven contacts that I make to my 110-person partner<|5.70|>
+
+573
+00:31:46,299 --> 00:31:51,439
+<|5.70|> database? Did I actually execute my 90-minute weekly pipeline review in<|10.84|>
+
+574
+00:31:51,439 --> 00:31:56,000
+<|10.84|> Terra on Monday morning? Yes or no? Did I schedule and protect my learning hour?<|15.40|>
+
+575
+00:31:56,000 --> 00:32:00,919
+<|15.40|> It is utilizing the scorecard review from the week 601 module. It is shifting<|20.32|>
+
+576
+00:32:00,919 --> 00:32:06,160
+<|20.32|> the daily anxiety from, did I close the deal today to a calm assessment of, "Did I<|25.56|>
+
+577
+00:32:06,160 --> 00:32:09,000
+<|25.56|> run my system today?"<|28.40|>
+
+578
+00:32:07,000 --> 00:32:11,800
+<|startoftranscript|><|0.00|> There is a fantastic quote from the sources from an industry veteran named Dale that summarizes<|4.80|>
+
+579
+00:32:11,800 --> 00:32:12,800
+<|4.80|> this perfectly.<|5.80|>
+
+580
+00:32:12,800 --> 00:32:16,640
+<|5.80|> He says, "Quit focusing on your monthly results, start focusing on your daily activities<|9.64|>
+
+581
+00:32:16,640 --> 00:32:18,640
+<|9.64|> and actions and your attitudes.<|11.64|>
+
+582
+00:32:18,640 --> 00:32:21,880
+<|11.64|> If you do the right things day in and day out, good things will happen and your numbers<|14.88|>
+
+583
+00:32:21,880 --> 00:32:22,880
+<|14.88|> will be there."<|15.88|>
+
+584
+00:32:22,880 --> 00:32:26,680
+<|15.88|> I agree with Dale and Theory, but I am going to push back on the reality of implementing<|19.68|>
+
+585
+00:32:26,680 --> 00:32:26,719
+<|19.68|> this.<|19.72|>
+
+586
+00:32:26,900 --> 00:32:38,900
+<|startoftranscript|><|0.00|> Because if you stand in front of a room full of experience loan officers and tell them they need to start tracking their daily activities like making tally marks for how many calls they made or consultations they had, they're going to visibly grown.<|12.00|>
+
+587
+00:32:38,900 --> 00:32:39,900
+<|12.00|> Oh, they hate it.<|13.00|>
+
+588
+00:32:39,900 --> 00:32:47,900
+<|13.00|> Loan officers despise tracking activities. It feels like corporate micromanagement. It feels like being treated like an entry level telemarketer in a call center.<|21.00|>
+
+589
+00:32:48,099 --> 00:32:54,299
+<|startoftranscript|><|0.00|> How do you shift that mindset so that a scorecard feels like a tool for freedom rather than a leash?<|6.20|>
+
+590
+00:32:54,579 --> 00:33:03,900
+<|6.48|> You are hitting on the core friction of accountability. The mindset shift happens when you realize you aren't tracking these activities to please a middle manager or fill out a spreadsheet.<|15.80|>
+
+591
+00:33:04,099 --> 00:33:10,699
+<|startoftranscript|><|0.00|> In Elite 601, you are tracking your leading indicators to buy back your own freedom and reduce your own anxiety.<|6.60|>
+
+592
+00:33:10,699 --> 00:33:13,579
+<|6.60|> Explain how a scorecard buys freedom.<|9.48|>
+
+593
+00:33:13,579 --> 00:33:18,699
+<|9.48|> When you rigorously track your leading indicators, you gain the superpower of predictability.<|14.60|>
+
+594
+00:33:18,699 --> 00:33:23,500
+<|14.60|> Let's say you track your numbers for a quarter and you realize your specific conversion math.<|19.40|>
+
+595
+00:33:23,500 --> 00:33:29,140
+<|startoftranscript|><|0.00|> You know that for every 10 structured CSCR consultations you have, you get four solid applications<|5.64|>
+
+596
+00:33:29,140 --> 00:33:31,699
+<|5.64|> and for every four applications, two loans close.<|8.20|>
+
+597
+00:33:31,699 --> 00:33:33,699
+<|8.20|> Okay, so you know your ratios perfectly.<|10.20|>
+
+598
+00:33:33,699 --> 00:33:38,900
+<|10.20|> Once you know those ratios, you eliminate the terrifying anxiety of the unknown.<|15.40|>
+
+599
+00:33:38,900 --> 00:33:41,900
+<|15.40|> You know exactly what you have to do to hit your income goal.<|18.40|>
+
+600
+00:33:41,900 --> 00:33:47,800
+<|18.40|> If you need to close four loans next month, you know you need 20 consultations this month.<|24.30|>
+
+601
+00:33:47,800 --> 00:33:50,500
+<|24.30|> Tracking becomes the dashboard of your business engine.<|27.00|>
+
+602
+00:33:50,300 --> 00:34:02,300
+<|startoftranscript|><|0.00|> If you hit your 20 consultations by Thursday afternoon, tracking is the mechanism that allows you to confidently turn off your phone and take a three-day weekend without a shred of guilt because you know the math is already in motion.<|12.00|>
+
+603
+00:34:02,300 --> 00:34:10,300
+<|12.00|> It changes the narrative from I have to track this because my boss is watching too. I am checking the oil pressure on my generational wealth engine.<|20.00|>
+
+604
+00:34:10,300 --> 00:34:16,300
+<|20.00|> If the oil pressure is good and the fuel is full, I can put it in cruise control and enjoy the drive.<|26.00|>
+
+605
+00:34:16,300 --> 00:34:17,300
+<|26.00|> Precisely.<|27.00|>
+
+606
+00:34:17,300 --> 00:34:21,300
+<|startoftranscript|><|0.00|> Accountability ensures you do the work required to maintain the baseline.<|4.00|>
+
+607
+00:34:21,300 --> 00:34:27,300
+<|4.00|> But doing the exact same work, the exact same way forever, eventually leads to stagnation and boredom.<|10.00|>
+
+608
+00:34:27,300 --> 00:34:30,300
+<|10.00|> How do you ensure you are always sharpening your skills?<|13.00|>
+
+609
+00:34:30,300 --> 00:34:35,300
+<|13.00|> Always getting slightly better at the craft, without turning into a workaholic who studies guidelines until midnight.<|18.00|>
+
+610
+00:34:35,300 --> 00:34:38,300
+<|18.00|> Which brings us to the philosophy of continuous improvement.<|21.00|>
+
+611
+00:34:38,300 --> 00:34:42,300
+<|21.00|> Specifically this concept of the two pages a week learning standard.<|25.00|>
+
+612
+00:34:42,699 --> 00:34:47,300
+<|startoftranscript|><|0.00|> I think this is one of the most practical takeaways from the deep dive.<|4.60|>
+
+613
+00:34:47,300 --> 00:34:51,899
+<|4.60|> We are shifting from pure execution to sustainable evolution.<|9.20|>
+
+614
+00:34:51,899 --> 00:34:55,939
+<|9.20|> The reason this is so important is that when a senior aloe decides they want to improve<|13.24|>
+
+615
+00:34:55,939 --> 00:35:00,459
+<|13.24|> their conversion rates or update their systems, they usually try to overhaul their entire<|17.76|>
+
+616
+00:35:00,459 --> 00:35:01,459
+<|17.76|> business overnight.<|18.76|>
+
+617
+00:35:01,699 --> 00:35:03,899
+<|startoftranscript|><|0.00|> It is the New Year's resolution trout.<|2.20|>
+
+618
+00:35:03,899 --> 00:35:04,899
+<|2.20|> Oh, definitely.<|3.20|>
+
+619
+00:35:04,899 --> 00:35:07,339
+<|3.20|> They buy three new CRM platforms.<|5.64|>
+
+620
+00:35:07,339 --> 00:35:10,739
+<|5.64|> They decide to start cold calling 50 New Agents a day.<|9.04|>
+
+621
+00:35:10,739 --> 00:35:15,060
+<|9.04|> They try to reinvent their entire presentation script and they try to launch a podcast all<|13.36|>
+
+622
+00:35:15,060 --> 00:35:16,219
+<|13.36|> on a Monday.<|14.52|>
+
+623
+00:35:16,219 --> 00:35:21,060
+<|14.52|> And just like the guy who goes to the gym for three hours on January 1st, they are so exhausted<|19.36|>
+
+624
+00:35:21,060 --> 00:35:25,659
+<|19.36|> and sore that they abandon the entire effort by January 14th and go right back to their<|23.96|>
+
+625
+00:35:25,659 --> 00:35:26,699
+<|23.96|> old habits.<|25.00|>
+
+626
+00:35:26,699 --> 00:35:27,699
+<|25.00|> Exactly.<|26.00|>
+
+627
+00:35:27,699 --> 00:35:31,060
+<|startoftranscript|><|0.00|> The cognitive load of massive sudden change is unsustainable.<|3.36|><|endoftext|>
+
+628
+00:35:31,100 --> 00:35:34,100
+<|startoftranscript|><|0.00|> The standard for elite execution is totally different.<|3.00|>
+
+629
+00:35:34,100 --> 00:35:36,100
+<|3.00|> It is two pages a week.<|5.00|>
+
+630
+00:35:36,100 --> 00:35:40,100
+<|5.00|> It is the commitment to small, hyper-incramental, but relentlessly<|9.00|>
+
+631
+00:35:40,100 --> 00:35:42,100
+<|9.00|> compounding growth.<|11.00|>
+
+632
+00:35:42,100 --> 00:35:45,100
+<|11.00|> This is deeply rooted in the psychology of adult learning and<|14.00|>
+
+633
+00:35:45,100 --> 00:35:46,100
+<|14.00|> behavioral change.<|15.00|>
+
+634
+00:35:46,100 --> 00:35:50,100
+<|15.00|> You can only successfully integrate tiny behavioral shifts into an<|19.00|>
+
+635
+00:35:50,100 --> 00:35:51,100
+<|19.00|> already busy schedule.<|20.00|>
+
+636
+00:35:51,300 --> 00:35:55,219
+<|startoftranscript|><|0.00|> So what is two pages a week actually look like in practice for a senior<|3.92|>
+
+637
+00:35:55,219 --> 00:35:58,300
+<|3.92|> L.O. who is running the terrorist system? How do they study?<|7.00|>
+
+638
+00:35:58,300 --> 00:36:02,300
+<|7.00|> It looks like refining the absolute micronuances of the craft. For example,<|11.00|>
+
+639
+00:36:02,300 --> 00:36:05,800
+<|11.00|> the sources highlight the 80/20 rule of communication that elite producers<|14.50|>
+
+640
+00:36:05,800 --> 00:36:08,300
+<|14.50|> listen 80% of the time and talk 20% of the time.<|17.00|>
+
+641
+00:36:08,199 --> 00:36:12,479
+<|startoftranscript|><|0.00|> time. Let's say you review your own game tape during your learning hour and you realize<|4.28|>
+
+642
+00:36:12,479 --> 00:36:16,719
+<|4.28|> you are actually talking 40% of the time because you get overly excited explaining terror<|8.52|>
+
+643
+00:36:16,719 --> 00:36:21,760
+<|8.52|> pricing. Guilty is charged. Your two pages for that week is not to rewrite your entire<|13.56|>
+
+644
+00:36:21,760 --> 00:36:27,040
+<|13.56|> script. Your only goal for the week is simply practicing asking one more open-ended question<|18.84|>
+
+645
+00:36:27,040 --> 00:36:31,719
+<|18.84|> during the clarify stage and forcing yourself to remain completely silent for three full<|23.52|>
+
+646
+00:36:31,719 --> 00:36:36,040
+<|23.52|> seconds before answering the borrower. That is it. That is the only change you focus.<|27.84|>
+
+647
+00:36:36,000 --> 00:36:37,000
+<|startoftranscript|><|0.00|> on.<|1.00|>
+
+648
+00:36:37,000 --> 00:36:39,560
+<|1.00|> You were just tweaking the emotional connection slightly.<|3.56|>
+
+649
+00:36:39,560 --> 00:36:40,560
+<|3.56|> Yes.<|4.56|>
+
+650
+00:36:40,560 --> 00:36:45,600
+<|4.56|> Or, maybe your two pages is finding one tiny mechanical efficiency in your workflow.<|9.60|>
+
+651
+00:36:45,600 --> 00:36:49,840
+<|9.60|> You spend 15 minutes learning a new keyboard shortcut for how to flag a missing document<|13.84|>
+
+652
+00:36:49,840 --> 00:36:51,399
+<|13.84|> in Terra faster.<|15.40|>
+
+653
+00:36:51,399 --> 00:36:56,120
+<|15.40|> Or, you spend 20 minutes slightly improving the subject line of a single email template<|20.12|>
+
+654
+00:36:56,120 --> 00:36:58,520
+<|20.12|> in your follow-up sequence to increase the open rate.<|22.52|>
+
+655
+00:36:58,800 --> 00:37:03,800
+<|startoftranscript|><|0.00|> The sources mention a fascinating financial concept tied to this called the lost referrals<|5.00|>
+
+656
+00:37:03,800 --> 00:37:04,800
+<|5.00|> gap.<|6.00|>
+
+657
+00:37:04,800 --> 00:37:08,640
+<|6.00|> How do these tiny incremental gains impact that gap?<|9.84|>
+
+658
+00:37:08,640 --> 00:37:11,439
+<|9.84|> Because it sounds like we are talking about pennies, but I have a feeling we are talking<|12.64|>
+
+659
+00:37:11,439 --> 00:37:13,160
+<|12.64|> about thousands of dollars.<|14.36|>
+
+660
+00:37:13,160 --> 00:37:15,479
+<|14.36|> We are talking about massive revenue increases.<|16.68|>
+
+661
+00:37:15,500 --> 00:37:21,500
+<|startoftranscript|><|0.00|> The lost referrals gap is the measurable difference between the number of people you have an initial consultation with<|6.00|>
+
+662
+00:37:21,500 --> 00:37:24,500
+<|6.00|> and the number who actually end up closing alone with you.<|9.00|>
+
+663
+00:37:24,500 --> 00:37:27,500
+<|9.00|> By just tweaking the quality of your conversations lightly,<|12.00|>
+
+664
+00:37:27,500 --> 00:37:33,500
+<|12.00|> pairing down non-essential industry jargon, increasing your empathy by pausing longer,<|18.00|>
+
+665
+00:37:33,500 --> 00:37:38,500
+<|18.00|> listening more effectively to their pain points, you can drastically increase your conversion.<|23.00|>
+
+666
+00:37:38,600 --> 00:37:44,280
+<|startoftranscript|><|0.00|> So if I am having 10 consultations a month and I usually close two of them you're saying.<|5.68|>
+
+667
+00:37:44,280 --> 00:37:49,760
+<|5.68|> If you apply the two pages a week philosophy and slowly refine your CSER delivery, you might<|11.16|>
+
+668
+00:37:49,760 --> 00:37:53,280
+<|11.16|> take your conversion rate from 20% to 30%.<|14.68|>
+
+669
+00:37:53,280 --> 00:37:57,760
+<|14.68|> That is an extra closed loan every single month from the exact same number of leads you didn't<|19.16|>
+
+670
+00:37:57,760 --> 00:38:01,880
+<|19.16|> buy more leads, you didn't work an extra weekend, you just became slightly more lethal<|23.28|>
+
+671
+00:38:01,880 --> 00:38:02,680
+<|23.28|> in your execution.<|24.08|>
+
+672
+00:38:02,699 --> 00:38:07,859
+<|startoftranscript|><|0.00|> It is like a professional golfer tweaking their grip by just a millimeter.<|5.16|>
+
+673
+00:38:07,859 --> 00:38:12,260
+<|5.16|> To the outside world, to the casual observer watching on TV, nothing looks different.<|9.56|>
+
+674
+00:38:12,260 --> 00:38:16,699
+<|9.56|> The stance is the same, the club is the same, the swing looks identical.<|14.00|>
+
+675
+00:38:16,699 --> 00:38:20,699
+<|14.00|> But that tiny millimeter change in the grip alters the club face at impact.<|18.00|>
+
+676
+00:38:20,699 --> 00:38:24,699
+<|startoftranscript|><|0.00|> and suddenly the ball flies 30 yards further and dead straight.<|4.00|>
+
+677
+00:38:24,699 --> 00:38:27,099
+<|4.00|> You didn't swing harder, you swung smarter.<|6.40|>
+
+678
+00:38:27,099 --> 00:38:30,899
+<|6.40|> You increased your income without adding a single extra calorie of effort.<|10.20|>
+
+679
+00:38:30,899 --> 00:38:33,899
+<|10.20|> That is the ultimate definition of an elite producer.<|13.20|>
+
+680
+00:38:33,899 --> 00:38:36,300
+<|13.20|> Maximum yield for the energy expended.<|15.60|>
+
+681
+00:38:36,300 --> 00:38:38,099
+<|15.60|> And as we look at the modern landscape,<|17.40|>
+
+682
+00:38:38,099 --> 00:38:41,500
+<|17.40|> one of the most powerful paradigm shifting tools available<|20.80|>
+
+683
+00:38:41,500 --> 00:38:43,500
+<|20.80|> to achieve these incremental gains,<|22.80|>
+
+684
+00:38:43,500 --> 00:38:47,099
+<|22.80|> speed up the workflow, and free up that vital cognitive load<|26.40|>
+
+685
+00:38:47,099 --> 00:38:47,099
+<|26.40|> is the proper integration of artificial<|endoftext|>
+
+686
+00:38:49,000 --> 00:38:53,800
+<|startoftranscript|><|0.00|> intelligence, which is the perfect transition to the final major pillar of our deep dive.<|4.80|>
+
+687
+00:38:53,800 --> 00:38:58,600
+<|4.80|> AI is true place in the long-term strategy, because you cannot have a serious conversation<|9.60|>
+
+688
+00:38:58,600 --> 00:39:03,080
+<|9.60|> about elite execution systems and protecting your time today without addressing AI.<|14.08|>
+
+689
+00:39:03,080 --> 00:39:07,560
+<|14.08|> But there is so much noise, so much hype, and quite frankly so much fear around it in the<|18.56|>
+
+690
+00:39:07,560 --> 00:39:08,919
+<|18.56|> mortgage base right now.<|19.92|>
+
+691
+00:39:08,919 --> 00:39:10,479
+<|19.92|> The anxiety is palpable.<|21.48|>
+
+692
+00:39:10,479 --> 00:39:14,239
+<|21.48|> You have half the industry terrified that AI is going to replace loan officers entirely<|25.24|>
+
+693
+00:39:14,239 --> 00:39:18,439
+<|25.24|> within two years, and the other half dismissing it as a glorified spell checker.<|29.44|>
+
+694
+00:39:18,500 --> 00:39:24,300
+<|startoftranscript|><|0.00|> The truth, as strictly outlined in the Elite 601 Framework, is highly pragmatic.<|5.80|>
+
+695
+00:39:24,300 --> 00:39:28,659
+<|5.80|> We have to clearly define the boundaries of exactly where AI fits into a senior loan officer's<|10.16|>
+
+696
+00:39:28,659 --> 00:39:30,020
+<|10.16|> long-term business model.<|11.52|>
+
+697
+00:39:30,020 --> 00:39:32,419
+<|11.52|> Okay, let's draw those boundaries clearly.<|13.92|>
+
+698
+00:39:32,419 --> 00:39:37,340
+<|13.92|> In the context of a lead execution, what is AI and what is it not?<|18.84|>
+
+699
+00:39:37,340 --> 00:39:42,780
+<|18.84|> Think of AI as a highly capable, incredibly fast, completely tireless administrative assistant.<|24.28|>
+
+700
+00:39:42,780 --> 00:39:47,500
+<|startoftranscript|><|0.00|> It is brilliant for draft assistance, data summarization, and workflow automation.<|4.72|><|endoftext|>
+
+701
+00:39:47,500 --> 00:39:51,820
+<|startoftranscript|><|0.00|> Going back to your 90-minute shield, if you are sitting there during your content review<|4.32|>
+
+702
+00:39:51,820 --> 00:39:55,659
+<|4.32|> and you have writer's block, AI is the perfect tool to generate a rough draft of your<|8.16|>
+
+703
+00:39:55,659 --> 00:40:00,419
+<|8.16|> social media post about DSCR trends based on a few bullet points you feed it.<|12.92|>
+
+704
+00:40:00,419 --> 00:40:02,340
+<|12.92|> So it basically solves the blank page problem.<|14.84|>
+
+705
+00:40:02,340 --> 00:40:03,340
+<|14.84|> Exactly.<|15.84|>
+
+706
+00:40:03,340 --> 00:40:07,739
+<|15.84|> It can draft your follow-up emails, it can summarize complex new agency guidelines into<|20.24|>
+
+707
+00:40:07,739 --> 00:40:12,020
+<|20.24|> digestible bullet points for your learning hour, and you can even use it as a persona<|24.52|>
+
+708
+00:40:12,020 --> 00:40:12,739
+<|24.52|> for roleplay.<|25.24|>
+
+709
+00:40:12,899 --> 00:40:17,399
+<|startoftranscript|><|0.00|> You can tell the AI act as a skeptical real estate investor who wants a lower rate,<|4.50|>
+
+710
+00:40:17,399 --> 00:40:21,899
+<|4.50|> and you can practice your objection handling with it before you talk to a real human.<|9.00|>
+
+711
+00:40:21,899 --> 00:40:26,399
+<|9.00|> And when we look specifically at the technology ecosystem you are operating in,<|13.50|>
+
+712
+00:40:26,399 --> 00:40:30,399
+<|13.50|> Terra, the AI integrations are moving beyond just writing emails.<|17.50|>
+
+713
+00:40:30,399 --> 00:40:34,099
+<|17.50|> The automation capabilities are where the massive time savings occur.<|21.20|>
+
+714
+00:40:34,099 --> 00:40:39,399
+<|21.20|> Within Terra, AI is handling the heavy lifting of compliance and document auditing.<|26.50|>
+
+715
+00:40:39,300 --> 00:40:44,900
+<|startoftranscript|><|0.00|> When a borrower uploads a massive PDF of their tax returns, the AI can instantly scan it,<|5.60|>
+
+716
+00:40:44,900 --> 00:40:49,699
+<|5.60|> audited against the loan requirements, automatically flag missing pages, and trigger an alert.<|10.40|>
+
+717
+00:40:49,699 --> 00:40:52,600
+<|10.40|> Which completely removes the administrative friction.<|13.30|>
+
+718
+00:40:52,600 --> 00:40:57,219
+<|13.30|> The mind numbing manual process of staring and comparing numbers on a screen that drains an<|17.92|>
+
+719
+00:40:57,219 --> 00:40:59,500
+<|17.92|> Ulo's energy and leads to burnout.<|20.20|>
+
+720
+00:40:59,500 --> 00:41:01,100
+<|20.20|> The machine does the machine work.<|21.80|>
+
+721
+00:41:01,100 --> 00:41:05,100
+<|21.80|> It preserves your cognitive energy for the tasks that actually generate revenue.<|25.80|>
+
+722
+00:41:05,100 --> 00:41:11,260
+<|startoftranscript|><|0.00|> But, and this is the absolute hardbound re that the training enforces, AI is never the closer.<|6.16|>
+
+723
+00:41:11,260 --> 00:41:12,540
+<|6.16|> AI is never the closer.<|7.44|>
+
+724
+00:41:12,540 --> 00:41:16,860
+<|7.44|> Let's really unpack that because that is the hill the elite L.O. dies on.<|11.76|>
+
+725
+00:41:16,860 --> 00:41:20,860
+<|11.76|> AI cannot build deep, authentic human trust.<|15.76|>
+
+726
+00:41:20,860 --> 00:41:25,739
+<|15.76|> It can analyze attacks return in three seconds, but it cannot read the subtle hesitation<|20.64|>
+
+727
+00:41:25,739 --> 00:41:29,979
+<|20.64|> and a borrower's voice when they talk about tapping into their home equity to pay off debt.<|24.88|>
+
+728
+00:41:30,199 --> 00:41:34,800
+<|startoftranscript|><|0.00|> It cannot understand the complex family dynamics of a divorce buyout.<|4.60|>
+
+729
+00:41:34,800 --> 00:41:39,359
+<|4.60|> It cannot provide the empathetic, grounded reassurance that a nervous first time home<|9.16|>
+
+730
+00:41:39,359 --> 00:41:42,000
+<|9.16|> buyer desperately needs when the appraisal comes in low.<|11.80|>
+
+731
+00:41:42,000 --> 00:41:45,679
+<|11.80|> AI handles the data computation you handle the human emotion.<|15.48|>
+
+732
+00:41:45,679 --> 00:41:46,679
+<|15.48|> Precisely.<|16.48|>
+
+733
+00:41:46,679 --> 00:41:50,560
+<|16.48|> You use AI to structure your presentation to flag the missing signatures to write the rough<|20.36|>
+
+734
+00:41:50,560 --> 00:41:51,879
+<|20.36|> draft of the market update.<|21.68|>
+
+735
+00:41:51,899 --> 00:41:56,139
+<|startoftranscript|><|0.00|> But when it is time to have that high stakes, highly vulnerable consultation where the borrower<|4.24|>
+
+736
+00:41:56,139 --> 00:42:00,579
+<|4.24|> is making a 30-year financial commitment, it must be 100% human.<|8.68|>
+
+737
+00:42:00,579 --> 00:42:02,979
+<|8.68|> I have a serious, practical concern about this, though.<|11.08|>
+
+738
+00:42:02,979 --> 00:42:05,619
+<|11.08|> A real ethical question.<|13.72|>
+
+739
+00:42:05,619 --> 00:42:10,299
+<|13.72|> As AI gets more sophisticated, as it gets better at perfectly mimicking my tone of voice<|18.40|>
+
+740
+00:42:10,299 --> 00:42:16,059
+<|18.40|> by slang, the way I write texts, where is the line, at what point does the borrower realize<|24.16|>
+
+741
+00:42:16,059 --> 00:42:18,219
+<|24.16|> they aren't actually texting me, but a bot?<|26.32|>
+
+742
+00:42:18,399 --> 00:42:23,339
+<|startoftranscript|><|0.00|> And if they realize that, doesn't that instantly break the high-trust advisory relationship<|4.94|>
+
+743
+00:42:23,339 --> 00:42:25,219
+<|4.94|> we just spent months building?<|6.82|>
+
+744
+00:42:25,219 --> 00:42:27,139
+<|6.82|> It is a very real danger.<|8.74|>
+
+745
+00:42:27,139 --> 00:42:30,359
+<|8.74|> If you automate too much, you destroy the relationship.<|11.96|>
+
+746
+00:42:30,359 --> 00:42:35,459
+<|11.96|> The rule of thumb in the elite framework is unwavering transparency and contextual authenticity.<|17.06|>
+
+747
+00:42:35,500 --> 00:42:40,899
+<|startoftranscript|><|0.00|> If an AI drafted a mass email summarizing local MLS data for your real estate partners,<|5.40|>
+
+748
+00:42:40,899 --> 00:42:43,899
+<|5.40|> that's fine because the value of that email is the raw data.<|8.40|>
+
+749
+00:42:43,899 --> 00:42:46,800
+<|8.40|> But if an email or a text requires empathy, say,<|11.30|>
+
+750
+00:42:46,800 --> 00:42:51,399
+<|11.30|> a borrower is loan, just hit a major snag in underwriting because of an undisclosed credit issue,<|15.90|>
+
+751
+00:42:51,399 --> 00:42:55,800
+<|15.90|> and they are panicking, that communication must come directly from your brain and your fingers.<|20.30|>
+
+752
+00:42:55,800 --> 00:42:59,800
+<|20.30|> Because if a borrower is in a moment of extreme financial vulnerability,<|24.30|>
+
+753
+00:42:59,899 --> 00:43:03,779
+<|startoftranscript|><|0.00|> And they feel they are being managed by an automated chatbot.<|3.88|>
+
+754
+00:43:03,779 --> 00:43:07,579
+<|3.88|> The trust isn't just damaged, it is irreparably shattered.<|7.68|>
+
+755
+00:43:07,579 --> 00:43:09,899
+<|7.68|> They will pull the loan and go somewhere else.<|10.00|>
+
+756
+00:43:09,899 --> 00:43:10,899
+<|10.00|> Exactly.<|11.00|>
+
+757
+00:43:10,899 --> 00:43:15,020
+<|11.00|> AI is a tool to organize your thoughts and speed up your administration.<|15.12|>
+
+758
+00:43:15,020 --> 00:43:19,699
+<|15.12|> It is not a mask to hide behind to avoid difficult human conversations.<|19.80|>
+
+759
+00:43:19,800 --> 00:43:26,800
+<|startoftranscript|><|0.00|> The Elite LO uses technology to buy back the time needed to be profoundly deeply human with their clients.<|7.00|>
+
+760
+00:43:26,800 --> 00:43:30,800
+<|7.00|> We let the machine be the machine so the human can be the human.<|11.00|>
+
+761
+00:43:30,800 --> 00:43:34,800
+<|11.00|> I think that perfectly crystallizes the mindset of the modern Elite producer.<|15.00|>
+
+762
+00:43:35,100 --> 00:43:38,300
+<|startoftranscript|><|0.00|> And when you step back and look at this entire framework we have built today,<|3.20|>
+
+763
+00:43:38,300 --> 00:43:41,140
+<|3.20|> when your niche is deliberately chosen and defended,<|6.04|>
+
+764
+00:43:41,140 --> 00:43:44,380
+<|6.04|> when your 90-minute weekly shield is holding the chaos at bay,<|9.28|>
+
+765
+00:43:44,380 --> 00:43:47,540
+<|9.28|> when your mentees are learning the system set of leaning on you,<|12.44|>
+
+766
+00:43:47,540 --> 00:43:50,460
+<|12.44|> when your scorecard is tracking the actions that actually matter,<|15.36|>
+
+767
+00:43:50,460 --> 00:43:54,580
+<|15.36|> when you're growing by two pages a week and when AI is handling your drafts,<|19.48|>
+
+768
+00:43:54,580 --> 00:43:57,020
+<|19.48|> it all leads to a final moment of reckoning.<|21.92|>
+
+769
+00:43:57,020 --> 00:44:00,060
+<|21.92|> A moment of brutal, quiet honesty at the end of the week.<|24.96|>
+
+770
+00:44:00,060 --> 00:44:03,340
+<|24.96|> We have covered a massive amount of ground in this deep dive.<|28.24|>
+
+771
+00:44:03,500 --> 00:44:08,500
+<|startoftranscript|><|0.00|> We started by completely dismantling the toxic myth of the volume-based hustle.<|5.00|>
+
+772
+00:44:08,500 --> 00:44:13,500
+<|5.00|> Redefining elite performance as consistency, command, and the law of the scale.<|10.00|>
+
+773
+00:44:13,500 --> 00:44:24,500
+<|10.00|> We talked about throwing away the giant garbage-filled net and using the spear by planting your flag in specific, pain-solving niche, and leveraging terrorist transparent pricing to prove your value.<|21.00|>
+
+774
+00:44:24,500 --> 00:44:29,500
+<|21.00|> We built the fortress around your time with the Meezum Place of the Personal Weekly Operating System.<|26.00|>
+
+775
+00:44:29,199 --> 00:44:35,199
+<|startoftranscript|><|0.00|> We explored the delicate psychology of mentoring junior LOs by transferring the mechanics of success,<|6.00|>
+
+776
+00:44:35,199 --> 00:44:39,199
+<|6.00|> forcing them to pay the tuition of lost deal rather than adopting their stress.<|10.00|>
+
+777
+00:44:39,199 --> 00:44:47,199
+<|10.00|> We shifted from the anxiety of staring at lagging indicators to the predictable freedom of tracking leading indicators through the accountability rhythm.<|18.00|>
+
+778
+00:44:47,800 --> 00:44:52,920
+<|startoftranscript|><|0.00|> We embrace the adult learning philosophy of incremental, sustainable growth, tweaking the<|5.12|>
+
+779
+00:44:52,920 --> 00:44:56,560
+<|5.12|> golfer's grip to close the loss referrals gap.<|8.76|>
+
+780
+00:44:56,560 --> 00:45:00,560
+<|8.76|> And finally, we placed artificial intelligence in its rightful, highly productive, but<|12.76|>
+
+781
+00:45:00,560 --> 00:45:02,199
+<|12.76|> strictly bounded box.<|14.40|>
+
+782
+00:45:02,199 --> 00:45:07,199
+<|14.40|> It is a truly comprehensive framework for operating at a master level in mortgage sales.<|19.40|>
+
+783
+00:45:07,199 --> 00:45:10,199
+<|startoftranscript|><|0.00|> But as we know, a framework is just a piece of paper.<|3.00|>
+
+784
+00:45:10,199 --> 00:45:13,199
+<|3.00|> It is only as good as the daily discipline required to execute it.<|6.00|>
+
+785
+00:45:13,199 --> 00:45:18,199
+<|6.00|> And the Elite 601 training leaves the listener with one ultimate accountability tool<|11.00|>
+
+786
+00:45:18,199 --> 00:45:20,199
+<|11.00|> to ensure that discipline holds.<|13.00|>
+
+787
+00:45:20,199 --> 00:45:23,199
+<|13.00|> Yes, the final provocative thought.<|16.00|>
+
+788
+00:45:23,000 --> 00:45:27,199
+<|startoftranscript|><|0.00|> A single check-in question that you, the listener, need to ask yourself, not your manager,<|4.20|>
+
+789
+00:45:27,199 --> 00:45:29,600
+<|4.20|> not your broker, not yourself.<|6.60|>
+
+790
+00:45:29,600 --> 00:45:33,239
+<|6.60|> Every single Sunday night, before the chaos of Monday morning begins, you look at your<|10.24|>
+
+791
+00:45:33,239 --> 00:45:36,679
+<|10.24|> calendar, you look at your scorecard, and you ask yourself this question to determine if<|13.68|>
+
+792
+00:45:36,679 --> 00:45:40,199
+<|13.68|> you ran a real, the leak week, or a fake reactive one.<|17.20|>
+
+793
+00:45:40,199 --> 00:45:44,840
+<|17.20|> The question is this, did I actively run my system this week to create the business I want,<|21.84|>
+
+794
+00:45:44,840 --> 00:45:47,320
+<|21.84|> or did I just let the industry's noise run me?<|24.32|>
+
+795
+00:45:47,320 --> 00:45:48,399
+<|24.32|> That is the dividing line.<|25.40|>
+
+796
+00:45:48,399 --> 00:45:51,399
+<|startoftranscript|><|0.00|> That is the question that separates the elite from the exhausted.<|3.00|><|endoftext|>
+
+797
+00:45:51,699 --> 00:45:55,919
+<|startoftranscript|><|0.00|> that I actively run my system this week to create the business I want, or did I just<|4.22|>
+
+798
+00:45:55,919 --> 00:45:57,619
+<|4.22|> let the industry's noise run you?<|5.92|>
+
+799
+00:45:57,619 --> 00:45:58,619
+<|5.92|> Let that sit with you.<|6.92|>
+
+800
+00:45:58,619 --> 00:46:00,500
+<|6.92|> Thank you so much for joining us on this Deep Dive.<|8.80|>
+
+801
+00:46:00,500 --> 00:46:05,300
+<|8.80|> Take your tenure platform, take this new elite framework, step off the transactional hamster<|13.60|>
+
+802
+00:46:05,300 --> 00:46:07,500
+<|13.60|> wheel, and go own your week.<|15.80|>
+
+803
+00:46:07,500 --> 00:46:08,339
+<|15.80|> We will see you next time.<|16.64|>
+

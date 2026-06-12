@@ -1,0 +1,3440 @@
+1
+00:00:00,000 --> 00:00:05,000
+<|startoftranscript|><|0.00|> You know, it's funny when we talk about something like a medical diagnosis.<|5.00|>
+
+2
+00:00:05,000 --> 00:00:09,000
+<|5.00|> There is this very clear expectation of like precision.<|9.00|>
+
+3
+00:00:09,000 --> 00:00:11,000
+<|9.00|> Oh, absolutely. Total precision.<|11.00|>
+
+4
+00:00:11,000 --> 00:00:16,000
+<|11.00|> Right. Like if you fall off a ladder and your arm hurts, you go to the hospital, they put you in a machine.<|16.00|>
+
+5
+00:00:15,500 --> 00:00:18,379
+<|startoftranscript|><|0.00|> And the X-ray shows this jacket white line,<|2.88|>
+
+6
+00:00:18,379 --> 00:00:20,639
+<|2.88|> and the doctor just points at the screen and says,<|5.14|>
+
+7
+00:00:20,639 --> 00:00:21,479
+<|5.14|> "Broken."<|5.98|>
+
+8
+00:00:21,479 --> 00:00:23,279
+<|5.98|> - Right, the solution is immediate,<|7.78|>
+
+9
+00:00:23,279 --> 00:00:25,420
+<|7.78|> and it's obvious, you just put a cast on it.<|9.92|>
+
+10
+00:00:25,420 --> 00:00:27,020
+<|9.92|> - Exactly, it's binary.<|11.52|>
+
+11
+00:00:27,020 --> 00:00:29,159
+<|11.52|> And there is a deep, I don't know,<|13.66|>
+
+12
+00:00:29,159 --> 00:00:30,659
+<|13.66|> almost a deep comfort,<|15.16|>
+
+13
+00:00:30,700 --> 00:00:32,580
+<|startoftranscript|><|0.00|> in that kind of clarity.<|1.88|>
+
+14
+00:00:32,580 --> 00:00:34,380
+<|1.88|> - There's an immense comfort in it, yeah.<|3.68|>
+
+15
+00:00:34,380 --> 00:00:36,659
+<|3.68|> Because as humans, we desperately want the world<|5.96|>
+
+16
+00:00:36,659 --> 00:00:37,500
+<|5.96|> to be visible.<|6.80|>
+
+17
+00:00:37,500 --> 00:00:39,299
+<|6.80|> We want it to be easily categorized.<|8.60|>
+
+18
+00:00:39,299 --> 00:00:41,060
+<|8.60|> - We want to see the cause and effect.<|10.36|>
+
+19
+00:00:41,060 --> 00:00:43,459
+<|10.36|> - Yeah, we want cause and effect to be a straight line<|12.76|>
+
+20
+00:00:43,459 --> 00:00:45,020
+<|12.76|> that we could just trace with our finger.<|14.32|>
+
+21
+00:00:45,020 --> 00:00:47,260
+<|14.32|> - But then, and this is where it gets interesting,<|16.56|>
+
+22
+00:00:47,260 --> 00:00:49,739
+<|16.56|> you take a step into the world of business growth<|19.04|>
+
+23
+00:00:49,739 --> 00:00:51,099
+<|19.04|> or community leadership.<|20.40|>
+
+24
+00:00:51,099 --> 00:00:52,580
+<|20.40|> - Oh boy, yeah.<|21.88|>
+
+25
+00:00:52,580 --> 00:00:53,819
+<|21.88|> The X-ray machine is<|23.12|>
+
+26
+00:00:53,900 --> 00:00:58,700
+<|startoftranscript|><|0.00|> completely useless there. Totally useless, the straight line just vanishes. We<|4.80|>
+
+27
+00:00:58,700 --> 00:01:03,380
+<|4.80|> find ourselves looking at a landscape that is incredibly murky. Right, because<|9.48|>
+
+28
+00:01:03,380 --> 00:01:07,980
+<|9.48|> the cause and effect are hidden. They're buried under layers of human psychology<|14.08|>
+
+29
+00:01:07,980 --> 00:01:13,419
+<|14.08|> and culture and, you know, unspoken expectations.<|19.52|>
+
+30
+00:01:11,500 --> 00:01:14,220
+<|startoftranscript|><|0.00|> Which brings us to the core of what we're talking about today<|2.72|>
+
+31
+00:01:14,720 --> 00:01:20,760
+<|3.22|> Because the absolute best way to grow your business today involves a truth that feels completely well<|9.26|>
+
+32
+00:01:20,919 --> 00:01:26,639
+<|9.42|> It feels totally counterintuitive to everything we've been taught. It really is the definition of professional muddy waters<|15.14|>
+
+33
+00:01:26,639 --> 00:01:32,220
+<|15.14|> I mean if you look at the traditional corporate playbook. It's basically a manual on how to force a straight line. Yes<|20.72|>
+
+34
+00:01:32,779 --> 00:01:39,360
+<|21.28|> Hustle grind close the deal exactly it's all about the aggressive pipeline that always be closing mentality<|27.86|>
+
+35
+00:01:39,800 --> 00:01:44,440
+<|startoftranscript|><|0.00|> But the reality we are seeing in the data right now, and this is wild, is that this<|4.64|>
+
+36
+00:01:44,440 --> 00:01:47,760
+<|4.64|> hyper-transactional mindset isn't just outdated.<|7.96|>
+
+37
+00:01:47,760 --> 00:01:48,760
+<|7.96|> It's toxic.<|8.96|>
+
+38
+00:01:48,760 --> 00:01:51,480
+<|8.96|> It's actively becoming a liability.<|11.68|>
+
+39
+00:01:51,480 --> 00:01:55,200
+<|11.68|> It is destroying the very foundation of long-term success.<|15.40|>
+
+40
+00:01:55,200 --> 00:01:57,960
+<|15.40|> Which brings us perfectly to our mission for you today.<|18.16|>
+
+41
+00:01:57,960 --> 00:01:59,400
+<|18.16|> Welcome to this deep dive.<|19.60|>
+
+42
+00:01:59,400 --> 00:02:01,000
+<|19.60|> We are so thrilled to have you with us.<|21.20|>
+
+43
+00:02:01,000 --> 00:02:02,000
+<|21.20|> Could be a good one.<|22.20|>
+
+44
+00:02:02,000 --> 00:02:02,680
+<|22.20|> It really is.<|22.88|>
+
+45
+00:02:03,099 --> 00:02:08,100
+<|startoftranscript|><|0.00|> Today, we are completely flipping that traditional business advice on its head.<|5.00|>
+
+46
+00:02:08,100 --> 00:02:14,100
+<|5.00|> We're going to explore the reality that the most effective way to grow your business is to actually wait for it.<|11.00|>
+
+47
+00:02:14,100 --> 00:02:15,100
+<|11.00|> Stop trying to sell.<|12.00|>
+
+48
+00:02:15,100 --> 00:02:17,100
+<|12.00|> I know, it sounds like a complete paradox.<|14.00|>
+
+49
+00:02:17,100 --> 00:02:18,100
+<|14.00|> It does.<|15.00|>
+
+50
+00:02:18,100 --> 00:02:23,100
+<|15.00|> But when you actually examine the mechanics of how communities function, it becomes literally<|20.00|>
+
+51
+00:02:23,600 --> 00:02:25,460
+<|startoftranscript|><|0.00|> the only logical approach.<|1.86|>
+
+52
+00:02:25,460 --> 00:02:31,779
+<|1.86|> And to really ground this, we are putting a massive spotlight on the power of serving specific cultural demographics.<|8.18|>
+
+53
+00:02:31,779 --> 00:02:34,600
+<|8.18|> And today we're looking specifically at the Vietnamese community.<|11.00|>
+
+54
+00:02:34,600 --> 00:02:37,860
+<|11.00|> Because in every successful community, trust has to come first.<|14.26|>
+
+55
+00:02:37,860 --> 00:02:46,500
+<|14.26|> Right. And in the Vietnamese community, trust has largely built through family, relationships, reputation, and personal referrals.<|22.90|>
+
+56
+00:02:46,600 --> 00:02:53,000
+<|startoftranscript|><|0.00|> We're going to uncover how true community leadership builds the kind of generational trust that actually creates sustainable success.<|6.40|>
+
+57
+00:02:53,000 --> 00:02:55,800
+<|6.40|> And the sources we have for this are just incredible.<|9.20|>
+
+58
+00:02:55,800 --> 00:02:57,600
+<|9.20|> Oh, the stack is amazing.<|11.00|>
+
+59
+00:02:57,600 --> 00:03:01,800
+<|11.00|> For you listening, we're pulling from deep consumer behavior studies in Vietnam.<|15.20|>
+
+60
+00:03:02,000 --> 00:03:07,520
+<|startoftranscript|><|0.00|> the psychology of trust-based selling, some really fascinating data on mortgage journeys,<|5.52|>
+
+61
+00:03:07,520 --> 00:03:12,320
+<|5.52|> and even a look at how modern AI relationship platforms are changing the game.<|10.32|>
+
+62
+00:03:12,320 --> 00:03:17,759
+<|10.32|> It stands out to me across all of these, whether it's like an economic paper on trust,<|15.76|>
+
+63
+00:03:17,759 --> 00:03:20,720
+<|15.76|> or a behavioral study on first-time home buyers.<|18.72|>
+
+64
+00:03:20,800 --> 00:03:24,300
+<|startoftranscript|><|0.00|> is how they all converge on the exact same truth.<|3.50|>
+
+65
+00:03:24,300 --> 00:03:25,300
+<|3.50|> - Which is.<|4.50|>
+
+66
+00:03:25,300 --> 00:03:27,699
+<|4.50|> - People want to work with someone who understands them.<|6.90|>
+
+67
+00:03:27,699 --> 00:03:29,500
+<|6.90|> Someone who speaks their language,<|8.70|>
+
+68
+00:03:29,500 --> 00:03:32,180
+<|8.70|> understands their culture, and actually shares their values.<|11.38|>
+
+69
+00:03:32,180 --> 00:03:33,660
+<|11.38|> - Because when people feel understood,<|12.86|>
+
+70
+00:03:33,660 --> 00:03:35,940
+<|12.86|> they get comfortable asking questions.<|15.14|>
+
+71
+00:03:35,940 --> 00:03:36,779
+<|15.14|> - Yes.<|15.98|>
+
+72
+00:03:36,500 --> 00:03:40,699
+<|startoftranscript|><|0.00|> And when they are comfortable asking questions, they've finally become comfortable making decisions.<|4.20|>
+
+73
+00:03:40,699 --> 00:03:44,500
+<|4.20|> Understood to questioning, to deciding, I love that progression.<|8.00|>
+
+74
+00:03:44,500 --> 00:03:50,699
+<|8.00|> To set the stage for you, the listener, I want to introduce a metaphor that I think perfectly captures this whole shift.<|14.20|>
+
+75
+00:03:50,699 --> 00:03:52,100
+<|14.20|> The Hunter and the Farmer.<|15.60|>
+
+76
+00:03:52,100 --> 00:03:57,899
+<|15.60|> Yes, exactly. For decades, we've been taught to view business as a hunting expedition.<|21.40|>
+
+77
+00:03:58,000 --> 00:04:00,000
+<|startoftranscript|><|0.00|> You know, you are the hunter.<|2.00|>
+
+78
+00:04:00,000 --> 00:04:04,259
+<|2.00|> You go out into the wilderness, you track down a prospect, you capture the sale,<|6.26|>
+
+79
+00:04:04,259 --> 00:04:07,300
+<|6.26|> and you just drag that transaction back to your cave.<|9.30|>
+
+80
+00:04:07,300 --> 00:04:08,860
+<|9.30|> Right, it's adversarial.<|10.86|>
+
+81
+00:04:08,860 --> 00:04:10,059
+<|10.86|> It's totally zero sum.<|12.06|>
+
+82
+00:04:10,059 --> 00:04:11,059
+<|12.06|> And it's exhausting.<|13.06|>
+
+83
+00:04:11,059 --> 00:04:14,740
+<|13.06|> Because a hunter has to wake up every single day and start from zero.<|16.74|>
+
+84
+00:04:14,740 --> 00:04:16,700
+<|16.74|> If you don't kill, you don't eat.<|18.70|>
+
+85
+00:04:16,700 --> 00:04:21,420
+<|startoftranscript|><|0.00|> And the environment you are operating in is completely depleted by your actions.<|4.72|>
+
+86
+00:04:21,420 --> 00:04:23,340
+<|4.72|> You aren't giving anything back to the forest.<|6.64|>
+
+87
+00:04:23,340 --> 00:04:24,340
+<|6.64|> Nothing.<|7.64|>
+
+88
+00:04:24,340 --> 00:04:25,340
+<|7.64|> You're just taking.<|8.64|>
+
+89
+00:04:25,340 --> 00:04:29,580
+<|8.64|> But sources we're exploring today show is that successful community marketing is not hunting<|12.88|>
+
+90
+00:04:29,580 --> 00:04:30,580
+<|12.88|> at all.<|13.88|>
+
+91
+00:04:30,580 --> 00:04:31,620
+<|13.88|> It is farming.<|14.92|>
+
+92
+00:04:31,620 --> 00:04:33,260
+<|14.92|> You are cultivating an ecosystem.<|16.56|>
+
+93
+00:04:33,299 --> 00:04:35,419
+<|startoftranscript|><|0.00|> You have to carefully prepare the soil.<|2.12|>
+
+94
+00:04:35,419 --> 00:04:40,699
+<|2.12|> Plant the seeds, water them, protect them, long, long before you can ever expect to harvest anything.<|7.40|>
+
+95
+00:04:40,699 --> 00:04:43,099
+<|7.40|> And the most critical nutrient in that soil.<|9.80|>
+
+96
+00:04:43,099 --> 00:04:48,299
+<|9.80|> The thing that allows the whole ecosystem to survive and eventually thrive is trust.<|15.00|>
+
+97
+00:04:48,299 --> 00:04:50,500
+<|15.00|> Which is a massive paradigm shift.<|17.20|>
+
+98
+00:04:50,500 --> 00:04:54,500
+<|17.20|> Because for a very long time in the business world, trust has been treated as like...<|21.20|>
+
+99
+00:04:54,500 --> 00:04:56,220
+<|startoftranscript|><|0.00|> A soft skill.<|1.72|>
+
+100
+00:04:56,220 --> 00:04:57,220
+<|1.72|> Oh absolutely.<|2.72|>
+
+101
+00:04:57,220 --> 00:04:59,459
+<|2.72|> It's viewed as an HR department buzzword.<|4.96|>
+
+102
+00:04:59,459 --> 00:05:03,220
+<|4.96|> Right, it's the thing you talk about at the corporate retreat while doing a trust fall.<|8.72|>
+
+103
+00:05:03,220 --> 00:05:04,220
+<|8.72|> Exactly.<|9.72|>
+
+104
+00:05:04,220 --> 00:05:08,519
+<|9.72|> It's nice to have it makes the office pleasant, but your hard nose executive would say<|14.02|>
+
+105
+00:05:08,519 --> 00:05:09,980
+<|14.02|> it doesn't belong on a balance sheet.<|15.48|>
+
+106
+00:05:10,200 --> 00:05:15,640
+<|startoftranscript|><|0.00|> But then yes, even M. Covey's work, particularly his framework in the speed of trust.<|5.44|>
+
+107
+00:05:15,640 --> 00:05:18,760
+<|5.44|> And he just aggressively dismantles that idea.<|8.56|>
+
+108
+00:05:18,760 --> 00:05:19,760
+<|8.56|> He really does.<|9.56|>
+
+109
+00:05:19,760 --> 00:05:24,680
+<|9.56|> He argues that trust is not a soft, touchy-feely concept at all.<|14.48|>
+
+110
+00:05:24,680 --> 00:05:26,740
+<|14.48|> It is a hard, pragmatic,<|16.54|>
+
+111
+00:05:26,799 --> 00:05:29,599
+<|startoftranscript|><|0.00|> highly quantifiable economic asset.<|2.80|>
+
+112
+00:05:29,599 --> 00:05:31,039
+<|2.80|> He actually presents a formula, right?<|4.24|>
+
+113
+00:05:31,039 --> 00:05:33,039
+<|4.24|> Yeah, a universally applicable formula.<|6.24|>
+
+114
+00:05:33,039 --> 00:05:35,839
+<|6.24|> When trust in a relationship or a community goes up,<|9.04|>
+
+115
+00:05:35,839 --> 00:05:38,959
+<|9.04|> the suite of execution goes up and the costs go down.<|12.16|>
+
+116
+00:05:38,959 --> 00:05:40,959
+<|12.16|> Let's make that real for a second.<|14.16|>
+
+117
+00:05:40,959 --> 00:05:43,279
+<|14.16|> If I'm doing business with someone I deeply trust,<|16.48|>
+
+118
+00:05:43,299 --> 00:05:47,299
+<|startoftranscript|><|0.00|> I don't need a team of lawyers to spend three weeks reviewing a 50-page contract.<|4.00|>
+
+119
+00:05:47,299 --> 00:05:49,299
+<|4.00|> You don't. You might just need a handshake.<|6.00|>
+
+120
+00:05:49,299 --> 00:05:50,299
+<|6.00|> Maybe a one-page memo.<|7.00|>
+
+121
+00:05:50,299 --> 00:05:53,299
+<|7.00|> Right. The speed of the transaction is lightning fast.<|10.00|>
+
+122
+00:05:53,299 --> 00:05:58,299
+<|10.00|> And the cost, the legal fees, the time spent agonizing over loopholes, is essentially zero.<|15.00|>
+
+123
+00:05:58,299 --> 00:06:02,299
+<|15.00|> But if I'm dealing with someone, I suspect is trying to take advantage of me.<|19.00|>
+
+124
+00:06:02,299 --> 00:06:04,299
+<|19.00|> Oh, everything grinds to a halt.<|21.00|>
+
+125
+00:06:04,299 --> 00:06:07,299
+<|21.00|> Totally. You double-check their math. You hire third-party inspectors.<|24.00|>
+
+126
+00:06:07,299 --> 00:06:12,299
+<|24.00|> You draft these iron-clad agreements with penalty clauses, the speed plummets, and the costs.<|29.00|>
+
+127
+00:06:12,700 --> 00:06:19,340
+<|startoftranscript|><|0.00|> skyrockets. And Covey calls this the tax of low trust. Exactly. And in a community<|6.64|>
+
+128
+00:06:19,340 --> 00:06:23,380
+<|6.64|> setting, particularly in immigrant or diaspora communities where there might<|10.68|>
+
+129
+00:06:23,380 --> 00:06:27,900
+<|10.68|> already be an inherent skepticism of outside institutions, that low trust<|15.20|>
+
+130
+00:06:27,900 --> 00:06:31,980
+<|15.20|> tax can completely bankrupt your efforts to build a business. So if trust is the<|19.28|>
+
+131
+00:06:31,980 --> 00:06:36,420
+<|19.28|> ultimate currency, the immediate question is, well how do we actually mint it? How<|23.72|>
+
+132
+00:06:36,420 --> 00:06:40,059
+<|23.72|> do we build it in a way that is systematic and reliable instead of just you know<|27.36|>
+
+133
+00:06:40,059 --> 00:06:41,259
+<|startoftranscript|><|0.00|> hoping people like us.<|1.20|><|endoftext|>
+
+134
+00:06:41,500 --> 00:06:46,299
+<|startoftranscript|><|0.00|> To understand the mechanics of that, we have to look at what Charles H. Green and David Maester developed.<|4.80|>
+
+135
+00:06:46,299 --> 00:06:48,100
+<|4.80|> It's known as the trust equation.<|6.60|>
+
+136
+00:06:48,100 --> 00:06:52,700
+<|6.60|> Right, they take this invisible abstract concept and break it down to a literal math equation.<|11.20|>
+
+137
+00:06:52,700 --> 00:06:55,100
+<|11.20|> A mathematical fraction, specifically.<|13.60|>
+
+138
+00:06:55,100 --> 00:06:58,700
+<|13.60|> The top of the equation the numerator consists of three elements added together.<|17.20|>
+
+139
+00:06:58,600 --> 00:07:02,440
+<|startoftranscript|><|0.00|> credibility plus reliability plus intimacy.<|3.84|>
+
+140
+00:07:02,440 --> 00:07:06,339
+<|3.84|> Okay, let's walk through those three because this is essentially the blueprint for becoming<|7.74|>
+
+141
+00:07:06,339 --> 00:07:08,860
+<|7.74|> a trusted resource in your community.<|10.26|>
+
+142
+00:07:08,860 --> 00:07:10,220
+<|10.26|> Credibility seems straightforward.<|11.62|>
+
+143
+00:07:10,220 --> 00:07:11,760
+<|11.62|> It's about your words and your expertise, right?<|13.16|>
+
+144
+00:07:11,760 --> 00:07:12,760
+<|13.16|> It is.<|14.16|>
+
+145
+00:07:12,760 --> 00:07:17,040
+<|14.16|> It asks the question, do you actually know what you're talking about?<|18.44|>
+
+146
+00:07:17,299 --> 00:07:22,220
+<|startoftranscript|><|0.00|> Like if you are a financial advisor serving the Vietnamese community, do you deeply understand<|4.92|>
+
+147
+00:07:22,220 --> 00:07:25,779
+<|4.92|> the tax implications of the portfolios you are recommending?<|8.48|>
+
+148
+00:07:25,779 --> 00:07:28,659
+<|8.48|> Can you explain the complex market dynamics clearly?<|11.36|>
+
+149
+00:07:28,659 --> 00:07:29,659
+<|11.36|> Exactly.<|12.36|>
+
+150
+00:07:29,659 --> 00:07:31,579
+<|12.36|> And it's also about intellectual honesty.<|14.28|>
+
+151
+00:07:31,579 --> 00:07:35,139
+<|14.28|> If you don't know the answer to a question, credibility means admitting that.<|17.84|>
+
+152
+00:07:35,139 --> 00:07:37,059
+<|17.84|> Rather than making something up just to save faith.<|19.76|>
+
+153
+00:07:37,059 --> 00:07:38,059
+<|19.76|> Right.<|20.76|>
+
+154
+00:07:38,059 --> 00:07:38,779
+<|20.76|> And then we add reliability to that.<|21.48|>
+
+155
+00:07:38,799 --> 00:07:40,319
+<|startoftranscript|><|0.00|> Which is about action.<|1.52|>
+
+156
+00:07:40,319 --> 00:07:43,919
+<|1.52|> So credibility is what you say and reliability is what you do.<|5.12|>
+
+157
+00:07:43,919 --> 00:07:44,919
+<|5.12|> Spot on.<|6.12|>
+
+158
+00:07:44,919 --> 00:07:46,359
+<|6.12|> Do you follow through?<|7.56|>
+
+159
+00:07:46,359 --> 00:07:50,239
+<|7.56|> If you promise to send a summary email by 5pm on Tuesday,<|11.44|>
+
+160
+00:07:50,239 --> 00:07:53,319
+<|11.44|> does it actually arrive at 4.55pm?<|14.52|>
+
+161
+00:07:53,319 --> 00:07:55,799
+<|14.52|> Do you show up to community events on time?<|17.00|>
+
+162
+00:07:55,799 --> 00:07:59,959
+<|17.00|> So you could have a PhD in economics be the most credible expert in the state.<|21.16|>
+
+163
+00:07:59,959 --> 00:08:02,000
+<|21.16|> But if you are chronically late,<|23.20|>
+
+164
+00:08:02,100 --> 00:08:06,100
+<|startoftranscript|><|0.00|> constantly reschedule meetings and forget your return phone calls,<|4.00|>
+
+165
+00:08:06,100 --> 00:08:08,100
+<|4.00|> your trustworthiness crumbles.<|6.00|>
+
+166
+00:08:08,100 --> 00:08:10,100
+<|6.00|> Okay, so I have to stop us here.<|8.00|>
+
+167
+00:08:10,100 --> 00:08:13,100
+<|8.00|> I want to push back on the third element on top of that equation.<|11.00|>
+
+168
+00:08:13,100 --> 00:08:14,100
+<|11.00|> And to receive.<|12.00|>
+
+169
+00:08:14,100 --> 00:08:18,100
+<|12.00|> Yeah. I hear the word intimacy and my immediate reaction is just<|16.00|>
+
+170
+00:08:18,100 --> 00:08:23,100
+<|16.00|> discomfort. It feels entirely inappropriate for a professional setting.<|21.00|>
+
+171
+00:08:23,100 --> 00:08:24,100
+<|21.00|> It's a strong word for business.<|22.00|>
+
+172
+00:08:24,100 --> 00:08:28,100
+<|22.00|> Right. If I am managing someone's commercial real estate portfolio<|26.00|>
+
+173
+00:08:28,100 --> 00:08:30,100
+<|26.00|> or helping them get a small business loan,<|28.00|>
+
+174
+00:08:30,299 --> 00:08:34,739
+<|startoftranscript|><|0.00|> I don't want to be their therapist. I don't want to hold their hands and campfire songs.<|4.44|>
+
+175
+00:08:34,739 --> 00:08:38,059
+<|4.44|> Is intimacy crossing a professional boundary?<|7.76|>
+
+176
+00:08:38,059 --> 00:08:43,859
+<|7.76|> It's a very common reaction actually because Western corporate culture has spent a century<|13.56|>
+
+177
+00:08:43,859 --> 00:08:46,579
+<|13.56|> trying to like sterilize the business environment.<|16.28|>
+
+178
+00:08:46,579 --> 00:08:51,700
+<|16.28|> We are taught to keep our work life and our personal life in these separate sealed containers.<|21.40|>
+
+179
+00:08:51,700 --> 00:08:52,299
+<|21.40|> Exactly.<|22.00|>
+
+180
+00:08:52,299 --> 00:08:55,820
+<|22.00|> But when green and measter use the word intimacy in the trust equation,<|25.52|>
+
+181
+00:08:55,799 --> 00:08:59,799
+<|startoftranscript|><|0.00|> They aren't talking about romance or inappropriate oversharing.<|4.00|>
+
+182
+00:08:59,799 --> 00:09:02,799
+<|4.00|> They're defining it as providing a safe haven.<|7.00|>
+
+183
+00:09:02,799 --> 00:09:03,799
+<|7.00|> A safe haven.<|8.00|>
+
+184
+00:09:03,799 --> 00:09:05,799
+<|8.00|> Okay, that frames it entirely differently.<|10.00|>
+
+185
+00:09:05,799 --> 00:09:09,799
+<|10.00|> What does a safe haven actually look like in a business context?<|14.00|>
+
+186
+00:09:09,799 --> 00:09:12,799
+<|14.00|> Well, think about the emotional weight of the transactions we are discussing.<|17.00|>
+
+187
+00:09:13,299 --> 00:09:18,899
+<|startoftranscript|><|0.00|> Buying a first home, securing a business loan to open a restaurant, planning for a family's<|5.60|>
+
+188
+00:09:18,899 --> 00:09:20,399
+<|5.60|> financial future.<|7.10|>
+
+189
+00:09:20,399 --> 00:09:21,979
+<|7.10|> These aren't casual purchases.<|8.68|>
+
+190
+00:09:21,979 --> 00:09:22,979
+<|8.68|> No.<|9.68|>
+
+191
+00:09:22,979 --> 00:09:29,260
+<|9.68|> These are deeply emotional, terrifying life events that carry massive generational consequences.<|15.96|>
+
+192
+00:09:29,260 --> 00:09:33,500
+<|15.96|> Intimacy means that the client feels safe enough to expose their vulnerabilities to you.<|20.20|>
+
+193
+00:09:33,500 --> 00:09:35,500
+<|20.20|> Like admitting they have bad credit.<|22.20|>
+
+194
+00:09:35,500 --> 00:09:35,700
+<|22.20|> Yes.<|22.40|>
+
+195
+00:09:35,799 --> 00:09:39,640
+<|startoftranscript|><|0.00|> Or admitting they simply don't understand what an amortization schedule is.<|3.84|>
+
+196
+00:09:39,640 --> 00:09:44,679
+<|3.84|> Right. If a client is sitting across from you and feels like they have to wear a mask of total confidence.<|8.88|>
+
+197
+00:09:44,679 --> 00:09:51,519
+<|8.88|> If they are afraid that asking a basic question will make them look foolish or cost them your respect, then you have zero intimacy.<|15.72|>
+
+198
+00:09:51,519 --> 00:09:53,119
+<|15.72|> There is a literal wall between.<|17.32|>
+
+199
+00:09:53,099 --> 00:09:56,979
+<|startoftranscript|><|0.00|> you. You cannot properly advise someone who is hiding their true financial<|3.88|>
+
+200
+00:09:56,979 --> 00:10:01,539
+<|3.88|> reality out of fear or shame. Exactly. Intimacy is the environment you create<|8.44|>
+
+201
+00:10:01,539 --> 00:10:05,779
+<|8.44|> that allows them to say, "Look, I'm terrified of losing my savings and I really<|12.68|>
+
+202
+00:10:05,779 --> 00:10:09,859
+<|12.68|> need your help." That makes perfect sense. You can't be a guide if they won't show<|16.76|>
+
+203
+00:10:09,859 --> 00:10:13,419
+<|16.76|> you where they are actually starting from.<|20.32|>
+
+204
+00:10:11,599 --> 00:10:16,599
+<|startoftranscript|><|0.00|> So we have credibility, reliability, and intimacy on top.<|5.00|>
+
+205
+00:10:16,599 --> 00:10:21,399
+<|5.00|> But this is a fraction, which means we have to divide all of that by the denominator.<|9.80|>
+
+206
+00:10:21,399 --> 00:10:23,599
+<|9.80|> And this is where the entire equation can fall apart.<|12.00|>
+
+207
+00:10:23,599 --> 00:10:25,599
+<|12.00|> The denominator is self-orientation.<|14.00|>
+
+208
+00:10:25,599 --> 00:10:26,599
+<|14.00|> Right.<|15.00|>
+
+209
+00:10:26,599 --> 00:10:27,599
+<|15.00|> This is your motive.<|16.00|>
+
+210
+00:10:27,599 --> 00:10:30,199
+<|16.00|> Who's interest are you actually serving in the interaction?<|18.60|>
+
+211
+00:10:30,200 --> 00:10:33,200
+<|startoftranscript|><|0.00|> Are you focused on the client or are you focused on yourself?<|3.00|>
+
+212
+00:10:33,200 --> 00:10:38,000
+<|3.00|> And because it's the denominator in a math equation, if your self-orientation number gets<|7.80|>
+
+213
+00:10:38,000 --> 00:10:42,679
+<|7.80|> too high, the value of everything on top basically approaches zero.<|12.48|>
+
+214
+00:10:42,679 --> 00:10:45,400
+<|12.48|> It completely neutralizes your virtues.<|15.20|>
+
+215
+00:10:45,400 --> 00:10:48,520
+<|15.20|> Imagine an advisor who is brilliant, high credibility.<|18.32|>
+
+216
+00:10:48,700 --> 00:10:51,580
+<|startoftranscript|><|0.00|> They never miss a meeting, high reliability.<|2.88|>
+
+217
+00:10:51,580 --> 00:10:55,619
+<|2.88|> They have a warm, welcoming office where clients feel comfortable, high intimacy.<|6.92|>
+
+218
+00:10:55,619 --> 00:10:56,820
+<|6.92|> That sounds great so far.<|8.12|>
+
+219
+00:10:56,820 --> 00:11:03,200
+<|8.12|> But the client slowly realizes that every single piece of advice magically leads back to<|14.50|>
+
+220
+00:11:03,200 --> 00:11:06,580
+<|14.50|> the advisor pushing the exact same high commission product.<|17.88|>
+
+221
+00:11:06,580 --> 00:11:09,820
+<|17.88|> Oh man, you can physically feel that shift in the room?<|21.12|>
+
+222
+00:11:09,820 --> 00:11:12,500
+<|21.12|> It's what salespeople sometimes call commission breath.<|23.80|>
+
+223
+00:11:12,500 --> 00:11:13,500
+<|23.80|> Commission breath, yes.<|24.80|>
+
+224
+00:11:13,500 --> 00:11:17,580
+<|24.80|> It's the moment you realize you are not being viewed as a human being with a family and<|28.88|>
+
+225
+00:11:18,400 --> 00:11:23,400
+<|startoftranscript|><|0.00|> But rather as a walking quota, you are just a stepping stone to their beach vacation.<|5.00|>
+
+226
+00:11:23,400 --> 00:11:29,440
+<|5.00|> And human beings, regardless of their culture, are evolutionarily hardwired to detect when<|11.04|>
+
+227
+00:11:29,440 --> 00:11:32,080
+<|11.04|> they are being manipulated for someone else's game.<|13.68|>
+
+228
+00:11:32,080 --> 00:11:33,080
+<|13.68|> We can smell it.<|14.68|>
+
+229
+00:11:33,080 --> 00:11:33,580
+<|14.68|> We can.<|15.18|>
+
+230
+00:11:33,900 --> 00:11:38,360
+<|startoftranscript|><|0.00|> The moment a community, especially a tight-knit community like the Vietnamese diaspora, where<|4.46|>
+
+231
+00:11:38,360 --> 00:11:43,700
+<|4.46|> word travels incredibly fast, the moment they sense high self-orientation, the trust is gone.<|9.80|>
+
+232
+00:11:43,700 --> 00:11:48,420
+<|9.80|> Which is why the Hunter mentality fails so spectacularly in community building.<|14.52|>
+
+233
+00:11:48,420 --> 00:11:52,100
+<|14.52|> A hunter is inherently 100% self-oriented.<|18.20|>
+
+234
+00:11:52,100 --> 00:11:54,580
+<|18.20|> While a farmer is oriented toward the health of the crop.<|20.68|>
+
+235
+00:11:54,580 --> 00:11:58,900
+<|20.68|> Right, and this concept of trust expanding outward is fascinating because it ties directly<|25.00|>
+
+236
+00:11:58,900 --> 00:12:02,700
+<|25.00|> into what Covey describes as "the five waves of trust."<|28.80|>
+
+237
+00:12:02,700 --> 00:12:07,000
+<|startoftranscript|><|0.00|> Because when we talk about a community, trust doesn't just stay in that one-on-one room.<|4.30|>
+
+238
+00:12:07,000 --> 00:12:08,000
+<|4.30|> No, it ripples.<|5.30|>
+
+239
+00:12:08,000 --> 00:12:12,400
+<|5.30|> Covey visualizes it like a single drop of water hitting a still pond.<|9.70|>
+
+240
+00:12:12,400 --> 00:12:15,500
+<|9.70|> The first wave, the center, is self-trust.<|12.80|>
+
+241
+00:12:15,500 --> 00:12:16,500
+<|12.80|> Do you have integrity?<|13.80|>
+
+242
+00:12:16,500 --> 00:12:18,900
+<|13.80|> Do you trust yourself to keep your own promises?<|16.20|>
+
+243
+00:12:18,900 --> 00:12:20,900
+<|16.20|> And then the second wave is relationship trust.<|18.20|>
+
+244
+00:12:20,900 --> 00:12:23,660
+<|startoftranscript|><|0.00|> Exactly. This is where you'll play the trust equation.<|2.76|>
+
+245
+00:12:23,660 --> 00:12:29,500
+<|2.76|> Credibility, reliability, intimacy, low self orientation with another individual.<|8.60|>
+
+246
+00:12:29,500 --> 00:12:33,059
+<|8.60|> Then it scales up to wave three, which is organizational trust.<|12.16|>
+
+247
+00:12:33,059 --> 00:12:37,380
+<|12.16|> Meaning, does your company's infrastructure actually support trust?<|16.48|>
+
+248
+00:12:37,400 --> 00:12:41,000
+<|startoftranscript|><|0.00|> Like, if you promise a client a seamless loan process,<|3.60|>
+
+249
+00:12:41,000 --> 00:12:45,320
+<|3.60|> but your underwriting department is just a chaotic mess that constantly loses paperwork.<|7.92|>
+
+250
+00:12:45,320 --> 00:12:47,000
+<|7.92|> Then the organizational trust fails.<|9.60|>
+
+251
+00:12:47,000 --> 00:12:50,920
+<|9.60|> Right. Then wave 4 is Market Trust, which is your broader reputation.<|13.52|>
+
+252
+00:12:50,920 --> 00:12:54,840
+<|13.52|> And in the Vietnamese community, reputation is the absolute gold standard.<|17.44|>
+
+253
+00:12:54,840 --> 00:12:57,080
+<|17.44|> It is the collective judgment of the community.<|19.68|>
+
+254
+00:12:57,080 --> 00:13:00,040
+<|19.68|> And finally, wave 5 is societal trust.<|22.64|>
+
+255
+00:13:00,099 --> 00:13:08,339
+<|startoftranscript|><|0.00|> Are you creating real value in the world? Are you getting back? Yes. I want to ground these theoretical waves and some hard economic reality for our listener<|8.24|>
+
+256
+00:13:08,539 --> 00:13:25,959
+<|8.44|> Because we actually have data that explicitly shows the monetary difference between a low-trust environment and a high-trust environment. The lead generation numbers. Yes. Let's look at lead generation. If you are a business operating with low-market trust, you are likely relying on buying cold search leads.<|25.86|>
+
+257
+00:13:26,000 --> 00:13:30,000
+<|startoftranscript|><|0.00|> So someone who just typed real estate agent near me into a search engine.<|4.00|>
+
+258
+00:13:30,000 --> 00:13:31,000
+<|4.00|> Exactly.<|5.00|>
+
+259
+00:13:31,000 --> 00:13:36,000
+<|5.00|> And the data shows that those cold leads close at an average rate of about 10%.<|10.00|>
+
+260
+00:13:36,000 --> 00:13:37,000
+<|10.00|> Why?<|11.00|>
+
+261
+00:13:37,000 --> 00:13:40,000
+<|11.00|> Because they are operating in an environment of zero trust.<|14.00|>
+
+262
+00:13:40,000 --> 00:13:42,000
+<|14.00|> They are price shopping.<|16.00|>
+
+263
+00:13:42,000 --> 00:13:43,000
+<|16.00|> Right.<|17.00|>
+
+264
+00:13:43,000 --> 00:13:47,000
+<|17.00|> They are calling five different agencies looking for the absolute cheapest option,<|21.00|>
+
+265
+00:13:47,000 --> 00:13:49,000
+<|21.00|> assuming everyone is basically the same.<|23.00|>
+
+266
+00:13:49,000 --> 00:13:53,000
+<|23.00|> They are highly skeptical and crucially they have a very low lifetime value<|27.00|>
+
+267
+00:13:53,000 --> 00:13:55,000
+<|27.00|> because they have zero loyalty to you.<|29.00|>
+
+268
+00:13:55,400 --> 00:14:01,200
+<|startoftranscript|><|0.00|> Now, contrast that with the byproduct of high market trust, which is warm referrals.<|5.80|>
+
+269
+00:14:01,200 --> 00:14:06,800
+<|5.80|> A referral happens when a client has experienced your high credibility and your low self-orientation,<|11.40|>
+
+270
+00:14:06,800 --> 00:14:11,480
+<|11.40|> and they effectively transfer their accumulated trust in you to their friend or family member.<|16.08|>
+
+271
+00:14:11,480 --> 00:14:13,440
+<|16.08|> And the closing rate on those warm referrals.<|18.04|>
+
+272
+00:14:13,440 --> 00:14:15,080
+<|18.04|> It sits at around 90%.<|19.68|>
+
+273
+00:14:15,080 --> 00:14:18,320
+<|19.68|> The jump from 10% to 90% is staggering.<|22.92|>
+
+274
+00:14:18,320 --> 00:14:22,400
+<|22.92|> It is, because the battle is already won before they even walk into your office.<|27.00|>
+
+275
+00:14:22,400 --> 00:14:26,300
+<|startoftranscript|><|0.00|> They aren't comparing you to competitors. They aren't trying to squeeze you on your feet.<|3.90|>
+
+276
+00:14:26,300 --> 00:14:32,600
+<|3.90|> Because they believe you are the safe haven. Exactly. They become premium clients and they stay with you for life.<|10.20|>
+
+277
+00:14:32,600 --> 00:14:36,000
+<|10.20|> They are essentially buying you as much as they are buying your service.<|13.60|>
+
+278
+00:14:36,000 --> 00:14:37,800
+<|13.60|> So going back to our farming metaphor,<|15.40|>
+
+279
+00:14:38,100 --> 00:14:45,300
+<|15.70|> relying on cold leads is like going to the grocery store every single night and paying premium retail prices for a single tomato.<|22.90|>
+
+280
+00:14:45,599 --> 00:14:48,599
+<|startoftranscript|><|0.00|> It's exhausting and it's expensive.<|3.00|>
+
+281
+00:14:48,599 --> 00:14:53,099
+<|3.00|> Yeah, whereas building a high-trust community presence is planting an orchard.<|7.50|>
+
+282
+00:14:53,099 --> 00:14:54,599
+<|7.50|> Yes, it takes time.<|9.00|>
+
+283
+00:14:54,599 --> 00:15:00,099
+<|9.00|> But eventually, it yields fruit year after year and the fruit actually brings more seeds right to you.<|14.50|>
+
+284
+00:15:00,099 --> 00:15:03,099
+<|14.50|> But this brings us to a really dangerous intersection.<|17.50|>
+
+285
+00:15:03,099 --> 00:15:07,099
+<|17.50|> If trust is the ultimate foundation for all of this economic value,<|21.50|>
+
+286
+00:15:07,099 --> 00:15:10,099
+<|21.50|> we have to recognize a fundamental trap.<|24.50|>
+
+287
+00:15:10,099 --> 00:15:12,099
+<|24.50|> Trust does not mean the same thing<|26.50|>
+
+288
+00:15:12,400 --> 00:15:16,040
+<|startoftranscript|><|0.00|> every culture. It really doesn't. The behaviors that signal trustworthiness in a<|3.64|>
+
+289
+00:15:16,040 --> 00:15:20,880
+<|3.64|> boardroom in New York City might be the exact behaviors that signal disrespect<|8.48|>
+
+290
+00:15:20,880 --> 00:15:25,600
+<|8.48|> and danger in a living room in Ho Chi Minh City or in a Vietnamese household in Orange<|13.20|>
+
+291
+00:15:25,600 --> 00:15:29,600
+<|13.20|> County. This is a critical pivot because you can't just memorize the trust<|17.20|>
+
+292
+00:15:29,600 --> 00:15:34,280
+<|17.20|> equation, read a generic Western sales manual and deploy it successfully in the<|21.88|>
+
+293
+00:15:34,280 --> 00:15:37,480
+<|21.88|> Vietnamese community. People want to work with someone who understands them.<|25.08|>
+
+294
+00:15:37,500 --> 00:15:44,500
+<|startoftranscript|><|0.00|> And understanding means grasping the cultural nuances that define what a safe haven actually looks like to them.<|7.00|>
+
+295
+00:15:44,500 --> 00:15:47,500
+<|7.00|> Right. To navigate this, we have to dive into cultural intelligence.<|10.00|>
+
+296
+00:15:47,500 --> 00:15:48,500
+<|10.00|> Hey!<|11.00|>
+
+297
+00:15:48,500 --> 00:15:51,500
+<|11.00|> And a phenomenal framework for this comes from Girt Hofstede.<|14.00|>
+
+298
+00:15:51,500 --> 00:15:52,500
+<|14.00|> The Dutch social psychologist.<|15.00|>
+
+299
+00:15:52,500 --> 00:15:54,500
+<|15.00|> Yes. He mapped out these cultural dimensions.<|17.00|>
+
+300
+00:15:54,900 --> 00:15:58,100
+<|startoftranscript|><|0.00|> and his work is essential for understanding the profound<|3.20|>
+
+301
+00:15:58,100 --> 00:16:02,500
+<|3.20|> psychological differences between Western and Eastern or Asian paradigms.<|7.60|>
+
+302
+00:16:02,500 --> 00:16:08,040
+<|7.60|> The sources highlight that Western cultures like the US, the UK, Western Europe are fundamentally<|13.14|>
+
+303
+00:16:08,040 --> 00:16:09,300
+<|13.14|> individualist.<|14.40|>
+
+304
+00:16:09,300 --> 00:16:09,800
+<|14.40|> Right.<|14.90|>
+
+305
+00:16:09,800 --> 00:16:14,800
+<|14.90|> The culture prioritizes personal autonomy, self-expression, individual achievement.<|19.90|>
+
+306
+00:16:14,800 --> 00:16:18,300
+<|19.90|> And in terms of communication, it is considered low context.<|23.40|>
+
+307
+00:16:18,299 --> 00:16:25,299
+<|startoftranscript|><|0.00|> Low context means that the meaning of a message is contained almost entirely in the explicit words being spoken.<|7.00|>
+
+308
+00:16:25,299 --> 00:16:29,299
+<|7.00|> The communication is direct, it's analytical, it's literal.<|11.00|>
+
+309
+00:16:29,299 --> 00:16:34,299
+<|11.00|> If a Western business person says, "I disagree with this clause," they mean exactly that.<|16.00|>
+
+310
+00:16:34,299 --> 00:16:36,299
+<|16.00|> Exactly. They value getting straight to the point.<|18.00|>
+
+311
+00:16:36,299 --> 00:16:40,299
+<|18.00|> Efficiency is prized way over emotional nuance.<|22.00|>
+
+312
+00:16:40,299 --> 00:16:44,299
+<|22.00|> But when you look at the Vietnamese culture and many other Asian cultures,<|26.00|>
+
+313
+00:16:44,900 --> 00:16:47,900
+<|startoftranscript|><|0.00|> You are entering a collectivist society.<|3.00|>
+
+314
+00:16:47,900 --> 00:16:50,900
+<|3.00|> Where the group, the family, the community, the company,<|6.00|>
+
+315
+00:16:50,900 --> 00:16:52,900
+<|6.00|> takes precedence over the individual.<|8.00|>
+
+316
+00:16:52,900 --> 00:16:55,900
+<|8.00|> And crucially, the communication is highly high-context.<|11.00|>
+
+317
+00:16:55,900 --> 00:16:58,900
+<|11.00|> And the best way to understand the difference between low-context<|14.00|>
+
+318
+00:16:58,900 --> 00:17:01,900
+<|14.00|> and high-context is an analogy.<|17.00|>
+
+319
+00:17:01,700 --> 00:17:05,300
+<|startoftranscript|><|0.00|> Western communication is like reading the lyrics on a sheet of paper.<|3.60|>
+
+320
+00:17:05,300 --> 00:17:08,660
+<|3.60|> High context communication is like having to hear the music.<|6.96|>
+
+321
+00:17:08,660 --> 00:17:10,420
+<|6.96|> I absolutely love that metaphor.<|8.72|>
+
+322
+00:17:10,420 --> 00:17:12,420
+<|8.72|> The lyrics versus the music.<|10.72|>
+
+323
+00:17:12,420 --> 00:17:14,020
+<|10.72|> Because you can read the lyrics perfectly,<|12.32|>
+
+324
+00:17:14,020 --> 00:17:18,619
+<|12.32|> but if you don't know the tempo or the instrumentation or the emotion behind the song.<|16.92|>
+
+325
+00:17:18,619 --> 00:17:20,540
+<|16.92|> You don't actually know the piece of music at all.<|18.84|>
+
+326
+00:17:20,540 --> 00:17:21,300
+<|18.84|> For "Sci-slee."<|19.60|>
+
+327
+00:17:21,300 --> 00:17:27,300
+<|19.60|> In a high context culture, the actual words spoken are only a tiny fraction of the total message.<|25.60|>
+
+328
+00:17:27,500 --> 00:17:31,199
+<|startoftranscript|><|0.00|> The real meaning the music is hidden in the pauses.<|3.70|>
+
+329
+00:17:31,199 --> 00:17:32,699
+<|3.70|> It's in the tone of voice.<|5.20|>
+
+330
+00:17:32,699 --> 00:17:38,160
+<|5.20|> The physical proximity, the subtle facial expressions, and most importantly, it is deeply<|10.66|>
+
+331
+00:17:38,160 --> 00:17:41,239
+<|10.66|> embedded in the social context of the interaction.<|13.74|>
+
+332
+00:17:41,239 --> 00:17:43,599
+<|13.74|> Like who is the oldest person in the room?<|16.10|>
+
+333
+00:17:43,599 --> 00:17:45,280
+<|16.10|> Who holds the highest status?<|17.78|>
+
+334
+00:17:45,400 --> 00:17:48,599
+<|startoftranscript|><|0.00|> The unsaid expectations carry all the weight.<|3.20|>
+
+335
+00:17:48,599 --> 00:17:53,000
+<|3.20|> So imagine an aggressive, highly successful American salesperson.<|7.60|>
+
+336
+00:17:53,000 --> 00:17:56,599
+<|7.60|> They walk into a meeting with a Vietnamese family. They want to share confidence.<|11.20|>
+
+337
+00:17:56,599 --> 00:17:59,400
+<|11.20|> So they give a firm bone crushing handshake,<|14.00|>
+
+338
+00:17:59,400 --> 00:18:04,000
+<|14.00|> slap the patriarch on the back, make a quick self-deprecating joke to break the ice,<|18.60|>
+
+339
+00:18:04,000 --> 00:18:08,000
+<|18.60|> and immediately launch into a fast-paced presentation about interest rate.<|22.60|>
+
+340
+00:18:07,900 --> 00:18:08,900
+<|startoftranscript|><|0.00|> Oh wow.<|1.00|>
+
+341
+00:18:08,900 --> 00:18:12,619
+<|1.00|> They think they are building rapport by being informal and efficient, but what are they<|4.72|>
+
+342
+00:18:12,619 --> 00:18:13,859
+<|4.72|> actually doing?<|5.96|>
+
+343
+00:18:13,859 --> 00:18:16,780
+<|5.96|> They are likely causing severe psychological distress.<|8.88|>
+
+344
+00:18:16,780 --> 00:18:20,739
+<|8.88|> They are reading the lyrics of a business meeting, but entirely ignoring the cultural music.<|12.84|>
+
+345
+00:18:20,739 --> 00:18:21,900
+<|12.84|> Because of face culture.<|14.00|>
+
+346
+00:18:21,900 --> 00:18:22,900
+<|14.00|> Exactly.<|15.00|>
+
+347
+00:18:22,900 --> 00:18:27,660
+<|15.00|> To understand why that approach fails, you have to understand the concept of face culture,<|19.76|>
+
+348
+00:18:27,660 --> 00:18:28,339
+<|19.76|> or mean Z.<|20.44|>
+
+349
+00:18:28,599 --> 00:18:34,160
+<|startoftranscript|><|0.00|> In these collectivist cultures, a business interaction is never just a cold transaction.<|5.56|>
+
+350
+00:18:34,160 --> 00:18:39,719
+<|5.56|> It is a deeply complex social event that directly reflects on a person's reputation, the<|11.12|>
+
+351
+00:18:39,719 --> 00:18:43,880
+<|11.12|> honor of their family, and their social standing within the community.<|15.28|>
+
+352
+00:18:43,880 --> 00:18:45,799
+<|15.28|> Social Harmony is the ultimate priority.<|17.20|>
+
+353
+00:18:45,800 --> 00:18:50,400
+<|startoftranscript|><|0.00|> It overrides individual expression or efficiency every single time.<|4.60|>
+
+354
+00:18:50,400 --> 00:18:54,800
+<|4.60|> The source material actually draws a fascinating parallel here, mentioning the Kazakh concept<|9.00|>
+
+355
+00:18:54,800 --> 00:18:56,360
+<|9.00|> of Kwanachai-Livik.<|10.56|>
+
+356
+00:18:56,360 --> 00:18:59,880
+<|10.56|> Which translates to a profound, almost sacred level of hospitality.<|14.08|>
+
+357
+00:18:59,880 --> 00:19:04,520
+<|14.08|> Right, and while geographically distinct, the underlying psychology perfectly mirrors<|18.72|>
+
+358
+00:19:04,520 --> 00:19:08,040
+<|18.72|> the traditional Vietnamese respect for elders and strict social hierarchy.<|22.24|>
+
+359
+00:19:08,099 --> 00:19:11,459
+<|startoftranscript|><|0.00|> There's what sociologists call an ultra-high power distance.<|3.36|>
+
+360
+00:19:11,459 --> 00:19:18,299
+<|3.36|> Meaning that the gap and authority and respect between the young and the old or the host and the guest is massive and rigidly observed.<|10.20|>
+
+361
+00:19:18,299 --> 00:19:19,299
+<|10.20|> Always.<|11.20|>
+
+362
+00:19:19,299 --> 00:19:25,400
+<|11.20|> The older generation, the elders, hold a status that dictates the entire flow of the room.<|17.30|>
+
+363
+00:19:25,599 --> 00:19:28,880
+<|startoftranscript|><|0.00|> So, returning to our American salesperson.<|3.28|>
+
+364
+00:19:28,880 --> 00:19:34,160
+<|3.28|> If they use Western-style roast humor, or if they speak over an elder, or if they ask a direct<|8.56|>
+
+365
+00:19:34,160 --> 00:19:40,199
+<|8.56|> question that the elder doesn't know the answer to, putting them on the spot, and the moment<|14.60|>
+
+366
+00:19:40,199 --> 00:19:41,719
+<|14.60|> that happens, it's game over.<|16.12|>
+
+367
+00:19:41,900 --> 00:19:46,859
+<|startoftranscript|><|0.00|> The trust field is instantaneously destroyed and not just with that specific elder<|4.96|>
+
+368
+00:19:46,859 --> 00:19:51,200
+<|4.96|> but with every single person in the room who witness the disruption of social harmony.<|9.30|>
+
+369
+00:19:51,200 --> 00:19:58,099
+<|9.30|> Their self-orientation, their desire to get through their pitch quickly, completely overshadowed the communities need for respect and harmony.<|16.20|>
+
+370
+00:19:58,099 --> 00:19:58,900
+<|16.20|> It's a minefield.<|17.00|>
+
+371
+00:19:59,000 --> 00:20:05,000
+<|startoftranscript|><|0.00|> If you are paying attention to the music and a massive part of that music ironically is the literal language being spoken.<|6.00|>
+
+372
+00:20:05,000 --> 00:20:11,000
+<|6.00|> Yes, let's talk about that. We have some incredibly compelling data in the sources from the state of Hispanic homeownership report.<|12.00|>
+
+373
+00:20:11,000 --> 00:20:14,000
+<|12.00|> Now, obviously that report focuses on a different demographic.<|15.00|>
+
+374
+00:20:14,300 --> 00:20:20,300
+<|startoftranscript|><|0.00|> But the psychological parallel regarding language is profound and directly applicable to the Vietnamese diaspora.<|6.00|>
+
+375
+00:20:20,300 --> 00:20:25,300
+<|6.00|> It highlights the difference between merely translating words and actually translating confidence.<|11.00|>
+
+376
+00:20:25,300 --> 00:20:33,300
+<|11.00|> Right, the data shows that offering services in a client's native language does something far beyond just conveying technical information.<|19.00|>
+
+377
+00:20:33,300 --> 00:20:37,300
+<|19.00|> It fundamentally alters the emotional atmosphere of the interaction.<|23.00|>
+
+378
+00:20:37,500 --> 00:20:42,300
+<|startoftranscript|><|0.00|> There's a quote from a practitioner in that report that really struck me.<|4.80|>
+
+379
+00:20:42,300 --> 00:20:47,020
+<|4.80|> They noted that providing bilingual support not only makes us better prepared to serve<|9.52|>
+
+380
+00:20:47,020 --> 00:20:50,180
+<|9.52|> as our clients, but it creates a level of confidence.<|12.68|>
+
+381
+00:20:50,180 --> 00:20:51,339
+<|12.68|> Emotional confidence.<|13.84|>
+
+382
+00:20:51,339 --> 00:20:52,339
+<|13.84|> Yes.<|14.84|>
+
+383
+00:20:52,339 --> 00:20:56,839
+<|14.84|> If you are sitting across a desk from someone trying to explain an adjustable rate<|19.34|>
+
+384
+00:20:56,839 --> 00:21:02,300
+<|19.34|> mortgage or a complex estate tax structure or the contingencies in a commercial lease.<|24.80|>
+
+385
+00:21:02,300 --> 00:21:05,300
+<|startoftranscript|><|0.00|> Those are incredibly dense, stressful topics.<|3.00|>
+
+386
+00:21:05,300 --> 00:21:06,619
+<|3.00|> - Even for a native speaker.<|4.32|>
+
+387
+00:21:06,619 --> 00:21:07,460
+<|4.32|> - Exactly.<|5.16|>
+
+388
+00:21:07,460 --> 00:21:10,260
+<|5.16|> But if you can explain those concepts in their native tongue,<|7.96|>
+
+389
+00:21:10,260 --> 00:21:13,340
+<|7.96|> you remove a massive layer of cognitive friction.<|11.04|>
+
+390
+00:21:13,340 --> 00:21:15,060
+<|11.04|> - It ties directly back to intimacy<|12.76|>
+
+391
+00:21:15,060 --> 00:21:17,340
+<|12.76|> in the trust equation, the safe haven.<|15.04|>
+
+392
+00:21:17,340 --> 00:21:19,340
+<|15.04|> When a client hears the phonetics,<|17.04|>
+
+393
+00:21:19,340 --> 00:21:21,660
+<|17.04|> the familiar idioms, the natural cadence<|19.36|>
+
+394
+00:21:21,660 --> 00:21:23,100
+<|19.36|> of their native language,<|20.80|>
+
+395
+00:21:23,100 --> 00:21:25,100
+<|20.80|> their brain physically responds.<|22.80|>
+
+396
+00:21:25,100 --> 00:21:26,820
+<|22.80|> It lowers its defensive barriers.<|24.52|>
+
+397
+00:21:26,599 --> 00:21:31,959
+<|startoftranscript|><|0.00|> The subconscious signal being sent is, "This person understands me. I don't have to work twice as hard<|5.36|>
+
+398
+00:21:31,959 --> 00:21:36,160
+<|5.36|> just to translate my fears into their language before I speak. I can just be myself."<|9.56|>
+
+399
+00:21:36,160 --> 00:21:41,919
+<|9.56|> We actually have a perfect large-scale case study in the sources about how a massive organization<|15.32|>
+
+400
+00:21:41,919 --> 00:21:47,559
+<|15.32|> successfully navigated these exact cultural dimensions. It's the story of Chick-fil-A's entry<|20.96|>
+
+401
+00:21:47,559 --> 00:21:48,919
+<|20.96|> into the Chinese market.<|22.32|>
+
+402
+00:21:48,919 --> 00:21:54,079
+<|22.32|> It is an absolute masterclass in cross-cultural adaptation. It provides a perfect template for anyone<|27.48|>
+
+403
+00:21:54,079 --> 00:21:55,599
+<|startoftranscript|><|0.00|> trying to engage a high context.<|1.52|><|endoftext|>
+
+404
+00:21:55,599 --> 00:21:59,199
+<|startoftranscript|><|0.00|> community. What is so remarkable about the Chick-fil-A example is how they<|3.60|>
+
+405
+00:21:59,199 --> 00:22:03,719
+<|3.60|> managed attention that every expanding business faces. The tension between<|8.12|>
+
+406
+00:22:03,719 --> 00:22:08,239
+<|8.12|> standardization, keeping the brand's identity intact, and localization<|12.64|>
+
+407
+00:22:08,239 --> 00:22:12,280
+<|12.64|> adapting to fit the new culture. Right, because Chick-fil-A is arguably one of<|16.68|>
+
+408
+00:22:12,280 --> 00:22:16,679
+<|16.68|> the most profoundly American brands in existence.<|21.08|>
+
+409
+00:22:14,800 --> 00:22:19,619
+<|startoftranscript|><|0.00|> It's roots are deep in western individualistic, low-context culture.<|4.82|>
+
+410
+00:22:19,619 --> 00:22:22,420
+<|4.82|> The fast food model itself is based on individual convenience.<|7.62|>
+
+411
+00:22:22,420 --> 00:22:25,180
+<|7.62|> I want my sandwich my way right now.<|10.38|>
+
+412
+00:22:25,180 --> 00:22:28,460
+<|10.38|> But their leadership recognized a critical truth.<|13.66|>
+
+413
+00:22:28,460 --> 00:22:33,180
+<|13.66|> To succeed in a collectivist, high-context, face-culture market like China.<|18.38|>
+
+414
+00:22:33,400 --> 00:22:38,200
+<|startoftranscript|><|0.00|> They couldn't just hire a translator to convert their English slogans into Chinese characters.<|4.80|>
+
+415
+00:22:38,200 --> 00:22:41,400
+<|4.80|> A literal translation would be completely meaningless.<|8.00|>
+
+416
+00:22:41,400 --> 00:22:46,400
+<|8.00|> They had to translate the underlying intent of their brand into the local cultural values.<|13.00|>
+
+417
+00:22:46,400 --> 00:22:49,200
+<|13.00|> Let's break down how they did that because it's brilliant.<|15.80|>
+
+418
+00:22:49,200 --> 00:22:51,000
+<|15.80|> Take their core corporate value.<|17.60|>
+
+419
+00:22:51,000 --> 00:22:52,000
+<|17.60|> We're here to serve.<|18.60|>
+
+420
+00:22:52,300 --> 00:22:56,020
+<|startoftranscript|><|0.00|> In America, that translates to "excellent customer service."<|3.72|>
+
+421
+00:22:56,020 --> 00:23:00,380
+<|3.72|> The employee smiles, gets your order right, gets you through the drive-through quickly.<|8.08|>
+
+422
+00:23:00,380 --> 00:23:02,580
+<|8.08|> It's about efficiency and politeness.<|10.28|>
+
+423
+00:23:02,580 --> 00:23:07,619
+<|10.28|> But in an Asian collectivist culture, Chick-fil-A realized that "We're here to serve"<|15.32|>
+
+424
+00:23:07,619 --> 00:23:09,900
+<|15.32|> could be mapped onto a much deeper cultural pillar.<|17.60|>
+
+425
+00:23:10,099 --> 00:23:16,099
+<|startoftranscript|><|0.00|> They aligned it with the cultural emphasis on teamwork, maintaining good relationships, and supporting social harmony.<|6.00|>
+
+426
+00:23:16,099 --> 00:23:19,099
+<|6.00|> So serving wasn't just about handing over chicken sandwich.<|9.00|>
+
+427
+00:23:19,099 --> 00:23:23,099
+<|9.00|> No, it was framed as serving the collective good of the team and the community.<|13.00|>
+
+428
+00:23:23,099 --> 00:23:26,099
+<|13.00|> Even look at their famous catchphrase, "My Pleasure."<|16.00|>
+
+429
+00:23:26,099 --> 00:23:30,099
+<|16.00|> In the U.S. it's just a polite alternative to your welcome.<|20.00|>
+
+430
+00:23:29,500 --> 00:23:34,599
+<|startoftranscript|><|0.00|> But the case study points out that in China, training their staff to use a uniform highly<|5.10|>
+
+431
+00:23:34,599 --> 00:23:40,339
+<|5.10|> respectful and deferential phrase like that appealed deeply to the collectivist mindset.<|10.84|>
+
+432
+00:23:40,339 --> 00:23:43,699
+<|10.84|> It creates an atmosphere of predictable harmony.<|14.20|>
+
+433
+00:23:43,699 --> 00:23:49,660
+<|14.20|> In a culture that prefers social cohesion over expressing loud, unique individual opinions.<|20.16|>
+
+434
+00:23:49,699 --> 00:23:52,739
+<|startoftranscript|><|0.00|> having a staff that interacts with uniform respect<|3.04|>
+
+435
+00:23:52,739 --> 00:23:54,899
+<|3.04|> elevates the entire dining experience.<|5.20|>
+
+436
+00:23:54,899 --> 00:23:55,979
+<|5.20|> They didn't change what they did.<|6.28|>
+
+437
+00:23:55,979 --> 00:23:57,939
+<|6.28|> They still served chicken with a smile,<|8.24|>
+
+438
+00:23:57,939 --> 00:23:59,939
+<|8.24|> but they completely refrained why they did it<|10.24|>
+
+439
+00:23:59,939 --> 00:24:02,339
+<|10.24|> to resonate with the specific cultural frequency<|12.64|>
+
+440
+00:24:02,339 --> 00:24:03,219
+<|12.64|> of their customers.<|13.52|>
+
+441
+00:24:03,219 --> 00:24:05,819
+<|13.52|> They even adjusted their broader corporate identity.<|16.12|>
+
+442
+00:24:05,819 --> 00:24:08,739
+<|16.12|> In the US, they are known for being a purpose-driven company,<|19.04|>
+
+443
+00:24:08,739 --> 00:24:10,819
+<|19.04|> which carries specific undertones,<|21.12|>
+
+444
+00:24:10,819 --> 00:24:13,059
+<|21.12|> often tied to the founder's religious values.<|23.36|>
+
+445
+00:24:13,099 --> 00:24:17,819
+<|startoftranscript|><|0.00|> In the Chinese market, they successfully pivoted that identity to being family-driven.<|4.72|>
+
+446
+00:24:17,819 --> 00:24:19,339
+<|4.72|> Which is a masterstroke.<|6.24|>
+
+447
+00:24:19,339 --> 00:24:23,699
+<|6.24|> Family-driven is a highly specific purpose that bypasses any cultural friction and connects<|10.60|>
+
+448
+00:24:23,699 --> 00:24:28,219
+<|10.60|> instantly and deeply with the core values of an Asian collectivist audience.<|15.12|>
+
+449
+00:24:28,219 --> 00:24:30,780
+<|15.12|> So applying this to you, the listener.<|17.68|>
+
+450
+00:24:30,780 --> 00:24:35,260
+<|17.68|> If your goal is to serve and lead within the Vietnamese community, this means you have to<|22.16|>
+
+451
+00:24:35,260 --> 00:24:37,459
+<|22.16|> become a student of their values.<|24.36|>
+
+452
+00:24:37,459 --> 00:24:41,699
+<|24.36|> You have to understand their dedication to family, the paramount importance of education.<|28.60|>
+
+453
+00:24:41,699 --> 00:24:47,939
+<|startoftranscript|><|0.00|> They're profound respect for elders, the mechanics of saving face, and their entrepreneurial<|6.24|>
+
+454
+00:24:47,939 --> 00:24:48,939
+<|6.24|> hustle.<|7.24|>
+
+455
+00:24:48,939 --> 00:24:49,939
+<|7.24|> Right.<|8.24|>
+
+456
+00:24:49,939 --> 00:24:53,899
+<|8.24|> Because if you're marketing materials, your community outreach and your one-on-one conversations<|12.20|>
+
+457
+00:24:53,899 --> 00:24:57,739
+<|12.20|> don't act as a mirror reflecting those specific values back to them.<|16.04|>
+
+458
+00:24:57,800 --> 00:25:00,600
+<|startoftranscript|><|0.00|> You aren't communicating, you are just making noise.<|2.80|>
+
+459
+00:25:00,600 --> 00:25:04,680
+<|2.80|> And once you truly understand that cultural music, once you grasp the values,<|6.88|>
+
+460
+00:25:04,680 --> 00:25:09,720
+<|6.88|> the respect for hierarchy, and the power of language, it leads to a very practical logistical question.<|11.92|>
+
+461
+00:25:09,720 --> 00:25:12,200
+<|11.92|> Where do you actually go to play this music?<|14.40|>
+
+462
+00:25:12,200 --> 00:25:16,600
+<|14.40|> Yeah, if you want to build these relationships today, you have to know where the community is actually coming.<|18.80|>
+
+463
+00:25:16,599 --> 00:25:22,719
+<|startoftranscript|><|0.00|> The digital landscape of the Vietnamese community is shifting at an incredible speed, and it is<|6.12|>
+
+464
+00:25:22,719 --> 00:25:28,599
+<|6.12|> shattering a lot of outdated assumptions. We have the data from the decision lab Q2-2024<|12.00|>
+
+465
+00:25:28,599 --> 00:25:34,199
+<|12.00|> connected consumer report, which is essentially a real-time map of how the Vietnamese demographic<|17.60|>
+
+466
+00:25:34,199 --> 00:25:35,479
+<|17.60|> is consuming media right now.<|18.88|>
+
+467
+00:25:35,500 --> 00:25:41,020
+<|startoftranscript|><|0.00|> Now, the insights in this report are striking, particularly regarding where attention is flowing<|5.52|>
+
+468
+00:25:41,020 --> 00:25:43,500
+<|5.52|> and more importantly, where it is fleeing from.<|8.00|>
+
+469
+00:25:43,500 --> 00:25:45,859
+<|8.00|> Let's start with the absolute juggernaut in the room.<|10.36|>
+
+470
+00:25:45,859 --> 00:25:46,859
+<|10.36|> TikTok.<|11.36|>
+
+471
+00:25:46,859 --> 00:25:47,859
+<|11.36|> Right.<|12.36|>
+
+472
+00:25:47,859 --> 00:25:51,339
+<|12.36|> According to the Q2-2024 data, TikTok didn't just grow.<|15.84|>
+
+473
+00:25:51,339 --> 00:25:55,380
+<|15.84|> It hit an all-time high penetration rate of 68% in Vietnam.<|19.88|>
+
+474
+00:25:55,800 --> 00:25:58,920
+<|startoftranscript|><|0.00|> But the report goes deeper than just download numbers.<|3.12|>
+
+475
+00:25:58,920 --> 00:26:01,800
+<|3.12|> It tracks a metric called top primary apps.<|6.00|>
+
+476
+00:26:01,800 --> 00:26:03,520
+<|6.00|> This measures in-dispensibility.<|7.72|>
+
+477
+00:26:03,520 --> 00:26:07,320
+<|7.72|> That asks the user which app is the one you literally cannot live without.<|11.52|>
+
+478
+00:26:07,320 --> 00:26:08,800
+<|11.52|> And the findings are fascinating.<|13.00|>
+
+479
+00:26:08,800 --> 00:26:13,260
+<|13.00|> A midst of broader digital landscape where the traditional giants are facing stagnation or<|17.46|>
+
+480
+00:26:13,260 --> 00:26:18,440
+<|17.46|> decline, TikTok was the only social media application in the top five to consistently increase<|22.64|>
+
+481
+00:26:18,440 --> 00:26:21,800
+<|22.64|> its in-dispensibility score reaching 11% this quarter.<|26.00|>
+
+482
+00:26:21,800 --> 00:26:23,000
+<|26.00|> And this isn't just teenagers.<|27.20|>
+
+483
+00:26:23,000 --> 00:26:26,199
+<|startoftranscript|><|0.00|> it seemed growth across all generational cohorts.<|3.20|>
+
+484
+00:26:26,199 --> 00:26:26,900
+<|3.20|> Exactly.<|3.90|>
+
+485
+00:26:26,900 --> 00:26:29,300
+<|3.90|> This begs a massive question. Why?<|6.30|>
+
+486
+00:26:29,300 --> 00:26:31,300
+<|6.30|> What is the psychological hook?<|8.30|>
+
+487
+00:26:31,300 --> 00:26:35,800
+<|8.30|> What is it about TikTok that resonates so profoundly with the Vietnamese consumer?<|12.80|>
+
+488
+00:26:35,800 --> 00:26:39,400
+<|12.80|> If we tie this directly back to our discussion on cultural intelligence,<|16.40|>
+
+489
+00:26:39,500 --> 00:26:41,500
+<|startoftranscript|><|0.00|> It suddenly makes perfect sense.<|2.00|>
+
+490
+00:26:41,500 --> 00:26:45,500
+<|2.00|> Remember the difference between low context and high context communication.<|6.00|>
+
+491
+00:26:45,500 --> 00:26:47,500
+<|6.00|> The lyrics versus the music.<|8.00|>
+
+492
+00:26:47,500 --> 00:26:49,500
+<|8.00|> Yes. Text is inherently low context.<|10.00|>
+
+493
+00:26:49,500 --> 00:26:53,500
+<|10.00|> A thousand word blog post about interest rates is just words on a screen.<|14.00|>
+
+494
+00:26:53,500 --> 00:26:54,500
+<|14.00|> Relax the music.<|15.00|>
+
+495
+00:26:54,800 --> 00:27:00,800
+<|startoftranscript|><|0.00|> But video and audio, which is the entire ecosystem of TikTok, is incredibly high-context.<|6.00|>
+
+496
+00:27:00,800 --> 00:27:02,800
+<|6.00|> Oh, wow. That is a massive connection.<|8.00|>
+
+497
+00:27:02,800 --> 00:27:05,800
+<|8.00|> Because in a video, I can see your facial micro-expressions.<|11.00|>
+
+498
+00:27:05,800 --> 00:27:08,800
+<|11.00|> I can hear the hesitation or the confidence in your tone of voice.<|14.00|>
+
+499
+00:27:08,800 --> 00:27:10,800
+<|14.00|> I can see the environment you were in.<|16.00|>
+
+500
+00:27:10,800 --> 00:27:13,800
+<|16.00|> Exactly. It delivers all the subtle, non-verbal cues<|19.00|>
+
+501
+00:27:13,800 --> 00:27:17,800
+<|19.00|> that a high-context culture relies on to determine if someone is trustworthy.<|23.00|>
+
+502
+00:27:17,599 --> 00:27:21,199
+<|startoftranscript|><|0.00|> The medium itself matches their native cultural communication style.<|3.60|>
+
+503
+00:27:21,199 --> 00:27:26,000
+<|3.60|> It allows for much faster transfer of intimacy and credibility than a wall of text ever could.<|8.40|>
+
+504
+00:27:26,000 --> 00:27:30,699
+<|8.40|> It does. It refrains the entire platform. It's not just a place for entertainment.<|13.10|>
+
+505
+00:27:30,699 --> 00:27:33,500
+<|13.10|> It is an engine for high context trust-building.<|15.90|>
+
+506
+00:27:33,500 --> 00:27:36,599
+<|15.90|> But the report also highlights a fascinating counter-trend.<|19.00|>
+
+507
+00:27:36,599 --> 00:27:42,400
+<|19.00|> While short-form video is exploding, there is also rapid movement in a completely different format.<|24.80|>
+
+508
+00:27:42,400 --> 00:27:43,299
+<|24.80|> Threads.<|25.70|>
+
+509
+00:27:43,299 --> 00:27:46,099
+<|25.70|> Met is text-based microblogging app.<|28.50|>
+
+510
+00:27:45,900 --> 00:27:52,900
+<|startoftranscript|><|0.00|> The data shows it reached a 10% penetration rate, which is a massive 5% point jump from the previous quarter.<|7.00|>
+
+511
+00:27:52,900 --> 00:27:58,900
+<|7.00|> And the demographic driving this isn't Gen Z. It's the millennials who are rapidly gravitating toward it.<|13.00|>
+
+512
+00:27:58,900 --> 00:27:59,900
+<|13.00|> Which is so interesting.<|14.00|>
+
+513
+00:27:59,900 --> 00:28:08,900
+<|14.00|> Why are millennials people currently in their late 20s to early 40s flocking to a brand new text-only app when video is dominant?<|23.00|>
+
+514
+00:28:08,900 --> 00:28:14,900
+<|23.00|> The report speculates and the behavioral psychology backs this up that it's driven by a sense of nostalgia and comfort.<|29.00|>
+
+515
+00:28:15,400 --> 00:28:20,599
+<|startoftranscript|><|0.00|> Millennials grew up during the era of early internet forums, message boards, and early blogging.<|5.20|>
+
+516
+00:28:20,599 --> 00:28:26,200
+<|5.20|> So they have a deep familiarity with text-based conversational community-driven platforms.<|10.80|>
+
+517
+00:28:26,200 --> 00:28:30,599
+<|10.80|> Threads feels like the internet they grew up with. It feels like a localized digital neighborhood.<|15.20|>
+
+518
+00:28:30,599 --> 00:28:33,800
+<|15.20|> So we have this dual migration happening simultaneously.<|18.40|>
+
+519
+00:28:33,900 --> 00:28:39,420
+<|startoftranscript|><|0.00|> You have explosive growth and high-context video on TikTok, capturing the broader cultures<|5.52|>
+
+520
+00:28:39,420 --> 00:28:41,619
+<|5.52|> need for visual cues.<|7.72|>
+
+521
+00:28:41,619 --> 00:28:45,300
+<|7.72|> And you have the rapid adoption of conversational text threads by millennials seeking<|11.40|>
+
+522
+00:28:45,300 --> 00:28:47,300
+<|11.40|> community discussion.<|13.40|>
+
+523
+00:28:47,300 --> 00:28:49,940
+<|13.40|> Meanwhile, what is happening to the old guard?<|16.04|>
+
+524
+00:28:49,940 --> 00:28:53,380
+<|16.04|> The report shows that the legacy platforms are facing serious headwinds.<|19.48|>
+
+525
+00:28:53,400 --> 00:28:57,320
+<|startoftranscript|><|0.00|> Both Facebook and YouTube experience notable declines in their<|3.92|>
+
+526
+00:28:57,320 --> 00:28:58,839
+<|3.92|> indestensibility scores.<|5.44|>
+
+527
+00:28:58,839 --> 00:29:01,080
+<|5.44|> The YouTube data is particularly interesting.<|7.68|>
+
+528
+00:29:01,080 --> 00:29:06,880
+<|7.68|> Historically, YouTube's absolute stronghold in Vietnam has been music and long form entertainment,<|13.48|>
+
+529
+00:29:06,880 --> 00:29:10,200
+<|13.48|> but the report tracked a 4% point decline in that specific<|16.80|>
+
+530
+00:29:10,300 --> 00:29:15,619
+<|startoftranscript|><|0.00|> category. The audience's attention isn't static. It is actively migrating away from traditional<|5.32|>
+
+531
+00:29:15,619 --> 00:29:20,860
+<|5.32|> hubs. And amidst all this global platform warfare, we have to mention Zalo. Zalo is Vietnam's<|10.56|>
+
+532
+00:29:20,860 --> 00:29:26,500
+<|10.56|> home-grown proprietary messaging app. The data shows it maintains a fiercely loyal user base<|16.20|>
+
+533
+00:29:26,500 --> 00:29:30,739
+<|16.20|> and a consistently high-favorability rating. Which reinforces a crucial point.<|20.44|>
+
+534
+00:29:31,099 --> 00:29:37,380
+<|startoftranscript|><|0.00|> Local communities deeply value platforms that are built specifically for their localized needs<|6.28|>
+
+535
+00:29:37,900 --> 00:29:46,660
+<|6.80|> Rather than having to adapt their lives to fit a generic global platforms algorithm. So let's put ourselves in the shoes of our listener for a second<|15.56|>
+
+536
+00:29:46,660 --> 00:29:56,059
+<|15.56|> Let's play devil's advocate. I am a serious professional. I am a commercial real estate broker handling multi-million dollar properties or I am a wealth manager<|24.96|>
+
+537
+00:29:56,400 --> 00:30:01,680
+<|startoftranscript|><|0.00|> I listen to this data and I think, are you seriously telling me that I should stop writing<|5.28|>
+
+538
+00:30:01,680 --> 00:30:05,239
+<|5.28|> my authoritative, deeply researched financial newsletter?<|8.84|>
+
+539
+00:30:05,239 --> 00:30:09,680
+<|8.84|> Do I need to be doing TikTok dances and firing off hot takes on threads to get clients?<|13.28|>
+
+540
+00:30:09,680 --> 00:30:11,280
+<|13.28|> I can hear the resistance that right now.<|14.88|>
+
+541
+00:30:11,280 --> 00:30:13,560
+<|14.88|> It feels undignified to a traditional professional.<|17.16|>
+
+542
+00:30:13,560 --> 00:30:14,560
+<|17.16|> It really does.<|18.16|>
+
+543
+00:30:14,560 --> 00:30:17,599
+<|18.16|> But the answer is, you absolutely must be where the attention is.<|21.20|>
+
+544
+00:30:17,599 --> 00:30:21,400
+<|21.20|> You do not have to compromise your dignity, and you certainly don't have to do gances.<|25.00|>
+
+545
+00:30:21,500 --> 00:30:27,900
+<|startoftranscript|><|0.00|> But you do have to adapt the delivery of your expertise to the format your audience actually prefers to consume.<|6.40|>
+
+546
+00:30:27,900 --> 00:30:32,699
+<|6.40|> If the Vietnamese community relies on high-context video to assess trustworthiness,<|11.20|>
+
+547
+00:30:32,699 --> 00:30:36,699
+<|11.20|> and you refuse to ever turn on a camera because you prefer writing white papers.<|15.20|>
+
+548
+00:30:36,800 --> 00:30:39,600
+<|startoftranscript|><|0.00|> you are refusing to speak their cultural language.<|2.80|>
+
+549
+00:30:39,600 --> 00:30:42,600
+<|2.80|> And if the millennial home buyers are having conversations on threads<|5.80|>
+
+550
+00:30:42,600 --> 00:30:46,000
+<|5.80|> and you refuse to engage there, you are essentially invisible.<|9.20|>
+
+551
+00:30:46,000 --> 00:30:49,000
+<|9.20|> It's the ultimate test of low self-orientation,<|12.20|>
+
+552
+00:30:49,000 --> 00:30:50,600
+<|12.20|> meeting them where they are comfortable,<|13.80|>
+
+553
+00:30:50,600 --> 00:30:53,000
+<|13.80|> rather than demanding they come to where you are comfortable.<|16.20|>
+
+554
+00:30:53,000 --> 00:30:56,000
+<|16.20|> Exactly, because capturing their attention on these platforms<|19.20|>
+
+555
+00:30:56,000 --> 00:30:57,400
+<|19.20|> is really only the first step.<|20.60|>
+
+556
+00:30:57,400 --> 00:31:01,000
+<|20.60|> Getting them to watch your video or read your thread is just the beginning.<|24.20|>
+
+557
+00:31:01,099 --> 00:31:06,479
+<|startoftranscript|><|0.00|> The truly critical part is what you actually say and do when you have their attention.<|5.38|>
+
+558
+00:31:06,479 --> 00:31:12,199
+<|5.38|> How do you ensure that when they see you, they see a community leader and not just a digital<|11.10|>
+
+559
+00:31:12,199 --> 00:31:14,359
+<|11.10|> hunter looking for a quick transaction?<|13.26|>
+
+560
+00:31:14,359 --> 00:31:18,199
+<|13.26|> This is where we bridge the cultural data directly into the sales psychology.<|17.10|>
+
+561
+00:31:18,199 --> 00:31:25,199
+<|startoftranscript|><|0.00|> We are moving into the concept of trust-based selling and the core philosophy of trust-based selling requires a complete<|7.00|>
+
+562
+00:31:25,199 --> 00:31:31,199
+<|7.00|> rewiring of the traditional business brand. It does. The fundamental rule is this. The goal is not to sell.<|13.00|>
+
+563
+00:31:31,199 --> 00:31:35,199
+<|13.00|> That is the hardest pill for any traditional business person to swallow.<|17.00|>
+
+564
+00:31:35,599 --> 00:31:38,119
+<|startoftranscript|><|0.00|> It feels like professional heresy.<|2.52|>
+
+565
+00:31:38,119 --> 00:31:39,640
+<|2.52|> Right, the goal is not to sell.<|4.04|>
+
+566
+00:31:39,640 --> 00:31:42,239
+<|4.04|> The goal is to help people understand opportunities.<|6.64|>
+
+567
+00:31:42,239 --> 00:31:44,760
+<|6.64|> The goal is to help people avoid mistakes.<|9.16|>
+
+568
+00:31:44,760 --> 00:31:47,959
+<|9.16|> The goal is to help families build a better future.<|12.36|>
+
+569
+00:31:47,959 --> 00:31:51,839
+<|12.36|> When you genuinely adopt that mindset, over time,<|16.24|>
+
+570
+00:31:51,839 --> 00:31:54,199
+<|16.24|> it transforms you from a transaction hunter<|18.60|>
+
+571
+00:31:54,199 --> 00:31:56,000
+<|18.60|> into a trusted advisor.<|20.40|>
+
+572
+00:31:56,000 --> 00:31:58,040
+<|startoftranscript|><|0.00|> Let's bring this back to the trust equation.<|2.04|>
+
+573
+00:31:58,040 --> 00:32:02,199
+<|2.04|> We talked about self-orientation being the denominator that can ruin everything.<|6.20|>
+
+574
+00:32:02,199 --> 00:32:03,199
+<|6.20|> Right.<|7.20|>
+
+575
+00:32:03,199 --> 00:32:04,199
+<|7.20|> The motive.<|8.20|>
+
+576
+00:32:04,199 --> 00:32:09,959
+<|8.20|> If your stated goal is to help a family avoid a disastrous financial mistake.<|13.96|>
+
+577
+00:32:09,959 --> 00:32:13,520
+<|13.96|> Even if avoiding that mistake means they do not buy your product today.<|17.52|>
+
+578
+00:32:13,699 --> 00:32:15,699
+<|startoftranscript|><|0.00|> and you lose out on a commission,<|2.00|>
+
+579
+00:32:15,699 --> 00:32:19,199
+<|2.00|> you have just demonstrated the ultimate undeniable proof<|5.50|>
+
+580
+00:32:19,199 --> 00:32:21,000
+<|5.50|> of low self-orientation.<|7.30|>
+
+581
+00:32:21,000 --> 00:32:23,699
+<|7.30|> - You have unequivocally prioritized their well-being<|10.00|>
+
+582
+00:32:23,699 --> 00:32:24,799
+<|10.00|> over your own wallet.<|11.10|>
+
+583
+00:32:24,799 --> 00:32:28,099
+<|11.10|> - And a community never forgets that kind of action.<|14.40|>
+
+584
+00:32:28,099 --> 00:32:30,899
+<|14.40|> The source's detail is strategy called sample selling.<|17.20|>
+
+585
+00:32:30,699 --> 00:32:31,699
+<|startoftranscript|><|0.00|> to illustrate this.<|1.00|>
+
+586
+00:32:31,699 --> 00:32:34,380
+<|1.00|> If you own a bakery, sample selling is easy.<|3.68|>
+
+587
+00:32:34,380 --> 00:32:38,979
+<|3.68|> You put a tray of free cheese samples on the counter, a customer tastes it, likes it, and<|8.28|>
+
+588
+00:32:38,979 --> 00:32:39,979
+<|8.28|> buys a block.<|9.28|>
+
+589
+00:32:39,979 --> 00:32:45,859
+<|9.28|> But in a high-stakes service business like finance, real estate, or law, how do you sample<|15.16|>
+
+590
+00:32:45,859 --> 00:32:46,859
+<|15.16|> sell?<|16.16|>
+
+591
+00:32:46,859 --> 00:32:48,059
+<|16.16|> You can't give them a free fraction of a house.<|17.36|>
+
+592
+00:32:48,059 --> 00:32:51,459
+<|17.36|> You sample sell by giving away your expertise as a genuine gift.<|20.76|>
+
+593
+00:32:51,599 --> 00:32:54,799
+<|startoftranscript|><|0.00|> with zero expectation of an immediate return.<|3.20|>
+
+594
+00:32:54,799 --> 00:32:59,760
+<|3.20|> You host a free Saturday morning seminar at a local community center on how to read a credit report.<|8.16|>
+
+595
+00:32:59,760 --> 00:33:04,400
+<|8.16|> You create a series of deeply informative, high-context TikTok videos,<|12.80|>
+
+596
+00:33:04,400 --> 00:33:08,079
+<|12.80|> explaining the hidden costs of property taxes in their specific county.<|16.48|>
+
+597
+00:33:08,079 --> 00:33:12,079
+<|16.48|> You are giving them a tangible sample of what it feels like to have you on their side.<|20.48|>
+
+598
+00:33:12,079 --> 00:33:12,880
+<|20.48|> Exactly!<|21.28|>
+
+599
+00:33:12,880 --> 00:33:17,119
+<|21.28|> To really drive home, why this always-be-helping approach is so desperately needed,<|25.52|>
+
+600
+00:33:17,119 --> 00:33:20,000
+<|25.52|> we have to look closely at the Fannie Mae Mortgage Journey study.<|28.40|>
+
+601
+00:33:20,099 --> 00:33:23,859
+<|startoftranscript|><|0.00|> This study is phenomenal because it didn't just look at interest rates.<|3.76|>
+
+602
+00:33:23,859 --> 00:33:28,900
+<|3.76|> It tracked the actual emotional and psychological experience of first-time home buyers navigating<|8.80|>
+
+603
+00:33:28,900 --> 00:33:29,900
+<|8.80|> the system.<|9.80|>
+
+604
+00:33:29,900 --> 00:33:35,579
+<|9.80|> What they found was a landscape defined by immense decision fatigue and crushing stress.<|15.48|>
+
+605
+00:33:35,579 --> 00:33:40,459
+<|15.48|> The cognitive load required to buy a house or to make any major structural financial decisions.<|20.36|>
+
+606
+00:33:40,500 --> 00:33:46,260
+<|startoftranscript|><|0.00|> is just staggering. A normal person is suddenly bombarded with impenetrable, jargon-eschro,<|5.76|>
+
+607
+00:33:46,260 --> 00:33:51,939
+<|5.76|> amortization, debt-to-income ratios. They are hit with conflicting advice from the internet.<|11.44|>
+
+608
+00:33:51,939 --> 00:33:58,339
+<|11.44|> And underneath it all is the terrifying, paralyzing fear of making a ruinous mistake that will harm<|17.84|>
+
+609
+00:33:58,339 --> 00:34:03,619
+<|17.84|> their family. The study actually noted that a borrower's ability to make rational decisions<|23.12|>
+
+610
+00:34:03,619 --> 00:34:08,739
+<|23.12|> literally deteriorates over the course of a single day, simply due to the exhaustion of this<|28.24|>
+
+611
+00:34:09,100 --> 00:34:14,100
+<|startoftranscript|><|0.00|> and because of that intense fatigue, borrowers rely heavily, almost desperately<|5.00|>
+
+612
+00:34:14,100 --> 00:34:19,100
+<|5.00|> untrusted advisors, to carry the weight for them. But here's the critical vulnerability.<|10.00|>
+
+613
+00:34:19,100 --> 00:34:23,100
+<|10.00|> What happens if the borrower doesn't have anyone in their personal familial life<|14.00|>
+
+614
+00:34:23,100 --> 00:34:27,100
+<|14.00|> who understands the system? Which brings us to a specific participant highlighted<|18.00|>
+
+615
+00:34:27,100 --> 00:34:32,100
+<|18.00|> in the fan May study, a man named James. James' story is the perfect encapsulation<|23.00|>
+
+616
+00:34:32,100 --> 00:34:37,100
+<|23.00|> of the immigrant and first generation experience when confronting western financial aid.<|28.00|>
+
+617
+00:34:36,800 --> 00:34:37,800
+<|startoftranscript|><|0.00|> institutions.<|1.00|>
+
+618
+00:34:37,800 --> 00:34:39,800
+<|1.00|> "Paint a picture of James for us."<|3.00|>
+
+619
+00:34:39,800 --> 00:34:41,560
+<|3.00|> James is an Uber driver.<|4.76|>
+
+620
+00:34:41,560 --> 00:34:43,160
+<|4.76|> He works incredibly hard.<|6.36|>
+
+621
+00:34:43,160 --> 00:34:45,160
+<|6.36|> He is hustling to build a life.<|8.36|>
+
+622
+00:34:45,160 --> 00:34:49,040
+<|8.36|> He wants to eventually get his real estate license and his immediate goal is to buy a home<|12.24|>
+
+623
+00:34:49,040 --> 00:34:50,600
+<|12.24|> for his family.<|13.80|>
+
+624
+00:34:50,600 --> 00:34:53,920
+<|13.80|> But the study notes a heartbreaking reality.<|17.12|>
+
+625
+00:34:53,920 --> 00:34:58,439
+<|17.12|> As James is trying to navigate mortgage pre-approvals and credit scores, he cannot turn<|21.64|>
+
+626
+00:34:58,439 --> 00:35:00,160
+<|21.64|> to his parents for advice.<|23.36|>
+
+627
+00:35:00,160 --> 00:35:01,160
+<|23.36|> Why?<|24.36|>
+
+628
+00:35:01,160 --> 00:35:06,080
+<|24.36|> Because, as the study documented, his parents literally kept their money in the fridge.<|29.28|>
+
+629
+00:35:06,199 --> 00:35:12,239
+<|startoftranscript|><|0.00|> That phrase speaks volumes. They were completely unbanked. They operated entirely outside the traditional financial system<|6.04|>
+
+630
+00:35:12,239 --> 00:35:14,079
+<|6.04|> Exactly they survived on cash<|7.88|>
+
+631
+00:35:14,520 --> 00:35:20,439
+<|8.32|> Which means James has inherited a massive generational knowledge deficit. He has no familial safety net<|14.24|>
+
+632
+00:35:20,439 --> 00:35:24,979
+<|14.24|> He can't call his dad on a Sunday afternoon and ask hey does this closing disclosure look right to you?<|18.78|>
+
+633
+00:35:24,979 --> 00:35:30,839
+<|18.78|> Is this a good interest rate his parents have a deep systemic distrust of invisible institutional money?<|24.64|>
+
+634
+00:35:30,800 --> 00:35:35,800
+<|startoftranscript|><|0.00|> So James is standing at the bottom of massive mountain and he has no map.<|5.00|>
+
+635
+00:35:35,800 --> 00:35:37,800
+<|5.00|> He desperately needs a professional mentor.<|7.00|>
+
+636
+00:35:37,800 --> 00:35:42,800
+<|7.00|> He doesn't need a salesperson who is just trying to hustle him into a subprime loan to hit a monthly quota.<|12.00|>
+
+637
+00:35:42,800 --> 00:35:46,800
+<|12.00|> He needs someone who will act in his absolute best interest.<|16.00|>
+
+638
+00:35:46,800 --> 00:35:50,800
+<|16.00|> He essentially needs someone to act as the financial parent he never had.<|20.00|>
+
+639
+00:35:50,800 --> 00:35:54,800
+<|20.00|> And this is where true community leadership totally transcends marketing.<|24.00|>
+
+640
+00:35:54,800 --> 00:36:00,060
+<|startoftranscript|><|0.00|> When you serve a community like the Vietnamese diaspora, you're going to encounter countless<|5.26|>
+
+641
+00:36:00,060 --> 00:36:03,459
+<|5.26|> families who share James' situation.<|8.66|>
+
+642
+00:36:03,459 --> 00:36:08,660
+<|8.66|> Families who are incredibly hardworking, but who are navigating these complex, high-stakes<|13.86|>
+
+643
+00:36:08,660 --> 00:36:11,660
+<|13.86|> western systems for the very first time.<|16.86|>
+
+644
+00:36:11,660 --> 00:36:12,979
+<|16.86|> They do not need a vendor.<|18.18|>
+
+645
+00:36:12,979 --> 00:36:14,500
+<|18.18|> They need a guide.<|19.70|>
+
+646
+00:36:14,500 --> 00:36:19,380
+<|19.70|> To become that guide, we can look at Stephen and Covey's 13 behaviors of high-trust leaders.<|24.58|>
+
+647
+00:36:19,380 --> 00:36:22,920
+<|24.58|> These behaviors serve as a practical job description for the kind of advisor James<|28.12|>
+
+648
+00:36:22,920 --> 00:36:23,219
+<|28.12|> needs.<|28.42|>
+
+649
+00:36:23,199 --> 00:36:27,439
+<|startoftranscript|><|0.00|> Let's examine a few of them and how they apply in this cultural context.<|4.24|>
+
+650
+00:36:27,439 --> 00:36:29,679
+<|4.24|> Consider behavior number one, talk straight.<|6.48|>
+
+651
+00:36:29,679 --> 00:36:33,639
+<|6.48|> Now in a high context culture that values face in social harmony, talking straight does<|10.44|>
+
+652
+00:36:33,639 --> 00:36:36,479
+<|10.44|> not mean being brutally blunt, aggressive or rude.<|13.28|>
+
+653
+00:36:36,479 --> 00:36:40,879
+<|13.28|> No, it means being intellectually honest about the realities of a situation without spinning<|17.68|>
+
+654
+00:36:40,879 --> 00:36:41,439
+<|17.68|> the truth.<|18.24|>
+
+655
+00:36:41,600 --> 00:36:46,360
+<|startoftranscript|><|0.00|> If James brings you a loan product he found online, and you know it has balloon payments<|4.76|>
+
+656
+00:36:46,360 --> 00:36:50,400
+<|4.76|> that will bankrupt him in five years, talking straight means you sit down with him and<|8.80|>
+
+657
+00:36:50,400 --> 00:36:52,840
+<|8.80|> explain exactly why it's a trap.<|11.24|>
+
+658
+00:36:52,840 --> 00:36:57,120
+<|11.24|> You tell him it's bad for him, even if that specific loan would have paid you a massive<|15.52|>
+
+659
+00:36:57,120 --> 00:36:58,280
+<|15.52|> commission.<|16.68|>
+
+660
+00:36:58,280 --> 00:37:01,520
+<|16.68|> You prioritize his safety over your profit.<|19.92|>
+
+661
+00:37:01,520 --> 00:37:04,400
+<|19.92|> Let's look at behavior number four, right wrongs.<|22.80|>
+
+662
+00:37:04,400 --> 00:37:06,080
+<|22.80|> This one is incredibly powerful.<|24.48|>
+
+663
+00:37:06,300 --> 00:37:11,300
+<|startoftranscript|><|0.00|> When you make a mistake and if you are in business long enough, you absolutely will make a mistake.<|5.00|>
+
+664
+00:37:11,300 --> 00:37:16,300
+<|5.00|> You do not cover it up. You do not blame the underwriter or the market or the client.<|10.00|>
+
+665
+00:37:16,300 --> 00:37:20,300
+<|10.00|> You acknowledge the error, you apologize sincerely, and you immediately make restitution.<|14.00|>
+
+666
+00:37:20,300 --> 00:37:22,300
+<|14.00|> Which requires immense humility.<|16.00|>
+
+667
+00:37:22,300 --> 00:37:27,300
+<|16.00|> It does. And in a face culture, demonstrating that level of humility resonates profoundly.<|21.00|>
+
+668
+00:37:27,800 --> 00:37:35,800
+<|startoftranscript|><|0.00|> Because by admitting fault and taking the hit, you are willingly lowering your own status to protect the client and maintain the harmony of the relationship.<|8.00|>
+
+669
+00:37:35,800 --> 00:37:38,800
+<|8.00|> It is the ultimate proof that you are a safe haven.<|11.00|>
+
+670
+00:37:38,800 --> 00:37:40,800
+<|11.00|> And then there is behavior number 11. Listen first.<|13.00|>
+
+671
+00:37:40,800 --> 00:37:47,800
+<|13.00|> This is the exact antidote to the traditional hunter salesperson who just wants to launch into their rehearsed pitch.<|20.00|>
+
+672
+00:37:47,800 --> 00:37:50,800
+<|20.00|> Listen to understand, not merely to reply.<|23.00|>
+
+673
+00:37:50,800 --> 00:37:52,800
+<|23.00|> Diagnose with empathy.<|25.00|>
+
+674
+00:37:52,800 --> 00:37:57,520
+<|startoftranscript|><|0.00|> When a family sits in your office, what are they actually terrified of?<|4.72|>
+
+675
+00:37:57,520 --> 00:38:01,120
+<|4.72|> Are they worried about the interest rate or are they secretly terrified that they won't<|8.32|>
+
+676
+00:38:01,120 --> 00:38:04,880
+<|8.32|> be able to afford their children's college tuition if they buy this house?<|12.08|>
+
+677
+00:38:04,880 --> 00:38:08,160
+<|12.08|> If you don't listen first, you will solve the wrong problem.<|15.36|>
+
+678
+00:38:08,160 --> 00:38:13,040
+<|15.36|> I love this because it reveals the beautiful paradox of the always-be-helping mindset.<|20.24|>
+
+679
+00:38:13,199 --> 00:38:19,040
+<|startoftranscript|><|0.00|> By completely giving up the desire to close a sale, by formally abandoning the hunter mentality<|5.84|>
+
+680
+00:38:19,040 --> 00:38:24,520
+<|5.84|> and focusing entirely on diagnosing and educating, you actually end up closing more business.<|11.32|>
+
+681
+00:38:24,520 --> 00:38:27,159
+<|11.32|> It seems like magic, but it's really just human nature.<|13.96|>
+
+682
+00:38:27,159 --> 00:38:31,939
+<|13.96|> When you genuinely help someone like James navigate a terrifying opaque process, and you<|18.74|>
+
+683
+00:38:31,939 --> 00:38:37,399
+<|18.74|> do it without demanding anything in return, human psychology demands reciprocity.<|24.20|>
+
+684
+00:38:37,399 --> 00:38:37,399
+<|24.20|> People naturally want to return a genuine<|endoftext|>
+
+685
+00:38:39,000 --> 00:38:42,679
+<|startoftranscript|><|0.00|> you and gift. When James is finally ready to buy, he isn't going to call five<|3.68|>
+
+686
+00:38:42,679 --> 00:38:47,000
+<|3.68|> different agencies to price shop. You become his only logical choice. And the ripple<|8.00|>
+
+687
+00:38:47,000 --> 00:38:51,280
+<|8.00|> effect, the ways of trust takes over. Not only does James buy from you, but in a<|12.28|>
+
+688
+00:38:51,280 --> 00:38:55,320
+<|12.28|> collectiveist culture, where family and community are everything, he tells his<|16.32|>
+
+689
+00:38:55,320 --> 00:38:59,280
+<|16.32|> parents, he tells his cousins, he tells his fellow drivers, he tells his church or<|20.28|>
+
+690
+00:38:59,280 --> 00:39:03,000
+<|20.28|> temple, because you protected him, the community elevates you, you become the<|24.00|>
+
+691
+00:39:03,000 --> 00:39:07,120
+<|24.00|> trusted advisor for the entire network. Which is an incredible place to be<|28.12|>
+
+692
+00:39:07,399 --> 00:39:11,979
+<|startoftranscript|><|0.00|> But it leads us directly into a very real, very practical problem.<|4.58|>
+
+693
+00:39:11,979 --> 00:39:14,119
+<|4.58|> Let's say you execute this perfectly.<|6.72|>
+
+694
+00:39:14,119 --> 00:39:18,779
+<|6.72|> You have high cultural intelligence, you operate with low self-orientation, you become the trusted<|11.38|>
+
+695
+00:39:18,779 --> 00:39:19,779
+<|11.38|> guide.<|12.38|>
+
+696
+00:39:19,779 --> 00:39:25,260
+<|12.38|> Suddenly you have 50, 100, maybe 300 families who view you as their financial safe haven.<|17.86|>
+
+697
+00:39:25,500 --> 00:39:28,060
+<|startoftranscript|><|0.00|> How on earth do you manage it all?<|2.56|>
+
+698
+00:39:28,060 --> 00:39:30,100
+<|2.56|> That is the ultimate scaling dilemma.<|4.60|>
+
+699
+00:39:30,100 --> 00:39:35,060
+<|4.60|> If intimacy and deep personal connection are the keys to this entire strategy, how does<|9.56|>
+
+700
+00:39:35,060 --> 00:39:40,379
+<|9.56|> a single human being manage hundreds of nuanced, highly emotional relationships without<|14.88|>
+
+701
+00:39:40,379 --> 00:39:42,620
+<|14.88|> completely burning out?<|17.12|>
+
+702
+00:39:42,620 --> 00:39:44,060
+<|17.12|> Human memory has bandwidth limits.<|18.56|>
+
+703
+00:39:44,100 --> 00:39:45,100
+<|startoftranscript|><|0.00|> It does.<|1.00|>
+
+704
+00:39:45,100 --> 00:39:50,500
+<|1.00|> A farmer can only tend to so many acres by hand before the crops start to die.<|6.40|>
+
+705
+00:39:50,500 --> 00:39:54,660
+<|6.40|> This is exactly where we have to look at how modern technology is stepping in, but it's<|10.56|>
+
+706
+00:39:54,660 --> 00:39:58,860
+<|10.56|> stepping in not to replace the human being, but to augment them.<|14.76|>
+
+707
+00:39:58,860 --> 00:40:03,540
+<|14.76|> We're looking at sources covering the rapid evolution of AI customer relationship managers,<|19.44|>
+
+708
+00:40:03,540 --> 00:40:09,580
+<|19.44|> CRMs, and digital community building platforms, specifically tools like Circle for Community<|25.48|>
+
+709
+00:40:09,580 --> 00:40:13,460
+<|25.48|> Management and Rings AI for Relationship Intelligence.<|29.36|>
+
+710
+00:40:13,500 --> 00:40:17,840
+<|startoftranscript|><|0.00|> Let's start by looking at the community aspect with platforms like Circle.<|4.34|>
+
+711
+00:40:17,840 --> 00:40:21,780
+<|4.34|> When community leader becomes highly sought after, they often find themselves trying to<|8.28|>
+
+712
+00:40:21,780 --> 00:40:23,219
+<|8.28|> unify chaos.<|9.72|>
+
+713
+00:40:23,219 --> 00:40:28,379
+<|9.72|> You might be hosting Saturday morning webinars on Zoom, sharing educational PDFs via email,<|14.88|>
+
+714
+00:40:28,379 --> 00:40:32,500
+<|14.88|> having discussions in a private Facebook group, and trying to organize local meetups through<|19.00|>
+
+715
+00:40:32,500 --> 00:40:33,500
+<|19.00|> text threads.<|20.00|>
+
+716
+00:40:33,500 --> 00:40:34,500
+<|20.00|> Right.<|21.00|>
+
+717
+00:40:34,500 --> 00:40:34,500
+<|21.00|> And as the leader, you're spending 80% of your time just playing traffic<|endoftext|>
+
+718
+00:40:37,399 --> 00:40:39,719
+<|startoftranscript|><|0.00|> You're trying to remember who got which link.<|2.32|>
+
+719
+00:40:39,719 --> 00:40:44,559
+<|2.32|> It is logistically exhausting and it drains the energy you should be using to actually help<|7.16|>
+
+720
+00:40:44,559 --> 00:40:45,559
+<|7.16|> people.<|8.16|>
+
+721
+00:40:45,559 --> 00:40:49,439
+<|8.16|> Platforms like Circle solve this by bringing all of that fragmented interaction under one<|12.04|>
+
+722
+00:40:49,439 --> 00:40:52,599
+<|12.04|> unified branded, often gamified roof.<|15.20|>
+
+723
+00:40:52,599 --> 00:40:54,879
+<|15.20|> It acts as a digital headquarters.<|17.48|>
+
+724
+00:40:54,879 --> 00:40:59,439
+<|17.48|> But the key is that it allows the community leader to focus entirely on impact rather than<|22.04|>
+
+725
+00:40:59,439 --> 00:40:59,839
+<|22.04|> logistics.<|22.44|>
+
+726
+00:40:59,899 --> 00:41:09,899
+<|startoftranscript|><|0.00|> And increasingly, these platforms offer AI agents that can help moderate, summarize long discussions, or guide new members to the right resources.<|10.00|>
+
+727
+00:41:09,899 --> 00:41:13,899
+<|10.00|> The AI acts as an always-on extension of the leaders intent to help.<|14.00|>
+
+728
+00:41:13,899 --> 00:41:17,899
+<|14.00|> But the truly mind-bending evolution is happening in the CRM space.<|18.00|>
+
+729
+00:41:18,100 --> 00:41:24,380
+<|startoftranscript|><|0.00|> The source material detailing the top AI powered CRMs for 2026, specifically highlights<|6.28|>
+
+730
+00:41:24,380 --> 00:41:28,979
+<|6.28|> platforms like Rings AI, and it points out a massive historical shift.<|10.88|>
+
+731
+00:41:28,979 --> 00:41:32,620
+<|10.88|> Because if we look back just a few years ago, a CRM was essentially just a digital<|14.52|>
+
+732
+00:41:32,620 --> 00:41:33,620
+<|14.52|> roll-a-dex.<|15.52|>
+
+733
+00:41:33,620 --> 00:41:34,620
+<|15.52|> It was a digital graveyard.<|16.52|>
+
+734
+00:41:34,620 --> 00:41:38,820
+<|16.52|> A place where a salesperson would type in notes after a meeting, spoke to Bob, like<|20.72|>
+
+735
+00:41:38,820 --> 00:41:39,140
+<|20.72|> Sculff.<|21.04|>
+
+736
+00:41:39,199 --> 00:41:42,560
+<|startoftranscript|><|0.00|> And then never look at those notes again until they needed to cold call them a year later.<|3.36|>
+
+737
+00:41:42,560 --> 00:41:48,560
+<|3.36|> But the introduction of generative AI has completely transformed the static databases into proactive<|9.36|>
+
+738
+00:41:48,560 --> 00:41:53,919
+<|9.36|> relationship engines. The article highlights that a platform like Rings AI fundamentally<|14.72|>
+
+739
+00:41:53,919 --> 00:42:00,479
+<|14.72|> prioritizes relationship intelligence over mere data storage. What that means in a practical day-to-day<|21.28|>
+
+740
+00:42:00,479 --> 00:42:06,800
+<|21.28|> sense for an advisor is that the AI handles the massive cognitive load of remembering the human details.<|27.60|>
+
+741
+00:42:06,899 --> 00:42:08,899
+<|startoftranscript|><|0.00|> It features automated data capture.<|2.00|>
+
+742
+00:42:08,899 --> 00:42:12,899
+<|2.00|> It integrates with your email, your calendar, your secure meeting transcripts.<|6.00|>
+
+743
+00:42:12,899 --> 00:42:16,899
+<|6.00|> It pulls the relevant information without you having to manually type a single thing.<|10.00|>
+
+744
+00:42:16,899 --> 00:42:22,899
+<|10.00|> It generates conversational summary so that before your next meeting, you have a perfect brief of where you left off.<|16.00|>
+
+745
+00:42:22,899 --> 00:42:24,899
+<|16.00|> Let's give a concrete example.<|18.00|>
+
+746
+00:42:25,000 --> 00:42:29,080
+<|startoftranscript|><|0.00|> I am an advisor. I have a Zoom meeting with a Vietnamese client. We're discussing their business<|4.08|>
+
+747
+00:42:29,080 --> 00:42:33,239
+<|4.08|> loan, but in passing, the client mentions that they're incredibly stressed because their<|8.24|>
+
+748
+00:42:33,239 --> 00:42:38,040
+<|8.24|> eldest daughter is starting college at UCLA next month, and the logistics are a nightmare.<|13.04|>
+
+749
+00:42:38,040 --> 00:42:42,239
+<|13.04|> In the past, you might forget that detail because you were focused on the math alone,<|17.24|>
+
+750
+00:42:42,239 --> 00:42:47,679
+<|17.24|> but the AI hears that detail. It understands that in a family-driven culture, this is a massive<|22.68|>
+
+751
+00:42:47,679 --> 00:42:48,360
+<|22.68|> life event.<|23.36|>
+
+752
+00:42:48,399 --> 00:42:53,479
+<|startoftranscript|><|0.00|> It logs that detail, and a month later, it proactively flags it for you, suggesting you<|5.08|>
+
+753
+00:42:53,479 --> 00:42:56,399
+<|5.08|> send a quick message wishing her luck at UCLA.<|8.00|>
+
+754
+00:42:56,399 --> 00:42:59,719
+<|8.00|> And it goes even deeper with a feature of the sources called PathPower.<|11.32|>
+
+755
+00:42:59,719 --> 00:43:00,959
+<|11.32|> I love this term.<|12.56|>
+
+756
+00:43:00,959 --> 00:43:03,399
+<|12.56|> Unpack what PathPower actually is.<|15.00|>
+
+757
+00:43:03,399 --> 00:43:06,279
+<|15.00|> PathPower is advanced relationship mapping.<|17.88|>
+
+758
+00:43:06,279 --> 00:43:10,879
+<|17.88|> The AI analyzes millions of data points across your communications and networks to identify<|22.48|>
+
+759
+00:43:10,879 --> 00:43:11,879
+<|22.48|> shared connections.<|23.48|>
+
+760
+00:43:12,000 --> 00:43:17,120
+<|startoftranscript|><|0.00|> In a high-context community that relies on this entirely on personal referrals, reputation,<|5.12|>
+
+761
+00:43:17,120 --> 00:43:21,360
+<|5.12|> and word-of-mouth, knowing who knows who is your most valuable asset.<|9.36|>
+
+762
+00:43:21,360 --> 00:43:25,479
+<|9.36|> The CRM can literally show you the warmest, most socially harmonious introduction path to<|13.48|>
+
+763
+00:43:25,479 --> 00:43:29,439
+<|13.48|> a new prospect based on the high-trust relationships you have already built.<|17.44|>
+
+764
+00:43:29,439 --> 00:43:30,800
+<|17.44|> It maps the invisible social web.<|18.80|>
+
+765
+00:43:30,800 --> 00:43:32,120
+<|18.80|> Okay, I have to jump in here.<|20.12|>
+
+766
+00:43:32,120 --> 00:43:34,560
+<|20.12|> I want to raise a massive red flag on behalf of the list.<|22.56|>
+
+767
+00:43:34,600 --> 00:43:40,600
+<|startoftranscript|><|0.00|> We have just spent the better part of an hour talking about how crucial genuine connection is.<|6.00|>
+
+768
+00:43:40,600 --> 00:43:44,600
+<|6.00|> We've talked about intimacy, credibility, and low-cell orientation.<|10.00|>
+
+769
+00:43:44,600 --> 00:43:47,600
+<|10.00|> We've talked about being a real safe haven for people like James.<|13.00|>
+
+770
+00:43:47,600 --> 00:43:51,600
+<|13.00|> If I'm using a piece of software to remember someone's daughter's name,<|17.00|>
+
+771
+00:43:51,600 --> 00:43:57,600
+<|17.00|> or if an AI is writing a summary of a deeply personal emotional chat about a family's financial fear,<|23.00|>
+
+772
+00:43:57,500 --> 00:44:02,060
+<|startoftranscript|><|0.00|> Doesn't that violate the very trust we are trying to build?<|4.56|>
+
+773
+00:44:02,060 --> 00:44:03,659
+<|4.56|> Isn't that just fake trust?<|6.16|>
+
+774
+00:44:03,659 --> 00:44:05,340
+<|6.16|> It is a brilliant question.<|7.84|>
+
+775
+00:44:05,340 --> 00:44:09,100
+<|7.84|> And it is the defining ethical debate of modern business technology.<|11.60|>
+
+776
+00:44:09,100 --> 00:44:11,899
+<|11.60|> But the answer brings us right back to the trust equation.<|14.40|>
+
+777
+00:44:11,899 --> 00:44:13,939
+<|14.40|> Specifically, the denominator.<|16.44|>
+
+778
+00:44:14,000 --> 00:44:20,800
+<|startoftranscript|><|0.00|> Yeah. Self-orientation. The AI is not a relationship. It is a tool. It is exactly like a pen, a notebook, or a calendar.<|6.80|>
+
+779
+00:44:20,800 --> 00:44:25,600
+<|6.80|> How so? Think about it this way. If a client tells you their birthday and you write it down in a physical,<|11.60|>
+
+780
+00:44:25,600 --> 00:44:28,959
+<|11.60|> leather notebook so that you remember to call them six months from now, is that fake?<|14.96|>
+
+781
+00:44:29,520 --> 00:44:32,719
+<|15.52|> Are you a fraud for needing a notebook to augment your memory?<|18.72|>
+
+782
+00:44:32,719 --> 00:44:36,959
+<|18.72|> No. If I write it down, it means I care enough to want to remember.<|22.96|>
+
+783
+00:44:37,100 --> 00:44:39,660
+<|startoftranscript|><|0.00|> It's a tool to help me be a better friend.<|2.56|>
+
+784
+00:44:39,660 --> 00:44:40,660
+<|2.56|> Exactly.<|3.56|>
+
+785
+00:44:40,660 --> 00:44:44,940
+<|3.56|> The AI CRM is simply a vastly superior notebook.<|7.84|>
+
+786
+00:44:44,940 --> 00:44:48,020
+<|7.84|> It does it better, faster, and at scale.<|10.92|>
+
+787
+00:44:48,020 --> 00:44:51,220
+<|10.92|> The technology enabled the logistics of empathy.<|14.12|>
+
+788
+00:44:51,220 --> 00:44:53,700
+<|14.12|> But, and this is a massive, non-negotiable,<|16.60|>
+
+789
+00:44:53,700 --> 00:44:57,780
+<|16.60|> but the intent behind using the tool must still be genuine.<|20.68|>
+
+790
+00:44:57,780 --> 00:44:59,820
+<|20.68|> The desire to serve must be real.<|22.72|>
+
+791
+00:44:59,899 --> 00:45:04,899
+<|startoftranscript|><|0.00|> If you use AI simply to spam thousands of personalized sounding messages to hunt for a quick sale,<|5.00|>
+
+792
+00:45:04,899 --> 00:45:07,899
+<|5.00|> the community will sense the high self-orientation immediately.<|8.00|>
+
+793
+00:45:07,899 --> 00:45:09,899
+<|8.00|> It's the lyrics versus the music again.<|10.00|>
+
+794
+00:45:09,899 --> 00:45:12,899
+<|10.00|> The AI can write the perfect lyrics, but it can't fake the music.<|13.00|>
+
+795
+00:45:12,899 --> 00:45:14,899
+<|13.00|> And if you try to use it to fake the music,<|15.00|>
+
+796
+00:45:14,899 --> 00:45:17,899
+<|15.00|> the technology will actually accelerate the destruction of your reputation.<|18.00|>
+
+797
+00:45:17,899 --> 00:45:21,899
+<|18.00|> Because the people will feel the disconnect between the highly personalized message<|22.00|>
+
+798
+00:45:21,899 --> 00:45:23,899
+<|22.00|> and your actual transactional behavior.<|24.00|>
+
+799
+00:45:23,899 --> 00:45:25,899
+<|24.00|> It acts as a magnifying glass.<|26.00|>
+
+800
+00:45:26,399 --> 00:45:31,199
+<|startoftranscript|><|0.00|> If you are genuinely a farmer, if you care about the soil and the crops, the AI is just<|4.80|>
+
+801
+00:45:31,199 --> 00:45:35,319
+<|4.80|> an advanced irrigation system that helps you water the farm more efficiently.<|8.92|>
+
+802
+00:45:35,319 --> 00:45:39,839
+<|8.92|> But if you are a hunter, the AI just turns you into a highly mechanized, incredibly annoying<|13.44|>
+
+803
+00:45:39,839 --> 00:45:40,839
+<|13.44|> hunter.<|14.44|>
+
+804
+00:45:40,839 --> 00:45:43,919
+<|14.44|> The vantage point analysis in our sources sums this up perfectly.<|17.52|>
+
+805
+00:45:43,919 --> 00:45:47,639
+<|17.52|> They note that purpose-built relationship intelligence platforms are making genuine<|21.24|>
+
+806
+00:45:47,639 --> 00:45:49,760
+<|21.24|> advisors wildly more productive.<|23.36|>
+
+807
+00:45:49,800 --> 00:45:51,800
+<|startoftranscript|><|0.00|> because it shifts the burden of work.<|2.00|>
+
+808
+00:45:51,800 --> 00:45:53,800
+<|2.00|> It allows an advisor to spend 10% of their time<|4.00|>
+
+809
+00:45:53,800 --> 00:45:55,800
+<|4.00|> on administrative data entry and logistics,<|6.00|>
+
+810
+00:45:55,800 --> 00:45:58,800
+<|6.00|> and 90% of their time actually sitting across<|9.00|>
+
+811
+00:45:58,800 --> 00:46:00,800
+<|9.00|> from their clients, looking them in the eye,<|11.00|>
+
+812
+00:46:00,800 --> 00:46:03,800
+<|11.00|> listening to their fears, and solving their problems.<|14.00|>
+
+813
+00:46:03,800 --> 00:46:06,800
+<|14.00|> It frees the human to do what only the human can do.<|17.00|>
+
+814
+00:46:06,800 --> 00:46:08,800
+<|17.00|> What an incredible journey we've been on today.<|19.00|>
+
+815
+00:46:08,800 --> 00:46:10,800
+<|19.00|> Let's bring all these threads together.<|21.00|>
+
+816
+00:46:10,800 --> 00:46:13,800
+<|21.00|> We started by fundamentally redefining trust.<|24.00|>
+
+817
+00:46:14,699 --> 00:46:19,699
+<|startoftranscript|><|0.00|> It isn't a soft warm feeling, it is a hard, measurable economic driver that<|5.00|>
+
+818
+00:46:19,699 --> 00:46:22,699
+<|5.00|> dictates the speed and cost of every interaction you have.<|8.00|>
+
+819
+00:46:22,699 --> 00:46:27,699
+<|8.00|> We saw that in order to unlock that trust, particularly within the Vietnamese community,<|13.00|>
+
+820
+00:46:27,699 --> 00:46:29,699
+<|13.00|> you must develop deep cultural intelligence.<|15.00|>
+
+821
+00:46:30,100 --> 00:46:35,260
+<|startoftranscript|><|0.00|> It requires prioritizing social harmony, respecting the hierarchy and the elders, and communicating<|5.16|>
+
+822
+00:46:35,260 --> 00:46:39,580
+<|5.16|> in a way that provides genuine emotional safety, often by embracing their native language<|9.48|>
+
+823
+00:46:39,580 --> 00:46:41,500
+<|9.48|> to remove cognitive friction.<|11.40|>
+
+824
+00:46:41,500 --> 00:46:45,979
+<|11.40|> We discover that you have to meet the community where their attention actually is today.<|15.88|>
+
+825
+00:46:45,979 --> 00:46:51,340
+<|15.88|> That means embracing the high-context, nonverbal cues of video on platforms like Tick<|21.24|>
+
+826
+00:46:51,399 --> 00:46:55,199
+<|startoftranscript|><|0.00|> or entering the conversational forms of millennials on threads,<|3.80|>
+
+827
+00:46:55,199 --> 00:46:58,639
+<|3.80|> while recognizing that older platforms may be losing their indispensable<|7.24|>
+
+828
+00:46:58,639 --> 00:47:00,879
+<|7.24|> ability. And at the very core of it all,<|9.48|>
+
+829
+00:47:00,879 --> 00:47:04,239
+<|9.48|> we learned that the ultimate growth strategy is to stop selling.<|12.84|>
+
+830
+00:47:04,239 --> 00:47:07,799
+<|12.84|> To embrace the always-be-helping mindset, to become<|16.40|>
+
+831
+00:47:07,799 --> 00:47:12,279
+<|16.40|> the professional mentor, the guide, the safe haven for families who are navigating<|20.88|>
+
+832
+00:47:12,279 --> 00:47:15,959
+<|20.88|> intimidating systems without any generational knowledge to rely on.<|24.56|>
+
+833
+00:47:15,959 --> 00:47:16,919
+<|24.56|> You become the guide.<|25.52|>
+
+834
+00:47:17,000 --> 00:47:20,239
+<|startoftranscript|><|0.00|> and you use modern AI tools not to fake relationships,<|3.24|>
+
+835
+00:47:20,239 --> 00:47:22,500
+<|3.24|> but to scale your genuine, authentic care<|5.50|>
+
+836
+00:47:22,500 --> 00:47:24,000
+<|5.50|> so that you can help hundreds of families<|7.00|>
+
+837
+00:47:24,000 --> 00:47:26,500
+<|7.00|> build a better future without burning yourself out.<|9.50|>
+
+838
+00:47:26,500 --> 00:47:28,600
+<|9.50|> Focus entirely on helping your community<|11.60|>
+
+839
+00:47:28,600 --> 00:47:31,500
+<|11.60|> and the business growth will naturally inevitably follow.<|14.50|>
+
+840
+00:47:31,500 --> 00:47:33,899
+<|14.50|> If we project all of this into the future,<|16.90|>
+
+841
+00:47:33,899 --> 00:47:36,199
+<|16.90|> I want to leave you the listener with a final thought<|19.20|>
+
+842
+00:47:36,199 --> 00:47:37,600
+<|19.20|> to really mull over.<|20.60|>
+
+843
+00:47:37,600 --> 00:47:39,500
+<|20.60|> We've spent a lot of time today talking about<|22.50|>
+
+844
+00:47:39,500 --> 00:47:42,100
+<|22.50|> how technology can help us map relationships,<|25.10|>
+
+845
+00:47:42,100 --> 00:47:44,000
+<|25.10|> remember complex personal details,<|27.00|>
+
+846
+00:47:44,000 --> 00:47:46,000
+<|27.00|> and even adapt to cultural nuances.<|29.00|>
+
+847
+00:47:46,100 --> 00:47:51,900
+<|startoftranscript|><|0.00|> But we are rapidly approaching a technological horizon where AI will become perfectly fluent<|5.80|>
+
+848
+00:47:51,900 --> 00:47:56,500
+<|5.80|> in every language, every dialect, and every cultural custom on Earth.<|10.40|>
+
+849
+00:47:56,500 --> 00:47:58,100
+<|10.40|> That's a profound thought.<|12.00|>
+
+850
+00:47:58,100 --> 00:48:02,500
+<|12.00|> Soon an AI agent will be able to speak flawless conversational Vietnamese.<|16.40|>
+
+851
+00:48:02,600 --> 00:48:09,600
+<|startoftranscript|><|0.00|> It will be programmed to observe perfect face culture and execute the exact right level of elder respect and hospitality.<|7.00|>
+
+852
+00:48:09,600 --> 00:48:16,600
+<|7.00|> Exactly. And when that day arrives, perfect communication will become a widely available, highly inexpensive commodity.<|14.00|>
+
+853
+00:48:16,600 --> 00:48:21,600
+<|14.00|> Anyone with an internet connection will be able to buy an AI that says the exact perfect thing at the perfect time.<|19.00|>
+
+854
+00:48:22,100 --> 00:48:34,100
+<|startoftranscript|><|0.00|> When the words themselves become completely commoditized, your genuine human intent, your actual undeniable, messy, beating heart desire to see your community thrive will be the only competitive advantage you have left.<|12.00|>
+
+855
+00:48:34,100 --> 00:48:42,100
+<|12.00|> Wow, so it all comes entirely back to the farm. When everyone on earth can buy the exact same perfect AI-driven tractor, the only difference between the<|20.00|>
+
+856
+00:48:42,399 --> 00:48:46,479
+<|startoftranscript|><|0.00|> farms will be how much the farmer actually cares about the soil.<|4.08|>
+
+857
+00:48:46,479 --> 00:48:48,639
+<|4.08|> Thank you so much for joining us on this Deep Dive.<|6.24|>
+
+858
+00:48:48,639 --> 00:48:52,520
+<|6.24|> We hope you take these insights, lay down your weapons, stop hunting, and start planting<|10.12|>
+
+859
+00:48:52,520 --> 00:48:54,679
+<|10.12|> real seeds in your own communities.<|12.28|>
+
+860
+00:48:54,679 --> 00:48:55,679
+<|12.28|> We'll catch you on the next one.<|13.28|>
+

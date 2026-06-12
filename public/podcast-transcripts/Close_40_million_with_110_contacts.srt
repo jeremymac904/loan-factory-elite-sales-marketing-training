@@ -1,0 +1,2620 @@
+1
+00:00:00,000 --> 00:00:02,939
+<|startoftranscript|><|0.00|> Imagine you step into your office tomorrow, right?<|2.94|>
+
+2
+00:00:02,939 --> 00:00:04,940
+<|2.94|> You pull up your database and you're looking at it.<|4.94|>
+
+3
+00:00:04,940 --> 00:00:08,019
+<|4.94|> I don't know, maybe 2,800 contacts.<|8.02|>
+
+4
+00:00:08,019 --> 00:00:11,500
+<|8.02|> People you've spent years agonizing over trying to build<|11.50|>
+
+5
+00:00:11,500 --> 00:00:12,819
+<|11.50|> this massive list.<|12.82|>
+
+6
+00:00:12,819 --> 00:00:14,139
+<|12.82|> - Right, the ultimate safety now.<|14.14|>
+
+7
+00:00:14,139 --> 00:00:15,179
+<|14.14|> - Exactly.<|15.18|>
+
+8
+00:00:15,179 --> 00:00:20,180
+<|15.18|> And then you just decide to delete 2,690 of them.<|20.18|>
+
+9
+00:00:20,799 --> 00:00:23,359
+<|startoftranscript|><|0.00|> Just permanently cut your list down to 110 people.<|2.56|>
+
+10
+00:00:23,359 --> 00:00:25,059
+<|2.56|> - You take it out, yeah.<|4.26|>
+
+11
+00:00:25,059 --> 00:00:26,399
+<|4.26|> - To almost anyone in sales.<|5.60|>
+
+12
+00:00:26,399 --> 00:00:29,919
+<|5.60|> I mean, that sounds like absolute professional suicide, you know.<|9.12|>
+
+13
+00:00:29,919 --> 00:00:32,079
+<|9.12|> But according to the proprietary coaching blueprints<|11.28|>
+
+14
+00:00:32,079 --> 00:00:33,879
+<|11.28|> we're diving into today,<|13.08|>
+
+15
+00:00:33,879 --> 00:00:36,399
+<|13.08|> one real estate professional did exactly that.<|15.60|>
+
+16
+00:00:36,399 --> 00:00:38,680
+<|15.60|> And he literally watched his production<|17.88|>
+
+17
+00:00:38,700 --> 00:00:44,299
+<|startoftranscript|><|0.00|> skyrocket from $8 million a year to $40 million a year.<|5.60|>
+
+18
+00:00:44,299 --> 00:00:50,099
+<|5.60|> Which is just wild. It completely shatters that, well, that fundamental assumption we all have about revenue, right?<|11.40|>
+
+19
+00:00:50,099 --> 00:00:57,700
+<|11.40|> We're so conditioned to believe that sheer volume at the top of the funnel is like the only way to get consistent closings at the bottom.<|19.00|>
+
+20
+00:00:57,700 --> 00:01:00,300
+<|19.00|> Right. It's a numbers game. Right. That's what everyone says.<|21.60|>
+
+21
+00:01:00,300 --> 00:01:02,700
+<|21.60|> Exactly. The whole numbers game myth.<|24.00|>
+
+22
+00:01:02,700 --> 00:01:06,400
+<|startoftranscript|><|0.00|> But the top-tier coaching platforms were looking out for the steep dive.<|3.70|>
+
+23
+00:01:06,400 --> 00:01:08,099
+<|3.70|> They proved the exact opposite.<|5.40|>
+
+24
+00:01:08,099 --> 00:01:14,699
+<|5.40|> They show that high-trusts like hyperconcentrated relationship management vastly outperforms<|12.00|>
+
+25
+00:01:14,699 --> 00:01:17,699
+<|12.00|> just casting this massive generic net.<|15.00|>
+
+26
+00:01:17,699 --> 00:01:22,699
+<|15.00|> And honestly, that counterintuitive reality is the entire foundation of our deep dive today.<|20.00|>
+
+27
+00:01:22,900 --> 00:01:26,900
+<|startoftranscript|><|0.00|> Because we're speaking directly to you, the dedicated, more-to-professional.<|4.00|>
+
+28
+00:01:26,900 --> 00:01:29,540
+<|4.00|> You're probably out there operating in a market where<|6.64|>
+
+29
+00:01:29,540 --> 00:01:32,740
+<|6.64|> let's be real, the variables feel totally out of your control.<|9.84|>
+
+30
+00:01:32,740 --> 00:01:37,300
+<|9.84|> Oh, absolutely. I mean, rates are fluctuating daily, the secondary market is shifting,<|14.40|>
+
+31
+00:01:37,300 --> 00:01:40,500
+<|14.40|> and-- And your pipeline just feels like it's built on a foundation of pure luck.<|17.60|>
+
+32
+00:01:40,500 --> 00:01:42,020
+<|17.60|> Like, you're just waiting for the phone to ring.<|19.12|>
+
+33
+00:01:42,020 --> 00:01:42,339
+<|19.12|> Yeah.<|19.44|>
+
+34
+00:01:42,400 --> 00:01:48,400
+<|startoftranscript|><|0.00|> So today our mission is to examine this literal mountain of top tier mortgage sales training blueprints.<|6.00|>
+
+35
+00:01:48,400 --> 00:01:56,400
+<|6.00|> We're talking internal playbooks from loan factories elite training recorded master classes from absolute legends like Duane Gann, Amir Syed, and<|14.00|>
+
+36
+00:01:57,400 --> 00:02:04,400
+<|15.00|> Master coaches like Todd Duncan. Yeah, these are people personally closing hundreds of millions of dollars in volume every single year.<|22.00|>
+
+37
+00:02:05,000 --> 00:02:09,000
+<|startoftranscript|><|0.00|> And our goal today is to basically extract their exact systems.<|4.00|>
+
+38
+00:02:09,000 --> 00:02:12,000
+<|4.00|> We're going to get super granular on how they manage their databases.<|7.00|>
+
+39
+00:02:12,000 --> 00:02:19,000
+<|7.00|> The precise psychology of their follow-up scripts and those daily mathematical KPIs they track.<|14.00|>
+
+40
+00:02:19,000 --> 00:02:23,000
+<|14.00|> But you know, before we can even get into the tech or the weekly schedule or any of that.<|18.00|>
+
+41
+00:02:23,500 --> 00:02:27,699
+<|startoftranscript|><|0.00|> We really have to look at that initial friction point, the very first phone call.<|4.20|>
+
+42
+00:02:27,699 --> 00:02:28,699
+<|4.20|> Yeah.<|5.20|>
+
+43
+00:02:28,699 --> 00:02:31,899
+<|5.20|> Because if you get that wrong, I mean, none of the other systems matter.<|8.40|>
+
+44
+00:02:31,899 --> 00:02:32,899
+<|8.40|> Right.<|9.40|>
+
+45
+00:02:32,899 --> 00:02:33,899
+<|9.40|> They absolutely don't.<|10.40|>
+
+46
+00:02:33,899 --> 00:02:38,699
+<|10.40|> And the source materials spend so much time dismantling what they call the order taker mentality.<|15.20|>
+
+47
+00:02:38,699 --> 00:02:44,059
+<|15.20|> It's the defining line between being just a transactional middleman and being a predictable<|20.56|>
+
+48
+00:02:44,059 --> 00:02:45,059
+<|20.56|> advisor.<|21.56|>
+
+49
+00:02:45,059 --> 00:02:46,259
+<|21.56|> OK, an order taker.<|22.76|>
+
+50
+00:02:46,259 --> 00:02:47,259
+<|22.76|> Break that down for us.<|23.76|>
+
+51
+00:02:47,259 --> 00:02:48,899
+<|23.76|> What does that actually look like in practice?<|25.40|>
+
+52
+00:02:48,899 --> 00:02:50,699
+<|25.40|> Well, the old model, the order taker model.<|27.20|>
+
+53
+00:02:50,699 --> 00:02:55,119
+<|startoftranscript|><|0.00|> It trains loan officers to study products instead of studying people.<|4.42|>
+
+54
+00:02:55,119 --> 00:03:00,279
+<|4.42|> So, a lead calls and the instant instinct is to just diagnose the transaction.<|9.58|>
+
+55
+00:03:00,279 --> 00:03:05,039
+<|9.58|> The borrower says, "Hey, what's your rate for a 30-year fixed?"<|14.34|>
+
+56
+00:03:05,039 --> 00:03:09,160
+<|14.34|> And the loan officer just immediately launches into quoting rates, points, and fees.<|18.46|>
+
+57
+00:03:09,100 --> 00:03:15,700
+<|startoftranscript|><|0.00|> right, but and I want to push back on this a little bit just to play devil's advocate. Isn't that just answering the question?<|6.60|>
+
+58
+00:03:15,700 --> 00:03:21,420
+<|6.60|> Like if someone calls asking for a price and you refuse to give it, aren't you basically risking them just hanging up?<|12.32|>
+
+59
+00:03:21,420 --> 00:03:28,500
+<|12.32|> I'm I'm putting myself in the shoes of a loan officer who knows this borrower is probably calling three other lenders today.<|19.40|>
+
+60
+00:03:28,500 --> 00:03:31,340
+<|19.40|> Oh for sure. That is the fear and it's totally understandable.<|22.24|>
+
+61
+00:03:31,500 --> 00:03:37,500
+<|startoftranscript|><|0.00|> But the master classes explain this massive psychological trap hidden in that exact interaction.<|6.00|>
+
+62
+00:03:37,500 --> 00:03:42,500
+<|6.00|> When you immediately quote or rate, you implicitly validate the borrower's false assumption.<|11.00|>
+
+63
+00:03:42,500 --> 00:03:47,500
+<|11.00|> You validate the idea that the interest rate is literally the only variable that matters in their entire financial life.<|16.00|>
+
+64
+00:03:47,500 --> 00:03:50,500
+<|16.00|> Wow. Okay, so you're basically commoditizing yourself instantly.<|19.00|>
+
+65
+00:03:50,500 --> 00:03:51,500
+<|19.00|> Yes.<|20.00|>
+
+66
+00:03:51,800 --> 00:03:57,240
+<|startoftranscript|><|0.00|> You kick off this race to the bottom where you're inevitably going to lose to some competitor<|5.44|>
+
+67
+00:03:57,240 --> 00:04:01,720
+<|5.44|> who's offering an eighth of a point less just because, you know, their margin strategy<|9.92|>
+
+68
+00:04:01,720 --> 00:04:04,000
+<|9.92|> for a Tuesday happened to be different than yours.<|12.20|>
+
+69
+00:04:04,000 --> 00:04:07,960
+<|12.20|> So by answering the question directly, you're confirming a flawed premise.<|16.16|>
+
+70
+00:04:07,960 --> 00:04:10,240
+<|16.16|> You're basically letting the patient<|18.44|>
+
+71
+00:04:10,500 --> 00:04:12,500
+<|startoftranscript|><|0.00|> dictate the surgery.<|2.00|>
+
+72
+00:04:12,500 --> 00:04:15,000
+<|2.00|> It's like going to a doctor with a shattered arm.<|4.50|>
+
+73
+00:04:15,000 --> 00:04:17,299
+<|4.50|> And before the doctor even looks at an x-ray,<|6.80|>
+
+74
+00:04:17,299 --> 00:04:21,299
+<|6.80|> they just quote you the retail price of fiberglass cast.<|10.80|>
+
+75
+00:04:21,299 --> 00:04:23,000
+<|10.80|> That is a perfect analogy, yes.<|12.50|>
+
+76
+00:04:23,000 --> 00:04:24,700
+<|12.50|> You don't want the cheapest cast, you know.<|14.20|>
+
+77
+00:04:24,700 --> 00:04:27,299
+<|14.20|> You want the assurance that your arm is going to heal correctly.<|16.80|>
+
+78
+00:04:27,299 --> 00:04:29,500
+<|16.80|> Right. You want the diagnostic x-ray first.<|19.00|>
+
+79
+00:04:29,500 --> 00:04:35,179
+<|startoftranscript|><|0.00|> And true sales mastery, according to these footprints, is all about managing the borrower's<|5.68|>
+
+80
+00:04:35,179 --> 00:04:36,779
+<|5.68|> internal state.<|7.28|>
+
+81
+00:04:36,779 --> 00:04:41,260
+<|7.28|> Because think about it, borrowers are making the largest, most intimidating financial decision<|11.76|>
+
+82
+00:04:41,260 --> 00:04:42,260
+<|11.76|> of their lives.<|12.76|>
+
+83
+00:04:42,260 --> 00:04:45,100
+<|12.76|> They are carrying just an immense amount of uncertainty.<|15.60|>
+
+84
+00:04:45,100 --> 00:04:46,100
+<|15.60|> Oh, totally.<|16.60|>
+
+85
+00:04:46,100 --> 00:04:47,100
+<|16.60|> It's terrifying for them.<|17.60|>
+
+86
+00:04:47,100 --> 00:04:48,100
+<|17.60|> Exactly.<|18.60|>
+
+87
+00:04:48,100 --> 00:04:52,459
+<|18.60|> So elite producers, they understand that their primary job is actually hospitality.<|22.96|>
+
+88
+00:04:52,459 --> 00:04:55,579
+<|22.96|> It's making the borrower feel completely capable, understood, and safe.<|26.08|>
+
+89
+00:04:56,000 --> 00:04:59,000
+<|startoftranscript|><|0.00|> If you manage how they experience that uncertainty,<|3.00|>
+
+90
+00:04:59,000 --> 00:05:02,500
+<|3.00|> the actual interest rate becomes totally secondary to the trust you've built.<|6.50|>
+
+91
+00:05:02,500 --> 00:05:04,000
+<|6.50|> Okay, so let's make this tactical.<|8.00|>
+
+92
+00:05:04,000 --> 00:05:07,000
+<|8.00|> How does an elite producer actually do that on a live call?<|11.00|>
+
+93
+00:05:07,000 --> 00:05:10,000
+<|11.00|> Like the borrower opens with "What are your rates today?"<|14.00|>
+
+94
+00:05:10,000 --> 00:05:14,000
+<|14.00|> What's the actual mechanism to pivot from being an order taker<|18.00|>
+
+95
+00:05:14,000 --> 00:05:18,000
+<|18.00|> to a diagnostician without sounding, you know, evasive or shady?<|22.00|>
+
+96
+00:05:18,000 --> 00:05:22,000
+<|22.00|> So they use a framework detailed in the elite training platform called CSER,<|26.00|>
+
+97
+00:05:22,000 --> 00:05:25,000
+<|26.00|> CSER, it stands for "Clareify."<|29.00|>
+
+98
+00:05:25,200 --> 00:05:29,200
+<|startoftranscript|><|0.00|> cell-davocation, explain concerns, and reinforce decision.<|4.00|>
+
+99
+00:05:29,200 --> 00:05:33,200
+<|4.00|> And it's that very first stage clarify where you completely alter the power dynamic of the call.<|8.00|>
+
+100
+00:05:33,200 --> 00:05:37,200
+<|8.00|> Okay, walk me through the mechanics of that pivot. How does the clarify stage actually sound?<|12.00|>
+
+101
+00:05:37,200 --> 00:05:43,200
+<|12.00|> Well, when the borrower asks for the rate, the elite loan officer validates it,<|18.00|>
+
+102
+00:05:43,200 --> 00:05:45,200
+<|18.00|> but they immediately establish boundaries.<|20.00|>
+
+103
+00:05:45,600 --> 00:06:13,700
+<|startoftranscript|><|nocaptions|><|endoftext|>
+
+104
+00:06:13,700 --> 00:06:19,680
+<|startoftranscript|><|0.00|> man, that completely shifts the leverage because you're positioning the blind<|5.98|>
+
+105
+00:06:19,680 --> 00:06:23,320
+<|5.98|> rate quote as a dangerous financial risk for them. Precisely, you get them to<|9.62|>
+
+106
+00:06:23,320 --> 00:06:26,600
+<|9.62|> drop their guard because you're showing that your priority is accuracy in their<|12.90|>
+
+107
+00:06:26,600 --> 00:06:30,559
+<|12.90|> long-term safety, not just, you know, rushing to close a sale. Right. And once you've<|16.86|>
+
+108
+00:06:30,559 --> 00:06:36,380
+<|16.86|> earned the right to ask questions, you enter that deep clarify stage.<|22.68|>
+
+109
+00:06:34,500 --> 00:06:38,500
+<|startoftranscript|><|0.00|> your goal here is to find their absolute deepest financial pain point.<|4.00|>
+
+110
+00:06:38,500 --> 00:06:42,500
+<|4.00|> The blueprints actually give a really specific example of this, right?<|8.00|>
+
+111
+00:06:42,500 --> 00:06:44,500
+<|8.00|> With a cash out refinance.<|10.00|>
+
+112
+00:06:44,500 --> 00:06:49,500
+<|10.00|> How does the average loan officer handle a refi versus someone using CSER?<|15.00|>
+
+113
+00:06:49,500 --> 00:06:54,500
+<|15.00|> Yeah, so the average loan officer takes the application, sees the property value,<|20.00|>
+
+114
+00:06:54,500 --> 00:06:58,500
+<|20.00|> calculates the equity, and just quotes a cash out rate.<|24.00|>
+
+115
+00:06:58,500 --> 00:07:00,500
+<|24.00|> They're looking entirely at the real estate.<|26.00|>
+
+116
+00:07:00,399 --> 00:07:05,399
+<|startoftranscript|><|0.00|> But the elite loan officer using CSER looks at the human being.<|5.00|>
+
+117
+00:07:05,399 --> 00:07:10,399
+<|5.00|> During that clarify stage, they ask probing questions about the borrower's total debt load.<|10.00|>
+
+118
+00:07:10,399 --> 00:07:11,399
+<|10.00|> Not just the house.<|11.00|>
+
+119
+00:07:11,399 --> 00:07:12,399
+<|11.00|> Right.<|12.00|>
+
+120
+00:07:12,399 --> 00:07:17,399
+<|12.00|> And they uncover that, you know, this borrower isn't just looking for a lower rate on their mortgage.<|17.00|>
+
+121
+00:07:17,399 --> 00:07:20,399
+<|17.00|> They're drowning in $150,000 of credit card.<|20.00|>
+
+122
+00:07:20,299 --> 00:07:21,299
+<|startoftranscript|><|0.00|> debt.<|1.00|>
+
+123
+00:07:21,299 --> 00:07:22,299
+<|1.00|> Wow.<|2.00|>
+
+124
+00:07:22,299 --> 00:07:25,419
+<|2.00|> And credit card debt carries a fundamentally different emotional weight than a mortgage<|5.12|>
+
+125
+00:07:25,419 --> 00:07:26,419
+<|5.12|> desk.<|6.12|>
+
+126
+00:07:26,419 --> 00:07:27,419
+<|6.12|> Totally different.<|7.12|>
+
+127
+00:07:27,419 --> 00:07:29,859
+<|7.12|> Credit card debt at like 24% interest is suffocating.<|9.56|>
+
+128
+00:07:29,859 --> 00:07:31,619
+<|9.56|> It keeps people up at night.<|11.32|>
+
+129
+00:07:31,619 --> 00:07:35,179
+<|11.32|> So the elite originator asks questions to quantify that pain.<|14.88|>
+
+130
+00:07:35,179 --> 00:07:39,699
+<|14.88|> The less, how much is that 150,000 costing you every month in minimum payments?<|19.40|>
+
+131
+00:07:39,699 --> 00:07:40,699
+<|19.40|> Right.<|20.40|>
+
+132
+00:07:40,699 --> 00:07:41,699
+<|20.40|> Getting to the actual monthly bleed.<|21.40|>
+
+133
+00:07:41,699 --> 00:07:42,699
+<|21.40|> Exactly.<|22.40|>
+
+134
+00:07:42,699 --> 00:07:46,619
+<|22.40|> Let's say it's eating up $1,500 of their monthly budget.<|26.32|>
+
+135
+00:07:46,619 --> 00:07:48,699
+<|26.32|> Then you ask the crucial psychological question.<|28.40|>
+
+136
+00:07:48,700 --> 00:07:53,500
+<|startoftranscript|><|0.00|> What is that $1,500 monthly drain preventing you from doing?<|4.80|>
+
+137
+00:07:53,500 --> 00:07:54,700
+<|4.80|> Oh wow.<|6.00|>
+
+138
+00:07:54,700 --> 00:07:59,180
+<|6.00|> So you're forcing them to vocalize the secondary consequences of their debt.<|10.48|>
+
+139
+00:07:59,180 --> 00:08:05,540
+<|10.48|> They might say, "It's keeping me from saving from my kids' college or it's causing constant<|16.84|>
+
+140
+00:08:05,540 --> 00:08:06,740
+<|16.84|> fights with my spouse."<|18.04|>
+
+141
+00:08:06,740 --> 00:08:07,740
+<|18.04|> Yes.<|19.04|>
+
+142
+00:08:07,740 --> 00:08:09,580
+<|19.04|> Now you've identified the bleeding artery.<|20.88|>
+
+143
+00:08:09,580 --> 00:08:11,020
+<|20.88|> You've found the real problem.<|22.32|>
+
+144
+00:08:11,100 --> 00:08:15,100
+<|startoftranscript|><|0.00|> And that's when you transition to the second phase of CSER, which is cell vacation.<|4.00|>
+
+145
+00:08:15,100 --> 00:08:16,100
+<|4.00|> Cell vacation.<|5.00|>
+
+146
+00:08:16,100 --> 00:08:17,100
+<|5.00|> Right.<|6.00|>
+
+147
+00:08:17,100 --> 00:08:18,100
+<|6.00|> This means you don't sell the airplane flight.<|7.00|>
+
+148
+00:08:18,100 --> 00:08:21,100
+<|7.00|> The flight is the mortgage transaction, the underwriting the paperwork.<|10.00|>
+
+149
+00:08:21,100 --> 00:08:23,100
+<|10.00|> Nobody wants the flight.<|12.00|>
+
+150
+00:08:23,100 --> 00:08:24,100
+<|12.00|> You've sell the destination.<|13.00|>
+
+151
+00:08:24,100 --> 00:08:25,100
+<|13.00|> You've sell the relief.<|14.00|>
+
+152
+00:08:25,100 --> 00:08:26,100
+<|14.00|> Okay.<|15.00|>
+
+153
+00:08:26,100 --> 00:08:30,100
+<|15.00|> So instead of saying, I can get you a 6.5% cash out refinance.<|19.00|>
+
+154
+00:08:30,100 --> 00:08:33,099
+<|19.00|> How do you actually articulate the vacation?<|22.00|>
+
+155
+00:08:33,099 --> 00:08:37,099
+<|22.00|> You anchor the loan entirely to their survival and their personal goals.<|26.00|>
+
+156
+00:08:37,099 --> 00:08:38,099
+<|26.00|> You say, "Look.<|27.00|>
+
+157
+00:08:38,599 --> 00:08:43,759
+<|startoftranscript|><|0.00|> If we restructure your mortgage today, yes, your primary mortgage rate might be slightly<|5.16|>
+
+158
+00:08:43,759 --> 00:08:49,119
+<|5.16|> different than it was three years ago, but we are going to completely wipe out that 150<|10.52|>
+
+159
+00:08:49,119 --> 00:08:51,000
+<|10.52|> grand and credit card debt.<|12.40|>
+
+160
+00:08:51,000 --> 00:08:51,000
+<|12.40|> We're going to instantly put $1,500 a month back into your<|endoftext|>
+
+161
+00:08:54,099 --> 00:08:59,779
+<|startoftranscript|><|0.00|> you're checking account, which is massive. Right. That's $18,000 a year of tax-free cash flow<|5.68|>
+
+162
+00:08:59,779 --> 00:09:03,739
+<|5.68|> that you get back to start fully funding that college account and take the pressure off<|9.64|>
+
+163
+00:09:03,739 --> 00:09:09,619
+<|9.64|> your marriage. When you frame it like that, I mean, the $18,000 a year in new cash flow<|15.52|>
+
+164
+00:09:09,900 --> 00:09:15,660
+<|startoftranscript|><|0.00|> Completely dwarfs some microscopic argument over an eighth of a point on the mortgage rate.<|5.76|>
+
+165
+00:09:15,660 --> 00:09:18,980
+<|5.76|> The borrower isn't looking at you as a human calculator anymore.<|9.08|>
+
+166
+00:09:18,980 --> 00:09:21,260
+<|9.08|> They're looking at you as a financial savior.<|11.36|>
+
+167
+00:09:21,260 --> 00:09:22,260
+<|11.36|> Exactly.<|12.36|>
+
+168
+00:09:22,260 --> 00:09:24,420
+<|12.36|> You solved a massive life problem.<|14.52|>
+
+169
+00:09:24,420 --> 00:09:28,980
+<|14.52|> By the time you move to explain concerns, which is where you transparently discuss any<|19.08|>
+
+170
+00:09:28,980 --> 00:09:32,580
+<|19.08|> closing costs or appraisal risks and then reinforce decision,<|22.68|>
+
+171
+00:09:32,599 --> 00:09:44,599
+<|startoftranscript|><|0.00|> The trust is just cemented. They are totally immune to being poached by a competitor because the competitor is still calling them talking about a 30 year fixed rate while you're talking about their child's college tuition.<|12.00|>
+
+172
+00:09:44,599 --> 00:09:49,599
+<|12.00|> That's so powerful. It also brings up this concept of Masterclass to talk about the three-option lender.<|17.00|>
+
+173
+00:09:50,000 --> 00:09:55,880
+<|startoftranscript|><|0.00|> Once you've clarified the pain and sold the vacation, how do you present the actual math?<|5.88|>
+
+174
+00:09:55,880 --> 00:09:59,840
+<|5.88|> Because clearly you don't just push one single loan product across the desk and say take<|9.84|>
+
+175
+00:09:59,840 --> 00:10:00,840
+<|9.84|> it or leave it.<|10.84|>
+
+176
+00:10:00,840 --> 00:10:01,840
+<|10.84|> No, not at all.<|11.84|>
+
+177
+00:10:01,840 --> 00:10:04,559
+<|11.84|> The psychology of choice architecture is vital here.<|14.56|>
+
+178
+00:10:04,559 --> 00:10:08,400
+<|14.56|> As the three-option lender, you tell the borrower up front very early in the conversation.<|18.40|>
+
+179
+00:10:08,400 --> 00:10:13,900
+<|startoftranscript|><|0.00|> that your process is to always provide three distinct options that match their specific goals.<|5.50|>
+
+180
+00:10:13,900 --> 00:10:19,400
+<|5.50|> But wait, why specifically three? If you've done the diagnostic x-ray and you know what's best for them,<|11.00|>
+
+181
+00:10:19,400 --> 00:10:22,400
+<|11.00|> why not just present this single most optimal solution?<|14.00|>
+
+182
+00:10:22,400 --> 00:10:27,400
+<|14.00|> Because human beings have this innate psychological need for autonomy and comparison.<|19.00|>
+
+183
+00:10:28,000 --> 00:10:35,000
+<|startoftranscript|><|0.00|> If you present just one option, the borrower's brain instinctively goes, "Well, is this the best deal out there?"<|7.00|>
+
+184
+00:10:35,000 --> 00:10:39,000
+<|7.00|> And they'll feel this huge urge to call another lender just to compare.<|11.00|>
+
+185
+00:10:39,000 --> 00:10:42,000
+<|11.00|> Okay, I do that all the time when I'm shopping for anything.<|14.00|>
+
+186
+00:10:42,000 --> 00:10:43,000
+<|14.00|> We all do.<|15.00|>
+
+187
+00:10:43,000 --> 00:10:47,000
+<|15.00|> But if you present three carefully structured options,<|19.00|>
+
+188
+00:10:46,700 --> 00:10:51,940
+<|startoftranscript|><|0.00|> like maybe one with the lowest out of pocket costs, one with the lowest monthly payment,<|5.24|>
+
+189
+00:10:51,940 --> 00:10:56,900
+<|5.24|> and one that pays off the debt the fastest, you satisfy that psychological urge to shop<|10.20|>
+
+190
+00:10:56,900 --> 00:10:59,340
+<|10.20|> around because you're doing the shopping for them.<|12.64|>
+
+191
+00:10:59,340 --> 00:11:00,340
+<|12.64|> That makes perfect sense.<|13.64|>
+
+192
+00:11:00,340 --> 00:11:02,700
+<|13.64|> You've essentially built a walled garden of choices.<|16.00|>
+
+193
+00:11:02,900 --> 00:11:07,100
+<|startoftranscript|><|0.00|> They're comparing your options against each other, and setting a pairing you against some<|4.20|>
+
+194
+00:11:07,100 --> 00:11:08,820
+<|4.20|> other lender down the street.<|5.92|>
+
+195
+00:11:08,820 --> 00:11:12,119
+<|5.92|> And the transcripts note that you explicitly tell them it doesn't matter to you which<|9.22|>
+
+196
+00:11:12,119 --> 00:11:13,540
+<|9.22|> option they choose.<|10.64|>
+
+197
+00:11:13,540 --> 00:11:16,740
+<|10.64|> That detachment is the ultimate confidence play.<|13.84|>
+
+198
+00:11:16,740 --> 00:11:22,260
+<|13.84|> Amir Syad, one of the top originators we studied for this, he emphasizes this heavily.<|19.36|>
+
+199
+00:11:22,260 --> 00:11:26,740
+<|19.36|> He tells borrowers his personal policy is to never convince anyone to refinance when the<|23.84|>
+
+200
+00:11:26,740 --> 00:11:27,740
+<|23.84|> math doesn't make sense.<|24.84|>
+
+201
+00:11:27,799 --> 00:11:31,799
+<|startoftranscript|><|0.00|> He tells him right up front, "My priority is the math."<|4.00|>
+
+202
+00:11:31,799 --> 00:11:36,799
+<|4.00|> If the math tells us we need to wait six months, I will be the first one to tell you to wait.<|9.00|>
+
+203
+00:11:36,799 --> 00:11:41,799
+<|9.00|> The moment you tell a prospect that you're literally willing to walk away from a commission to protect them,<|14.00|>
+
+204
+00:11:41,799 --> 00:11:45,799
+<|14.00|> you instantly elevate yourself from a salesperson to a fiduciary advisor.<|18.00|>
+
+205
+00:11:45,799 --> 00:11:47,799
+<|18.00|> It creates an incredibly safe environment.<|20.00|>
+
+206
+00:11:47,799 --> 00:11:51,799
+<|20.00|> They feel zero pressure, which ironically makes them much more likely to commit to you.<|24.00|>
+
+207
+00:11:52,400 --> 00:11:58,000
+<|startoftranscript|><|0.00|> Right, but I mean this level of consultative selling, it requires a tremendous amount of focus<|5.60|>
+
+208
+00:11:58,000 --> 00:11:59,440
+<|5.60|> in relational bandwidth.<|7.04|>
+
+209
+00:11:59,440 --> 00:12:03,520
+<|7.04|> You can't have this depth of conversation with a thousand cold internet leads every<|11.12|>
+
+210
+00:12:03,520 --> 00:12:04,520
+<|11.12|> month.<|12.12|>
+
+211
+00:12:04,520 --> 00:12:07,600
+<|12.12|> Which leads us perfectly into the data on database management.<|15.20|>
+
+212
+00:12:07,600 --> 00:12:11,520
+<|15.20|> We mentioned that Todd Duncan case study earlier, the agent who cut his database from<|19.12|>
+
+213
+00:12:11,520 --> 00:12:15,440
+<|19.12|> 2800 to 110 people and his volume jumped to 40 million.<|23.04|>
+
+214
+00:12:15,700 --> 00:12:18,900
+<|startoftranscript|><|0.00|> We have to deconstruct why that is mathematically possible.<|3.20|>
+
+215
+00:12:18,900 --> 00:12:23,580
+<|3.20|> It really comes down to understanding the difference between a contact and a relationship.<|7.88|>
+
+216
+00:12:23,580 --> 00:12:28,540
+<|7.88|> When an originator has 2,800 people in a database, it is physically impossible to maintain<|12.84|>
+
+217
+00:12:28,540 --> 00:12:30,580
+<|12.84|> any meaningful dialogue with them.<|14.88|>
+
+218
+00:12:30,580 --> 00:12:35,100
+<|14.88|> You're just relegated to sending generic, automated newsletters that no one actually reads.<|19.40|>
+
+219
+00:12:35,100 --> 00:12:36,500
+<|19.40|> Right, straight to the spam folder.<|20.80|>
+
+220
+00:12:36,500 --> 00:12:37,500
+<|20.80|> Exactly.<|21.80|>
+
+221
+00:12:37,500 --> 00:12:41,619
+<|21.80|> You're spread so thin that you add zero, unique value to anyone's life.<|25.92|>
+
+222
+00:12:41,700 --> 00:12:49,700
+<|startoftranscript|><|0.00|> But playing devil's advocate again, a database of 2800 people means more potential surface area for a random transaction.<|8.00|>
+
+223
+00:12:49,700 --> 00:12:57,700
+<|8.00|> By cutting it to 110, you are deliberately turning your back on over 2,600 people who might buy a house.<|16.00|>
+
+224
+00:12:57,700 --> 00:13:01,700
+<|16.00|> Yes, but you're turning your back on the randomness to focus on deliberate influence.<|20.00|>
+
+225
+00:13:01,400 --> 00:13:06,400
+<|startoftranscript|><|0.00|> The coaching strategy here is about identifying nodes of high concentration.<|5.00|>
+
+226
+00:13:06,400 --> 00:13:11,480
+<|5.00|> The people who belong in that elite 110 list, they aren't just past clients, they are individuals<|10.08|>
+
+227
+00:13:11,480 --> 00:13:14,720
+<|10.08|> with outsized influence in their respective networks.<|13.32|>
+
+228
+00:13:14,720 --> 00:13:19,100
+<|13.32|> When you dedicate your time to providing unbelievable value and high trust hospitality to<|17.70|>
+
+229
+00:13:19,100 --> 00:13:22,680
+<|17.70|> 110 influential people, the law reciprocity kicks.<|21.28|>
+
+230
+00:13:22,700 --> 00:13:24,980
+<|startoftranscript|><|0.00|> They become an unpaid sales force for you.<|2.28|>
+
+231
+00:13:24,980 --> 00:13:29,460
+<|2.28|> The sources actually illustrate this with a specific narrative they call the ophthalmologist<|6.76|>
+
+232
+00:13:29,460 --> 00:13:30,760
+<|6.76|> story.<|8.06|>
+
+233
+00:13:30,760 --> 00:13:35,580
+<|8.06|> Let's walk through the mechanics of how one well managed relationship cascaded into this<|12.88|>
+
+234
+00:13:35,580 --> 00:13:36,580
+<|12.88|> massive pipeline.<|13.88|>
+
+235
+00:13:36,580 --> 00:13:37,859
+<|13.88|> It's a great example.<|15.16|>
+
+236
+00:13:37,859 --> 00:13:42,979
+<|15.16|> So, it began with a loan officer executing a flawless transaction for a local doctor.<|20.28|>
+
+237
+00:13:43,099 --> 00:13:46,579
+<|startoftranscript|><|0.00|> Because the loan officer used that CSER framework,<|3.48|>
+
+238
+00:13:46,579 --> 00:13:49,619
+<|3.48|> managed the internal state of uncertainty beautifully,<|6.52|>
+
+239
+00:13:49,619 --> 00:13:52,519
+<|6.52|> and acted as an advisor instead of an order taker,<|9.42|>
+
+240
+00:13:52,519 --> 00:13:55,519
+<|9.42|> the doctor's experience was incredibly memorable.<|12.42|>
+
+241
+00:13:55,519 --> 00:13:59,119
+<|12.42|> And people of high status tend to associate with other people of high status.<|16.02|>
+
+242
+00:13:59,119 --> 00:14:02,519
+<|16.02|> Right, so the doctor referred the loan officer to a trusted peer<|19.42|>
+
+243
+00:14:02,519 --> 00:14:04,299
+<|19.42|> who happened to be an ophthalmologist.<|21.20|>
+
+244
+00:14:04,299 --> 00:14:08,099
+<|21.20|> The loan officer delivered the exact same high-trust experience.<|25.00|>
+
+245
+00:14:08,200 --> 00:14:13,200
+<|startoftranscript|><|0.00|> But here is where the leverage of that on-ten list really becomes apparent.<|5.00|>
+
+246
+00:14:13,200 --> 00:14:18,140
+<|5.00|> Six months after that closing, the ophthalmologist was promoted to the chief medical executive<|9.94|>
+
+247
+00:14:18,140 --> 00:14:20,919
+<|9.94|> for a massive regional hospital system.<|12.72|>
+
+248
+00:14:20,919 --> 00:14:24,119
+<|12.72|> Oh wow, a hospital system with hundreds of physicians, right?<|15.92|>
+
+249
+00:14:24,119 --> 00:14:25,799
+<|15.92|> 750 physicians to...<|17.60|>
+
+250
+00:14:25,799 --> 00:14:29,200
+<|startoftranscript|><|0.00|> be exact and roughly 2000 nurses.<|3.40|>
+
+251
+00:14:29,200 --> 00:14:33,679
+<|3.40|> Because the loan officer had invested the time to build a deep personal relationship<|7.88|>
+
+252
+00:14:33,679 --> 00:14:39,000
+<|7.88|> with that one ophthalmologist, he essentially became the de facto trusted lending partner<|13.20|>
+
+253
+00:14:39,000 --> 00:14:41,880
+<|13.20|> for the entire hospital network.<|16.08|>
+
+254
+00:14:41,880 --> 00:14:45,479
+<|16.08|> When the hospital recruited a new physician who needed to relocate, the chief medical<|19.68|>
+
+255
+00:14:45,479 --> 00:14:48,760
+<|19.68|> executive personally recommended this specific loan officer.<|22.96|>
+
+256
+00:14:48,799 --> 00:14:55,799
+<|startoftranscript|><|0.00|> And the data shows that a referral handed down from an executive to a new hire carries an incredibly high conversion rate.<|7.00|>
+
+257
+00:14:55,799 --> 00:15:00,799
+<|7.00|> You bypass the whole rate shopping phase completely because the truck is just transferred by proxy.<|12.00|>
+
+258
+00:15:00,799 --> 00:15:13,799
+<|12.00|> The source material noted that the real estate partner involved in this single hospital network ended up generating $70 million in real estate volume, all from curating one relationship deeply rather than chasing a thousand cold leads.<|25.00|>
+
+259
+00:15:13,799 --> 00:15:17,299
+<|startoftranscript|><|0.00|> That is the power of drafting behind someone else's influence.<|3.50|><|endoftext|>
+
+260
+00:15:17,299 --> 00:15:22,899
+<|startoftranscript|><|0.00|> But to your earlier point about bandwidth, even managing 110 highly active, high-networked<|5.60|>
+
+261
+00:15:22,899 --> 00:15:28,700
+<|5.60|> relationships while also running a pipeline of active files, it requires rigorous infrastructure.<|11.40|>
+
+262
+00:15:28,700 --> 00:15:30,899
+<|11.40|> A legal pad and a spreadsheet will fail you.<|13.60|>
+
+263
+00:15:30,899 --> 00:15:32,500
+<|13.60|> "Alright, there are only so many hours in a day."<|15.20|>
+
+264
+00:15:32,500 --> 00:15:33,500
+<|15.20|> "Exactly."<|16.20|>
+
+265
+00:15:33,500 --> 00:15:37,659
+<|16.20|> And this is where the proprietary technology frameworks detailed in the sources, particularly<|20.36|>
+
+266
+00:15:37,659 --> 00:15:43,899
+<|20.36|> loan factories, MOSO and Terra platforms, redefine how passive lead generation works.<|26.60|>
+
+267
+00:15:43,900 --> 00:15:50,900
+<|startoftranscript|><|0.00|> The integration of tech here is fascinating because it's not being used to replace the human relationship.<|7.00|>
+
+268
+00:15:50,900 --> 00:15:57,900
+<|7.00|> It's being used to fiercely protect the loan officers' time so they can engage in more human relationships.<|14.00|>
+
+269
+00:15:57,900 --> 00:16:00,900
+<|14.00|> Let's talk about the friction of traditional database monitoring.<|17.00|>
+
+270
+00:16:01,500 --> 00:16:08,500
+<|startoftranscript|><|0.00|> In the past, if you wanted to know if a past client could benefit from a refinance, what was the actual operational process?<|7.00|>
+
+271
+00:16:08,500 --> 00:16:23,500
+<|7.00|> It was overwhelmingly manual. You'd have to remember the client, look up their original closing docs to find their note rate, look up today's current market rates across multiple wholesale lenders, manually calculate the new potential payment, and then call them to pitch the idea.<|22.00|>
+
+272
+00:16:22,799 --> 00:16:25,080
+<|startoftranscript|><|0.00|> Which means it almost never happens.<|2.28|>
+
+273
+00:16:25,080 --> 00:16:29,399
+<|2.28|> If the market dips on a Tuesday afternoon while you're in back-to-back consultations,<|6.60|>
+
+274
+00:16:29,399 --> 00:16:31,080
+<|6.60|> you completely miss the window.<|8.28|>
+
+275
+00:16:31,080 --> 00:16:33,080
+<|8.28|> Right, you miss it entirely.<|10.28|>
+
+276
+00:16:33,080 --> 00:16:37,479
+<|10.28|> But the Terra platform fundamentally changes this by introducing automated radar alerts.<|14.68|>
+
+277
+00:16:37,479 --> 00:16:41,039
+<|14.68|> It basically functions like a financial thermostat for your database.<|18.24|>
+
+278
+00:16:41,099 --> 00:16:45,979
+<|startoftranscript|><|0.00|> A really one who's floor that financial thermostat concept, how does a loan officer actually<|4.88|>
+
+279
+00:16:45,979 --> 00:16:48,259
+<|4.88|> set this up mechanically within the software?<|7.16|>
+
+280
+00:16:48,259 --> 00:16:52,179
+<|7.16|> Well, when you close a loan or even when you speak to a prospect who just isn't ready<|11.08|>
+
+281
+00:16:52,179 --> 00:16:56,699
+<|11.08|> yet, you enter them into the terrorist system, you log their current interest rate.<|15.60|>
+
+282
+00:16:56,700 --> 00:17:04,020
+<|startoftranscript|><|0.00|> Then you set a specific target rate, for instance, exactly.75% below their current note rate,<|7.32|>
+
+283
+00:17:04,020 --> 00:17:08,699
+<|7.32|> which is typically the threshold where a refinance just becomes mathematically undeniable.<|12.00|>
+
+284
+00:17:08,699 --> 00:17:10,739
+<|12.00|> Okay, and then the loan officer just walks away.<|14.04|>
+
+285
+00:17:10,739 --> 00:17:12,900
+<|14.04|> They walk away and focus on their 110 list.<|16.20|>
+
+286
+00:17:12,900 --> 00:17:17,979
+<|16.20|> The Terra system is continuously plugged into the live pricing engines of over 240 wholesale<|21.28|>
+
+287
+00:17:17,979 --> 00:17:18,579
+<|21.28|> lenders.<|21.88|>
+
+288
+00:17:18,599 --> 00:17:21,400
+<|startoftranscript|><|0.00|> It constantly monitors the market in the background.<|2.80|>
+
+289
+00:17:21,400 --> 00:17:27,119
+<|2.80|> The secondary market shifts and one of those 240 lenders offers a rate that hits that point<|8.52|>
+
+290
+00:17:27,119 --> 00:17:30,599
+<|8.52|> 7-5% threshold, the system triggers automatically.<|12.00|>
+
+291
+00:17:30,599 --> 00:17:31,599
+<|12.00|> No way.<|13.00|>
+
+292
+00:17:31,599 --> 00:17:35,099
+<|13.00|> It fires off an instant alert to both you and the borrower.<|16.50|>
+
+293
+00:17:35,099 --> 00:17:40,400
+<|16.50|> So the borrower receives a notification, essentially saying, "Hey, the market just hit the<|21.80|>
+
+294
+00:17:40,400 --> 00:17:43,900
+<|21.80|> exact target we discussed to save you $400 a month."<|25.30|>
+
+295
+00:17:44,300 --> 00:17:47,460
+<|startoftranscript|><|0.00|> and loan officer gets an alert to follow up right then.<|3.16|>
+
+296
+00:17:47,460 --> 00:17:52,500
+<|3.16|> It completely removes human error and the limitation of time from the equation.<|8.20|>
+
+297
+00:17:52,500 --> 00:17:56,060
+<|8.20|> It is the definition of a passive lead generation system.<|11.76|>
+
+298
+00:17:56,060 --> 00:18:01,700
+<|11.76|> You're generating mathematically qualified leads based on real-time market data while you're sleeping,<|17.40|>
+
+299
+00:18:01,700 --> 00:18:04,580
+<|17.40|> or while you're doing a deep dive consultation with someone else.<|20.28|>
+
+300
+00:18:04,599 --> 00:18:08,760
+<|startoftranscript|><|0.00|> And the sources take this a step further with the integration of AI, specifically the<|4.16|>
+
+301
+00:18:08,760 --> 00:18:11,359
+<|4.16|> Tiro-pylon AI pipeline.<|6.76|>
+
+302
+00:18:11,359 --> 00:18:14,640
+<|6.76|> Because generating the lead is only half the battle, right?<|10.04|>
+
+303
+00:18:14,640 --> 00:18:19,079
+<|10.04|> Once the borrower says, "Yes, let's do the refinance," you still have the massive administrative<|14.48|>
+
+304
+00:18:19,079 --> 00:18:20,359
+<|14.48|> burden of qualifying them.<|15.76|>
+
+305
+00:18:20,400 --> 00:18:22,599
+<|startoftranscript|><|0.00|> How does the AI step in here?<|2.20|>
+
+306
+00:18:22,599 --> 00:18:26,400
+<|2.20|> Well, the traditional intake process involves the borrower uploading W2s,<|6.00|>
+
+307
+00:18:26,400 --> 00:18:29,700
+<|6.00|> pay stubs, bank statements, and then the loan officer has to sit down,<|9.30|>
+
+308
+00:18:29,700 --> 00:18:32,700
+<|9.30|> audit those documents, calculate the qualifying income,<|12.30|>
+
+309
+00:18:32,700 --> 00:18:36,400
+<|12.30|> which can be incredibly complex with variable commission or self-employed income,<|16.00|>
+
+310
+00:18:36,400 --> 00:18:40,099
+<|16.00|> and then manually calculate the debt to income ratio or DTI.<|19.70|>
+
+311
+00:18:40,099 --> 00:18:43,599
+<|19.70|> Oh yeah, I've seen originally to spend three hours just trying to calculate<|23.20|>
+
+312
+00:18:43,599 --> 00:18:46,000
+<|23.20|> complex income to see if a file is even viable.<|25.60|>
+
+313
+00:18:46,000 --> 00:18:49,099
+<|25.60|> The TRIP-ILON AI eliminates that manual labor.<|28.70|>
+
+314
+00:18:49,099 --> 00:18:52,599
+<|startoftranscript|><|0.00|> When the documents are uploaded, the AI automatically reads them.<|3.50|>
+
+315
+00:18:52,599 --> 00:18:58,099
+<|3.50|> It audits the docs for accuracy, cross-references the data, and instantly calculates the DTI.<|9.00|>
+
+316
+00:18:58,099 --> 00:19:01,099
+<|9.00|> That is a staggering operational advantage.<|12.00|>
+
+317
+00:19:01,099 --> 00:19:06,599
+<|12.00|> You are effectively outsourcing the complex math and the administrative grunt work to the machine.<|17.50|>
+
+318
+00:19:06,599 --> 00:19:09,599
+<|17.50|> Which is the core philosophy of these elite blueprints.<|20.50|>
+
+319
+00:19:09,599 --> 00:19:15,599
+<|20.50|> Your CRM has to evolve from being just a static digital address book into an active relationship engine.<|26.50|>
+
+320
+00:19:15,300 --> 00:19:22,300
+<|startoftranscript|><|0.00|> You automate the math so that you have the mental energy to be a better, more present human advisor during those CSCR consultations.<|7.00|>
+
+321
+00:19:22,300 --> 00:19:27,300
+<|7.00|> But even with an AI-powered relationship engine and a curated list of influential partners,<|12.00|>
+
+322
+00:19:27,300 --> 00:19:31,300
+<|12.00|> predictable income still relies heavily on the discipline of follow-up.<|16.00|>
+
+323
+00:19:31,300 --> 00:19:35,300
+<|16.00|> I mean, a perfectly calculated DTI means nothing if the borrower ghosts you.<|20.00|>
+
+324
+00:19:35,800 --> 00:19:40,360
+<|startoftranscript|><|0.00|> And this brings us to a part of the data that is genuinely shocking regarding the industry<|4.56|>
+
+325
+00:19:40,360 --> 00:19:42,160
+<|4.56|> standard for follow-up cadences.<|6.36|>
+
+326
+00:19:42,160 --> 00:19:48,160
+<|6.36|> Yeah, the data regarding follow-up is quite grim, but it highlights a massive competitive vacuum,<|12.36|>
+
+327
+00:19:48,160 --> 00:19:51,600
+<|12.36|> a survey of over 26,000 loan officers.<|15.80|>
+
+328
+00:19:51,599 --> 00:19:57,280
+<|startoftranscript|><|0.00|> Heavily referenced in the Todd Duncan materials, revealed that only 3% of loan officers<|5.68|>
+
+329
+00:19:57,280 --> 00:20:02,119
+<|5.68|> rate their own follow-up skills with referral partners as a 5 out of 5.<|10.52|>
+
+330
+00:20:02,119 --> 00:20:07,039
+<|10.52|> And worse, only 1 in 4 loan officers actually contact their real estate partners on a weekly<|15.44|>
+
+331
+00:20:07,039 --> 00:20:07,039
+<|15.44|> basis for business<|endoftext|>
+
+332
+00:20:08,000 --> 00:20:13,280
+<|startoftranscript|><|0.00|> development. That statistic is staggering. 97% of your competition admits they are<|5.28|>
+
+333
+00:20:13,280 --> 00:20:17,040
+<|5.28|> dropping the ball on following up with the very people who supply their livelihood.<|9.04|>
+
+334
+00:20:17,040 --> 00:20:21,239
+<|9.04|> And 75% aren't even making a single weekly phone call to their partners.<|13.24|>
+
+335
+00:20:21,239 --> 00:20:25,719
+<|13.24|> Why is there such a massive execution failure across the industry?<|17.72|>
+
+336
+00:20:25,719 --> 00:20:29,719
+<|17.72|> It primarily stems from psychological dread. Most loan officers have been<|21.72|>
+
+337
+00:20:29,719 --> 00:20:33,040
+<|21.72|> taught a follow up model that feels entirely parasitic. They call a real estate<|25.04|>
+
+338
+00:20:33,040 --> 00:20:36,280
+<|25.04|> agent and say, "Hey, just checking in. Do you have any buyers this weekend? Please send me a deal."<|28.28|>
+
+339
+00:20:36,500 --> 00:20:39,619
+<|startoftranscript|><|0.00|> They're constantly asking for value rather than providing it.<|3.12|>
+
+340
+00:20:39,619 --> 00:20:40,739
+<|3.12|> It feels like begging.<|4.24|>
+
+341
+00:20:40,739 --> 00:20:43,979
+<|4.24|> And human beings naturally avoid activities that lower their start-as.<|7.48|>
+
+342
+00:20:43,979 --> 00:20:46,699
+<|7.48|> It's exhausting to constantly ask for handouts.<|10.20|>
+
+343
+00:20:46,699 --> 00:20:48,300
+<|10.20|> I wouldn't want to make those calls either.<|11.80|>
+
+344
+00:20:48,300 --> 00:20:50,859
+<|11.80|> So how do the blueprints instruct an elite producer<|14.36|>
+
+345
+00:20:50,859 --> 00:20:53,540
+<|14.36|> to stay top of mind without begging?<|17.04|>
+
+346
+00:20:53,540 --> 00:20:56,180
+<|17.04|> They teach a framework called the Realtor Value Loop.<|19.68|>
+
+347
+00:20:56,180 --> 00:20:58,819
+<|19.68|> The core premise is that you must position yourself<|22.32|>
+
+348
+00:20:58,819 --> 00:21:01,739
+<|22.32|> as an indispensable data-driven market expert.<|25.24|>
+
+349
+00:21:01,699 --> 00:21:06,739
+<|startoftranscript|><|0.00|> You stop asking for business, and you start supplying tactical intelligence.<|5.04|>
+
+350
+00:21:06,739 --> 00:21:11,699
+<|5.04|> You do this by executing a highly structured, monthly data-driven market update.<|10.00|>
+
+351
+00:21:11,699 --> 00:21:14,539
+<|10.00|> Let's dissect what that update actually contains.<|12.84|>
+
+352
+00:21:14,539 --> 00:21:18,619
+<|12.84|> Because if I am a top-producing real estate agent, what am I seeing my inbox or on a video<|16.92|>
+
+353
+00:21:18,619 --> 00:21:23,139
+<|16.92|> message from you that makes me view you as a peer rather than just another vendor?<|21.44|>
+
+354
+00:21:23,139 --> 00:21:26,019
+<|21.44|> An elite update is concise and heavily localized.<|24.32|>
+
+355
+00:21:26,019 --> 00:21:27,419
+<|24.32|> It might sound like this.<|25.72|>
+
+356
+00:21:27,419 --> 00:21:29,500
+<|25.72|> Here is your February Tactical Market Update.<|27.80|>
+
+357
+00:21:29,500 --> 00:21:36,239
+<|startoftranscript|><|0.00|> The 30-year conventional is currently holding at 6.25% and FHA is at 5.875%.<|6.74|>
+
+358
+00:21:36,239 --> 00:21:40,459
+<|6.74|> More importantly for your listings, active inventory in our specific county is up 12%<|10.96|>
+
+359
+00:21:40,459 --> 00:21:44,300
+<|10.96|> month over month, that the average days on market has surprisingly dropped at 34.<|14.80|>
+
+360
+00:21:44,300 --> 00:21:48,739
+<|14.80|> Okay, so you're giving them the macro financial data alongside the micro local data.<|19.24|>
+
+361
+00:21:48,900 --> 00:21:55,000
+<|startoftranscript|><|0.00|> You're arming them with the exact statistics they need to go into their own listing appointments and look super smart to their sellers<|6.10|>
+
+362
+00:21:55,300 --> 00:22:01,900
+<|6.40|> Exactly you are providing them with ammunition to win their own battles and you close that communication with a very specific question<|13.00|>
+
+363
+00:22:02,099 --> 00:22:10,300
+<|13.20|> Popularized by the late industry legend Mike Moore. You don't ask for a lead you ask how can I help you win today? How can I help you win today?<|21.40|>
+
+364
+00:22:10,800 --> 00:22:15,000
+<|startoftranscript|><|0.00|> Man, that word "win" carries so much psychological weight.<|4.20|>
+
+365
+00:22:15,000 --> 00:22:19,960
+<|4.20|> It completely shifts the dynamic from a vendor asking for a handout to a partner offering<|9.16|>
+
+366
+00:22:19,960 --> 00:22:22,720
+<|9.16|> tactical support in a competitive arena.<|11.92|>
+
+367
+00:22:22,720 --> 00:22:24,840
+<|11.92|> It implies that you're in the trenches together.<|14.04|>
+
+368
+00:22:24,840 --> 00:22:26,400
+<|14.04|> It builds immense loyalty.<|15.60|>
+
+369
+00:22:26,400 --> 00:22:30,840
+<|15.60|> Now, that covers the referral partners, but consumer leads require a different psychological<|20.04|>
+
+370
+00:22:30,840 --> 00:22:32,280
+<|20.04|> approach entirely.<|21.48|>
+
+371
+00:22:32,280 --> 00:22:36,920
+<|21.48|> The source materials discuss the five touch point reality, the statistical fact that it takes<|26.12|>
+
+372
+00:22:36,920 --> 00:22:40,280
+<|startoftranscript|><|0.00|> multiple specific touches just to get a digital lead on the phone.<|3.36|><|endoftext|>
+
+373
+00:22:40,300 --> 00:22:42,220
+<|startoftranscript|><|0.00|> Let's get very granular here.<|1.92|>
+
+374
+00:22:42,220 --> 00:22:45,500
+<|1.92|> A new digital lead registers online.<|5.20|>
+
+375
+00:22:45,500 --> 00:22:47,580
+<|5.20|> They are a complete stranger.<|7.28|>
+
+376
+00:22:47,580 --> 00:22:52,119
+<|7.28|> What is the immediate optimal protocol to initiate contact without triggering their defense<|11.82|>
+
+377
+00:22:52,119 --> 00:22:53,580
+<|11.82|> mechanisms?<|13.28|>
+
+378
+00:22:53,580 --> 00:22:57,660
+<|13.28|> The top producers utilize what's called the safety brand text as their very first touch<|17.36|>
+
+379
+00:22:57,660 --> 00:22:57,860
+<|17.36|> point.<|17.56|>
+
+380
+00:22:57,900 --> 00:23:00,900
+<|startoftranscript|><|0.00|> You have to put yourself in the consumer's mindset.<|3.00|>
+
+381
+00:23:00,900 --> 00:23:02,900
+<|3.00|> They've just submitted their name, phone number,<|5.00|>
+
+382
+00:23:02,900 --> 00:23:05,900
+<|5.00|> and potentially sensitive financial data into a web form.<|8.00|>
+
+383
+00:23:05,900 --> 00:23:09,900
+<|8.00|> Their immediate psychological state is high alert.<|12.00|>
+
+384
+00:23:09,900 --> 00:23:12,900
+<|12.00|> They are terrified of spam, scams, and identity theft.<|15.00|>
+
+385
+00:23:12,900 --> 00:23:15,900
+<|15.00|> Right, so pushy all-cap sales text like,<|18.00|>
+
+386
+00:23:15,900 --> 00:23:17,900
+<|18.00|> "Let's get you pre-approved today."<|20.00|>
+
+387
+00:23:17,900 --> 00:23:19,900
+<|20.00|> It's going to cause them to instantly block your number.<|22.00|>
+
+388
+00:23:19,900 --> 00:23:21,900
+<|22.00|> It confirms their worst fears.<|24.00|>
+
+389
+00:23:21,900 --> 00:23:26,900
+<|24.00|> Instead, the safety grant text is designed to establish immediate human trust.<|29.00|>
+
+390
+00:23:26,599 --> 00:23:35,599
+<|startoftranscript|><|0.00|> You send a text message containing a professional high-quality photo often of you or you and your family along with your official NMLS ID number and a brief professional note.<|9.00|>
+
+391
+00:23:35,599 --> 00:23:40,599
+<|9.00|> Like, "Hi Sarah, my name is David. I received your inquiry. Here is my license number for your peace of mind.<|14.00|>
+
+392
+00:23:40,599 --> 00:23:43,599
+<|14.00|> Let me know when you have five minutes to review the market data you were calling."<|17.00|>
+
+393
+00:23:43,199 --> 00:23:50,199
+<|startoftranscript|><|0.00|> that is brilliant. Providing the license number proactively basically says I am regulated, I am real and I am accountable.<|7.00|>
+
+394
+00:23:50,199 --> 00:23:58,199
+<|7.00|> The family photo says I am a member of your community. You diffuse the threat before they even have a chance to formulate it.<|15.00|>
+
+395
+00:23:58,199 --> 00:24:04,199
+<|15.00|> But what happens when you establish contact, you have great initial conversation and then they throw up the classic objection.<|21.00|>
+
+396
+00:24:04,199 --> 00:24:10,199
+<|21.00|> I think we're just going to wait for rates to drop. How do the blueprints address that specific smokescreen?<|27.00|>
+
+397
+00:24:11,099 --> 00:24:16,059
+<|startoftranscript|><|0.00|> The training materials outline a highly effective conversational maneuver called the Boomerang<|4.96|>
+
+398
+00:24:16,059 --> 00:24:17,059
+<|4.96|> technique.<|5.96|>
+
+399
+00:24:17,059 --> 00:24:21,939
+<|5.96|> When a borrower attempts to use macroeconomic conditions to delay a decision, you don't argue<|10.84|>
+
+400
+00:24:21,939 --> 00:24:23,020
+<|10.84|> with them.<|11.92|>
+
+401
+00:24:23,020 --> 00:24:27,819
+<|11.92|> You validate their logic, but you boomerang the macroeconomic reality right back onto their<|16.72|>
+
+402
+00:24:27,819 --> 00:24:29,140
+<|16.72|> underlying goal.<|18.04|>
+
+403
+00:24:29,140 --> 00:24:30,140
+<|18.04|> Let's roleplay that.<|19.04|>
+
+404
+00:24:30,140 --> 00:24:31,140
+<|19.04|> I'll be the borrower.<|20.04|>
+
+405
+00:24:31,140 --> 00:24:32,939
+<|20.04|> I say, look, David, 6.5% is just too high.<|21.84|>
+
+406
+00:24:32,939 --> 00:24:35,900
+<|21.84|> We're going to hold off for six months and see if we can get back down into the fives.<|24.80|>
+
+407
+00:24:36,000 --> 00:24:37,599
+<|startoftranscript|><|0.00|> How do you boomerang that?<|1.60|>
+
+408
+00:24:37,599 --> 00:24:42,280
+<|1.60|> I would say I completely understand that instinct, and nobody wants to pay more interest than<|6.28|>
+
+409
+00:24:42,280 --> 00:24:46,439
+<|6.28|> they have to, but as your advisor, I'd be remiss if I didn't share the broader market<|10.44|>
+
+410
+00:24:46,439 --> 00:24:47,880
+<|10.44|> data with you.<|11.88|>
+
+411
+00:24:47,880 --> 00:24:53,699
+<|11.88|> Historically, macroeconomic data shows that for every 1% that mortgage rates drop, approximately<|17.70|>
+
+412
+00:24:53,699 --> 00:24:57,599
+<|17.70|> 5 million new buyers re-enter the housing market.<|21.60|>
+
+413
+00:24:57,599 --> 00:25:00,959
+<|21.60|> Oh wow, okay, you're introducing a massive wave of new demand.<|24.96|>
+
+414
+00:25:00,959 --> 00:25:02,479
+<|24.96|> Precisely, and I continue.<|26.48|>
+
+415
+00:25:02,599 --> 00:25:08,119
+<|startoftranscript|><|0.00|> When 5 million new buyers enter the market, competition's skyrockets, multiple offer situations<|5.52|>
+
+416
+00:25:08,119 --> 00:25:11,319
+<|5.52|> return, and home prices are driven up significantly.<|8.72|>
+
+417
+00:25:11,319 --> 00:25:15,000
+<|8.72|> The buyers who actually win in the economic cycle aren't the ones who wait.<|12.40|>
+
+418
+00:25:15,000 --> 00:25:19,319
+<|12.40|> They are the ones who buy now when competition is low, secure the asset at today's price,<|16.72|>
+
+419
+00:25:19,319 --> 00:25:22,239
+<|16.72|> and simply refinance the rate later when the market dips.<|19.64|>
+
+420
+00:25:22,239 --> 00:25:26,439
+<|19.64|> If you wait for the rate to drop, you'll be paying thousands more for the house itself.<|23.84|>
+
+421
+00:25:26,439 --> 00:25:28,640
+<|23.84|> That is a masterclass in reframing.<|26.04|>
+
+422
+00:25:28,800 --> 00:25:33,840
+<|startoftranscript|><|0.00|> You've taken their localized fear of a high interest rate and replaced it with a much larger,<|5.04|>
+
+423
+00:25:33,840 --> 00:25:39,400
+<|5.04|> more rational fear of being completely priced out of the market by 5 million competing buyers.<|10.60|>
+
+424
+00:25:39,400 --> 00:25:43,560
+<|10.60|> You've turned their reason for delaying into the exact mathematical reason they must act<|14.76|>
+
+425
+00:25:43,560 --> 00:25:44,560
+<|14.76|> immediately.<|15.76|>
+
+426
+00:25:44,560 --> 00:25:47,560
+<|15.76|> It is entirely logically sound, which is why it works so well.<|18.76|>
+
+427
+00:25:47,560 --> 00:25:51,400
+<|18.76|> But there is another scenario that is even more frustrating for originators.<|22.60|>
+
+428
+00:25:51,400 --> 00:25:53,200
+<|startoftranscript|><|0.00|> The Ghost.<|1.80|>
+
+429
+00:25:53,200 --> 00:25:58,400
+<|1.80|> The Bar-O-R, who doesn't give you an objection at all, but simply stops replying to texts,<|7.00|>
+
+430
+00:25:58,400 --> 00:25:59,800
+<|7.00|> emails, and voicemails.<|8.40|>
+
+431
+00:25:59,800 --> 00:26:01,920
+<|8.40|> Ugh, the pipeline cloggers.<|10.52|>
+
+432
+00:26:01,920 --> 00:26:05,839
+<|10.52|> You spent hours running their DTI, you sent the preapproval, and suddenly it's radio<|14.44|>
+
+433
+00:26:05,839 --> 00:26:07,280
+<|14.44|> silence for three weeks.<|15.88|>
+
+434
+00:26:07,280 --> 00:26:10,680
+<|15.88|> How do you force engagement without sounding desperate or angry?<|19.28|>
+
+435
+00:26:10,680 --> 00:26:14,000
+<|19.28|> For the ghosts, the blueprints deploy the Hail Mary text.<|22.60|>
+
+436
+00:26:14,000 --> 00:26:20,000
+<|startoftranscript|><|0.00|> It is a psychological pattern interrupt based on the behavioral economics concept of loss aversion.<|6.00|>
+
+437
+00:26:20,000 --> 00:26:25,000
+<|6.00|> After specific cadence of unanswered attempts, you send one final very simple direct message.<|11.00|>
+
+438
+00:26:25,000 --> 00:26:32,000
+<|11.00|> It just says, "Hi John, it's been 30 days since we last spoke regarding your preapproval. Should I close your file or are you still looking for a home?"<|18.00|>
+
+439
+00:26:32,099 --> 00:26:37,699
+<|startoftranscript|><|0.00|> Should I close your file? I love the construction of that sentence. It completely removes the pressure to buy<|5.60|>
+
+440
+00:26:38,059 --> 00:26:44,859
+<|5.96|> But human beings had this visceral reaction to having doors closed on them. It triggers the fear of losing an option<|12.76|>
+
+441
+00:26:44,859 --> 00:26:53,859
+<|12.76|> Exactly Daniel Kahneman's prospect theory shows that the pain of losing something is psychologically twice as powerful as the pleasure of gaining something<|21.76|>
+
+442
+00:26:54,419 --> 00:26:58,459
+<|22.32|> Even if they are ready to buy today, they hate the idea of losing their pre-approves<|26.36|>
+
+443
+00:26:58,500 --> 00:27:02,219
+<|startoftranscript|><|0.00|> status. They realize you're a professional whose time is valuable and you<|3.72|>
+
+444
+00:27:02,219 --> 00:27:05,579
+<|3.72|> aren't going to chase them indefinitely. I would bet a massive percentage of<|7.08|>
+
+445
+00:27:05,579 --> 00:27:09,900
+<|7.08|> ghosts reply to that text within five minutes saying no no please don't close it.<|11.40|>
+
+446
+00:27:09,900 --> 00:27:14,540
+<|11.40|> My kid just got sick and work has been crazy. We're still looking. It forces a<|16.04|>
+
+447
+00:27:14,540 --> 00:27:19,420
+<|16.04|> definitive answer. Either they re-engage and apologize for the delay or they say<|20.92|>
+
+448
+00:27:19,420 --> 00:27:24,180
+<|20.92|> yes we decided to sign another lease in which case you gain the clarity needed to<|25.68|>
+
+449
+00:27:24,180 --> 00:27:28,339
+<|25.68|> clean up your pipeline and focus your energy elsewhere.<|29.84|>
+
+450
+00:27:26,400 --> 00:27:31,000
+<|startoftranscript|><|0.00|> which leads us perfectly into the mechanics of how you measure all of this energy.<|4.60|>
+
+451
+00:27:31,000 --> 00:27:37,599
+<|4.60|> If you are deploying the CSER framework, managing your 110 list and executing Hail Mary texts,<|11.20|>
+
+452
+00:27:37,599 --> 00:27:41,700
+<|11.20|> how do you mathematically ensure it translates to predictable revenue?<|15.30|>
+
+453
+00:27:41,700 --> 00:27:45,000
+<|15.30|> We need to look at KPI tracking and daily execution.<|18.60|>
+
+454
+00:27:45,000 --> 00:27:46,920
+<|startoftranscript|><|0.00|> the math of success.<|1.92|>
+
+455
+00:27:46,920 --> 00:27:49,040
+<|1.92|> Because you can have the mindset of an advisor<|4.04|>
+
+456
+00:27:49,040 --> 00:27:50,640
+<|4.04|> and you can have all the brilliantly scripted<|5.64|>
+
+457
+00:27:50,640 --> 00:27:52,560
+<|5.64|> boomerang techniques in the world.<|7.56|>
+
+458
+00:27:52,560 --> 00:27:54,800
+<|7.56|> But if you don't measure your daily execution,<|9.80|>
+
+459
+00:27:54,800 --> 00:27:58,199
+<|9.80|> you're still operating on feeling rather than fact.<|13.20|>
+
+460
+00:27:58,199 --> 00:28:00,000
+<|13.20|> And the advice from the industry veterans<|15.00|>
+
+461
+00:28:00,000 --> 00:28:02,479
+<|15.00|> in the master classes is incredibly blunt<|17.48|>
+
+462
+00:28:02,479 --> 00:28:04,319
+<|17.48|> regarding what not to measure.<|19.32|>
+
+463
+00:28:04,319 --> 00:28:07,160
+<|19.32|> You have to stop obsessing over your monthly closing volume.<|22.16|>
+
+464
+00:28:07,160 --> 00:28:08,760
+<|22.16|> - It sounds so counterintuitive<|23.76|>
+
+465
+00:28:08,760 --> 00:28:10,359
+<|23.76|> to tell a commission sales professional<|25.36|>
+
+466
+00:28:10,359 --> 00:28:11,880
+<|25.36|> to ignore their monthly volume,<|26.88|>
+
+467
+00:28:11,880 --> 00:28:13,920
+<|26.88|> but it is a vital psychological shift.<|28.92|>
+
+468
+00:28:13,699 --> 00:28:17,899
+<|startoftranscript|><|0.00|> Dale, one of the veteran coaches in the source materials emphasizes that your monthly<|4.20|>
+
+469
+00:28:17,899 --> 00:28:20,939
+<|4.20|> closed volume is a purely lagging indicator.<|7.24|>
+
+470
+00:28:20,939 --> 00:28:25,059
+<|7.24|> A lagging indicator, meaning it's the result of actions taken in the past.<|11.36|>
+
+471
+00:28:25,059 --> 00:28:26,059
+<|11.36|> Exactly.<|12.36|>
+
+472
+00:28:26,059 --> 00:28:30,459
+<|12.36|> The loans closing today are the result of the follow-up calls you made, the CSER consultations<|16.76|>
+
+473
+00:28:30,459 --> 00:28:35,659
+<|16.76|> you conducted, and the trust you built 30, 60 or even 90 days ago.<|21.96|>
+
+474
+00:28:35,659 --> 00:28:37,659
+<|21.96|> You cannot control what funds today.<|23.96|>
+
+475
+00:28:38,000 --> 00:28:44,119
+<|startoftranscript|><|0.00|> If you obsess over today's closings, you ride an emotional roller coaster based on underwriting<|6.12|>
+
+476
+00:28:44,119 --> 00:28:48,079
+<|6.12|> delays or title issues that are completely out of your hands.<|10.08|>
+
+477
+00:28:48,079 --> 00:28:52,280
+<|10.08|> What you can control with absolute precision are your daily activities and your daily<|14.28|>
+
+478
+00:28:52,280 --> 00:28:53,280
+<|14.28|> attitude.<|15.28|>
+
+479
+00:28:53,280 --> 00:28:58,119
+<|15.28|> Okay so if monthly volume is out, what are the daily leading indicators we should be obsessing<|20.12|>
+
+480
+00:28:58,119 --> 00:28:58,280
+<|20.12|> over?<|20.28|>
+
+481
+00:28:58,300 --> 00:29:00,540
+<|startoftranscript|><|0.00|> I'm going to be skeptical here.<|2.24|>
+
+482
+00:29:00,540 --> 00:29:02,860
+<|2.24|> Is it just the sheer number of phone calls?<|4.56|>
+
+483
+00:29:02,860 --> 00:29:07,020
+<|4.56|> Does a predictable business just mean tracking that I made 75 dials today because we<|8.72|>
+
+484
+00:29:07,020 --> 00:29:10,340
+<|8.72|> just established that blindly throwing volume at a wall doesn't work?<|12.04|>
+
+485
+00:29:10,340 --> 00:29:11,340
+<|12.04|> Right.<|13.04|>
+
+486
+00:29:11,340 --> 00:29:14,700
+<|13.04|> Tracking sheer dial volume is an antiquated industrial aryometric.<|16.40|>
+
+487
+00:29:14,700 --> 00:29:16,540
+<|16.40|> It measures effort, not effectiveness.<|18.24|>
+
+488
+00:29:16,599 --> 00:29:23,599
+<|startoftranscript|><|0.00|> The elite operating system focuses on specific conversion metrics and a concept Todd Duncan calls conversational productivity.<|7.00|>
+
+489
+00:29:23,599 --> 00:29:28,599
+<|7.00|> Conversational productivity. Let's unpack how you actually measure the productivity of conversation.<|12.00|>
+
+490
+00:29:28,599 --> 00:29:38,599
+<|12.00|> It relies heavily on the 80/20 rule. Elite producers audit their own conversations and the metric they strive for is talking 20% of the time and listening 80% of the time.<|22.00|>
+
+491
+00:29:38,199 --> 00:29:44,199
+<|startoftranscript|><|0.00|> at the time. That is a staggering ratio. Most sales people I interact with talk 90% of the time.<|6.00|>
+
+492
+00:29:44,199 --> 00:29:49,079
+<|6.00|> They get a prospect on the phone and immediately launch into a feature dump of all their loan products,<|10.88|>
+
+493
+00:29:49,079 --> 00:29:54,359
+<|10.88|> their company history and their processing speeds until the client is practically comatose.<|16.16|>
+
+494
+00:29:54,359 --> 00:29:58,599
+<|16.16|> And that is exactly why their conversion rates are abysmal. The data presented in these coaching<|20.40|>
+
+495
+00:29:58,599 --> 00:30:00,519
+<|20.40|> platforms proves something remarkable.<|22.32|>
+
+496
+00:30:00,699 --> 00:30:06,699
+<|startoftranscript|><|0.00|> If a loan officer records their own pitch, audits the transcript, and ruthlessly cuts the fat.<|6.00|>
+
+497
+00:30:06,699 --> 00:30:13,699
+<|6.00|> Meaning, they reduce 100-word rambling explanation down to 25 essential, deeply impactful words.<|13.00|>
+
+498
+00:30:13,699 --> 00:30:16,699
+<|13.00|> Their conversion rate can skyrocket to 75%.<|16.00|>
+
+499
+00:30:16,699 --> 00:30:17,699
+<|16.00|> Wow.<|17.00|>
+
+500
+00:30:17,699 --> 00:30:19,699
+<|17.00|> So you are measuring the precision of your language.<|19.00|>
+
+501
+00:30:19,800 --> 00:30:27,800
+<|startoftranscript|><|0.00|> You're tracking whether you're asking deep probing questions during the Clarify stage and letting the borrower talk or whether you just fill a bus during.<|8.00|>
+
+502
+00:30:27,800 --> 00:30:31,800
+<|8.00|> What are the other daily KPIs that drive predictability?<|12.00|>
+
+503
+00:30:31,800 --> 00:30:34,800
+<|12.00|> You must rigorously track your speed to lead.<|15.00|>
+
+504
+00:30:35,199 --> 00:30:39,799
+<|startoftranscript|><|0.00|> In a digital environment, a half-life of a lead is incredibly short.<|4.60|>
+
+505
+00:30:39,799 --> 00:30:43,679
+<|4.60|> If you aren't responding to an internet inquiry with your safety brand text within minutes,<|8.48|>
+
+506
+00:30:43,679 --> 00:30:46,919
+<|8.48|> your probability of conversion plummets exponentially.<|11.72|>
+
+507
+00:30:46,919 --> 00:30:50,839
+<|11.72|> But perhaps the most vital metric is your consultation pull through ratio.<|15.64|>
+
+508
+00:30:50,839 --> 00:30:53,439
+<|15.64|> Explain what you mean by pull through ratio in this context.<|18.24|>
+
+509
+00:30:53,439 --> 00:30:57,839
+<|18.24|> It is the percentage of prospects who agree to a deep dive consultation, whether face-to-face<|22.64|>
+
+510
+00:30:57,839 --> 00:31:01,399
+<|22.64|> or on Zoom, who ultimately commit to taking out a mortgage with you.<|26.20|>
+
+511
+00:31:01,400 --> 00:31:07,200
+<|startoftranscript|><|0.00|> The transcripts highlight Kelly Marsh, a top producer who meticulously tracks this metric.<|5.80|>
+
+512
+00:31:07,200 --> 00:31:13,080
+<|5.80|> She aims for and consistently achieves a 90% pull-through rate from her pre-purchase consultations.<|11.68|>
+
+513
+00:31:13,080 --> 00:31:18,640
+<|11.68|> I have to pause there, because a 90% conversion rate from a consultation sounds mathematically<|17.24|>
+
+514
+00:31:18,640 --> 00:31:23,640
+<|17.24|> impossible in a market where consumers are conditioned by the internet to shop for different<|22.24|>
+
+515
+00:31:23,640 --> 00:31:25,599
+<|22.24|> lenders for the lowest rate.<|24.20|>
+
+516
+00:31:25,599 --> 00:31:29,520
+<|startoftranscript|><|0.00|> 10 people get on a Zoom call with her, 9 of them commit to her exclusively.<|3.92|><|endoftext|>
+
+517
+00:31:29,699 --> 00:31:31,699
+<|startoftranscript|><|0.00|> How is she achieving that?<|2.00|>
+
+518
+00:31:31,699 --> 00:31:34,500
+<|2.00|> Because she completely changes the battlefield.<|4.80|>
+
+519
+00:31:34,500 --> 00:31:36,699
+<|4.80|> She refuses to play the order-taker game.<|7.00|>
+
+520
+00:31:36,699 --> 00:31:40,699
+<|7.00|> During that Zoom consultation, she doesn't pull up a generic rate sheet.<|11.00|>
+
+521
+00:31:40,699 --> 00:31:46,699
+<|11.00|> She actually shares her screen and pulls up live mortgage-backed securities or MBS charts.<|17.00|>
+
+522
+00:31:46,699 --> 00:31:47,699
+<|17.00|> Wait, really?<|18.00|>
+
+523
+00:31:47,699 --> 00:31:50,699
+<|18.00|> She's showing the retail borrower the actual bond market data?<|21.00|>
+
+524
+00:31:50,699 --> 00:31:51,699
+<|21.00|> Yes.<|22.00|>
+
+525
+00:31:51,099 --> 00:31:54,780
+<|startoftranscript|><|0.00|> She educates the borrower on how the secondary market works.<|3.68|>
+
+526
+00:31:54,780 --> 00:31:58,939
+<|3.68|> She shows them the six-month and 12-month trend lines of mortgage bonds.<|7.84|>
+
+527
+00:31:58,939 --> 00:32:03,979
+<|7.84|> She explains the macroeconomic forces like inflation data and Fed policy that caused their<|12.88|>
+
+528
+00:32:03,979 --> 00:32:06,459
+<|12.88|> specific interest rate to move daily.<|15.36|>
+
+529
+00:32:06,459 --> 00:32:08,179
+<|15.36|> That is a massive paradigm shift.<|17.08|>
+
+530
+00:32:08,500 --> 00:32:14,099
+<|startoftranscript|><|0.00|> By pulling up the bond charts, she's no longer a salesperson sitting across the table trying to negotiate a margin.<|5.60|>
+
+531
+00:32:14,099 --> 00:32:18,900
+<|5.60|> She's moved to the same side of the table as the borrower and together they're analyzing the market.<|10.40|>
+
+532
+00:32:18,900 --> 00:32:22,500
+<|10.40|> She establishes ultimate undeniable authority.<|14.00|>
+
+533
+00:32:22,500 --> 00:32:31,500
+<|14.00|> The borrower realizes very quickly that the other lenders they spoke to just threw a random rate at them while Kelly Marsh is a genuine financial market expert.<|23.00|>
+
+534
+00:32:31,400 --> 00:32:36,440
+<|startoftranscript|><|0.00|> Once you achieve that level of authoritative status in the borrower's mind, the instinct to<|5.04|>
+
+535
+00:32:36,440 --> 00:32:39,239
+<|5.04|> rate shop goes entirely out the window.<|7.84|>
+
+536
+00:32:39,239 --> 00:32:43,320
+<|7.84|> They realize that a blind rate quote is meaningless without the market intelligence to<|11.92|>
+
+537
+00:32:43,320 --> 00:32:45,280
+<|11.92|> lock it at the right time.<|13.88|>
+
+538
+00:32:45,280 --> 00:32:48,960
+<|13.88|> They trust her to captain the ship through volatile waters.<|17.56|>
+
+539
+00:32:48,960 --> 00:32:51,239
+<|17.56|> That is a completely different level of professional value.<|19.84|>
+
+540
+00:32:51,300 --> 00:32:55,060
+<|startoftranscript|><|0.00|> you. And there's one final daily metric mentioned in the audio<|3.76|>
+
+541
+00:32:55,060 --> 00:32:58,980
+<|3.76|> files from Carl White and Steve Kiles, which they argue is the absolute life<|7.68|>
+
+542
+00:32:58,980 --> 00:33:03,460
+<|7.68|> blood of predictability. The rule of making it offer. Yes. This is a non<|12.16|>
+
+543
+00:33:03,460 --> 00:33:07,860
+<|12.16|> negotiable daily KPI. Every single conversation you have throughout your day<|16.56|>
+
+544
+00:33:07,860 --> 00:33:11,860
+<|16.56|> must end with an explicit invitation to do business or to join forces.<|20.56|>
+
+545
+00:33:11,900 --> 00:33:16,619
+<|startoftranscript|><|0.00|> So whether it's a first-time consultation, a monthly value loop check-in with a realtor,<|4.72|>
+
+546
+00:33:16,619 --> 00:33:20,580
+<|4.72|> or even a routine status update call to a borrower who's loan is currently in underwriting,<|8.68|>
+
+547
+00:33:20,580 --> 00:33:21,820
+<|8.68|> you have to make an offer.<|9.92|>
+
+548
+00:33:21,820 --> 00:33:22,820
+<|9.92|> Precisely.<|10.92|>
+
+549
+00:33:22,820 --> 00:33:25,300
+<|10.92|> You cannot be afraid of the word no.<|13.40|>
+
+550
+00:33:25,300 --> 00:33:29,099
+<|13.40|> Many loan officers will call a past client just to wish them a happy birthday, and they<|17.20|>
+
+551
+00:33:29,099 --> 00:33:32,020
+<|17.20|> pat themselves on the back for maintaining the relationship.<|20.12|>
+
+552
+00:33:32,020 --> 00:33:32,020
+<|20.12|> But if you don't seamlessly weave in an offer, you have wasted the<|endoftext|>
+
+553
+00:33:35,800 --> 00:33:41,320
+<|startoftranscript|><|0.00|> touch point. Let's replay that. How do you pivot a birthday call into an explicit offer without<|5.52|>
+
+554
+00:33:41,320 --> 00:33:45,880
+<|5.52|> ruining the warmth of the conversation? You handle the personal connection first, and then as the<|10.08|>
+
+555
+00:33:45,880 --> 00:33:50,840
+<|10.08|> call is naturally wrapping up, you transition smoothly. By the way, before I let you go enjoy your<|15.04|>
+
+556
+00:33:50,840 --> 00:33:54,840
+<|15.04|> birthday, I wanted to mention something. I know a lot of homeowners in your neighborhood are sitting<|19.04|>
+
+557
+00:33:54,840 --> 00:33:55,960
+<|19.04|> on record equity right now.<|20.16|>
+
+558
+00:33:56,000 --> 00:34:04,000
+<|startoftranscript|><|0.00|> If you or anyone at your office is looking to tap into that equity this year to consolidate high interest debt or fund a remodel,<|8.00|>
+
+559
+00:34:04,000 --> 00:34:10,000
+<|8.00|> I would love the opportunity to run some free numbers for them to see if it makes mathematical sense.<|14.00|>
+
+560
+00:34:10,000 --> 00:34:17,000
+<|14.00|> It's totally non-threatening. You are offering a free analytical service, but it is an explicit request for business.<|21.00|>
+
+561
+00:34:17,199 --> 00:34:23,119
+<|startoftranscript|><|0.00|> If you track your daily speed to lead, if you audit your 80/20 conversational productivity,<|5.92|>
+
+562
+00:34:23,119 --> 00:34:28,560
+<|5.92|> if you master the MBS charts to drive a 90% pull-through rate, and if you demand of yourself,<|11.36|>
+
+563
+00:34:28,560 --> 00:34:33,459
+<|11.36|> you make a specific number of explicit offers every single day you have removed luck from<|16.26|>
+
+564
+00:34:33,459 --> 00:34:34,859
+<|16.26|> the equation entirely.<|17.66|>
+
+565
+00:34:34,859 --> 00:34:36,699
+<|17.66|> You've built an industrialized machine.<|19.50|>
+
+566
+00:34:36,699 --> 00:34:40,119
+<|19.50|> A predictable machine that operates independently of market volatility.<|22.92|>
+
+567
+00:34:40,119 --> 00:34:42,199
+<|22.92|> Which brings us to the grand finale.<|25.00|>
+
+568
+00:34:42,199 --> 00:34:44,399
+<|25.00|> The culmination of this entire deep dive.<|27.20|>
+
+569
+00:34:44,500 --> 00:34:49,500
+<|startoftranscript|><|0.00|> We've explored the psychological mindset shift of the CSER framework.<|5.00|>
+
+570
+00:34:49,500 --> 00:34:53,500
+<|5.00|> We've dissected the Terra database technology and the AI integrations.<|9.00|>
+
+571
+00:34:53,500 --> 00:34:57,540
+<|9.00|> We've role-played the boomerang and Hail Mary follow-up scripts, and we've established<|13.04|>
+
+572
+00:34:57,540 --> 00:34:59,500
+<|13.04|> the Daily Math Medical KPIs.<|15.00|>
+
+573
+00:34:59,500 --> 00:35:04,500
+<|15.00|> Now, we're going to synthesize all of this into the exact, non-negotiable weekly structure<|20.00|>
+
+574
+00:35:04,500 --> 00:35:05,500
+<|20.00|> for a predictable business.<|21.00|>
+
+575
+00:35:05,500 --> 00:35:10,500
+<|21.00|> We're going to map out the week day by day for you to execute starting tomorrow morning.<|26.00|>
+
+576
+00:35:10,500 --> 00:35:14,020
+<|startoftranscript|><|0.00|> This is where abstract strategy solidifies into daily reality.<|3.52|><|endoftext|>
+
+577
+00:35:14,000 --> 00:35:17,199
+<|startoftranscript|><|0.00|> A predictable business requires a predictable calendar.<|3.20|>
+
+578
+00:35:17,199 --> 00:35:18,000
+<|3.20|> Let's map it out.<|4.00|>
+
+579
+00:35:18,000 --> 00:35:19,000
+<|4.00|> Let's do it.<|5.00|>
+
+580
+00:35:19,000 --> 00:35:21,000
+<|5.00|> Monday, database and Lee Gen.<|7.00|>
+
+581
+00:35:21,000 --> 00:35:23,000
+<|7.00|> When you sit at your desk on Monday morning,<|9.00|>
+
+582
+00:35:23,000 --> 00:35:25,000
+<|9.00|> you do not open social media.<|11.00|>
+
+583
+00:35:25,000 --> 00:35:27,000
+<|11.00|> You do not check the news.<|13.00|>
+
+584
+00:35:27,000 --> 00:35:28,000
+<|13.00|> You open your CRM,<|14.00|>
+
+585
+00:35:28,000 --> 00:35:31,000
+<|14.00|> ideally a smart relationship engine like Terra.<|17.00|>
+
+586
+00:35:31,100 --> 00:35:36,100
+<|startoftranscript|><|0.00|> First, you review your pipeline stages to know exactly where every active file stands.<|5.00|>
+
+587
+00:35:36,100 --> 00:35:41,100
+<|5.00|> Then, you set up the automated read alerts for any new prospects you consulted with over the weekend.<|10.00|>
+
+588
+00:35:41,100 --> 00:35:47,100
+<|10.00|> You input their current note rate and set the AI thermostat to target exactly 0.75% below it.<|16.00|>
+
+589
+00:35:47,100 --> 00:35:52,100
+<|16.00|> Great, and once that automation is set, you immediately execute the speed to lead protocol.<|21.00|>
+
+590
+00:35:52,100 --> 00:35:56,100
+<|21.00|> You aggressively follow up on any internet inquiries that came in over the weekend.<|25.00|>
+
+591
+00:35:55,300 --> 00:35:59,300
+<|startoftranscript|><|0.00|> you do not send a generic email, you deploy the safety brand text, you send your<|4.00|>
+
+592
+00:35:59,300 --> 00:36:03,300
+<|4.00|> professional photo, your NMLS ID, and a personal note to establish immediate safety<|8.00|>
+
+593
+00:36:03,300 --> 00:36:06,300
+<|8.00|> and humanize yourself. That sets the foundation for the week.<|11.00|>
+
+594
+00:36:06,300 --> 00:36:11,300
+<|11.00|> Then we move to Tuesday, follow up cadence and offers. This is universally known among<|16.00|>
+
+595
+00:36:11,300 --> 00:36:15,300
+<|16.00|> elite producers as the day for Tuesday updates.<|20.00|>
+
+596
+00:36:14,000 --> 00:36:18,739
+<|startoftranscript|><|0.00|> You block out dedicated time to call every single active borrower and every real estate agent<|4.74|>
+
+597
+00:36:18,739 --> 00:36:22,459
+<|4.74|> involved in an active file with a proactive status update.<|8.46|>
+
+598
+00:36:22,459 --> 00:36:25,459
+<|8.46|> The psychology of the Tuesday update is critical.<|11.46|>
+
+599
+00:36:25,459 --> 00:36:30,419
+<|11.46|> By proactively calling them before they feel the need to call you, you eliminate their anxiety.<|16.42|>
+
+600
+00:36:30,600 --> 00:36:36,160
+<|startoftranscript|><|0.00|> But remember, the daily KPI math, you don't just update them on the appraisal and hang up.<|5.56|>
+
+601
+00:36:36,160 --> 00:36:40,800
+<|5.56|> You make an explicit offer for commitment on every single call.<|10.20|>
+
+602
+00:36:40,800 --> 00:36:44,840
+<|10.20|> You update the listing agent on the clear to close, and then you seamlessly transition.<|14.24|>
+
+603
+00:36:44,840 --> 00:36:48,320
+<|14.24|> By the way, who else do you have in your car this coming weekend that needs a bullet proof<|17.72|>
+
+604
+00:36:48,320 --> 00:36:51,400
+<|17.72|> preapproval so you can win a multiple offer situation?<|20.80|>
+
+605
+00:36:51,699 --> 00:36:54,300
+<|startoftranscript|><|0.00|> You ask for the business every time.<|2.60|>
+
+606
+00:36:54,300 --> 00:36:56,339
+<|2.60|> Which brings us to Wednesday.<|4.64|>
+
+607
+00:36:56,339 --> 00:36:57,579
+<|4.64|> Referral systems.<|5.88|>
+
+608
+00:36:57,579 --> 00:37:00,300
+<|5.88|> This is the day you execute the real-ter value loop.<|8.60|>
+
+609
+00:37:00,300 --> 00:37:03,260
+<|8.60|> Wednesday's for cultivating your elite 110 list.<|11.56|>
+
+610
+00:37:03,260 --> 00:37:06,939
+<|11.56|> You generate your highly localized data-driven market update.<|15.24|>
+
+611
+00:37:06,939 --> 00:37:11,579
+<|15.24|> You pull the average days on market, the current conventional and FHA benchmarks, and<|19.88|>
+
+612
+00:37:11,579 --> 00:37:12,780
+<|19.88|> the local inventory shifts.<|21.08|>
+
+613
+00:37:12,800 --> 00:37:16,400
+<|startoftranscript|><|0.00|> You distribute this vital intelligence to your top referral partners.<|3.60|>
+
+614
+00:37:16,400 --> 00:37:20,679
+<|3.60|> And you end that Wednesday communication with Mike Moore's legendary question, shifting<|7.88|>
+
+615
+00:37:20,679 --> 00:37:22,719
+<|7.88|> the dynamic from vendor to partner.<|9.92|>
+
+616
+00:37:22,719 --> 00:37:24,640
+<|9.92|> How can I help you win today?<|11.84|>
+
+617
+00:37:24,640 --> 00:37:26,600
+<|11.84|> You arm them for the weekend listing appointments.<|13.80|>
+
+618
+00:37:26,600 --> 00:37:30,479
+<|13.80|> Finally Thursday and Friday, daily execution and consultations.<|17.68|>
+
+619
+00:37:30,500 --> 00:37:36,500
+<|startoftranscript|><|0.00|> The back half of the week is fiercely protected for conducting your deep dive borrower consultations.<|6.00|>
+
+620
+00:37:36,500 --> 00:37:39,500
+<|6.00|> This is where you deploy the CSER firmware.<|9.00|>
+
+621
+00:37:39,500 --> 00:37:43,500
+<|9.00|> You do not quote blind rates. You run the diagnostic x-ray.<|13.00|>
+
+622
+00:37:43,500 --> 00:37:48,500
+<|13.00|> You clarify their deepest financial pain points, uncovering that suffocating credit card debt,<|18.00|>
+
+623
+00:37:48,500 --> 00:37:51,500
+<|18.00|> and you sell the destination, not the loan.<|21.00|>
+
+624
+00:37:51,100 --> 00:37:56,100
+<|startoftranscript|><|0.00|> You practice conversational productivity, forcing yourself to listen 80% of the time.<|5.00|>
+
+625
+00:37:56,100 --> 00:38:01,100
+<|5.00|> If it's a Zoom consultation, you pull up the live ABS charts, educate them on the bond market trends,<|10.00|>
+
+626
+00:38:01,100 --> 00:38:04,100
+<|10.00|> and ship your status to an authoritative financial expert.<|13.00|>
+
+627
+00:38:04,100 --> 00:38:07,100
+<|13.00|> And you present yourself as the three option lender.<|16.00|>
+
+628
+00:38:07,100 --> 00:38:11,020
+<|startoftranscript|><|0.00|> You give them three carefully structured choices, satisfying their psychological urge to<|3.92|>
+
+629
+00:38:11,020 --> 00:38:15,100
+<|3.92|> shop around, effectively building a walled garden where they only compare your options against<|8.00|>
+
+630
+00:38:15,100 --> 00:38:16,100
+<|8.00|> each other.<|9.00|>
+
+631
+00:38:16,100 --> 00:38:21,700
+<|9.00|> If you execute that specific structure consistently, Monday database automation, Tuesday proactive<|14.60|>
+
+632
+00:38:21,700 --> 00:38:27,380
+<|14.60|> updates and offers, Wednesday value loop intelligence, and Thursday Friday deep dive CS<|20.28|>
+
+633
+00:38:27,380 --> 00:38:28,940
+<|20.28|> ear consultations.<|21.84|>
+
+634
+00:38:29,000 --> 00:38:36,000
+<|startoftranscript|><|0.00|> You transition permanently from being a victim of the market's roller coaster to being the architect of your own predictable income.<|7.00|>
+
+635
+00:38:36,000 --> 00:38:45,000
+<|7.00|> It is a blueprint that does not require luck. It requires discipline, emotional intelligence, and the willingness to step out of the transactional order to take a roll.<|16.00|>
+
+636
+00:38:45,000 --> 00:38:51,000
+<|16.00|> Which leaves us with one final provocative thought for you to chew on as you head into your very next client call.<|22.00|>
+
+637
+00:38:51,000 --> 00:38:55,820
+<|startoftranscript|><|0.00|> We spent a lot of time today discussing the fear and uncertainty that borrowers carry.<|4.82|>
+
+638
+00:38:55,820 --> 00:38:59,239
+<|4.82|> But the reality is, loan officers carry fear too.<|8.24|>
+
+639
+00:38:59,239 --> 00:39:02,120
+<|8.24|> The deep-seated fear of losing the deal to a competitor.<|11.12|>
+
+640
+00:39:02,120 --> 00:39:06,520
+<|11.12|> It is that fear that causes loan officers to rush into quoting a rate hoping to secure a quick<|15.52|>
+
+641
+00:39:06,520 --> 00:39:09,600
+<|15.52|> transactional victory only to lose the client entirely.<|18.60|>
+
+642
+00:39:09,600 --> 00:39:10,600
+<|18.60|> Exactly.<|19.60|>
+
+643
+00:39:10,600 --> 00:39:13,040
+<|19.60|> So I want to leave you with this specific challenge.<|22.04|>
+
+644
+00:39:13,040 --> 00:39:17,679
+<|22.04|> What would happen to your conversion metrics if, for one entire week, you absolutely refused<|26.68|>
+
+645
+00:39:17,679 --> 00:39:19,199
+<|startoftranscript|><|0.00|> to quote a specific interest rate.<|1.52|><|endoftext|>
+
+646
+00:39:19,199 --> 00:39:21,199
+<|startoftranscript|><|0.00|> on the very first phone call.<|2.00|>
+
+647
+00:39:21,199 --> 00:39:23,699
+<|2.00|> What if, when the borrower asks for a raid,<|4.50|>
+
+648
+00:39:23,699 --> 00:39:26,199
+<|4.50|> you've forced yourself to sit in the awkward silence,<|7.00|>
+
+649
+00:39:26,199 --> 00:39:28,199
+<|7.00|> hold your ground as an advisor,<|9.00|>
+
+650
+00:39:28,199 --> 00:39:30,699
+<|9.00|> and uncover their deepest financial fear first?<|11.50|>
+
+651
+00:39:30,699 --> 00:39:31,699
+<|11.50|> Try it.<|12.50|>
+
+652
+00:39:31,699 --> 00:39:32,699
+<|12.50|> Flip your script,<|13.50|>
+
+653
+00:39:32,699 --> 00:39:35,199
+<|13.50|> diagnose the pain before you price the cast,<|16.00|>
+
+654
+00:39:35,199 --> 00:39:37,699
+<|16.00|> and watch how drastically the power dynamic shifts.<|18.50|>
+
+655
+00:39:37,699 --> 00:39:40,199
+<|18.50|> Keep diving deep, and we'll catch you next time.<|21.00|>
+

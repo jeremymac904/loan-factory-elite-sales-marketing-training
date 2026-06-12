@@ -6,6 +6,7 @@ const TABS = [
   { key: "scripts", label: "Scripts" },
   { key: "tools", label: "Tools" },
   { key: "training", label: "Training" },
+  { key: "podcast", label: "Podcast" },
   { key: "calendar", label: "Calendar" },
   { key: "course-overview", label: "Course Overview" },
   { key: "downloads", label: "Downloads" },
@@ -22,6 +23,7 @@ export default function ResourceTabs({
   scripts,
   tools,
   training,
+  podcast,
   calendar,
   course,
   downloads,
@@ -29,6 +31,7 @@ export default function ResourceTabs({
   scripts: ReactNode;
   tools: ReactNode;
   training: ReactNode;
+  podcast: ReactNode;
   calendar: ReactNode;
   course: ReactNode;
   downloads: ReactNode;
@@ -40,7 +43,8 @@ export default function ResourceTabs({
     const tab = raw === "course" ? "course-overview" : raw; // legacy deep links
     if (
       tab === "tools" || tab === "training" || tab === "scripts" ||
-      tab === "calendar" || tab === "course-overview" || tab === "downloads"
+      tab === "podcast" || tab === "calendar" || tab === "course-overview" ||
+      tab === "downloads"
     ) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- read the deep-link tab once after hydration.
       setActive(tab);
@@ -74,6 +78,7 @@ export default function ResourceTabs({
       <div className={active === "scripts" ? "grid gap-6" : "hidden"}>{scripts}</div>
       <div className={active === "tools" ? "grid gap-6" : "hidden"}>{tools}</div>
       <div className={active === "training" ? "grid gap-6" : "hidden"}>{training}</div>
+      <div className={active === "podcast" ? "grid gap-6" : "hidden"}>{podcast}</div>
       <div className={active === "calendar" ? "grid gap-6" : "hidden"}>{calendar}</div>
       <div className={active === "course-overview" ? "grid gap-6" : "hidden"}>{course}</div>
       <div className={active === "downloads" ? "grid gap-6" : "hidden"}>{downloads}</div>

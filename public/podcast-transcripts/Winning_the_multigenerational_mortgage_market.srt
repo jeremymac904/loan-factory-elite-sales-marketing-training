@@ -1,0 +1,1812 @@
+1
+00:00:00,000 --> 00:00:06,079
+<|startoftranscript|><|0.00|> Right now, there are about 60 million Americans who are just secretly rewriting the entire<|6.08|>
+
+2
+00:00:06,079 --> 00:00:07,520
+<|6.08|> rulebook of the real estate market.<|7.52|>
+
+3
+00:00:07,520 --> 00:00:08,519
+<|7.52|> Oh, absolutely.<|8.52|>
+
+4
+00:00:08,519 --> 00:00:09,519
+<|8.52|> It is a massive shift.<|9.52|>
+
+5
+00:00:09,519 --> 00:00:10,519
+<|9.52|> Right.<|10.52|>
+
+6
+00:00:10,519 --> 00:00:14,559
+<|10.52|> Like, they're completely changing how homes are purchased and how wealth is structured.<|14.56|>
+
+7
+00:00:14,559 --> 00:00:17,039
+<|14.56|> But if you look at how the majority<|17.04|>
+
+8
+00:00:17,200 --> 00:00:19,600
+<|startoftranscript|><|0.00|> of the mortgage industry operates.<|2.40|>
+
+9
+00:00:19,600 --> 00:00:21,560
+<|2.40|> You know, the standard application of the coal calling,<|4.36|>
+
+10
+00:00:21,560 --> 00:00:24,159
+<|4.36|> it's like these 60 million people don't even exist.<|6.96|>
+
+11
+00:00:24,159 --> 00:00:27,479
+<|6.96|> - Yeah, lenders are still stuck on this factory floor model, right?<|10.28|>
+
+12
+00:00:27,479 --> 00:00:29,680
+<|10.28|> - Exactly, just put your marketing dollars in,<|12.48|>
+
+13
+00:00:29,680 --> 00:00:32,080
+<|12.48|> generate a lead, check their individual credit,<|14.88|>
+
+14
+00:00:32,080 --> 00:00:33,400
+<|14.88|> and close the deal.<|16.20|>
+
+15
+00:00:33,400 --> 00:00:36,520
+<|16.20|> But that linear single-player model is just<|19.32|>
+
+16
+00:00:36,500 --> 00:00:37,860
+<|startoftranscript|><|0.00|> Well, it's fracturing.<|1.36|>
+
+17
+00:00:37,860 --> 00:00:39,060
+<|1.36|> It is entirely fracturing.<|2.56|>
+
+18
+00:00:39,060 --> 00:00:42,419
+<|2.56|> Especially when you look at the specific demographic shifts we're seeing.<|5.92|>
+
+19
+00:00:42,419 --> 00:00:47,779
+<|5.92|> If you approach today's emerging markets with that old school, isolated mindset, you're<|11.28|>
+
+20
+00:00:47,779 --> 00:00:51,299
+<|11.28|> going to be obsolete in like three to five years.<|14.80|>
+
+21
+00:00:51,299 --> 00:00:52,299
+<|14.80|> Let's be real.<|15.80|>
+
+22
+00:00:52,299 --> 00:00:54,340
+<|15.80|> You're probably already feeling it.<|17.84|>
+
+23
+00:00:54,340 --> 00:00:55,900
+<|17.84|> Welcome to another Deep Dive Everyone.<|19.40|>
+
+24
+00:00:56,200 --> 00:01:02,599
+<|startoftranscript|><|0.00|> If you are a mortgage professional serving Indian families and the broader Asian American community<|6.40|>
+
+25
+00:01:02,599 --> 00:01:09,000
+<|6.40|> working in places like Edison, New Jersey or Fremont, California, you already feel this shift in your bones.<|12.80|>
+
+26
+00:01:09,000 --> 00:01:11,000
+<|12.80|> Oh, you definitely do. You see it every day.<|14.80|>
+
+27
+00:01:11,000 --> 00:01:15,900
+<|14.80|> Right. You're sitting across the Zoom screen from whole families, not just individuals.<|19.70|>
+
+28
+00:01:15,900 --> 00:01:20,900
+<|startoftranscript|><|0.00|> You're dealing with cross-border gift funds and these deep-rooted community networks.<|5.00|>
+
+29
+00:01:20,900 --> 00:01:27,220
+<|5.00|> So today, our mission is to decode exactly how you capture and really serve this market.<|11.32|>
+
+30
+00:01:27,220 --> 00:01:33,459
+<|11.32|> We are stripping down the exact strategies, the psychological frameworks of trust and the<|17.56|>
+
+31
+00:01:33,459 --> 00:01:34,819
+<|17.56|> tech tools you need for this.<|18.92|>
+
+32
+00:01:34,800 --> 00:01:38,360
+<|startoftranscript|><|0.00|> to become that ultimate financial anchor for the community.<|3.56|>
+
+33
+00:01:38,360 --> 00:01:40,080
+<|3.56|> - And to do this, we've pulled together<|5.28|>
+
+34
+00:01:40,080 --> 00:01:41,600
+<|5.28|> a massive stack of research.<|6.80|>
+
+35
+00:01:41,600 --> 00:01:43,720
+<|6.80|> We've got the state of Asia, America report,<|8.92|>
+
+36
+00:01:43,720 --> 00:01:45,680
+<|8.92|> and the state of Hispanic homeownership report.<|10.88|>
+
+37
+00:01:45,680 --> 00:01:47,560
+<|10.88|> - What's your grade for tracking the macro data, right?<|12.76|>
+
+38
+00:01:47,560 --> 00:01:50,480
+<|12.76|> - Yeah, but data only tells us what is happening, not why.<|15.68|>
+
+39
+00:01:50,500 --> 00:01:55,379
+<|startoftranscript|><|0.00|> So we are also leaning heavily on this brilliant video ethnography called mortgage journeys.<|4.88|>
+
+40
+00:01:55,379 --> 00:02:00,580
+<|4.88|> That study is incredible, conducted by Abbot Associates for Fannie Mae, and it literally<|10.08|>
+
+41
+00:02:00,580 --> 00:02:05,860
+<|10.08|> tracked the day-to-day emotional realities of first-time home buyers over an entire year.<|15.36|>
+
+42
+00:02:05,860 --> 00:02:08,259
+<|15.36|> It's going to completely shatter some industry myths today.<|17.76|>
+
+43
+00:02:08,259 --> 00:02:12,860
+<|17.76|> We're also pulling from the Finlocker Guide on Consumer Trust, some manuals on multicultural<|22.36|>
+
+44
+00:02:12,860 --> 00:02:17,139
+<|22.36|> marketing, and a breakdown of the top AI-powered CRMs hitting the market.<|26.64|>
+
+45
+00:02:17,300 --> 00:02:22,300
+<|startoftranscript|><|0.00|> By synthesizing all of this, a very clear narrative emerges.<|5.00|>
+
+46
+00:02:22,300 --> 00:02:28,300
+<|5.00|> The traditional business to consumer or B2C mindset is essentially dead for this demographic.<|11.00|>
+
+47
+00:02:28,300 --> 00:02:29,300
+<|11.00|> Dead and buried.<|12.00|>
+
+48
+00:02:29,300 --> 00:02:32,300
+<|12.00|> You just cannot treat a barrower as an isolated consumer anymore.<|15.00|>
+
+49
+00:02:32,300 --> 00:02:33,300
+<|15.00|> Exactly.<|16.00|>
+
+50
+00:02:33,300 --> 00:02:39,300
+<|16.00|> To win, you have to adopt this deeply embedded community mindset, using what we call low self-orientation.<|22.00|>
+
+51
+00:02:39,300 --> 00:02:43,300
+<|22.00|> Let's start with the ground truth here, the changing face of the barrower.<|26.00|>
+
+52
+00:02:42,899 --> 00:02:48,899
+<|startoftranscript|><|0.00|> because the demographic reality completely contradicts the marketing materials most branches are running right now.<|6.00|>
+
+53
+00:02:48,899 --> 00:03:00,899
+<|6.00|> It really does. The state of Asia-America Report explicitly shows that AA and HPI families, Asian-American, Native Hawaiian and Pacific Islander families, are literally living the future of housing right now.<|18.00|>
+
+54
+00:03:00,600 --> 00:03:06,040
+<|startoftranscript|><|0.00|> Yeah, and the defining characteristic of that future is multi-generational living, right?<|5.44|>
+
+55
+00:03:06,040 --> 00:03:10,100
+<|5.44|> Yes, that is exactly where that 60 million figure comes from.<|9.50|>
+
+56
+00:03:10,100 --> 00:03:14,279
+<|9.50|> 60 million Americans living in multi-generational households.<|13.68|>
+
+57
+00:03:14,279 --> 00:03:15,639
+<|13.68|> Wait, let's just pause on that.<|15.04|>
+
+58
+00:03:15,639 --> 00:03:16,639
+<|15.04|> 60 million.<|16.04|>
+
+59
+00:03:16,639 --> 00:03:17,639
+<|16.04|> That's like<|17.04|>
+
+60
+00:03:17,399 --> 00:03:20,159
+<|startoftranscript|><|0.00|> Nearly one in five Americans.<|2.76|>
+
+61
+00:03:20,159 --> 00:03:21,159
+<|2.76|> It's huge.<|3.76|>
+
+62
+00:03:21,159 --> 00:03:23,639
+<|3.76|> It's not some newch sub segment.<|6.24|>
+
+63
+00:03:23,639 --> 00:03:27,119
+<|6.24|> That is a fundamental restructuring of the American dream.<|9.72|>
+
+64
+00:03:27,119 --> 00:03:29,759
+<|9.72|> And the age demographics are shifting too.<|12.36|>
+
+65
+00:03:29,759 --> 00:03:33,919
+<|12.36|> The median age of a first time buyer just hit an all time high of 40 years old.<|16.52|>
+
+66
+00:03:33,919 --> 00:03:37,000
+<|16.52|> Right, and 24% of first time buyers are single women.<|19.60|>
+
+67
+00:03:37,000 --> 00:03:38,000
+<|19.60|> Exactly.<|20.60|>
+
+68
+00:03:38,000 --> 00:03:42,039
+<|20.60|> So this whole industry idea of the 25 year old newlywed couple,<|24.64|>
+
+69
+00:03:42,000 --> 00:03:44,399
+<|startoftranscript|><|0.00|> buying a starter home on a single income.<|2.40|>
+
+70
+00:03:44,399 --> 00:03:46,160
+<|2.40|> That's increasingly a complete myth.<|4.16|>
+
+71
+00:03:46,160 --> 00:03:47,440
+<|4.16|> It's just not the reality anymore.<|5.44|>
+
+72
+00:03:47,440 --> 00:03:49,039
+<|5.44|> But we have to ask why this is happening.<|7.04|>
+
+73
+00:03:49,039 --> 00:03:50,880
+<|7.04|> You know, is it purely a cultural preference?<|8.88|>
+
+74
+00:03:50,880 --> 00:03:51,919
+<|8.88|> Oh, what does the data say?<|9.92|>
+
+75
+00:03:51,919 --> 00:03:54,000
+<|9.92|> When you synthesize the Asian-American data<|12.00|>
+
+76
+00:03:54,000 --> 00:03:55,919
+<|12.00|> with the Hispanic homeownership report<|13.92|>
+
+77
+00:03:55,919 --> 00:03:57,919
+<|13.92|> and that mortgage journey's ethnography,<|15.92|>
+
+78
+00:03:57,919 --> 00:04:00,320
+<|15.92|> you see a highly strategic response<|18.32|>
+
+79
+00:04:00,320 --> 00:04:02,320
+<|18.32|> to a brutal economic environment.<|20.32|>
+
+80
+00:04:02,320 --> 00:04:04,320
+<|20.32|> Oh, because of the affordability pressures.<|22.32|>
+
+81
+00:04:04,320 --> 00:04:05,440
+<|22.32|> Exactly.<|23.44|>
+
+82
+00:04:05,440 --> 00:04:06,800
+<|23.44|> High interest rates.<|24.80|>
+
+83
+00:04:06,800 --> 00:04:08,160
+<|24.80|> Constrained inventory.<|26.16|>
+
+84
+00:04:08,199 --> 00:04:13,800
+<|startoftranscript|><|0.00|> Buyers across immigrant and minority communities are systematically pooling their resources.<|5.60|>
+
+85
+00:04:13,800 --> 00:04:16,160
+<|5.60|> Okay, let's unpack this a little.<|7.96|>
+
+86
+00:04:16,160 --> 00:04:21,000
+<|7.96|> Because a skeptic might read that data and say, well rent is just too high, so adult kids<|12.80|>
+
+87
+00:04:21,000 --> 00:04:23,559
+<|12.80|> are failing to launch and living in their parents' basements.<|15.36|>
+
+88
+00:04:23,559 --> 00:04:24,919
+<|15.36|> Yeah, people do say that.<|16.72|>
+
+89
+00:04:24,919 --> 00:04:25,919
+<|16.72|> Right.<|17.72|>
+
+90
+00:04:25,919 --> 00:04:31,079
+<|17.72|> So is this a symptom of economic distress or is it a deliberate real estate strategy?<|22.88|>
+
+91
+00:04:31,100 --> 00:04:35,140
+<|startoftranscript|><|0.00|> The data points heavily toward a deliberate strategy.<|4.04|>
+
+92
+00:04:35,140 --> 00:04:36,860
+<|4.04|> This is not about failing to launch.<|5.76|>
+
+93
+00:04:36,860 --> 00:04:40,339
+<|5.76|> It's about families merging their financial power to launch together.<|9.24|>
+
+94
+00:04:40,339 --> 00:04:41,739
+<|9.24|> Wow, okay.<|10.64|>
+
+95
+00:04:41,739 --> 00:04:42,739
+<|10.64|> That's a big distinction.<|11.64|>
+
+96
+00:04:42,739 --> 00:04:43,739
+<|11.64|> It is.<|12.64|>
+
+97
+00:04:43,739 --> 00:04:48,020
+<|12.64|> In the Hispanic report, a real estate agent from California, Vicki Delaharan, explains it<|16.92|>
+
+98
+00:04:48,020 --> 00:04:48,660
+<|16.92|> perfectly.<|17.56|>
+
+99
+00:04:48,700 --> 00:04:54,220
+<|startoftranscript|><|0.00|> Buyers are actively combining income because they are incredibly hungry for home ownership.<|5.52|>
+
+100
+00:04:54,220 --> 00:04:56,779
+<|5.52|> So parents with adult children, brothers with sister?<|8.08|>
+
+101
+00:04:56,779 --> 00:05:01,460
+<|8.08|> Exactly, they know qualifying on a single income is nearly impossible in high cost areas,<|12.76|>
+
+102
+00:05:01,460 --> 00:05:05,180
+<|12.76|> so they turn the family unit into a collective financial engine.<|16.48|>
+
+103
+00:05:05,180 --> 00:05:09,700
+<|16.48|> So practically speaking, for you as a loan officer, this completely changes the underwriting<|21.00|>
+
+104
+00:05:09,700 --> 00:05:10,700
+<|21.00|> game.<|22.00|>
+
+105
+00:05:10,700 --> 00:05:11,700
+<|22.00|> Oh, completely.<|23.00|>
+
+106
+00:05:11,700 --> 00:05:15,580
+<|23.00|> You are just pulling one W2 and running a simple DTI calculation anymore.<|26.88|>
+
+107
+00:05:15,600 --> 00:05:22,320
+<|startoftranscript|><|0.00|> You're dealing with siblings co-signing, or adult kids combining their tech salaries<|6.72|>
+
+108
+00:05:22,320 --> 00:05:25,320
+<|6.72|> while parents wire over international gift funds.<|9.72|>
+
+109
+00:05:25,320 --> 00:05:30,640
+<|9.72|> Yeah, they are collectively taking on the obligation to build generational wealth, and the<|15.04|>
+
+110
+00:05:30,640 --> 00:05:33,040
+<|15.04|> mortgage journey's ethnography confirms this.<|17.44|>
+
+111
+00:05:33,100 --> 00:05:38,700
+<|startoftranscript|><|0.00|> Family structure is the absolute most frequent deciding factor in housing tenure for these communities.<|5.60|>
+
+112
+00:05:38,700 --> 00:05:42,899
+<|5.60|> Having more income earners under one roof is a massive strategic asset.<|9.80|>
+
+113
+00:05:42,899 --> 00:05:46,399
+<|9.80|> Right. It's not viewed as a burden or a failure of independence at all.<|13.30|>
+
+114
+00:05:46,399 --> 00:05:52,000
+<|13.30|> This means if your marketing just says, "Get your dream home" or "check your rate," you're totally missing the mark.<|18.90|>
+
+115
+00:05:52,000 --> 00:05:53,600
+<|18.90|> You're practically invisible to them.<|20.50|>
+
+116
+00:05:53,600 --> 00:05:56,600
+<|20.50|> Yeah. If 60 million people are pooling resources.<|23.50|>
+
+117
+00:05:56,899 --> 00:06:01,859
+<|startoftranscript|><|0.00|> selling them a standard individual mortgage is like, well, it's like trying to sell a two-seater<|4.96|>
+
+118
+00:06:01,859 --> 00:06:04,899
+<|4.96|> sports car to a family that desperately needs them in a van.<|8.00|>
+
+119
+00:06:04,899 --> 00:06:05,899
+<|8.00|> That's a perfect analogy.<|9.00|>
+
+120
+00:06:05,899 --> 00:06:07,979
+<|9.00|> You aren't underwriting the individual.<|11.08|>
+
+121
+00:06:07,979 --> 00:06:10,660
+<|11.08|> You are underwriting a family's collective ambition.<|13.76|>
+
+122
+00:06:10,660 --> 00:06:14,739
+<|13.76|> Okay, so when you're consulting with a perspective buyer from the Indian community.<|17.84|>
+
+123
+00:06:14,799 --> 00:06:21,799
+<|startoftranscript|><|0.00|> You have to recognize that the decision-making unit, sitting across from you, is rarely just the person on the deed.<|7.00|>
+
+124
+00:06:21,799 --> 00:06:28,299
+<|7.00|> Exactly. It's the extended family. It's the parents who contributed 50 grand and want to know their investment is safe.<|13.50|>
+
+125
+00:06:28,299 --> 00:06:30,799
+<|13.50|> It's the sibling who's helping with the monthly payments.<|16.00|>
+
+126
+00:06:30,799 --> 00:06:34,299
+<|16.00|> If your conversation only addresses the individual applicant.<|19.50|>
+
+127
+00:06:34,200 --> 00:06:38,120
+<|startoftranscript|><|0.00|> You're ignoring the actual board of directors driving the purchase.<|3.92|>
+
+128
+00:06:38,120 --> 00:06:39,680
+<|3.92|> You really are.<|5.48|>
+
+129
+00:06:39,680 --> 00:06:44,460
+<|5.48|> Saul Pinella, an originator in the sources, pointed out that using co-barrowers is the primary<|10.26|>
+
+130
+00:06:44,460 --> 00:06:47,360
+<|10.26|> opportunity for increasing buying power right now.<|13.16|>
+
+131
+00:06:47,360 --> 00:06:51,360
+<|13.16|> It starts as a survival tactic, but transforms into a wealth building stress.<|17.16|>
+
+132
+00:06:51,399 --> 00:06:54,899
+<|startoftranscript|><|0.00|> But understanding the family unit is only step one, right?<|3.50|>
+
+133
+00:06:54,899 --> 00:06:58,899
+<|3.50|> The real challenge is figuring out how to actually penetrate that unit.<|7.50|>
+
+134
+00:06:58,899 --> 00:07:00,899
+<|7.50|> Yes, that is the operational hurdle.<|9.50|>
+
+135
+00:07:00,899 --> 00:07:05,899
+<|9.50|> You do not reach these deeply connected families through generic Facebook ads or mailers.<|14.50|>
+
+136
+00:07:05,899 --> 00:07:06,899
+<|14.50|> So how do you do it?<|15.50|>
+
+137
+00:07:06,899 --> 00:07:14,399
+<|15.50|> You have to physically and digitally enter the hyper local spaces where these families gather and share financial information.<|23.00|>
+
+138
+00:07:14,899 --> 00:07:18,579
+<|startoftranscript|><|0.00|> The marketing manuals call it true multicultural marketing.<|3.68|>
+
+139
+00:07:18,579 --> 00:07:20,139
+<|3.68|> Right, which means going all out.<|5.24|>
+
+140
+00:07:20,139 --> 00:07:21,859
+<|5.24|> Going all out exactly.<|6.96|>
+
+141
+00:07:21,859 --> 00:07:24,660
+<|6.96|> But that doesn't mean blowing your budget on a highway billboard.<|9.76|>
+
+142
+00:07:24,660 --> 00:07:27,579
+<|9.76|> It means stepping outside the corporate environment<|12.68|>
+
+143
+00:07:27,579 --> 00:07:30,660
+<|12.68|> and embedding yourself directly into the cultural fabric.<|15.76|>
+
+144
+00:07:30,660 --> 00:07:33,019
+<|15.76|> The sources gave this really vivid example of this<|18.12|>
+
+145
+00:07:33,019 --> 00:07:36,979
+<|18.12|> from a report about Punjabi American farmers in California.<|22.08|>
+
+146
+00:07:37,000 --> 00:07:38,399
+<|startoftranscript|><|0.00|> Break that down for us.<|1.40|>
+
+147
+00:07:38,399 --> 00:07:41,799
+<|1.40|> Yeah, so the report details the Punjabi American Growers Group<|4.80|>
+
+148
+00:07:41,799 --> 00:07:47,000
+<|4.80|> dozens of farmers gather to discuss huge issues local business policies, water rights,<|10.00|>
+
+149
+00:07:47,000 --> 00:07:48,399
+<|10.00|> drought challenges,<|11.40|>
+
+150
+00:07:48,399 --> 00:07:49,799
+<|11.40|> heavy consequential stuff.<|12.80|>
+
+151
+00:07:49,799 --> 00:07:52,799
+<|12.80|> Very, but the critical piece is where they gather.<|15.80|>
+
+152
+00:07:52,799 --> 00:07:54,600
+<|15.80|> They don't meet at the Chamber of Commerce.<|17.60|>
+
+153
+00:07:54,600 --> 00:07:59,200
+<|17.60|> They gather at the Shriguru Nanak Sikh Temple in Yuba City.<|22.20|>
+
+154
+00:07:59,200 --> 00:08:04,700
+<|startoftranscript|><|0.00|> Right, and the report notes the descendants of the earliest immigrants now serve in local government there.<|5.50|>
+
+155
+00:08:04,700 --> 00:08:07,700
+<|5.50|> It is this incredibly dense high-trust network.<|8.50|>
+
+156
+00:08:07,700 --> 00:08:15,200
+<|8.50|> Exactly, so if you're a loan officer in UBCD, sending out generic rate sheet flyers is basically throwing money into an incinerator.<|16.00|>
+
+157
+00:08:15,200 --> 00:08:16,200
+<|16.00|> You're totally invisible.<|17.00|>
+
+158
+00:08:16,200 --> 00:08:19,200
+<|17.00|> You are, to be visible, you need to be at that temple.<|20.00|>
+
+159
+00:08:19,200 --> 00:08:27,200
+<|20.00|> You need to understand the macro factors affecting their livelihoods, like a drought impacting their yields, which dictates their real estate leverage.<|28.00|>
+
+160
+00:08:27,200 --> 00:08:29,200
+<|startoftranscript|><|0.00|> I have to challenge this though.<|2.00|><|endoftext|>
+
+161
+00:08:28,600 --> 00:08:33,599
+<|startoftranscript|><|0.00|> because if I just show up at a good warra or a cultural center,<|5.00|>
+
+162
+00:08:33,679 --> 00:08:35,559
+<|5.08|> handing out my business cards,<|6.96|>
+
+163
+00:08:35,559 --> 00:08:37,799
+<|6.96|> that is gonna backfire spectacularly.<|9.20|>
+
+164
+00:08:37,799 --> 00:08:38,880
+<|9.20|> - Oh, it absolutely will.<|10.28|>
+
+165
+00:08:38,880 --> 00:08:42,239
+<|10.28|> It comes across as incredibly tacky and opportunistic.<|13.64|>
+
+166
+00:08:42,239 --> 00:08:43,400
+<|13.64|> - Yeah, very transactional.<|14.80|>
+
+167
+00:08:43,400 --> 00:08:46,200
+<|14.80|> - And this ties into a vital psychological concept<|17.60|>
+
+168
+00:08:46,200 --> 00:08:48,679
+<|17.60|> from the manuals regarding face culture.<|20.08|>
+
+169
+00:08:48,500 --> 00:08:52,179
+<|startoftranscript|><|0.00|> which is very prominent across many Asian demographics.<|3.68|>
+
+170
+00:08:52,179 --> 00:08:53,859
+<|3.68|> Face culture, let's dig into that,<|5.36|>
+
+171
+00:08:53,859 --> 00:08:56,739
+<|5.36|> because I think Western marketing completely misunderstands it.<|8.24|>
+
+172
+00:08:56,739 --> 00:08:57,460
+<|8.24|> They do.<|8.96|>
+
+173
+00:08:57,460 --> 00:08:59,940
+<|8.96|> It isn't just about avoiding embarrassment.<|11.44|>
+
+174
+00:08:59,940 --> 00:09:03,619
+<|11.44|> It's about social capital, respect, and prestige.<|15.12|>
+
+175
+00:09:03,619 --> 00:09:07,460
+<|15.12|> People attach themselves to trusted, prestigious entities<|18.96|>
+
+176
+00:09:07,460 --> 00:09:09,859
+<|18.96|> to elevate their family's collective social standards.<|21.36|>
+
+177
+00:09:09,900 --> 00:09:16,700
+<|startoftranscript|><|0.00|> But how does a mortgage professional, who's essentially selling a commoditized loan, become<|6.80|>
+
+178
+00:09:16,700 --> 00:09:18,300
+<|6.80|> a prestigious entity?<|8.40|>
+
+179
+00:09:18,300 --> 00:09:22,420
+<|8.40|> Well, prestige here doesn't mean having a luxury brand logo.<|12.52|>
+
+180
+00:09:22,420 --> 00:09:26,059
+<|12.52|> It means possessing localized trust and cultural relevance.<|16.16|>
+
+181
+00:09:26,099 --> 00:09:30,099
+<|startoftranscript|><|0.00|> You have to establish a footprint where they already exist organically.<|4.00|>
+
+182
+00:09:30,099 --> 00:09:35,099
+<|4.00|> So strategic, respectful, hyper-local advertising.<|9.00|>
+
+183
+00:09:35,099 --> 00:09:40,099
+<|9.00|> Yes, sponsoring cultural lands, religious festivals, local sports leagues.<|14.00|>
+
+184
+00:09:40,099 --> 00:09:44,099
+<|14.00|> So instead of crashing the temple with business cards, you're sponsoring the local cricket tournament.<|18.00|>
+
+185
+00:09:44,700 --> 00:09:47,859
+<|startoftranscript|><|0.00|> We're setting up an educational booth at a Duwali, Mala.<|3.16|>
+
+186
+00:09:47,859 --> 00:09:50,179
+<|3.16|> Exactly. You focus on community enrichment.<|5.48|>
+
+187
+00:09:50,179 --> 00:09:52,739
+<|5.48|> But the manuals have a crucial caveat.<|8.04|>
+
+188
+00:09:52,739 --> 00:09:55,460
+<|8.04|> Never attempt to penetrate these networks alone.<|10.76|>
+
+189
+00:09:55,460 --> 00:09:57,260
+<|10.76|> Right. You need strategic partnerships.<|12.56|>
+
+190
+00:09:57,260 --> 00:10:00,380
+<|12.56|> Yes. You align yourself with trusted nodes already in the ecosystem.<|15.68|>
+
+191
+00:10:00,400 --> 00:10:05,440
+<|startoftranscript|><|0.00|> partner with prominent local real estate agents, trusted financial advisors, or a<|5.04|>
+
+192
+00:10:05,440 --> 00:10:09,559
+<|5.04|> culturally relevant CPA. Someone who already handles the tax returns for 50<|9.16|>
+
+193
+00:10:09,559 --> 00:10:13,760
+<|9.16|> families in that community maybe. Exactly. You co-sponsor wealth building seminars<|13.36|>
+
+194
+00:10:13,760 --> 00:10:17,800
+<|13.36|> with them. You absorb their established face and transfer their localized trust<|17.40|>
+
+195
+00:10:17,800 --> 00:10:22,080
+<|17.40|> onto your services. That transfer of trust is basically the holy grail. It really is.<|21.68|>
+
+196
+00:10:22,080 --> 00:10:26,119
+<|21.68|> The next B source talked about the ultimate growth engine being word of mouth in<|25.72|>
+
+197
+00:10:26,119 --> 00:10:29,240
+<|25.72|> these dense networks.<|28.84|>
+
+198
+00:10:27,700 --> 00:10:31,460
+<|startoftranscript|><|0.00|> It's not just a nice bonus. It's the entire ball game.<|3.76|>
+
+199
+00:10:31,460 --> 00:10:37,619
+<|3.76|> Because a great A referral in this context carries the immense weight of an existing personal relationship.<|9.92|>
+
+200
+00:10:37,619 --> 00:10:40,020
+<|9.92|> Right. A great A referral isn't someone saying,<|12.32|>
+
+201
+00:10:40,020 --> 00:10:43,460
+<|12.32|> "Hey, I got a 6.5% rate from this guy." It's someone saying,<|15.76|>
+
+202
+00:10:43,460 --> 00:10:48,179
+<|15.76|> "This professional sat down with my parents explained the process with incredible patience<|20.48|>
+
+203
+00:10:48,179 --> 00:10:50,660
+<|20.48|> and treated our family with immense respect."<|22.96|>
+
+204
+00:10:50,660 --> 00:10:54,260
+<|22.96|> That kind of referral bypasses all traditional marketing friction.<|26.56|>
+
+205
+00:10:54,299 --> 00:10:58,440
+<|startoftranscript|><|0.00|> The community member is putting their own social capital on the line to<|4.14|>
+
+206
+00:10:58,440 --> 00:11:04,019
+<|4.14|> vouch for you. But earning that referral is so hard. It requires a fundamental<|9.72|>
+
+207
+00:11:04,019 --> 00:11:07,679
+<|9.72|> shift in how you behave. It's not about the closing table. It's about what<|13.38|>
+
+208
+00:11:07,679 --> 00:11:12,059
+<|13.38|> happens months before. Which brings us to the mortgage journey's ethnography,<|17.76|>
+
+209
+00:11:12,059 --> 00:11:14,579
+<|17.76|> which is just...<|20.28|>
+
+210
+00:11:12,900 --> 00:11:18,300
+<|startoftranscript|><|0.00|> It's mind blowing. It reveals the exact psychological timing of when a buyer decides to trust you.<|5.40|>
+
+211
+00:11:18,300 --> 00:11:21,700
+<|5.40|> Yeah, that study is arguably the most important piece of research in our stack.<|8.80|>
+
+212
+00:11:21,700 --> 00:11:26,500
+<|8.80|> They spend a whole year tracking lower income first-time home buyers.<|13.60|>
+
+213
+00:11:26,500 --> 00:11:31,200
+<|13.60|> And they found the home-mind process isn't one continuous blur.<|18.30|>
+
+214
+00:11:31,200 --> 00:11:36,200
+<|18.30|> It's three distinct phases. Preparation, decision, and purchasing.<|23.30|>
+
+215
+00:11:36,099 --> 00:11:41,899
+<|startoftranscript|><|0.00|> And the defining insight, the thing that upends how 90% of loan officers run their business<|5.80|>
+
+216
+00:11:41,899 --> 00:11:44,779
+<|5.80|> is what happens during that final purchase phase.<|8.68|>
+
+217
+00:11:44,779 --> 00:11:49,139
+<|8.68|> The industry assumes buyers treat mortgages like a pure commodity, right?<|13.04|>
+
+218
+00:11:49,139 --> 00:11:53,139
+<|13.04|> That right up until closing, they're aggressively shopping around trying to shave an eighth<|17.04|>
+
+219
+00:11:53,139 --> 00:11:54,779
+<|17.04|> of a point off their rate.<|18.68|>
+
+220
+00:11:54,779 --> 00:11:55,940
+<|18.68|> Yeah, that's what everyone thinks.<|19.84|>
+
+221
+00:11:55,940 --> 00:11:57,940
+<|19.84|> But the ethnography proved the exact opposite.<|21.84|>
+
+222
+00:11:58,000 --> 00:12:02,739
+<|startoftranscript|><|0.00|> By the time buyers select a home and enter the purchase phase, they absolutely do not shop<|4.74|>
+
+223
+00:12:02,739 --> 00:12:03,739
+<|4.74|> around for mortgage.<|5.74|>
+
+224
+00:12:03,739 --> 00:12:05,419
+<|5.74|> Okay, I have to stop you there.<|7.42|>
+
+225
+00:12:05,419 --> 00:12:08,020
+<|7.42|> Objectively, that sounds incredibly financially irrational.<|10.02|>
+
+226
+00:12:08,020 --> 00:12:09,299
+<|10.02|> She does sound that way, yeah.<|11.30|>
+
+227
+00:12:09,299 --> 00:12:11,859
+<|11.30|> Like, this is the largest debt of their life.<|13.86|>
+
+228
+00:12:11,859 --> 00:12:15,940
+<|13.86|> People spend three weeks reading reviews for a $40 toaster on Amazon.<|17.94|>
+
+229
+00:12:15,940 --> 00:12:18,900
+<|17.94|> Are you telling me for an $800,000 asset?<|20.90|>
+
+230
+00:12:18,900 --> 00:12:21,340
+<|20.90|> They just accept whatever rate is put in front of them.<|23.34|>
+
+231
+00:12:21,340 --> 00:12:25,340
+<|23.34|> It sounds crazy until you look at their psychological state during that window.<|27.34|>
+
+232
+00:12:25,500 --> 00:12:30,000
+<|startoftranscript|><|0.00|> The researchers identified this massive phenomenon of decision fatigue.<|4.50|>
+
+233
+00:12:30,000 --> 00:12:32,099
+<|4.50|> Oh, because of the reality of the purchase phase.<|6.60|>
+
+234
+00:12:32,099 --> 00:12:33,099
+<|6.60|> Exactly.<|7.60|>
+
+235
+00:12:33,099 --> 00:12:39,500
+<|7.60|> The buyer has just endured months of searching, lost bidding wars, and suddenly a ticking clock starts.<|14.00|>
+
+236
+00:12:39,500 --> 00:12:46,799
+<|14.00|> Street deadlines, home inspections, appraisal, and a sheer crushing volume of documentation the underwriters demand.<|21.30|>
+
+237
+00:12:46,900 --> 00:12:50,619
+<|startoftranscript|><|0.00|> You're terrified that if you sneeze wrong, the deal falls apart.<|3.72|>
+
+238
+00:12:50,619 --> 00:12:52,900
+<|3.72|> It is pure cognitive overload.<|6.00|>
+
+239
+00:12:52,900 --> 00:12:57,500
+<|6.00|> The absolute last thing they want to do is introduce new variables, like filling out three<|10.60|>
+
+240
+00:12:57,500 --> 00:13:01,500
+<|10.60|> different applications and managing communications with three different loan officers.<|14.60|>
+
+241
+00:13:01,500 --> 00:13:06,980
+<|14.60|> Plus, there's that widespread fear that multiple applications will tank their credit score<|20.08|>
+
+242
+00:13:06,980 --> 00:13:08,460
+<|20.08|> right before closing.<|21.56|>
+
+243
+00:13:08,460 --> 00:13:11,300
+<|21.56|> Right, which often isn't even true, but the fear is real.<|24.40|>
+
+244
+00:13:11,400 --> 00:13:17,400
+<|startoftranscript|><|0.00|> And their real estate agents are usually discouraging them from shopping around at the last minute anyway to protect the deal.<|6.00|>
+
+245
+00:13:17,400 --> 00:13:25,400
+<|6.00|> So they just lack the bandwidth to comparison shop, which means if they aren't deciding in the purchase phase, when does the decision actually happen?<|14.00|>
+
+246
+00:13:25,400 --> 00:13:31,400
+<|14.00|> It happens at the very beginning. The dye is cast months before they ever tour an open house.<|20.00|>
+
+247
+00:13:31,400 --> 00:13:32,400
+<|20.00|> During the preparation phase.<|21.00|>
+
+248
+00:13:32,400 --> 00:13:33,400
+<|21.00|> Yes.<|22.00|>
+
+249
+00:13:33,200 --> 00:13:38,200
+<|startoftranscript|><|0.00|> The choices made about lenders in that early phase are incredibly sticky.<|5.00|>
+
+250
+00:13:38,200 --> 00:13:41,200
+<|5.00|> Let's use an analogy here because this is crucial.<|8.00|>
+
+251
+00:13:41,200 --> 00:13:46,200
+<|8.00|> The mortgage industry treats this process like laying asphalt on a road.<|13.00|>
+
+252
+00:13:46,200 --> 00:13:50,200
+<|13.00|> They think the value is created at the very end right before the car's drive on it.<|17.00|>
+
+253
+00:13:50,200 --> 00:13:53,200
+<|17.00|> Yeah, all the advertising is fast disclosing.<|20.00|>
+
+254
+00:13:53,799 --> 00:13:58,799
+<|startoftranscript|><|0.00|> But the data says winning a client is actually like pouring concrete pillars for a bridge underwater.<|5.00|>
+
+255
+00:13:58,799 --> 00:14:02,799
+<|5.00|> It takes massive time and precision and no one sees it happening.<|9.00|>
+
+256
+00:14:02,799 --> 00:14:06,799
+<|9.00|> But if you pour those pillars during the preparation phase, you own the bridge.<|13.00|>
+
+257
+00:14:06,799 --> 00:14:08,799
+<|13.00|> That is a phenomenal way to conceptualize it.<|15.00|>
+
+258
+00:14:08,799 --> 00:14:11,799
+<|15.00|> The underwater work is where the trust is for.<|18.00|>
+
+259
+00:14:11,700 --> 00:14:16,400
+<|startoftranscript|><|0.00|> And you have to look at the emotional vulnerability of the buyer during that time.<|4.70|>
+
+260
+00:14:16,400 --> 00:14:18,980
+<|4.70|> The ethnography talks about financial self-perception.<|7.28|>
+
+261
+00:14:18,980 --> 00:14:22,660
+<|7.28|> Right, especially within minority and immigrant communities.<|10.96|>
+
+262
+00:14:22,660 --> 00:14:27,619
+<|10.96|> Many enter the process feeling financially vulnerable or fundamentally uncredited.<|15.92|>
+
+263
+00:14:27,619 --> 00:14:30,720
+<|15.92|> There was that heartbreaking case study in the report, Joshua.<|19.02|>
+
+264
+00:14:30,900 --> 00:14:32,900
+<|startoftranscript|><|0.00|> Walk us through his experience.<|2.00|>
+
+265
+00:14:32,900 --> 00:14:35,900
+<|2.00|> So Joshua considered himself highly responsible.<|5.00|>
+
+266
+00:14:35,900 --> 00:14:38,900
+<|5.00|> Pating cash, avoided debt, kept expenses low.<|8.00|>
+
+267
+00:14:38,900 --> 00:14:41,900
+<|8.00|> He even had utilities in his roommates' names.<|11.00|>
+
+268
+00:14:41,900 --> 00:14:45,900
+<|11.00|> But when he applied for pre-qualification, he was denied outright.<|15.00|>
+
+269
+00:14:45,900 --> 00:14:47,900
+<|15.00|> Because he had a thin credit file.<|17.00|>
+
+270
+00:14:47,900 --> 00:14:48,900
+<|17.00|> Exactly.<|18.00|>
+
+271
+00:14:48,900 --> 00:14:52,900
+<|18.00|> Because he hadn't played the credit card game, the algorithm deemed him a ghost.<|22.00|>
+
+272
+00:14:52,500 --> 00:14:58,780
+<|startoftranscript|><|0.00|> And this wasn't just a logistical setback, it was a profound emotional devastation for him.<|6.28|>
+
+273
+00:14:58,780 --> 00:15:01,979
+<|6.28|> It was a rejection of his identity as a responsible adult.<|9.48|>
+
+274
+00:15:01,979 --> 00:15:02,979
+<|9.48|> Yes.<|10.48|>
+
+275
+00:15:02,979 --> 00:15:06,859
+<|10.48|> And we see these layered cultural anxieties constantly.<|14.36|>
+
+276
+00:15:06,859 --> 00:15:12,380
+<|14.36|> Another participant, Duncan, a black home buyer, carried deep anxiety that his race affected<|19.88|>
+
+277
+00:15:12,380 --> 00:15:14,020
+<|19.88|> how banks evaluated him.<|21.52|>
+
+278
+00:15:14,020 --> 00:15:17,619
+<|21.52|> And Nancy, who watched her parents suffer during the subprime crisis.<|25.12|>
+
+279
+00:15:17,599 --> 00:15:19,839
+<|startoftranscript|><|0.00|> She was terrified of predatory lending.<|2.24|>
+
+280
+00:15:19,839 --> 00:15:22,880
+<|2.24|> These buyers are not walking into a bank looking for a transaction.<|5.28|>
+
+281
+00:15:22,880 --> 00:15:26,039
+<|5.28|> They have their shields up, expecting to be marginalized or taken advantage of.<|8.44|>
+
+282
+00:15:26,039 --> 00:15:28,159
+<|8.44|> They are seeking emotional reassurance.<|10.56|>
+
+283
+00:15:28,159 --> 00:15:30,959
+<|10.56|> Which brings us to the absolute core strategy here.<|13.36|>
+
+284
+00:15:30,959 --> 00:15:34,679
+<|13.36|> When a buyer is that vulnerable, the only currency that matters is genuine trust.<|17.08|>
+
+285
+00:15:34,700 --> 00:15:37,700
+<|startoftranscript|><|0.00|> And you build that through low self-orientation.<|3.00|>
+
+286
+00:15:37,700 --> 00:15:42,960
+<|3.00|> Yes, from the trust-based selling manual, operating with low self-orientation means your<|8.26|>
+
+287
+00:15:42,960 --> 00:15:48,179
+<|8.26|> focus is entirely on the client for their benefit, not as a means to your end.<|13.48|>
+
+288
+00:15:48,179 --> 00:15:50,299
+<|13.48|> The manual uses that Voltronality, right?<|15.60|>
+
+289
+00:15:50,299 --> 00:15:50,660
+<|15.60|> Yes.<|15.96|>
+
+290
+00:15:50,700 --> 00:15:54,080
+<|startoftranscript|><|0.00|> It says most client focus is the focus of a vulture.<|3.38|>
+
+291
+00:15:54,080 --> 00:15:57,700
+<|3.38|> A vulture is highly focused on its target, but only to consume it.<|7.00|>
+
+292
+00:15:57,700 --> 00:16:00,299
+<|7.00|> Wow, that's dark, but accurate.<|9.60|>
+
+293
+00:16:00,299 --> 00:16:03,859
+<|9.60|> But when a client encounters a professional who genuinely cares about their financial<|13.16|>
+
+294
+00:16:03,859 --> 00:16:08,780
+<|13.16|> health as an end in itself, the client is overwhelmingly inclined to trust them.<|18.08|>
+
+295
+00:16:08,799 --> 00:16:15,799
+<|startoftranscript|><|0.00|> So practically, low self-orientation means being willing to kill your own deal if it's the right thing to do.<|7.00|>
+
+296
+00:16:15,799 --> 00:16:16,799
+<|7.00|> Exactly.<|8.00|>
+
+297
+00:16:16,799 --> 00:16:22,799
+<|8.00|> It means looking at a young couple's DTI and saying, "Look, I could squeeze this through today, but you'll be house poor.<|14.00|>
+
+298
+00:16:22,799 --> 00:16:26,799
+<|14.00|> Walk away, pay down this auto loan for six months, and come back when you're truly ready."<|18.00|>
+
+299
+00:16:26,799 --> 00:16:28,799
+<|18.00|> A Vulture would never do that.<|20.00|>
+
+300
+00:16:28,799 --> 00:16:30,799
+<|20.00|> A Vulture pushes the paper through to get the check.<|22.00|>
+
+301
+00:16:30,799 --> 00:16:33,799
+<|22.00|> A Focus on Immediate Transactions kills long-term relationships.<|25.00|>
+
+302
+00:16:33,799 --> 00:16:38,039
+<|startoftranscript|><|0.00|> but focusing on the relationship allows future transactions to blossom.<|4.24|><|endoftext|>
+
+303
+00:16:38,299 --> 00:16:42,519
+<|startoftranscript|><|0.00|> Sue Buzzwell from the Finn Locker Guide talked about this with pulling credit<|4.22|>
+
+304
+00:16:42,519 --> 00:16:47,479
+<|4.22|> reports right? Yeah pulling credit is invasive and uncomfortable. If you don't<|9.18|>
+
+305
+00:16:47,479 --> 00:16:51,500
+<|9.18|> just point out their flaws but actually partner with them to explain credit<|13.20|>
+
+306
+00:16:51,500 --> 00:16:56,059
+<|13.20|> repair acting as a financial educator you permanently elevate your value.<|17.76|>
+
+307
+00:16:56,059 --> 00:17:00,059
+<|17.76|> This is where you dispel the myths.<|21.76|>
+
+308
+00:16:58,400 --> 00:17:00,280
+<|startoftranscript|><|0.00|> holding these communities back.<|1.88|>
+
+309
+00:17:00,280 --> 00:17:02,320
+<|1.88|> Like the massive misconception<|3.92|>
+
+310
+00:17:02,320 --> 00:17:05,359
+<|3.92|> that you absolutely must have a 20% down payment.<|6.96|>
+
+311
+00:17:05,359 --> 00:17:10,200
+<|6.96|> Or the confusion about what private mortgage insurance PMI actually is.<|11.80|>
+
+312
+00:17:10,200 --> 00:17:13,160
+<|11.80|> So imagine sitting down with a multi-generational family<|14.76|>
+
+313
+00:17:13,160 --> 00:17:15,920
+<|14.76|> and clearly explaining down payment assistance.<|17.52|>
+
+314
+00:17:15,900 --> 00:17:18,940
+<|startoftranscript|><|0.00|> It's mapping out how they can pool incomes.<|3.04|>
+
+315
+00:17:18,940 --> 00:17:24,219
+<|3.04|> Explaining that PMI is an a penalty but a tool to start building equity a decade earlier.<|8.32|>
+
+316
+00:17:24,219 --> 00:17:27,140
+<|8.32|> You demystify the terrifying financial system.<|11.24|>
+
+317
+00:17:27,140 --> 00:17:29,700
+<|11.24|> You pour those concrete pillars underwater.<|13.80|>
+
+318
+00:17:29,700 --> 00:17:33,140
+<|13.80|> And eight months later they won't log on to a discount site to shop your rate.<|17.24|>
+
+319
+00:17:33,140 --> 00:17:34,140
+<|17.24|> They'll call you.<|18.24|>
+
+320
+00:17:34,140 --> 00:17:36,660
+<|18.24|> Because you are the architect of their possibility.<|20.76|>
+
+321
+00:17:36,660 --> 00:17:39,500
+<|20.76|> But we have to talk about the operational reality check.<|23.60|>
+
+322
+00:17:39,500 --> 00:17:41,780
+<|startoftranscript|><|0.00|> - Yeah, because acting is a financial therapist<|2.28|>
+
+323
+00:17:41,780 --> 00:17:43,579
+<|2.28|> and holding a client's hand for eight months<|4.08|>
+
+324
+00:17:43,579 --> 00:17:44,699
+<|4.08|> does not scale.<|5.20|>
+
+325
+00:17:44,699 --> 00:17:47,459
+<|5.20|> - No, it is incredibly time intensive.<|7.96|>
+
+326
+00:17:47,459 --> 00:17:51,180
+<|7.96|> If you spend four hours a week counseling one family<|11.68|>
+
+327
+00:17:51,180 --> 00:17:54,500
+<|11.68|> who might not buy for a year, you will go bankrupt.<|15.00|>
+
+328
+00:17:54,500 --> 00:17:56,339
+<|15.00|> - So how does a loan officer maintain<|16.84|>
+
+329
+00:17:56,339 --> 00:17:58,979
+<|16.84|> this low-cell orientation across a pipeline<|19.48|>
+
+330
+00:17:58,979 --> 00:18:01,380
+<|19.48|> of 300 prospects without burning out?<|21.88|>
+
+331
+00:18:01,380 --> 00:18:04,140
+<|21.88|> - You have to scale your trust using highly targeted<|24.64|>
+
+332
+00:18:04,140 --> 00:18:07,099
+<|24.64|> educational content and cutting edge automation.<|27.60|>
+
+333
+00:18:07,099 --> 00:18:09,979
+<|startoftranscript|><|0.00|> Let's dive into the 2026 tech stack.<|2.88|>
+
+334
+00:18:09,979 --> 00:18:13,900
+<|2.88|> Alright, how do we build a machine that replicates deep empathy?<|6.80|>
+
+335
+00:18:13,900 --> 00:18:16,859
+<|6.80|> The foundation is educational marketing.<|9.76|>
+
+336
+00:18:16,859 --> 00:18:21,979
+<|9.76|> Scott Scheing, an AI and a mortgage tech expert in our sources, argues you must position<|14.88|>
+
+337
+00:18:21,979 --> 00:18:26,380
+<|14.88|> yourself as the definitive local authority through culturally competent content.<|19.28|>
+
+338
+00:18:26,400 --> 00:18:30,000
+<|startoftranscript|><|0.00|> videos, blogs, infographics, addressing their specific pain points.<|3.60|>
+
+339
+00:18:30,000 --> 00:18:31,280
+<|3.60|> - Exactly.<|4.88|>
+
+340
+00:18:31,280 --> 00:18:34,960
+<|4.88|> Owning versus renting, navigating multi-bar or applications.<|8.56|>
+
+341
+00:18:34,960 --> 00:18:37,960
+<|8.56|> Gingerbell calls your blog your digital soapbox.<|11.56|>
+
+342
+00:18:37,960 --> 00:18:40,200
+<|11.56|> - And Mike Farashi stresses the importance of video,<|13.80|>
+
+343
+00:18:40,200 --> 00:18:42,680
+<|13.80|> live Q&A sessions, client testimonials.<|16.28|>
+
+344
+00:18:42,680 --> 00:18:45,080
+<|16.28|> You translate your one-on-one empathy into a broadcast.<|18.68|>
+
+345
+00:18:45,080 --> 00:18:46,119
+<|18.68|> - But here's the catch.<|19.72|>
+
+346
+00:18:46,119 --> 00:18:47,880
+<|19.72|> Creating a great video is useless<|21.48|>
+
+347
+00:18:47,880 --> 00:18:50,440
+<|21.48|> if it just sits on YouTube gathering dust.<|24.04|>
+
+348
+00:18:50,440 --> 00:18:52,479
+<|24.04|> You have to deliver it at the exact moment<|26.08|>
+
+349
+00:18:52,479 --> 00:18:54,599
+<|26.08|> the buyer is psychologically primed for it.<|28.20|>
+
+350
+00:18:54,599 --> 00:18:57,599
+<|startoftranscript|><|0.00|> That's where AI powered CRM's come in.<|3.00|>
+
+351
+00:18:57,599 --> 00:18:59,599
+<|3.00|> The Ring's AI source breaks this down perfectly.<|5.00|>
+
+352
+00:18:59,599 --> 00:19:03,599
+<|5.00|> Five years ago, a CRM was just a glorified role at X.<|9.00|>
+
+353
+00:19:03,599 --> 00:19:07,599
+<|9.00|> Static data storage, but today they are predictive intelligence engines.<|13.00|>
+
+354
+00:19:07,599 --> 00:19:12,599
+<|13.00|> By 2028, 80% of generative AI business applications will be integrated into these platforms.<|18.00|>
+
+355
+00:19:12,800 --> 00:19:15,600
+<|startoftranscript|><|0.00|> Walk us through the mechanics of rings AI.<|2.80|>
+
+356
+00:19:15,600 --> 00:19:19,480
+<|2.80|> How does a lone officer actually deploy it to win a deal?<|6.68|>
+
+357
+00:19:19,480 --> 00:19:22,239
+<|6.68|> Rings AI uses automated data capture.<|9.44|>
+
+358
+00:19:22,239 --> 00:19:23,840
+<|9.44|> Instead of manually logging notes,<|11.04|>
+
+359
+00:19:23,840 --> 00:19:28,040
+<|11.04|> the AI continuously ingest data from your emails, calendar,<|15.24|>
+
+360
+00:19:28,040 --> 00:19:30,680
+<|15.24|> and zoom transcripts to build a dynamic profile.<|17.88|>
+
+361
+00:19:30,680 --> 00:19:32,520
+<|17.88|> OK, but where is the real leverage?<|19.72|>
+
+362
+00:19:32,520 --> 00:19:35,080
+<|19.72|> The predictive scoring and real-time news alerts.<|22.28|>
+
+363
+00:19:35,099 --> 00:19:40,099
+<|startoftranscript|><|0.00|> Say you have a prospect, a young engineer who wasn't ready to buy a year ago, traditionally<|5.00|>
+
+364
+00:19:40,099 --> 00:19:41,339
+<|5.00|> that lead goes cold.<|6.24|>
+
+365
+00:19:41,339 --> 00:19:42,339
+<|6.24|> You just forget about them.<|7.24|>
+
+366
+00:19:42,339 --> 00:19:46,859
+<|7.24|> Right, but rings AI monitors the broader data ecosystem.<|11.76|>
+
+367
+00:19:46,859 --> 00:19:51,699
+<|11.76|> If that engineer's tech firm announces a major IPO, the CRM flags it and alerts you.<|16.60|>
+
+368
+00:19:51,800 --> 00:19:57,800
+<|startoftranscript|><|0.00|> It tells you their financial situation likely just changed, who to contact, why to contact them, and gives you the context.<|6.00|>
+
+369
+00:19:57,800 --> 00:20:02,800
+<|6.00|> That is basically having a genius level analyst working your pipeline to R4-7.<|11.00|>
+
+370
+00:20:02,800 --> 00:20:08,800
+<|11.00|> You're proactively calling to say, "Hey, congrats on the IPO. Let's look at how this accelerates your timeline."<|17.00|>
+
+371
+00:20:09,199 --> 00:20:11,760
+<|startoftranscript|><|0.00|> It feels so personalized, but it's automated.<|2.56|>
+
+372
+00:20:11,760 --> 00:20:12,760
+<|2.56|> Exactly.<|3.56|>
+
+373
+00:20:12,760 --> 00:20:15,079
+<|3.56|> And the other systems are highly specialized too.<|5.88|>
+
+374
+00:20:15,079 --> 00:20:19,959
+<|5.88|> HubSpot CRM has an AI content assistant for drafting hyper local emails.<|10.76|>
+
+375
+00:20:19,959 --> 00:20:23,279
+<|10.76|> Salesforce has Einstein co-pilot for pipeline forecasting.<|14.08|>
+
+376
+00:20:23,279 --> 00:20:25,919
+<|14.08|> And Zoho uses sentiment detection AI, right?<|16.72|>
+
+377
+00:20:25,919 --> 00:20:26,079
+<|16.72|> Yes.<|16.88|>
+
+378
+00:20:26,099 --> 00:20:32,599
+<|startoftranscript|><|0.00|> It analyzes the tone of emails and flags you if a client seems anxious so you can intervene before a deal blows up.<|6.50|>
+
+379
+00:20:32,599 --> 00:20:33,699
+<|6.50|> That is wild.<|7.60|>
+
+380
+00:20:33,699 --> 00:20:38,599
+<|7.60|> Pipe Drive uses an AI sales assistant to prioritize leads based on likelihood to close.<|12.50|>
+
+381
+00:20:38,599 --> 00:20:43,099
+<|12.50|> But the most intriguing platform in our stack wasn't a traditional CRM at all.<|17.00|>
+
+382
+00:20:43,099 --> 00:20:48,500
+<|startoftranscript|><|0.00|> It was circle and this ties right back to our Yuba City Community Network discussion.<|5.40|>
+
+383
+00:20:48,500 --> 00:20:50,500
+<|5.40|> Circle represents a total paradigm shift.<|7.40|>
+
+384
+00:20:50,500 --> 00:20:52,699
+<|7.40|> It's a complete community building platform.<|9.60|>
+
+385
+00:20:52,699 --> 00:20:55,380
+<|9.60|> You're building a proprietary branded social network.<|12.28|>
+
+386
+00:20:55,380 --> 00:21:00,660
+<|12.28|> Your own app on iOS and Android, discussion boards, educational courses, member directories,<|17.56|>
+
+387
+00:21:00,660 --> 00:21:02,059
+<|17.56|> all in one walled garden.<|18.96|>
+
+388
+00:21:02,059 --> 00:21:04,020
+<|18.96|> Think about the power of that.<|20.92|>
+
+389
+00:21:04,020 --> 00:21:07,099
+<|20.92|> Instead of trying to awkwardly penetrate local networks,<|24.00|>
+
+390
+00:21:07,099 --> 00:21:09,099
+<|startoftranscript|><|0.00|> you build the network yourself.<|2.00|>
+
+391
+00:21:09,099 --> 00:21:12,099
+<|2.00|> You could create a private invite only digital community,<|5.00|>
+
+392
+00:21:12,099 --> 00:21:16,099
+<|5.00|> specifically for first time Indian home buyers in your area.<|9.00|>
+
+393
+00:21:16,099 --> 00:21:22,099
+<|9.00|> Exactly. You host live Q&A streams on navigating H1B visa mortgage requirements<|15.00|>
+
+394
+00:21:22,099 --> 00:21:24,099
+<|15.00|> or multi-generational structuring.<|17.00|>
+
+395
+00:21:24,199 --> 00:21:27,500
+<|startoftranscript|><|0.00|> You provide step-by-step credit repair videos.<|3.30|>
+
+396
+00:21:27,500 --> 00:21:30,119
+<|3.30|> You're creating a digital extension of the community center,<|5.92|>
+
+397
+00:21:30,119 --> 00:21:34,199
+<|5.92|> a safe, highly controlled environment where you are the undisputed expert.<|10.00|>
+
+398
+00:21:34,199 --> 00:21:37,959
+<|10.00|> Yes, providing immense value with low self-orientation.<|13.76|>
+
+399
+00:21:37,959 --> 00:21:40,039
+<|13.76|> But I do have a question about the consumer's role here.<|15.84|>
+
+400
+00:21:40,000 --> 00:21:46,520
+<|startoftranscript|><|0.00|> The sources note younger demographics are incredibly tech savvy using chat GPT to research real estate independent<|6.52|>
+
+401
+00:21:46,520 --> 00:21:47,319
+<|6.52|> Yeah, yes<|7.32|>
+
+402
+00:21:47,319 --> 00:21:52,119
+<|7.32|> So if the consumer has an AI answer in their questions, well, they just bypass the loan officer entirely<|12.12|>
+
+403
+00:21:52,119 --> 00:21:57,400
+<|12.12|> That's the industry's existential fear, but Jorge Montoya frames it differently in the sources<|17.40|>
+
+404
+00:21:57,500 --> 00:22:02,500
+<|startoftranscript|><|0.00|> Consumers are coming to the table more prepared, but information is not the same as context.<|5.00|>
+
+405
+00:22:02,500 --> 00:22:05,500
+<|5.00|> Right, and it certainly isn't the same as trust.<|8.00|>
+
+406
+00:22:05,500 --> 00:22:06,500
+<|8.00|> Exactly.<|9.00|>
+
+407
+00:22:06,500 --> 00:22:13,500
+<|9.00|> An AI can define a DTI ratio perfectly, but an AI cannot sit across from an anxious immigrant father.<|16.00|>
+
+408
+00:22:13,500 --> 00:22:19,500
+<|16.00|> Understand the cultural weight of his life savings and say, "I have your family's best interest at heart."<|22.00|>
+
+409
+00:22:19,400 --> 00:22:21,060
+<|startoftranscript|><|0.00|> Let's protect your wealth.<|1.66|>
+
+410
+00:22:21,060 --> 00:22:24,359
+<|1.66|> AI lacks the capacity for emotional reassurance.<|4.96|>
+
+411
+00:22:24,359 --> 00:22:28,479
+<|4.96|> Which is why John Jerkovich coined the term "Tech with Touch."<|9.08|>
+
+412
+00:22:28,479 --> 00:22:30,680
+<|9.08|> Technology should never replace human connection.<|11.28|>
+
+413
+00:22:30,680 --> 00:22:33,520
+<|11.28|> It must be used exclusively to scale it.<|14.12|>
+
+414
+00:22:33,520 --> 00:22:34,719
+<|14.12|> Tech with Touch.<|15.32|>
+
+415
+00:22:34,800 --> 00:22:40,000
+<|startoftranscript|><|0.00|> That makes perfect sense. The CRM remembers their cultural holiday or that their sibling is graduating.<|5.20|>
+
+416
+00:22:40,000 --> 00:22:45,320
+<|5.20|> It manages the timing, freeing up your cognitive load so when you record that personalized video,<|10.52|>
+
+417
+00:22:45,320 --> 00:22:47,380
+<|10.52|> you are fully present and empathetic.<|12.58|>
+
+418
+00:22:47,380 --> 00:22:50,000
+<|12.58|> Jeremy Potter from Title Look captured this perfectly.<|15.20|>
+
+419
+00:22:50,000 --> 00:22:55,800
+<|15.20|> He said technology can automate timing, but the information delivered must still be genuine and real.<|21.00|>
+
+420
+00:22:55,800 --> 00:23:00,800
+<|21.00|> Your weaponizing tech to maintain that high empathy posture across hundreds of relationships.<|26.00|>
+
+421
+00:23:00,800 --> 00:23:01,800
+<|26.00|> Exactly.<|27.00|>
+
+422
+00:23:01,500 --> 00:23:03,500
+<|startoftranscript|><|0.00|> This has been a massive amount of material.<|2.00|>
+
+423
+00:23:03,500 --> 00:23:05,000
+<|2.00|> Let's synthesize the blueprint.<|3.50|>
+
+424
+00:23:05,000 --> 00:23:06,500
+<|3.50|> If you want to dominate this market,<|5.00|>
+
+425
+00:23:06,500 --> 00:23:08,500
+<|5.00|> burn the old B2C playbook.<|7.00|>
+
+426
+00:23:08,500 --> 00:23:11,300
+<|7.00|> First, respect the multi-generational family<|9.80|>
+
+427
+00:23:11,300 --> 00:23:13,000
+<|9.80|> as the primary economic engine.<|11.50|>
+
+428
+00:23:13,000 --> 00:23:15,500
+<|11.50|> You're underwriting collective ambition.<|14.00|>
+
+429
+00:23:15,500 --> 00:23:18,500
+<|14.00|> Second, establish deep, authentic groups<|17.00|>
+
+430
+00:23:18,500 --> 00:23:21,500
+<|17.00|> in hyper-local community hubs to earn prestige.<|20.00|>
+
+431
+00:23:21,300 --> 00:23:26,940
+<|startoftranscript|><|0.00|> Third, a band of the transaction obsessed purchase phase and relentlessly provide emotional<|5.64|>
+
+432
+00:23:26,940 --> 00:23:29,619
+<|5.64|> reassurance during the preparation phase.<|8.32|>
+
+433
+00:23:29,619 --> 00:23:35,340
+<|8.32|> And finally, deploy AICRM's and community platforms to scale that deep trust.<|14.04|>
+
+434
+00:23:35,340 --> 00:23:37,619
+<|14.04|> It's an entire philosophical shift.<|16.32|>
+
+435
+00:23:37,619 --> 00:23:39,300
+<|16.32|> You're no longer a vendor.<|18.00|>
+
+436
+00:23:39,300 --> 00:23:42,300
+<|18.00|> You're a trusted advisor, architecting generational wealth.<|21.00|>
+
+437
+00:23:42,500 --> 00:23:46,500
+<|startoftranscript|><|0.00|> Before we wrap up, I want to hand it over to you for one final provocative thought.<|4.00|>
+
+438
+00:23:46,500 --> 00:23:51,500
+<|4.00|> Sure, so we've talked entirely about marketing to communities to win individual family mortgages,<|9.00|>
+
+439
+00:23:51,500 --> 00:23:53,500
+<|9.00|> but extrapolate this trend.<|11.00|>
+
+440
+00:23:53,500 --> 00:23:58,500
+<|11.00|> As ecosystems become more connected, what if the future isn't business to consumer,<|16.00|>
+
+441
+00:23:58,500 --> 00:24:00,500
+<|16.00|> but be to see meaning business to community?<|18.00|>
+
+442
+00:24:00,500 --> 00:24:01,500
+<|18.00|> Okay, wow.<|19.00|>
+
+443
+00:24:01,500 --> 00:24:04,500
+<|19.00|> Imagine if a loan officer doesn't just finance one family's property,<|22.00|>
+
+444
+00:24:04,500 --> 00:24:08,500
+<|22.00|> but becomes the dedicated financial anchor for an entire local network.<|26.00|>
+
+445
+00:24:09,199 --> 00:24:13,199
+<|startoftranscript|><|0.00|> underwriting their collective neighborhood developments and generational wealth transfers.<|4.00|>
+
+446
+00:24:13,199 --> 00:24:17,199
+<|4.00|> If your goal was to become the central bank for an entire community ecosystem,<|8.00|>
+
+447
+00:24:17,199 --> 00:24:19,199
+<|8.00|> how would that change your business model tomorrow?<|10.00|>
+
+448
+00:24:19,199 --> 00:24:24,199
+<|10.00|> That is a staggering paradigm shift. If you stop staring at the single transaction,<|15.00|>
+
+449
+00:24:24,199 --> 00:24:27,199
+<|15.00|> the ceiling on your business completely disappears.<|18.00|>
+
+450
+00:24:27,199 --> 00:24:29,199
+<|18.00|> Thank you so much for joining us on this Deep Dive.<|20.00|>
+
+451
+00:24:29,199 --> 00:24:32,199
+<|20.00|> Take these frameworks, integrate these technologies,<|23.00|>
+
+452
+00:24:32,199 --> 00:24:34,199
+<|23.00|> and go build those foundational pillars in your market.<|25.00|>
+
+453
+00:24:34,199 --> 00:24:36,199
+<|25.00|> We will see you next time.<|27.00|>
+
