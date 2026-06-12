@@ -1,0 +1,100 @@
+{
+  "$schema": "./avatars.schema.json",
+  "updatedAt": "2026-06-12",
+  "notes": [
+    "HeyGen avatar/voice IDs are NOT the same as the embed video IDs below.",
+    "Embed video IDs come from src/data/heygenIntroVideos.ts and prove each coach already has a working HeyGen avatar.",
+    "To fill in heygenAvatarId / heygenVoiceId run: node scripts/podcast/render-avatar-video-heygen.mjs check",
+    "localAvatarSource paths are where to drop a still image or short reference video per coach for local lip-sync tools (Black Frame AI / SadTalker / etc). None exist yet."
+  ],
+  "defaults": {
+    "singleCoach": "jeremy",
+    "podcastPair": ["jeremy", "edward"],
+    "roundtableThree": ["jeremy", "edward", "john"],
+    "roundtableFour": ["jeremy", "edward", "john", "craig"]
+  },
+  "avatars": [
+    {
+      "id": "jeremy",
+      "name": "Jeremy McDonald",
+      "role": "Founder / Sales & Marketing + AI Advantage coach",
+      "heygenAvatarId": null,
+      "heygenVoiceId": null,
+      "heygenKnownVideos": [
+        { "title": "Jeremy - Sales & Marketing", "embedUrl": "https://app.heygen.com/embeds/495b155fa8a54ebf89f6d688bef29804" },
+        { "title": "Jeremy - AI Advantage", "embedUrl": "https://app.heygen.com/embeds/bf6b437acb60464fbe08f6efc73b0335" },
+        { "title": "Jeremy - AI assistants", "embedUrl": "https://app.heygen.com/embeds/4bf3ceed2bb04dd094173e7c42a66c0c" }
+      ],
+      "existingSourceVideoPath": null,
+      "localAvatarSource": "podcast/avatar_sources/jeremy/",
+      "preferredUseCase": "Host / lead voice on every podcast lane; daily coaching singles",
+      "fallbackAvatar": "edward"
+    },
+    {
+      "id": "edward",
+      "name": "Edward",
+      "role": "LO Mastery coach (Monday feed coach)",
+      "heygenAvatarId": null,
+      "heygenVoiceId": null,
+      "heygenKnownVideos": [
+        { "title": "Edward - Coaching Intro", "embedUrl": "https://app.heygen.com/embeds/e3b29b2422d04793b478aaab5d13e7c3" }
+      ],
+      "existingSourceVideoPath": null,
+      "localAvatarSource": "podcast/avatar_sources/edward/",
+      "preferredUseCase": "Co-host on sales/coaching podcast episodes; weekly curriculum",
+      "fallbackAvatar": "john"
+    },
+    {
+      "id": "john",
+      "name": "John",
+      "role": "Coach (Wednesday feed coach, weekly curriculum)",
+      "heygenAvatarId": null,
+      "heygenVoiceId": null,
+      "heygenKnownVideos": [],
+      "existingSourceVideoPath": null,
+      "localAvatarSource": "podcast/avatar_sources/john/",
+      "preferredUseCase": "Third chair on roundtable / mastermind episodes",
+      "fallbackAvatar": "craig"
+    },
+    {
+      "id": "craig",
+      "name": "Craig",
+      "role": "Coach (Tuesday feed coach, weekly curriculum)",
+      "heygenAvatarId": null,
+      "heygenVoiceId": null,
+      "heygenKnownVideos": [],
+      "existingSourceVideoPath": null,
+      "localAvatarSource": "podcast/avatar_sources/craig/",
+      "preferredUseCase": "Fourth chair on coach-panel / AI-boardroom episodes",
+      "fallbackAvatar": "edward"
+    },
+    {
+      "id": "thuan",
+      "name": "Thuan",
+      "role": "FaceGram coach (Friday feed coach)",
+      "heygenAvatarId": null,
+      "heygenVoiceId": null,
+      "heygenKnownVideos": [
+        { "title": "Thuan - FaceGram", "embedUrl": "https://app.heygen.com/embeds/6e86d933511c4c35901a798b74b09598" }
+      ],
+      "existingSourceVideoPath": null,
+      "localAvatarSource": "podcast/avatar_sources/thuan/",
+      "preferredUseCase": "FaceGram / social-content lane episodes; Vietnamese-language episodes",
+      "fallbackAvatar": "jeremy"
+    },
+    {
+      "id": "andre",
+      "name": "Andre King",
+      "role": "Support / resources coach (Thursday feed coach)",
+      "heygenAvatarId": null,
+      "heygenVoiceId": null,
+      "heygenKnownVideos": [
+        { "title": "Andre King - Support Page", "embedUrl": "https://app.heygen.com/embeds/2a89afffe5ae47b8bcac6d41854f5be1" }
+      ],
+      "existingSourceVideoPath": null,
+      "localAvatarSource": "podcast/avatar_sources/andre/",
+      "preferredUseCase": "Support / resources lane; onboarding episodes",
+      "fallbackAvatar": "jeremy"
+    }
+  ]
+}

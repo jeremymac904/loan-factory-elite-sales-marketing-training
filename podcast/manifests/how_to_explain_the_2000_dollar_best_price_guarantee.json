@@ -1,0 +1,27 @@
+{
+  "id": "how_to_explain_the_2000_dollar_best_price_guarantee",
+  "title": "How to Explain the $2,000 Best Price Guarantee",
+  "topicLane": "sales-marketing",
+  "language": "en",
+  "sourceNotebook": "notebooklm:sales-marketing-501",
+  "episodeNumber": 1,
+  "filePath": "podcast/inbox/how_to_explain_the_2000_dollar_best_price_guarantee.mp3",
+  "durationSeconds": 1042.6,
+  "status": "planned",
+  "transcriptPath": "podcast/transcripts/how_to_explain_the_2000_dollar_best_price_guarantee.json",
+  "speakerCount": 2,
+  "assignedAvatars": [
+    "jeremy",
+    "edward"
+  ],
+  "videoPlanPath": "podcast/manifests/how_to_explain_the_2000_dollar_best_price_guarantee.videoplan.json",
+  "videoOutputPath": "podcast/video_outputs/how_to_explain_the_2000_dollar_best_price_guarantee__waveform_90s_preview.mp4",
+  "platformDestinations": [
+    "community_feed",
+    "podcast_library",
+    "daily_email",
+    "youtube_queue"
+  ],
+  "createdAt": "2026-06-12T04:27:28.680Z",
+  "updatedAt": "2026-06-12T04:35:11.597Z"
+}

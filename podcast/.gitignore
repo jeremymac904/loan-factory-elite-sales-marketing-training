@@ -1,0 +1,13 @@
+# Media never goes to GitHub (repo rule — see docs/OPEN_NOTEBOOK_AUDIO_COMPANION_HANDOFF.md)
+inbox/*
+!inbox/.gitkeep
+processed/*
+!processed/.gitkeep
+video_outputs/*
+!video_outputs/.gitkeep
+avatar_sources/**/*.png
+avatar_sources/**/*.jpg
+avatar_sources/**/*.jpeg
+avatar_sources/**/*.mp4
+avatar_sources/**/*.mov
+transcripts/*.srt
