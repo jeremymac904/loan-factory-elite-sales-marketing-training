@@ -139,7 +139,15 @@ export default function CommunityFeed({
           ...buildSystemPosts(program),
           ...getCoachPicks(program),
           ...getSeedPosts(program),
-          ...saved.posts.filter((p) => !(p as LocalPost).kind || (p as LocalPost).kind === "member"),
+          // Restore ONLY the member's own posts from local storage. Coach,
+          // pinned, daily, weekly, and pick content is always re-derived from
+          // seeds/cloud above — never trusted from local storage — so a stray
+          // locally-saved post posing as a "Coach" post can't reappear.
+          ...saved.posts.filter((p) => {
+            const lp = p as LocalPost;
+            const memberAuthored = lp.role === "Member" || lp.author === "You";
+            return memberAuthored && !lp.pinned && (!lp.kind || lp.kind === "member");
+          }),
         ]),
       );
       setVoteState(saved.votes);
