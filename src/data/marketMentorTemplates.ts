@@ -295,7 +295,7 @@ export const videoTemplates: VideoTemplate[] = [
     audience: "coaching_member",
     durationSeconds: 90,
     structure:
-      "Hook → Top 3 takeaways from this week's coaching session → One commitment to make this week → Close.",
+      "Hook → Top 3 takeaways from this week's coaching call → One commitment to make this week → Close.",
     ctaStyle: "Internal: 'Post your commitment in FaceGram.'",
     reviewNotes: [
       "Internal Loan Factory only — never publish externally.",

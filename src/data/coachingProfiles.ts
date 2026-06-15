@@ -238,7 +238,7 @@ export const coachingProfiles: Record<ProfileId, CoachingProfile> = {
     teamLeaderNotes: [
       "Send the agenda before the meeting.",
       "Give credit for accuracy, not just volume.",
-      "Use 1:1 coaching reps instead of group cold calls when introducing a new script.",
+      "Use guided practice reps instead of group cold calls when introducing a new script.",
       "Pair with a Driver or Influencer for outbound prospecting blocks.",
     ],
   },
@@ -302,7 +302,7 @@ export const newLoReadinessProfiles: Record<NewLoReadinessId, NewLoReadinessProf
       "Use AI Assistants only for drafting practice, not live borrower work yet.",
     ],
     supportRouting: [
-      "Pair with a corporate coach for weekly 1:1s.",
+      "Pair with a corporate coach for weekly feedback through the platform.",
       "Loop the team leader for partner introductions.",
       "Use the Support Routing page for any compliance or pricing question.",
     ],
@@ -336,7 +336,7 @@ export const newLoReadinessProfiles: Record<NewLoReadinessId, NewLoReadinessProf
       "Start a short weekly content rhythm using prompts.",
     ],
     supportRouting: [
-      "Weekly 1:1 with team leader.",
+      "Weekly accountability check with team leader.",
       "Monthly review with a corporate coach.",
       "Use FaceGram to share wins and ask questions.",
     ],
@@ -370,7 +370,7 @@ export const newLoReadinessProfiles: Record<NewLoReadinessId, NewLoReadinessProf
       "Run weekly AI prompts to draft partner follow-up.",
     ],
     supportRouting: [
-      "Weekly 1:1 with team leader.",
+      "Weekly accountability check with team leader.",
       "Open coaching channel for live deal questions.",
       "Loop compliance early — not after the fact.",
     ],
@@ -404,7 +404,7 @@ export const newLoReadinessProfiles: Record<NewLoReadinessId, NewLoReadinessProf
       "Build an AI Twin persona for content reps.",
     ],
     supportRouting: [
-      "Weekly 1:1 with team leader.",
+      "Weekly accountability check with team leader.",
       "Quarterly business review with a corporate coach.",
       "Pull marketing review for content beyond a starter rhythm.",
     ],

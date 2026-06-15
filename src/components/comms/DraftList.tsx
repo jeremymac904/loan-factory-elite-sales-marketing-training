@@ -62,7 +62,7 @@ export default function DraftList({
     if (d.channelLabel?.startsWith("Text")) {
       return "Send this from your own phone.";
     }
-    return "Keep this as a private coaching note.";
+    return "Keep this as an internal coach note.";
   }
 
   return (

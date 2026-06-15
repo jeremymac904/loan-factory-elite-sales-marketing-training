@@ -12,17 +12,23 @@ export default function CoachCommunityPage() {
         Both program feeds. Pin posts, answer questions, and feature wins.
       </p>
       <div className="mt-6 grid gap-10">
-        <div>
-          <h2 className="h-display text-xl">LO Mastery feed</h2>
-          <div className="mt-3">
-            <CommunityFeed posts={communityPosts} storageKey="lf-feed-mastery" program="mastery" />
+        <div className="rounded-2xl border-2 border-lf-orange/50 p-4">
+          <div className="mb-3 flex items-center gap-2">
+            <span className="inline-flex items-center rounded-full bg-lf-orange px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+              LO Mastery
+            </span>
+            <h2 className="h-display text-xl">Program feed — what LO Mastery members see</h2>
           </div>
+          <CommunityFeed posts={communityPosts} storageKey="lf-feed-mastery" program="mastery" />
         </div>
-        <div>
-          <h2 className="h-display text-xl">Alliance feed</h2>
-          <div className="mt-3">
-            <CommunityFeed posts={communityPosts} storageKey="lf-feed-alliance" program="alliance" />
+        <div className="rounded-2xl border-2 border-lf-navy/40 p-4">
+          <div className="mb-3 flex items-center gap-2">
+            <span className="inline-flex items-center rounded-full bg-lf-navy px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+              Loan Factory Alliance
+            </span>
+            <h2 className="h-display text-xl">Program feed — what Alliance members see</h2>
           </div>
+          <CommunityFeed posts={communityPosts} storageKey="lf-feed-alliance" program="alliance" />
         </div>
       </div>
     </section>

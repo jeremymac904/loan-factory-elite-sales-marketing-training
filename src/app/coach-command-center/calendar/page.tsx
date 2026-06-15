@@ -1,5 +1,6 @@
 import { getCoachAccess } from "@/lib/coachAccess";
 import CoachCommandNav from "@/components/coach/CoachCommandNav";
+import CoachingEventManager from "@/components/coach/CoachingEventManager";
 import CalendarWorkspace from "@/components/comms/CalendarWorkspace";
 import ConnectionStatusBadge from "@/components/comms/ConnectionStatusBadge";
 import { calendarEventTypes } from "@/data/coachCommandCenter";
@@ -28,9 +29,10 @@ export default async function CoachCalendarPage() {
             Coaching Calendar
           </h1>
           <p className="mt-2 max-w-2xl text-base text-white/85">
-            Plan one-on-ones, group calls, team coaching, and Power Hours. Build
-            a Google Calendar event draft and a Google Meet draft, then create
-            the event yourself — nothing is added to any calendar here.
+            Plan group coaching calls, team coaching, and Power Hours. Create the
+            meeting in Google Meet or Zoom, paste the link, and publish it to the
+            program&apos;s platform calendar — members get a Join button. No
+            mailbox or email account required.
           </p>
           {access.viewingAsLabel && (
             <p className="mt-3 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
@@ -57,17 +59,36 @@ export default async function CoachCalendarPage() {
             />
           </div>
           <p className="prose-lf mt-2 text-sm">
-            {workspaceServiceMeta.calendar.connectHint} Use the builder below to
-            assemble the event details and a Google Meet draft, copy them, and
-            create the real event yourself in Google Calendar. When the
-            integration is connected later, event creation must stay behind an
-            approval step.
+            {workspaceServiceMeta.calendar.connectHint} Automatic two-way Google
+            Calendar sync is not connected yet — but you don&apos;t need it: use
+            the publisher below to post a coaching event with your own Meet or
+            Zoom link, and it appears on the program&apos;s platform calendar for
+            members right away.
           </p>
         </div>
       </section>
 
       <section className="container-page pb-8">
-        <CalendarWorkspace eventTypes={calendarEventTypes} />
+        <div className="mb-3">
+          <h2 className="h-display text-xl">Publish a coaching event</h2>
+          <p className="text-sm text-lf-slate">
+            Create the meeting in Google Meet or Zoom, paste the link, and it appears on the
+            program&apos;s platform calendar with a Join button. Members see it immediately — no
+            mailbox or email account required.
+          </p>
+        </div>
+        <CoachingEventManager />
+      </section>
+
+      <section className="container-page pb-8">
+        <details className="card">
+          <summary className="cursor-pointer text-base font-semibold text-lf-charcoal">
+            Optional: build an invite text draft to copy
+          </summary>
+          <div className="mt-4">
+            <CalendarWorkspace eventTypes={calendarEventTypes} />
+          </div>
+        </details>
       </section>
 
       <section className="container-page pb-12">

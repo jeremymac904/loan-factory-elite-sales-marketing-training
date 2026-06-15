@@ -134,10 +134,10 @@ export const coachingScripts: CoachingScript[] = [
   {
     id: "session-recap",
     category: "coach-follow-up",
-    title: "Session recap",
+    title: "Coaching recap",
     whoFor: "Coaches and coaching managers",
     purpose:
-      "Summarize the coaching session in a way that keeps the next step obvious.",
+      "Summarize the coaching conversation in a way that keeps the next step obvious.",
     body:
       "Recap the win, the stuck point, the one commitment, and the date you will review it again. If the recap cannot be understood in one read, tighten it.",
     accessTier: "coach",

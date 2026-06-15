@@ -69,7 +69,7 @@ export const sampleReports: SampleReport[] = [
     readinessScore: 1.65,
     personalityLean: "steady",
     coachNote:
-      "Steady lean — go heavy on 1:1 reps, light on public roleplays for the first 30 days.",
+      "Steady lean — go heavy on solo practice reps, light on public roleplays for the first 30 days.",
   },
   {
     id: "rep-004",

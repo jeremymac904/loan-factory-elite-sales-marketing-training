@@ -476,11 +476,11 @@ export const allianceWeeks: ProgramWeek[] = [
   {
     week: 10,
     theme: "Leading & Coaching Your People",
-    number: "Standards and 1:1s set",
+    number: "Team standards and check-ins set",
     phase: "People",
     actions: [
       "Set clear standards for the people you lead.",
-      "Run a weekly one-on-one rhythm.",
+      "Run a weekly check-in rhythm with each person you lead.",
       "Practice accountability with warmth and directness.",
     ],
     win: "Leadership rhythm installed.",

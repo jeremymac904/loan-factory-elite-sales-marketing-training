@@ -31,7 +31,7 @@ const seedTemplates: Omit<Message, "to">[] = [
   {
     id: "msg-2",
     from: "edward.arvizo@loanfactory.com",
-    body: "Coaching session recap is ready — want me to share it in FaceGram?",
+    body: "Weekly coaching call recap is ready — want me to share it in FaceGram?",
     time: "3h ago",
   },
   {

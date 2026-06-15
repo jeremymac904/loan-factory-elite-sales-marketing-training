@@ -10,7 +10,7 @@ export const metadata = { title: "Member Progress · Coach Command Center" };
 const activityNote: Record<string, string> = {
   active: "Engaged and moving — keep the momentum going.",
   needs_nudge: "A little quiet — a quick coaching nudge will help.",
-  stuck: "Hit a stuck point — worth a focused 1:1 to reset.",
+  stuck: "Hit a stuck point — send a coach note and bring it to the weekly coaching call.",
   inactive: "No recent engagement — reach out and re-engage.",
 };
 

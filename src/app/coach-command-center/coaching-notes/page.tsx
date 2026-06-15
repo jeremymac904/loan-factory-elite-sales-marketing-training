@@ -13,17 +13,17 @@ export const metadata = { title: "Coaching Notes · Coach Command Center" };
 
 // The structured sections a coach fills in for each person. These save to the
 // coaching_notes table once the coaching tables are connected; until then this
-// renders the working template a coach uses inside a 1:1 or a review.
+// renders the working template a coach uses during a scorecard or member review.
 const noteSections: { key: string; label: string; hint: string }[] = [
   {
     key: "coaching_notes",
     label: "Coaching notes",
-    hint: "What you covered this session — themes, observations, what's working.",
+    hint: "What you covered on this coaching call — themes, observations, what's working.",
   },
   {
     key: "note_type",
     label: "Note type",
-    hint: "1:1 coaching, scorecard review, re-engagement, training assignment, or meeting recap.",
+    hint: "Scorecard review, re-engagement, training assignment, or meeting recap.",
   },
   {
     key: "tags",
@@ -212,7 +212,7 @@ export default async function CoachingNotesPage() {
             <h2 className="h-display text-2xl">Notes by person</h2>
             <p className="prose-lf mt-1 text-sm">
               Manual tracking for now. Automation can be connected later. Each
-              card is the template a coach fills in during a 1:1 or review.
+              card is the template a coach fills in during a scorecard or member review.
             </p>
           </div>
           <Link href="/coach-command-center/team/" className="btn-secondary text-sm">

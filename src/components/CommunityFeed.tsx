@@ -11,6 +11,7 @@ import {
 } from "@/lib/coachingCloud";
 import { buildSystemPosts, isCurrentWeekly, isTodaysDaily } from "@/lib/systemPosts";
 import { getCoachPicks } from "@/data/coachPicks";
+import { getSeedPosts } from "@/data/seedPosts";
 
 // Categories members can post under (composer dropdown).
 const CATEGORIES = ["Pinned", "Daily", "Weekly", "Wins", "Questions", "Scripts"] as const;
@@ -118,11 +119,17 @@ export default function CommunityFeed({
       setLocalPosts([
         ...buildSystemPosts(program),
         ...getCoachPicks(program),
+        ...getSeedPosts(program),
         ...saved.posts.filter((p) => !(p as LocalPost).kind || (p as LocalPost).kind === "member"),
       ]);
       setVoteState(saved.votes);
     } else {
-      setLocalPosts((current) => [...buildSystemPosts(program), ...getCoachPicks(program), ...current]);
+      setLocalPosts((current) => [
+        ...buildSystemPosts(program),
+        ...getCoachPicks(program),
+        ...getSeedPosts(program),
+        ...current,
+      ]);
     }
     // Supabase is the primary feed when configured and signed in.
     fetchFeedCloud(program).then((cloud) => {
@@ -142,8 +149,15 @@ export default function CommunityFeed({
       }));
       setLocalPosts((current) => [
         ...cloudPosts,
-        // Coach Picks are curated client-side data, not cloud rows — keep them.
-        ...current.filter((p) => p.kind === "pick" || (p.pinned && !p.cloudId && !p.kind)),
+        // Coach Picks and Q&A/Scripts seeds are curated client-side data, not
+        // cloud rows — keep them when the cloud feed loads.
+        ...current.filter(
+          (p) =>
+            p.kind === "pick" ||
+            p.kind === "qa" ||
+            p.kind === "script-tip" ||
+            (p.pinned && !p.cloudId && !p.kind),
+        ),
       ]);
     });
     // Next-action strip: what should I do right now?
@@ -218,7 +232,11 @@ export default function CommunityFeed({
       );
       const pinnedMember = localPosts.filter((p) => p.pinned && !isSystem(p));
       const picks = localPosts.filter((p) => p.kind === "pick");
-      const members = localPosts.filter((p) => !p.pinned && !isSystem(p));
+      // Q&A and Scripts seeds live under their filter pills, not in All —
+      // keeps the main feed focused on coaching posts and member activity.
+      const members = localPosts.filter(
+        (p) => !p.pinned && !isSystem(p) && p.kind !== "qa" && p.kind !== "script-tip",
+      );
       return [...startHere, ...todaysDaily, ...currentWeekly, ...pinnedMember, ...picks, ...members];
     }
     return localPosts.filter((post) => post.category === activeCategory && !isSystem(post));

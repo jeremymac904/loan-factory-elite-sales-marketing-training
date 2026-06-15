@@ -6,7 +6,7 @@ const templates = [
   {
     name: "Coaching weekly recap",
     audience: "Coaching member",
-    body: "Recap of last week's commitments, this week's focus, and the next coaching session.",
+    body: "Recap of last week's commitments, this week's focus, and the next weekly coaching call.",
   },
   {
     name: "First-call follow-up",

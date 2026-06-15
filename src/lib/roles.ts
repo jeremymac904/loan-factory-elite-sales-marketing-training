@@ -218,7 +218,7 @@ export const roles: Role[] = [
     dashboardHref: "/member-area/lo-mastery/",
     highlights: [
       "LO Mastery resources",
-      "Coaching sessions",
+      "Weekly group coaching calls",
       "Sales & Marketing training",
       "AI Advantage",
     ],

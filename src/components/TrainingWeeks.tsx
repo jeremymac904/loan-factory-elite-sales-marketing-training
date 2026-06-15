@@ -121,11 +121,13 @@ export default function TrainingWeeks({
                   <div>
                     <div className="flex aspect-video w-full items-center justify-center rounded-xl border border-dashed border-lf-line bg-white">
                       <p className="px-4 text-center text-sm font-semibold text-lf-slate">
-                        Training video coming soon
+                        The live group training recording will be posted here after the session
                       </p>
                     </div>
                     <p className="mt-2 text-sm text-lf-slate">
-                      Live training: full time and day will be sent by Google Calendar invite.
+                      Live training time and day come by Google Calendar invite. The weekly
+                      overview video (Course Overview tab) is a short preview of the week —
+                      it is not the live training.
                     </p>
                     <div className="mt-3">
                       <p className="text-xs font-semibold uppercase tracking-wide text-lf-slate">
@@ -187,7 +189,7 @@ export default function TrainingWeeks({
                         Open Scorecard
                       </Link>
                       <Link href={`${routes[program].resources}?tab=course-overview`} className="btn-secondary">
-                        Watch overview
+                        Open Course Overview
                       </Link>
                       <Link href={`${routes[program].resources}?tab=scripts`} className="btn-secondary">
                         Scripts

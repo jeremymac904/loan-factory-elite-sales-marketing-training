@@ -34,7 +34,7 @@ const toggleConfig: {
     key: "coachingReminders",
     title: "Coaching reminders",
     description:
-      "Power Hour prompts, accountability check-ins, and coaching session reminders.",
+      "Power Hour prompts, accountability check-ins, and weekly coaching call reminders.",
   },
   {
     key: "platformAnnouncements",

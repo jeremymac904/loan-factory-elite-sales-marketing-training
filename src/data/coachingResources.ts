@@ -339,9 +339,9 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
     id: "business-planning",
     title: "Business Planning",
     description:
-      "Program planning, quarterly review, and the business rhythm behind the paid coaching work.",
+      "The interactive business planner — income goal, transaction goal, conversion assumptions, and your monthly and weekly activity breakdown.",
     whoFor: "Alliance members, coaches, coaching managers, and admin.",
-    openHref: "/member-area/resources/?tab=tools",
+    openHref: "/member-area/resources/?tab=planning",
     accessTier: "alliance",
     sourceFolder: "02_Complete_Coaching_Program",
     items: [
@@ -349,9 +349,9 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         id: "business-plan-roadmap",
         title: "Business plan roadmap",
         description:
-          "The 12-week roadmap for the business goals, weekly focus, and supporting actions.",
+          "Set your income goal and the planner works backward to the weekly numbers that get you there.",
         whoFor: "Alliance members and coaches.",
-        openHref: "/member-area/resources/?tab=tools",
+        openHref: "/member-area/resources/?tab=planning",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["roadmap", "business"],
       },
@@ -361,7 +361,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A structured look at progress, patterns, and what to adjust next.",
         whoFor: "Alliance members, coaches, and coaching managers.",
-        openHref: "/member-area/resources/?tab=tools",
+        openHref: "/member-area/resources/?tab=planning",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["review", "quarterly"],
       },
@@ -371,7 +371,7 @@ export const coachingResourceCategories: CoachingResourceCategory[] = [
         description:
           "A clean summary of the current program week, focus, and next checkpoint.",
         whoFor: "Alliance members and coaches.",
-        openHref: "/member-area/resources/?tab=tools",
+        openHref: "/member-area/resources/?tab=planning",
         sourceFolder: "02_Complete_Coaching_Program",
         tags: ["program", "plan"],
       },

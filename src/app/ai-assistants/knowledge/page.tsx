@@ -30,7 +30,7 @@ const knowledgeSources = [
   },
   {
     name: "Drive: coaching docs",
-    description: "Google Drive folder for coaching session materials.",
+    description: "Google Drive folder for weekly coaching call materials.",
     status: "drive-pending",
   },
 ];

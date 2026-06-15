@@ -3,12 +3,12 @@ import type { AssignedPerson } from "@/data/coachCommandCenter";
 
 const personActions = [
   { label: "View profile", href: "/coach-command-center/team/" },
-  { label: "Add note", href: "/coach-command-center/coaching-notes/" },
-  { label: "Create follow up", href: "/coach-command-center/coaching-notes/" },
+  { label: "Send coach note", href: "/coach-command-center/coaching-notes/" },
+  { label: "Weekly follow-up", href: "/coach-command-center/coaching-notes/" },
   { label: "Draft message", href: "/coach-command-center/coaching-notes/" },
-  { label: "View LO scorecard", href: "/coach-command-center/scorecards/" },
-  { label: "Schedule coaching call draft", href: "/coach-command-center/calendar/" },
-  { label: "Assign resource", href: "/coach-command-center/resources/" },
+  { label: "Review scorecard", href: "/coach-command-center/scorecards/" },
+  { label: "Add to weekly coaching call", href: "/coach-command-center/calendar/" },
+  { label: "Training assignment review", href: "/coach-command-center/resources/" },
   { label: "Mark action complete", href: "/coach-command-center/team/" },
 ];
 

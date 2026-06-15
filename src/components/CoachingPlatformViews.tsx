@@ -46,6 +46,7 @@ import TrainingWeeks from "./TrainingWeeks";
 import ProfileWorkspace from "./ProfileWorkspace";
 import ResourceTabs from "./ResourceTabs";
 import PodcastLibrary from "./PodcastLibrary";
+import BusinessPlanner from "./BusinessPlanner";
 
 function PageHero({
   eyebrow,
@@ -338,6 +339,7 @@ export function ResourcesLibrary({ program }: { program: ProgramKey }) {
       <ResourceTabs
         scripts={<ScriptLibraryWorkspace scripts={programScripts(program)} />}
         tools={<MemberTools program={program} />}
+        planning={<BusinessPlanner program={program} />}
         podcast={<PodcastLibrary />}
         calendar={<CalendarMonth program={program} />}
         course={<CourseOverview program={program} />}

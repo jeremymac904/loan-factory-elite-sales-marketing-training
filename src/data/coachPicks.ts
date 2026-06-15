@@ -131,15 +131,6 @@ const masteryPicks: CoachPick[] = [
     "https://www.youtube.com/watch?v=15EmOqBDW-8",
   ),
   pick(
-    "m-sales-5",
-    "Sales Psychology",
-    "Linguistic Mirroring and Frictionless Follow-Ups",
-    "Tiny mechanics, big trust: mirror the prospect's words and run follow-up calls as service, not pursuit. This is the psychology behind your Tuesday follow-up block.",
-    "On Tuesday, open three follow-ups with the prospect's own words from your last conversation (check your tracker notes).",
-    "What's your opening line on a follow-up call so it doesn't feel like chasing?",
-    "https://www.youtube.com/watch?v=trdSPP0P4dE",
-  ),
-  pick(
     "m-ai-1",
     "AI Leverage",
     "ChatGPT Deep Research for Lead Domination",
@@ -197,15 +188,6 @@ const alliancePicks: CoachPick[] = [
     "https://www.youtube.com/watch?v=vBuphe8XLtU",
   ),
   pick(
-    "a-mind-3",
-    "Mindset",
-    "The 10 Rules for Unshakable Success",
-    "Focus controls energy, and hunger beats motivation. A dense set of operating principles for producers who are scaling past personal production into systems and people.",
-    "Pick ONE rule from this video and install it as a daily standard for the next two weeks.",
-    "Which rule hit hardest, and why?",
-    "https://www.youtube.com/watch?v=z9LpVIkqmhQ",
-  ),
-  pick(
     "a-sales-1",
     "Sales Psychology",
     "Shifting Buyer Identity and Belief Systems",
@@ -221,7 +203,7 @@ const alliancePicks: CoachPick[] = [
     "Stop pushing; engineer pull. Position your advisory brand so qualified borrowers and agents come to you. This is the strategic frame behind your content rhythm.",
     "Audit your last five posts or touches: were they chasing or attracting? Adjust the next five.",
     "What's the one piece of content that has actually generated inbound business for you?",
-    "https://www.youtube.com/watch?v=sMUN5-fll6g",
+    undefined,
     { question: "Where does your inbound business come from today?", options: ["Past clients", "Agent partners", "Social content", "Almost none — all outbound"] },
   ),
   pick(
@@ -285,7 +267,6 @@ const alliancePicks: CoachPick[] = [
     "Delivering tough news without burning trust — and without burning an hour drafting it. Frameworks for tactful, emotionally intelligent replies to demanding clients and partners.",
     "Save one prompt template for 'deliver difficult news with empathy and authority' and use it on your next hard email.",
     "What's the hardest email you have to write regularly?",
-    "https://www.youtube.com/watch?v=4wppKdmQID0",
   ),
   pick(
     "a-partner-1",

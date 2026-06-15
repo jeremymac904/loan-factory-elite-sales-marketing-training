@@ -452,3 +452,84 @@ export async function createCommentCloud(postId: string, body: string): Promise<
   });
   return !error;
 }
+
+// ── Coaching calendar events (manual meeting links) ────────────────────────
+
+export type CoachingEvent = {
+  id: string;
+  title: string;
+  description?: string;
+  startsAt: string; // ISO
+  durationMin?: number;
+  meetingUrl?: string;
+  meetingProvider?: string;
+  program: "mastery" | "alliance" | "both";
+  coachEmail?: string;
+};
+
+/** Upcoming coaching events visible to a member of `program` (and "both"). */
+export async function listCoachingEventsCloud(
+  program: ProgramKey,
+): Promise<CoachingEvent[] | null> {
+  const supabase = client();
+  if (!supabase) return null;
+  const { data, error } = await supabase
+    .from("coaching_calendar_events")
+    .select("id,title,description,starts_at,duration_min,meeting_url,meeting_provider,program,coach_email")
+    .in("program", [program, "both"])
+    .gte("starts_at", new Date(Date.now() - 2 * 3600 * 1000).toISOString())
+    .order("starts_at", { ascending: true });
+  if (error || !data) return null;
+  return data.map((r) => ({
+    id: r.id as string,
+    title: (r.title as string) ?? "Coaching call",
+    description: (r.description as string) ?? undefined,
+    startsAt: r.starts_at as string,
+    durationMin: (r.duration_min as number) ?? undefined,
+    meetingUrl: (r.meeting_url as string) ?? undefined,
+    meetingProvider: (r.meeting_provider as string) ?? undefined,
+    program: (r.program as CoachingEvent["program"]) ?? "both",
+    coachEmail: (r.coach_email as string) ?? undefined,
+  }));
+}
+
+export async function createCoachingEventCloud(input: {
+  title: string;
+  description?: string;
+  startsAt: string;
+  durationMin?: number;
+  meetingUrl?: string;
+  meetingProvider?: string;
+  program: "mastery" | "alliance" | "both";
+}): Promise<string | null> {
+  const supabase = client();
+  if (!supabase) return null;
+  const user = await getCloudUser();
+  if (!user) return null;
+  const { data, error } = await supabase
+    .from("coaching_calendar_events")
+    .insert({
+      title: input.title,
+      description: input.description ?? null,
+      starts_at: input.startsAt,
+      duration_min: input.durationMin ?? null,
+      meeting_url: input.meetingUrl ?? null,
+      meeting_provider: input.meetingProvider ?? null,
+      program: input.program,
+      event_type: "group_coaching",
+      status: "scheduled",
+      coach_email: user.email,
+      created_by: user.email,
+    })
+    .select("id")
+    .single();
+  if (error || !data) return null;
+  return data.id as string;
+}
+
+export async function deleteCoachingEventCloud(id: string): Promise<boolean> {
+  const supabase = client();
+  if (!supabase) return false;
+  const { error } = await supabase.from("coaching_calendar_events").delete().eq("id", id);
+  return !error;
+}

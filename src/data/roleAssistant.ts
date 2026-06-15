@@ -701,7 +701,7 @@ const matchers: IntentMatcher[] = [
           : {
               intent: "scorecard",
               body:
-                "Submit your weekly scorecard from your member area — track real conversations, Realtor activity, past-client touches, pipeline and follow-up work, and your coaching commitments. Save a draft anytime; submit before your next coaching session.",
+                "Submit your weekly scorecard from your member area — track real conversations, Realtor activity, past-client touches, pipeline and follow-up work, and your coaching commitments. Save a draft anytime; submit before the next weekly coaching call.",
               links: [LINKS.scorecard, b === "alliance_member" ? LINKS.alliance : LINKS.loMastery],
             },
   },
