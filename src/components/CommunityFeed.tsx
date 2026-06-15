@@ -30,6 +30,7 @@ type LocalPost = CommunityPost & {
   cloudId?: string;
   kind?: string;
   refKey?: string;
+  localKey?: string;
 };
 
 type Props = {
@@ -80,8 +81,25 @@ function readFileAsDataURL(file: File): Promise<string> {
   });
 }
 
-function makePostKey(post: LocalPost, index: number) {
-  return `${post.title}-${index}`;
+// Stable, index-independent post identity. The render maps over visiblePosts
+// (reordered/filtered) while the mutation handlers map over localPosts — keying
+// by array index made those diverge, so comments/replies/votes silently failed
+// in any non-raw view. A stable key per post fixes that.
+let keySeq = 0;
+function freshLocalKey() {
+  keySeq += 1;
+  return `lk-${Date.now().toString(36)}-${keySeq}`;
+}
+function withStableKeys(posts: LocalPost[]): LocalPost[] {
+  return posts.map((p) =>
+    p.cloudId || (p.kind && p.refKey) || p.localKey ? p : { ...p, localKey: freshLocalKey() },
+  );
+}
+function makePostKey(post: LocalPost) {
+  if (post.cloudId) return `cloud:${post.cloudId}`;
+  if (post.kind && post.refKey) return `sys:${post.kind}:${post.refKey}`;
+  if (post.localKey) return `local:${post.localKey}`;
+  return `title:${post.title}`;
 }
 
 export default function CommunityFeed({
@@ -90,7 +108,7 @@ export default function CommunityFeed({
   program = "mastery",
 }: Props) {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
-  const [localPosts, setLocalPosts] = useState<LocalPost[]>(posts);
+  const [localPosts, setLocalPosts] = useState<LocalPost[]>(() => withStableKeys(posts));
   const [hydrated, setHydrated] = useState(false);
   const [composerOpen, setComposerOpen] = useState(false);
   const [nextAction, setNextAction] = useState<{ day: string; theme: string; entered: number } | null>(null);
@@ -116,20 +134,24 @@ export default function CommunityFeed({
     const saved = readFeedStore(storageKey);
     if (saved) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- restore browser-only saved state after hydration to avoid SSR/client mismatches.
-      setLocalPosts([
-        ...buildSystemPosts(program),
-        ...getCoachPicks(program),
-        ...getSeedPosts(program),
-        ...saved.posts.filter((p) => !(p as LocalPost).kind || (p as LocalPost).kind === "member"),
-      ]);
+      setLocalPosts(
+        withStableKeys([
+          ...buildSystemPosts(program),
+          ...getCoachPicks(program),
+          ...getSeedPosts(program),
+          ...saved.posts.filter((p) => !(p as LocalPost).kind || (p as LocalPost).kind === "member"),
+        ]),
+      );
       setVoteState(saved.votes);
     } else {
-      setLocalPosts((current) => [
-        ...buildSystemPosts(program),
-        ...getCoachPicks(program),
-        ...getSeedPosts(program),
-        ...current,
-      ]);
+      setLocalPosts((current) =>
+        withStableKeys([
+          ...buildSystemPosts(program),
+          ...getCoachPicks(program),
+          ...getSeedPosts(program),
+          ...current,
+        ]),
+      );
     }
     // Supabase is the primary feed when configured and signed in.
     fetchFeedCloud(program).then((cloud) => {
@@ -147,18 +169,20 @@ export default function CommunityFeed({
         kind: post.kind,
         refKey: post.refKey,
       }));
-      setLocalPosts((current) => [
-        ...cloudPosts,
-        // Coach Picks and Q&A/Scripts seeds are curated client-side data, not
-        // cloud rows — keep them when the cloud feed loads.
-        ...current.filter(
-          (p) =>
-            p.kind === "pick" ||
-            p.kind === "qa" ||
-            p.kind === "script-tip" ||
-            (p.pinned && !p.cloudId && !p.kind),
-        ),
-      ]);
+      setLocalPosts((current) =>
+        withStableKeys([
+          ...cloudPosts,
+          // Coach Picks and Q&A/Scripts seeds are curated client-side data, not
+          // cloud rows — keep them when the cloud feed loads.
+          ...current.filter(
+            (p) =>
+              p.kind === "pick" ||
+              p.kind === "qa" ||
+              p.kind === "script-tip" ||
+              (p.pinned && !p.cloudId && !p.kind),
+          ),
+        ]),
+      );
     });
     // Next-action strip: what should I do right now?
     try {
@@ -267,6 +291,7 @@ export default function CommunityFeed({
               .map((opt, i) => ({ id: `${Date.now()}-${i}`, label: opt.trim(), votes: 0 }))
           : undefined,
     };
+    newPost.localKey = freshLocalKey();
     setLocalPosts((current) => [newPost, ...current]);
     createPostCloud(program, {
       category: newPost.category,
@@ -296,8 +321,8 @@ export default function CommunityFeed({
     const draft = (commentDraft[postKey] ?? "").trim();
     if (!draft) return;
     setLocalPosts((current) =>
-      current.map((post, index) => {
-        if (makePostKey(post, index) !== postKey) return post;
+      current.map((post) => {
+        if (makePostKey(post) !== postKey) return post;
         if (post.cloudId) createCommentCloud(post.cloudId, draft);
         return { ...post, comments: [...post.comments, `You: ${draft}`] };
       }),
@@ -309,8 +334,8 @@ export default function CommunityFeed({
     const draft = (replyDraft[`${postKey}|${parentComment}`] ?? "").trim();
     if (!draft) return;
     setLocalPosts((current) =>
-      current.map((post, index) => {
-        if (makePostKey(post, index) !== postKey) return post;
+      current.map((post) => {
+        if (makePostKey(post) !== postKey) return post;
         if (post.cloudId) createCommentCloud(post.cloudId, `↳ ${parentComment}: ${draft}`);
         return {
           ...post,
@@ -324,8 +349,8 @@ export default function CommunityFeed({
   function vote(postKey: string, optionId: string) {
     setVoteState((current) => ({ ...current, [postKey]: optionId }));
     setLocalPosts((current) =>
-      current.map((post, index) => {
-        if (makePostKey(post, index) !== postKey) return post;
+      current.map((post) => {
+        if (makePostKey(post) !== postKey) return post;
         if (!post.pollOptions) return post;
         return {
           ...post,
@@ -651,8 +676,8 @@ export default function CommunityFeed({
           </div>
         )}
 
-        {visiblePosts.map((post, index) => {
-          const key = makePostKey(post, index);
+        {visiblePosts.map((post) => {
+          const key = makePostKey(post);
           const bodyYoutubeId = (() => {
             if (!post.body) return null;
             const lines = post.body.split("\n");
